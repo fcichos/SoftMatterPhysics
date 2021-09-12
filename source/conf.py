@@ -17,12 +17,13 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Soft Matter Physics'
+project = 'Soft Matter Lecture'
 copyright = '2021, Frank Cichos'
 author = 'Frank Cichos'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
-release = '1'
+release = '21'
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,25 +32,99 @@ release = '1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.mathjax',
+    'sphinx.ext.githubpages',
+    'nbsphinx',
+    'IPython.sphinxext.ipython_console_highlighting',
+    'IPython.sphinxext.ipython_directive',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
+exclude_patterns = ['_build', '**.ipynb_checkpoints']
 templates_path = ['_templates']
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
-
+mathjax_config = {
+'TeX': {'equationNumbers': {'autoNumber': 'AMS', 'useLabelIds': True}},
+}
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+#import sphinx_rtd_theme
+
+html_theme = 'furo'
+# html_theme_path = [furo.get_html_theme_path()]
+
+#def setup(app):
+#    app.add_stylesheet('theme_overrides.css')
+
+# html_logo = 'img/HY-logo-2017.png'
+
+# Add last modified to all pages
+html_last_updated_fmt = ""
+
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
+#
+
+html_theme_options = {
+    "collapse_navigation" : False
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
+
+# Custom sidebar templates, must be a dictionary that maps document names
+# to template names.
+#
+# The default sidebars (for documents that don't match any pattern) are
+# defined by theme itself.  Builtin themes are using these templates by
+# default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
+# 'searchbox.html']``.
+#
+# html_sidebars = {}
+
+
+html_context = {
+    # Enable the "Edit in GitHub link within the header of each page.
+    'display_github': True,
+    # Set the following variables to generate the resulting github URL for each page.
+    # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
+    'github_user': 'fcichos',
+    'github_repo': 'SoftMatterPhysics',
+    'github_version': 'main/',
+    'conf_py_path': '/source/'
+}
+
+#html_logo = 'img/mona_logo.png'
+
+# -- Extension configuration -------------------------------------------------
+# This is processed by Jinja2 and inserted before each notebook
+
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base=False) %}
+
+.. only:: html
+
+    .. role:: raw-html(raw)
+        :format: html
+
+    .. nbinfo::
+        This page was generated from `{{ docname }}`.
+        :raw-html:`<br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/{{ docname }}"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a>`
+
+.. only:: latex
+
+    The following section was created from :file:`{{ docname }}`.
+"""
+
+nbsphinx_allow_errors = True
+
+# Sphinx versioning settings
+scv_show_banner = True
+scv_whitelist_branches = ('main', 'develop')
