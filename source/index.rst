@@ -10,7 +10,7 @@ Welcome to Soft Matter Physics's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   notebooks/L1/1_introduction.ipynb
 
 
 
