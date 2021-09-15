@@ -6,11 +6,18 @@
 Welcome to Soft Matter Physics's documentation!
 ===============================================
 
+
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Lecture 1:
 
    notebooks/L1/1_introduction.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 2:
+
 
 
 
