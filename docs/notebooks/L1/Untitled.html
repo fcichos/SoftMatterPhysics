@@ -1,0 +1,633 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+        <title>Introduction - Soft Matter Lecture 21 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html#Basics-of-Statistical-Physics">Basics of Statistical Physics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html#Phase-Transitions">Phase Transitions</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="admonition note">
+<p>This page was generated from <cite>notebooks/L1/Untitled.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L1/Untitled.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+</div>
+<div class="section" id="Introduction">
+<h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="Basics-of-Statistical-Physics">
+<h1>Basics of Statistical Physics<a class="headerlink" href="#Basics-of-Statistical-Physics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Laws-of-Thermodynamics">
+<h2>Laws of Thermodynamics<a class="headerlink" href="#Laws-of-Thermodynamics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Fundamental-Quantities">
+<h3>Fundamental Quantities<a class="headerlink" href="#Fundamental-Quantities" title="Permalink to this headline">¶</a></h3>
+<p>A thermodynamic system can be defined by <strong>state variables</strong> p, V and/or T. The <strong>state functions</strong> are useful to formulate the laws of thermodynamics. A state function is independent of how one arrived at that particular state. They are most often used to characterize an equilibrium state.</p>
+<ul class="simple">
+<li><p><strong>Internal energy U:</strong> State function. The total energy contained in a thermodynamic system. It is the energy necessary to create the system with the major components kinetic energy and potential energy.</p></li>
+</ul>
+<p>The internal energy is connected to the <strong>First law of thermodynamics</strong> :</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\mathrm dU=\delta Q+\delta W=\delta Q-p\mathrm dV\]</div></div>
+<p>which states, that the energy contained in a system can be changed by providing heat or performing mechanical work on the system. Here δQ and δW are no state functions. They characterize a process of delivering heat or performing mechanical work.</p>
+<ul class="simple">
+<li><p><strong>Enthalpy H:</strong> The enthalpy H of a system is measuring the internal energy minus an entropic part.</p></li>
+</ul>
+<p>H=U-TS</p>
+<ul class="simple">
+<li><p><strong>Entropy S:</strong> The entropy is the</p></li>
+</ul>
+</div>
+<div class="section" id="First-Law-of-Thermodynamics">
+<h3>First Law of Thermodynamics<a class="headerlink" href="#First-Law-of-Thermodynamics" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="Second-Law-of-Thermodynamics">
+<h3>Second Law of Thermodynamics<a class="headerlink" href="#Second-Law-of-Thermodynamics" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="Statistical-Physics">
+<h2>Statistical Physics<a class="headerlink" href="#Statistical-Physics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Entropy">
+<h3>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="Boltzmann-Distribution-and-Equipartition">
+<h3>Boltzmann Distribution and Equipartition<a class="headerlink" href="#Boltzmann-Distribution-and-Equipartition" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="Chemical-Potential-and-Osmotic-Pressure">
+<h3>Chemical Potential and Osmotic Pressure<a class="headerlink" href="#Chemical-Potential-and-Osmotic-Pressure" title="Permalink to this headline">¶</a></h3>
+<p>So far we have considered either isolated systems, meaning that no energy nor particle exchange is possible, and closed systems, which allow an exchange of energy with a reservoir (bath). We will now have a look at a system that also allows an exchange of particles with a reservoir. For these systems, we will define the <strong>chemical potential</strong> which we will identify as the <strong>free energy change when adding one molecule of a given species to a thermodynamic system</strong> at constant and .</p>
+<p>We consider a system of two components A and B in contact with a heat bath and a diffusive equilibrium between A and B. The total free energy of our system is then defined as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G=G_{\mathrm A}+G_{\mathrm B}.\]</div></div>
+<p>The total number of particles in the system is also contained byIn equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\mathrm dG}{\mathrm dN}=\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}|_{T,p}+\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}|_{T,p}=0.\]</div></div>
+<p>Since the total number of particles is conserved we also find in equilibrium that from which follows that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}.\]</div></div>
+<p>We can now define a new quantity</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}|_{T,P}\]</div></div>
+<p>which is termed the chemical potential, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the capacity of a system to change the number of particles. We will have a closer look at the chemical potential with an example now.</p>
+<p><strong>Free energy of a dilute solution</strong></p>
+<p>We would like to calculate the free energy and the chemical potential for a dilute solution of some <em>solutes</em> in a solvent, which we just term H2O. Actually, no additional information on the details of the solute and solvent are currently required, though if we would want to have numbers, we would need to know which solute or solvent we are looking at.</p>
+<p>The solute chemical potential is the defined by</p>
+<p><span class="math">\mu</span><em>{:nbsphinx-math:`rm solute`}=:nbsphinx-math:`left`( :nbsphinx-math:`frac{partial G_{rm tot}}{partial N_{rm s}}`:nbsphinx-math:`right`)|</em>{p,T}</p>
+<p>or intuitively as</p>
+<p><span class="math">\mu</span><em>{:nbsphinx-math:`rm solute`}=G</em>{<span class="math">\rm tot</span>}(N_{<span class="math">\rm s</span>}+1)-G_{<span class="math">\rm tot</span>}(N_{<span class="math">\rm s</span>})</p>
+<p>Analyzing the situation we obtain</p>
+<p>G_{<span class="math">\rm tot</span>}=N_{<span class="math">\rm{H_{2}O}\varepsilon_{H_{2}O}</span>}+N_{<span class="math">\rm s</span>}:nbsphinx-math:<cite>varepsilon</cite><em>{:nbsphinx-math:`rm s`}-TS</em>{<span class="math">\rm mix</span>}</p>
+<p>We are in the following interested in the last term, which is the entropic contribution to the free energy containing the entropy of mixing solute and solvent.</p>
+<p>The mixing entropy can be calculated by either the Gibbs definition</p>
+<p>S_{<span class="math">\rm mix</span>}=-k_{<span class="math">\rm B</span>}:nbsphinx-math:<cite>sum</cite><em>{i}p</em>{i}:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>ln`(p_{i})</p>
+<p>or the Boltzmann definition</p>
+<p>S_{<span class="math">\rm mix</span>}=k_{<span class="math">\rm B</span>}:nbsphinx-math:<a href="#id3"><span class="problematic" id="id4">`</span></a>ln`(W).</p>
+<p>We will use the latter definition including the number of possible configurationsto obtain the mixing entropy.</p>
+</div>
+<div class="section" id="Gibbs-distribution">
+<h3>Gibbs distribution<a class="headerlink" href="#Gibbs-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="Phase-Transitions">
+<h1>Phase Transitions<a class="headerlink" href="#Phase-Transitions" title="Permalink to this headline">¶</a></h1>
+<p>The importance of looking at phase transitions resides in the multicomponent nature of soft matter and its interaction energy scales.</p>
+<div class="section" id="Liquid–Liquid-unmixing">
+<h2>Liquid–Liquid unmixing<a class="headerlink" href="#Liquid–Liquid-unmixing" title="Permalink to this headline">¶</a></h2>
+<p>Consider two liquids consisting of molecules A and B, which we will bring together and mix. The mixing should happen at constant volume and temperature. We can therefore use the Helmholtz free energy as the quantity that is minimized.</p>
+<p>Initially, the separated components have the free energies <span class="math notranslate nohighlight">\(F_{\rm A}\)</span>and <span class="math notranslate nohighlight">\(F_{\rm B}.\)</span>After the mixing, the free energy that comes from the mixing is <span class="math notranslate nohighlight">\(F_{\rm A+B}-(F_{\rm A}+F_{\rm B}).\)</span>If the volume fraction of component A is <span class="math notranslate nohighlight">\(\phi_{\rm A}\)</span>and the one of component B <span class="math notranslate nohighlight">\(\phi_{\rm B}\)</span> such that <strong>???</strong> , the we can need to calculate the mixing free energy .</p>
+<p>First we calculate the mixing entropy <span class="math notranslate nohighlight">\(S_{\rm mix}\)</span> from</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[S=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})\]</div></div>
+<p>which results in</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[S_{\rm mix}=-k_{\rm B}(\phi_{\rm A}\ln(\phi_{\rm A})+\phi_{\rm B}\ln(\phi_{\rm B})).\]</div></div>
+<p>In addition to the mixing entropy, we have to calculate the change of the internal energy as well. This internal energy consists of an energy term that comprises the interaction of two molecules A (<span class="math notranslate nohighlight">\(\epsilon_{\rm AA}\)</span>), one of two molecules B (<span class="math notranslate nohighlight">\(\epsilon_{\rm BB}\)</span>) and the one between molecules and A and B (<span class="math notranslate nohighlight">\(\epsilon_{\rm AB}\)</span>). If we assume that each site in the liquid has a number ofneighbors, then the interaction energy of this site is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[z\phi_{\rm A}\epsilon_{\rm AA}.\]</div></div>
+<p>A fraction of <span class="math notranslate nohighlight">\(\phi_{\rm A}\)</span> sites is occupied with molecules A and thus the interaction energy reads</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{z}{2}\phi_{\rm A}^2\epsilon_{\rm AA}.\]</div></div>
+<p>Similarly, expressions for the interaction of B molecules and the interaction of A with B can be obtained. To calculate the change in internal energy when mixing the two species we still have to subtract the internal energy of the two separated components <span class="math notranslate nohighlight">\(\phi_{\rm A}\epsilon_{\rm AA}\)</span>and <span class="math notranslate nohighlight">\(\phi_{\rm B}\epsilon_{\rm BB}\)</span>such that we obtain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[U_{\rm mix}=\frac{z}{2}[(\phi_{\rm A}^2-\phi_{\rm A})\epsilon_{\rm AA}+(\phi_{\rm B}^2-\phi_{\rm B})\epsilon_{\rm BB}+2\phi_{\rm A}\phi_{\rm B}\epsilon_{\rm AB}].\]</div></div>
+<p>Using this expression we can define an interaction parameter</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\chi=\frac{z}{2k_{\rm B}T}(2\epsilon_{\rm AB}-\epsilon_{\rm AA}-\epsilon_{\rm BB})\]</div></div>
+<p>such that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{U_{\rm mix}}{k_{\rm B}T}=\chi\phi_{\rm A}\phi_{\rm B}.\]</div></div>
+<p>This finally yields the free energy of mixing</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{F_{\rm mix}}{k_{\rm B}T}=\phi_{\rm A}\ln(\phi_{\rm A})+\phi_{\rm B}\ln(\phi_{\rm B})+\chi\phi_{\rm A}\phi_{\rm B}.\]</div></div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Frank Cichos |
+            Last updated on Sep 15, 2021. |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../_sources/notebooks/L1/Untitled.ipynb.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction</a></li>
+<li><a class="reference internal" href="#Basics-of-Statistical-Physics">Basics of Statistical Physics</a><ul>
+<li><a class="reference internal" href="#Laws-of-Thermodynamics">Laws of Thermodynamics</a><ul>
+<li><a class="reference internal" href="#Fundamental-Quantities">Fundamental Quantities</a></li>
+<li><a class="reference internal" href="#First-Law-of-Thermodynamics">First Law of Thermodynamics</a></li>
+<li><a class="reference internal" href="#Second-Law-of-Thermodynamics">Second Law of Thermodynamics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Statistical-Physics">Statistical Physics</a><ul>
+<li><a class="reference internal" href="#Entropy">Entropy</a></li>
+<li><a class="reference internal" href="#Boltzmann-Distribution-and-Equipartition">Boltzmann Distribution and Equipartition</a></li>
+<li><a class="reference internal" href="#Chemical-Potential-and-Osmotic-Pressure">Chemical Potential and Osmotic Pressure</a></li>
+<li><a class="reference internal" href="#Gibbs-distribution">Gibbs distribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Phase-Transitions">Phase Transitions</a><ul>
+<li><a class="reference internal" href="#Liquid–Liquid-unmixing">Liquid–Liquid unmixing</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    </body>
+</html>
