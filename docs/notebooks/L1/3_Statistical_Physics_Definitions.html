@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Thermodynamics and Statistical Physics Revisited" href="2_Thermodynamics_Statistics.html" /><link rel="prev" title="Welcome to Soft Matter Physics’s documentation!" href="../../index.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Thermodynamics and Statistical Physics Revisited" href="2_Thermodynamics_Statistics.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
-        <title>Introduction - Soft Matter Lecture 21 documentation</title>
+        <title>Statistical Physics Definitions - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -155,9 +155,9 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Statistical Physics Definitions</a></li>
 </ul>
 
 </div>
@@ -178,18 +178,73 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L1/1_introduction.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L1/1_introduction.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L1/3_Statistical_Physics_Definitions.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L1/3_Statistical_Physics_Definitions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Introduction">
-<h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Statistical-Physics-Definitions">
+<h1>Statistical Physics Definitions<a class="headerlink" href="#Statistical-Physics-Definitions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Entropy">
+<h2>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Boltzmann-Distribution-and-Equipartition">
+<h2>Boltzmann Distribution and Equipartition<a class="headerlink" href="#Boltzmann-Distribution-and-Equipartition" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Chemical-Potential-and-Osmotic-Pressure">
+<h2>Chemical Potential and Osmotic Pressure<a class="headerlink" href="#Chemical-Potential-and-Osmotic-Pressure" title="Permalink to this headline">¶</a></h2>
+<p>So far we have considered either isolated systems, meaning that no energy nor particle exchange is possible, and closed systems, which allow an exchange of energy with a reservoir (bath). We will now have a look at a system that also allows an exchange of particles with a reservoir. For these systems, we will define the <strong>chemical potential :math:`mu`</strong> which we will identify as the <strong>free energy change when adding one molecule of a given species to a thermodynamic system</strong> at constant
+<span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>We consider a system of two components A and B in contact with a heat bath and a diffusive equilibrium between A and B. The total free energy of our system is then defined as</p>
+<p><span class="math">\begin{equation}
+G=G_{\mathrm A}+G_{\mathrm B}.
+\end{equation}</span></p>
+<p>The total number of particles in the system is also contained by… In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
+<p><span class="math">\begin{equation}\frac{\mathrm dG}{\mathrm dN}=\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}|_{T,p}+\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}|_{T,p}=0.\end{equation}</span></p>
+<p>Since the total number of particles is conserved, we also find in equilibrium that from which follows that</p>
+<p><span class="math">\begin{equation}
+\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}.
+\end{equation}</span></p>
+<p>We can now define a new quantity</p>
+<p><span class="math">\begin{equation}
+\mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}|_{T,P}
+\end{equation}</span></p>
+<p>which is termed the chemical potential, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the capacity of a system to change the number of particles. We will have a closer look at the chemical potential with an example now.</p>
+<p><strong>Free energy of a dilute solution</strong></p>
+<p>We would like to calculate the free energy and the chemical potential for a dilute solution of some <em>solutes</em> in a solvent, which we just term H<span class="math notranslate nohighlight">\(_2\)</span>O. Actually, no additional information on the details of the solute and solvent are currently required, though if we want to have numbers, we would need to know which solute or solvent we are looking at.</p>
+<p>The solute chemical potential is defined by</p>
+<p><span class="math">\begin{equation}
+\mu_{\rm solute}=\left( \frac{\partial G_{\rm tot}}{\partial N_{\rm s}}\right)|_{p,T}
+\end{equation}</span></p>
+<p>or intuitively as</p>
+<p><span class="math">\begin{equation}
+\mu_{\rm solute}=G_{\rm tot}(N_{\rm s}+1)-G_{\rm tot}(N_{\rm s}).
+\end{equation}</span></p>
+<p>Analyzing the situation, we obtain</p>
+<p><span class="math">\begin{equation}
+G_{\rm tot}=N_{\rm{H_{2}O}\varepsilon_{H_{2}O}}+N_{\rm s}\varepsilon_{\rm s}-TS_{\rm mix}.
+\end{equation}</span></p>
+<p>In the following, we are interested in the last term, which is the entropic contribution to the free energy containing the entropy of mixing solute and solvent.</p>
+<p>The mixing entropy can be calculated by either the Gibbs definition</p>
+<p><span class="math">\begin{equation}
+S_{\rm mix}=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})
+\end{equation}</span></p>
+<p>or the Boltzmann definition</p>
+<p><span class="math">\begin{equation}
+S_{\rm mix}=k_{\rm B}\ln(W).
+\end{equation}</span></p>
+<p>We will use the latter definition including the number of possible configurations to obtain the mixing entropy.</p>
+</div>
+<div class="section" id="Gibbs-Distribution">
+<h2>Gibbs Distribution<a class="headerlink" href="#Gibbs-Distribution" title="Permalink to this headline">¶</a></h2>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></div>
 </div>
 
         </article>
@@ -197,23 +252,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="2_Thermodynamics_Statistics.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Thermodynamics and Statistical Physics Revisited</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../../index.html">
+          
+          <a class="prev-page" href="2_Thermodynamics_Statistics.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Thermodynamics and Statistical Physics Revisited</div>
                 
               </div>
             </a>
@@ -226,7 +273,7 @@
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L1/1_introduction.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L1/3_Statistical_Physics_Definitions.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -234,8 +281,30 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Statistical Physics Definitions</a><ul>
+<li><a class="reference internal" href="#Entropy">Entropy</a></li>
+<li><a class="reference internal" href="#Boltzmann-Distribution-and-Equipartition">Boltzmann Distribution and Equipartition</a></li>
+<li><a class="reference internal" href="#Chemical-Potential-and-Osmotic-Pressure">Chemical Potential and Osmotic Pressure</a></li>
+<li><a class="reference internal" href="#Gibbs-Distribution">Gibbs Distribution</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
