@@ -1,5 +1,8 @@
-Instructor
-==========
+Instructors
+===========
+
+Lectures
+--------
 
 Email: *lastname@physik.uni-leipzig.de*
 
@@ -11,7 +14,7 @@ Email: *lastname@physik.uni-leipzig.de*
 
 
 Seminar
-=======
+--------
 
 Email: *lastname@physik.uni-leipzig.de*
 
@@ -24,7 +27,7 @@ Email: *lastname@physik.uni-leipzig.de*
   
 
 Exercise
-========
+--------
 
 Email: *lastname@physik.uni-leipzig.de*
 
