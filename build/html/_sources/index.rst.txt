@@ -7,7 +7,7 @@ Welcome to Soft Matter Physics's documentation!
 ===============================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Course Information:
 
    course-info/info.rst
