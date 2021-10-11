@@ -10,8 +10,8 @@ Email: *lastname@physik.uni-leipzig.de*
   * Phone: +0341 97 32571
 
 
-Exercise
-==========
+Seminar
+=======
 
 Email: *lastname@physik.uni-leipzig.de*
 
@@ -24,7 +24,7 @@ Email: *lastname@physik.uni-leipzig.de*
   
 
 Exercise
-==========
+========
 
 Email: *lastname@physik.uni-leipzig.de*
 
