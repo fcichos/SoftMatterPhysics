@@ -6,7 +6,14 @@ q.. Soft Matter Physics documentation master file, created by
 Welcome to Soft Matter Physics's documentation!
 ===============================================
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Course Information:
 
+   course-info/info.rst
+   course-info/instructors.rst
+   course-info/resources.rst   
+   course-info/exam.rst
 
 .. toctree::
    :maxdepth: 2

@@ -153,7 +153,18 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/info.html">Lecture Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/info.html#seminar-schedule">Seminar Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/info.html#exercise-schedule">Exercise Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/instructors.html">Instructor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/instructors.html#exercise">Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/instructors.html#id1">Exercise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/exam.html">Exercises and Exam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Thermodynamics and Statistical Physics Revisited</a></li>
@@ -444,8 +455,8 @@ div.rendered_html tbody tr:hover {
 <h3>Fundamental Quantities<a class="headerlink" href="#Fundamental-Quantities" title="Permalink to this headline">¶</a></h3>
 <p>We can define different thermodynamic systems depending on their ability to exchange energy and particles with the environment.</p>
 <p><img alt="systems" class="bg-primary mb-1 no-scaled-link" src="../../_images/systems.png" style="width: 500px;"/></p>
-<p>A system is called <em>isolated</em> if it can neither exchange energy nor particles with its environment. It is a <em>closed system</em> if it can exchange energy with the surrounding, i.e. a heat bath keeping it at a constant temperature. In case the system can exchange also particles, it is called an <em>open system</em>. A thermodynamic system can be defined by <strong>state variables</strong> <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(V\)</span> and/or <span class="math notranslate nohighlight">\(T\)</span>. <strong>State functions</strong> are useful to formulate the laws of thermodynamics. A state function is
-independent of how one arrived at that particular state. They are most often used to characterize an equilibrium state.</p>
+<p>A system is called <em>isolated</em> if it can neither exchange energy nor particles with its environment. This ensemble of particles is also called <span class="math notranslate nohighlight">\(micro-canonical\)</span>. The energy in such a system can not fluctuate. It is a <em>closed system</em> if it can exchange energy with the surrounding, i.e. a heat bath keeping it at a constant temperature. The esenmble of particles in such a system corresponds to a <em>canonical</em> ensemble. Energy can fluctuate. In case the system can exchange also particles, it is
+called an <em>open system</em> or <em>grand-canonical</em> ensemble. A thermodynamic system can be defined by <strong>state variables</strong> <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(V\)</span> and/or <span class="math notranslate nohighlight">\(T\)</span>. <strong>State functions</strong> are useful to formulate the laws of thermodynamics. A state function is independent of how one arrived at that particular state. They are most often used to characterize an equilibrium state.</p>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Note:</strong> State Function and State Variables</p>
 <ul class="simple">
@@ -476,6 +487,7 @@ dH=dU+pdV+Vdp=\delta Q - Vdp
 <p>The change of entropy of a system is given by <span class="math">\begin{equation}
 dS=\frac{\delta Q}{T}
 \end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> denotes the temperature and <span class="math notranslate nohighlight">\(\delta Q\)</span> the heat exchanged in a reversible process.</p>
 <ul class="simple">
 <li><p><strong>Free Energy</strong> <span class="math notranslate nohighlight">\(G\)</span> or <span class="math notranslate nohighlight">\(F\)</span>:</p></li>
 </ul>
