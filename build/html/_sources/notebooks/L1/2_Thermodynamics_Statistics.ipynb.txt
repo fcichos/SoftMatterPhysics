@@ -169,6 +169,35 @@
     "Thus, in equilibrium the free energy reaches a minimum value. Free energy minimization does two things at the same time: It tries to minimize the internal energy/enthalpy as well as to maximize the entropy (due to the negative sign in front of the entropy term) of a non-isolated object. The free energy minimum is thus the optimal balance between the two extrema. \n",
     "</div>"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import math\n",
+    "\n",
+    "math.factorial(100)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
