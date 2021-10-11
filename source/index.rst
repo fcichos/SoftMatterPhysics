@@ -14,6 +14,7 @@ Welcome to Soft Matter Physics's documentation!
 
    notebooks/L1/1_introduction.ipynb
    notebooks/L1/2_Thermodynamics_Statistics.ipynb
+   notebooks/L1/3_Statistical_Physics_Definitions.ipynb
    
 
 .. toctree::
