@@ -1,0 +1,494 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+        <title>Forces and Interactions in Soft Matter - Soft Matter Lecture 21 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="admonition note">
+<p>This page was generated from <cite>notebooks/L1/4_Forces and Interactions.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L1/4_Forces and Interactions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+</div>
+<div class="section" id="Forces-and-Interactions-in-Soft-Matter">
+<h1>Forces and Interactions in Soft Matter<a class="headerlink" href="#Forces-and-Interactions-in-Soft-Matter" title="Permalink to this headline">¶</a></h1>
+<p>While we have discussed in the previous sections the thermodynamics of systems and the kinetics of phase transitions, we have made as few as possible assumptions on the interactions between the, i.e., liquid components of a mixture to highlight the importance of entropic and other effects. Now, we would like to have a close look at the possible types of interactions and their order of magnitude in soft matter systems. We may classify the interactions in the following way: - covalent interaction
+(chemical binding) - electrostatic (Coulomb) - dipolar (vdW) - dispersion (vdW) - fluctuation, depletion (entropic)</p>
+<p>These interactions deliver the forces that hold soft matter together, even though the phases are characterized by <em>density</em>, <em>free energy</em> and <em>entropy</em>, but not by the forces.</p>
+<p><strong>Pairwise interaction energy</strong> – Before we go into further details, we may have a look at some general behavior again. Let us assume that the interaction energy between two atoms/molecules is given by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>w(r)=-frac{C}{r^n}</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>with C being an interaction specific constant, then the force between the two species at a distanceris given by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id3"><span class="problematic" id="id4">`</span></a>begin{equation}</dt><dd><p>F(r)=-frac{mathrm dw(r)}{mathrm dr}=-frac{nC}{r^{n+1}}.</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>For a material, which has a number densityρand thus the total number <span class="math notranslate nohighlight">\(ρ4πr^2 dr\)</span> molecules in a shell between <span class="math notranslate nohighlight">\(r,r+dr\)</span> around a molecule, we obtain the following total interaction energy per molecule (the standard chemical potential)</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id5"><span class="problematic" id="id6">`</span></a>begin{equation}</dt><dd><p>mu^{0}=int_{sigma}^{L}w(r)rho 4pi r^2 mathrm dr=frac{-4pi Crho}{(n-3)sigma^{n-3}}left [ 1-left (frac{sigma}{L}right )^{n-3}right ].</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>The total interaction energy, and thus also the property of the system will thus depend on the size <span class="math notranslate nohighlight">\(L\)</span> of the system, except we assume <span class="math notranslate nohighlight">\(n&gt;3andL&gt;&gt;σ\)</span>, where <span class="math notranslate nohighlight">\(σ\)</span> is the size of the molecule. This states nothing else, that long range interactions may yield system dependent properties or bulk properties do not depend on the volume size only if objects become small. Obviously Coulomb interactions, or dipolar interactions may not satisfy the above assumptions. We can find out some
+general rule about the cohesive energy of molecule with its neighbors in a liquid, when comparing the molar gas and molar liquid volumes. A typical gas molar volume is <span class="math notranslate nohighlight">\(22.400~ \rm cm^3/mol\)</span>, while this is only <span class="math notranslate nohighlight">\(20~ \rm cm^3/mol\)</span> for a liquid. If liquid and gas coexist at a certain temperature <span class="math notranslate nohighlight">\(T\)</span>,then the chemical potential of gas and liquid have to be the same, i.e.,</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id7"><span class="problematic" id="id8">`</span></a>begin{equation}</dt><dd><p>mu^{0}_{rm gas}+k_{rm B}Tln(X_{rm gas})=mu^{0}_{rm liq}+k_{rm B}Tln(X_{rm liq})</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>or</p>
+<p><span class="math">\begin{equation}
+\mu^{0}_{\rm gas}-\mu^0_{\rm liq}\approx -\mu^{0}_{\rm liq}=k_{\rm B}T \ln\left (\frac{X_{\rm liq}}{X_{\rm gas}}\right)\approx 7 k_{\rm B}T
+\end{equation}</span></p>
+<p>assuming that there is essentially no cohesive energy in the gas phase. At the vaporization temperature, the energy required to release one mole of molecules from its cohesion with its neighboring molecules to the gas phase is thus</p>
+<p><span class="math">\begin{equation}
+U_{\rm vap}=-N_{A}\mu^0_{\rm liq}=7N_{\rm A}k_{\rm B}T.
+\end{equation}</span></p>
+<p>This allows us to estimate the latent heat of vaporization</p>
+<p><span class="math">\begin{equation}
+\Delta H_{\rm vap}=U_{\rm vap}+pV\approx 7 R T_{\rm B}+RT_{\rm B}
+\end{equation}</span></p>
+<p>According to that, the ratio of latent heat of vaporization and boiling temperature is <span class="math notranslate nohighlight">\(\frac{\Delta H_{\rm vap}}{T_{B}}\approx 8 R\approx 80 \frac{\rm J}{\rm K\, mol}\)</span> per mole, or <span class="math notranslate nohighlight">\(9 k_{\rm B} T\)</span> per molecule. If we assume that each molecule has on average 6 neighbors in a liquid, than we obtain a value of $:nbsphinx-math:<cite>frac{3}{2}`k_{:nbsphinx-math:</cite>rm B`}T $ as energy molecular pair. The about rough rule is called <strong>Troutons rule</strong> and gives only a very rough estimate of the
+cohesive energy, as it completely neglects the details of the interactions. However, it demonstrates why the thermal energy is important in soft matter.</p>
+<div class="section" id="Coulomb-forces,-charge–charge-interactions">
+<h2>Coulomb forces, charge–charge interactions<a class="headerlink" href="#Coulomb-forces,-charge–charge-interactions" title="Permalink to this headline">¶</a></h2>
+<p>The simplest form but at the same time, also one of the most important types of interaction is the electrostatic interaction, e.g., of simple charges. This type of interaction is important not only due to its relevance in biological systems, but the electrostatic interaction is in principle the only one delivering a long range repulsive forces.</p>
+<p><strong>Charge–charge interactions</strong> – Charge–charge interactions are mediated by the electric fields. Assume that we have a charge <span class="math notranslate nohighlight">\(Q_1\)</span> that creates an electric field</p>
+<p><span class="math">\begin{equation}
+E_{1}=\frac{Q_{1}}{4\pi \epsilon_{0}\epsilon r^2}.
+\end{equation}</span></p>
+<p>We neglect the vectorial character of the electric field to avoid further complications. The electric field is creating a force on a second charge <span class="math notranslate nohighlight">\(Q_2\)</span></p>
+<p><span class="math">\begin{equation}
+F(r)=Q_{2}E_{1}=\frac{Q_{1}Q_{2}}{4\pi \epsilon_{0}\epsilon r^2}.
+\end{equation}</span></p>
+<p>In this charge assembly at a distanceris an energy stored, which is the potential energy of assembling these two charges from infinity. The free energy of the two charges thus reads</p>
+<p><span class="math">\begin{equation}
+w(r)=\int_{\infty}^{r}-F(r)\mathrm dr=-\int_{\infty}^{r} \frac{Q_{1}Q_{2}}{4\pi \epsilon_{0}\epsilon r^{2}}\mathrm dr=\frac{Q_{1}Q_{2}}{4\pi \epsilon_{0}\epsilon r}.
+\end{equation}</span></p>
+<p>If we evaluate this energy, for example, for a sodium and a chlorine ion at a distance of <span class="math notranslate nohighlight">\(r=0.276\, {\rm nm}\)</span> we find a free energy of interaction of <span class="math notranslate nohighlight">\(w=-8.4\cdot 10^{-19}\, {\rm J}\)</span>, which corresponds to about <span class="math notranslate nohighlight">\(200\, k_{\rm B}T\)</span> at <span class="math notranslate nohighlight">\(300~\rm K\)</span> temperature. This is on the same order of magnitude than covalent interactions. It requires about <span class="math notranslate nohighlight">\(3~\rm nN\)</span> to break this bond and the long range character of electrostatics becomes clear when evaluating the distance at
+which this interaction becomes comparable to <span class="math notranslate nohighlight">\(k_{\rm B}T (r=56\, {\rm nm})\)</span>. This is only considering a pair of ions. In a NaCl crystal, multiple neighbors contribute to the interaction energy of one sodium ion with its surrounding. One sodium ion has 6 Cl– neighbors at a distance of <span class="math notranslate nohighlight">\(r=0.276\, {\rm nm}\)</span>, 12 Na+ neightbors at <span class="math notranslate nohighlight">\(\sqrt{2}r\)</span>,and further 8 Cl– neighbors at <span class="math notranslate nohighlight">\(\sqrt{3}r\)</span> and so on. We have to sum up all the interaction energies for the total cohesive energy of
+the sodium ion in the crystal</p>
+<p><span class="math">\begin{equation}
+\mu^{0}=-\frac{e^2}{4\pi \epsilon_{0}r}\left [ 6-\frac{12}{\sqrt{2}}+\frac{8}{\sqrt{3}}-\frac{6}{2}+\ldots\right]=-1.748\frac{e^2}{4\pi \epsilon_{0}r}.
+\end{equation}</span></p>
+<p>The factor in front of the Coulomb term (the one in the square brackets) is termed Madelung constant and is known from solid state physics. It is characteristic for specific lattice types such as a simple cubic lattice in this case. Note that the cohesive energy of one sodium ion therefore is about <span class="math notranslate nohighlight">\(350\, k_{\rm B}T\)</span> and is thus much larger than the thermal energy keeping the NaCl crystal stable. Yet it can be dissolved in water very easily.</p>
+<p><strong>Born energy of solvation</strong> – The Born energy of solvation calculates the free energy of assembling a charge inside a dielectric medium of dielectric constant <span class="math notranslate nohighlight">\(ϵ\)</span>. Let us shortly reconsider the free energy</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id9"><span class="problematic" id="id10">`</span></a>begin{eqnarray}</dt><dd><p>mathrm dU&amp;=&amp;mathrm dQ+mathrm dW\ mathrm dU&amp;=&amp;Tmathrm dS+mathrm dW\ mathrm dW&amp;=&amp;mathrm dU-Tmathrm dS</p>
+</dd>
+</dl>
+<p>end{eqnarray}`</p>
+<p>which leads to</p>
+<p><span class="math">\begin{equation}
+\mathrm dF=\mathrm dU-T\mathrm dS=\mathrm dW.
+\end{equation}</span></p>
+<p>Therefore, the free energy change is related to the energy to assemble a charge</p>
+<p><span class="math">\begin{equation}
+\Delta F=\frac{\epsilon \epsilon_{0}}{2}\int_{V}E^{2}\mathrm dV.
+\end{equation}</span></p>
+<p>To find the free energy we, therefore, integrate the square of the electric field over the volume (this is actually the same as adding tiny charge elements against previously assembled parts of the charge). According to that, the free energy of a charge in a medium with dielectric constant <span class="math notranslate nohighlight">\(ϵ\)</span> is</p>
+<p><span class="math">\begin{equation}
+\mu^{0}=\frac{z^2e^2}{8\pi \epsilon \epsilon_{0}a}
+\end{equation}</span></p>
+<p>if the charge has a radius <span class="math notranslate nohighlight">\(a\)</span>. If we look now at the difference of assembling the charge in vacuum (with <span class="math notranslate nohighlight">\(ϵ\)</span> =1) and in a medium with <span class="math notranslate nohighlight">\(ϵ\)</span>,we find the following difference in the chemical potential (free energy)</p>
+<p><span class="math">\begin{equation}
+\Delta \mu^{0}=\frac{z^2e^2}{8\pi \epsilon_{0}a}\left (\frac{1}{\epsilon}-1\right )=-\frac{28z^2}{a}\left (\frac{1}{\epsilon}-1\right ).
+\end{equation}</span></p>
+<p>This is the Born free energy of solvation of a single ion. The molar free energy is then obtained by multiplication with the Avogadro number <span class="math notranslate nohighlight">\(N_{\rm A}\)</span></p>
+<p><span class="math">\begin{equation}
+\Delta G=N_{\rm A}\Delta \mu^{0}=-\frac{69z^2}{a}\left (\frac{1}{\epsilon}-1\right )
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\Delta \mu^{0}\approx \frac{e^2}{4\pi\epsilon_{0}\epsilon (a_{+}+a_{-})}
+\end{equation}</span></p>
+<p>The mole fraction that is dissolved in water is then found by the Boltzmann factor</p>
+<p><span class="math">\begin{equation}
+X_{s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
+\end{equation}</span></p>
+<p>which is a measure for the solubility of the ions. Inserting the formula for the chemical potential delivers the proportionality <span class="math notranslate nohighlight">\(X_{s}\propto \exp(-{\rm const}/\epsilon)\)</span>. This dependency on the dielectric constant of the solvent is indeed observed in the experiment, even though this is only a trend and there are solvents with marked deviations. The reason for that is essentially that the theory just assumes 1) continuous changes in the interactions, despite the fact that there is a near
+order and 2) that additional interactions like hydrogen bonds exist.</p>
+<p><strong>Interactions involving polar molecules</strong></p>
+<p>Many molecules exhibit dipole or even higher moments due to the fact that the charges are not evenly distributed over the molecular structure. Some of the atoms exhibit a stronger tendency to accept charges than others. This is typically measured by electronegativity and provides an idea of whether atoms rather donate or accept a charge when binding to other atoms. While homo-atomic bonds therefore do not have dipole moments heteroatomic bonds do (see table).</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 76%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bond</p></th>
+<th class="head"><p>Dipole moment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>C-C</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>C-N</p></td>
+<td><p>0.22</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>The dipole moment of a molecule is measured by the displacementlof two charges <span class="math notranslate nohighlight">\(±q\)</span> from each other</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id11"><span class="problematic" id="id12">`</span></a>begin{equation}</dt><dd><p>vec{u}=qvec{l}.</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>Its direction is from the negative to the positive side. It creates an electric field that is given by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id13"><span class="problematic" id="id14">`</span></a>begin{equation}</dt><dd><p>vec{E}=frac{3(vec{u}cdot hat{r})hat{r}-vec{u}}{4pi epsilon_{0}epsilon r^{3}}.</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>The dipole self-energy, i.e., the energy to create the dipole in a solvent is given by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id15"><span class="problematic" id="id16">`</span></a>begin{equation}</dt><dd><p>mu^{0}=frac{1}{4pi epsilon_{0}epsilon}left [ frac{q^2}{2a}+frac{q^2}{2a}-frac{q^2}{l}right ].</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p><span class="math notranslate nohighlight">\(F\)</span> or <span class="math notranslate nohighlight">\(l=2a\)</span> this yields <span class="math notranslate nohighlight">\(μ^0=q^2/(8πϵ_0 ϵa)=u^2/(4πϵ_0 ϵl^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math notranslate nohighlight">\(ϵ\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
+<p><strong>Ion–dipole interaction</strong></p>
+<p>The interaction energy of a dipole with a charge can be calculated by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id17"><span class="problematic" id="id18">`</span></a>begin{equation}</dt><dd><p>w(r)=-frac{qQ}{4piepsilon_{0}epsilon}left [ frac{1}{r-frac{1}{2}l cos(theta)}-frac{1}{r+frac{1}{2}l cos(theta)}right ]=-frac{qQ}{4piepsilon_{0}epsilon r^2}cos(theta)=-uEcos(theta),</p>
+</dd>
+</dl>
+<p>label{eq:energy}
+end{equation}`</p>
+<p>where the last two equations are assuming that the distance between both objects <span class="math notranslate nohighlight">\(r\)</span> is much larger than the extent of the dipole <span class="math notranslate nohighlight">\(l\)</span> itself. From equation <span class="math notranslate nohighlight">\(\eqref{eq:energy}\)</span>, we see that the interaction can be either attractive or repulsive. An angle <span class="math notranslate nohighlight">\(θ=0^°\)</span> results in an attractive interaction, while <span class="math notranslate nohighlight">\(θ=180^°\)</span> yields repulsive interaction. Using a single chargee(Na+ ion) and a dipole of <span class="math notranslate nohighlight">\(u=1.85\, {\rm D}\)</span> (water molecule) results in an interaction energy of
+about <span class="math notranslate nohighlight">\(39\, k_{\rm B}T\)</span>. Ions align and bind polar molecules like water, for example. For arbitrary polar molecules this is called solvation, while for water</p>
+<p>the term hydration is used. The strength of the hydration can effect the mobility of ions in solution as it makes them effectively charges and is of interest, for example, for the study of ion transport through ion channels, as this requires stripping the hydration shell.</p>
+<p><strong>Dipole–dipole interactions</strong></p>
+<p>The interactions of two dipoles <span class="math notranslate nohighlight">\((u_1, u_2)\)</span> in the solution can be also calculated following the above scheme</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id19"><span class="problematic" id="id20">`</span></a>begin{equation}</dt><dd><p>w(r,theta_{1},theta_{2},phi)=-frac{u_{1}u_{2}}{4piepsilon_{0}epsilon r^3}left [ 2cos(theta_{1})cos(theta_{2})-sin(theta_{1}sin(theta_{2})cos(phi))right ].</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>Also in this case the dipole–dipole interaction yields an orientation dependence with either repulsive or attractive interactions. The figure below shows the distance dependence for two configurations where the dipoles are arranged parallel but either along the connecting line or perpendicular to it.</p>
+<p><strong>Rotating dipoles, angle averaged Potential</strong></p>
+</div>
+<div class="section" id="van-der-Waals-interactions">
+<h2>van der Waals interactions<a class="headerlink" href="#van-der-Waals-interactions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Depletion-Forces">
+<h2>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this headline">¶</a></h2>
+<p><strong>Depletion force between two plates</strong></p>
+<p><strong>Depletion force between two spheres</strong> – To describe the depletion interaction between two spheres (radius <span class="math notranslate nohighlight">\(R\)</span>) in a solution of smaller spheres (radius <span class="math notranslate nohighlight">\(σ/2\)</span>), we may use the same approach of assuming an isotropic osmotic pressure of the smaller spheres. The smaller spheres can actually not approach a spherical shell of thickness <span class="math notranslate nohighlight">\(σ/2\)</span> around the larger spheres or a total volume of <span class="math notranslate nohighlight">\(4π(R+σ/2)^3/3\)</span> . The pressure on the large spheres has no consequences except in the
+case where the two spheres approach closer than <span class="math notranslate nohighlight">\(r≤2(R+σ/2)=2R_d\)</span>. In this case the two excluded volumes around each sphere overlap to a lens-like volume. Due to this overall, the forces which create the pressure on the spherical surface up to an angle <span class="math notranslate nohighlight">\(θ_0\)</span> are unbalanced from the other side of the surface (see image) and result in an attractive interaction.</p>
+<img alt="image-14.png" src="data:image/png;base64,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">
+<p>The total force is then calculated from the osmotic pressure times the surface area of the spherical cap by just taking into account the force components along the connecting line. This the read</p>
+<p><span class="math">\begin{equation}
+F(r)=-2nk_{\rm B}T\pi (R+\sigma/2)^2\int\limits_{0}^{\theta_{0}}\sin(\theta)\cos(\theta)\mathrm d\theta
+\end{equation}</span></p>
+<p>resulting in</p>
+<p><span class="math">\begin{equation}
+F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right ]
+\end{equation}</span></p>
+<p>which is valid if the distance between the centers of the large spheres is <span class="math notranslate nohighlight">\(r&lt;2(R+σ/2)\)</span>. For <span class="math notranslate nohighlight">\(r≥2(R+σ/2)\)</span> there is no depletion of the smaller spheres from the region between the larger spheres and the force is zero, i.e., <span class="math notranslate nohighlight">\(F(r)=0\)</span>.</p>
+<p><strong>General description</strong> – A more general description of the depletion interaction may be obtained based on our introduction into statistical physics at the beginning of the course. There we stated that the probability of finding a system in a stet of energy <span class="math notranslate nohighlight">\(E\)</span> is</p>
+<p><span class="math">\begin{equation}
+p(E)=\frac{e^{-\beta E}}{Z},
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(\beta=1/k_{\rm B}T\)</span> and the partition function <span class="math notranslate nohighlight">\(Z\)</span> is</p>
+<p><span class="math">\begin{equation}
+Z=\sum_{i}e^{-\beta E_{i}}
+\end{equation}</span></p>
+<p>for a system with a discrete number of states numbered by the indexi.For a single particle with a continuous number of energies the energy may look like</p>
+<p><span class="math">\begin{equation}
+E=\frac{p^2}{2m}+U(q),
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is some general coordinate. The classical partition function for a system of N particles is then</p>
+<p><span class="math">\begin{equation}
+Z=\frac{1}{N!h^{3N}}\int \mathrm d^{3}p^{N}\int \mathrm d^{3}q^{N}\exp\left ( -\beta \left [ \sum_{i}\frac{p^2}{2m}+U(q^N)\right ]\right ),
+\end{equation}</span></p>
+<p>where we use the notation <span class="math notranslate nohighlight">\(p^N\)</span> and <span class="math notranslate nohighlight">\(q^N\)</span> to denote the whole set of variables. The prefactor is appropriate for indistinguishable particles and the phase space normalization factor <span class="math notranslate nohighlight">\(h\)</span> (Planck’s constant) for every pair of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>. Since there is no issue of the non-commutation of positions and momenta we can perform the momentum integrals exactly, yielding</p>
+<p><span class="math">\begin{equation}
+Z=\frac{1}{N!}\frac{1}{\Lambda^{3N}}\int \mathrm d^{3}q^{N}\exp(-\beta U(q^{N})),
+\end{equation}</span></p>
+<p>where the thermal de Broglie wavelength <span class="math notranslate nohighlight">\(Λ\)</span> is</p>
+<p><span class="math">\begin{equation}
+\Lambda=\frac{h}{\sqrt{2 \pi m k_{\rm B}T}}.
+\end{equation}</span></p>
+<p>In the case of two interacting large spheres in a solution of small spheres with all spheres being hard spheres, the integration over the exponential function yields</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id21"><span class="problematic" id="id22">`</span></a>begin{equation}</dt><dd><p>Z=frac{V_{A}^{N}}{N! Lambda^{3N}}</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>with <span class="math notranslate nohighlight">\(V_A\)</span> being the volume available to the small spheres, i.e., $V_A=V-V_{E}^{’} $ for <span class="math notranslate nohighlight">\(r&lt;D+d\)</span> and <span class="math notranslate nohighlight">\(V_A=V-V_E\)</span> for <span class="math notranslate nohighlight">\(r&gt;D+d\)</span> with <span class="math notranslate nohighlight">\(V_E=π(D+d)^3/3\)</span> and <span class="math notranslate nohighlight">\(V_{E}^{'}=V_E-(2πl^2)/3 [3(D+d)/2-l]\)</span> and <span class="math notranslate nohighlight">\(l=(D+d)/2-r/2\)</span>. The calculation then yields the free energy</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id23"><span class="problematic" id="id24">`</span></a>begin{equation}</dt><dd><p>G=-k_{rm B}Tln(Z) =-k_{rm B}Tlnleft (frac{V_{A}^N}{N!Lambda^{3N}}right).</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>Using Stirling’s formula again this can be turned into</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id25"><span class="problematic" id="id26">`</span></a>begin{equation}</dt><dd><p>G=G_{rm ideal}-Nk_{rm B}lnleft (frac{V_{A}}{V}right).</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>The ideal contribution to the free energy is constant with the separation of the large sphere, so it does not contribute to the depletion force. It reads</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id27"><span class="problematic" id="id28">`</span></a>begin{equation}</dt><dd><p>G_{rm ideal}=-Nk_{rm B}Tleft (1-lnleft (frac{NLambda^3}{V}right)right).</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>The distance-dependent part still contains the logarithm which we can approximate by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id29"><span class="problematic" id="id30">`</span></a>begin{equation}</dt><dd><p>lnleft (frac{V_{A}}{V}right)approx -frac{V_{E}}{V}+frac{pi}{6V}(D+d-r)^2(D+d+r/2)</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>for the case of the overlapping excluded volumes. This gives then finally a force</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id31"><span class="problematic" id="id32">`</span></a>begin{equation}</dt><dd><p>F=-frac{N}{4V}k_{rm B}Tpi(D+d-r)(D+d+r)</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>for <span class="math notranslate nohighlight">\(r&lt;d+D\)</span>. For all other distances of the two centers of the spheres, the depletion force is zero.</p>
+</img></div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Frank Cichos |
+            Last updated on Oct 11, 2021. |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../_sources/notebooks/L1/4_Forces and Interactions.ipynb.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Forces and Interactions in Soft Matter</a><ul>
+<li><a class="reference internal" href="#Coulomb-forces,-charge–charge-interactions">Coulomb forces, charge–charge interactions</a></li>
+<li><a class="reference internal" href="#van-der-Waals-interactions">van der Waals interactions</a></li>
+<li><a class="reference internal" href="#Depletion-Forces">Depletion Forces</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    </body>
+</html>

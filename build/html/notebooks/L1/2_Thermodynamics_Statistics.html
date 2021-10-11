@@ -1,0 +1,376 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Introduction" href="1_introduction.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+        <title>Thermodynamics and Statistical Physics Revisited - Soft Matter Lecture 21 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Thermodynamics and Statistical Physics Revisited</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="admonition note">
+<p>This page was generated from <cite>notebooks/L1/2_Thermodynamics_Statistics.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L1/2_Thermodynamics_Statistics.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+</div>
+<div class="section" id="Thermodynamics-and-Statistical-Physics-Revisited">
+<h1>Thermodynamics and Statistical Physics Revisited<a class="headerlink" href="#Thermodynamics-and-Statistical-Physics-Revisited" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Thermodynamics">
+<h2>Thermodynamics<a class="headerlink" href="#Thermodynamics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Fundamental-Quantities">
+<h3>Fundamental Quantities<a class="headerlink" href="#Fundamental-Quantities" title="Permalink to this headline">¶</a></h3>
+<p>A thermodynamic system can be defined by <strong>state variables</strong> <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(V\)</span> and/or <span class="math notranslate nohighlight">\(T\)</span>. The <strong>state functions</strong> are useful to formulate the laws of thermodynamics. A state function is independent of how one arrived at that particular state. They are most often used to characterize an equilibrium state.</p>
+<ul class="simple">
+<li><p><strong>Internal energy</strong> <span class="math notranslate nohighlight">\(U\)</span>: State function. The total energy contained in a thermodynamic system. It is the energy necessary to create the system with the major components kinetic energy and potential energy.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Note:</strong> State Functions and State Variables</p>
+<p><strong>State function</strong> is a function of state variables that depends only on the state of the system.</p>
+<p><strong>State variables</strong> characterize the state of a system and are Independent of who the system got there.</p>
+</div>
+</div>
+<div class="section" id="First-Law-of-Thermodynamics">
+<h3>First Law of Thermodynamics<a class="headerlink" href="#First-Law-of-Thermodynamics" title="Permalink to this headline">¶</a></h3>
+<p>The internal energy is connected to the First law of thermodynamics:</p>
+<p><span class="math">\begin{equation}
+\mathrm dU=\delta Q+\delta W=\delta Q-p\mathrm dV
+\end{equation}</span></p>
+<p>which states, that the energy contained in a system can be changed by providing heat or performing mechanical work on the system. Here <span class="math notranslate nohighlight">\(δQ\)</span> and <span class="math notranslate nohighlight">\(δW\)</span> are no state functions. They characterize a process of delivering heat or performing mechanical work.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Note:</strong> First Law of Thermodynamics</p>
+<p>The internal energy of a system can only be changed by exchanging heat with the environment or by doing mechanical work on it (energy cannot appear or disappear).</p>
+</div>
+</div>
+<div class="section" id="Second-Law-of-Thermodynamics">
+<h3>Second Law of Thermodynamics<a class="headerlink" href="#Second-Law-of-Thermodynamics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Enthalpy :math:`H`:</strong> The enthalpy <span class="math notranslate nohighlight">\(H\)</span> of a system is measuring the internal energy minus an entropic part.</p></li>
+</ul>
+<p><span class="math">\begin{equation}
+H=U-TS
+\end{equation}</span></p>
+<ul class="simple">
+<li><p><strong>Entropy :math:`S`:</strong> The entropy is the</p></li>
+</ul>
+<p><span class="math">\begin{equation}
+dS=\frac{\delta Q}{T}
+\end{equation}</span></p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Note:</strong> Second Law of Thermodynamics</p>
+<p>When an isolated system is left alone long enough it evolves to thermal equilibrium whose entropy is at least as great as before (dS &gt;= 0).</p>
+</div>
+</div>
+</div>
+<div class="section" id="Statistical-Physics">
+<h2>Statistical Physics<a class="headerlink" href="#Statistical-Physics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Entropy">
+<h3>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="Boltzmann-Distribution-and-Equipartition">
+<h3>Boltzmann Distribution and Equipartition<a class="headerlink" href="#Boltzmann-Distribution-and-Equipartition" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="Chemical-Potential-and-Osmotic-Pressure">
+<h3>Chemical Potential and Osmotic Pressure<a class="headerlink" href="#Chemical-Potential-and-Osmotic-Pressure" title="Permalink to this headline">¶</a></h3>
+<p>So far we have considered either isolated systems, meaning that no energy nor particle exchange is possible, and closed systems, which allow an exchange of energy with a reservoir (bath). We will now have a look at a system that also allows an exchange of particles with a reservoir. For these systems, we will define the <strong>chemical potential :math:`mu`</strong> which we will identify as the <strong>free energy change when adding one molecule of a given species to a thermodynamic system</strong> at constant
+<span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>We consider a system of two components A and B in contact with a heat bath and a diffusive equilibrium between A and B. The total free energy of our system is then defined as</p>
+<p><span class="math">\begin{equation}
+G=G_{\mathrm A}+G_{\mathrm B}.
+\end{equation}</span></p>
+<p>The total number of particles in the system is also contained by… In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
+<p><span class="math">\begin{equation}\frac{\mathrm dG}{\mathrm dN}=\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}|_{T,p}+\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}|_{T,p}=0.\end{equation}</span></p>
+<p>Since the total number of particles is conserved, we also find in equilibrium that from which follows that</p>
+<p><span class="math">\begin{equation}
+\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}.
+\end{equation}</span></p>
+<p>We can now define a new quantity</p>
+<p><span class="math">\begin{equation}
+\mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}|_{T,P}
+\end{equation}</span></p>
+<p>which is termed the chemical potential, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the capacity of a system to change the number of particles. We will have a closer look at the chemical potential with an example now.</p>
+<p><strong>Free energy of a dilute solution</strong></p>
+<p>We would like to calculate the free energy and the chemical potential for a dilute solution of some <em>solutes</em> in a solvent, which we just term H<span class="math notranslate nohighlight">\(_2\)</span>O. Actually, no additional information on the details of the solute and solvent are currently required, though if we want to have numbers, we would need to know which solute or solvent we are looking at.</p>
+<p>The solute chemical potential is defined by</p>
+<p><span class="math">\begin{equation}
+\mu_{\rm solute}=\left( \frac{\partial G_{\rm tot}}{\partial N_{\rm s}}\right)|_{p,T}
+\end{equation}</span></p>
+<p>or intuitively as</p>
+<p><span class="math">\begin{equation}
+\mu_{\rm solute}=G_{\rm tot}(N_{\rm s}+1)-G_{\rm tot}(N_{\rm s}).
+\end{equation}</span></p>
+<p>Analyzing the situation, we obtain</p>
+<p><span class="math">\begin{equation}
+G_{\rm tot}=N_{\rm{H_{2}O}\varepsilon_{H_{2}O}}+N_{\rm s}\varepsilon_{\rm s}-TS_{\rm mix}.
+\end{equation}</span></p>
+<p>In the following, we are interested in the last term, which is the entropic contribution to the free energy containing the entropy of mixing solute and solvent.</p>
+<p>The mixing entropy can be calculated by either the Gibbs definition</p>
+<p><span class="math">\begin{equation}
+S_{\rm mix}=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})
+\end{equation}</span></p>
+<p>or the Boltzmann definition</p>
+<p><span class="math">\begin{equation}
+S_{\rm mix}=k_{\rm B}\ln(W).
+\end{equation}</span></p>
+<p>We will use the latter definition including the number of possible configurations to obtain the mixing entropy.</p>
+</div>
+<div class="section" id="Gibbs-Distribution">
+<h3>Gibbs Distribution<a class="headerlink" href="#Gibbs-Distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="1_introduction.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Introduction</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Frank Cichos |
+            Last updated on Oct 11, 2021. |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../_sources/notebooks/L1/2_Thermodynamics_Statistics.ipynb.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Thermodynamics and Statistical Physics Revisited</a><ul>
+<li><a class="reference internal" href="#Thermodynamics">Thermodynamics</a><ul>
+<li><a class="reference internal" href="#Fundamental-Quantities">Fundamental Quantities</a></li>
+<li><a class="reference internal" href="#First-Law-of-Thermodynamics">First Law of Thermodynamics</a></li>
+<li><a class="reference internal" href="#Second-Law-of-Thermodynamics">Second Law of Thermodynamics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Statistical-Physics">Statistical Physics</a><ul>
+<li><a class="reference internal" href="#Entropy">Entropy</a></li>
+<li><a class="reference internal" href="#Boltzmann-Distribution-and-Equipartition">Boltzmann Distribution and Equipartition</a></li>
+<li><a class="reference internal" href="#Chemical-Potential-and-Osmotic-Pressure">Chemical Potential and Osmotic Pressure</a></li>
+<li><a class="reference internal" href="#Gibbs-Distribution">Gibbs Distribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    </body>
+</html>
