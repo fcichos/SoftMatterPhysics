@@ -15,6 +15,8 @@ Welcome to Soft Matter Physics's documentation!
    course-info/resources.rst   
    course-info/exam.rst
 
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 1:

@@ -72,7 +72,10 @@ html_last_updated_fmt = ""
 
 html_theme_options = {
 #    "collapse_navigation" : False
+    "navigation_depth": 5,
+    "collapse_navigation": False
 }
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
