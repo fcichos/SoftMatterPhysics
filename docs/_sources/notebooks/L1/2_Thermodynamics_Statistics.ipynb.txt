@@ -43,7 +43,7 @@
     "\n",
     "- **Enthalpy** $H$ (state function):\n",
     "\n",
-    "The enthalpy $H$ of a system is measuring the internal energy minus an entropic part.\n",
+    "The enthalpy $H$ of a system is measuring the internal energy plus the product of volume and pressure.\n",
     "\n",
     "\\begin{equation}\n",
     "H=U+pV\n",
