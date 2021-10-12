@@ -1,5 +1,5 @@
 
-Welcome to Soft Matter Physics's documentation!
+Welcome to Soft Matter Physics Lecture Website!
 ===============================================
 
 .. toctree::
