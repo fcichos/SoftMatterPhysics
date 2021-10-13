@@ -6,6 +6,7 @@ Lecture Schedule
 ----------------
 
 Tuesday:	13:15 - 14:45 Uhr SR 532
+
 Thursday:	09:15 - 10:45 Uhr SR 532
 
 There will be no lectures on the 19.October and the 21.October. We will catching up with the topics the two weeks later during one of the exercise dates. 
@@ -27,6 +28,7 @@ Exercise Schedule
 ----------------
 
 Tuesday:	9:15 - 10:45 Uhr SR 221 (only used in exceptional cases)
+
 **Wednesday:	9:15 - 10:45 Uhr SR 218**
 
 As all student will most likely fit into one seminar room, we will use only one of the dates.
