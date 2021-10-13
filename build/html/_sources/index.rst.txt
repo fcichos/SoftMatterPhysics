@@ -1,4 +1,7 @@
-
+.. Computational Software documentation master file, created by
+   sphinx-quickstart on Tue Mar 31 12:45:28 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 .. figure:: img/FluffyParticles.png
 
 Welcome to Soft Matter Physics Lecture Website!
@@ -15,15 +18,6 @@ Welcome to Soft Matter Physics Lecture Website!
    course-info/instructors.rst
    course-info/resources.rst   
    course-info/exam.rst
-
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lecture 1:
-
-   notebooks/L1/1_introduction.ipynb
-   notebooks/L1/2_Thermodynamics_Statistics.ipynb 
 
 
 
