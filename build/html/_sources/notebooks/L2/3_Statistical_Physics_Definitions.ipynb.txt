@@ -563,38 +563,72 @@
    "source": [
     "In the previous section, we showed how the probability distribution for a system with average energy $\\langle E \\rangle$ could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier $\\beta$.\n",
     "\n",
+    "To obtain the lagrange parameter we just consider one degree of freedom for a monoatomic gas. This degree of freedom is the kinetic energy of one atom along the x-direction, which is given by\n",
     "\n",
     "\\begin{equation}\n",
     "E=\\frac{p_{X}^{2}}{2 m}\n",
     "\\end{equation}\n",
     "\n",
+    "\n",
+    "According to the Boltzmann distribution, the probability to find an atom with a certain momentum is given by\n",
+    "\n",
     "\\begin{equation}\n",
     "P\\left(p_{x}\\right)=\\frac{\\mathrm{e}^{-\\beta\\left(p_{x}^{2} / 2 m\\right)}}{\\sum_{\\text {states }} \\mathrm{e}^{-\\beta\\left(p_{x}^{2} / 2 m\\right)}}\n",
     "\\end{equation}\n",
+    "\n",
+    "We can thus calculate the mean energy by summing up (or integrating when going to continuous states) over alls possible momenta\n",
     "\n",
     "\\begin{equation}\n",
     "\\sum_{\\text {states }} \\rightarrow \\int_{-\\infty}^{\\infty} \\mathrm{d} p_{x}\n",
     "\\end{equation}\n",
     "\n",
+    "\n",
+    "This yields\n",
+    "\n",
     "\\begin{equation}\n",
     "\\int_{-\\infty}^{\\infty} \\mathrm{e}^{-\\beta p_{x}^{2} / 2 m} \\mathrm{~d} p_{x}=\\sqrt{\\frac{2 m \\pi}{\\beta}}\n",
     "\\end{equation}\n",
+    "\n",
+    "To obtain the value of $\\beta$ we now constrain the mean energy to the value given by the equiparition principle\n",
     "\n",
     "\\begin{equation}\n",
     "\\langle E\\rangle=\\frac{1}{2} k_{\\mathrm{B}} T\n",
     "\\end{equation}\n",
     "\n",
+    "This is the mean energy per degree of freedom. One can show that each degree of freedom, independent of the object (atom, colloid, parking car) is carrying this mean energy. It provides actually our measure of temperature.\n",
+    "\n",
+    "Using the momentum to calculate the mean energy we write down \n",
+    "\n",
     "\\begin{equation}\n",
     "\\langle E\\rangle=\\frac{\\int_{-\\infty}^{\\infty} \\frac{p_{X}^{2}}{2 m} \\mathrm{e}^{-\\beta\\left(p_{x}^{2} / 2 m\\right)} \\mathrm{d} p_{x}}{\\sqrt{2 m \\pi / \\beta}}\n",
     "\\end{equation}\n",
+    "\n",
+    "which can be slightly simplified \n",
     "\n",
     "\\begin{equation}\n",
     "\\langle E\\rangle=\\frac{\\alpha^{3 / 2}}{\\beta \\sqrt{\\pi}}\\left(-\\frac{\\partial}{\\partial \\alpha}\\right) \\int_{-\\infty}^{\\infty} \\mathrm{e}^{-\\alpha p_{x}^{2}} \\mathrm{~d} p_{x}\n",
     "\\end{equation}\n",
     "\n",
+    "and calculated via some tricks valid for integrals over Gaussian functions. This finally leads us to the result that the value of the Lagrangian multiplier must be\n",
+    "\n",
     "\\begin{equation}\n",
     "\\beta=\\frac{1}{k_{\\mathrm{B}} T}\n",
-    "\\end{equation}"
+    "\\end{equation}\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Equipartition is useful in many ways. One of them is the field of force measurements using optical tweezers."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<img src=\"img/tweezers.png\" alt=\"tweezers\" name=\"tweezers\" class=\"bg-primary mb-1\" width=\"800px\">\n"
    ]
   }
  ],

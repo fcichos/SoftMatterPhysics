@@ -761,30 +761,41 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
 <div class="section" id="Equipartition">
 <h2>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h2>
 <p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>To obtain the lagrange parameter we just consider one degree of freedom for a monoatomic gas. This degree of freedom is the kinetic energy of one atom along the x-direction, which is given by</p>
 <p><span class="math">\begin{equation}
 E=\frac{p_{X}^{2}}{2 m}
 \end{equation}</span></p>
+<p>According to the Boltzmann distribution, the probability to find an atom with a certain momentum is given by</p>
 <p><span class="math">\begin{equation}
 P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_{\text {states }} \mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}
 \end{equation}</span></p>
+<p>We can thus calculate the mean energy by summing up (or integrating when going to continuous states) over alls possible momenta</p>
 <p><span class="math">\begin{equation}
 \sum_{\text {states }} \rightarrow \int_{-\infty}^{\infty} \mathrm{d} p_{x}
 \end{equation}</span></p>
+<p>This yields</p>
 <p><span class="math">\begin{equation}
 \int_{-\infty}^{\infty} \mathrm{e}^{-\beta p_{x}^{2} / 2 m} \mathrm{~d} p_{x}=\sqrt{\frac{2 m \pi}{\beta}}
 \end{equation}</span></p>
+<p>To obtain the value of <span class="math notranslate nohighlight">\(\beta\)</span> we now constrain the mean energy to the value given by the equiparition principle</p>
 <p><span class="math">\begin{equation}
 \langle E\rangle=\frac{1}{2} k_{\mathrm{B}} T
 \end{equation}</span></p>
+<p>This is the mean energy per degree of freedom. One can show that each degree of freedom, independent of the object (atom, colloid, parking car) is carrying this mean energy. It provides actually our measure of temperature.</p>
+<p>Using the momentum to calculate the mean energy we write down</p>
 <p><span class="math">\begin{equation}
 \langle E\rangle=\frac{\int_{-\infty}^{\infty} \frac{p_{X}^{2}}{2 m} \mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)} \mathrm{d} p_{x}}{\sqrt{2 m \pi / \beta}}
 \end{equation}</span></p>
+<p>which can be slightly simplified</p>
 <p><span class="math">\begin{equation}
 \langle E\rangle=\frac{\alpha^{3 / 2}}{\beta \sqrt{\pi}}\left(-\frac{\partial}{\partial \alpha}\right) \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha p_{x}^{2}} \mathrm{~d} p_{x}
 \end{equation}</span></p>
+<p>and calculated via some tricks valid for integrals over Gaussian functions. This finally leads us to the result that the value of the Lagrangian multiplier must be</p>
 <p><span class="math">\begin{equation}
 \beta=\frac{1}{k_{\mathrm{B}} T}
 \end{equation}</span></p>
+<p>Equipartition is useful in many ways. One of them is the field of force measurements using optical tweezers.</p>
+<p><img alt="tweezers" class="bg-primary mb-1 no-scaled-link" src="../../_images/tweezers.png" style="width: 800px;"/></p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
