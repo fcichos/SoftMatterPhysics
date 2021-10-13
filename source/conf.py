@@ -72,8 +72,6 @@ html_last_updated_fmt = ""
 
 html_theme_options = {
 #    "collapse_navigation" : False
-    "navigation_depth": 5,
-    "collapse_navigation": False
 }
 
 

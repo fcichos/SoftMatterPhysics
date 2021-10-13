@@ -1,4 +1,6 @@
 
+.. figure:: img/FluffyParticles.png
+
 Welcome to Soft Matter Physics Lecture Website!
 ===============================================
 
