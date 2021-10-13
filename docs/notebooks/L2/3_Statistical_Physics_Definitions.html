@@ -481,7 +481,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Entropy">
 <h2>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this headline">¶</a></h2>
-<p>The term of entropy becomes vey important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by <strong>Boltzmann</strong> is well known, i.e.,</p>
+<div class="section" id="Entropy-Definition-by-Boltzmann">
+<h3>Entropy Definition by Boltzmann<a class="headerlink" href="#Entropy-Definition-by-Boltzmann" title="Permalink to this headline">¶</a></h3>
+<p>The term of entropy becomes very important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by <strong>Boltzmann</strong> is well known, i.e.,</p>
 <p><span class="math">\begin{equation}
 S=k_\mathrm{B} \ln(W)
 \end{equation}</span></p>
@@ -524,7 +526,6 @@ S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 \end{equation}</span></p>
 <p>with <span class="math notranslate nohighlight">\(c=N_\mathrm{p}/N\)</span> being the mean occupation of each site or the probability to find a state occupied.</p>
 </p></p></div>
-<p><strong>Entropy of Protein Binding on a Chain</strong></p>
 <p>Below you just find some Python code calculating the entropy as a function of “concentration” using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since <span class="math notranslate nohighlight">\(N=100\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -559,7 +560,8 @@ S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L2_3_Statistical_Physics_Definitions_8_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_Statistical_Physics_Definitions_8_0.png" style="width: 408px; height: 280px;"/>
+<img alt="../../_images/notebooks_L2_3_Statistical_Physics_Definitions_7_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_Statistical_Physics_Definitions_7_0.png" style="width: 408px; height: 280px;"/>
+</div>
 </div>
 </div>
 <div class="section" id="Shannon-Entropy">
@@ -707,6 +709,18 @@ Z=\sum_{i} \mathrm{e}^{-\beta E_{l}}
 p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 \end{equation}</span></p>
 </div>
+</div>
+<div class="section" id="When-a-Macrostate-is-a-Microstate">
+<h2>When a Macrostate is a Microstate<a class="headerlink" href="#When-a-Macrostate-is-a-Microstate" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -760,10 +774,12 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
             <ul>
 <li><a class="reference internal" href="#">Statistical Physics Definitions</a><ul>
 <li><a class="reference internal" href="#Entropy">Entropy</a><ul>
+<li><a class="reference internal" href="#Entropy-Definition-by-Boltzmann">Entropy Definition by Boltzmann</a></li>
 <li><a class="reference internal" href="#Shannon-Entropy">Shannon Entropy</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#Boltzmann-Distribution">Boltzmann Distribution</a></li>
+<li><a class="reference internal" href="#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
 </ul>
 </li>
 </ul>

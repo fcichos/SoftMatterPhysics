@@ -42,16 +42,15 @@
    "source": [
     "## Entropy\n",
     "\n",
-    "The term of entropy becomes vey important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by **Boltzmann** is well known, i.e.,\n",
+    "\n",
+    "### Entropy Definition by Boltzmann\n",
+    "The term of entropy becomes very important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by **Boltzmann** is well known, i.e.,\n",
     "\n",
     "\\begin{equation}\n",
     "S=k_\\mathrm{B} \\ln(W)\n",
     "\\end{equation}\n",
     "\n",
-    "where $W$ is the number of microstates corresponding to a system's macrostate with and energy $E$. Here $k_\\mathrm{B}=1.38064852 × 10^{-23} {\\rm m^2\\, kg\\, s^{-2}\\, K^{-1}}$ is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.\n",
-    "\n",
-    "\n",
-    "\n"
+    "where $W$ is the number of microstates corresponding to a system's macrostate with and energy $E$. Here $k_\\mathrm{B}=1.38064852 × 10^{-23} {\\rm m^2\\, kg\\, s^{-2}\\, K^{-1}}$ is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.\n"
    ]
   },
   {
@@ -134,13 +133,6 @@
     "    \n",
     "    \n",
     "</div>"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "**Entropy of Protein Binding on a Chain**"
    ]
   },
   {
@@ -486,6 +478,15 @@
   {
    "cell_type": "markdown",
    "metadata": {},
+   "source": [
+    "## When a Macrostate is a Microstate"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
    "source": []
   }
  ],
