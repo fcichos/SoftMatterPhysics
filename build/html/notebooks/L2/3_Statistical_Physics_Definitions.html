@@ -488,7 +488,8 @@ S=k_\mathrm{B} \ln(W)
 <p>where <span class="math notranslate nohighlight">\(W\)</span> is the number of microstates corresponding to a system’s macrostates. Here <span class="math notranslate nohighlight">\(k_\mathrm{B}=1.38064852 × 10^{-23} {\rm m^2\, kg\, s^{-2}\, K^{-1}}\)</span> is the Boltzmann constant.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Entropy of an N letter word</strong></p>
-<p>Consider the number of states <span class="math notranslate nohighlight">\(W\)</span> of a word with <span class="math notranslate nohighlight">\(N\)</span> letters of <span class="math notranslate nohighlight">\(M\)</span> different characters. The letter can be arranged in</p>
+<p><p><img alt="letters" class="bg-primary mb-1 no-scaled-link" src="../../_images/letters.png" style="width: 500px;"/></p>
+<p><p>Consider the number of states <span class="math notranslate nohighlight">\(W\)</span> of a word with <span class="math notranslate nohighlight">\(N\)</span> letters of <span class="math notranslate nohighlight">\(M\)</span> different characters. The letter can be arranged in</p>
 <p><span class="math">\begin{equation}
 W=M^N
 \end{equation}</span></p>
@@ -497,10 +498,10 @@ W=M^N
 S=N\, k_\mathrm{B} \ln(M) = k_{\rm B}\sum_{1}^{N} \ln(M)
 \end{equation}</span></p>
 <p>which just tells that entropy is an additive quantity.</p>
-</div>
+</p></p></div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Arrangement of Molecules along a Chain</strong></p>
-<p><img alt="binding" class="bg-primary mb-1 no-scaled-link" src="../../_images/binding.png" style="width: 500px;"/></p>
+<p><p><img alt="binding" class="bg-primary mb-1 no-scaled-link" src="../../_images/binding.png" style="width: 500px;"/></p>
 <p><p>We consider a linear molecules (perhaps a DNA) that has <span class="math notranslate nohighlight">\(N\)</span> binding sites for, e.g., proteins. <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math notranslate nohighlight">\(N\)</span> sites is given by the binomial coefficient</p>
 <p><span class="math">\begin{equation}
 W(N_\mathrm{p};N)=\frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}.
@@ -522,7 +523,7 @@ S=k_\mathrm{B} \ln\left ( \frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}\right )
 S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 \end{equation}</span></p>
 <p>with <span class="math notranslate nohighlight">\(c=N_\mathrm{p}/N\)</span> being the mean occupation of each site or the probability to find a state occupied.</p>
-</p></div>
+</p></p></div>
 <p><strong>Entropy of Protein Binding on a Chain</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
