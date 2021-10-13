@@ -26,6 +26,7 @@ Welcome to Soft Matter Physics Lecture Website!
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 2:
+   
    notebooks/L2/3_Statistical_Physics_Definitions.ipynb
 
 
