@@ -638,6 +638,8 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 <p><span class="math">\begin{equation}
 \sum_i p(E_i)=1.
 \end{equation}</span></p>
+<div class="section" id="Mean-Energy">
+<h3>Mean Energy<a class="headerlink" href="#Mean-Energy" title="Permalink to this headline">¶</a></h3>
 <p>The Boltzmann distribution is useful to calculate also expectation values, for example, of the total energy of the system (the mean energy <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>).</p>
 <p>The mean is defined by: <span class="math">\begin{equation}
 \langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}E_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right).
@@ -654,12 +656,26 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 <p><span class="math">\begin{equation}
 \langle E \rangle=-\frac{\partial }{\partial \beta}\ln(Z).
 \end{equation}</span></p>
-<p><strong>Free energy and Boltzmann distribution</strong></p>
-<p>The total free energy of the system can finally be calculated with the help of the partition function</p>
+</div>
+<div class="section" id="Free-energy">
+<h3>Free energy<a class="headerlink" href="#Free-energy" title="Permalink to this headline">¶</a></h3>
+<p>Using the Gibbs entropy <span class="math notranslate nohighlight">\(S=-k_B\sum_{i=1}^{N} p_{i} \ln p_{i}\)</span> to find a relation between the free energy <span class="math notranslate nohighlight">\(F\)</span> (or <span class="math notranslate nohighlight">\(G\)</span>) and the partition function. Inserting the probability <span class="math notranslate nohighlight">\(p_i=Z^{1}\exp(-\beta E_i)\)</span> and doing some transformations yields</p>
 <p><span class="math">\begin{equation}
-G=-k_\mathrm{B} T \ln(Z).
+S=k_B (\ln(Z)+\beta <e>)
+\end{equation}</e></span></p>
+<p>Using</p>
+<p><span class="math">\begin{equation}
+F=U-TS
 \end{equation}</span></p>
-<p>Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system.</p>
+<p>for the free energy, we can insert the above result for the entropy and obtain</p>
+<p><span class="math">\begin{equation}
+F=-k_\mathrm{B} T \ln(Z).
+\end{equation}</span></p>
+<p>(or <span class="math notranslate nohighlight">\(G\)</span> in the same way)</p>
+<p>Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system. The partition function thus allows us to calculate the free energy.</p>
+</div>
+<div class="section" id="Deriving-the-Boltzmann-Distribution">
+<h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this headline">¶</a></h3>
 <p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g. a system which is in contact with a reservoir as depicted below.</p>
 <p><img alt="entropy_calc" class="bg-primary mb-1 no-scaled-link" src="../../_images/entropy_calc.png" style="width: 300px;"/></p>
 <p>System (index <span class="math notranslate nohighlight">\(S\)</span>) and reservoir (index <span class="math notranslate nohighlight">\(R\)</span>) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm R}+E_{\rm S}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_s^i)\)</span> with the energy <span class="math notranslate nohighlight">\(E_s^i\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probability of two states is then equal to the ratio of the number of states of the reservoir, i.e.</p>
@@ -690,37 +706,85 @@ p(E_{\rm S}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm S}^{(i)}}{k_B T}\right )
 <p>where <span class="math notranslate nohighlight">\(Z\)</span> is the previously mentioned normalization factor, which is called <em>partition function</em>.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Boltzmann Distribution is the Maximum Entropy Distribution in Which the Average Energy is Prescribed as a Constraint</strong></p>
+<p>We can also obtain the Boltzmann distribution from the Shannon entropy by contraining the Shannon entropy. With only the normalization as a constraint in entropy maximization, we obtained equal likely microsates. If we now constrain the mean energy <span class="math notranslate nohighlight">\(\langle E\rangle\)</span> of the system we obtain a distribution which maximizes the entropy under this condition. The mean energy is given by</p>
 <p><span class="math">\begin{equation}
 \langle E\rangle=\sum_{i} E_{i} p_{i}
 \end{equation}</span></p>
+<p>such that we can add another constraint to our augmented entropy. We now have a Lagragian multilier <span class="math notranslate nohighlight">\(\lambda\)</span> for the normalization of the probability and a second one <span class="math notranslate nohighlight">\(\beta\)</span> which is multilolied by the energy constraint.</p>
 <p><span class="math">\begin{equation}
 S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right)-\beta\left(\sum_{i} p_{i} E_{i}-\langle E\rangle\right)
 \end{equation}</span></p>
+<p>Taking the derivative</p>
 <p><span class="math">\begin{equation}
-\p_{i}=\mathrm{e}^{-1-\lambda-\beta E_{i}}
+\frac{\partial S_{\prime}}{\partial p_{i}}=0=-\ln p_{i}-1-\lambda-\beta E_i
 \end{equation}</span></p>
+<p>results in</p>
+<p><span class="math">\begin{equation}
+p_{i}=\mathrm{e}^{-1-\lambda-\beta E_{i}}
+\end{equation}</span></p>
+<p>and together with the normalization condition <span class="math notranslate nohighlight">\(\sum p_i=1\)</span> finally</p>
 <p><span class="math">\begin{equation}
 \mathrm{e}^{-1-\lambda}=\frac{1}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 \end{equation}</span></p>
+<p>where we already recognize that we can replace the prefactor <span class="math notranslate nohighlight">\(\mathrm{e}^{-1-\lambda}\)</span> by <span class="math notranslate nohighlight">\(1/Z\)</span> with <span class="math notranslate nohighlight">\(Z\)</span> being the partition function</p>
 <p><span class="math">\begin{equation}
 Z=\sum_{i} \mathrm{e}^{-\beta E_{l}}
 \end{equation}</span></p>
+<p>Overall this therefore leads to the Boltzmann distribution</p>
 <p><span class="math">\begin{equation}
 p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 \end{equation}</span></p>
+<p>which is quite interesting. We have just fixed the mean energy of the system and maximized the entropy. The Boltzmann distribution is therefore the probability distribution which maximizes the entropy under as little as possible additional information (just the mean energy).</p>
+<p>The only thing that is missing in the above formula is an expression for the value of <span class="math notranslate nohighlight">\(\beta\)</span>, the Lagrange multiplier. This can be obtained when knowning the mean energy. In thermal euilibrium, this mean energy can be obtained from the equipartition theorem.</p>
+</div>
 </div>
 </div>
 <div class="section" id="When-a-Macrostate-is-a-Microstate">
 <h2>When a Macrostate is a Microstate<a class="headerlink" href="#When-a-Macrostate-is-a-Microstate" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+<p>In practice, we are often interested in the likelihood that the system a state that is described by some macroscopic parameter <span class="math notranslate nohighlight">\(X\)</span> that we can measure. For example, for a DNA molecule inside a cell, an interesting quantity, which can be measured using fluorescent markers, is the distance R between two sites on the DNA chain. Repeated measurements of <span class="math notranslate nohighlight">\(R\)</span> can to construct the probability distribution p(R).</p>
+<p>In general, the probability of the macrostate <span class="math notranslate nohighlight">\(X\)</span> is given by the sum of probabilities of all the microstates of the system that adopt the specified value <span class="math notranslate nohighlight">\(X\)</span>,</p>
+<p><span class="math">\begin{equation}
+p(X)=\sum_{i_{X}} p_{i}=\sum_{i_{X}} \frac{1}{Z} \mathrm{e}^{-\beta E_{i}}
+\end{equation}</span></p>
+<p>For the DNA example, the sum in the above equation would run over only those microstates <span class="math notranslate nohighlight">\(i_X\)</span> that have the prescribed distance between the two labeled sites on the polymer, e.g. <span class="math notranslate nohighlight">\(X=R\)</span>. Using the basic relation between the partition function and the free energy, <span class="math notranslate nohighlight">\(G = −k_BT \ln(Z)\)</span>, we can express the probability of the macrostate X as</p>
+<p><span class="math">\begin{equation}
+p(X)=\frac{1}{Z} \mathrm{e}^{-\beta G(X)}
+\end{equation}</span></p>
+<p>where</p>
+<p><span class="math">\begin{equation}
+G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
+\end{equation}</span></p>
+<p>is the free energy of the macrostate <span class="math notranslate nohighlight">\(X\)</span>. Note that the formula for <span class="math notranslate nohighlight">\(p(X)\)</span> is identical to the Boltzmann formula for the probability of a microstate, with the energy of the microstate replaced by the free energy of the macrostate. Note that the sum on the right side of the last equation is not the partition function <span class="math notranslate nohighlight">\(Z\)</span> but that of the subensemble of microstates fulfilling the condition X, i.e. <span class="math notranslate nohighlight">\(Z_X\)</span>. Similarly, when writing down the states and weights for the macrostates
+<span class="math notranslate nohighlight">\(X\)</span>, the energy is replaced by the free energy, as shown in in the figure below. In this sense, one person’s macrostate is truly another person’s microstate.</p>
+<p><img alt="micro_macro" class="bg-primary mb-1 no-scaled-link" src="../../_images/micro_macro.png" style="width: 500px;"/></p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="Equipartition">
+<h2>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p><span class="math">\begin{equation}
+E=\frac{p_{X}^{2}}{2 m}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_{\text {states }} \mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\sum_{\text {states }} \rightarrow \int_{-\infty}^{\infty} \mathrm{d} p_{x}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\int_{-\infty}^{\infty} \mathrm{e}^{-\beta p_{x}^{2} / 2 m} \mathrm{~d} p_{x}=\sqrt{\frac{2 m \pi}{\beta}}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\langle E\rangle=\frac{1}{2} k_{\mathrm{B}} T
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\langle E\rangle=\frac{\int_{-\infty}^{\infty} \frac{p_{X}^{2}}{2 m} \mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)} \mathrm{d} p_{x}}{\sqrt{2 m \pi / \beta}}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\langle E\rangle=\frac{\alpha^{3 / 2}}{\beta \sqrt{\pi}}\left(-\frac{\partial}{\partial \alpha}\right) \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha p_{x}^{2}} \mathrm{~d} p_{x}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\beta=\frac{1}{k_{\mathrm{B}} T}
+\end{equation}</span></p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -778,8 +842,14 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 <li><a class="reference internal" href="#Shannon-Entropy">Shannon Entropy</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Boltzmann-Distribution">Boltzmann Distribution</a></li>
+<li><a class="reference internal" href="#Boltzmann-Distribution">Boltzmann Distribution</a><ul>
+<li><a class="reference internal" href="#Mean-Energy">Mean Energy</a></li>
+<li><a class="reference internal" href="#Free-energy">Free energy</a></li>
+<li><a class="reference internal" href="#Deriving-the-Boltzmann-Distribution">Deriving the Boltzmann Distribution</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
+<li><a class="reference internal" href="#Equipartition">Equipartition</a></li>
 </ul>
 </li>
 </ul>
