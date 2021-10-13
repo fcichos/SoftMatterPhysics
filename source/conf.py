@@ -43,7 +43,7 @@ extensions = [
 exclude_patterns = ['_build', '**.ipynb_checkpoints']
 templates_path = ['_templates']
 
-mathjax_config = {
+mathjax3_config = {
 'TeX': {'equationNumbers': {'autoNumber': 'AMS', 'useLabelIds': True}},
 }
 
@@ -102,7 +102,7 @@ html_context = {
     'conf_py_path': '/source/'
 }
 
-#html_logo = 'img/mona_logo.png'
+html_logo = 'img/mona_logo.png'
 
 # -- Extension configuration -------------------------------------------------
 # This is processed by Jinja2 and inserted before each notebook
