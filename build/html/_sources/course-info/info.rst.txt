@@ -26,7 +26,9 @@ The lectures will be supported by a seminar where current topics of soft matter 
 Exercise Schedule
 ----------------
 
-Tuesday:	9:15 - 10:45 Uhr SR 221
-Wednesday:	9:15 - 10:45 Uhr SR 218
+Tuesday:	9:15 - 10:45 Uhr SR 221 (only used in exceptional cases)
+**Wednesday:	9:15 - 10:45 Uhr SR 218**
 
-As all student will most likely fit into one seminar room, we will use only one of the dates. Most likely this will be the Wednesday date.
+As all student will most likely fit into one seminar room, we will use only one of the dates.
+We will therefore offer one exercise class per week on Wednesday (starting 27.October).
+
