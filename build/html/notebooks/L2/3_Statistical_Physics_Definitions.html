@@ -490,8 +490,8 @@ S=k_\mathrm{B} \ln(W)
 <p>where <span class="math notranslate nohighlight">\(W\)</span> is the number of microstates corresponding to a system’s macrostate with and energy <span class="math notranslate nohighlight">\(E\)</span>. Here <span class="math notranslate nohighlight">\(k_\mathrm{B}=1.38064852 × 10^{-23} {\rm m^2\, kg\, s^{-2}\, K^{-1}}\)</span> is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Entropy of an N letter word</strong></p>
-<p align="center"><p><img alt="letters" class="bg-primary mb-1 no-scaled-link" src="../../_images/letters.png" style="width: 300px;"/></p>
-<p><p>Consider the number of states <span class="math notranslate nohighlight">\(W\)</span> of a word with <span class="math notranslate nohighlight">\(N\)</span> letters of <span class="math notranslate nohighlight">\(M\)</span> different characters. The letter can be arranged in</p>
+<img alt="letters" src="../../_images/letters.png">
+<p>Consider the number of states <span class="math notranslate nohighlight">\(W\)</span> of a word with <span class="math notranslate nohighlight">\(N\)</span> letters of <span class="math notranslate nohighlight">\(M\)</span> different characters. The letter can be arranged in</p>
 <p><span class="math">\begin{equation}
 W=M^N
 \end{equation}</span></p>
@@ -500,11 +500,11 @@ W=M^N
 S=N\, k_\mathrm{B} \ln(M) = k_{\rm B}\sum_{1}^{N} \ln(M)
 \end{equation}</span></p>
 <p>which just tells that entropy is an additive quantity.</p>
-</p></p></div>
+</img></div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Arrangement of Molecules along a Chain</strong></p>
-<p align="center"><p><img alt="binding" class="bg-primary mb-1 no-scaled-link" src="../../_images/binding.png" style="width: 500px;"/></p>
-<p><p>We consider a linear molecules (perhaps a DNA) that has <span class="math notranslate nohighlight">\(N\)</span> binding sites for, e.g., proteins. <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math notranslate nohighlight">\(N\)</span> sites is given by the binomial coefficient</p>
+<img alt="binding" src="../../_images/binding.png"/>
+<p>We consider a linear molecules (perhaps a DNA) that has <span class="math notranslate nohighlight">\(N\)</span> binding sites for, e.g., proteins. <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math notranslate nohighlight">\(N\)</span> sites is given by the binomial coefficient</p>
 <p><span class="math">\begin{equation}
 W(N_\mathrm{p};N)=\frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}.
 \end{equation}</span></p>
@@ -525,7 +525,7 @@ S=k_\mathrm{B} \ln\left ( \frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}\right )
 S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 \end{equation}</span></p>
 <p>with <span class="math notranslate nohighlight">\(c=N_\mathrm{p}/N\)</span> being the mean occupation of each site or the probability to find a state occupied.</p>
-</p></p></div>
+</div>
 <p>Below you just find some Python code calculating the entropy as a function of “concentration” using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since <span class="math notranslate nohighlight">\(N=100\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -619,7 +619,7 @@ p_{i}=\frac{1}{N}
 <div class="section" id="Boltzmann-Distribution">
 <h2>Boltzmann Distribution<a class="headerlink" href="#Boltzmann-Distribution" title="Permalink to this headline">¶</a></h2>
 <p>Our previous consideration of the state functions has shown, that thermal equibrium is associated with a minimum in free energy. As the free energy consists of internal energy <span class="math notranslate nohighlight">\(U\)</span> (or enthalpy <span class="math notranslate nohighlight">\(H\)</span>) and an entropic term (<span class="math notranslate nohighlight">\(-TS\)</span>), we may understand this minimization as a competition between the minimization of the internal energy and a maximization of the entropy (since it is <span class="math notranslate nohighlight">\(-TS\)</span>). The figure below illustrates this competition for a gas in the gravity field.</p>
-<p><img alt="entropy" class="bg-primary mb-1 no-scaled-link" src="../../_images/entropy_comp.png" style="width: 500px;"/></p>
+<img alt="entropy" src="../../_images/entropy_comp.png"/>
 <p>The internal energy minimization yields just a condensed layer at the bottom of the container, while the entropy maximization will try to spread the particles evenly (middle picture). The compromise of both at finite temperature is given by the <strong>barometric height formula</strong>, i.e.,</p>
 <p><span class="math">\begin{equation}
 p(z)=p_0\exp\left ( -\frac{m g z}{k_\mathrm{B} T}\right ),
@@ -677,7 +677,7 @@ F=-k_\mathrm{B} T \ln(Z).
 <div class="section" id="Deriving-the-Boltzmann-Distribution">
 <h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this headline">¶</a></h3>
 <p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g. a system which is in contact with a reservoir as depicted below.</p>
-<p><img alt="entropy_calc" class="bg-primary mb-1 no-scaled-link" src="../../_images/entropy_calc.png" style="width: 300px;"/></p>
+<img alt="Test" src="../../_images/entropy_calc.png"/>
 <p>System (index <span class="math notranslate nohighlight">\(S\)</span>) and reservoir (index <span class="math notranslate nohighlight">\(R\)</span>) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm R}+E_{\rm S}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_s^i)\)</span> with the energy <span class="math notranslate nohighlight">\(E_s^i\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probability of two states is then equal to the ratio of the number of states of the reservoir, i.e.</p>
 <p><span class="math">\begin{equation}
 \frac{p(E_s^{(1)})}{p(E_s^{(2)}}=\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}
@@ -756,7 +756,7 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
 \end{equation}</span></p>
 <p>is the free energy of the macrostate <span class="math notranslate nohighlight">\(X\)</span>. Note that the formula for <span class="math notranslate nohighlight">\(p(X)\)</span> is identical to the Boltzmann formula for the probability of a microstate, with the energy of the microstate replaced by the free energy of the macrostate. Note that the sum on the right side of the last equation is not the partition function <span class="math notranslate nohighlight">\(Z\)</span> but that of the subensemble of microstates fulfilling the condition X, i.e. <span class="math notranslate nohighlight">\(Z_X\)</span>. Similarly, when writing down the states and weights for the macrostates
 <span class="math notranslate nohighlight">\(X\)</span>, the energy is replaced by the free energy, as shown in in the figure below. In this sense, one person’s macrostate is truly another person’s microstate.</p>
-<p><img alt="micro_macro" class="bg-primary mb-1 no-scaled-link" src="../../_images/micro_macro.png" style="width: 500px;"/></p>
+<img alt="micro_macro" src="../../_images/micro_macro.png"/>
 </div>
 <div class="section" id="Equipartition">
 <h2>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h2>
@@ -795,7 +795,16 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 \beta=\frac{1}{k_{\mathrm{B}} T}
 \end{equation}</span></p>
 <p>Equipartition is useful in many ways. One of them is the field of force measurements using optical tweezers.</p>
-<p><img alt="tweezers" class="bg-primary mb-1 no-scaled-link" src="../../_images/tweezers.png" style="width: 800px;"/></p>
+<img alt="tweezers" src="../../_images/tweezers.png"/>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -822,7 +831,7 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 13, 2021. |
+            Last updated on Oct 14, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

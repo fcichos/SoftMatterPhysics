@@ -11,7 +11,7 @@ Thursday:	09:15 - 10:45 Uhr SR 532
 
 There will be no lectures on the 19.October and the 21.October. We will catching up with the topics the two weeks later during one of the exercise dates. 
 
-**There will be an additional lecture on 26.October 9:15 in SR 532 and 2.November 9:15 in SR 221 to catch up.**
+**There will be an additional lecture on 26.October 9:15 in SR 221 and 2.November 9:15 in SR 221 to catch up.**
 
 
 Seminar Schedule
