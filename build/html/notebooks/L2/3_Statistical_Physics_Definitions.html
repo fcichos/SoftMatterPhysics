@@ -737,6 +737,28 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 <p>which is quite interesting. We have just fixed the mean energy of the system and maximized the entropy. The Boltzmann distribution is therefore the probability distribution which maximizes the entropy under as little as possible additional information (just the mean energy).</p>
 <p>The only thing that is missing in the above formula is an expression for the value of <span class="math notranslate nohighlight">\(\beta\)</span>, the Lagrange multiplier. This can be obtained when knowning the mean energy. In thermal euilibrium, this mean energy can be obtained from the equipartition theorem.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title"><strong>Example: Barometric height formula</strong></p>
+<p>We have mentioned already the barometric height formula giving the probability of finding a particle at a height <span class="math notranslate nohighlight">\(z\)</span>. To derive that, we consider a constant gravitational force <span class="math notranslate nohighlight">\(F=-mg\)</span> along the <span class="math notranslate nohighlight">\(z\)</span>-direction such that the potential energy is given by <span class="math notranslate nohighlight">\(E=mgz\)</span> assuming that <span class="math notranslate nohighlight">\(E=0\)</span> at <span class="math notranslate nohighlight">\(z=0\)</span>.</p>
+<p>The probability for finding the particle is therefore</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>p(z)=frac{1}{Z}expleft( -frac{mgz}{k_B T}right)=frac{1}{&lt;z&gt;}expleft ( -frac{z}{&lt;z&gt;}right )</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>Normalization provides the value of the partition function</p>
+<p><span class="math">\begin{equation}
+Z=\int_0^\infty\exp\left( -\frac{mgz}{k_B T}\right)dz=\frac{k_BT}{mg}
+\end{equation}</span></p>
+<p>We may further calculate the mean height, which is the sedimentation length in sedimentation problems</p>
+<p><span class="math">\begin{equation}
+<z>=\frac{1}{Z}\int_0^\inftyh\exp\left( -\frac{mgz}{k_B T}\right)dz=\frac{k_BT}{mg}
+\end{equation}</z></span></p>
+<p>and the mean energy</p>
+<p><span class="math">\begin{equation}
+<e>=-\frac{\partial }{\partial \beta} Z=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_B T=mg <z>
+\end{equation}</z></e></span></p>
+</div>
 </div>
 </div>
 <div class="section" id="When-a-Macrostate-is-a-Microstate">
@@ -760,7 +782,10 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
 </div>
 <div class="section" id="Equipartition">
 <h2>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h2>
-<p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>. We can derive a value for <span class="math notranslate nohighlight">\(\beta\)</span> with the help of the equipartition theorem.</p>
+<div class="admonition warning">
+<p>The equipartition theorem, also known as the law of equipartition, equipartition of energy or simply equipartition, states that every degree of freedom that appears only quadratically in the total energy has an average energy of <span class="math notranslate nohighlight">\(\frac{1}{2}k_B T\)</span>.</p>
+</div>
 <p>To obtain the lagrange parameter we just consider one degree of freedom for a monoatomic gas. This degree of freedom is the kinetic energy of one atom along the x-direction, which is given by</p>
 <p><span class="math">\begin{equation}
 E=\frac{p_{X}^{2}}{2 m}
@@ -794,6 +819,9 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 <p><span class="math">\begin{equation}
 \beta=\frac{1}{k_{\mathrm{B}} T}
 \end{equation}</span></p>
+<div class="admonition warning">
+<p>A good example for a non-quadratic degree of freedom is the barometric height formula with a potential energy that is linear in position.</p>
+</div>
 <p>Equipartition is useful in many ways. One of them is the field of force measurements using optical tweezers.</p>
 <img alt="tweezers" src="../../_images/tweezers.png"/>
 <div class="nbinput nblast docutils container">
