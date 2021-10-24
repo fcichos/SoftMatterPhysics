@@ -35,6 +35,13 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L2/3_Statistical_Physics_Definitions.ipynb
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 3:
+   
+   notebooks/L3/1_Equipartition.ipynb
+   notebooks/L3/2_Chemical Potential.ipynb
+
 
 Indices and tables
 ==================
