@@ -268,11 +268,11 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 <div class="admonition warning">
 <p>A good example for a non-quadratic degree of freedom is the barometric height formula with a potential energy that is linear in position.</p>
 </div>
-<p>Equipartition is useful in many ways. One of them is the field of force measurements using optical tweezers.</p>
+<p>Equipartition is useful in many ways. The fundamental degrees of freedom, e.g. the vibrations of a single molecule are quadratic in the bond length. Similarly all rotational degrees of freedom are as well. Their occupation is determined by a Boltzmann distribution and readily visible in molecular spectra. On more macroscopic scales it is very useful in the field of force measurements using optical tweezers.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Position of a Bead in an Optical Tweezer</strong></p>
 <p>In an optical tweezer, a polarizable object (e.g. a polymer bead) is hold in the intensity gradient of a focused laser beam. The nearly Gaussian intensity distribution of a focused beam leads, in first approximation to a linear force a parabolic potential and can be employed to measure tiny forces.</p>
-<img alt="tweezers" src="../../_images/tweezers1.png"/>
+<img alt="tweezers" src="../../_images/tweezers.png"/>
 <p>For one dimension of the 3D optical potential it can thus be written as</p>
 <p><span class="math">\begin{equation}
 F=-k x
@@ -298,11 +298,9 @@ Z=\sqrt{2\pi }\sigma=\sqrt{2\pi\frac{k_B T }{k}}
 \langle E \rangle =\int_{-\infty}^{\infty} E\, p(x)\,dx=\frac{1}{2}k\int_{-\infty}^{\infty} x^2 p(x)dx=\frac{1}{2}k \frac{k_B T}{k}=\frac{1}{2}k_B T
 \end{equation}</span></p>
 <p>With the help of the variance of the distribution mentioned above, we also recognize that the trap stiffness can be obtained by dividing th ethermal energy <span class="math notranslate nohighlight">\(k_B T\)</span> by the variance of the positional fluctuations.</p>
-<dl class="simple">
-<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>k=frac{k_B T}{langle x^2rangle }</p>
-</dd>
-</dl>
-<p>end{equation}`</p>
+<p><span class="math">\begin{equation}
+k=\frac{k_B T}{\langle x^2\rangle }
+\end{equation}</span></p>
 <div class="line-block">
 <div class="line">which is very helpful for the experiment calibrating the trap stiffness for using the tweezers for force measurements. According to that you just have to observe the position of the trapped object in the potential and measure the variance.</div>
 <div class="line">We will deal with this relation later again in the section about the fluctuation dissipation relation.</div>
@@ -312,20 +310,7 @@ achieved only abotu 10 years ago, while the distribution connected to the veloci
 <p>Take some time to have a look at tghe Maxwell-Bltzmann distribution again.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title"><strong>Barometric Height Formula</strong></p>
-<p>Another very prominent manifestation of Boltzmann’s law are atmosheres of non-interacting particles as we considered them for free energy minimization. Here we consider a constant gravity force on a particle, e.g. a gas molecule in our atmosphere. Force and potential energy are thus</p>
-<p><span class="math">\begin{equation}
-F=-mg
-\end{equation}</span></p>
-<p>and</p>
-<p><span class="math">\begin{equation}
-E_{\rm pot}=mgz
-\end{equation}</span></p>
-<p>where <span class="math notranslate nohighlight">\(g\)</span> is the gravitational acceleration and <span class="math notranslate nohighlight">\(z\)</span> is the height over ground <span class="math notranslate nohighlight">\(z_{\rm ground}=0\)</span>.</p>
-<p>According to Boltzmann</p>
-<p><span class="math">\begin{equation}
-p(z)=\frac{1}{Z} \exp\left (-\frac{m g z}{k_{B} T}\right)
-\end{equation}</span></p>
+<p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g. for spin systems.</p>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}

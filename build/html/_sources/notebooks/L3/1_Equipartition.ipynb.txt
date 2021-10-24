@@ -119,7 +119,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Equipartition is useful in many ways. One of them is the field of force measurements using optical tweezers."
+    "Equipartition is useful in many ways. The fundamental degrees of freedom, e.g. the vibrations of a single molecule are quadratic in the bond length. Similarly all rotational degrees of freedom are as well. Their occupation is determined by a Boltzmann distribution and readily visible in molecular spectra. On more macroscopic scales it is very useful in the field of force measurements using optical tweezers."
    ]
   },
   {
@@ -177,9 +177,9 @@
     "With the help of the variance of the distribution mentioned above, we also recognize that the trap stiffness can be obtained by dividing th ethermal energy $k_B T$ by the variance of the positional fluctuations. \n",
     "    \n",
     "\\begin{equation}\n",
-    "    k=\\frac{k_B T}{\\langle x^2\\rangle }\n",
+    "k=\\frac{k_B T}{\\langle x^2\\rangle }\n",
     "\\end{equation}\n",
-    "    \n",
+    "\n",
     "which is very helpful for the experiment calibrating the trap stiffness for using the tweezers for force measurements. According to that you just have to observe the position of the trapped object in the potential and measure the variance.   \n",
     "We will deal with this relation later again in the section about the fluctuation dissipation relation.    \n",
     "\n",
@@ -196,27 +196,12 @@
    "source": [
     "<div class=\"alert alert-info\">\n",
     "    \n",
-    "**Barometric Height Formula**\n",
     "    \n",
-    "Another very prominent manifestation of Boltzmann’s law are atmosheres of non-interacting particles as we considered them for free energy minimization. Here we consider a constant gravity force on a particle, e.g. a gas molecule in our atmosphere. Force and potential energy are thus\n",
     "    \n",
-    "\\begin{equation}\n",
-    "F=-mg\n",
-    "\\end{equation}\n",
     "\n",
-    "and\n",
-    "    \n",
-    "\\begin{equation}\n",
-    "E_{\\rm pot}=mgz\n",
-    "\\end{equation}\n",
+    "As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g. for spin systems.\n",
     "\n",
-    "where $g$ is the gravitational acceleration and $z$ is the height over ground $z_{\\rm ground}=0$. \n",
-    "\n",
-    "According to Boltzmann \n",
     "    \n",
-    "\\begin{equation}    \n",
-    "p(z)=\\frac{1}{Z} \\exp\\left (-\\frac{m g z}{k_{B} T}\\right)\n",
-    "\\end{equation}\n",
     "</div>"
    ]
   }
