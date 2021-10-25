@@ -197,7 +197,7 @@
     "<div class=\"alert alert-info\">\n",
     "    \n",
     "    \n",
-    "    \n",
+    "**Example: Two-level-system**\n",
     "\n",
     "As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g. for spin systems.\n",
     "\n",

@@ -203,255 +203,7 @@
           </label>
         </div>
         <article role="main">
-          
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-</style>
-<div class="admonition note">
+          <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L3/2_Chemical Potential.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L3/2_Chemical Potential.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
@@ -465,23 +217,26 @@ div.rendered_html tbody tr:hover {
 <p><span class="math">\begin{equation}
 G=G_{\mathrm A}+G_{\mathrm B}.
 \end{equation}</span></p>
-<p>The total number of particles in the system is also conserved and given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[N=N_A+N_B\]</div></div>
-<p>In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
+<p>The total number of particles in the system is also conserved and given by <span class="math notranslate nohighlight">\(N_{\rm tot}=N_A+N_B\)</span> In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
 <p><span class="math">\begin{equation}\frac{\mathrm dG}{\mathrm dN}=\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}|_{T,p}+\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}|_{T,p}=0.\end{equation}</span></p>
 <p>Since the total number of particles is conserved, we also find in equilibrium that from which follows that</p>
 <p><span class="math">\begin{equation}
-\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=-\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}.
+\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=-\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}
 \end{equation}</span></p>
-<p>and with</p>
+<p>and with <span class="math notranslate nohighlight">\(dN_A=-dN_B\)</span> also</p>
+<p><span class="math">\begin{equation}
+\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm A}}.
+\end{equation}</span></p>
+<p>Apparently, in equilibrium the change in the free energy of system <span class="math notranslate nohighlight">\(A\)</span> needs to be the same (or negative) of system <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p>We can now define a new quantity</p>
 <p><span class="math">\begin{equation}
 \mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}|_{T,P}
 \end{equation}</span></p>
-<p>which is termed the chemical potential, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the capacity of a system to change the number of particles. We will have a closer look at the chemical potential with an example now.</p>
-<p><strong>Free energy of a dilute solution</strong></p>
+<p>which is termed the chemical potential, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the capacity of a system to change the number of particles. We will have a closer look at the chemical potential with an example now. The previous condition states that the chemical potential of the two systems in the same in equilibrium.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Free energy of a dilute solution</strong></p>
 <p>We would like to calculate the free energy and the chemical potential for a dilute solution of some <em>solutes</em> in a solvent, which we just term H<span class="math notranslate nohighlight">\(_2\)</span>O. Actually, no additional information on the details of the solute and solvent are currently required, though if we want to have numbers, we would need to know which solute or solvent we are looking at.</p>
+<img alt="Solute Solvent" src="../../_images/solute_solvent.png"/>
 <p>The solute chemical potential is defined by</p>
 <p><span class="math">\begin{equation}
 \mu_{\rm solute}=\left( \frac{\partial G_{\rm tot}}{\partial N_{\rm s}}\right)|_{p,T}
@@ -490,11 +245,14 @@ G=G_{\mathrm A}+G_{\mathrm B}.
 <p><span class="math">\begin{equation}
 \mu_{\rm solute}=G_{\rm tot}(N_{\rm s}+1)-G_{\rm tot}(N_{\rm s}).
 \end{equation}</span></p>
-<p>Analyzing the situation, we obtain</p>
+<p>The total free energy <span class="math notranslate nohighlight">\(G_{\rm tot}\)</span> consists of the enthalpy of forming the solven molecules <span class="math notranslate nohighlight">\(N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}\)</span> and the enthalpy solvating the solute proteins <span class="math notranslate nohighlight">\(N_{\rm s}\varepsilon_{\rm s}\)</span>.</p>
 <p><span class="math">\begin{equation}
 G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}-TS_{\rm mix}.
 \end{equation}</span></p>
-<p>In the following, we are interested in the last term, which is the entropic contribution to the free energy containing the entropy of mixing solute and solvent.</p>
+<div class="line-block">
+<div class="line">The last term denotes the entropy for mixing the solute and the solvent molecules.</div>
+<div class="line">In the following, we are interested in the last term, which is the entropic contribution to the free energy containing the entropy of mixing solute and solvent.</div>
+</div>
 <p>The mixing entropy can be calculated by either the Gibbs definition</p>
 <p><span class="math">\begin{equation}
 S_{\rm mix}=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})
@@ -504,14 +262,6 @@ S_{\rm mix}=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})
 S_{\rm mix}=k_{\rm B}\ln(W).
 \end{equation}</span></p>
 <p>We will use the latter definition including the number of possible configurations to obtain the mixing entropy.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
@@ -538,7 +288,7 @@ S_{\rm mix}=k_{\rm B}\ln(W).
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 24, 2021. |
+            Last updated on Oct 25, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
