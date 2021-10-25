@@ -508,7 +508,7 @@ S=N\, k_\mathrm{B} \ln(M) = k_{\rm B}\sum_{1}^{N} \ln(M)
 <p>which just tells that entropy is an additive quantity.</p>
 </img></div>
 <div class="admonition note">
-<p class="admonition-title"><strong>Example: Arrangement of Molecules along a Chain</strong></p>
+<p class="admonition-title"><strong>Example: Arrangement of molecules along a chain</strong></p>
 <img alt="binding" src="../../_images/binding.png"/>
 <p>We consider a linear molecules (perhaps a DNA) that has <span class="math notranslate nohighlight">\(N\)</span> binding sites for, e.g., proteins. <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math notranslate nohighlight">\(N\)</span> sites is given by the binomial coefficient</p>
 <p><span class="math">\begin{equation}
@@ -583,28 +583,28 @@ S\left(\left\{p_{i}\right\}\right)=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i},
 \end{equation}</span></p>
 <p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of the <span class="math notranslate nohighlight">\(i\)</span>th microstate (or outcome). The example below will show, that if only the normalization of the probability is known, maximization of the Shannon entropy will directly lead to an equal probability of events (uniform distribution). Later, we see that similar calculations can be done to yield the Boltzmann distribution.</p>
 <div class="admonition note">
-<p class="admonition-title"><strong>Example: Equal Distribution</strong></p>
-<p>To figure out that the Shannon entropy is indeed delivering some useful measure, we will have a look at a measurement which has <span class="math notranslate nohighlight">\(N\)</span> outcomes (e.g. rolling a dice). We of course know that in this case all number of the dice have equal probability, but we can test this by maximizing the Shannon entropy as required by our thermodynamic considerations earlier.</p>
-<p>To do so, we use the technique of Lagrangian multipliers, which allows us to set a constraint, while maximizing the entropy. This contraint is for this example, that</p>
+<p class="admonition-title"><strong>Example: Uniform distribution</strong></p>
+<p>To figure out that the Shannon entropy is indeed delivering some useful measure, we will have a look at a measurement which has <span class="math notranslate nohighlight">\(N\)</span> outcomes (e.g., rolling a dice). We, of course, know that in this case all numbers of the dice have equal probability, but we can test this by maximizing the Shannon entropy as required by our thermodynamic considerations earlier.</p>
+<p>To do so, we use the technique of Lagrange multipliers, which allows us to set a constraint while maximizing the entropy. This contraint is for this example, that</p>
 <p><span class="math">\begin{equation}
 \sum_{i}^{N} p_{i}=1
 \end{equation}</span></p>
-<p>i.e. that the probability is normalized to 1. With this constraint we maximize the entropy by adding an additional term with the contrains multilied by the Lagrangien multiplier <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<p>i.e., that the probability is normalized to 1. With this constraint we maximize the entropy by adding an additional term with the contrain multilied by the Lagrange multiplier <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
 <p><span class="math">\begin{equation}
-S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right)
+S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right).
 \end{equation}</span></p>
-<p>We see, that if the probability is normalized to 1, we do not change the entropy. Our procedure is to find that set of probabilities <span class="math notranslate nohighlight">\(p_i\)</span> which maximize this augmented entropy function.</p>
-<p>The derivative of the augmented entropy with respect to <span class="math notranslate nohighlight">\(\lambda\)</span> yields the normalization condition, i.e.</p>
+<p>We see, that if the probability is normalized to 1, we do not change the entropy. Our procedure is to find that set of probabilities <span class="math notranslate nohighlight">\(p_i\)</span> which maximizes this augmented entropy function.</p>
+<p>The derivative of the augmented entropy with respect to <span class="math notranslate nohighlight">\(\lambda\)</span> yields the normalization condition, i.e.,</p>
 <p><span class="math">\begin{equation}
-\frac{\partial S^{\prime}}{\partial \lambda}=0=-\left(\sum_{i} p_{i}-1\right)
+\frac{\partial S^{\prime}}{\partial \lambda}=-\left(\sum_{i} p_{i}-1\right)\overset{!}{=} 0.
 \end{equation}</span></p>
 <p>Differentiation with respect to the probabilities yields</p>
 <p><span class="math">\begin{equation}
-\frac{\partial S^{\prime}}{\partial p_{i}}=0=-\ln p_{i}-1-\lambda
+\frac{\partial S^{\prime}}{\partial p_{i}}=-\ln p_{i}-1-\lambda\overset{!}{=} 0
 \end{equation}</span></p>
 <p>which directly gives</p>
 <p><span class="math">\begin{equation}
-p_{i}=\mathrm{e}^{-1-\lambda}
+p_{i}=\mathrm{e}^{-1-\lambda}.
 \end{equation}</span></p>
 <p>Together with the normalization condition we therefore obtain</p>
 <p><span class="math">\begin{equation}
@@ -650,9 +650,9 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 <p>The mean is defined by: <span class="math">\begin{equation}
 \langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}E_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right).
 \end{equation}</span></p>
-<p>Abbrevating <span class="math notranslate nohighlight">\(\beta=(k_\mathrm{B} T)^1\)</span> we find</p>
+<p>Abbrevating <span class="math notranslate nohighlight">\(\beta=(k_\mathrm{B} T)^{-1}\)</span> we find</p>
 <p><span class="math">\begin{equation}
-\langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}- \frac{\partial }{\partial \beta}\exp\left ( -\beta E_i\right),
+\langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}\bigg(- \frac{\partial }{\partial \beta}\exp\left ( -\beta E_i\right)\bigg),
 \end{equation}</span></p>
 <p>where the sum is nothing else than the derivative of the partition function</p>
 <p><span class="math">\begin{equation}
@@ -663,11 +663,11 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 \langle E \rangle=-\frac{\partial }{\partial \beta}\ln(Z).
 \end{equation}</span></p>
 </div>
-<div class="section" id="Free-energy">
-<h3>Free energy<a class="headerlink" href="#Free-energy" title="Permalink to this headline">¶</a></h3>
-<p>Using the Gibbs entropy <span class="math notranslate nohighlight">\(S=-k_B\sum_{i=1}^{N} p_{i} \ln p_{i}\)</span> to find a relation between the free energy <span class="math notranslate nohighlight">\(F\)</span> (or <span class="math notranslate nohighlight">\(G\)</span>) and the partition function. Inserting the probability <span class="math notranslate nohighlight">\(p_i=Z^{1}\exp(-\beta E_i)\)</span> and doing some transformations yields</p>
+<div class="section" id="Free-Energy">
+<h3>Free Energy<a class="headerlink" href="#Free-Energy" title="Permalink to this headline">¶</a></h3>
+<p>Employ the Gibbs entropy <span class="math notranslate nohighlight">\(S=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i}\)</span> to find a relation between the free energy <span class="math notranslate nohighlight">\(F\)</span> (or <span class="math notranslate nohighlight">\(G\)</span>) and the partition function. Inserting the probability <span class="math notranslate nohighlight">\(p_i=Z^{-1}\exp(-\beta E_i)\)</span> and doing some transformations yields</p>
 <p><span class="math">\begin{equation}
-S=k_B (\ln(Z)+\beta <e>)
+S=k_\mathrm{B} (\ln(Z)+\beta <e>).
 \end{equation}</e></span></p>
 <p>Using</p>
 <p><span class="math">\begin{equation}
@@ -675,54 +675,54 @@ F=U-TS
 \end{equation}</span></p>
 <p>for the free energy, we can insert the above result for the entropy and obtain</p>
 <p><span class="math">\begin{equation}
-F=-k_\mathrm{B} T \ln(Z).
+F=-k_\mathrm{B} T \ln(Z)
 \end{equation}</span></p>
-<p>(or <span class="math notranslate nohighlight">\(G\)</span> in the same way)</p>
+<p>(or <span class="math notranslate nohighlight">\(G\)</span> in the same way).</p>
 <p>Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system. The partition function thus allows us to calculate the free energy.</p>
 </div>
 <div class="section" id="Deriving-the-Boltzmann-Distribution">
 <h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this headline">¶</a></h3>
-<p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g. a system which is in contact with a reservoir as depicted below.</p>
+<p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.</p>
 <img alt="Test" src="../../_images/entropy_calc.png"/>
-<p>System (index <span class="math notranslate nohighlight">\(S\)</span>) and reservoir (index <span class="math notranslate nohighlight">\(R\)</span>) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm R}+E_{\rm S}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_s^i)\)</span> with the energy <span class="math notranslate nohighlight">\(E_s^i\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probability of two states is then equal to the ratio of the number of states of the reservoir, i.e.</p>
+<p>System (index S) and reservoir (index R) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm R}+E_{\rm S}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_{\rm s}^{(i)})\)</span> with the energy <span class="math notranslate nohighlight">\(E_{\rm s}^{(i)}\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,</p>
 <p><span class="math">\begin{equation}
-\frac{p(E_s^{(1)})}{p(E_s^{(2)}}=\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}
+\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}.
 \end{equation}</span></p>
-<p>Here, <span class="math notranslate nohighlight">\(W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})\)</span> is the number of states available to the reservoir, when the system is having the energy <span class="math notranslate nohighlight">\(E_{\rm S}^{1}\)</span>.</p>
-<p>We can now rewrite the above equation in term of the entropy using <span class="math notranslate nohighlight">\(W=\exp(S/k_B)\)</span> such that</p>
+<p>Here, the function <span class="math notranslate nohighlight">\(W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})\)</span> is the number of states available to the reservoir, when the system is having the energy <span class="math notranslate nohighlight">\(E_{\rm S}^{(1)}\)</span>.</p>
+<p>We can now rewrite the above equation in terms of the entropy using <span class="math notranslate nohighlight">\(W(S(E))=\exp(S(E)/k_\mathrm{B})\)</span> such that</p>
 <p><span class="math">\begin{equation}
-\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}=\frac{\exp(S_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})/k_B)}{\exp(S_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})/k_B)}
+\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}=\frac{\exp(S_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})/k_{\rm B})}{\exp(S_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})/k_{\rm B})}.
 \end{equation}</span></p>
 <p>We may now expand the entropy to first order</p>
 <p><span class="math">\begin{equation}
 S_{\rm R}(E_{\rm tot}-E_{\rm S})\approx S_{\rm R}(E_{\rm tot})-\frac{\partial S_{\rm R}}{\partial E}E_{\rm S}
 \end{equation}</span></p>
-<p>considering that <span class="math notranslate nohighlight">\(E_{\rm S}\)</span> is only a very tiny as compared to the total energy of the reservoir. Using the thermodynamic identity that</p>
+<p>considering that <span class="math notranslate nohighlight">\(E_{\rm S}\)</span> is only very tiny as compared to the total energy of the reservoir. Using the thermodynamic identity that</p>
 <p><span class="math">\begin{equation}
 \frac{\partial S_{\rm R}}{\partial E}|_{V,N}=\frac{1}{T}
 \end{equation}</span></p>
 <p>we finally find</p>
 <p><span class="math">\begin{equation}
-\frac{p(E_s^{(1)})}{p(E_s^{(2)})}=\frac{\exp(-E_{\rm S}^{(1)}/k_BT)}{\exp(-E_{\rm S}^{(2)}/k_BT)}
+\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{\exp(-E_{\rm S}^{(1)}/k_{\rm B}T)}{\exp(-E_{\rm S}^{(2)}/k_{\rm B}T)}
 \end{equation}</span></p>
 <p>which corresponds to the ratio of two Boltzmann distributions</p>
 <p><span class="math">\begin{equation}
-p(E_{\rm S}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm S}^{(i)}}{k_B T}\right )
+p(E_{\rm S}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm S}^{(i)}}{k_{\rm B} T}\right),
 \end{equation}</span></p>
 <p>where <span class="math notranslate nohighlight">\(Z\)</span> is the previously mentioned normalization factor, which is called <em>partition function</em>.</p>
 <div class="admonition note">
-<p class="admonition-title"><strong>Example: Boltzmann Distribution is the Maximum Entropy Distribution in Which the Average Energy is Prescribed as a Constraint</strong></p>
-<p>We can also obtain the Boltzmann distribution from the Shannon entropy by contraining the Shannon entropy. With only the normalization as a constraint in entropy maximization, we obtained equal likely microsates. If we now constrain the mean energy <span class="math notranslate nohighlight">\(\langle E\rangle\)</span> of the system we obtain a distribution which maximizes the entropy under this condition. The mean energy is given by</p>
+<p class="admonition-title"><strong>Example: Boltzmann distribution is the maximum entropy distribution in which the average energy is prescribed as a constraint</strong></p>
+<p>We can also obtain the Boltzmann distribution from the Shannon entropy by constraining the Shannon entropy. With only the normalization as a constraint in entropy maximization, we obtained equally likely microsates. If we now constrain the mean energy <span class="math notranslate nohighlight">\(\langle E\rangle\)</span> of the system, we obtain a distribution which maximizes the entropy under this condition. The mean energy is given by</p>
 <p><span class="math">\begin{equation}
-\langle E\rangle=\sum_{i} E_{i} p_{i}
+\langle E\rangle=\sum_{i} E_{i} p_{i},
 \end{equation}</span></p>
-<p>such that we can add another constraint to our augmented entropy. We now have a Lagragian multilier <span class="math notranslate nohighlight">\(\lambda\)</span> for the normalization of the probability and a second one <span class="math notranslate nohighlight">\(\beta\)</span> which is multilolied by the energy constraint.</p>
+<p>such that we can add another constraint to our augmented entropy. We now have a Lagrange multiplier <span class="math notranslate nohighlight">\(\lambda\)</span> for the normalization of the probability and a second one <span class="math notranslate nohighlight">\(\beta\)</span> which is multiplied by the energy constraint.</p>
 <p><span class="math">\begin{equation}
-S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right)-\beta\left(\sum_{i} p_{i} E_{i}-\langle E\rangle\right)
+S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right)-\beta\left(\sum_{i} p_{i} E_{i}-\langle E\rangle\right).
 \end{equation}</span></p>
 <p>Taking the derivative</p>
 <p><span class="math">\begin{equation}
-\frac{\partial S_{\prime}}{\partial p_{i}}=0=-\ln p_{i}-1-\lambda-\beta E_i
+\frac{\partial S^{\prime}}{\partial p_{i}}=-\ln p_{i}-1-\lambda-\beta E_i\overset{!}{=} 0
 \end{equation}</span></p>
 <p>results in</p>
 <p><span class="math">\begin{equation}
@@ -730,13 +730,13 @@ p_{i}=\mathrm{e}^{-1-\lambda-\beta E_{i}}
 \end{equation}</span></p>
 <p>and together with the normalization condition <span class="math notranslate nohighlight">\(\sum p_i=1\)</span> finally</p>
 <p><span class="math">\begin{equation}
-\mathrm{e}^{-1-\lambda}=\frac{1}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
+\mathrm{e}^{-1-\lambda}=\frac{1}{\sum_{i} \mathrm{e}^{-\beta E_{i}}},
 \end{equation}</span></p>
-<p>where we already recognize that we can replace the prefactor <span class="math notranslate nohighlight">\(\mathrm{e}^{-1-\lambda}\)</span> by <span class="math notranslate nohighlight">\(1/Z\)</span> with <span class="math notranslate nohighlight">\(Z\)</span> being the partition function</p>
+<p>where we already recognized that we can replace the prefactor <span class="math notranslate nohighlight">\(\mathrm{e}^{-1-\lambda}\)</span> by <span class="math notranslate nohighlight">\(1/Z\)</span> with <span class="math notranslate nohighlight">\(Z\)</span> being the partition function</p>
 <p><span class="math">\begin{equation}
-Z=\sum_{i} \mathrm{e}^{-\beta E_{l}}
+Z=\sum_{i} \mathrm{e}^{-\beta E_{i}}.
 \end{equation}</span></p>
-<p>Overall this therefore leads to the Boltzmann distribution</p>
+<p>Overall this, therefore, leads to the Boltzmann distribution</p>
 <p><span class="math">\begin{equation}
 p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 \end{equation}</span></p>
@@ -746,23 +746,23 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Barometric height formula</strong></p>
 <p>We have mentioned already the barometric height formula giving the probability of finding a particle at a height <span class="math notranslate nohighlight">\(z\)</span>. To derive that, we consider a constant gravitational force <span class="math notranslate nohighlight">\(F=-mg\)</span> along the <span class="math notranslate nohighlight">\(z\)</span>-direction such that the potential energy is given by <span class="math notranslate nohighlight">\(E=mgz\)</span> assuming that <span class="math notranslate nohighlight">\(E=0\)</span> at <span class="math notranslate nohighlight">\(z=0\)</span>.</p>
-<p>The probability for finding the particle is therefore</p>
+<p>The probability for finding the particle at position <span class="math notranslate nohighlight">\(z\)</span> is therefore</p>
 <dl class="simple">
-<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>p(z)=frac{1}{Z}expleft( -frac{mgz}{k_B T}right)=frac{1}{&lt;z&gt;}expleft ( -frac{z}{&lt;z&gt;}right )</p>
+<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>p(z)=frac{1}{Z}expleft( -frac{mgz}{k_{rm B} T}right)=frac{1}{&lt;z&gt;}expleft ( -frac{z}{&lt;z&gt;}right ).</p>
 </dd>
 </dl>
 <p>end{equation}`</p>
 <p>Normalization provides the value of the partition function</p>
 <p><span class="math">\begin{equation}
-Z=\int_0^\infty\exp\left( -\frac{mgz}{k_B T}\right)dz=\frac{k_BT}{mg}
+Z=\int_0^\infty\exp\left( -\frac{mgz}{k_{\rm B} T}\right)dz=\frac{k_{\rm B}T}{mg}.
 \end{equation}</span></p>
-<p>We may further calculate the mean height, which is the sedimentation length in sedimentation problems</p>
+<p>We may further calculate the mean height, which is the sedimentation length in sedimentation problems:</p>
 <p><span class="math">\begin{equation}
-<z>=\frac{1}{Z}\int_0^\infty h\exp\left( -\frac{mgz}{k_B T}\right)dz=\frac{k_BT}{mg}
+<z>=\frac{1}{Z}\int_0^\infty h\exp\left( -\frac{mgz}{k_{\rm B} T}\right)\mathrm{d}z=\frac{k_{\rm B}T}{mg}
 \end{equation}</z></span></p>
 <p>and the mean energy</p>
 <p><span class="math">\begin{equation}
-<e>=-\frac{\partial }{\partial \beta} Z=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_B T=mg <z>
+<e>=-\frac{\partial }{\partial \beta} \ln (Z)=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_{\rm B} T=mg <z>.
 \end{equation}</z></e></span></p>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
@@ -833,7 +833,7 @@ Z=\int_0^\infty\exp\left( -\frac{mgz}{k_B T}\right)dz=\frac{k_BT}{mg}
 </li>
 <li><a class="reference internal" href="#Boltzmann-Distribution">Boltzmann Distribution</a><ul>
 <li><a class="reference internal" href="#Mean-Energy">Mean Energy</a></li>
-<li><a class="reference internal" href="#Free-energy">Free energy</a></li>
+<li><a class="reference internal" href="#Free-Energy">Free Energy</a></li>
 <li><a class="reference internal" href="#Deriving-the-Boltzmann-Distribution">Deriving the Boltzmann Distribution</a></li>
 </ul>
 </li>

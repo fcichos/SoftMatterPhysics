@@ -8,8 +8,6 @@ Welcome to Soft Matter Physics Lecture Website!
 ===============================================
 
 
-
-
 .. toctree::
    :maxdepth: 1
    :caption: Course Information:
