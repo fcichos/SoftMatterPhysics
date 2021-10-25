@@ -77,7 +77,7 @@
     "G_{\\rm tot}=N_{\\rm{H_{2}O}}\\varepsilon_{\\rm H_{2}O}+N_{\\rm s}\\varepsilon_{\\rm s}-TS_{\\rm mix}.\n",
     "\\end{equation}\n",
     "\n",
-    "The last term denotes the entropy for mixing the solute and the solvent molecules.     \n",
+    "The last term $TS_{\\rm mix}$ denotes the entropy for mixing the solute and the solvent molecules.     \n",
     "In the following, we are interested in the last term, which is the entropic contribution to the free energy containing the entropy of mixing solute and solvent.\n",
     "\n",
     "The mixing entropy can be calculated by either the Gibbs definition\n",
@@ -96,6 +96,13 @@
     "\n",
     "</div>    "
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {

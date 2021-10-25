@@ -572,16 +572,16 @@ S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 </div>
 <div class="section" id="Shannon-Entropy">
 <h3>Shannon Entropy<a class="headerlink" href="#Shannon-Entropy" title="Permalink to this headline">¶</a></h3>
-<p>A different access to entropy comes from the field of information theory and has been divised by Claude Shannon. Information theory is trying to mathematically assess the information content of measurement facing uncertainty. It will turn out further below that this alternative description results in the Boltzmann distribution and effectively amounts to making a best guess about the probability distribution given some limited knowledge about the system such as the average energy.</p>
+<p>A different access to entropy comes from the field of information theory and has been devised by Claude Shannon. Information theory is trying to mathematically assess the information content of a measurement facing uncertainty. It will turn out further below that this alternative description results in the Boltzmann distribution and effectively amounts to making a best guess about the probability distribution given some limited knowledge about the system such as the average energy.</p>
 <p>The Shannon entropy is defined by</p>
 <p><span class="math">\begin{equation}
 S\left(p_{1}, p_{2}, \ldots, p_{N}\right)=S\left(\left\{p_{i}\right\}\right)=-\sum_{i=1}^{N} p_{i} \ln p_{i}
 \end{equation}</span></p>
 <p>and relates to its thermodynamic version, the Gibbs entropy</p>
 <p><span class="math">\begin{equation}
-S\left(\left\{p_{i}\right\}\right)=-k_B\sum_{i=1}^{N} p_{i} \ln p_{i}
+S\left(\left\{p_{i}\right\}\right)=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i},
 \end{equation}</span></p>
-<p>where the <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of the <span class="math notranslate nohighlight">\(i\)</span>th microstate (or outcome). The example below, will show that if only the normalization of the probability is known, maximization of the Shannon entropy will directly lead to an equal probabiliyt of events (equal distribution). Later, we see that similar calculations can be done to yields the Boltzmann distribution.</p>
+<p>where <span class="math notranslate nohighlight">\(p_i\)</span> is the probability of the <span class="math notranslate nohighlight">\(i\)</span>th microstate (or outcome). The example below will show, that if only the normalization of the probability is known, maximization of the Shannon entropy will directly lead to an equal probability of events (uniform distribution). Later, we see that similar calculations can be done to yield the Boltzmann distribution.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Equal Distribution</strong></p>
 <p>To figure out that the Shannon entropy is indeed delivering some useful measure, we will have a look at a measurement which has <span class="math notranslate nohighlight">\(N\)</span> outcomes (e.g. rolling a dice). We of course know that in this case all number of the dice have equal probability, but we can test this by maximizing the Shannon entropy as required by our thermodynamic considerations earlier.</p>
@@ -862,7 +862,7 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 24, 2021. |
+            Last updated on Oct 25, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
