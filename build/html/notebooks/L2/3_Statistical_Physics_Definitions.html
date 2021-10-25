@@ -765,72 +765,10 @@ Z=\int_0^\infty\exp\left( -\frac{mgz}{k_B T}\right)dz=\frac{k_BT}{mg}
 <e>=-\frac{\partial }{\partial \beta} Z=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_B T=mg <z>
 \end{equation}</z></e></span></p>
 </div>
-</div>
-</div>
-<div class="section" id="When-a-Macrostate-is-a-Microstate">
-<h2>When a Macrostate is a Microstate<a class="headerlink" href="#When-a-Macrostate-is-a-Microstate" title="Permalink to this headline">¶</a></h2>
-<p>In practice, we are often interested in the likelihood that the system a state that is described by some macroscopic parameter <span class="math notranslate nohighlight">\(X\)</span> that we can measure. For example, for a DNA molecule inside a cell, an interesting quantity, which can be measured using fluorescent markers, is the distance R between two sites on the DNA chain. Repeated measurements of <span class="math notranslate nohighlight">\(R\)</span> can to construct the probability distribution p(R).</p>
-<p>In general, the probability of the macrostate <span class="math notranslate nohighlight">\(X\)</span> is given by the sum of probabilities of all the microstates of the system that adopt the specified value <span class="math notranslate nohighlight">\(X\)</span>,</p>
-<p><span class="math">\begin{equation}
-p(X)=\sum_{i_{X}} p_{i}=\sum_{i_{X}} \frac{1}{Z} \mathrm{e}^{-\beta E_{i}}
-\end{equation}</span></p>
-<p>For the DNA example, the sum in the above equation would run over only those microstates <span class="math notranslate nohighlight">\(i_X\)</span> that have the prescribed distance between the two labeled sites on the polymer, e.g. <span class="math notranslate nohighlight">\(X=R\)</span>. Using the basic relation between the partition function and the free energy, <span class="math notranslate nohighlight">\(G = −k_BT \ln(Z)\)</span>, we can express the probability of the macrostate X as</p>
-<p><span class="math">\begin{equation}
-p(X)=\frac{1}{Z} \mathrm{e}^{-\beta G(X)}
-\end{equation}</span></p>
-<p>where</p>
-<p><span class="math">\begin{equation}
-G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
-\end{equation}</span></p>
-<p>is the free energy of the macrostate <span class="math notranslate nohighlight">\(X\)</span>. Note that the formula for <span class="math notranslate nohighlight">\(p(X)\)</span> is identical to the Boltzmann formula for the probability of a microstate, with the energy of the microstate replaced by the free energy of the macrostate. Note that the sum on the right side of the last equation is not the partition function <span class="math notranslate nohighlight">\(Z\)</span> but that of the subensemble of microstates fulfilling the condition X, i.e. <span class="math notranslate nohighlight">\(Z_X\)</span>. Similarly, when writing down the states and weights for the macrostates
-<span class="math notranslate nohighlight">\(X\)</span>, the energy is replaced by the free energy, as shown in in the figure below. In this sense, one person’s macrostate is truly another person’s microstate.</p>
-<img alt="micro_macro" src="../../_images/micro_macro.png"/>
-</div>
-<div class="section" id="Equipartition">
-<h2>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h2>
-<p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>. We can derive a value for <span class="math notranslate nohighlight">\(\beta\)</span> with the help of the equipartition theorem.</p>
-<div class="admonition warning">
-<p>The equipartition theorem, also known as the law of equipartition, equipartition of energy or simply equipartition, states that every degree of freedom that appears only quadratically in the total energy has an average energy of <span class="math notranslate nohighlight">\(\frac{1}{2}k_B T\)</span>.</p>
-</div>
-<p>To obtain the lagrange parameter we just consider one degree of freedom for a monoatomic gas. This degree of freedom is the kinetic energy of one atom along the x-direction, which is given by</p>
-<p><span class="math">\begin{equation}
-E=\frac{p_{X}^{2}}{2 m}
-\end{equation}</span></p>
-<p>According to the Boltzmann distribution, the probability to find an atom with a certain momentum is given by</p>
-<p><span class="math">\begin{equation}
-P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_{\text {states }} \mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}
-\end{equation}</span></p>
-<p>We can thus calculate the mean energy by summing up (or integrating when going to continuous states) over alls possible momenta</p>
-<p><span class="math">\begin{equation}
-\sum_{\text {states }} \rightarrow \int_{-\infty}^{\infty} \mathrm{d} p_{x}
-\end{equation}</span></p>
-<p>This yields</p>
-<p><span class="math">\begin{equation}
-\int_{-\infty}^{\infty} \mathrm{e}^{-\beta p_{x}^{2} / 2 m} \mathrm{~d} p_{x}=\sqrt{\frac{2 m \pi}{\beta}}
-\end{equation}</span></p>
-<p>To obtain the value of <span class="math notranslate nohighlight">\(\beta\)</span> we now constrain the mean energy to the value given by the equiparition principle</p>
-<p><span class="math">\begin{equation}
-\langle E\rangle=\frac{1}{2} k_{\mathrm{B}} T
-\end{equation}</span></p>
-<p>This is the mean energy per degree of freedom. One can show that each degree of freedom, independent of the object (atom, colloid, parking car) is carrying this mean energy. It provides actually our measure of temperature.</p>
-<p>Using the momentum to calculate the mean energy we write down</p>
-<p><span class="math">\begin{equation}
-\langle E\rangle=\frac{\int_{-\infty}^{\infty} \frac{p_{X}^{2}}{2 m} \mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)} \mathrm{d} p_{x}}{\sqrt{2 m \pi / \beta}}
-\end{equation}</span></p>
-<p>which can be slightly simplified</p>
-<p><span class="math">\begin{equation}
-\langle E\rangle=\frac{\alpha^{3 / 2}}{\beta \sqrt{\pi}}\left(-\frac{\partial}{\partial \alpha}\right) \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha p_{x}^{2}} \mathrm{~d} p_{x}
-\end{equation}</span></p>
-<p>and calculated via some tricks valid for integrals over Gaussian functions. This finally leads us to the result that the value of the Lagrangian multiplier must be</p>
-<p><span class="math">\begin{equation}
-\beta=\frac{1}{k_{\mathrm{B}} T}
-\end{equation}</span></p>
-<div class="admonition warning">
-<p>A good example for a non-quadratic degree of freedom is the barometric height formula with a potential energy that is linear in position.</p>
-</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
 </div>
 
         </article>
@@ -899,8 +837,6 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 <li><a class="reference internal" href="#Deriving-the-Boltzmann-Distribution">Deriving the Boltzmann Distribution</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li><a class="reference internal" href="#Equipartition">Equipartition</a></li>
 </ul>
 </li>
 </ul>
