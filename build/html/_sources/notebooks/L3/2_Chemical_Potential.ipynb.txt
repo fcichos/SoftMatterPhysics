@@ -236,7 +236,7 @@
     "Finally, a chemical potential may be also defined for gases, e.g. for the ideal gas\n",
     "\n",
     "\\begin{equation}    \n",
-    "    \\mu_{\\rm iG}=k_B T \\ln\\left (\\frac{p}{p_0}\\right)\n",
+    "\\mu_{\\rm iG}=k_B T \\ln\\left (\\frac{p}{p_0}\\right)\n",
     "\\end{equation}    \n",
     "\n",
     "which only has entropic contributions.    \n"
