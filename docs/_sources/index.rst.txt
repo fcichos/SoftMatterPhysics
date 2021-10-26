@@ -38,7 +38,7 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 3:
    
    notebooks/L3/1_Equipartition.ipynb
-   notebooks/L3/2_Chemical Potential.ipynb
+   notebooks/L3/2_Chemical_Potential.ipynb
 
 
 Indices and tables

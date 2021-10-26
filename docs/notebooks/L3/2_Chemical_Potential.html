@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -197,15 +197,15 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L3/2_Chemical Potential.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L3/2_Chemical Potential.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L3/2_Chemical_Potential.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L3/2_Chemical_Potential.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <div class="section" id="Chemical-Potential-and-Osmotic-Pressure">
 <h1>Chemical Potential and Osmotic Pressure<a class="headerlink" href="#Chemical-Potential-and-Osmotic-Pressure" title="Permalink to this headline">¶</a></h1>
@@ -218,7 +218,9 @@
 G=G_{\mathrm A}+G_{\mathrm B}.
 \end{equation}</span></p>
 <p>The total number of particles in the system is also conserved and given by <span class="math notranslate nohighlight">\(N_{\rm tot}=N_A+N_B\)</span> In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
-<p><span class="math">\begin{equation}\frac{\mathrm dG}{\mathrm dN}=\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}|_{T,p}+\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}|_{T,p}=0.\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\frac{\mathrm dG}{\mathrm dN}=\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}\bigg|_{T,p}+\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}\bigg|_{T,p}=0.
+\end{equation}</span></p>
 <p>Since the total number of particles is conserved, we also find in equilibrium that from which follows that</p>
 <p><span class="math">\begin{equation}
 \frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=-\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}
@@ -228,13 +230,32 @@ G=G_{\mathrm A}+G_{\mathrm B}.
 \frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm A}}.
 \end{equation}</span></p>
 <p>Apparently, in equilibrium the change in the free energy of system <span class="math notranslate nohighlight">\(A\)</span> needs to be the same (or negative) of system <span class="math notranslate nohighlight">\(B\)</span>.</p>
-<p>We can now define a new quantity</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Chemical Potential</strong></p>
+<p>We can define a quantity</p>
 <p><span class="math">\begin{equation}
-\mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}|_{T,P}
+\mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}\bigg|_{T,P}
 \end{equation}</span></p>
-<p>which is termed the chemical potential, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the capacity of a system to change the number of particles. We will have a closer look at the chemical potential with an example now. The previous condition states that the chemical potential of the two systems in the same in equilibrium.</p>
+<p>which is termed the <strong>chemical potential</strong>, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the cost for adding one more particle (at constsn <span class="math notranslate nohighlight">\(T,p\)</span>) to the system.</p>
+<p>Note</p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(\mu_l&lt;\mu_v\)</span> at constant <span class="math notranslate nohighlight">\(T,p\)</span>, we can lower the free energy by moving a particle from <span class="math notranslate nohighlight">\(v\)</span> to <span class="math notranslate nohighlight">\(l\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_l\neq \mu_v\)</span> means non-equilibrium and partricles diffuse until <span class="math notranslate nohighlight">\(\mu_l=\mu_v\)</span></p></li>
+</ul>
+</div>
+<p>We will have a closer look at the chemical potential with an example below. The previous condition states that the chemical potential of the two systems in the same in equilibrium. The chemical potential is useful in many situations. For example, to determine</p>
+<p><strong>Phase equilibria</strong></p>
+<img alt="Phase equilibrium" src="../../_images/phase_equilibria.png"/>
+<p>In this case we have a boundary between two phases (e.g. liquid and vapor) and particles of the vapour phase may joing the liquid phase and vice versa. In this case, the number of vapor particles <span class="math notranslate nohighlight">\(N_{\rm vapor}\)</span> and the number of liquid particles <span class="math notranslate nohighlight">\(N_{\rm liquid}\)</span> is not fixed, but the total number of particles <span class="math notranslate nohighlight">\(N=N_{\rm vapor}+N_{\rm liquid}\)</span> is.</p>
+<p><strong>Chemical equilibria</strong></p>
+<img alt="Chemical equilibrium" src="../../_images/chemical_equilibria.png"/>
+<p>In the case of chemical equilibria, two species <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> may react to form a new specia <span class="math notranslate nohighlight">\(AB\)</span> by a chemical reaction</p>
+<p><span class="math">\begin{equation}
+A+B \rightleftharpoons A B
+\end{equation}</span></p>
+<p>Here the individual numbers of particles <span class="math notranslate nohighlight">\(N_A\)</span>,<span class="math notranslate nohighlight">\(N_B\)</span> and <span class="math notranslate nohighlight">\(N_{AB}\)</span> are not fixed, but <span class="math notranslate nohighlight">\(N_A + N_{AB}\)</span> and <span class="math notranslate nohighlight">\(N_B+N_{AB}\)</span> are.</p>
 <div class="admonition note">
-<p class="admonition-title"><strong>Free energy of a dilute solution</strong></p>
+<p class="admonition-title"><strong>Example: Free energy of a dilute solution</strong></p>
 <p>We would like to calculate the free energy and the chemical potential for a dilute solution of some <em>solutes</em> in a solvent, which we just term H<span class="math notranslate nohighlight">\(_2\)</span>O. Actually, no additional information on the details of the solute and solvent are currently required, though if we want to have numbers, we would need to know which solute or solvent we are looking at.</p>
 <img alt="Solute Solvent" src="../../_images/solute_solvent.png"/>
 <p>Suppose we have</p>
@@ -302,9 +323,7 @@ G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}
 \end{equation}</span></p>
 <p>The value of <span class="math notranslate nohighlight">\(c_0\)</span> thereby acts as a reference point, which is commonly chosen to be at <span class="math notranslate nohighlight">\(c_0=1\,M\)</span>. The value of <span class="math notranslate nohighlight">\(\epsilon_s\)</span> is termed the standard chemical potential <span class="math notranslate nohighlight">\(\mu_s0\)</span>. The standard chemical potential is measured at standard thermodynamic conditions, i.e. <span class="math notranslate nohighlight">\(p_0=101.3\, {\rm kPa}\)</span> and <span class="math notranslate nohighlight">\(T=293.15\, {\rm K}\)</span> and <span class="math notranslate nohighlight">\(c_0=1\, {\rm M}\)</span>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title"><strong>Chemical Potential</strong></p>
-<p>The chemical potential of a component <span class="math notranslate nohighlight">\(i\)</span> consists of two components</p>
+<p>In a mixed system, we therefore define the chemical potential of a component <span class="math notranslate nohighlight">\(i\)</span> as the sum of two components</p>
 <p><span class="math">\begin{equation}
 \mu_i=\mu_i0+k_B T \ln \left ( \frac{c_i}{c_i0}\right )
 \end{equation}</span></p>
@@ -329,20 +348,9 @@ G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}
 </dl>
 <p>end{equation}`</p>
 <p>which only has entropic contributions.</p>
-</div>
-<div class="section" id="Chemical-Potential-in-Equilibrium">
-<h2>Chemical Potential in Equilibrium<a class="headerlink" href="#Chemical-Potential-in-Equilibrium" title="Permalink to this headline">¶</a></h2>
-<p>As we have mentioned already previously, the chemical potrential of all components is the same in equilibrium, which means</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\mu_A-\mu_B=0\]</div></div>
-<p>or</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\mu_A=\mu_B\]</div></div>
-<p>This was the result of our consideration of the free energy minimum.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</img></div>
+</script></img></div>
 
         </article>
       </div>
@@ -365,12 +373,12 @@ G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 25, 2021. |
+            Last updated on Oct 26, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L3/2_Chemical Potential.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L3/2_Chemical_Potential.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -378,27 +386,8 @@ G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Chemical Potential and Osmotic Pressure</a><ul>
-<li><a class="reference internal" href="#Chemical-Potential-in-Equilibrium">Chemical Potential in Equilibrium</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

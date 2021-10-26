@@ -4,7 +4,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Note## Chemical Potential and Osmotic Pressure\n",
+    "## Chemical Potential and Osmotic Pressure\n",
     "\n",
     "So far we have considered either isolated systems, meaning that no energy nor particle exchange is possible, and closed systems, which allow an exchange of energy with a reservoir (bath). We will now have a look at a system that also allows an exchange of particles with a reservoir. For these systems, we will define the **chemical potential** $\\mu$ which we will identify as the **free energy change when adding one molecule of a given species to a thermodynamic system** at constant $p$ and $T$.\n",
     "\n",
@@ -61,6 +61,7 @@
     "- if $\\mu_l<\\mu_v$ at constant $T,p$, we can lower the free energy by moving a particle from $v$ to $l$\n",
     "- $\\mu_l\\neq \\mu_v$ means non-equilibrium and partricles diffuse until $\\mu_l=\\mu_v$\n",
     "\n",
+    "    \n",
     "</div>"
    ]
   },
@@ -223,6 +224,7 @@
     "    - the conformational entropy of the molecule and  \n",
     "    - the enthalpy and entropy contributions when bringing the molecule into contact with the solvent (solvation free energy. \n",
     "- The logarithm term     $k_B T \\ln \\left ( \\frac{c_i}{c_i0}\\right )$ is the pure mixing/dilution entropy reflecting the different abundance of solute and solvent due to the resulting numbers of microstates\n",
+    "\n",
     "\n",
     "    \n",
     "For a solvent we consequently write\n",
