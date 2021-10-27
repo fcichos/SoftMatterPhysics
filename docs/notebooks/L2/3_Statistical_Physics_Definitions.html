@@ -765,27 +765,26 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 </div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Two-level-system</strong></p>
-<p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g. for spin systems. Such two level spin systems are for example very important for nuclear magnetic resonance (NMR), which is a important tool to study the structure and dynamics of soft matter.</p>
+<p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g., for spin systems. Such two level spin systems are, for example, very important for nuclear magnetic resonance (NMR), which is an important tool to study the structure and dynamics of soft matter.</p>
 <img alt="Two Level" src="../../_images/two_level.png"/>
-<p>Consider the image above, where a single energy level at zero magnetic field (<span class="math notranslate nohighlight">\(B=0\)</span>) splits into two energy levels due to the interaction of an proton spin (red arrow) with the external magnetic field.</p>
+<p>Consider the image above, where a single energy level at zero magnetic field (<span class="math notranslate nohighlight">\(B=0\)</span>) splits into two energy levels due to the interaction of a proton spin (red arrow) with the external magnetic field.</p>
 <p>The magnetic moment of the proton spin may take two expectation values in the magnetic field, which are characterized by the magnetic quantum number <span class="math notranslate nohighlight">\(m_Z=\pm 1/2\)</span>. The magnetic moment projected along the magnetic field direction is then</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\mu_z=\gamma m_Z \hbar\]</div></div>
+\[\mu_Z=\gamma m_Z \hbar\]</div></div>
 <p>and the energy of the states</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[E(m_Z)=-\mu_z B=-\gamma m_Z \hbar B\]</div></div>
-<p>with <span class="math notranslate nohighlight">\(\gamma=2.675222005\times 10^{8}\; s^{-1} T^{-1}\)</span> being the gyromagnetic ratio of the proton. The energy difference for a nonzero magnetic field is therefore given by</p>
+\[E(m_Z)=-\mu_Z B=-\gamma m_Z \hbar B\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(\gamma=2.675222005\times 10^{8}\; \mathrm{s}^{-1} \mathrm{T}^{-1}\)</span> being the gyromagnetic ratio of the proton. The energy difference for a nonzero magnetic field is therefore given by</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\Delta E=\gamma \hbar B=\hbar \omega_L\]</div></div>
-<p>which results for a magnetic field of <span class="math notranslate nohighlight">\(B=1\; T\)</span> in <span class="math notranslate nohighlight">\(\Delta E\approx 1.76\times 10^{-7}\;{\rm eV}\)</span> or a Larmor frequency of <span class="math notranslate nohighlight">\(\omega_L=42\; {\rm MHz}\)</span>. This energy difference is almost negligable as compared to the thermal energy at room temperature <span class="math notranslate nohighlight">\(k_BT=2.6\times 10^{-2}\;{\rm eV}\)</span>. Yet, this small energy difference is used to give the contrast in NMR and related techniques such as MRI.</p>
+\[\Delta E=\gamma \hbar B=\hbar \omega_\mathrm{L}\]</div></div>
+<p>which results for a magnetic field of <span class="math notranslate nohighlight">\(B=1\; \mathrm{T}\)</span> in <span class="math notranslate nohighlight">\(\Delta E\approx 1.76\times 10^{-7}\;{\rm eV}\)</span> or a Larmor frequency of <span class="math notranslate nohighlight">\(\omega_\mathrm{L}=42\; {\rm MHz}\)</span>. This energy difference is almost negligible as compared to the thermal energy at room temperature <span class="math notranslate nohighlight">\(k_\mathrm{B}T=2.6\times 10^{-2}\;{\rm eV}\)</span>. Yet, this small energy difference is used to give the contrast in NMR and related techniques such as MRI.</p>
 <p>Using the Boltzmann distribution we can now calculate the ratio of the population of spins in the lower or excited state</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=\exp\left (-\frac{\Delta E}{k_B T} \right )\]</div></div>
-<p>which is very close to one</p>
+\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=\exp\left (-\frac{\Delta E}{k_\mathrm{B} T} \right )\]</div></div>
+<p>which is very close to one:</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=0.99999332\]</div></div>
-<p>.</p>
-<p>If you consider now a volume of <span class="math notranslate nohighlight">\(V=1\;{\rm {\mu m}}^3\)</span> water, then you would roughly have about <span class="math notranslate nohighlight">\(N=6.7\times 10^{19}\)</span> protons. This then means that the excess number of protons in the excited state is just <span class="math notranslate nohighlight">\(N_{+\frac{1}{2}}-N_{-\frac{1}{2}}4.5\times 10^{12}\)</span>, which is extremely low. Thus, to detect something in NMR or MRI a certain number of protons in the volume is required.</p>
+\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=0.99999332.\]</div></div>
+<p>If you consider now a volume of <span class="math notranslate nohighlight">\(V=1\;{\rm {\mu m}}^3\)</span> water, then you would roughly have about <span class="math notranslate nohighlight">\(N=6.7\times 10^{19}\)</span> protons. This then means that the excess number of protons in the excited state is just <span class="math notranslate nohighlight">\(N_{+\frac{1}{2}}-N_{-\frac{1}{2}}=4.5\times 10^{12}\)</span>, which is extremely low. Thus, to detect something in NMR or MRI, a certain number of protons in the volume is required.</p>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
@@ -822,7 +821,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 26, 2021. |
+            Last updated on Oct 27, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

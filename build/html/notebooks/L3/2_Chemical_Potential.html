@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -197,7 +197,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -209,7 +209,7 @@
 </div>
 <div class="section" id="Chemical-Potential-and-Osmotic-Pressure">
 <h1>Chemical Potential and Osmotic Pressure<a class="headerlink" href="#Chemical-Potential-and-Osmotic-Pressure" title="Permalink to this headline">¶</a></h1>
-<p>So far we have considered either isolated systems, meaning that no energy nor particle exchange is possible, and closed systems, which allow an exchange of energy with a reservoir (bath). We will now have a look at a system that also allows an exchange of particles with a reservoir. For these systems, we will define the <strong>chemical potential</strong> <span class="math notranslate nohighlight">\(\mu\)</span> which we will identify as the <strong>free energy change when adding one molecule of a given species to a thermodynamic system</strong> at constant
+<p>So far, we have considered either isolated systems, meaning that no energy nor particle exchange is possible, and closed systems, which allow an exchange of energy with a reservoir (bath). We will now have a look at a system that also allows an exchange of particles with a reservoir. For these systems, we will define the <strong>chemical potential</strong> <span class="math notranslate nohighlight">\(\mu\)</span> which we will identify as the <strong>free energy change when adding one molecule of a given species to a thermodynamic system</strong> at constant
 <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(T\)</span>.</p>
 <p>We consider a system of two components A and B in contact with a heat bath and a diffusive equilibrium between A and B.</p>
 <img alt="Chemical Potential" src="../../_images/chem_pot.png">
@@ -217,13 +217,13 @@
 <p><span class="math">\begin{equation}
 G=G_{\mathrm A}+G_{\mathrm B}.
 \end{equation}</span></p>
-<p>The total number of particles in the system is also conserved and given by <span class="math notranslate nohighlight">\(N_{\rm tot}=N_A+N_B\)</span> In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that</p>
+<p>The total number of particles in the system is also conserved and given by <span class="math notranslate nohighlight">\(N_{\rm tot}=N_{\mathrm A}+N_{\mathrm B}\)</span>. In equilibrium we require the free energy of the system to be a minimum with respect to the particle number such that:</p>
 <p><span class="math">\begin{equation}
-{\mathrm dG}=\frac{ \partial G_{\mathrm A}}{\partial N_{\mathrm A}}\bigg|_{T,p}dN_{\mathrm A}+\frac{\partial G_{\mathrm B}}{\partial N_{\mathrm B}}\bigg|_{T,p}dN_{\mathrm B}=\frac{ \partial G_{\mathrm A}}{\partial N_{\mathrm A}}\bigg|_{T,p}dN_{\mathrm A}-\frac{\partial G_{\mathrm B}}{\partial N_{\mathrm B}}\bigg|_{T,p}dN_{\mathrm A}=0.
+{\mathrm d}G=\frac{ \partial G_{\mathrm A}}{\partial N_{\mathrm A}}\bigg|_{T,p}{\mathrm d}N_{\mathrm A}+\frac{\partial G_{\mathrm B}}{\partial N_{\mathrm B}}\bigg|_{T,p}{\mathrm d}N_{\mathrm B}=\frac{ \partial G_{\mathrm A}}{\partial N_{\mathrm A}}\bigg|_{T,p}{\mathrm d}N_{\mathrm A}-\frac{\partial G_{\mathrm B}}{\partial N_{\mathrm B}}\bigg|_{T,p}{\mathrm d}N_{\mathrm A}=0.
 \end{equation}</span></p>
-<p>with <span class="math notranslate nohighlight">\(dN_A=-dN_B\)</span> since the total number of particles is conserved (i.e. <span class="math notranslate nohighlight">\(dN_{\rm tot}=0\)</span>)</p>
+<p>with <span class="math notranslate nohighlight">\({\mathrm d}N_{\mathrm A}=-{\mathrm d}N_{\mathrm B}\)</span>, since the total number of particles is conserved (i.e., <span class="math notranslate nohighlight">\(\mathrm{d}N_{\rm tot}=0\)</span>):</p>
 <p><span class="math">\begin{equation}
-\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}
+\frac{\mathrm dG_{\mathrm A}}{\mathrm dN_{\mathrm A}}=\frac{\mathrm dG_{\mathrm B}}{\mathrm dN_{\mathrm B}}.
 \end{equation}</span></p>
 <p>Apparently, in equilibrium the change in the free energy of system <span class="math notranslate nohighlight">\(A\)</span> needs to be the same of system <span class="math notranslate nohighlight">\(B\)</span> when exchanging particles at constant <span class="math notranslate nohighlight">\(T,p\)</span>.</p>
 <div class="admonition warning">
@@ -232,22 +232,25 @@ G=G_{\mathrm A}+G_{\mathrm B}.
 <p><span class="math">\begin{equation}
 \mu(T,p,N)=\frac{\mathrm dG}{\mathrm dN}\bigg|_{T,P}
 \end{equation}</span></p>
-<p>which is termed the <strong>chemical potential</strong>, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the cost for adding one more particle (at constsn <span class="math notranslate nohighlight">\(T,p\)</span>) to the system.</p>
+<p>which is termed the <strong>chemical potential</strong>, which is the change in the free energy when adding a particle to the system. The chemical potential may be interpreted as the cost for adding one more particle (at constant <span class="math notranslate nohighlight">\(T,p\)</span>) to the system.</p>
 <p>Note</p>
 <ul class="simple">
-<li><p>if <span class="math notranslate nohighlight">\(\mu_l&lt;\mu_v\)</span> at constant <span class="math notranslate nohighlight">\(T,p\)</span>, we can lower the free energy by moving a particle from <span class="math notranslate nohighlight">\(v\)</span> to <span class="math notranslate nohighlight">\(l\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mu_l\neq \mu_v\)</span> means non-equilibrium and partricles diffuse until <span class="math notranslate nohighlight">\(\mu_l=\mu_v\)</span></p></li>
+<li><p>if <span class="math notranslate nohighlight">\(\mu_l&lt;\mu_v\)</span> at constant <span class="math notranslate nohighlight">\(T,p\)</span>, we can lower the free energy by moving a particle from <span class="math notranslate nohighlight">\(v\)</span> to <span class="math notranslate nohighlight">\(l\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_l\neq \mu_v\)</span> means non-equilibrium and partricles will diffuse until <span class="math notranslate nohighlight">\(\mu_l=\mu_v\)</span>.</p></li>
 </ul>
 </div>
-<p>We will have a closer look at the chemical potential with an example below. The previous condition states that the chemical potential of the two systems in the same in equilibrium. The chemical potential is useful in many situations. For example, to determine</p>
-<p><strong>Phase equilibria</strong></p>
+<p>We will have a closer look at the chemical potential with an example below. The previous condition states that the chemical potential of the two systems is the same in equilibrium. The chemical potential is useful in many situations. For example, to determine</p>
+<div class="section" id="Phase-equilibria">
+<h2>Phase equilibria<a class="headerlink" href="#Phase-equilibria" title="Permalink to this headline">¶</a></h2>
 <img alt="Phase equilibrium" src="../../_images/phase_equilibria.png"/>
-<p>In this case we have a boundary between two phases (e.g. liquid and vapor) and particles of the vapour phase may joing the liquid phase and vice versa. In this case, the number of vapor particles <span class="math notranslate nohighlight">\(N_{\rm vapor}\)</span> and the number of liquid particles <span class="math notranslate nohighlight">\(N_{\rm liquid}\)</span> is not fixed, but the total number of particles <span class="math notranslate nohighlight">\(N=N_{\rm vapor}+N_{\rm liquid}\)</span> is.</p>
-<p><strong>Chemical equilibria</strong></p>
+<p>In this case, we have a boundary between two phases (e.g., liquid and vapor) and particles of the vapour phase may join the liquid phase and vice versa. In this case, the number of vapor particles <span class="math notranslate nohighlight">\(N_{\rm vapor}\)</span> and the number of liquid particles <span class="math notranslate nohighlight">\(N_{\rm liquid}\)</span> is not fixed, but the total number of particles <span class="math notranslate nohighlight">\(N=N_{\rm vapor}+N_{\rm liquid}\)</span> is.</p>
+</div>
+<div class="section" id="Chemical-equilibria">
+<h2>Chemical equilibria<a class="headerlink" href="#Chemical-equilibria" title="Permalink to this headline">¶</a></h2>
 <img alt="Chemical equilibrium" src="../../_images/chemical_equilibria.png"/>
-<p>In the case of chemical equilibria, two species <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> may react to form a new specia <span class="math notranslate nohighlight">\(AB\)</span> by a chemical reaction</p>
+<p>In the case of chemical equilibria, two species <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> may react to form a new species <span class="math notranslate nohighlight">\(AB\)</span> by a chemical reaction:</p>
 <p><span class="math">\begin{equation}
-A+B \rightleftharpoons A B
+A+B \rightleftharpoons A B.
 \end{equation}</span></p>
 <p>Here the individual numbers of particles <span class="math notranslate nohighlight">\(N_A\)</span>,<span class="math notranslate nohighlight">\(N_B\)</span> and <span class="math notranslate nohighlight">\(N_{AB}\)</span> are not fixed, but <span class="math notranslate nohighlight">\(N_A + N_{AB}\)</span> and <span class="math notranslate nohighlight">\(N_B+N_{AB}\)</span> are.</p>
 <div class="admonition note">
@@ -256,18 +259,18 @@ A+B \rightleftharpoons A B
 <img alt="Solute Solvent" src="../../_images/solute_solvent.png"/>
 <p>Suppose we have</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(N_{\rm H_2 O}\)</span> solvent molecules (e.g. water)</p></li>
-<li><p><span class="math notranslate nohighlight">\(N_s\)</span> solute molecules (e.g. proteins)</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_{\rm H_2 O}\)</span> solvent molecules (e.g., water),</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_{\rm s}\)</span> solute molecules (e.g., proteins).</p></li>
 </ul>
 <p>The solute chemical potential is defined by</p>
 <p><span class="math">\begin{equation}
-\mu_{\rm solute}=\left( \frac{\partial G_{\rm tot}}{\partial N_{\rm s}}\right)|_{p,T}
+\mu_{\rm s}=\left( \frac{\partial G_{\rm tot}}{\partial N_{\rm s}}\right)\bigg|_{p,T}
 \end{equation}</span></p>
 <p>or intuitively as</p>
 <p><span class="math">\begin{equation}
-\mu_{\rm solute}=G_{\rm tot}(N_{\rm s}+1)-G_{\rm tot}(N_{\rm s}).
+\mu_{\rm s}=G_{\rm tot}(N_{\rm s}+1)-G_{\rm tot}(N_{\rm s}).
 \end{equation}</span></p>
-<p>The total free energy <span class="math notranslate nohighlight">\(G_{\rm tot}\)</span> consists of the enthalpy of forming the solven molecules <span class="math notranslate nohighlight">\(N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}\)</span> and the enthalpy solvating the solute proteins <span class="math notranslate nohighlight">\(N_{\rm s}\varepsilon_{\rm s}\)</span>.</p>
+<p>The total free energy <span class="math notranslate nohighlight">\(G_{\rm tot}\)</span> consists of the enthalpy of forming the solvent molecules <span class="math notranslate nohighlight">\(N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}\)</span> and the enthalpy solvating the solute proteins <span class="math notranslate nohighlight">\(N_{\rm s}\varepsilon_{\rm s}\)</span>.</p>
 <p><span class="math">\begin{equation}
 G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}-TS_{\rm mix}.
 \end{equation}</span></p>
@@ -283,68 +286,94 @@ S_{\rm mix}=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})
 <p><span class="math">\begin{equation}
 S_{\rm mix}=k_{\rm B}\ln(W).
 \end{equation}</span></p>
-<p>We will use the latter definition including the number of possible configurations to obtain the mixing entropy. If the total number of molecules in the volume is <span class="math notranslate nohighlight">\(N=N_{\rm H_2O}+N_s\)</span> we can write down the number of different ways to arrange the molecules as previously done, we obtain</p>
+<p>We will use the latter definition including the number of possible configurations to obtain the mixing entropy. If the total number of molecules in the volume is <span class="math notranslate nohighlight">\(N=N_{\rm H_2O}+N_{\rm s}\)</span>, we can write down the number of different ways to arrange the molecules as previously done. We obtain:</p>
 <p><span class="math">\begin{equation}
-W(N_{\rm H_2O}, N_s )=\frac{N!}{N_{\rm H_2O}! N_s!}
+W(N_{\rm H_2O}, N_{\rm s} )=\frac{N!}{N_{\rm H_2O}! N_{\rm s}!}.
 \end{equation}</span></p>
 <p>As in our example with the DNA binding, we can apply the Stirling formula for large <span class="math notranslate nohighlight">\(N\)</span> and find</p>
 <p><span class="math">\begin{equation}
-S_{\rm mix}=-k_B \left ( N_{\rm H_2O} \ln\left (\frac{N_{\rm H_2O}}{N_{\rm H_2O}+N_s}\right) +N_s\ln\left (\frac{N_s}{N_{\rm H_2O}+N_s} \right )\right )
+S_{\rm mix}=-k_\mathrm{B} \left ( N_{\rm H_2O} \ln\left (\frac{N_{\rm H_2O}}{N_{\rm H_2O}+N_{\rm s}}\right) +N_{\rm s}\ln\left (\frac{N_{\rm s}}{N_{\rm H_2O}+N_{\rm s}} \right )\right ).
 \end{equation}</span></p>
-<p>To really go in the dilute limit, the number of solute molecules should be much larger than the number of solvent molecules, i.e.</p>
+<p>To really go in the dilute limit, the number of solute molecules should be much larger than the number of solvent molecules, i.e.,</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{N_s}{N_{\rm H_2O}}\ll 1\]</div></div>
+\[\frac{N_{\rm s}}{N_{\rm H_2O}}\ll 1\]</div></div>
 <p>which allows us to approximate the solution with</p>
 <p><span class="math">\begin{equation}
-S_{\rm mix}\approx -k_B \left ( N_{\rm H_2O} \ln \left ( 1-\frac{N_s}{N_{\rm H_2O}}\right) +N_s\ln\left ( \frac{N_s}{N_{\rm H_2O}}\right)\right )
-\end{equation}</span></p>
+S_{\rm mix}\approx -k_\mathrm{B} \left ( N_{\rm H_2O} \ln \left ( 1-\frac{N_{\rm s}}{N_{\rm H_2O}}\right) +N_{\rm s}\ln\left ( \frac{N_{\rm s}}{N_{\rm H_2O}}\right)\right )
+\end{equation}</span> employing the Taylor series expansion of <span class="math notranslate nohighlight">\(1/(1+N_{\rm s}/N_\mathrm{H_2O})\)</span> at <span class="math notranslate nohighlight">\(N_{\rm s}/N_\mathrm{H_2O}\approx 0\)</span>.</p>
 <p>Using</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\ln(1+\epsilon)\approx \epsilon\]</div></div>
 <p>we may finally write</p>
 <p><span class="math">\begin{equation}
-S_{\rm mix}\approx -k_B \left ( N_{s} \ln \left ( \frac{N_s}{N_{\rm H_2O}}\right) -N_s\right )
+S_{\rm mix}\approx -k_\mathrm{B} \left ( N_{\rm s} \ln \left ( \frac{N_{\rm s}}{N_{\rm H_2O}}\right) -N_{\rm s}\right )
 \end{equation}</span></p>
 <p>and the total free energy is then given by</p>
 <p><span class="math">\begin{equation}
-G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}--k_B T \left ( N_{s} \ln \left ( \frac{N_s}{N_{\rm H_2O}}\right) -N_s\right )
+G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}+k_\mathrm{B} T \left ( N_{\rm s} \ln \left ( \frac{N_{\rm s}}{N_{\rm H_2O}}\right) -N_{\rm s}\right ).
 \end{equation}</span></p>
 <p>We can now come back and calculate the chemical potential of the solute as noted above</p>
 <p><span class="math">\begin{equation}
-\mu_s=\epsilon_s+k_B T \ln \left ( \frac{N_s}{N_{\rm H_2O}}\right )
+\mu_{\rm s}=\epsilon_{\rm s}+k_{\rm B} T \ln \left ( \frac{N_{\rm s}}{N_{\rm H_2O}}\right ).
 \end{equation}</span></p>
-<p>As we rather work with concentrations than number of molecules we can use <span class="math notranslate nohighlight">\(c=N_s/V\)</span> and <span class="math notranslate nohighlight">\(c_0=c_{\rm H_2O}=N_{\rm H_2O}/V\)</span> to write</p>
+<p>As we rather work with concentrations than number of molecules we can use <span class="math notranslate nohighlight">\(c=N_{\rm s}/V\)</span> and <span class="math notranslate nohighlight">\(c_0=c_{\rm H_2O}=N_{\rm H_2O}/V\)</span> to write</p>
 <p><span class="math">\begin{equation}
-\mu_s=\epsilon_s+k_B T \ln \left ( \frac{c}{c_0}\right )
+\mu_{\rm s}=\epsilon_{\rm s}+k_{\rm B} T \ln \left ( \frac{c}{c_0}\right ).
 \end{equation}</span></p>
-<p>The value of <span class="math notranslate nohighlight">\(c_0\)</span> thereby acts as a reference point, which is commonly chosen to be at <span class="math notranslate nohighlight">\(c_0=1\,M\)</span>. The value of <span class="math notranslate nohighlight">\(\epsilon_s\)</span> is termed the standard chemical potential <span class="math notranslate nohighlight">\(\mu_s0\)</span>. The standard chemical potential is measured at standard thermodynamic conditions, i.e. <span class="math notranslate nohighlight">\(p_0=101.3\, {\rm kPa}\)</span> and <span class="math notranslate nohighlight">\(T=293.15\, {\rm K}\)</span> and <span class="math notranslate nohighlight">\(c_0=1\, {\rm M}\)</span>.</p>
+<p>The value of <span class="math notranslate nohighlight">\(c_0\)</span> thereby acts as a reference point, which is commonly chosen to be at <span class="math notranslate nohighlight">\(c_0=1\,{\rm M}\)</span>. The value of <span class="math notranslate nohighlight">\(\epsilon_{\rm s}\)</span> is termed the standard chemical potential <span class="math notranslate nohighlight">\(\mu_{\rm s}^{0}\)</span>. The standard chemical potential is measured at standard thermodynamic conditions, i.e. <span class="math notranslate nohighlight">\(p_0=101.3\, {\rm kPa}\)</span> and <span class="math notranslate nohighlight">\(T=293.15\, {\rm K}\)</span>, and <span class="math notranslate nohighlight">\(c_0=1\, {\rm M}\)</span>.</p>
 </div>
-<p>In a mixed system, we therefore define the chemical potential of a component <span class="math notranslate nohighlight">\(i\)</span> as the sum of two components</p>
+<p>In a mixed system, we define the chemical potential of a component <span class="math notranslate nohighlight">\(i\)</span> as the sum of two components</p>
 <p><span class="math">\begin{equation}
-\mu_i=\mu_i0+k_B T \ln \left ( \frac{c_i}{c_i0}\right )
+\mu_i=\mu_i^0+k_\mathrm{B} T \ln \left ( \frac{c_i}{c_{i,0}}\right ).
 \end{equation}</span></p>
 <ul class="simple">
 <li><p>The standard chemical potential is a molecular property (see slides) that contains</p>
 <ul>
 <li><p>the internal energy/enthalpy to create the molecule,</p></li>
-<li><p>the conformational entropy of the molecule and</p></li>
-<li><p>the enthalpy and entropy contributions when bringing the molecule into contact with the solvent (solvation free energy.</p></li>
+<li><p>the conformational entropy of the molecule, and</p></li>
+<li><p>the enthalpy and entropy contributions when bringing the molecule into contact with the solvent (solvation free energy).</p></li>
 </ul>
 </li>
-<li><p>The logarithm term <span class="math notranslate nohighlight">\(k_B T \ln \left ( \frac{c_i}{c_i0}\right )\)</span> is the pure mixing/dilution entropy reflecting the different abundance of solute and solvent due to the resulting numbers of microstates</p></li>
+<li><p>The logarithm term <span class="math notranslate nohighlight">\(k_\mathrm{B} T \ln \left ( \frac{c_i}{c_{i0}}\right )\)</span> is the pure mixing/dilution entropy reflecting the different abundance of solute and solvent due to the resulting numbers of microstates.</p></li>
 </ul>
 <p>For a solvent we consequently write</p>
 <p><span class="math">\begin{equation}
-\mu_{\rm H_2O}=\frac{\partial G_{\rm tot}}{\partial N_{\rm H_2O}}|_{T,p}=\mu_{\rm H_2O}^{0}-k_B T\ln\left ( \frac{c_s}{c_{\rm H_2O}}\right)
+\mu_{\rm H_2O}=\frac{\partial G_{\rm tot}}{\partial N_{\rm H_2O}}\bigg|_{T,p}=\mu_{\rm H_2O}^{0}-k_\mathrm{B} T\ln\left ( \frac{c_{\rm s}}{c_{\rm H_2O}}\right).
 \end{equation}</span></p>
-<p>Finally, a chemical potential may be also defined for gases, e.g. for the ideal gas</p>
+<p>Finally, a chemical potential may be also defined for gases, e.g., for the ideal gas:</p>
 <p><span class="math">\begin{equation}
-\mu_{\rm iG}=k_B T \ln\left (\frac{p}{p_0}\right)
+\mu_{\rm iG}=k_\mathrm{B} T \ln\left (\frac{p}{p_0}\right)
 \end{equation}</span></p>
 <p>which only has entropic contributions.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Example: Barometric height formula</strong></p>
+<p>We can have a look again at the barometric height formula using the framework of the chemical potential. Each height <span class="math notranslate nohighlight">\([h,h+dh]\)</span> is exchanging particles with other heights until the chemical potential in all regions is the same. We can thus write</p>
+<p>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{eqnarray}
+mu(h=0)&amp;=&amp;mu_{0}(h=0)+k_B Tln left ( frac{n(h=0)}{n_0}right )\</p>
+<blockquote>
+<div><p>&amp;=&amp;mu_{0}(h)+k_B T ln left ( frac{n(h)}{n_0}right )</p>
+</div></blockquote>
+<p>end{eqnarray}`</p>
+<p>The standard chemical potential is just given by the potential energy, i.e.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\mu_{0}(h)=mgh\]</div></div>
+<p>and</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\mu_{0}(h=0)=0\]</div></div>
+<p>which then leads us to</p>
+<p><span class="math">\begin{equation}
+-mgh=k_B T\left ( \ln \left( \frac{n(h)}{n_0} \right )    -\ln \left( \frac{n(h=0)}{n_0} \right ) \right)
+\end{equation}</span></p>
+<p>This finally leads us to</p>
+<p><span class="math">\begin{equation}
+\frac{n(h)}{n(h=0)}=\exp\left (-\frac{mgh}{k_B T} \right )
+\end{equation}</span></p>
+<p>which is fo course the barometric height formula.</p>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></img></div>
+</script></div>
+</img></div>
 
         </article>
       </div>
@@ -367,7 +396,7 @@ G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 26, 2021. |
+            Last updated on Oct 27, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -380,8 +409,28 @@ G_{\rm tot}=N_{\rm{H_{2}O}}\varepsilon_{\rm H_{2}O}+N_{\rm s}\varepsilon_{\rm s}
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Chemical Potential and Osmotic Pressure</a><ul>
+<li><a class="reference internal" href="#Phase-equilibria">Phase equilibria</a></li>
+<li><a class="reference internal" href="#Chemical-equilibria">Chemical equilibria</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
