@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="When a Macrostate is a Microstate" href="../L3/1_Equipartition.html" /><link rel="prev" title="Thermodynamics and Statistical Physics Revisited" href="../L1/2_Thermodynamics_Statistics.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Equipartition" href="../L3/1_Equipartition.html" /><link rel="prev" title="Thermodynamics and Statistical Physics Revisited" href="../L1/2_Thermodynamics_Statistics.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Statistical Physics Definitions - Soft Matter Lecture 21 documentation</title>
@@ -174,8 +174,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#Equipartition">Equipartition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential and Osmotic Pressure</a></li>
 </ul>
 
@@ -763,29 +763,6 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 <p>which is quite interesting. We have just fixed the mean energy of the system and maximized the entropy. The Boltzmann distribution is therefore the probability distribution which maximizes the entropy under as little as possible additional information (just the mean energy).</p>
 <p>The only thing that is missing in the above formula is an expression for the value of <span class="math notranslate nohighlight">\(\beta\)</span>, the Lagrange multiplier. This can be obtained when knowning the mean energy. In thermal euilibrium, this mean energy can be obtained from the equipartition theorem.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title"><strong>Example: Two-level-system</strong></p>
-<p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g., for spin systems. Such two level spin systems are, for example, very important for nuclear magnetic resonance (NMR), which is an important tool to study the structure and dynamics of soft matter.</p>
-<img alt="Two Level" src="../../_images/two_level.png"/>
-<p>Consider the image above, where a single energy level at zero magnetic field (<span class="math notranslate nohighlight">\(B=0\)</span>) splits into two energy levels due to the interaction of a proton spin (red arrow) with the external magnetic field.</p>
-<p>The magnetic moment of the proton spin may take two expectation values in the magnetic field, which are characterized by the magnetic quantum number <span class="math notranslate nohighlight">\(m_Z=\pm 1/2\)</span>. The magnetic moment projected along the magnetic field direction is then</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\mu_Z=\gamma m_Z \hbar\]</div></div>
-<p>and the energy of the states</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[E(m_Z)=-\mu_Z B=-\gamma m_Z \hbar B\]</div></div>
-<p>with <span class="math notranslate nohighlight">\(\gamma=2.675222005\times 10^{8}\; \mathrm{s}^{-1} \mathrm{T}^{-1}\)</span> being the gyromagnetic ratio of the proton. The energy difference for a nonzero magnetic field is therefore given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\Delta E=\gamma \hbar B=\hbar \omega_\mathrm{L}\]</div></div>
-<p>which results for a magnetic field of <span class="math notranslate nohighlight">\(B=1\; \mathrm{T}\)</span> in <span class="math notranslate nohighlight">\(\Delta E\approx 1.76\times 10^{-7}\;{\rm eV}\)</span> or a Larmor frequency of <span class="math notranslate nohighlight">\(\omega_\mathrm{L}=42\; {\rm MHz}\)</span>. This energy difference is almost negligible as compared to the thermal energy at room temperature <span class="math notranslate nohighlight">\(k_\mathrm{B}T=2.6\times 10^{-2}\;{\rm eV}\)</span>. Yet, this small energy difference is used to give the contrast in NMR and related techniques such as MRI.</p>
-<p>Using the Boltzmann distribution we can now calculate the ratio of the population of spins in the lower or excited state</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=\exp\left (-\frac{\Delta E}{k_\mathrm{B} T} \right )\]</div></div>
-<p>which is very close to one:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=0.99999332.\]</div></div>
-<p>If you consider now a volume of <span class="math notranslate nohighlight">\(V=1\;{\rm {\mu m}}^3\)</span> water, then you would roughly have about <span class="math notranslate nohighlight">\(N=6.7\times 10^{19}\)</span> protons. This then means that the excess number of protons in the excited state is just <span class="math notranslate nohighlight">\(N_{+\frac{1}{2}}-N_{-\frac{1}{2}}=4.5\times 10^{12}\)</span>, which is extremely low. Thus, to detect something in NMR or MRI, a certain number of protons in the volume is required.</p>
-</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -802,7 +779,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">When a Macrostate is a Microstate</div>
+                <div class="title">Equipartition</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -821,7 +798,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 27, 2021. |
+            Last updated on Oct 28, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

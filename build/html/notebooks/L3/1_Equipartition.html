@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical Potential and Osmotic Pressure" href="2_Chemical_Potential.html" /><link rel="prev" title="Statistical Physics Definitions" href="../L2/3_Statistical_Physics_Definitions.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
-        <title>When a Macrostate is a Microstate - Soft Matter Lecture 21 documentation</title>
+        <title>Equipartition - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -174,8 +174,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Equipartition">Equipartition</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Equipartition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_Chemical_Potential.html">Chemical Potential and Osmotic Pressure</a></li>
 </ul>
 
@@ -207,25 +207,6 @@
 <p>This page was generated from <cite>notebooks/L3/1_Equipartition.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L3/1_Equipartition.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="When-a-Macrostate-is-a-Microstate">
-<h1>When a Macrostate is a Microstate<a class="headerlink" href="#When-a-Macrostate-is-a-Microstate" title="Permalink to this headline">¶</a></h1>
-<p>In practice, we are often interested in the likelihood that the system is in a state that is described by some macroscopic parameter <span class="math notranslate nohighlight">\(X\)</span> that we can measure. For example, for a DNA molecule inside a cell, an interesting quantity, which can be measured using fluorescent markers, is the distance R between two sites on the DNA chain. Repeated measurements of <span class="math notranslate nohighlight">\(R\)</span> can to construct the probability distribution p(R).</p>
-<p>In general, the probability of the macrostate <span class="math notranslate nohighlight">\(X\)</span> is given by the sum of probabilities of all the microstates of the system that adopt the specified value <span class="math notranslate nohighlight">\(X\)</span>,</p>
-<p><span class="math">\begin{equation}
-p(X)=\sum_{i_{X}} p_{i}=\sum_{i_{X}} \frac{1}{Z} \mathrm{e}^{-\beta E_{i}}
-\end{equation}</span></p>
-<p>For the DNA example, the sum in the above equation would run over only those microstates <span class="math notranslate nohighlight">\(i_X\)</span> that have the prescribed distance between the two labeled sites on the polymer, e.g. <span class="math notranslate nohighlight">\(X=R\)</span>. Using the basic relation between the partition function and the free energy, <span class="math notranslate nohighlight">\(G = −k_BT \ln(Z)\)</span>, we can express the probability of the macrostate X as</p>
-<p><span class="math">\begin{equation}
-p(X)=\frac{1}{Z} \mathrm{e}^{-\beta G(X)}
-\end{equation}</span></p>
-<p>where</p>
-<p><span class="math">\begin{equation}
-G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
-\end{equation}</span></p>
-<p>is the free energy of the macrostate <span class="math notranslate nohighlight">\(X\)</span>. Note that the formula for <span class="math notranslate nohighlight">\(p(X)\)</span> is identical to the Boltzmann formula for the probability of a microstate, with the energy of the microstate replaced by the free energy of the macrostate. Note that the sum on the right side of the last equation is not the partition function <span class="math notranslate nohighlight">\(Z\)</span> but that of the subensemble of microstates fulfilling the condition X, i.e. <span class="math notranslate nohighlight">\(Z_X\)</span>. Similarly, when writing down the states and weights for the macrostates
-<span class="math notranslate nohighlight">\(X\)</span>, the energy is replaced by the free energy, as shown in in the figure below. In this sense, one person’s macrostate is truly another person’s microstate.</p>
-<img alt="micro_macro" src="../../_images/micro_macro.png">
-</img></div>
 <div class="section" id="Equipartition">
 <h1>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h1>
 <p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>. We can derive a value for <span class="math notranslate nohighlight">\(\beta\)</span> with the help of the equipartition theorem.</p>
@@ -270,6 +251,29 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 </div>
 <p>Equipartition is useful in many ways. The fundamental degrees of freedom, e.g. the vibrations of a single molecule are quadratic in the bond length. Similarly all rotational degrees of freedom are as well. Their occupation is determined by a Boltzmann distribution and readily visible in molecular spectra. On more macroscopic scales it is very useful in the field of force measurements using optical tweezers.</p>
 <div class="admonition note">
+<p class="admonition-title"><strong>Example: Two-level-system</strong></p>
+<p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g., for spin systems. Such two level spin systems are, for example, very important for nuclear magnetic resonance (NMR), which is an important tool to study the structure and dynamics of soft matter.</p>
+<img alt="Two Level" src="../../_images/two_level.png">
+<p>Consider the image above, where a single energy level at zero magnetic field (<span class="math notranslate nohighlight">\(B=0\)</span>) splits into two energy levels due to the interaction of a proton spin (red arrow) with the external magnetic field.</p>
+<p>The magnetic moment of the proton spin may take two expectation values in the magnetic field, which are characterized by the magnetic quantum number <span class="math notranslate nohighlight">\(m_Z=\pm 1/2\)</span>. The magnetic moment projected along the magnetic field direction is then</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\mu_Z=\gamma m_Z \hbar\]</div></div>
+<p>and the energy of the states</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[E(m_Z)=-\mu_Z B=-\gamma m_Z \hbar B\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(\gamma=2.675222005\times 10^{8}\; \mathrm{s}^{-1} \mathrm{T}^{-1}\)</span> being the gyromagnetic ratio of the proton. The energy difference for a nonzero magnetic field is therefore given by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Delta E=\gamma \hbar B=\hbar \omega_\mathrm{L}\]</div></div>
+<p>which results for a magnetic field of <span class="math notranslate nohighlight">\(B=1\; \mathrm{T}\)</span> in <span class="math notranslate nohighlight">\(\Delta E\approx 1.76\times 10^{-7}\;{\rm eV}\)</span> or a Larmor frequency of <span class="math notranslate nohighlight">\(\omega_\mathrm{L}=42\; {\rm MHz}\)</span>. This energy difference is almost negligible as compared to the thermal energy at room temperature <span class="math notranslate nohighlight">\(k_\mathrm{B}T=2.6\times 10^{-2}\;{\rm eV}\)</span>. Yet, this small energy difference is used to give the contrast in NMR and related techniques such as MRI.</p>
+<p>Using the Boltzmann distribution we can now calculate the ratio of the population of spins in the lower or excited state</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=\exp\left (-\frac{\Delta E}{k_\mathrm{B} T} \right )\]</div></div>
+<p>which is very close to one:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{N_{-\frac{1}{2}}}{N_{+\frac{1}{2}}}=0.99999332.\]</div></div>
+<p>If you consider now a volume of <span class="math notranslate nohighlight">\(V=1\;{\rm {\mu m}}^3\)</span> water, then you would roughly have about <span class="math notranslate nohighlight">\(N=6.7\times 10^{19}\)</span> protons. This then means that the excess number of protons in the excited state is just <span class="math notranslate nohighlight">\(N_{+\frac{1}{2}}-N_{-\frac{1}{2}}=4.5\times 10^{12}\)</span>, which is extremely low. Thus, to detect something in NMR or MRI, a certain number of protons in the volume is required.</p>
+</img></div>
+<div class="admonition note">
 <p class="admonition-title"><strong>Example: Position of a Bead in an Optical Tweezer</strong></p>
 <p>In an optical tweezer, a polarizable object (e.g. a polymer bead) is hold in the intensity gradient of a focused laser beam. The nearly Gaussian intensity distribution of a focused beam leads, in first approximation to a linear force a parabolic potential and can be employed to measure tiny forces.</p>
 <img alt="tweezers" src="../../_images/tweezers.png"/>
@@ -309,6 +313,25 @@ k=\frac{k_B T}{\langle x^2\rangle }
 achieved only abotu 10 years ago, while the distribution connected to the velocities, the <strong>Maxwell-Boltzmann distribution</strong> is already known for a very long time.</p>
 <p>Take some time to have a look at the Maxwell-Boltzmann distribution again.</p>
 </div>
+</div>
+<div class="section" id="When-a-Macrostate-is-a-Microstate">
+<h1>When a Macrostate is a Microstate<a class="headerlink" href="#When-a-Macrostate-is-a-Microstate" title="Permalink to this headline">¶</a></h1>
+<p>In practice, we are often interested in the likelihood that the system is in a state that is described by some macroscopic parameter <span class="math notranslate nohighlight">\(X\)</span> that we can measure. For example, for a DNA molecule inside a cell, an interesting quantity, which can be measured using fluorescent markers, is the distance R between two sites on the DNA chain. Repeated measurements of <span class="math notranslate nohighlight">\(R\)</span> can to construct the probability distribution p(R).</p>
+<p>In general, the probability of the macrostate <span class="math notranslate nohighlight">\(X\)</span> is given by the sum of probabilities of all the microstates of the system that adopt the specified value <span class="math notranslate nohighlight">\(X\)</span>,</p>
+<p><span class="math">\begin{equation}
+p(X)=\sum_{i_{X}} p_{i}=\sum_{i_{X}} \frac{1}{Z} \mathrm{e}^{-\beta E_{i}}
+\end{equation}</span></p>
+<p>For the DNA example, the sum in the above equation would run over only those microstates <span class="math notranslate nohighlight">\(i_X\)</span> that have the prescribed distance between the two labeled sites on the polymer, e.g. <span class="math notranslate nohighlight">\(X=R\)</span>. Using the basic relation between the partition function and the free energy, <span class="math notranslate nohighlight">\(G = −k_BT \ln(Z)\)</span>, we can express the probability of the macrostate X as</p>
+<p><span class="math">\begin{equation}
+p(X)=\frac{1}{Z} \mathrm{e}^{-\beta G(X)}
+\end{equation}</span></p>
+<p>where</p>
+<p><span class="math">\begin{equation}
+G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
+\end{equation}</span></p>
+<p>is the free energy of the macrostate <span class="math notranslate nohighlight">\(X\)</span>. Note that the formula for <span class="math notranslate nohighlight">\(p(X)\)</span> is identical to the Boltzmann formula for the probability of a microstate, with the energy of the microstate replaced by the free energy of the macrostate. Note that the sum on the right side of the last equation is not the partition function <span class="math notranslate nohighlight">\(Z\)</span> but that of the subensemble of microstates fulfilling the condition X, i.e. <span class="math notranslate nohighlight">\(Z_X\)</span>. Similarly, when writing down the states and weights for the macrostates
+<span class="math notranslate nohighlight">\(X\)</span>, the energy is replaced by the free energy, as shown in in the figure below. In this sense, one person’s macrostate is truly another person’s microstate.</p>
+<img alt="micro_macro" src="../../_images/micro_macro.png"/>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -342,7 +365,7 @@ achieved only abotu 10 years ago, while the distribution connected to the veloci
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Oct 27, 2021. |
+            Last updated on Oct 28, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -367,8 +390,8 @@ achieved only abotu 10 years ago, while the distribution connected to the veloci
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">When a Macrostate is a Microstate</a></li>
-<li><a class="reference internal" href="#Equipartition">Equipartition</a></li>
+<li><a class="reference internal" href="#">Equipartition</a></li>
+<li><a class="reference internal" href="#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
 </ul>
 
           </div>
