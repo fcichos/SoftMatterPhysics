@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Phase Transitions" href="2_Phase_Transitions.html" /><link rel="prev" title="Phase Transitions" href="../L4/2_Phase_Transitions.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Phase Transitions" href="../L5/1_Phase_Transitions.html" /><link rel="prev" title="Osmotic Pressure" href="1_Osmotic_Pressure.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Gibbs Distribution - Soft Matter Lecture 21 documentation</title>
@@ -176,21 +176,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential and Osmotic Pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Phase_Transitions.html">Phase Transitions</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Gibbs Distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Gibbs Distribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Phase_Transitions.html">Phase Transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
 </ul>
 
 </div>
@@ -218,8 +214,8 @@
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L5/1_Gibbs_Distribution.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L5/1_Gibbs_Distribution.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L4/2_Gibbs_Distribution.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L4/2_Gibbs_Distribution.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <div class="section" id="Gibbs-Distribution">
 <h1>Gibbs Distribution<a class="headerlink" href="#Gibbs-Distribution" title="Permalink to this headline">¶</a></h1>
@@ -261,7 +257,7 @@ Z=\sum_{i}\exp \left ( -\frac{E_{s}^{(i)}-\mu N_{s}^{(i)}}{k_B T}\right )
 <div class="admonition note">
 <p class="admonition-title"><strong>Ligand Binding</strong></p>
 <p>As an example, we have a look at the binding of a ligand (green) to a receptor, which is indicated in the figure below.</p>
-<img alt="Two State Binding" src="../../_images/two_state_binding.png">
+<img alt="Two State Binding" src="notebooks/L4/img/two_state_binding.png">
 <p>The binding is reported by the variable <span class="math notranslate nohighlight">\(\sigma\)</span>, which can be either 0 or 1. The binding energy is therefore</p>
 <p><span class="math">\begin{equation}
 E=\sigma \varepsilon_b
@@ -297,7 +293,7 @@ Z=\sum_{\sigma=0}^{1}=\exp\left ( -\beta (\varepsilon_b \sigma- \mu \sigma) \rig
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="2_Phase_Transitions.html">
+          <a class="next-page" href="../L5/1_Phase_Transitions.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
@@ -306,14 +302,14 @@ Z=\sum_{\sigma=0}^{1}=\exp\left ( -\beta (\varepsilon_b \sigma- \mu \sigma) \rig
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../L4/2_Phase_Transitions.html">
+          <a class="prev-page" href="1_Osmotic_Pressure.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Phase Transitions</div>
+                <div class="title">Osmotic Pressure</div>
                 
               </div>
             </a>
@@ -326,7 +322,7 @@ Z=\sum_{\sigma=0}^{1}=\exp\left ( -\beta (\varepsilon_b \sigma- \mu \sigma) \rig
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L5/1_Gibbs_Distribution.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L4/2_Gibbs_Distribution.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>

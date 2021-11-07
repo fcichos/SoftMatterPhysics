@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Thermodynamics and Statistical Physics Revisited" href="2_Thermodynamics_Statistics.html" /><link rel="prev" title="Exercises and Exam" href="../../course-info/exam.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Phase Transitions" href="../L5/1_Phase_Transitions.html" /><link rel="prev" title="Osmotic Pressure" href="1_Osmotic_Pressure.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
-        <title>Introduction - Soft Matter Lecture 21 documentation</title>
+        <title>Gibbs Distribution - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -164,9 +164,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/exam.html">Exercises and Exam</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
 <ul>
@@ -179,9 +179,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Gibbs Distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
 <ul>
@@ -214,13 +214,76 @@
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L1/1_introduction.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L1/1_introduction.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L4/2_Gibbs_Distribution.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L4/2_Gibbs_Distribution.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Introduction">
-<h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
-<p><img alt="intro" class="bg-primary mb-1 no-scaled-link" src="../../_images/intro.png" style="width: 800px;"/></p>
-<p><a class="reference external" href="https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2021-22/">Lecture Slides</a></p>
+<div class="section" id="Gibbs-Distribution">
+<h1>Gibbs Distribution<a class="headerlink" href="#Gibbs-Distribution" title="Permalink to this headline">¶</a></h1>
+<p>So far we have considered closed systems and derived and studied the Boltzmann distribution. Now our systems are open the particle number might change. The Boltzmann distribution is therefore not anymore sufficient.</p>
+<p><span class="math">\begin{equation}
+\frac{p(E_{s}^{(1)},N_s^{(1)})}{p(E_{s}^{(2)},N_s^{(2)})}=\frac{W_r(E_{tot}-E_s^{(1)},N_{tot}^{(1)})}{W_r(E_{tot}-E_s^{(2)},N_{tot}^{(2)})}
+\end{equation}</span></p>
+<p>Hereby, the <span class="math notranslate nohighlight">\(E_{s}^{(i)}, N_s^{(i)}\)</span> denote the energy and the number of particles in the system. The <span class="math notranslate nohighlight">\(W_{r}\)</span> indicate the number of available states to the reservoir, when the system is in a specific energy state with a specific number of particles. Similar to the derivation of the Boltzmann distribution we can now assert, that the total number of available states of the system plut reservoir is given by</p>
+<p><span class="math">\begin{equation}
+W_{tot}(E_{tot}-E_{s}^{(1)},N_{tot}-N_{s}^{(1)})=1\times W_{r}(E_{tot}-E_{s}^{(1)},N_{tot}-N_{s}^{(1)})
+\end{equation}</span></p>
+<p>and using again <span class="math notranslate nohighlight">\(S=k_B \ln(W)\)</span> or <span class="math notranslate nohighlight">\(W=\exp(S/k_B)\)</span> we find</p>
+<p><span class="math">\begin{equation}
+\frac{W_r^{(1)}}{W_r^{(2)}}=\frac{\exp(S_r^{(1)}/k_B )}{\exp(S_r^{(2)}/k_B)}
+\end{equation}</span></p>
+<p>We can now use a first order expansion again to get</p>
+<p><span class="math">\begin{equation}
+S_{r}(E_{tot}-E_{s},N_{tot}-N_s)\approx S_{r}(E_{tot},N_{tot})-\frac{\partial S_{r}}{\partial E}E_{s}-\frac{\partial S_{r}}{\partial N}E_{N_s}
+\end{equation}</span></p>
+<p>The partial derivatives can be converted with the help of the known thermodynamic relations</p>
+<p><span class="math">\begin{equation}
+\frac{\partial S_{r}}{\partial E}\bigg|_{V,N} =\frac{1}{T}
+\end{equation}</span></p>
+<p>and</p>
+<p><span class="math">\begin{equation}
+\frac{\partial S_{r}}{\partial N}\bigg|_{V,E}=-\frac{\mu}{T}
+\end{equation}</span></p>
+<p>which finally yields the Gibbs distribution:</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Gibbs-distribution</strong></p>
+<p><span class="math">\begin{equation}
+p(E_{s}^{(1)},N_s^{(1)})=\frac{1}{Z}\exp\left ( -\frac{E_{s}^{(1)}-\mu N_{s}^{(1)} }{k_B T} \right )
+\end{equation}</span></p>
+<p>with the <strong>grand partition function</strong></p>
+<p><span class="math">\begin{equation}
+Z=\sum_{i}\exp \left ( -\frac{E_{s}^{(i)}-\mu N_{s}^{(i)}}{k_B T}\right )
+\end{equation}</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><strong>Ligand Binding</strong></p>
+<p>As an example, we have a look at the binding of a ligand (green) to a receptor, which is indicated in the figure below.</p>
+<img alt="Two State Binding" src="notebooks/L4/img/two_state_binding.png">
+<p>The binding is reported by the variable <span class="math notranslate nohighlight">\(\sigma\)</span>, which can be either 0 or 1. The binding energy is therefore</p>
+<p><span class="math">\begin{equation}
+E=\sigma \varepsilon_b
+\end{equation}</span></p>
+<p>with <span class="math notranslate nohighlight">\(\varepsilon_b&lt;0\)</span>, since the ligand wants to bind. The grand partition function can therefore be written as</p>
+<p><span class="math">\begin{equation}
+Z=\sum_{\rm states}=\exp\left ( -\beta (E_{\rm state}- \mu N_{\rm state}) \right )
+\end{equation}</span></p>
+<p>in which the chemical potential <span class="math notranslate nohighlight">\(\mu\)</span> reflects the contact with the particle reservoir.</p>
+<p><span class="math">\begin{equation}
+Z=\sum_{\sigma=0}^{1}=\exp\left ( -\beta (\varepsilon_b \sigma- \mu \sigma) \right )=1+\exp(-\beta (\varepsilon_b -\mu ))
+\end{equation}</span></p>
+<p>From that we can calculate the mean bounda ligands to be</p>
+<p><span class="math">\begin{equation}
+\langle N \rangle =\frac{\exp(-\beta (\varepsilon_b -\mu ))}{1+\exp(-\beta (\varepsilon_b -\mu ))}
+\end{equation}</span></p>
+<p>Using</p>
+<p><span class="math">\begin{equation}
+\mu = \mu_0 + k_B T \ln \left ( \frac{c}{c_0}\right )
+\end{equation}</span></p>
+<p>we can finally write</p>
+<p><span class="math">\begin{equation}
+\langle N \rangle =\frac{c/c_0 \exp(-\beta \Delta \varepsilon_b)}{1+\frac{c}{c_0}\exp(-\beta \Delta \varepsilon_b)}
+\end{equation}</span></p>
+<p>with <span class="math notranslate nohighlight">\(\Delta \varepsilon=\varepsilon_b-\mu_0\)</span>, which is the energy freed when taking the ligand from the solution and placing it at the acceptor.</p>
+</img></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -230,23 +293,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="2_Thermodynamics_Statistics.html">
+          <a class="next-page" href="../L5/1_Phase_Transitions.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Thermodynamics and Statistical Physics Revisited</div>
+                <div class="title">Phase Transitions</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../../course-info/exam.html">
+          <a class="prev-page" href="1_Osmotic_Pressure.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Exercises and Exam</div>
+                <div class="title">Osmotic Pressure</div>
                 
               </div>
             </a>
@@ -259,7 +322,7 @@
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L1/1_introduction.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L4/2_Gibbs_Distribution.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
