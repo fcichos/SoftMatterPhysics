@@ -58,7 +58,7 @@ Welcome to Soft Matter Physics Lecture Website!
    :maxdepth: 2
    :caption: Lecture 6:
    
-   notebooks/L5/1_Solid_Liquid_Phase_Transitions.ipynb
+   notebooks/L6/1_Solid_Liquid_Phase_Transitions.ipynb
    
    
 Indices and tables
