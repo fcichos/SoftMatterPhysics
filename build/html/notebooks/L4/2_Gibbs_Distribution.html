@@ -218,46 +218,294 @@
           </label>
         </div>
         <article role="main">
-          <div class="admonition note">
+          
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="admonition note">
 <p>This page was generated from <cite>notebooks/L4/2_Gibbs_Distribution.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L4/2_Gibbs_Distribution.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <div class="section" id="Gibbs-Distribution">
 <h1>Gibbs Distribution<a class="headerlink" href="#Gibbs-Distribution" title="Permalink to this headline">¶</a></h1>
-<p>So far we have considered closed systems and derived and studied the Boltzmann distribution. Now our systems are open and the particle number might change. The Boltzmann distribution is therefore not anymore sufficient to describe the probability to find a system with an energy <span class="math notranslate nohighlight">\(E_s\)</span> and a particle number <span class="math notranslate nohighlight">\(N_s\)</span> in contact with a reservoir. To derive a distribution for this new situation, we can use one of the ways, which also allowed the derivation of the Boltzmann distribution. This
-route is considering the number of possible states in the either the system (index <span class="math notranslate nohighlight">\(s\)</span>), the reservoir (index <span class="math notranslate nohighlight">\(r\)</span>)</p>
+<p>So far, we have considered closed systems and derived and studied the Boltzmann distribution. Now our systems are open and the particle number might change. The Boltzmann distribution is therefore not anymore sufficient to describe the probability to find a system with an energy <span class="math notranslate nohighlight">\(E_\mathrm{s}\)</span> and a particle number <span class="math notranslate nohighlight">\(N_\mathrm{s}\)</span> in contact with a reservoir. To derive a distribution for this new situation, we can use one of the ways, which also allowed the derivation of the Boltzmann
+distribution. This route is, again, considering the ratio of the proababilities of two arbitrary states of the system (index s) which is equal to the ratio of the numbers of possible states of the reservoir (index <span class="math notranslate nohighlight">\(r\)</span>):</p>
 <p><span class="math">\begin{equation}
-\frac{p(E_{s}^{(1)},N_s^{(1)})}{p(E_{s}^{(2)},N_s^{(2)})}=\frac{W_r(E_{tot}-E_s^{(1)},N_{tot}^{(1)})}{W_r(E_{tot}-E_s^{(2)},N_{tot}^{(2)})}
+\frac{p(E_\mathrm{s}^{(1)},N_\mathrm{s}^{(1)})}{p(E_\mathrm{s}^{(2)},N_\mathrm{s}^{(2)})}=\frac{W_\mathrm{r}(E_\mathrm{tot}-E_\mathrm{s}^{(1)},N_\mathrm{tot}^{(1)})}{W_\mathrm{r}(E_\mathrm{tot}-E_\mathrm{s}^{(2)},N_\mathrm{tot}^{(2)})}
 \end{equation}</span></p>
-<p>Hereby, the <span class="math notranslate nohighlight">\(E_{s}^{(i)}, N_s^{(i)}\)</span> denote the energy and the number of particles in the system. The <span class="math notranslate nohighlight">\(W_{r}\)</span> indicate the number of available states to the reservoir, when the system is in a specific energy state with a specific number of particles. Similar to the derivation of the Boltzmann distribution we can now assert, that the total number of available states of the system plut reservoir is given by</p>
+<p>Hereby, the <span class="math notranslate nohighlight">\(E_\mathrm{s}^{(i)}, N_\mathrm{s}^{(i)}\)</span> denote the energy and the number of particles in the system in the <span class="math notranslate nohighlight">\(i\)</span>th state. <span class="math notranslate nohighlight">\(W_\mathrm{r}\)</span> indicates the number of available states to the reservoir, when the system is in a specific energy state with a specific number of particles. Similar to the derivation of the Boltzmann distribution, we can now assert that the total number of available states of the system and the reservoir is given by</p>
 <p><span class="math">\begin{equation}
-W_{tot}(E_{tot}-E_{s}^{(1)},N_{tot}-N_{s}^{(1)})=1\times W_{r}(E_{tot}-E_{s}^{(1)},N_{tot}-N_{s}^{(1)})
+W_\mathrm{tot}(E_\mathrm{tot}-E_\mathrm{s}^{(1)},N_\mathrm{tot}-N_\mathrm{s}^{(1)})=1\times W_\mathrm{r}(E_\mathrm{tot}-E_\mathrm{s}^{(1)},N_\mathrm{tot}-N_\mathrm{s}^{(1)}).
 \end{equation}</span></p>
-<p>and using again <span class="math notranslate nohighlight">\(S=k_B \ln(W)\)</span> or <span class="math notranslate nohighlight">\(W=\exp(S/k_B)\)</span> we find</p>
+<p>Note that the system is in exactly one state in this case. Utilizing again that <span class="math notranslate nohighlight">\(S=k_\mathrm{B} \ln(W)\)</span> or <span class="math notranslate nohighlight">\(W=\exp(S/k_\mathrm{B})\)</span>, we find</p>
 <p><span class="math">\begin{equation}
-\frac{W_r^{(1)}}{W_r^{(2)}}=\frac{\exp(S_r^{(1)}/k_B )}{\exp(S_r^{(2)}/k_B)}
+\frac{W_\mathrm{r}^{(1)}}{W_\mathrm{r}^{(2)}}=\frac{\exp(S_\mathrm{r}^{(1)}/k_\mathrm{B})}{\exp(S_\mathrm{r}^{(2)}/k_\mathrm{B})}.
 \end{equation}</span></p>
-<p>We can now use a first order expansion again to get</p>
+<p>Once more, we can use a first order expansion to get</p>
 <p><span class="math">\begin{equation}
-S_{r}(E_{tot}-E_{s},N_{tot}-N_s)\approx S_{r}(E_{tot},N_{tot})-\frac{\partial S_{r}}{\partial E}E_{s}-\frac{\partial S_{r}}{\partial N}E_{N_s}
+S_\mathrm{r}(E_\mathrm{tot}-E_\mathrm{s},N_\mathrm{tot}-N_\mathrm{s})\approx S_\mathrm{r}(E_\mathrm{tot},N_\mathrm{tot})-\frac{\partial S_\mathrm{r}}{\partial E}E_\mathrm{s}-\frac{\partial S_\mathrm{r}}{\partial N}E_{N_\mathrm{s}}.
 \end{equation}</span></p>
 <p>The partial derivatives can be converted with the help of the known thermodynamic relations</p>
 <p><span class="math">\begin{equation}
-\frac{\partial S_{r}}{\partial E}\bigg|_{V,N} =\frac{1}{T}
+\frac{\partial S_\mathrm{r}}{\partial E}\bigg|_{V,N} =\frac{1}{T}
 \end{equation}</span></p>
 <p>and</p>
 <p><span class="math">\begin{equation}
-\frac{\partial S_{r}}{\partial N}\bigg|_{V,E}=-\frac{\mu}{T}
+\frac{\partial S_\mathrm{r}}{\partial N}\bigg|_{V,E}=-\frac{\mu}{T}
 \end{equation}</span></p>
 <p>which finally yields the Gibbs distribution:</p>
 <div class="admonition warning">
-<p class="admonition-title"><strong>Gibbs-distribution</strong></p>
+<p class="admonition-title"><strong>Gibbs distribution</strong></p>
 <p><span class="math">\begin{equation}
-p(E_{s}^{(1)},N_s^{(1)})=\frac{1}{Z}\exp\left ( -\frac{E_{s}^{(1)}-\mu N_{s}^{(1)} }{k_B T} \right )
+p(E_\mathrm{s}^{(1)},N_\mathrm{s}^{(1)})=\frac{1}{Z}\exp\left ( -\frac{E_\mathrm{s}^{(1)}-\mu N_\mathrm{s}^{(1)} }{k_\mathrm{B} T} \right )
 \end{equation}</span></p>
 <p>with the <strong>grand partition function</strong></p>
 <p><span class="math">\begin{equation}
-Z=\sum_{i}\exp \left ( -\frac{E_{s}^{(i)}-\mu N_{s}^{(i)}}{k_B T}\right )
+Z=\sum_{i}\exp \left ( -\frac{E_\mathrm{s}^{(i)}-\mu N_\mathrm{s}^{(i)}}{k_\mathrm{B} T}\right ).
 \end{equation}</span></p>
 </div>
 <div class="admonition note">
@@ -266,30 +514,39 @@ Z=\sum_{i}\exp \left ( -\frac{E_{s}^{(i)}-\mu N_{s}^{(i)}}{k_B T}\right )
 <img alt="Two State Binding" src="../../_images/two_state_binding.png">
 <p>The binding is reported by the variable <span class="math notranslate nohighlight">\(\sigma\)</span>, which can be either 0 or 1. The binding energy is therefore</p>
 <p><span class="math">\begin{equation}
-E=\sigma \varepsilon_b
+E=\sigma \varepsilon_\mathrm{b}
 \end{equation}</span></p>
-<p>with <span class="math notranslate nohighlight">\(\varepsilon_b&lt;0\)</span>, since the ligand wants to bind. The grand partition function can therefore be written as</p>
+<p>with <span class="math notranslate nohighlight">\(\varepsilon_\mathrm{b}&lt;0\)</span>, since the ligand wants to bind. The grand partition function</p>
 <p><span class="math">\begin{equation}
-Z=\sum_{\rm states}=\exp\left ( -\beta (E_{\rm state}- \mu N_{\rm state}) \right )
+Z=\sum_{\rm states}\exp\left ( -\beta (E_{\rm state}- \mu N_{\rm state}) \right ),
 \end{equation}</span></p>
-<p>in which the chemical potential <span class="math notranslate nohighlight">\(\mu\)</span> reflects the contact with the particle reservoir.</p>
+<p>in which the chemical potential <span class="math notranslate nohighlight">\(\mu\)</span> reflects the contact with the particle reservoir and <span class="math notranslate nohighlight">\(\beta=(k_\mathrm{B}T)^{-1}\)</span>, can therefore be written as:</p>
 <p><span class="math">\begin{equation}
-Z=\sum_{\sigma=0}^{1}=\exp\left ( -\beta (\varepsilon_b \sigma- \mu \sigma) \right )=1+\exp(-\beta (\varepsilon_b -\mu ))
+Z=\sum_{\sigma=0}^{1}\exp\left ( -\beta (\varepsilon_\mathrm{b} \sigma- \mu \sigma) \right )=1+\exp(-\beta (\varepsilon_\mathrm{b} -\mu )).
 \end{equation}</span></p>
-<p>From that we can calculate the mean bounda ligands to be</p>
+<p>From that we can calculate the mean number of bounded ligands to be</p>
 <p><span class="math">\begin{equation}
-\langle N \rangle =\frac{\exp(-\beta (\varepsilon_b -\mu ))}{1+\exp(-\beta (\varepsilon_b -\mu ))}
+\langle N \rangle =\frac{\exp(-\beta (\varepsilon_\mathrm{b} -\mu ))}{1+\exp(-\beta (\varepsilon_\mathrm{b} -\mu ))}.
 \end{equation}</span></p>
 <p>Using</p>
 <p><span class="math">\begin{equation}
-\mu = \mu_0 + k_B T \ln \left ( \frac{c}{c_0}\right )
+\mu = \mu_0 + k_\mathrm{B} T \ln \left ( \frac{c}{c_0}\right )
 \end{equation}</span></p>
 <p>we can finally write</p>
 <p><span class="math">\begin{equation}
-\langle N \rangle =\frac{c/c_0 \exp(-\beta \Delta \varepsilon_b)}{1+\frac{c}{c_0}\exp(-\beta \Delta \varepsilon_b)}
+\langle N \rangle =\frac{c/c_0 \exp(-\beta \Delta \varepsilon_\mathrm{b})}{1+\frac{c}{c_0}\exp(-\beta \Delta \varepsilon_\mathrm{b})}
 \end{equation}</span></p>
-<p>with <span class="math notranslate nohighlight">\(\Delta \varepsilon=\varepsilon_b-\mu_0\)</span>, which is the energy freed when taking the ligand from the solution and placing it at the acceptor.</p>
+<p>with <span class="math notranslate nohighlight">\(\Delta \varepsilon_\mathrm{b}=\varepsilon_\mathrm{b}-\mu_0\)</span>, which is the energy freed when taking the ligand from the solution and placing it at the acceptor.</p>
 </img></div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -323,7 +580,7 @@ Z=\sum_{\sigma=0}^{1}=\exp\left ( -\beta (\varepsilon_b \sigma- \mu \sigma) \rig
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Nov 08, 2021. |
+            Last updated on Nov 10, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

@@ -699,30 +699,30 @@ F=-k_\mathrm{B} T \ln(Z)
 <h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this headline">¶</a></h3>
 <p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.</p>
 <img alt="Test" src="../../_images/entropy_calc.png"/>
-<p>System (index S) and reservoir (index R) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm R}+E_{\rm S}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_{\rm s}^{(i)})\)</span> with the energy <span class="math notranslate nohighlight">\(E_{\rm s}^{(i)}\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,</p>
+<p>System (index s) and reservoir (index r) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm r}+E_{\rm s}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_{\rm s}^{(i)})\)</span> with the energy <span class="math notranslate nohighlight">\(E_{\rm s}^{(i)}\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,</p>
 <p><span class="math">\begin{equation}
-\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}.
+\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})}{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})}.
 \end{equation}</span></p>
-<p>Here, the function <span class="math notranslate nohighlight">\(W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})\)</span> is the number of states available to the reservoir, when the system is having the energy <span class="math notranslate nohighlight">\(E_{\rm S}^{(1)}\)</span>.</p>
+<p>Here, the function <span class="math notranslate nohighlight">\(W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})\)</span> is the number of states available to the reservoir, when the system is having the energy <span class="math notranslate nohighlight">\(E_{\rm s}^{(1)}\)</span>.</p>
 <p>We can now rewrite the above equation in terms of the entropy using <span class="math notranslate nohighlight">\(W(S(E))=\exp(S(E)/k_\mathrm{B})\)</span> such that</p>
 <p><span class="math">\begin{equation}
-\frac{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})}{W_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})}=\frac{\exp(S_{\rm R}(E_{\rm tot}-E_{\rm S}^{(1)})/k_{\rm B})}{\exp(S_{\rm R}(E_{\rm tot}-E_{\rm S}^{(2)})/k_{\rm B})}.
+\frac{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})}{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})}=\frac{\exp(S_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})/k_{\rm B})}{\exp(S_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})/k_{\rm B})}.
 \end{equation}</span></p>
 <p>We may now expand the entropy to first order</p>
 <p><span class="math">\begin{equation}
-S_{\rm R}(E_{\rm tot}-E_{\rm S})\approx S_{\rm R}(E_{\rm tot})-\frac{\partial S_{\rm R}}{\partial E}E_{\rm S}
+S_{\rm r}(E_{\rm tot}-E_{\rm s})\approx S_{\rm r}(E_{\rm tot})-\frac{\partial S_{\rm r}}{\partial E}E_{\rm s}
 \end{equation}</span></p>
-<p>considering that <span class="math notranslate nohighlight">\(E_{\rm S}\)</span> is only very tiny as compared to the total energy of the reservoir. Using the thermodynamic identity that</p>
+<p>considering that <span class="math notranslate nohighlight">\(E_{\rm s}\)</span> is only very tiny as compared to the total energy of the reservoir. Using the thermodynamic identity that</p>
 <p><span class="math">\begin{equation}
-\frac{\partial S_{\rm R}}{\partial E}|_{V,N}=\frac{1}{T}
+\frac{\partial S_{\rm r}}{\partial E}|_{V,N}=\frac{1}{T}
 \end{equation}</span></p>
 <p>we finally find</p>
 <p><span class="math">\begin{equation}
-\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{\exp(-E_{\rm S}^{(1)}/k_{\rm B}T)}{\exp(-E_{\rm S}^{(2)}/k_{\rm B}T)}
+\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{\exp(-E_{\rm s}^{(1)}/k_{\rm B}T)}{\exp(-E_{\rm s}^{(2)}/k_{\rm B}T)}
 \end{equation}</span></p>
 <p>which corresponds to the ratio of two Boltzmann distributions</p>
 <p><span class="math">\begin{equation}
-p(E_{\rm S}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm S}^{(i)}}{k_{\rm B} T}\right),
+p(E_{\rm s}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm s}^{(i)}}{k_{\rm B} T}\right),
 \end{equation}</span></p>
 <p>where <span class="math notranslate nohighlight">\(Z\)</span> is the previously mentioned normalization factor, which is called <em>partition function</em>.</p>
 <div class="admonition note">
@@ -813,7 +813,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Nov 08, 2021. |
+            Last updated on Nov 10, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
