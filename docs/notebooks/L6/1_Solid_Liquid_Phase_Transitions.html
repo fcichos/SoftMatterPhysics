@@ -511,27 +511,27 @@ result, the liquid cannot freeze directly at the freezing temperature. To freeze
 <h2>Kinetics of the Liquid–Solid Phase Transition<a class="headerlink" href="#Kinetics-of-the-Liquid–Solid-Phase-Transition" title="Permalink to this headline">¶</a></h2>
 <p>To start the phase transition from a liquid to a solid in the undercooled liquid, a nucleus of a certain size has to appear from thermal fluctuations. This goes along the lines we discussed for the liquid-liquid phase transitions. To create a nucleus of a radius <span class="math notranslate nohighlight">\(r\)</span> we need a free energy change</p>
 <p><span class="math">\begin{equation}
-\Delta G= \frac{4}{3}\pi r^3\Delta G_b+4\pi r^2\gamma_{sl},
+\Delta G= \frac{4}{3}\pi r^3\Delta G_\mathrm{b}+4\pi r^2\gamma_{\rm sl},
 \end{equation}</span></p>
-<p>where <span class="math notranslate nohighlight">\(ΔG_b\)</span> is the free energy change per unit volume, when creating the volume phase of the solid material.<span class="math notranslate nohighlight">\(γ_{sl}\)</span> denotes the interfacial free energy for the solid/liquid contact. We also know that at a first-order phase transition all energy inserted into the system (the latent heat <span class="math notranslate nohighlight">\(ΔH_m\)</span> at the melting temperature <span class="math notranslate nohighlight">\(T_m\)</span>) is going into a change in the entropy of the system, i.e.,</p>
+<p>where <span class="math notranslate nohighlight">\(ΔG_\mathrm{b}\)</span> is the free energy change per unit volume, when creating the volume phase of the solid material. <span class="math notranslate nohighlight">\(γ_{\rm sl}\)</span> denotes the interfacial free energy for the solid/liquid contact. We also know that at a first-order phase transition all energy inserted into the system (the latent heat <span class="math notranslate nohighlight">\(ΔH_\mathrm{m}\)</span> at the melting temperature <span class="math notranslate nohighlight">\(T_\mathrm{m}\)</span>) is going into a change in the entropy of the system, i.e.,</p>
 <p><span class="math">\begin{equation}
-\Delta S_{m}=\left (\frac{\partial G_{s}}{\partial T}\right )_{p}-\left (\frac{\partial G_{l}}{\partial T}\right )_{p}=\frac{\Delta H_{m}}{T_{m}}.
+\Delta S_\mathrm{m}=\left (\frac{\partial G_{\rm s}}{\partial T}\right )_{p}-\left (\frac{\partial G_{\rm l}}{\partial T}\right )_{p}=\frac{\Delta H_\mathrm{m}}{T_\mathrm{m}}.
 \end{equation}</span></p>
 <p>We can, therefore, extrapolate the free energy change at the undercooled temperature by</p>
 <p><span class="math">\begin{equation}
-\Delta G_{b}=-\frac{\Delta H_{m}}{T_{m}}\Delta T
+\Delta G_{\rm b}=-\frac{\Delta H_{\rm m}}{T_{\rm m}}\Delta T
 \end{equation}</span></p>
 <p>which yields</p>
 <p><span class="math">\begin{equation}
-\Delta G= -\frac{4}{3}\pi r^3\frac{\Delta H_{m}}{T_{m}}\Delta T +4\pi r^2\gamma_{sl}.
+\Delta G= -\frac{4}{3}\pi r^3\frac{\Delta H_{\rm m}}{T_{\rm m}}\Delta T +4\pi r^2\gamma_{\rm sl}.
 \end{equation}</span></p>
 <p>According to our nucleation theory, this yields a critical radius of the nucleus of</p>
 <p><span class="math">\begin{equation}
-r^{*}=\frac{2\gamma_{sl}T_{m}}{\Delta H_{m}\Delta T}.
+r^{*}=\frac{2\gamma_{\rm sl}T_{\rm m}}{\Delta H_{\rm m}\Delta T}.
 \end{equation}</span></p>
-<p>A nucleus of size <span class="math notranslate nohighlight">\(r&lt;r^*\)</span> would thus have the tendency to dissolve again, while a nucleus of size <span class="math notranslate nohighlight">\(r&gt;r^*\)</span> is ready to grow continuously. The critical radius of the nucleus is corresponding to a free energy barrier</p>
+<p>A nucleus of size <span class="math notranslate nohighlight">\(r&lt;r^*\)</span> would thus have the tendency to dissolve again, while a nucleus of size <span class="math notranslate nohighlight">\(r&gt;r^*\)</span> is ready to grow continuously. The critical radius of the nucleus corresponds to a free energy barrier</p>
 <p><span class="math">\begin{equation}
-\Delta G^{*}=\frac{16\pi}{3}\gamma_{sl}^3\left (\frac{T_{m}}{\Delta H_{m}}\right )^2\frac{1}{\Delta T^2}.
+\Delta G^{*}=\frac{16\pi}{3}\gamma_{\rm sl}^3\left (\frac{T_{\rm m}}{\Delta H_{\rm m}}\right )^2\frac{1}{\Delta T^2}.
 \end{equation}</span></p>
 <p>The probability of critical nucleus formation can thus be determined from the Boltzmann factor</p>
 <p><span class="math">\begin{equation}
@@ -616,19 +616,19 @@ e^{-\frac{\Delta G^{*}}{k_{\rm B}T}}
 </div>
 <div class="section" id="Heterogeneous-Nucleation">
 <h2>Heterogeneous Nucleation<a class="headerlink" href="#Heterogeneous-Nucleation" title="Permalink to this headline">¶</a></h2>
-<p>To study the process of heterogeneous nucleation we have a look at a container wall, which acts as a nucleation catalyst. At this container wall, a solid droplet in form of a spherical cap exists.</p>
+<p>To study the process of heterogeneous nucleation, we have a look at a container wall, which acts as a nucleation catalyst. At this container wall, a solid droplet in form of a spherical cap exists.</p>
 <img alt="image-5.png" src="../../_images/heterogeneous_nucleation.png"/>
-<p>The solid material shall have a contact angle of <span class="math notranslate nohighlight">\(θ\)</span> with the catalyst surface. In this case, the contact angle obeys Youngs law <span class="math notranslate nohighlight">\(γ_sl\cos(θ)=γ_{cl}-γ_{cs}\)</span>. Further, for the calculation of the volume and interfacial contributions, we need the volume and the surfaces of the spherical cap as well as the surface at the catalyst interface, which all together read</p>
+<p>The solid material shall have a contact angle of <span class="math notranslate nohighlight">\(θ\)</span> with the catalyst surface. In this case, the contact angle obeys Young’s law <span class="math notranslate nohighlight">\(γ_{\rm sl}\cos(θ)=γ_{\rm cl}-γ_{\rm cs}\)</span>. Further, for the calculation of the volume and interfacial contributions, we need the volume and the surfaces of the spherical cap as well as the surface at the catalyst interface, which all together read</p>
 <p><span class="math">\begin{eqnarray}
-V&amp;=&amp; \frac{1}{3}\pi r^3 (1-\cos(\theta))^2(2+\cos(\theta))\\ S_{sl}&amp;=&amp;2\pi r^2 (1-\cos(\theta))\\ S_{cs}&amp;=&amp;\pi r^2\sin^2(\theta)
+V&amp;=&amp; \frac{1}{3}\pi r^3 (1-\cos(\theta))^2(2+\cos(\theta)),\\ S_{\rm sl}&amp;=&amp;2\pi r^2 (1-\cos(\theta)),\\ S_{\rm cs}&amp;=&amp;\pi r^2\sin^2(\theta).
 \end{eqnarray}</span></p>
-<p>Following the earlier arguments, we can write down the free energy change upon nucleation of a spherical cap of a radiusrat the catalyst surface as</p>
+<p>Following the earlier arguments, we can write down the free energy change upon nucleation of a spherical cap of a radius at the catalyst surface as</p>
 <p><span class="math">\begin{eqnarray}
-\Delta G(r)&amp;=&amp; \frac{1}{3}\pi r^3 (1-\cos(\theta))^2(2+\cos(\theta))\\ &amp;&amp;+ \gamma_{sl}2\pi r^2 (1-\cos(\theta))\\ &amp;&amp;+ \gamma_{cs}\pi r^2 \sin^2(\theta)\\ &amp;&amp;-\gamma_{cl}\pi r^2 \sin^2(\theta)\\
+\Delta G(r)&amp;=&amp; \frac{1}{3}\pi r^3 (1-\cos(\theta))^2(2+\cos(\theta))\\ &amp;&amp;+ \gamma_{\rm sl}2\pi r^2 (1-\cos(\theta))\\ &amp;&amp;+ \gamma_{\rm cs}\pi r^2 \sin^2(\theta)\\ &amp;&amp;-\gamma_{\rm cl}\pi r^2 \sin^2(\theta).\\
 \end{eqnarray}</span></p>
-<p>With the help of Youngs equation, we can simplify this to</p>
+<p>With the help of Young’s equation, we can simplify this to</p>
 <p><span class="math">\begin{equation}
-\Delta G^{*}=\frac{16\pi}{3}\gamma_{sl}^3\left (\frac{T_{m}}{\Delta H_{m}}\right)^2 \frac{1}{\Delta T^2}\left ( \frac{(1-\cos(\theta))^2(2+\cos(\theta))}{4}\right ).
+\Delta G^{*}=\frac{16\pi}{3}\gamma_{\rm sl}^3\left (\frac{T_{\rm m}}{\Delta H_{\rm m}}\right)^2 \frac{1}{\Delta T^2}\left ( \frac{(1-\cos(\theta))^2(2+\cos(\theta))}{4}\right ).
 \end{equation}</span></p>
 <p>The latter fraction is actually only an additional geometrical factor that depends only on <span class="math notranslate nohighlight">\(θ\)</span>,while all factors before just resemble the homogeneous nucleation result. The graph below displays this geometrical factor <span class="math notranslate nohighlight">\(f(θ)\)</span> as a function of the contact angle <span class="math notranslate nohighlight">\(θ\)</span> and indicates that the creation of a nucleus with a certain contact angle at a solid wall considerably lowers the nucleation barrier. The nucleation barrier can thus be easily as low as thermal energy as shown in the
 graph below for the water/ice system. The nucleus size in that model stays the same, while a contact angle of about 14° yields a nucleation barrier of <span class="math notranslate nohighlight">\(1\, k_{\rm B}T\)</span>.</p>
@@ -747,7 +747,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Nov 10, 2021. |
+            Last updated on Nov 14, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
