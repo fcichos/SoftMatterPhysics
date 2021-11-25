@@ -1,0 +1,305 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "6b6ae97d-4d73-44aa-9972-ecc80a9337c4",
+   "metadata": {},
+   "source": [
+    "# van der Waals Interactions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7a1c2d5d-2a84-41e1-9ed9-430563ecc836",
+   "metadata": {},
+   "source": [
+    "So far we have considered electrostatic forces between charged and dipolar molecules. We have also introduced interactions which rely on the polarizability of molecules, either just the electronic polarizbility or also an orientational polarization of dipolar molecules. \n",
+    "\n",
+    "A part of these interactions showed a specific distance dependence, which was $r^{-6}$. In particular, we identified the **Keesom interaction**, i.e. the interaction of two freely rotating dipoles as well as the **Debye interaction**, i.e. the interaction of an induced dipole with a permanent dipole as two parts of the so-called van der Waals interaction.\n",
+    "\n",
+    "Yet there also interaction between non-charged and non-polar molecules and this interaction is also belonging to this class and is specifically called **dispersion interaction** or **London interaction**.\n",
+    "\n",
+    "As compared to other interactions, van der Waals interactions are typically\n",
+    "\n",
+    "- long range\n",
+    "- attractive and orienting\n",
+    "- not additive\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "21204bd0-55d1-41cf-9ae4-8406af377a8d",
+   "metadata": {},
+   "source": [
+    "## Dispersion Interaction"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "45946d41-9a40-4b69-b05d-fefb3cc5b3c9",
+   "metadata": {},
+   "source": [
+    "The dispersion part in particular, will require a quantum electrodynamic approach, which is beyond the scope of this lecture. We will will consider a much simpler approach at the beginning and later study the more general approach by McLachlan. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa1fe558-e008-4ebc-87a7-01dd8f0fb5bf",
+   "metadata": {},
+   "source": [
+    "Consider first two atoms which have \n",
+    "\n",
+    "- no time averaged dipole\n",
+    "- no residual charge\n",
+    "\n",
+    "Depite this fact, the atoms may have an instantaneous dipole, which is causing and induced dipole in the other atom. Similarly, the second atom may cause a corresponding dipole in the first atom as well. This will effectively lead to an attractive interaction, which carries the spirit of the dispersion interaction. We can put that into a simple and very crude model based on the most basic semi-classical description of an atom."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "75e78198-de46-4ce1-87db-5f058c3ed1fd",
+   "metadata": {},
+   "source": [
+    "This atom may consist of an electron and proton, which are separated by a distance $a_0$, which corresponds to the Bohr radius. In this atom, the Coulomb interaction is given by\n",
+    "\n",
+    "\\begin{equation}\n",
+    "E_{\\rm pot}=\\frac{e^2}{4\\pi \\epsilon_0 a_0}\n",
+    "\\end{equation}\n",
+    "\n",
+    "This potential energy corresponds for an hydrogen atom to the ionization potential $I=13.6$ eV. To ionize the atom, we can use electromagnetic radiation of the frequency $\\nu=3.3\\times 10 ^{15}$ s$^{-1}$. Thus, in principle a photon of energy $h\\nu=2.2\\times 10^{-18}$ J would be sufficient to ionize the atom.\n",
+    "\n",
+    "Accordingly, we have \n",
+    "\n",
+    "$$h \\nu= \\frac{e^2}{4\\pi \\epsilon_0 a_0}$$\n",
+    "\n",
+    "or we can write, that the Bohr radius of the electron orbit is given by\n",
+    "\n",
+    "$$a_0=\\frac{e^2}{4\\pi\\epsilon_0 h\\nu}$$."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7e31bb8f-50c8-4199-a634-9b0b3da2ab68",
+   "metadata": {},
+   "source": [
+    "In this simple classical picture the atom has an instantaneous dipole which corresponds to $u=a_0 e$. This dipole creates a dipole field, that induces a dipole in the second atom. Using our previous findings for the dipole - induced dipole interaction yields\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w(r)=-\\frac{u^2 \\alpha_0}{(4\\pi \\epsilon_0)^2 r^6}=-\\frac{(a_0 e)^2 \\alpha_0}{(4\\pi \\epsilon_0)^2 r^6}\n",
+    "\\end{equation}\n",
+    "\n",
+    "where $\\alpha_0$ is the electronic polarizability $\\alpha_0=4\\pi \\epsilon_0 a_0^3$. The latter gives\n",
+    "\n",
+    "$$a_0^{2}=\\frac{\\alpha_0}{4\\pi \\epsilon_0 a_0}$$\n",
+    "\n",
+    "from which we finally find the interaction energy\n",
+    "\n",
+    "$$w(r)=-\\frac{a_0^2 e^2 \\alpha_0}{(4\\pi \\epsilon_0)^2 r^6}=-\\frac{\\alpha_0^2}{(4\\pi \\epsilon_0)^2}\\frac{e^2}{4\\pi \\epsilon_0 a_0 }\\frac{1}{r^6}$$\n",
+    "\n",
+    "or\n",
+    "\n",
+    "$$w(r)=-\\frac{\\alpha_0^2 h\\nu}{(4\\pi \\epsilon_0)^2 r^6}$$\n",
+    "\n",
+    "This simple semi-classical description corresponds to the result London (up to a factor of 3/4) obtained with a quantum-mechanical pertubation theory, which is\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w(r)=-\\frac{C_{\\rm disp}}{r^6}=-\\frac{3}{4}\\frac{\\alpha_0^2 h\\nu}{(4\\pi \\epsilon_0)^2 r^6}=-\\frac{3}{4}\\frac{\\alpha_0^2I}{(4\\pi \\epsilon_0)^2 r^6}\n",
+    "\\end{equation}\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "05bb69bf-7772-4668-af94-a6cbe5b54e38",
+   "metadata": {},
+   "source": [
+    "So far, we assumed that both molecules have the same polarizability and thus are of the same type. If this is not the case, the interaction energy is given by \n",
+    "\n",
+    "\\begin{equation}\n",
+    "w(r)=-\\frac{3}{2}\\frac{\\alpha_{01},\\alpha_{02}}{(4\\pi \\epsilon_0)^2 r^6}\\frac{I_1 I_2}{I_1+I_2}\n",
+    "\\end{equation}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e7f9b59e-8fbe-493d-aafc-ab582ca5b4aa",
+   "metadata": {},
+   "source": [
+    "\n",
+    "<div class=\"alert alert-info\">\n",
+    "    \n",
+    "**Example: Estimating the Boiling Point of Noble Gases**\n",
+    "    \n",
+    "We can use this formula for the dispersion energy to estimate the boiling point of noble gases. \n",
+    "    \n",
+    "    \n",
+    "\\begin{equation}\n",
+    "w(r)+E_{\\mathrm{kin}}=-\\frac{3 \\alpha_{0}^{2}}{4\\left(4 \\pi \\varepsilon_{0}\\right)^{2} \\sigma^{6}} h v_{\\mathrm{I}}+\\frac{3}{2} k_{\\mathrm{B}} T_{\\mathrm{m}}=0\n",
+    "\\begin{equation}\n",
+    "    \n",
+    "    \n",
+    "For Neon and Argon for example, we have the following parameters:\n",
+    "    \n",
+    "    \n",
+    "    \n",
+    "    - Ne: $\\sigma=3.08$ Angstroem, $h\\nu_I=21.6$ eV, $\\frac{\\alpha_0}{4\\pi \\epsilon_0}=0.39\\times 10^{-30}$ m$^{-3}$, from which we obtain a boiling temperature of $T_{\\rm b}=22$ K, which nicely corresponds to the experimental value of $T_{\\rm b}=27$ K\n",
+    "    \n",
+    "    \n",
+    "- Ar: $\\sigma=3.76$ Angstroem, $h\\nu_I=15.8$ eV, $\\frac{\\alpha_0}{4\\pi \\epsilon_0}=1.63\\times 10^{-30}$ m$^{-3}$, from which we obtain a boiling temperature of $T_{\\rm b}=85$ K, which nicely corresponds to the experimental value of $T_{\\rm b}=87$ K    \n",
+    "\n",
+    "    \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "52892b81-ecca-4f67-87e5-80f022f16798",
+   "metadata": {},
+   "source": [
+    "**Table with C_disp**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "05563b12-3851-4d64-a25a-5a8f1428212c",
+   "metadata": {},
+   "source": [
+    "While the theory above provides us only with some idea about the disperion interaction, we can now summarize all three controbution to the van der Waals interaction\n",
+    "\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w_{\\rm vdW}(r)=-\\underbrace{\\frac{u_{1}^{2} u_{2}^{2}}{3 k_{\\mathrm{B}} T\\left(4 \\pi \\epsilon_{0} \\right)^{2} r^{6}}}_{\\text {Keesom }}-\\underbrace{\\frac{u_{1}^{2} \\alpha_{02}+u_{2}^{2} \\alpha_{01}}{\\left(4 \\pi \\epsilon_{0} \\right)^{2} r^{6}}}_{\\text {Debye }}-\\underbrace{\\frac{3 h\\nu_1\\nu_2 \\alpha_{01} \\alpha_{02}}{\\left(4 \\pi \\epsilon_{0} \\right)^{2} 2(\\nu_1+\\nu_2)r^{6}}}_{\\text {London} }\n",
+    "\\end{equation}\n",
+    "\n",
+    "or simply\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w_{\\rm vdW}(r)=-\\frac{C_{\\rm vdW}}{r^6}=-\\frac{C_{\\rm Debye}+C_{\\rm Keesom}+C_{\\rm disp}}{r^6}\n",
+    "\\end{equation}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c35c376e-c8ca-4eef-ace0-8d69b54a3a33",
+   "metadata": {},
+   "source": [
+    "## McLachlan"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4d096267-2e50-4457-9b55-e406af68de4b",
+   "metadata": {},
+   "source": [
+    "The first complete theory for the vdW interaction involving 2 atoms in a medium, was proposed by McLachlan, which is expressed as"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3be7123a-0636-4f19-bbe1-66a7d8064de5",
+   "metadata": {},
+   "source": [
+    "\\begin{equation}\n",
+    "w_{\\mathrm{vdW}}(r)=-\\frac{6 k_{\\mathrm{B}} T}{\\left(4 \\pi \\epsilon_{0}\\right)^{2} r^{6}} \\sum_{n=0}^{\\infty}{}^{\\prime} \\frac{\\alpha_{1}\\left(i v_{n}\\right) \\alpha_{2}\\left(i v_{n}\\right)}{\\epsilon_{3}^{2}\\left(i v_{n}\\right)}\n",
+    "\\end{equation}\n",
+    "\n",
+    "The $\\sum^{\\prime}$ notation denotes that the first term in the summation is multiplied by $1/2$. The frequencies are sampled, only at discreet values that $h v_{n}=2 \\pi k_{\\mathrm{B}} \\operatorname{Tn}$ (known as the Matsubara frequencies). The typical $\\alpha(i v)-v$ plots of polar and non-polar molecules using the Lorentz model can be seen in the Figure below."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f12dfb52-b97b-4e28-bcb4-4487534326c8",
+   "metadata": {},
+   "source": [
+    "**Figure**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f896f228-ab0a-44fa-a353-30be5d1f3be6",
+   "metadata": {},
+   "source": [
+    "### Zero Frequency Contribution"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "30bcd28c-c34c-4b39-9d6e-ae6ad0814ca6",
+   "metadata": {},
+   "source": [
+    "\n",
+    "At zero frequency, we know that the polarizability reduces to the form of \n",
+    "\n",
+    "$$\\alpha=\\alpha_{0}+\\frac{u^{2} }{3 k_{\\mathrm{B}} T}$$\n",
+    "\n",
+    "which results in the first term of the sum\n",
+    "\n",
+    "\\begin{aligned}\n",
+    "w_{\\mathrm{vdW}}(\\nu=0, r) &=-\\frac{1}{2} \\frac{6 k_{\\mathrm{B}} T\\left(\\alpha_{01}+u_{1}^{2} /\\left(3 k_{\\mathrm{B}} T\\right)\\right)\\left(\\alpha_{02}+u_{2}^{2} /\\left(3 k_{\\mathrm{B}} T\\right)\\right)}{\\left(4 \\pi \\epsilon_{0} \\epsilon_{3}^{2}\\right)^{2} r^{6}} \\\\\n",
+    "&=-\\underbrace{\\frac{u_{1}^{2} u_{2}^{2}}{3 k_{\\mathrm{B}} T\\left(4 \\pi \\epsilon_{0} \\epsilon_{3}\\right)^{2} r^{6}}}_{\\text {Keesom }}-\\underbrace{\\frac{u_{1}^{2} \\alpha_{02}+u_{2}^{2} \\alpha_{01}}{\\left(4 \\pi \\epsilon_{0} \\epsilon_{3}\\right)^{2} r^{6}}}_{\\text {Debye }}-\\underbrace{\\frac{3 k_{\\mathrm{B}} T \\alpha_{01} \\alpha_{02}}{\\left(4 \\pi \\epsilon_{0} \\epsilon_{3}\\right)^{2} r^{6}}}_{\\text {London(n=0) }}\n",
+    "\\end{aligned}\n",
+    "\n",
+    "\n",
+    "We immediately see the recovery of the Keesom and Debye energies, as well as the $\\alpha_{01} \\alpha_{02}$ term from mathematical derivation. In fact, the last part is the zero-frequency part of the dispersion energy. Comparing the magnitudes of $k_{\\mathrm{B}} T$ and $h v$, we can see that the zero-frequency contribution to the dispersion energy is negligible."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bf5c99ae-58e6-4306-9c58-6fe872a00ab6",
+   "metadata": {},
+   "source": [
+    "### Optical Frequency Contribution\n",
+    "\n",
+    "The lowest legal frequency $h v_{1}=2 \\pi k_{\\mathrm{B}} T \\approx 0.16 \\mathrm{eV}$. The permanent dipoles cannot respond to such high frequency, therefore the dipole polarizability has no effect on the dispersion energy at optical frequencies. The electronic polarizability govern the dispersion energy at such frequencies. We first consider $\\epsilon_{3}=1$, that the 2 molecules are in vacuum.\n",
+    "\n",
+    "The summation in the original equation can be estimated using continuous integral at optical frequencies, if temperature is very low. Since $h \\mathrm{~d} \\nu=2 \\pi k_{\\mathrm{B}} T \\mathrm{~d} n$, we can rewrite the integral from $n=1$ to\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w_{\\mathrm{vdw}}(\\nu>0)=\\frac{h}{2 \\pi} \\frac{6}{\\left(4 \\pi \\epsilon_{0}\\right)^{2} r^{6}} \\int_{\\nu_{1}}^{\\infty} \\alpha_{1}(i v) \\alpha_{2}(i v) \\mathrm{d} v\n",
+    "\\end{equation}\n",
+    "\n",
+    "Using the approximate form of the polarizability\n",
+    "\n",
+    "$$\\alpha(i v)=\\frac{\\alpha_{0}}{\\left[1+\\left(v / v_{\\mathrm{I}}\\right)^{2}\\right]}$$\n",
+    "\n",
+    "and $\\epsilon_3=1$ we end up at\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w(\\nu>0, r)=-\\frac{3 \\alpha_{01} \\alpha_{02}}{2\\left(4 \\pi \\epsilon_{0}\\right)^{2} r^{6}} \\frac{h v_{\\mathrm{I} 1} v_{\\mathrm{I} 2}}{v_{\\mathrm{I} 1}+v_{\\mathrm{I} 2}}\n",
+    "\\end{equation}\n",
+    "\n",
+    "which is finally the London form of dispersion energy.\n",
+    "Now we know why this interaction is called \"dispersion\". The largest contribution to the energy comes from the range where $v$ is close to $v_{\\mathrm{I}}$. Since $v_{\\mathrm{I}}$ is usually in UV range, such interaction is dominated by the polarizabilities from Vis to UV frequencies. As the polarizability and permittivity are closely related to the dispersion of light, it is not hard to understand why it is originally coined as \"dispersion interaction\"."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
