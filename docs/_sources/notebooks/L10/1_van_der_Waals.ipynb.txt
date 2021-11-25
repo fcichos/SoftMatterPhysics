@@ -157,7 +157,7 @@
    "id": "52892b81-ecca-4f67-87e5-80f022f16798",
    "metadata": {},
    "source": [
-    "**Table with C_disp**"
+    "![Dispersion Interaction](img/c_disp.png)"
    ]
   },
   {
@@ -177,6 +177,16 @@
     "\\begin{equation}\n",
     "w_{\\rm vdW}(r)=-\\frac{C_{\\rm vdW}}{r^6}=-\\frac{C_{\\rm Debye}+C_{\\rm Keesom}+C_{\\rm disp}}{r^6}\n",
     "\\end{equation}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8d190b5c-8e80-46ad-8d63-cfb83b35c272",
+   "metadata": {},
+   "source": [
+    "The individual contributions have different strength, but it is not difficult to see that the dispersion interaction is typically the biggest one as shown in the table below. The reason for that is the ionization potential and we will address this issue later in the section of the McLachlan theory.\n",
+    "\n",
+    "![Comparison vdW](img/comp_vdw.png)"
    ]
   },
   {
@@ -212,7 +222,7 @@
    "id": "f12dfb52-b97b-4e28-bcb4-4487534326c8",
    "metadata": {},
    "source": [
-    "**Figure**"
+    "![Polarizability](img/polarizability.png)"
    ]
   },
   {

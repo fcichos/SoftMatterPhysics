@@ -72,6 +72,11 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L8/1_Forces_and_Interactions.ipynb
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 9:
+   
+   notebooks/L9/1_Electric_Double_Layer.ipynb
 
 .. toctree::
    :maxdepth: 2

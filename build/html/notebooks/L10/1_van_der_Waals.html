@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Dipole-Dipole Interactions" href="../L8/1_Forces_and_Interactions.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Electric Double Layer" href="../L9/1_Electric_Double_Layer.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>van der Waals Interactions - Soft Matter Lecture 21 documentation</title>
@@ -201,6 +201,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">van der Waals Interactions</a></li>
@@ -299,7 +303,7 @@ w(r)+E_{\mathrm{kin}}=-\frac{3 \alpha_{0}^{2}}{4\left(4 \pi \varepsilon_{0}\righ
 <li><p>Ar: <span class="math notranslate nohighlight">\(\sigma=3.76\)</span> Angstroem, <span class="math notranslate nohighlight">\(h\nu_I=15.8\)</span> eV, <span class="math notranslate nohighlight">\(\frac{\alpha_0}{4\pi \epsilon_0}=1.63\times 10^{-30}\)</span> m<span class="math notranslate nohighlight">\(^{-3}\)</span>, from which we obtain a boiling temperature of <span class="math notranslate nohighlight">\(T_{\rm b}=85\)</span> K, which nicely corresponds to the experimental value of <span class="math notranslate nohighlight">\(T_{\rm b}=87\)</span> K</p></li>
 </ul>
 </div>
-<p><strong>Table with C_disp</strong></p>
+<img alt="Dispersion Interaction" src="../../_images/c_disp.png">
 <p>While the theory above provides us only with some idea about the disperion interaction, we can now summarize all three controbution to the van der Waals interaction</p>
 <p><span class="math">\begin{equation}
 w_{\rm vdW}(r)=-\underbrace{\frac{u_{1}^{2} u_{2}^{2}}{3 k_{\mathrm{B}} T\left(4 \pi \epsilon_{0} \right)^{2} r^{6}}}_{\text {Keesom }}-\underbrace{\frac{u_{1}^{2} \alpha_{02}+u_{2}^{2} \alpha_{01}}{\left(4 \pi \epsilon_{0} \right)^{2} r^{6}}}_{\text {Debye }}-\underbrace{\frac{3 h\nu_1\nu_2 \alpha_{01} \alpha_{02}}{\left(4 \pi \epsilon_{0} \right)^{2} 2(\nu_1+\nu_2)r^{6}}}_{\text {London} }
@@ -308,7 +312,9 @@ w_{\rm vdW}(r)=-\underbrace{\frac{u_{1}^{2} u_{2}^{2}}{3 k_{\mathrm{B}} T\left(4
 <p><span class="math">\begin{equation}
 w_{\rm vdW}(r)=-\frac{C_{\rm vdW}}{r^6}=-\frac{C_{\rm Debye}+C_{\rm Keesom}+C_{\rm disp}}{r^6}
 \end{equation}</span></p>
-</div>
+<p>The individual contributions have different strength, but it is not difficult to see that the dispersion interaction is typically the biggest one as shown in the table below. The reason for that is the ionization potential and we will address this issue later in the section of the McLachlan theory.</p>
+<img alt="Comparison vdW" src="../../_images/comp_vdw.png"/>
+</img></div>
 <div class="section" id="McLachlan-Theory">
 <h2>McLachlan Theory<a class="headerlink" href="#McLachlan-Theory" title="Permalink to this headline">¶</a></h2>
 <p>The first complete theory for the vdW interaction involving 2 atoms in a medium, was proposed by McLachlan, which is expressed as</p>
@@ -316,7 +322,7 @@ w_{\rm vdW}(r)=-\frac{C_{\rm vdW}}{r^6}=-\frac{C_{\rm Debye}+C_{\rm Keesom}+C_{\
 w_{\mathrm{vdW}}(r)=-\frac{6 k_{\mathrm{B}} T}{\left(4 \pi \epsilon_{0}\right)^{2} r^{6}} \sum_{n=0}^{\infty}{}^{\prime} \frac{\alpha_{1}\left(i v_{n}\right) \alpha_{2}\left(i v_{n}\right)}{\epsilon_{3}^{2}\left(i v_{n}\right)}
 \end{equation}</span></p>
 <p>The <span class="math notranslate nohighlight">\(\sum^{\prime}\)</span> notation denotes that the first term in the summation is multiplied by <span class="math notranslate nohighlight">\(1/2\)</span>. The frequencies are sampled, only at discreet values that <span class="math notranslate nohighlight">\(h v_{n}=2 \pi k_{\mathrm{B}} \operatorname{Tn}\)</span> (known as the Matsubara frequencies). The typical <span class="math notranslate nohighlight">\(\alpha(i v)-v\)</span> plots of polar and non-polar molecules using the Lorentz model can be seen in the Figure below.</p>
-<p><strong>Figure</strong></p>
+<img alt="Polarizability" src="../../_images/polarizability.png"/>
 <div class="section" id="Zero-Frequency-Contribution">
 <h3>Zero Frequency Contribution<a class="headerlink" href="#Zero-Frequency-Contribution" title="Permalink to this headline">¶</a></h3>
 <p>At zero frequency, we know that the polarizability reduces to the form of</p>
@@ -353,14 +359,14 @@ coined as “dispersion interaction”.</p>
         
         <div class="related-pages">
           
-          <a class="prev-page" href="../L8/1_Forces_and_Interactions.html">
+          <a class="prev-page" href="../L9/1_Electric_Double_Layer.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Dipole-Dipole Interactions</div>
+                <div class="title">Electric Double Layer</div>
                 
               </div>
             </a>
