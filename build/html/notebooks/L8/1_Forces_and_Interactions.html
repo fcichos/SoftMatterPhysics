@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -200,6 +200,7 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Dipole-Dipole Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
 <ul>
@@ -208,6 +209,10 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
 </ul>
 
 </div>
@@ -228,7 +233,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -249,9 +254,23 @@ w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [
 <p>The image below (taken from the book by Israelachvili) shows the dipole dipole interaction energy for the <strong>parallel</strong> and the <strong>in-line</strong> configuration as indicated. As shown, the in-line configutation with facing opposite charges is more favorable.</p>
 <img alt="Dipole Energy" src="../../_images/dipole_energy.png"/>
 <p>The energies that are typically found are also larger than the thermal energy at room temperature and thefore lead to ordering effects.</p>
+</img></div>
+<div class="section" id="Rotating-Dipoles,-angle-averaged-Potential">
+<h1>Rotating Dipoles, angle averaged Potential<a class="headerlink" href="#Rotating-Dipoles,-angle-averaged-Potential" title="Permalink to this headline">¶</a></h1>
+<p>The equations we derived so far deliver the energy for a specific fixed orientation of dipoles for example. However, molecules with dipoles may rotate and undergo rotational Brownian motion driven by thermal energy. This rotational diffusion can be very fast and the rotational sampling creates an average interaction that may scale differently with the distance. To get an effective distance dependence in the interaction, we have to integrate the Boltzmann factor over the orientational degrees of
+freedoms, i.e.</p>
+<p><span class="math">\begin{equation}
+\exp\left ( \frac{w(r)}{k_B T} \right)=\frac{\int \exp\left (-\frac{w(r,\Omega)}{k_B T} d\Omega\right )}{\int d\Omega}=\left \langle  \exp\left (-\frac{w(r,\Omega)}{k_B T} d\Omega\right ) \right \rangle
+\end{equation}</span></p>
+<p>with</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[d\Omega =\sin(\theta)d\theta d\phi\]</div></div>
+<p>and</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\int d\Omega=4\pi\]</div></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></img></div>
+</script></div>
 
         </article>
       </div>
@@ -282,7 +301,7 @@ w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Nov 25, 2021. |
+            Last updated on Nov 27, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -295,8 +314,25 @@ w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Dipole-Dipole Interactions</a></li>
+<li><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
