@@ -200,6 +200,7 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
 <ul>
@@ -244,8 +245,51 @@
 </div>
 <div class="section" id="van-der-Waals-Interaction">
 <h1>van der Waals Interaction<a class="headerlink" href="#van-der-Waals-Interaction" title="Permalink to this headline">¶</a></h1>
+<p>The semiclassical theory we have developed in the last lecture can also be extended to objects and bodies which are embedded in media. We therefore consider a spherical particle of radius <span class="math notranslate nohighlight">\(a_i\)</span> of dielectric constant <span class="math notranslate nohighlight">\(\epsilon_i\)</span> in a mediums of dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. If an external electric field is applied, that the particle is polarized to obtain a dipole</p>
+<p><span class="math">\begin{equation}
+u_{\rm ind}=4\pi \epsilon_0 \epsilon \frac{\epsilon_i-\epsilon}{\epsilon_i+2\epsilon}a_i^3E
+\end{equation}</span></p>
+<p>This result is obtained as the spheres polarization is also influenced by the electric field generated in the medium around the sphere. This local electric field that is relevant has been considered by <strong>Clausius and Mossotti</strong>.</p>
+<p>According to <span class="math notranslate nohighlight">\(u_{\rm ind}=\alpha E\)</span>, we readily obtain the polarizability</p>
+<p><span class="math">\begin{equation}
+\alpha(\nu)=4\pi \epsilon_0 \epsilon_3(\nu)\frac{\epsilon_1(\nu)-\epsilon_3(\nu)}{\epsilon_1(\nu)+2\epsilon_3(\nu)}a_1^3
+\end{equation}</span></p>
+<p>This result shows that the dielectric function of the particle <span class="math notranslate nohighlight">\(\epsilon_1\)</span> needs to be different from the environment to obtain a contribution, which justifies the name excess polarizability.</p>
+<p>Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as</p>
+<p><strong>Zero Frequency</strong></p>
+<p><span class="math">\begin{equation}
+w(r)=-\frac{3k_B T a_{1}^3a_2^3}{r^6}\left ( \frac{\epsilon_1(0)-\epsilon_3(0)}{\epsilon_1(0)+2\epsilon_3(0)}\right )\left ( \frac{\epsilon_2(0)-\epsilon_3(0)}{\epsilon_2(0)+2\epsilon_3(0)}\right )
+\end{equation}</span></p>
+<p>and at</p>
+<p><strong>Optical Frequecies</strong></p>
+<p><span class="math">\begin{equation}
+w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1(i\nu)-\epsilon_3(i\nu)}{\epsilon_1(i\nu)+2\epsilon_3(i\nu)}\right )\left ( \frac{\epsilon_2(i\nu)-\epsilon_3(i\nu)}{\epsilon_2(i\nu)+2\epsilon_3(i\nu)}\right )d\nu
+\end{equation}</span></p>
+<p>To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at <span class="math notranslate nohighlight">\(\nu_e\)</span> then the dielectric function can be written as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\epsilon(\nu)=1+\frac{n^2-1}{1-\left (\frac{\nu}{\nu_e}\right )^2}\]</div></div>
+<p>which can be inserted and integrated in the above equations as a replacement.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>van der Waals interactions</strong></p>
+<p>Overall the van der Waals interactions have the following general properties</p>
+<ul class="simple">
+<li><p>since <span class="math notranslate nohighlight">\(h\nu_e &gt;&gt;k_B T\)</span> the dispersion interaction is much bigger that the rest of the interaction. For <span class="math notranslate nohighlight">\(\epsilon=n^2\approx 2\)</span>, and <span class="math notranslate nohighlight">\(\nu_e=3\times 10^{15}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> we find <span class="math notranslate nohighlight">\(h\nu_e/2\sqrt{3}k_B T\approx 140\)</span></p>
+<ul>
+<li><p>the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For <span class="math notranslate nohighlight">\(n_1=n_2=1.5\)</span> and <span class="math notranslate nohighlight">\(n_3=1.4\)</span> we obtain a factor of 32 as compared to <span class="math notranslate nohighlight">\(n_3=1\)</span></p></li>
+<li><p>the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if <span class="math notranslate nohighlight">\(n_3\)</span> is between <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span></p></li>
+<li><p>the van der Waals interaction is not additive</p></li>
+<li><p>the dispersion interaction shows retardation effects, at distances larger than <span class="math notranslate nohighlight">\(100\)</span> nm, it decays with <span class="math notranslate nohighlight">\(r^{-7}\)</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="Interaction-Between-Macroscopic-Bodies">
 <h2>Interaction Between Macroscopic Bodies<a class="headerlink" href="#Interaction-Between-Macroscopic-Bodies" title="Permalink to this headline">¶</a></h2>
+<p>The above equations, that we derived before are essentially valid between small objects at distances larger than their size. If objects become macroscopic, we have to consider the interaction of all components of a body with all components of the second body. To calculate those interactions, we will assume that all interactions are additive, while we know that this is not completely true for van der Waals forces.</p>
+<p>Our general law of interaction shall be</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[w(r)=-\frac{C}{r^n}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is the interaction constant, which comprises all additional constants in the interaction law.</p>
 </div>
 <div class="section" id="Lifshitz-Theory">
 <h2>Lifshitz Theory<a class="headerlink" href="#Lifshitz-Theory" title="Permalink to this headline">¶</a></h2>
@@ -275,7 +319,7 @@
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Nov 25, 2021. |
+            Last updated on Dec 01, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
