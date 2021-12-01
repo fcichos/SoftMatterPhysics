@@ -89,6 +89,13 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 11:
    
    notebooks/L11/1_van_der_Waals.ipynb
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 12:
+   
+   notebooks/L12/1_depletion_forces.ipynb
    
    
 Indices and tables

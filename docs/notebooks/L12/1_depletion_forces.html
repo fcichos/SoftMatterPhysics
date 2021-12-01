@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Depletion Forces" href="../L12/1_depletion_forces.html" /><link rel="prev" title="van der Waals Interactions" href="../L10/1_van_der_Waals.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="van der Waals Interaction" href="../L11/1_van_der_Waals.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
-        <title>van der Waals Interaction - Soft Matter Lecture 21 documentation</title>
+        <title>Depletion Forces - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -211,12 +211,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">van der Waals Interaction</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/1_depletion_forces.html">Depletion Forces</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Depletion Forces</a></li>
 </ul>
 
 </div>
@@ -244,60 +244,92 @@
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L11/1_van_der_Waals.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L11/1_van_der_Waals.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L12/1_depletion_forces.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L12/1_depletion_forces.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="van-der-Waals-Interaction">
-<h1>van der Waals Interaction<a class="headerlink" href="#van-der-Waals-Interaction" title="Permalink to this headline">¶</a></h1>
-<p>The semiclassical theory we have developed in the last lecture can also be extended to objects and bodies which are embedded in media. We therefore consider a spherical particle of radius <span class="math notranslate nohighlight">\(a_i\)</span> of dielectric constant <span class="math notranslate nohighlight">\(\epsilon_i\)</span> in a mediums of dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. If an external electric field is applied, that the particle is polarized to obtain a dipole</p>
-<p><span class="math">\begin{equation}
-u_{\rm ind}=4\pi \epsilon_0 \epsilon \frac{\epsilon_i-\epsilon}{\epsilon_i+2\epsilon}a_i^3E
-\end{equation}</span></p>
-<p>This result is obtained as the spheres polarization is also influenced by the electric field generated in the medium around the sphere. This local electric field that is relevant has been considered by <strong>Clausius and Mossotti</strong>.</p>
-<p>According to <span class="math notranslate nohighlight">\(u_{\rm ind}=\alpha E\)</span>, we readily obtain the polarizability</p>
-<p><span class="math">\begin{equation}
-\alpha(\nu)=4\pi \epsilon_0 \epsilon_3(\nu)\frac{\epsilon_1(\nu)-\epsilon_3(\nu)}{\epsilon_1(\nu)+2\epsilon_3(\nu)}a_1^3
-\end{equation}</span></p>
-<p>This result shows that the dielectric function of the particle <span class="math notranslate nohighlight">\(\epsilon_1\)</span> needs to be different from the environment to obtain a contribution, which justifies the name excess polarizability.</p>
-<p>Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as</p>
-<p><strong>Zero Frequency</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3k_B T a_{1}^3a_2^3}{r^6}\left ( \frac{\epsilon_1(0)-\epsilon_3(0)}{\epsilon_1(0)+2\epsilon_3(0)}\right )\left ( \frac{\epsilon_2(0)-\epsilon_3(0)}{\epsilon_2(0)+2\epsilon_3(0)}\right )
-\end{equation}</span></p>
-<p>and at</p>
-<p><strong>Optical Frequecies</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1(i\nu)-\epsilon_3(i\nu)}{\epsilon_1(i\nu)+2\epsilon_3(i\nu)}\right )\left ( \frac{\epsilon_2(i\nu)-\epsilon_3(i\nu)}{\epsilon_2(i\nu)+2\epsilon_3(i\nu)}\right )d\nu
-\end{equation}</span></p>
-<p>To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at <span class="math notranslate nohighlight">\(\nu_e\)</span> then the dielectric function can be written as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\epsilon(\nu)=1+\frac{n^2-1}{1-\left (\frac{\nu}{\nu_e}\right )^2}\]</div></div>
-<p>which can be inserted and integrated in the above equations as a replacement.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>van der Waals interactions</strong></p>
-<p>Overall the van der Waals interactions have the following general properties</p>
-<ul class="simple">
-<li><p>since <span class="math notranslate nohighlight">\(h\nu_e &gt;&gt;k_B T\)</span> the dispersion interaction is much bigger that the rest of the interaction. For <span class="math notranslate nohighlight">\(\epsilon=n^2\approx 2\)</span>, and <span class="math notranslate nohighlight">\(\nu_e=3\times 10^{15}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> we find <span class="math notranslate nohighlight">\(h\nu_e/2\sqrt{3}k_B T\approx 140\)</span></p></li>
-<li><p>the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For <span class="math notranslate nohighlight">\(n_1=n_2=1.5\)</span> and <span class="math notranslate nohighlight">\(n_3=1.4\)</span> we obtain a factor of 32 as compared to <span class="math notranslate nohighlight">\(n_3=1\)</span></p></li>
-<li><p>the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if <span class="math notranslate nohighlight">\(n_3\)</span> is between <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span></p></li>
-<li><p>the van der Waals interaction is not additive</p></li>
-<li><p>the dispersion interaction shows retardation effects, at distances larger than <span class="math notranslate nohighlight">\(100\)</span> nm, it decays with <span class="math notranslate nohighlight">\(r^{-7}\)</span></p></li>
-</ul>
+<div class="section" id="Depletion-Forces">
+<h1>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Depletion-force-between-two-plates">
+<h2>Depletion force between two plates<a class="headerlink" href="#Depletion-force-between-two-plates" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="Interaction-Between-Macroscopic-Bodies">
-<h2>Interaction Between Macroscopic Bodies<a class="headerlink" href="#Interaction-Between-Macroscopic-Bodies" title="Permalink to this headline">¶</a></h2>
-<p>The above equations, that we derived before are essentially valid between small objects at distances larger than their size. If objects become macroscopic, we have to consider the interaction of all components of a body with all components of the second body. To calculate those interactions, we will assume that all interactions are additive, while we know that this is not completely true for van der Waals forces.</p>
-<p>Our general law of interaction shall be</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[w(r)=-\frac{C}{r^n}\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(C\)</span> is the interaction constant, which comprises all additional constants in the interaction law.</p>
-<p>Let us first consider a single molecule in front of a wall as depicted in the image below</p>
-</div>
-<div class="section" id="Lifshitz-Theory">
-<h2>Lifshitz Theory<a class="headerlink" href="#Lifshitz-Theory" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Depletion-force-between-two-spheres">
+<h2>Depletion force between two spheres<a class="headerlink" href="#Depletion-force-between-two-spheres" title="Permalink to this headline">¶</a></h2>
+<p>To describe the depletion interaction between two spheres (radius <span class="math notranslate nohighlight">\(R\)</span>) in a solution of smaller spheres (radius <span class="math notranslate nohighlight">\(σ/2\)</span>), we may use the same approach of assuming an isotropic osmotic pressure of the smaller spheres. The smaller spheres can actually not approach a spherical shell of thickness <span class="math notranslate nohighlight">\(σ/2\)</span> around the larger spheres or a total volume of <span class="math notranslate nohighlight">\(4π(R+σ/2)^3/3\)</span> . The pressure on the large spheres has no consequences except in the case where the two spheres approach closer
+than <span class="math notranslate nohighlight">\(r≤2(R+σ/2)=2R_d\)</span>. In this case the two excluded volumes around each sphere overlap to a lens-like volume. Due to this overall, the forces which create the pressure on the spherical surface up to an angle <span class="math notranslate nohighlight">\(θ_0\)</span> are unbalanced from the other side of the surface (see image) and result in an attractive interaction.</p>
+<img alt="image-14.png" src="notebooks/L12/attachment:image-14.png">
+<p>The total force is then calculated from the osmotic pressure times the surface area of the spherical cap by just taking into account the force components along the connecting line. This the read</p>
+<p><span class="math">\begin{equation}
+F(r)=-2nk_{\rm B}T\pi (R+\sigma/2)^2\int\limits_{0}^{\theta_{0}}\sin(\theta)\cos(\theta)\mathrm d\theta
+\end{equation}</span></p>
+<p>resulting in</p>
+<p><span class="math">\begin{equation}
+F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right ]
+\end{equation}</span></p>
+<p>which is valid if the distance between the centers of the large spheres is <span class="math notranslate nohighlight">\(r&lt;2(R+σ/2)\)</span>. For <span class="math notranslate nohighlight">\(r≥2(R+σ/2)\)</span> there is no depletion of the smaller spheres from the region between the larger spheres and the force is zero, i.e., <span class="math notranslate nohighlight">\(F(r)=0\)</span>.</p>
+<p><strong>General description</strong> – A more general description of the depletion interaction may be obtained based on our introduction into statistical physics at the beginning of the course. There we stated that the probability of finding a system in a stet of energy <span class="math notranslate nohighlight">\(E\)</span> is</p>
+<p><span class="math">\begin{equation}
+p(E)=\frac{e^{-\beta E}}{Z},
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(\beta=1/k_{\rm B}T\)</span> and the partition function <span class="math notranslate nohighlight">\(Z\)</span> is</p>
+<p><span class="math">\begin{equation}
+Z=\sum_{i}e^{-\beta E_{i}}
+\end{equation}</span></p>
+<p>for a system with a discrete number of states numbered by the indexi.For a single particle with a continuous number of energies the energy may look like</p>
+<p><span class="math">\begin{equation}
+E=\frac{p^2}{2m}+U(q),
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is some general coordinate. The classical partition function for a system of N particles is then</p>
+<p><span class="math">\begin{equation}
+Z=\frac{1}{N!h^{3N}}\int \mathrm d^{3}p^{N}\int \mathrm d^{3}q^{N}\exp\left ( -\beta \left [ \sum_{i}\frac{p^2}{2m}+U(q^N)\right ]\right ),
+\end{equation}</span></p>
+<p>where we use the notation <span class="math notranslate nohighlight">\(p^N\)</span> and <span class="math notranslate nohighlight">\(q^N\)</span> to denote the whole set of variables. The prefactor is appropriate for indistinguishable particles and the phase space normalization factor <span class="math notranslate nohighlight">\(h\)</span> (Planck’s constant) for every pair of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>. Since there is no issue of the non-commutation of positions and momenta we can perform the momentum integrals exactly, yielding</p>
+<p><span class="math">\begin{equation}
+Z=\frac{1}{N!}\frac{1}{\Lambda^{3N}}\int \mathrm d^{3}q^{N}\exp(-\beta U(q^{N})),
+\end{equation}</span></p>
+<p>where the thermal de Broglie wavelength <span class="math notranslate nohighlight">\(Λ\)</span> is</p>
+<p><span class="math">\begin{equation}
+\Lambda=\frac{h}{\sqrt{2 \pi m k_{\rm B}T}}.
+\end{equation}</span></p>
+<p>In the case of two interacting large spheres in a solution of small spheres with all spheres being hard spheres, the integration over the exponential function yields</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>Z=frac{V_{A}^{N}}{N! Lambda^{3N}}</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>with <span class="math notranslate nohighlight">\(V_A\)</span> being the volume available to the small spheres, i.e., $V_A=V-V_{E}^{’} $ for <span class="math notranslate nohighlight">\(r&lt;D+d\)</span> and <span class="math notranslate nohighlight">\(V_A=V-V_E\)</span> for <span class="math notranslate nohighlight">\(r&gt;D+d\)</span> with <span class="math notranslate nohighlight">\(V_E=π(D+d)^3/3\)</span> and <span class="math notranslate nohighlight">\(V_{E}^{'}=V_E-(2πl^2)/3 [3(D+d)/2-l]\)</span> and <span class="math notranslate nohighlight">\(l=(D+d)/2-r/2\)</span>. The calculation then yields the free energy</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id3"><span class="problematic" id="id4">`</span></a>begin{equation}</dt><dd><p>G=-k_{rm B}Tln(Z) =-k_{rm B}Tlnleft (frac{V_{A}^N}{N!Lambda^{3N}}right).</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>Using Stirling’s formula again this can be turned into</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id5"><span class="problematic" id="id6">`</span></a>begin{equation}</dt><dd><p>G=G_{rm ideal}-Nk_{rm B}lnleft (frac{V_{A}}{V}right).</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>The ideal contribution to the free energy is constant with the separation of the large sphere, so it does not contribute to the depletion force. It reads</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id7"><span class="problematic" id="id8">`</span></a>begin{equation}</dt><dd><p>G_{rm ideal}=-Nk_{rm B}Tleft (1-lnleft (frac{NLambda^3}{V}right)right).</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>The distance-dependent part still contains the logarithm which we can approximate by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id9"><span class="problematic" id="id10">`</span></a>begin{equation}</dt><dd><p>lnleft (frac{V_{A}}{V}right)approx -frac{V_{E}}{V}+frac{pi}{6V}(D+d-r)^2(D+d+r/2)</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>for the case of the overlapping excluded volumes. This gives then finally a force</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id11"><span class="problematic" id="id12">`</span></a>begin{equation}</dt><dd><p>F=-frac{N}{4V}k_{rm B}Tpi(D+d-r)(D+d+r)</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>for <span class="math notranslate nohighlight">\(r&lt;d+D\)</span>. For all other distances of the two centers of the spheres, the depletion force is zero.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
+</script></img></div>
 </div>
 
         </article>
@@ -305,23 +337,15 @@ w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L12/1_depletion_forces.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Depletion Forces</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L10/1_van_der_Waals.html">
+          
+          <a class="prev-page" href="../L11/1_van_der_Waals.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">van der Waals Interactions</div>
+                <div class="title">van der Waals Interaction</div>
                 
               </div>
             </a>
@@ -334,7 +358,7 @@ w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L11/1_van_der_Waals.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L12/1_depletion_forces.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -354,9 +378,9 @@ w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">van der Waals Interaction</a><ul>
-<li><a class="reference internal" href="#Interaction-Between-Macroscopic-Bodies">Interaction Between Macroscopic Bodies</a></li>
-<li><a class="reference internal" href="#Lifshitz-Theory">Lifshitz Theory</a></li>
+<li><a class="reference internal" href="#">Depletion Forces</a><ul>
+<li><a class="reference internal" href="#Depletion-force-between-two-plates">Depletion force between two plates</a></li>
+<li><a class="reference internal" href="#Depletion-force-between-two-spheres">Depletion force between two spheres</a></li>
 </ul>
 </li>
 </ul>
