@@ -29,7 +29,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 141,
+   "execution_count": 150,
    "id": "66a1bb6e",
    "metadata": {},
    "outputs": [],
@@ -38,23 +38,14 @@
     "import matplotlib.pyplot as plt\n",
     "from numpy.linalg import norm\n",
     "from scipy.constants import c,epsilon_0,e,physical_constants\n",
+    "import json\n",
     "\n",
     "%config InlineBackend.figure_format = 'retina' \n",
-    "# the lines below set a number of parameters for plotting, such as label font size, \n",
-    "# title font size, which you may find useful\n",
-    "plt.rcParams.update({'font.size': 14,\n",
-    "                     'font.family':'sans-serif',\n",
-    "                     'axes.titlesize': 16,\n",
-    "                     'axes.labelsize': 18,\n",
-    "                     'axes.labelpad': 14,\n",
-    "                     'lines.linewidth': 1,\n",
-    "                     'lines.markersize': 10,\n",
-    "                     'xtick.labelsize' : 18,\n",
-    "                     'ytick.labelsize' : 18,\n",
-    "                     'xtick.top' : True,\n",
-    "                     'xtick.direction' : 'in',\n",
-    "                     'ytick.right' : True,\n",
-    "                     'ytick.direction' : 'in',}) "
+    "\n",
+    "with open('style.json', 'r') as fp:\n",
+    "    style = json.load(fp)\n",
+    "    \n",
+    "plt.rcParams.update(style) "
    ]
   },
   {
@@ -283,7 +274,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 77,
+   "execution_count": 151,
    "id": "8f9a938c",
    "metadata": {},
    "outputs": [],
@@ -294,7 +285,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 127,
+   "execution_count": 152,
    "id": "8af544ee",
    "metadata": {},
    "outputs": [],
@@ -304,7 +295,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 140,
+   "execution_count": 153,
    "id": "ace308a1",
    "metadata": {},
    "outputs": [

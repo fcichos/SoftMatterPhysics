@@ -1,0 +1,13 @@
+'font.size': 14,
+'font.family':'sans-serif',
+'axes.titlesize': 16,
+'axes.labelsize': 18,
+'axes.labelpad': 14,
+'lines.linewidth': 1,
+'lines.markersize': 10,
+'xtick.labelsize' : 18,
+'ytick.labelsize' : 18,
+'xtick.top' : True,
+'xtick.direction' : 'in',
+'ytick.right' : True,
+'ytick.direction' : 'in'

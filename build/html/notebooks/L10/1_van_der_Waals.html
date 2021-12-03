@@ -507,7 +507,7 @@ div.rendered_html tbody tr:hover {
 <li><p>not additive</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[141]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[150]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -515,23 +515,14 @@ div.rendered_html tbody tr:hover {
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
-<span class="c1"># the lines below set a number of parameters for plotting, such as label font size,</span>
-<span class="c1"># title font size, which you may find useful</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                     <span class="s1">'font.family'</span><span class="p">:</span><span class="s1">'sans-serif'</span><span class="p">,</span>
-                     <span class="s1">'axes.titlesize'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">'axes.labelsize'</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">'axes.labelpad'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                     <span class="s1">'lines.linewidth'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                     <span class="s1">'lines.markersize'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-                     <span class="s1">'xtick.labelsize'</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">'ytick.labelsize'</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">'xtick.top'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">'xtick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,</span>
-                     <span class="s1">'ytick.right'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">'ytick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,})</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -620,7 +611,7 @@ m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)
 \alpha(\nu)=\frac{\alpha_0}{1-i\Gamma \frac{\nu}{\nu_0^2}-\left ( \frac{\nu}{\nu_0}\right)^2}
 \end{equation}</span></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[77]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[151]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -630,7 +621,7 @@ m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[127]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[152]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -639,7 +630,7 @@ m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[140]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[153]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -725,7 +716,7 @@ coined as “dispersion interaction”.</p>
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Dec 02, 2021. |
+            Last updated on Dec 03, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
