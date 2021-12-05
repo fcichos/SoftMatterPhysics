@@ -497,6 +497,23 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Electric-Double-Layer">
 <h1>Electric Double Layer<a class="headerlink" href="#Electric-Double-Layer" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+</pre></div>
+</div>
+</div>
 <div class="section" id="Charges-surfaces-in-solution,-no-salt">
 <h2>Charges surfaces in solution, no salt<a class="headerlink" href="#Charges-surfaces-in-solution,-no-salt" title="Permalink to this headline">¶</a></h2>
 <p>We are going to consider first a situation, in which there is a solid surface (for example glass) in contact with a solution, which is presumably water. In this case, surface chemical groups on the solid may dissociate due to the high dielectric constant of water such that the residular surface is charged and some ions are dissolved in the solution. We will assume that there is no extra salt which is dissolved in water.</p>
@@ -523,18 +540,179 @@ ze\rho =-\epsilon_0 \epsilon \frac{d^{2}\psi}{dx^2}\tag{Poisson equation}
 \frac{d^2\psi}{dx^2} = -\frac{ze\rho}{\epsilon_0 \epsilon} =-\frac{ze \rho_0}{\epsilon_0 \epsilon}\exp\left ( -\frac{z e\psi}{k_B T}\right)\tag{Poisson-Boltzmann equation}
 \end{equation}</span></p>
 <p>the Poisson-Boltzmann equation, which is a non-linear differential equation in the potential <span class="math notranslate nohighlight">\(\psi\)</span> and therefore difficult to solve.</p>
+<p>In the following we would like to determine the surface values for the potential <span class="math notranslate nohighlight">\(\psi_s\)</span>, the electric field <span class="math notranslate nohighlight">\(E_s\)</span> and the density <span class="math notranslate nohighlight">\(\rho_s\)</span>, which are called contact values. We will do that for a system of two solid surfaces each with a surface charge density <span class="math notranslate nohighlight">\(\sigma\)</span> according to the configuration shown below.</p>
+<img alt="Config" src="../../_images/configuration.png">
+<p>This system is symmetric with respect to the mid-plane at <span class="math notranslate nohighlight">\(x=0\)</span> and thus the potential is <span class="math notranslate nohighlight">\(\psi_0=\psi(x=0)=0\)</span> and the charge number density is <span class="math notranslate nohighlight">\(\rho_o=\rho(x=0)\)</span>. Also, due to symmetry we have <span class="math notranslate nohighlight">\(\frac{d\psi}{dx}|_{x=0}=0\)</span>. It follows from this symmetry that</p>
+<p><span class="math">\begin{equation}
+\sigma=-\int_{0}^{D / 2} z e q d x=\epsilon_{0} \epsilon \int_0^{D / 2}\left(\frac{d^{2} \psi}{d x^{2}}\right)^{2} dx=-\epsilon_{0} \epsilon\left(\frac{d \psi}{d x}\right)|_{D / 2}=-\epsilon_{0} \epsilon\left(\frac{d \psi}{d x}\right)|_{S}=-\epsilon_0 \epsilon E_{s}
+\end{equation}</span></p>
+<p>To obtain the charge number density, we use the derivative of the Boltzmann equation with respect to the position</p>
+<p><span class="math">\begin{equation}
+\frac{d\rho}{dx}=-\frac{ze\rho_0}{k_B T}\exp\left ( -\frac{z e\psi}{k_B T}\right)\frac{d\psi}{dx}
+\end{equation}</span></p>
+<p>The term on the right side can be replaced to yield</p>
+<p><span class="math">\begin{equation}
+\frac{d\rho}{dx}=-\frac{ze\rho_0}{k_B T}\exp\left ( -\frac{z e\psi}{k_B T}\right)\frac{d\psi}{dx}=\frac{\epsilon_0 \epsilon}{k_B T}\left ( \frac{d\psi}{dx}\right ) \left (\frac{d^2\psi}{dx^2} \right )=\frac{\epsilon_0 \epsilon}{k_B T}\frac{d}{dx}\left ( \frac{d\psi}{dx}\right )^2
+\end{equation}</span></p>
+<p>thus we can integrate both sides</p>
+<p><span class="math">\begin{equation}
+\rho_x- \rho_0=\int_0^{x}d\rho = \frac{\epsilon_0 \epsilon}{2k_B T} \left (\frac{d\psi}{dx} \right )^2_x
+\end{equation}</span></p>
+<p>or</p>
+<p><span class="math">\begin{equation}
+\rho_x=\rho_0 + \frac{\epsilon_0 \epsilon}{2k_B T} \left (\frac{d\psi}{dx} \right )^2_x
+\end{equation}</span></p>
+<p>The term <span class="math notranslate nohighlight">\(\frac{d\psi}{dx}\)</span>, which appears as a square in the last formula is just the electric field evaluated at the position <span class="math notranslate nohighlight">\(x\)</span>. With the contact value of the electric field <span class="math notranslate nohighlight">\(E_s\)</span> obtained above, we can immediately write the contact value of the charge number density as</p>
+<p><span class="math">\begin{equation}
+\rho_s=\rho_s+\frac{\sigma^2}{2\epsilon_0 \epsilon k_B T}
+\end{equation}</span></p>
+<p>Thus even in the case, when the two surfaces are seperated by an infinite distance <span class="math notranslate nohighlight">\(\rho_0\rightarrow 0\)</span>, the surface charge number density never falls below <span class="math notranslate nohighlight">\(\frac{\sigma^2}{2\epsilon_0 \epsilon k_B T}\)</span>.</p>
+<div class="section" id="Example">
+<h3>Example<a class="headerlink" href="#Example" title="Permalink to this headline">¶</a></h3>
+<p>Two surfaces with a charge density of <span class="math notranslate nohighlight">\(\sigma=0.2\, C\cdot m^{-2}\)</span> are at a distance of <span class="math notranslate nohighlight">\(D=2 nm\)</span> in water at <span class="math notranslate nohighlight">\(T=293\,K\)</span>. We calculate the counter ion surface charge, the charge density, the electric field and the potential inside the water film between the two layers.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.2</span> <span class="c1"># C/m^2</span>
+<span class="n">epsilon</span><span class="o">=</span><span class="mi">80</span> <span class="c1"># water</span>
+<span class="n">D</span><span class="o">=</span><span class="mf">2e-9</span> <span class="c1"># m</span>
+<span class="n">T</span><span class="o">=</span><span class="mi">293</span> <span class="c1"># K</span>
 </pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># value of K*tan(K*D/2)</span>
+<span class="n">KTK</span><span class="o">=</span><span class="n">e</span><span class="o">*</span><span class="n">sigma</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">epsilon</span><span class="p">)</span>
+
+<span class="c1"># find the solution for K first graphically</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.32e9</span><span class="p">,</span><span class="mf">1.35e9</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span><span class="p">[:</span><span class="mi">1000</span><span class="p">]</span><span class="o">=</span><span class="n">KTK</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L9_1_Electric_Double_Layer_10_0.png" class="no-scaled-link" src="../../_images/notebooks_L9_1_Electric_Double_Layer_10_0.png" style="width: 372px; height: 271px;"/>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># numerically solve for K</span>
+
+<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">K</span> <span class="p">:</span> <span class="n">KTK</span> <span class="o">-</span> <span class="n">K</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">K_initial_guess</span> <span class="o">=</span> <span class="mf">1.33e9</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">K_initial_guess</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># ion density in the mid plane</span>
+<span class="n">rho0</span><span class="o">=</span><span class="n">K</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">epsilon</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># ion density in the gap</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">rho0</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'x-position, $m$'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'ion density [m$^{-3}$]'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L9_1_Electric_Double_Layer_13_0.png" class="no-scaled-link" src="../../_images/notebooks_L9_1_Electric_Double_Layer_13_0.png" style="width: 386px; height: 280px;"/>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># potential in the gap</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'x-position, $m$'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'electric potential [V]'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0, 0.5, 'electric potential [V]')
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L9_1_Electric_Double_Layer_14_1.png" class="no-scaled-link" src="../../_images/notebooks_L9_1_Electric_Double_Layer_14_1.png" style="width: 406px; height: 269px;"/>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># field in the gap</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">K</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">e</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'x-position, $m$'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'electric field [V/m]'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Text(0, 0.5, 'electric field [V/m]')
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L9_1_Electric_Double_Layer_15_1.png" class="no-scaled-link" src="../../_images/notebooks_L9_1_Electric_Double_Layer_15_1.png" style="width: 390px; height: 280px;"/>
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</img></div>
 </div>
 
         </article>
@@ -566,7 +744,7 @@ ze\rho =-\epsilon_0 \epsilon \frac{d^{2}\psi}{dx^2}\tag{Poisson equation}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Dec 03, 2021. |
+            Last updated on Dec 05, 2021. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -593,7 +771,10 @@ ze\rho =-\epsilon_0 \epsilon \frac{d^{2}\psi}{dx^2}\tag{Poisson equation}
             <ul>
 <li><a class="reference internal" href="#">Electric Double Layer</a><ul>
 <li><a class="reference internal" href="#Charges-surfaces-in-solution,-no-salt">Charges surfaces in solution, no salt</a></li>
-<li><a class="reference internal" href="#Poisson-Boltzmann-equation">Poisson-Boltzmann equation</a></li>
+<li><a class="reference internal" href="#Poisson-Boltzmann-equation">Poisson-Boltzmann equation</a><ul>
+<li><a class="reference internal" href="#Example">Example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
