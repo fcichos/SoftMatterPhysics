@@ -576,20 +576,80 @@ w(x,y,z,t)
 <p>To go beyond that limitation, we have to introduce frction into the equations. Since this is a good occasion, we will introduce the stress tensor at the same time, which is expressing all possible force on a volume element of a fluid.</p>
 <p><strong>d) Introduce internal friction</strong></p>
 <p>Let’s consider the following system with two fluid sheets, which only have a constant velocity component along the x-direction, i.e. <span class="math notranslate nohighlight">\(\vec{u}=\{u(y),0,0\}\)</span> and <span class="math notranslate nohighlight">\(\partial u(y)/\partial x=0\)</span>.</p>
-<img alt="viscosity" src="notebooks/L17/img/viscosity.png"/>
-<p>The sheet at <span class="math notranslate nohighlight">\(y\)</span> moves along the x-direction with a speed <span class="math notranslate nohighlight">\(u(y)\)</span>. The sheet at <span class="math notranslate nohighlight">\(y+\Delta y\)</span>, which is <span class="math notranslate nohighlight">\(\Delta y\)</span> away from the otehr sheet moves with a speed <span class="math notranslate nohighlight">\(u(y+\Delta y)\)</span></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<img alt="viscosity" src="../../_images/viscosity.png"/>
+<p>The sheet at <span class="math notranslate nohighlight">\(y\)</span> moves along the x-direction with a speed <span class="math notranslate nohighlight">\(u(y)\)</span>. The sheet at <span class="math notranslate nohighlight">\(y+\Delta y\)</span>, which is <span class="math notranslate nohighlight">\(\Delta y\)</span> away from the otehr sheet moves with a speed <span class="math notranslate nohighlight">\(u(y+\Delta y)\)</span>. Consider now the momentum <span class="math notranslate nohighlight">\(\vec{p}=\{m u(y),0,0 \}\)</span> of the fluid sheet (don’t confuse with the pressure <span class="math notranslate nohighlight">\(p\)</span>). The total momentum change <span class="math notranslate nohighlight">\(d\vec{p}\)</span> can be written as a substantial derivative</p>
+<p><span class="math">\begin{equation}
+d\vec{p}=\frac{\partial \vec{p}}{\partial t}dt +\underbrace{\frac{\partial \vec{p}}{\partial x}dx}_{=0} + \frac{\partial \vec{p}}{\partial y}dy+\underbrace{\frac{\partial \vec{p}}{\partial z}dz}_{=0}
+\end{equation}</span></p>
+<p>from which we obtain</p>
+<p><span class="math">\begin{equation}
+\frac{d\vec{p}}{dt}=\frac{\partial \vec{p}}{\partial t}+\frac{\partial \vec{p}}{\partial y}\frac{dy}{dt}=\frac{\partial m u(y)}{\partial y}\frac{dy}{dt}
+\end{equation}</span></p>
+<p>which is a force. This is the force that is responsible for the change in the fluid velocity along the y direction, which is parallel to the x-direction.</p>
+<img alt="Stress" src="../../_images/stress.png"/>
+<p>Such a force tangential to an area in the direction of motion is called a shear stress <span class="math notranslate nohighlight">\(\tau\)</span>, i.e.</p>
+<p><span class="math">\begin{equation}
+\tau=\frac{F}{A}=\frac{1}{A}\frac{d\vec{p}}{dt}=\underbrace{\frac{dy}{dt}\frac{\partial m u(y)}{\partial y}}_{\frac{d\vec{p}}{dt}}\frac{1}{A}
+\end{equation}</span></p>
+<p>With <span class="math notranslate nohighlight">\(m=\rho V\)</span> and <span class="math notranslate nohighlight">\(v=A L\)</span> this turns into</p>
+<p><span class="math">\begin{equation}
+\tau=\underbrace{L\frac{dy}{dt}}_{\frac{m^2}{s}}\frac{\partial \rho u(y)}{\partial y}
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(\rho u(y)\)</span> indicates a momentum density. This equation is actually a diffusion equation. On the left side we have a momentum current density (<span class="math notranslate nohighlight">\(\tau\)</span>) and on the right side a momentum density gradient, which is multiplied by a prefactor with a unit of the diffusion coefficient. This prefactor, the momentum diffusion coefficient, is the kinematic viscosity</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\nu=\frac{\eta}{\rho} \tag{kinematic viscosity}\]</div></div>
+<p>and thus</p>
+<p><span class="math">\begin{equation}
+\tau_{yx}=\frac{\eta}{\rho}\frac{\partial \rho u(y)}{\partial y}=\eta \frac{\partial u(y)}{dy}
+\end{equation}</span></p>
+<p>wher I have sneaked in the <strong>dynamic viscosity</strong> <span class="math notranslate nohighlight">\(\eta\)</span> and the index <span class="math notranslate nohighlight">\(yx\)</span>, as this is one element of the stress tensor for a momentum transport along the y-axis when stresses are applied along the x-axis.</p>
+<div class="section" id="Viscous-Stress-Tensor">
+<h3>Viscous Stress Tensor<a class="headerlink" href="#Viscous-Stress-Tensor" title="Permalink to this headline">¶</a></h3>
+<p>A similar treatment can be done for other velocity and force components can be done as well to construct the so-called visous stress tensor, which contains all the viscous stress components. They are</p>
+<p><span class="math">\begin{eqnarray}
+\tau_{xy}=\tau_{yx}&amp;=&amp;\eta \left ( \frac{\partial u}{\partial y} +\frac{\partial v}{\partial x}\right )\\
+\tau_{xz}=\tau_{zx}&amp;=&amp;\eta \left ( \frac{\partial u}{\partial z} +\frac{\partial w}{\partial x}\right )\\
+\tau_{yz}=\tau_{zy}&amp;=&amp;\eta \left ( \frac{\partial v}{\partial z} +\frac{\partial w}{\partial y}\right )
+\end{eqnarray}</span></p>
+<p>for the off-diagonal elements and</p>
+<p><span class="math">\begin{eqnarray}
+\tau_{xx}&amp;=&amp;2\eta \frac{\partial u }{\partial x}\\
+\tau_{yy}&amp;=&amp;2\eta \frac{\partial v }{\partial y}\\
+\tau_{zz}&amp;=&amp;2\eta \frac{\partial w }{\partial z}
+\end{eqnarray}</span></p>
+<p>for the diagonal elements. Together they create the viscous stress tensor</p>
+<p><span class="math">\begin{equation}
+\tau=\begin{bmatrix}
+\tau_{xx} &amp; \tau_{xy} &amp; \tau_{xz}\\
+\tau_{yx} &amp; \tau_{yy} &amp; \tau_{yz}\\
+\tau_{zx} &amp; \tau_{zy} &amp; \tau_{zz}
+\end{bmatrix}
+\end{equation}</span></p>
+<p>which is, as you see from the equations a symmetric tensor.</p>
+<p>So far we have only considered the situation where <span class="math notranslate nohighlight">\(\eta/\rho={\rm const.}\)</span>, without saying it. This situation actually corresponds to what we call <strong>Newtonian Liquids</strong>. The transport coefficient for the momentum is constant in this case.</p>
+<p>More generall, the transport coefficient may depend on the <em>shear rate</em> <span class="math notranslate nohighlight">\(\frac{\partial u}{\partial y},\ldots\)</span>. Thus we write more generally</p>
+<p><span class="math">\begin{equation}
+\tau_{yx}=k\left( \frac{\partial u}{\partial y} \right)^n
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the so-called <em>consistency index</em> and <span class="math notranslate nohighlight">\(n\)</span> is the <em>flow behavior index</em>. The above equation can be transformed into</p>
+<p><span class="math">\begin{equation}
+\tau_{yx}=\underbrace{k\left( \frac{\partial u}{\partial y} \right)^{n-1} }_{\rm apparent\, viscosity} \frac{\partial u}{\partial y}
+\end{equation}</span></p>
+<p>which takes the known form of the momentum diffusion equation with a shear rate dependent prefactor, which is the momentum diffusion coefficient or the <em>apparent viscosity</em>.</p>
+<p>Depending on the shear rate dependence of the apparent viscosity, we can now classify liquids into</p>
+<ul class="simple">
+<li><p>Newtonian liquids</p></li>
+<li><p>Non-Newtonian liquids</p>
+<ul>
+<li><p>shear thinning (ketchup)</p></li>
+<li><p>shear thickening (corn starch)</p></li>
+</ul>
+</li>
+</ul>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
 </div>
 
         </article>
@@ -639,7 +699,10 @@ w(x,y,z,t)
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Hydrodynamics</a><ul>
-<li><a class="reference internal" href="#Navier-Stokes-Equation">Navier Stokes Equation</a></li>
+<li><a class="reference internal" href="#Navier-Stokes-Equation">Navier Stokes Equation</a><ul>
+<li><a class="reference internal" href="#Viscous-Stress-Tensor">Viscous Stress Tensor</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
