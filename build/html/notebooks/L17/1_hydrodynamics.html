@@ -553,14 +553,25 @@ w(x,y,z,t)
 <div class="section" id="Navier-Stokes-Equation">
 <h2>Navier Stokes Equation<a class="headerlink" href="#Navier-Stokes-Equation" title="Permalink to this headline">¶</a></h2>
 <p>We obtain a force density from the above equations if we multiply the above derived velocity change with the mass density <span class="math notranslate nohighlight">\(\rho\)</span> of the fluid. This force density is the result of all possible forces that are present in the system. We thus have to consider possible forces on a volume element.</p>
-<ol class="loweralpha simple">
-<li><p>We would like to simplify our considerations by assuming an incompressibility of the liquid, i.e.</p></li>
-</ol>
+<p><strong>a) We would like to simplify our considerations by assuming an incompressibility of the liquid, i.e.</strong></p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\nabla \cdot \vec{u}=0 \tag{incompressibility}\]</div></div>
-<ol class="loweralpha simple" start="2">
-<li><p>One of the causes of a flow could be a pressure acting on the surface of a volume element</p></li>
-</ol>
+<p><strong>b) One of the causes of a flow could be a pressure acting on the surface of a volume element</strong></p>
+<img alt="Surface" src="../../_images/surface.png"/>
+<p>If the pressure <span class="math notranslate nohighlight">\(p\)</span> acts on the surface we have for a surface element <span class="math notranslate nohighlight">\(\delta S\)</span> with a normal vector <span class="math notranslate nohighlight">\(\hat{n}\)</span> a force <span class="math notranslate nohighlight">\(-\hat{n}p\delta S\)</span> on the surface element. If we integrate the force over the whole surface we can write</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[-\oint p\hat{n}\delta S = -\int \nabla p dV\]</div></div>
+<p>stating the the integral of the pressure over the whole surface should amount for the volume integral (over the volume enclosed by the surface) of the gradient pressure. Thus the net force cause by a pressure gradient is <span class="math notranslate nohighlight">\(-\nabla p dV\)</span> and the pressure gradient is just the force density.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[-\nabla p \tag{pressure force density}\]</div></div>
+<p><strong>c) Additionally, flow may be caused by external forces, like gravity (or others)</strong></p>
+<p>The force density by an external force, like gravity is just given by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\rho \vec{g} \tag{external force density }\]</div></div>
+<p>The sum of these components of the force density make up the <strong>Euler equation</strong></p>
+<p><span class="math">\begin{equation}
+\rho \frac{D\vec{u}}{Dt}=\rho \left [\frac{\partial \vec{u}}{\partial t} +(\vec{u}\nabla)\vec{u}\right ]=-\nabla p + \rho \vec{g} \tag{Euler equation}
+\end{equation}</span></p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
