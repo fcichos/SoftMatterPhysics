@@ -96,6 +96,12 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 12:
    
    notebooks/L12/1_depletion_forces.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 16:
+   
+   notebooks/L16/1_langevin.ipynb
    
 
 .. toctree::
