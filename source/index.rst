@@ -97,6 +97,12 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L12/1_depletion_forces.ipynb
    
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 17:
+   
+   notebooks/L17/1_hydrodynamics.ipynb
    
 Indices and tables
 ==================
