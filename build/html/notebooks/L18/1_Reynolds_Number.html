@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Hydrodynamics" href="../L17/1_hydrodynamics.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
-        <title>Depletion Forces - Soft Matter Lecture 21 documentation</title>
+        <title>Reynold Number - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -227,8 +227,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynold Number</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reynold Number</a></li>
 </ul>
 
 </div>
@@ -504,211 +504,111 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L13/1_depletion_forces.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L13/1_depletion_forces.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L18/1_Reynolds_Number.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L18/1_Reynolds_Number.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Depletion-Forces">
-<h1>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this headline">¶</a></h1>
-<p>Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="Depletion-force-between-two-plates">
-<h2>Depletion force between two plates<a class="headerlink" href="#Depletion-force-between-two-plates" title="Permalink to this headline">¶</a></h2>
-<p>Consider the picture below, where colloids are contained in a suspension together with two plates. Then there is a region, which is inaccessible by the centers of the colloids of radius <span class="math notranslate nohighlight">\(\sigma/2\)</span> that is indicated by the dahsed lines. If these regions between the plates overlap, not colloid can enter this region and the number density of the colloids is different inside as compared to the outside. This creates an osmotic pressure difference.</p>
-<img alt="depletion_plates" src="notebooks/L13/img/depletion_plates.png">
-<p>The osmotic pressure difference can be calculated with the help of the van’t Hoff equation for the osmotic pressure <span class="math notranslate nohighlight">\(\Pi=nk_B T\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number density. In the case the distance of the two plates is larger than the diamater of the two plates, <span class="math notranslate nohighlight">\(h&gt;\sigma\)</span>, we have <span class="math notranslate nohighlight">\(\Pi_i=\Pi_o= nk_B T\)</span> so the difference <span class="math notranslate nohighlight">\(P=\Pi_i-\Pi_o=0\)</span>, so there is not pressure difference. In the case when there is no colloid between the plates we have <span class="math notranslate nohighlight">\(\Pi_i =0\)</span> and
-<span class="math notranslate nohighlight">\(\Pi_o =nk_B T\)</span> such that</p>
+<div class="section" id="Reynold-Number">
+<h1>Reynold Number<a class="headerlink" href="#Reynold-Number" title="Permalink to this headline">¶</a></h1>
+<p>Hydrodynamics is full of dimensionless number, mainly also due to its relevance for engineering. For example, you may want to compare the flow around the same object at large and small scales. Ideally, you could just build a model of a small airplane and study the flow field around the small airplane in a lab, as it is naturally less expensive than studying it on a large one.</p>
+<p>A number which is useful with this respect is the <strong>Reynold number</strong>, which tells of how to scale the flow velocity when scaling the object.</p>
+<p>To obtain the Reynold number and its meaning, we introduce a Navier Stokes equation with dimensionless quatities. These use characteristic dimensions of the system to rescale. We use</p>
+<p><span class="math">\begin{eqnarray}
+x&amp;=&amp;x^{\prime} L\\
+\vec{u}&amp;=&amp;\vec{u}^{\prime} U\\
+t&amp;=&amp;t^{\prime} \frac{L}{U}
+\end{eqnarray}</span></p>
+<p>for the rescaling, where <span class="math notranslate nohighlight">\(L\)</span> is the characteristic size of the object, <span class="math notranslate nohighlight">\(U\)</span> a characteristic velocity and <span class="math notranslate nohighlight">\(L/U\)</span> the characteristic time for a fluid volume element to pass the object of size <span class="math notranslate nohighlight">\(L\)</span>. Using these quantities, the differential operators turn into</p>
+<p><span class="math">\begin{eqnarray}
+\nabla &amp;=&amp; \frac{\nabla^{\prime}}{L}\\
+\frac{\partial}{\partial t} &amp;=&amp; \frac{\partial}{\partial t^{\prime}}\frac{U}{L}\\
+p&amp;=&amp;p^{\prime} U^2/\rho
+\end{eqnarray}</span></p>
+<p>Using these relations in the Navier Stokes equation</p>
 <p><span class="math">\begin{equation}
-P=\Pi_i-\Pi_o=-nk_B T
+\rho \left [ \frac{\partial }{\partial t} +(\vec{u}\nabla)\right]\vec{u}=-\nabla p +\eta \Delta \vec{u}
 \end{equation}</span></p>
-<p>Thus there is an effective pressure that is compressing the two plates. As the force per area that is required is the pressure and thus</p>
+<p>yields</p>
 <p><span class="math">\begin{equation}
-P=-\frac{dw}{dh}
+\rho \left [ \frac{\partial }{\partial t^{\prime}}\frac{U}{L} +U\left (\vec{u}^{\prime}\frac{\nabla^{\prime}}{L}\right)\right]\vec{u}^{\prime}U=-\frac{\nabla^{\prime}}{L}p^{\prime} U^2 \rho +\eta \frac{1}{L^2}\Delta^{\prime} \vec{u}^{\prime}
 \end{equation}</span></p>
-<p>we can calculate the energy per area that is needed to seperate the two plates to a distance <span class="math notranslate nohighlight">\(h\)</span>. This is then found to be linear in the distance <span class="math notranslate nohighlight">\(h\)</span></p>
+<p>Dividing the previous equation by <span class="math notranslate nohighlight">\(\rho U^2/L\)</span> gives us the dimensionless Navier-Stokes equation</p>
 <p><span class="math">\begin{equation}
-w(h)=-n k_B T (\sigma-h)
+\left [\frac{\partial }{\partial t^{\prime}} +\vec{u}^{\prime} \nabla \right ]\vec{u}^{\prime}=-\nabla p^{\prime} +\frac{1}{\rm Re}\Delta \vec{u}^{\prime}
 \end{equation}</span></p>
-<p>for all <span class="math notranslate nohighlight">\(h&lt;\sigma\)</span>, while it is zero for <span class="math notranslate nohighlight">\(h&gt;\sigma\)</span>.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">depletion</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">h</span><span class="o">&lt;</span><span class="n">sigma</span><span class="p">,</span> <span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">-</span><span class="n">h</span><span class="p">),</span><span class="mi">0</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sigma</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">h</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">depletion</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"distance h $[\mu m]$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"energy per area $[k_B T]$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L13_1_depletion_forces_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L13_1_depletion_forces_5_0.png" style="width: 412px; height: 285px;"/>
-</div>
-</div>
-</img></div>
-<div class="section" id="Depletion-force-between-two-spheres">
-<h2>Depletion force between two spheres<a class="headerlink" href="#Depletion-force-between-two-spheres" title="Permalink to this headline">¶</a></h2>
-<p>To describe the depletion interaction between two spheres (radius <span class="math notranslate nohighlight">\(R\)</span>) in a solution of smaller spheres (radius <span class="math notranslate nohighlight">\(σ/2\)</span>), we may use the same approach of assuming an isotropic osmotic pressure of the smaller spheres. The smaller spheres can actually not approach a spherical shell of thickness <span class="math notranslate nohighlight">\(σ/2\)</span> around the larger spheres or a total volume of <span class="math notranslate nohighlight">\(4π(R+σ/2)^3/3\)</span> . The pressure on the large spheres has no consequences except in the case where the two spheres approach closer
-than <span class="math notranslate nohighlight">\(r≤2(R+σ/2)=2R_d\)</span>. In this case the two excluded volumes around each sphere overlap to a lens-like volume. Due to this overall, the forces which create the pressure on the spherical surface up to an angle <span class="math notranslate nohighlight">\(θ_0\)</span> are unbalanced from the other side of the surface (see image) and result in an attractive interaction. The surface element between <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\theta d\theta\)</span> is then given by</p>
-<p><span class="math">\begin{equation}
-2\pi R_{d}^2 \sin(\theta)d\theta
-\end{equation}</span></p>
-<p>but only the force components along the connecting line contribute.</p>
-<img alt="depletion_spheres" src="notebooks/L13/img/depletion_spheres.png"/>
-<p>The total force is then calculated from the osmotic pressure times the surface area of the spherical cap by just taking into account the force components along the connecting line (an additional factor <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>). This the read</p>
-<p><span class="math">\begin{equation}
-F(r)=-2nk_{\rm B}T\pi (R+\sigma/2)^2\int\limits_{0}^{\theta_{0}}\sin(\theta)\cos(\theta)\mathrm d\theta
-\end{equation}</span></p>
-<p>resulting in</p>
-<p><span class="math">\begin{equation}
-F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right ]
-\end{equation}</span></p>
-<p>which is valid if the distance between the centers of the large spheres is <span class="math notranslate nohighlight">\(r&lt;2(R+σ/2)\)</span>. For <span class="math notranslate nohighlight">\(r≥2(R+σ/2)\)</span> there is no depletion of the smaller spheres from the region between the larger spheres and the force is zero, i.e., <span class="math notranslate nohighlight">\(F(r)=0\)</span>.</p>
-<p>Calculating again the interction free energy <span class="math notranslate nohighlight">\(w(r)\)</span>, we have to integrate the force betwen <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(2R_{d}\)</span>, which is given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[w(r)=\int_r^{2R_d}F(r)dr=-nk_B T V_{ov}(r)\]</div></div>
 <p>where</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[V_{ov}=\frac{4\pi}{3}R_{d}^3\left [ 1-\frac{3}{4}\frac{r}{R_d}+\frac{1}{16}\left ( \frac{r}{R_d}\right )^3 \right ]\]</div></div>
+<p><span class="math">\begin{equation}
+{\rm Re}=\frac{\rho}{\eta}U L \tag{Reynolds number}
+\end{equation}</span></p>
+<p>is the Reynolds number. This number now tells us, that if we scale the size of the object by a factor of 2, we have to increase the velocity by a factor of two to get the same flow field as for the larger object. This is probably not what we would have simply anticipated by our intuition.</p>
+<p>The Reynolds number has also a very important meaning for the classification of flows. It may help you to make a distinction between the realm of turbulent and laminar flow. When we start just start from the stationary Navier Stokes equation</p>
+<p><span class="math">\begin{equation}
+\rho \left [(\vec{u}\nabla)\right]\vec{u}=-\nabla p +\eta \Delta \vec{u}
+\end{equation}</span></p>
+<p>we can also make a dimension analysis with the help of the individual quantities. In this way we find</p>
+<p><span class="math">\begin{equation}
+\underbrace{\rho \frac{U^2}{L}}_{\rm inertia}=-\nabla p +\underbrace{\eta \frac{U}{L^2}}_{\rm viscous}
+\end{equation}</span></p>
+<p>where the left side correspopnds to the inertial and the right side to the viscous force densities. If we compare the intertial to the viscous force densities, we obtain</p>
+<p><span class="math">\begin{equation}
+\frac{\rho \frac{U^2}{L}}{\eta \frac{U}{L^2}}=\rho\frac{U L}{\eta})={\rm Re}
+\end{equation}</span></p>
+<p>which is just the Reynolds number. Thus large Reynolds numbers (<span class="math notranslate nohighlight">\({\rm Re &gt;1}\)</span>) state that inertia are important as compared to viscous forces and the flow may be turbulent. Otherwise, for <span class="math notranslate nohighlight">\({\rm Re}&lt;1\)</span>, viscous forces dominate the flow and the flowfield will always be laminar.</p>
+<div class="section" id="Stokes-Equation">
+<h2>Stokes Equation<a class="headerlink" href="#Stokes-Equation" title="Permalink to this headline">¶</a></h2>
+<p>In the realm of very small Reynolds number we may even neglect the inertial terms in the Navier Stokes equation and obtain just the Stokes equation</p>
+<p><span class="math">\begin{equation}
+0= -\nabla p+\eta \Delta \vec{u}+\vec{f}\tag{Stokes Equation}
+\end{equation}</span></p>
+<p>with the incompressibility condition</p>
+<p><span class="math">\begin{equation}
+\nabla \cdot \vec{u}=0
+\end{equation}</span></p>
+</div>
+<div class="section" id="Solutions-of-the-Stokes-Equation">
+<h2>Solutions of the Stokes Equation<a class="headerlink" href="#Solutions-of-the-Stokes-Equation" title="Permalink to this headline">¶</a></h2>
+<p>The Stokes equation is easier to solve than the Navier-Stokes equation as it has no time dependence. This also means that it is time symmetric and the a reversal of the motion of an object typically also creates a reversed flow field. This is very important for example for micro-organisms that would like to swim in water. Due to their small dimension they live at low Reynolds numbers and every symmetric motion they take is just yielding a wiggeling back and forth but no net motion. They
+therefore have to come up with some time-asymmetric motion to swim. This is summarized in a theorem that has been put forward by Edward Purcell. We will talk about this later.</p>
+<p>We would first like to obtain two general solutions for the flow field from the Stokes equation and thereby consider two solid surfaces which confine a water film of height <span class="math notranslate nohighlight">\(h\)</span> according to the drawing below.</p>
+<p><strong>Insert Drawing here</strong></p>
+<p>We chose the ccordinate system in the way that the horizontal axis is the <span class="math notranslate nohighlight">\(x\)</span>-axis and the vertical one the <span class="math notranslate nohighlight">\(y\)</span>-axis. In two dimensions the Stokes equation is now the following</p>
+<p><span class="math">\begin{equation}
+\eta \frac{d^2 u}{d y^2 }=\frac{dp}{dx}
+\end{equation}</span></p>
+<p>without any external forces. We can readily integrate the both sides two times</p>
+<p><span class="math">\begin{equation}
+\int\frac{d^2 u}{d y^2 }=\frac{1}{\eta}\int \frac{dp}{dx}
+\end{equation}</span></p>
+<p>which results in</p>
+<p><span class="math">\begin{equation}
+\int\frac{d u}{d y}=\int \left [ \frac{1}{\eta} \frac{dp}{dx}y+C_1 \right ] dy
+\end{equation}</span></p>
+<p>and finally gives</p>
+<p><span class="math">\begin{equation}
+u(y)=\frac{1}{2\eta}\frac{dp}{dx}y^2+ C_1 y+ C_2
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> are integration constants, which we have to determine from the boundary conditions.</p>
+<p>We assume the following no-slip boundary conditions</p>
+<p><span class="math">\begin{equation}
+u(y=0)=0
+\end{equation}</span></p>
+<p>and</p>
+<p><span class="math">\begin{equation}
+u(y=h)=U
+\end{equation}</span></p>
+<p>With the help of these we obtain</p>
+<p><span class="math">\begin{equation}
+u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
+\end{equation}</span></p>
+<p>for the flow profile of the liquid film.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">depletion_sphere</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">Rd</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">+</span><span class="n">sigma</span>
-    <span class="n">Vov</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">Rd</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">Rd</span><span class="o">+</span><span class="p">(</span><span class="n">r</span><span class="o">/</span><span class="n">Rd</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">r</span><span class="o">&gt;=</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">r</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">+</span><span class="n">sigma</span><span class="p">,</span> <span class="o">-</span><span class="n">n</span><span class="o">*</span><span class="n">Vov</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="mi">0</span><span class="p">))</span>
+<span></span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sigma</span><span class="o">=</span><span class="mi">2</span>
-<span class="n">R</span><span class="o">=</span><span class="mi">5</span>
-<span class="n">n</span><span class="o">=</span><span class="mf">1e-3</span>
-<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">depletion_sphere</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"distance r $[\mu m]$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"energy $[k_B T]$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L13_1_depletion_forces_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L13_1_depletion_forces_9_0.png" style="width: 412px; height: 285px;"/>
-</div>
-</div>
-</div>
-<div class="section" id="General-description">
-<h2>General description<a class="headerlink" href="#General-description" title="Permalink to this headline">¶</a></h2>
-<p>A more general description of the depletion interaction may be obtained based on our introduction into statistical physics at the beginning of the course. There we stated that the probability of finding a system in a stet of energy <span class="math notranslate nohighlight">\(E\)</span> is</p>
-<p><span class="math">\begin{equation}
-p(E)=\frac{e^{-\beta E}}{Z},
-\end{equation}</span></p>
-<p>where <span class="math notranslate nohighlight">\(\beta=1/k_{\rm B}T\)</span> and the partition function <span class="math notranslate nohighlight">\(Z\)</span> is</p>
-<p><span class="math">\begin{equation}
-Z=\sum_{i}e^{-\beta E_{i}}
-\end{equation}</span></p>
-<p>for a system with a discrete number of states numbered by the indexi.For a single particle with a continuous number of energies the energy may look like</p>
-<p><span class="math">\begin{equation}
-E=\frac{p^2}{2m}+U(q),
-\end{equation}</span></p>
-<p>where <span class="math notranslate nohighlight">\(q\)</span> is some general coordinate. The classical partition function for a system of N particles is then</p>
-<p><span class="math">\begin{equation}
-Z=\frac{1}{N!h^{3N}}\int \mathrm d^{3}p^{N}\int \mathrm d^{3}q^{N}\exp\left ( -\beta \left [ \sum_{i}\frac{p^2}{2m}+U(q^N)\right ]\right ),
-\end{equation}</span></p>
-<p>where we use the notation <span class="math notranslate nohighlight">\(p^N\)</span> and <span class="math notranslate nohighlight">\(q^N\)</span> to denote the whole set of variables. The prefactor is appropriate for indistinguishable particles and the phase space normalization factor <span class="math notranslate nohighlight">\(h\)</span> (Planck’s constant) for every pair of <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>. Since there is no issue of the non-commutation of positions and momenta we can perform the momentum integrals exactly, yielding</p>
-<p><span class="math">\begin{equation}
-Z=\frac{1}{N!}\frac{1}{\Lambda^{3N}}\int \mathrm d^{3}q^{N}\exp(-\beta U(q^{N})),
-\end{equation}</span></p>
-<p>where the thermal de Broglie wavelength <span class="math notranslate nohighlight">\(Λ\)</span> is</p>
-<p><span class="math">\begin{equation}
-\Lambda=\frac{h}{\sqrt{2 \pi m k_{\rm B}T}}.
-\end{equation}</span></p>
-<p>In the case of two interacting large spheres in a solution of small spheres with all spheres being hard spheres, the integration over the exponential function yields</p>
-<p><span class="math">\begin{equation}
-Z=\frac{V_{A}^{N}}{N! \Lambda^{3N}}
-\end{equation}</span></p>
-<p>with <span class="math notranslate nohighlight">\(V_A\)</span> being the volume available to the small spheres, i.e., $V_A=V-V_{E}^{’} $ for <span class="math notranslate nohighlight">\(r&lt;D+d\)</span> and <span class="math notranslate nohighlight">\(V_A=V-V_E\)</span> for <span class="math notranslate nohighlight">\(r&gt;D+d\)</span> with <span class="math notranslate nohighlight">\(V_E=π(D+d)^3/3\)</span> and <span class="math notranslate nohighlight">\(V_{E}^{'}=V_E-(2πl^2)/3 [3(D+d)/2-l]\)</span> and <span class="math notranslate nohighlight">\(l=(D+d)/2-r/2\)</span>. The calculation then yields the free energy</p>
-<p><span class="math">\begin{equation}
-G=-k_{\rm B}T\ln(Z) =-k_{\rm B}T\ln\left (\frac{V_{A}^N}{N!\Lambda^{3N}}\right).
-\end{equation}</span></p>
-<p>Using Stirling’s formula again this can be turned into</p>
-<p><span class="math">\begin{equation}
-G=G_{\rm ideal}-Nk_{\rm B}\ln\left (\frac{V_{A}}{V}\right).
-\end{equation}</span></p>
-<p>The ideal contribution to the free energy is constant with the separation of the large sphere, so it does not contribute to the depletion force. It reads</p>
-<p><span class="math">\begin{equation}
-G_{\rm ideal}=-Nk_{\rm B}T\left (1-\ln\left (\frac{N\Lambda^3}{V}\right)\right).
-\end{equation}</span></p>
-<p>The distance-dependent part still contains the logarithm which we can approximate by</p>
-<p><span class="math">\begin{equation}
-\ln\left (\frac{V_{A}}{V}\right)\approx -\frac{V_{E}}{V}+\frac{\pi}{6V}(D+d-r)^2(D+d+r/2)
-\end{equation}</span></p>
-<p>for the case of the overlapping excluded volumes. This gives then finally a force</p>
-<p><span class="math">\begin{equation}
-F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
-\end{equation}</span></p>
-<p>for <span class="math notranslate nohighlight">\(r&lt;d+D\)</span>. For all other distances of the two centers of the spheres, the depletion force is zero.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -720,7 +620,17 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="../L17/1_hydrodynamics.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Hydrodynamics</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
@@ -730,7 +640,7 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L13/1_depletion_forces.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L18/1_Reynolds_Number.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -750,10 +660,9 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Depletion Forces</a><ul>
-<li><a class="reference internal" href="#Depletion-force-between-two-plates">Depletion force between two plates</a></li>
-<li><a class="reference internal" href="#Depletion-force-between-two-spheres">Depletion force between two spheres</a></li>
-<li><a class="reference internal" href="#General-description">General description</a></li>
+<li><a class="reference internal" href="#">Reynold Number</a><ul>
+<li><a class="reference internal" href="#Stokes-Equation">Stokes Equation</a></li>
+<li><a class="reference internal" href="#Solutions-of-the-Stokes-Equation">Solutions of the Stokes Equation</a></li>
 </ul>
 </li>
 </ul>

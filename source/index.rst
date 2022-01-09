@@ -110,6 +110,12 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L17/1_hydrodynamics.ipynb
    
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 18:
+   
+   notebooks/L18/1_Reynolds_Number.ipynb   
+   
 Indices and tables
 ==================
 
