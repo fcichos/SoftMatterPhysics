@@ -114,7 +114,8 @@ Welcome to Soft Matter Physics Lecture Website!
    :maxdepth: 2
    :caption: Lecture 18:
    
-   notebooks/L18/1_Reynolds_Number.ipynb   
+   notebooks/L18/1_Reynolds_Number.ipynb
+   notebooks/L18/2_boundary_hydrodynamics.ipynb 
    
    
 .. toctree::

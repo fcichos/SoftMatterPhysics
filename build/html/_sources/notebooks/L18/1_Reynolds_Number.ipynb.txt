@@ -5,7 +5,7 @@
    "id": "7daaa94f",
    "metadata": {},
    "source": [
-    "# Reynold Number\n"
+    "# Reynolds Number\n"
    ]
   },
   {
