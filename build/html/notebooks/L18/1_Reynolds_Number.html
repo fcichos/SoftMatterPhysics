@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Hydrodynamics" href="../L17/1_hydrodynamics.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Electro-osmosis" href="../L19/1_electroosmosis.html" /><link rel="prev" title="Hydrodynamics" href="../L17/1_hydrodynamics.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Reynold Number - Soft Matter Lecture 21 documentation</title>
@@ -230,6 +230,11 @@
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reynold Number</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Boundary-Hydrodynamics">Boundary Hydrodynamics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
 </ul>
 
 </div>
@@ -751,7 +756,7 @@ u_B= -\frac{1}{\eta}\int_0^{\infty} z h(z)dz\frac{\nabla T_{||}}{T}
 \end{equation}</span></p>
 <p>where <span class="math notranslate nohighlight">\(h(z)\)</span> is the excess enthalpy density of the interaction of the liquid with the solid as compared to the liquid alone. As the interaction between liquid and solid is often attractive (van der Waals alone already is attractive), the excess enthalpy density is negative and the difference of force density and pressure density results in forces along the temperarture gradient, e.g. from the cold region to the hot region. If the excess enthalpy is positive, the flow is driven from hot to
 cold regions. Note that this flow is established in a thin liquid layer of thickness <span class="math notranslate nohighlight">\(\lambda\)</span>, which is only a few nanometers thin. Within these few nanometers the flow velocity rises from 0 to a few 10 <span class="math notranslate nohighlight">\(\mu m/s\)</span>.</p>
-<p>The plot below calculates the integral over the product of <span class="math notranslate nohighlight">\(z\)</span> and the excess enthalpy for the electric double layer, assuming that some of the constants are 1.</p>
+<p>The plot below calculates the integral over the product of <span class="math notranslate nohighlight">\(z\)</span> and the excess enthalpy for the electric double layer, assuming that some of the constants are 1 and the temperature gradient just gives a minus sign (assuming hot is on the left and cold is on the right).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
@@ -838,7 +843,15 @@ interaction range <span class="math notranslate nohighlight">\(\lambda_D\)</span
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="../L19/1_electroosmosis.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Electro-osmosis</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="../L17/1_hydrodynamics.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">

@@ -116,6 +116,14 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L18/1_Reynolds_Number.ipynb   
    
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 19:
+   
+   notebooks/L19/1_electroosmosis.ipynb      
+   notebooks/L19/2_polymers.ipynb         
+   
 Indices and tables
 ==================
 
