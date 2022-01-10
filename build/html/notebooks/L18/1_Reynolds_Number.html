@@ -229,6 +229,7 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reynold Number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Boundary-Hydrodynamics">Boundary Hydrodynamics</a></li>
 </ul>
 
 </div>
@@ -509,6 +510,26 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Reynold-Number">
 <h1>Reynold Number<a class="headerlink" href="#Reynold-Number" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <p>Hydrodynamics is full of dimensionless number, mainly also due to its relevance for engineering. For example, you may want to compare the flow around the same object at large and small scales. Ideally, you could just build a model of a small airplane and study the flow field around the small airplane in a lab, as it is naturally less expensive than studying it on a large one.</p>
 <p>A number which is useful with this respect is the <strong>Reynold number</strong>, which tells of how to scale the flow velocity when scaling the object.</p>
 <p>To obtain the Reynold number and its meaning, we introduce a Navier Stokes equation with dimensionless quatities. These use characteristic dimensions of the system to rescale. We use</p>
@@ -569,7 +590,7 @@ p&amp;=&amp;p^{\prime} U^2/\rho
 <p>The Stokes equation is easier to solve than the Navier-Stokes equation as it has no time dependence. This also means that it is time symmetric and the a reversal of the motion of an object typically also creates a reversed flow field. This is very important for example for micro-organisms that would like to swim in water. Due to their small dimension they live at low Reynolds numbers and every symmetric motion they take is just yielding a wiggeling back and forth but no net motion. They
 therefore have to come up with some time-asymmetric motion to swim. This is summarized in a theorem that has been put forward by Edward Purcell. We will talk about this later.</p>
 <p>We would first like to obtain two general solutions for the flow field from the Stokes equation and thereby consider two solid surfaces which confine a water film of height <span class="math notranslate nohighlight">\(h\)</span> according to the drawing below.</p>
-<p><strong>Insert Drawing here</strong></p>
+<img alt="Flow Field" src="../../_images/flow_field.png">
 <p>We chose the ccordinate system in the way that the horizontal axis is the <span class="math notranslate nohighlight">\(x\)</span>-axis and the vertical one the <span class="math notranslate nohighlight">\(y\)</span>-axis. In two dimensions the Stokes equation is now the following</p>
 <p><span class="math">\begin{equation}
 \eta \frac{d^2 u}{d y^2 }=\frac{dp}{dx}
@@ -600,6 +621,99 @@ u(y=h)=U
 u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
 \end{equation}</span></p>
 <p>for the flow profile of the liquid film.</p>
+<p>We can now recognize two different solutions in the flow field.</p>
+<div class="section" id="Couette-Flow---Shear-Driven-Flow">
+<h3>Couette Flow - Shear Driven Flow<a class="headerlink" href="#Couette-Flow---Shear-Driven-Flow" title="Permalink to this headline">¶</a></h3>
+<p>To obtain a flow field purely driven by shear, we assume that <span class="math notranslate nohighlight">\(\frac{dp}{dx}=0\)</span>, which is leaving a flow velocity which linearly increases with the position <span class="math notranslate nohighlight">\(y\)</span></p>
+<p><span class="math">\begin{equation}
+u(y)=U\frac{y}{h}
+\end{equation}</span></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="mf">0.31</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)]</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="mf">0.31</span><span class="o">/</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"position x "</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"position y "</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L18_1_Reynolds_Number_7_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_7_0.png" style="width: 438px; height: 283px;"/>
+</div>
+</div>
+</div>
+<div class="section" id="Poiseuille-Flow---Pressure-Driven-Flow">
+<h3>Poiseuille Flow - Pressure Driven Flow<a class="headerlink" href="#Poiseuille-Flow---Pressure-Driven-Flow" title="Permalink to this headline">¶</a></h3>
+<p>If we assume that both boundaries are at rest in the laboratory frame and the pressure gradient along the x-axis is constant, we find a parabolic flow field, which is typical for pressure driven flows.</p>
+<p><span class="math">\begin{equation}
+u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
+\end{equation}</span></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)]</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"position x "</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"position y "</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L18_1_Reynolds_Number_10_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_10_0.png" style="width: 438px; height: 283px;"/>
+</div>
+</div>
+</div>
+</img></div>
+</div>
+<div class="section" id="Boundary-Hydrodynamics">
+<h1>Boundary Hydrodynamics<a class="headerlink" href="#Boundary-Hydrodynamics" title="Permalink to this headline">¶</a></h1>
+<p>As another important example of hydrodynamical flow fields we would like to have a look at hydrodynamic flows that arise from interfacial forces. In most of the cases, these interfacial forces are often caused by osmotic pressure differences an are termed osmotic flows. The osmotic pressure difference may thereby arise from various properties, e.g. temperature gradients, electrostatic potential gradients, concentration gradients.</p>
+<p>To analyze this type of boundary flow, we first look at the geometry below.</p>
+<img alt="Boundary Flow" src="../../_images/boundary_flow.png"/>
+<p>The boundary flows are the results of the fact that the interaction between liquid molecules is altered by the presence of the substrate depicted below (some symmetry breaking). This altered interaction is present at a length scale of nanometers (!) only. Think for example about the influence of van der Waals forces or the electric double layer. Beyond this interfacial region of a few nanometers the influence of the solid surface has decayed and the liquid exhibits bulk-like properties. It is
+this tiny interfacial region which we will consider in the description below.</p>
+<p>According to the above picture, we can use the Stokes equation</p>
+<p><span class="math">\begin{equation}
+\eta \Delta \vec{u}= -\nabla p-\vec{f}
+\end{equation}</span></p>
+<p>and split it according to the <span class="math notranslate nohighlight">\(x\)</span> (tangential) and <span class="math notranslate nohighlight">\(z\)</span> (nromal) components.</p>
+<div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-rule: 1px dotted #e0e0e0; -moz-column-rule: 1px dotted #e0e0e0; column-rule: 1px dotted #e0e0e0;"><div style="display: inline-block; width: 50%"><h4><p>normal to surface</p>
+</h4><p><span class="math notranslate nohighlight">\(\frac{\partial^2 \vec{u}}{\partial z^2}=0\)</span></p>
+<p><p><span class="math notranslate nohighlight">\(0=\frac{\partial p}{\partial z}-f_z\)</span></p>
+</p></div><div style="display: inline-block;"><h4><p>tangential to surface</p>
+</h4><p><span class="math notranslate nohighlight">\(\eta \frac{\partial^2 \vec{u}}{\partial z^2}=\frac{\partial p}{\partial x}-f_x\)</span></p>
+</div></div><p>We assume that close to the boundary there will be no flow component normal to the surface, which simplifies the normal components of the Stokes equation into a balance of pressure gradient (presumably osmotic pressure) and normal force density.</p>
+<p>For the tangential component we have a tangential pressure gradient (osmotic) and a tangential force density which determine the flow.</p>
+<p>We can now integrate the equation for the tangential component by parts with two boundary conditions, i.e. <span class="math notranslate nohighlight">\(u(z=0)=0\)</span> and <span class="math notranslate nohighlight">\(u(z\gg\lambda)=u_B={\rm const.}\)</span> and find</p>
+<p><span class="math">\begin{equation}
+u_B=\frac{1}{\eta}\int_0^{\infty} z\left (f_x-\frac{dp}{dx}\right )dz
+\end{equation}</span></p>
+<p>for the value of the boundary velocity <span class="math notranslate nohighlight">\(u_B\)</span>, which is established rounghly at a distance <span class="math notranslate nohighlight">\(\lambda\)</span> from the interface. The question is now what in detail the term in the brackets of the previous equation is.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -612,7 +726,6 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
-</div>
 
         </article>
       </div>
@@ -635,7 +748,7 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 09, 2022. |
+            Last updated on Jan 10, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -662,9 +775,14 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
             <ul>
 <li><a class="reference internal" href="#">Reynold Number</a><ul>
 <li><a class="reference internal" href="#Stokes-Equation">Stokes Equation</a></li>
-<li><a class="reference internal" href="#Solutions-of-the-Stokes-Equation">Solutions of the Stokes Equation</a></li>
+<li><a class="reference internal" href="#Solutions-of-the-Stokes-Equation">Solutions of the Stokes Equation</a><ul>
+<li><a class="reference internal" href="#Couette-Flow---Shear-Driven-Flow">Couette Flow - Shear Driven Flow</a></li>
+<li><a class="reference internal" href="#Poiseuille-Flow---Pressure-Driven-Flow">Poiseuille Flow - Pressure Driven Flow</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Boundary-Hydrodynamics">Boundary Hydrodynamics</a></li>
 </ul>
 
           </div>
