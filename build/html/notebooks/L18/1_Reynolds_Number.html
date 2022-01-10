@@ -714,6 +714,43 @@ this tiny interfacial region which we will consider in the description below.</p
 u_B=\frac{1}{\eta}\int_0^{\infty} z\left (f_x-\frac{dp}{dx}\right )dz
 \end{equation}</span></p>
 <p>for the value of the boundary velocity <span class="math notranslate nohighlight">\(u_B\)</span>, which is established rounghly at a distance <span class="math notranslate nohighlight">\(\lambda\)</span> from the interface. The question is now what in detail the term in the brackets of the previous equation is.</p>
+<div class="section" id="Thermo-osmosis">
+<h2>Thermo-osmosis<a class="headerlink" href="#Thermo-osmosis" title="Permalink to this headline">¶</a></h2>
+<p>We want to evaluate the boundary flow for the case when the surface is charged and in contact with an electrolyte solution. In this case, we can refer to the Debye-Hückel theory, which we earlier developed. In addition, this double layer is subject to a temperature gradient tangential to the surface, which will be the source of the osmotic pressure gradient along the surface.</p>
+<img alt="DoubleLayer" src="../../_images/charged_surface.png"/>
+<p>For this situation we have all equations at hand. We have first of all</p>
+<ul class="simple">
+<li><p>excess charge density: <span class="math notranslate nohighlight">\(\rho = e (n_+-n_-)\)</span></p></li>
+<li><p>total ion density: <span class="math notranslate nohighlight">\(n=n_++n_-\)</span></p></li>
+<li><p>the ion density distribution: <span class="math notranslate nohighlight">\(n_{\pm}=n_0(\exp\left (\mp \frac{e\psi}{k_B T}\right )-1)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n_0\)</span> the bulk ion density</p></li>
+<li><p><span class="math notranslate nohighlight">\(\psi\)</span> the electrostatic potential</p></li>
+</ul>
+<p>The force density in the system is given by</p>
+<p><span class="math">\begin{equation}
+f=-\rho \nabla \psi + \ldots
+\end{equation}</span></p>
+<p>where the dots denote other terms (electrostriction, change of dielectric constant …), which exist, but which we neglect.</p>
+<p>Further, we can write the pressure as the osmotic pressure of the ion density</p>
+<p><span class="math">\begin{equation}
+p=n k_B T=(n_++n_-)k_B T=\left ( n_0(\exp\left (- \frac{e\psi}{k_B T}\right )-1)+ n_0(\exp\left ( \frac{e\psi}{k_B T}\right )-1) \right ) k_B T
+\end{equation}</span></p>
+<p>The task is now to calculate the term f_x-<span class="math">\frac{\partial p}{\partial x}</span> using derivatives of the above written pressure. Note that we have to take the derivative of the temperature with respect to the position but assume the temperature in the Boltzmann factors constant.</p>
+<p>The result of this a bit more lengthy calculation is that</p>
+<p><span class="math">\begin{equation}
+f_x-\frac{\partial p}{\partial x} =-nk_B T \frac{1}{T}\frac{\partial T}{\partial x} - ^rho \psi \frac{1}{T}\frac{\partial T}{\partial x}
+\end{equation}</span></p>
+<p>or in 3-dimensions</p>
+<p><span class="math">\begin{equation}
+{\bf f}-\nabla p= -\left(\varrho \psi+n k_{\mathrm{B}} T\right) \frac{\nabla T}{T}
+\end{equation}</span></p>
+<p>The term in fron of the fraction is an electrostatic interaction energy related term and a term corresponding to the ideal gas pressure. Both terms together clearly make up an enthalpy (energy + pressure x volume). In this case, they correspond to an excess enthalpy density as there is no contribution if there is no electrostatic surface charge involved.</p>
+<p>We can therefore also write the boundary velocity <span class="math notranslate nohighlight">\(u_B\)</span> as</p>
+<p><span class="math">\begin{equation}
+u_B= -\frac{1}{\eta}\int_0^{\infty} z h(z)dz\frac{\nabla T_{||}}{T}
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(h(z)\)</span> is the excess enthalpy density of the interaction of the liquid with the solid as compared to the liquid alone. As the interaction between liquid and solid is often attractive (van der Waals alone already is attractive), the excess enthalpy density is negative and the difference of force density and pressure density results in forces along the temperarture gradient, e.g. from the cold region to the hot region. If the excess enthalpy is positive, the flow is driven from hot to
+cold regions. Note that this flow is established in a thin liquid layer of thickness <span class="math notranslate nohighlight">\(\lambda\)</span>, which is only a few nanometers thin. Within these few nanometers the flow velocity rises from 0 to a few 10 <span class="math notranslate nohighlight">\(\mu m/s\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -726,6 +763,7 @@ u_B=\frac{1}{\eta}\int_0^{\infty} z\left (f_x-\frac{dp}{dx}\right )dz
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
 
         </article>
       </div>
@@ -782,7 +820,10 @@ u_B=\frac{1}{\eta}\int_0^{\infty} z\left (f_x-\frac{dp}{dx}\right )dz
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Boundary-Hydrodynamics">Boundary Hydrodynamics</a></li>
+<li><a class="reference internal" href="#Boundary-Hydrodynamics">Boundary Hydrodynamics</a><ul>
+<li><a class="reference internal" href="#Thermo-osmosis">Thermo-osmosis</a></li>
+</ul>
+</li>
 </ul>
 
           </div>
