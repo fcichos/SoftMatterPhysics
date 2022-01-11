@@ -524,6 +524,7 @@ div.rendered_html tbody tr:hover {
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
@@ -579,7 +580,22 @@ p&amp;=&amp;p^{\prime} U^2/\rho
 \frac{\rho \frac{U^2}{L}}{\eta \frac{U}{L^2}}=\rho\frac{U L}{\eta})={\rm Re}
 \end{equation}</span></p>
 <p>which is just the Reynolds number. Thus large Reynolds numbers (<span class="math notranslate nohighlight">\({\rm Re &gt;1}\)</span>) state that inertia are important as compared to viscous forces and the flow may be turbulent. Otherwise, for <span class="math notranslate nohighlight">\({\rm Re}&lt;1\)</span>, viscous forces dominate the flow and the flowfield will always be laminar.</p>
-<p><strong>Experiment by Taylor here</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">'_dbnH-BBSNo'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe allowfullscreen="" frameborder="0" height="600" src="https://www.youtube.com/embed/_dbnH-BBSNo" width="800"></iframe></div>
+</div>
 <div class="section" id="Stokes-Equation">
 <h2>Stokes Equation<a class="headerlink" href="#Stokes-Equation" title="Permalink to this headline">¶</a></h2>
 <p>In the realm of very small Reynolds number we may even neglect the inertial terms in the Navier Stokes equation and obtain just the Stokes equation</p>
