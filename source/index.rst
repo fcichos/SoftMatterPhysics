@@ -124,6 +124,15 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L19/1_electroosmosis.ipynb      
    notebooks/L19/2_polymers.ipynb         
+ 
+ 
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 22:
+   
+   notebooks/L22/1_real_polymers.ipynb      
+
+   
    
 Indices and tables
 ==================
