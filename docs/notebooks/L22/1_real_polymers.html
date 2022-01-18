@@ -644,7 +644,7 @@ p(r)=\exp\left (-\frac{U(r)}{k_B T}\right)
 <h3>Mayer f-function<a class="headerlink" href="#Mayer-f-function" title="Permalink to this headline">¶</a></h3>
 <p>The Mayer f-function measures now the deviation of the probability from the regions where the potential is zero or the probability density gives 1. It is defined by</p>
 <p><span class="math">\begin{equation}
-f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1
+f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1 \tag{Mayer f-function}
 \end{equation}</span></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
@@ -678,10 +678,58 @@ f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1
 <img alt="../../_images/notebooks_L22_1_real_polymers_15_0.png" class="no-scaled-link" src="../../_images/notebooks_L22_1_real_polymers_15_0.png" style="width: 702px; height: 341px;"/>
 </div>
 </div>
+<p>This definition makes sense if we consider the right example of a hard sphere interaction. The free volume can then be calculated by</p>
+<p><span class="math">\begin{equation}
+v=-\int f(r)d^3r=\int 1-\exp\left (-\frac{U(r)}{k_B T}\right) d^3r
+\end{equation}</span></p>
+<p>which is giving in the case of the hard sphere interaction just <span class="math notranslate nohighlight">\(4\pi R^3/3\)</span>, where R is the contact separation distance of the two spheres. Thus the volume integral over the Mayer f-function is directly giving the excluded volume for the pairwise interaction. Note that the excluded volume can also be negative. This happens, when the attractive interaction is very strong. It can also be zero, when both positive and negative areas under the Mayer f-function are of the same size.</p>
+</div>
+<div class="section" id="Polymer-chain-as-a-real-gas">
+<h3>Polymer chain as a real gas<a class="headerlink" href="#Polymer-chain-as-a-real-gas" title="Permalink to this headline">¶</a></h3>
+<p>Our further calculations will now base the excluded volume influence on the conformation of a polymer chain on the assumtion that all monomers (or actually Kuhn segments) are independet and not correlation in their position. They will thus behave like a real gas and show effect which we know from the <strong>van der Waals gas</strong>, such as co-volume and cohesive pressure. The two effects are actually corrections to the equation of state of the <strong>ideal gas</strong>, which can be written as</p>
+<p><span class="math">\begin{equation}
+Z\equiv = \frac{pV_m}{R T}=1 \tag{compressibility factor}
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is the pressure, <span class="math notranslate nohighlight">\(V_m\)</span> the molar volume and <span class="math notranslate nohighlight">\(R\)</span> is the gas constant, i.e. <span class="math notranslate nohighlight">\(R=k_B N_A\)</span>. For a real gas, the corrections have to scale with the density of the objects <span class="math notranslate nohighlight">\(\rho=1/V_m\)</span> and we can write the compressibility factor as a Taylor series expansion</p>
+<p><span class="math">\begin{equation}
+Z=\frac{pV_m}{R T}= 1+ B(T)\rho +C(T)\rho^2 + D(T)\rho^3+\ldots \tag{virial expansion}
+\end{equation}</span></p>
+<p>which is the viral expansion of the compressibility factor for a real gas. The coefficients <span class="math notranslate nohighlight">\(B(T),C(T),D(T)\)</span> are called the viral expansion coefficient.</p>
+<p>Let’s have a look at the first one in the case of a van der Waals gas, which is <span class="math notranslate nohighlight">\(B(T)\)</span>. The presure of a vand der Waals gas reads</p>
+<p><span class="math">\begin{equation}
+p=\frac{RT}{(V_m-b)}-\frac{a}{V_m^2}
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(b\)</span> denotes the co-volume (the volume taken by the molecules themselves) and <span class="math notranslate nohighlight">\(a\)</span> amounts for the cohesive pressure of the gas molecules. If we set <span class="math notranslate nohighlight">\(a=0\)</span> we can write the compressibility factor</p>
+<p><span class="math">\begin{equation}
+Z=\frac{PV_m}{RT}=\frac{1}{1-\frac{b}{V_m}}
+\end{equation}</span></p>
+<p>For <span class="math notranslate nohighlight">\(b/V_m&lt;1\)</span>, we can do a Taylor expansion which yields</p>
+<p><span class="math">\begin{equation}
+Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
+\end{equation}</span></p>
+<p>Comparing with the virial expansion above yields the fact that the virial expansion coefficient</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[B(T)=b\]</div></div>
+<p>where b was the molar co-volume in the van der Waals equation, e.g. the excluded volume. Correspondingly, the virial expansion coefficient is given by the integral over the Mayer f-function, i.e. in spherical coordinates</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[B(T)=-\int f(r)d^3r=-2 \pi \int_{0}^{\infty}\left(e^{-\frac{U(r)}{k_B T}}-1\right) r^{2} d^3r\]</div></div>
+<p>Using this relation, we have a way to introduce the monomer-monomer and monomer-solvent interaction that is hidden in the May f-function into the equation of state of a real gas of polymer segements. We will come back to this solution.</p>
+</div>
+</img></div>
+<div class="section" id="Free-energy-of-interaction-of-a-real-chain">
+<h2>Free energy of interaction of a real chain<a class="headerlink" href="#Free-energy-of-interaction-of-a-real-chain" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
-</img></div>
 </div>
 
         </article>
@@ -735,8 +783,10 @@ f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1
 <li><a class="reference internal" href="#Interaction-potential">Interaction potential</a></li>
 <li><a class="reference internal" href="#Probability-distribution">Probability distribution</a></li>
 <li><a class="reference internal" href="#Mayer-f-function">Mayer f-function</a></li>
+<li><a class="reference internal" href="#Polymer-chain-as-a-real-gas">Polymer chain as a real gas</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#Free-energy-of-interaction-of-a-real-chain">Free energy of interaction of a real chain</a></li>
 </ul>
 </li>
 </ul>
