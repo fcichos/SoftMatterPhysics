@@ -716,17 +716,33 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 <p>Using this relation, we have a way to introduce the monomer-monomer and monomer-solvent interaction that is hidden in the May f-function into the equation of state of a real gas of polymer segements. We will come back to this solution.</p>
 </div>
 </img></div>
-<div class="section" id="Free-energy-of-interaction-of-a-real-chain">
-<h2>Free energy of interaction of a real chain<a class="headerlink" href="#Free-energy-of-interaction-of-a-real-chain" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">
+<h2>Non-spherical segments and Free energy of interaction of a real chain<a class="headerlink" href="#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain" title="Permalink to this headline">¶</a></h2>
+<p>We can get an idea about the free energy of a chain by coming back to our osmotic pressure formula</p>
+<p><span class="math">\begin{equation}
+\Pi=n k_B T
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number density of molecules. The unit of pressure is <span class="math notranslate nohighlight">\(N/m^2\)</span> or <span class="math notranslate nohighlight">\(J/m^3\)</span>, which is an energy density. The formula above tells us that adding a single molecule comes at some cost, which is <span class="math notranslate nohighlight">\(k_B T\)</span>. Yet, this is an ideal gas consideration. If we want to add a contribution of the excluded volume, we can refer to the overlap fraction</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Phi^*=b^3 \frac{N}{R^3}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(b\)</span> was the Kuhn length and <span class="math notranslate nohighlight">\(R\)</span> the root mean squared end-to-end distance. The number of monomer-monomer contacts was <span class="math notranslate nohighlight">\(N\Phi^*\)</span>, which finally gives <span class="math notranslate nohighlight">\(N^2/R^6\)</span> contacts per volume. The free energy of interaction per volume is therefore</p>
+<p><span class="math">\begin{equation}
+\frac{F_{\rm int}}{V}=k_B T(vc_m^2 + w c_m^3+\ldots)=k_B T (v\frac{N^2}{R^6}+w\frac{N^3}{R^9}+\ldots)
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(c_m=N/R^3\)</span> is the monomer concentration. The first term in the above equation results from the monomer-monomer contacts as we introduced. The second term is accordingly the result of the contact between three monomers and so on. Therefore, this is also a virial expansion and the first virial expansion coefficient <span class="math notranslate nohighlight">\(v\)</span> is the excluded volume of the bimolecular monomer contact.</p>
+<p>This consideration helps us to understand the role of non-spherical rodlike monomers or segments. If we have a rodlike segment of length <span class="math notranslate nohighlight">\(b\)</span> and radius <span class="math notranslate nohighlight">\(d\)</span>, then the ro can be replaced by spherical monomers of radius <span class="math notranslate nohighlight">\(d\)</span>. The number of spherical monomers per segment is then <span class="math notranslate nohighlight">\(b/d\)</span>. Thus if a chain has <span class="math notranslate nohighlight">\(N\)</span> rodlike segments, the it can be replaced by <span class="math notranslate nohighlight">\(n=Nb/d\)</span> spherical monomers.</p>
+<p>In case of hard-sphere interactions the overall contribution of the excluded volume to the free energy shall be independent of the fact if the rods are replaced by spheres so the term</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[vN^2/R^6\]</div></div>
+<p>shall give the same results, and therefore</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[v_s n^2 = v_c N^2\]</div></div>
+<p>or</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[w_sn^3=w_c N^3\]</div></div>
+<p>With the spherical volume <span class="math notranslate nohighlight">\(v_s=d^3\)</span> and <span class="math notranslate nohighlight">\(w_s=d^6\)</span> we find</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[v_c=v_s\left (\frac{n}{N}\right )^2=v_s\left(\frac{b}{d} \right )^2=b^2 d\]</div></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -753,7 +769,7 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 18, 2022. |
+            Last updated on Jan 19, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -786,7 +802,7 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 <li><a class="reference internal" href="#Polymer-chain-as-a-real-gas">Polymer chain as a real gas</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Free-energy-of-interaction-of-a-real-chain">Free energy of interaction of a real chain</a></li>
+<li><a class="reference internal" href="#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">Non-spherical segments and Free energy of interaction of a real chain</a></li>
 </ul>
 </li>
 </ul>
