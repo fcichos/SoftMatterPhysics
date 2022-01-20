@@ -647,7 +647,7 @@ p(r)=\exp\left (-\frac{U(r)}{k_B T}\right)
 f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1 \tag{Mayer f-function}
 \end{equation}</span></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -661,7 +661,6 @@ f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1 \tag{Mayer f-function}
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">heaviside</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s1">'k--'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">'k--'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"distance r"</span><span class="p">)</span>
@@ -718,7 +717,7 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 </img></div>
 <div class="section" id="Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">
 <h2>Non-spherical segments and Free energy of interaction of a real chain<a class="headerlink" href="#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain" title="Permalink to this headline">¶</a></h2>
-<p>We can get an idea about the free energy of a chain by coming back to our osmotic pressure formula</p>
+<p>While we have assumed so far (without emphasizing it to much) that the interaction of the monomers is radially symmatric (monomers are spheres), typical monomers are rather rod-like. Thus we should get an idea about how the free volume changes when we go from a sphere to the rod. The procedure below considers the free energy of the interaction and replaces a rod by a set of spheres. We can get an idea about the free energy of a chain by coming back to our osmotic pressure formula</p>
 <p><span class="math">\begin{equation}
 \Pi=n k_B T
 \end{equation}</span></p>
@@ -746,7 +745,44 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 <p>Thus the excluded volume for the interaction of two rods is larger than the actual rod volume itself, which is</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[v_0=bd^2\]</div></div>
-<p>which is the result of random orientations. If the aspect ratio, i.e. the ratio of the two volumes <span class="math notranslate nohighlight">\(v_c/v_0\)</span> is large, this excess excluded volume is the driving force for a nematic (aligment) ordering of the rodlike segments as originally described by Onsager for liquid crystalline system.</p>
+<p>which is the result of random orientations. If the aspect ratio, i.e. the ratio of the two volumes <span class="math notranslate nohighlight">\(v_c/v_0\)</span> is large, this excess excluded volume is the driving force for a nematic (aligment) ordering of the rodlike segments as originally described by Onsager for liquid crystalline systems.</p>
+</div>
+<div class="section" id="Solvent-Classification">
+<h2>Solvent Classification<a class="headerlink" href="#Solvent-Classification" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Athermal Solvents</strong> Here, <span class="math notranslate nohighlight">\(v\)</span> is independent of temperature. The system only features hard core repulsion and <span class="math notranslate nohighlight">\(v ≈ b^2d\)</span>. Monomer-monomer contact is energetically indistinguishable from monomer-solvent contact, for example.</p></li>
+<li><p><strong>Good solvents</strong> Excluded volume is reduced due to monomer-monomer attraction. The effect of this attraction is greater at lower temperatures, causing a reduction in the excluded volume. <span class="math notranslate nohighlight">\(0 &lt; v &lt; b^2d\)</span></p></li>
+<li><p><strong>Theta solvent</strong> The (positive) contribution to excluded volume from hard core repulsion is exactly balanced by that (negative) due to attractions and so <span class="math notranslate nohighlight">\(v = 0\)</span>. The chains thus have nearly ideal conformations. This occurs at a temperature called the theta temperature,<span class="math notranslate nohighlight">\(Θ\)</span>, which is analogous to the Boyle temperature in thermodynamics.</p></li>
+<li><p><strong>Poor solvents</strong> Excluded volume is negative due to large attractive interactions between the monomers, which prefer monomer-monomer contact strongly over monomer-solvent contact. Chain dimensions are reduced relative to ideal. <span class="math notranslate nohighlight">\(−b^2d &lt; v &lt; 0\)</span>.</p></li>
+<li><p><strong>Non-solvents</strong> Here, <span class="math notranslate nohighlight">\(v ≈ −b^2d\)</span> and the polymer collapses into a very compact structure that excludes all solvent.</p></li>
+</ul>
+</div>
+<div class="section" id="Flory-theory-(in-a-good-solvent)">
+<h2>Flory theory (in a good solvent)<a class="headerlink" href="#Flory-theory-(in-a-good-solvent)" title="Permalink to this headline">¶</a></h2>
+<p>Flory treated the question of equilibrium conformation of real chains using a mean field approach. The equilibrium size is set by a balance between excluded volume which tends to expand the chain size, and a restoring force due to loss of conformational entropy due to swelling. The energetic contribution due to excluded volume is given by the number of excluded volume interactions within a coil and the cost of each exclusion, <span class="math notranslate nohighlight">\(k_B T\)</span>. The number of excluded volume interactions is just the
+probability of finding a monomer within the excluded volume of another. If we assume a mean density of monomers in the coil, <span class="math notranslate nohighlight">\(N/R^3\)</span>, then the number of excluded volume interactions per monomer is <span class="math notranslate nohighlight">\(vN/R^3\)</span> and for <span class="math notranslate nohighlight">\(N\)</span> monomers in the coil, the energetic contribution is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[F_{\text {int }} \approx k_B T v \frac{N^{2}}{R^{3}}\]</div></div>
+<p>The entropic energy due to expansion of the coil is, as we have calculated before, given as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[F_{\text {entropic }} \approx k_B T \frac{R^{2}}{N b^{2}}\]</div></div>
+<p>which gives a total free energy</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[F \approx k_B T\left(v \frac{N^{2}}{R^{3}}+\frac{R^{2}}{N b^{2}}\right)\]</div></div>
+<p><strong>insert plot here</strong></p>
+<p>The total free enery as a function of the end to end distance <span class="math notranslate nohighlight">\(R\)</span> has two components which either decay with <span class="math notranslate nohighlight">\(R^{-3}\)</span> or increase with <span class="math notranslate nohighlight">\(R^2\)</span>. Therefore this function has a minimum, i.e.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\partial F}{ \partial R}\bigg |_{R_{F}}=0\]</div></div>
+<p>at a particular end to end distance, which is the so-called Flory radius <span class="math notranslate nohighlight">\(R_F\)</span>. From the derivative we find</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[R_{F} \approx v^{1 / 5} b^{2 / 5} N^{3 / 5}\]</div></div>
+<p>which shows, that the size of a real polymer chain scales with <span class="math notranslate nohighlight">\(N^{3 / 5}\)</span>, where <span class="math notranslate nohighlight">\(\nu=3/5=0.6\)</span> is the Flory exponent, which has to be compared to <span class="math notranslate nohighlight">\(\nu=1/2\)</span> for an ideal (Gaussian chain). The polymer size thus scales stronger with the number of segments in the polymer, which seems at first glance a small difference, but due to the large numbers involved for <span class="math notranslate nohighlight">\(N\)</span>, this could make quite some difference.</p>
+<p><strong>insert experimental plot here</strong></p>
+<p>The simple approach taken by Flory provides surprisingly good results - more modern theories/calculations provide <span class="math notranslate nohighlight">\(R ∼ N^{0.588}\)</span>. However, the success of the Flory theory is due to a cancelation of errors. The excluded volume contributions are overestimated as correlations between monomers (which decrease the probability of overlap) are not considered. At the same time, the entropic restoring force is also overestimated. Nevertheless, such approaches based on a mean field approximation of
+density combined with ideal chain conformation-derived entropy can provide quite useful results, for example in the case of an adsorbed chain. The treatment of the case for <span class="math notranslate nohighlight">\(v &lt; 0\)</span> in the preceding simple manner leads to an aphysical result for the coil size that minimizes the total free energy. Stabilizing terms need to be considered.</p>
+</div>
+<div class="section" id="Flory-Theory-(in-all-solvents)">
+<h2>Flory Theory (in all solvents)<a class="headerlink" href="#Flory-Theory-(in-all-solvents)" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -782,7 +818,7 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 19, 2022. |
+            Last updated on Jan 20, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -816,6 +852,9 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 </ul>
 </li>
 <li><a class="reference internal" href="#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">Non-spherical segments and Free energy of interaction of a real chain</a></li>
+<li><a class="reference internal" href="#Solvent-Classification">Solvent Classification</a></li>
+<li><a class="reference internal" href="#Flory-theory-(in-a-good-solvent)">Flory theory (in a good solvent)</a></li>
+<li><a class="reference internal" href="#Flory-Theory-(in-all-solvents)">Flory Theory (in all solvents)</a></li>
 </ul>
 </li>
 </ul>
