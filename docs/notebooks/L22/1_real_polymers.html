@@ -783,15 +783,54 @@ density combined with ideal chain conformation-derived entropy can provide quite
 </div>
 <div class="section" id="Flory-Theory-(in-all-solvents)">
 <h2>Flory Theory (in all solvents)<a class="headerlink" href="#Flory-Theory-(in-all-solvents)" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+<p>To extend the Flory theory for all kinds of solvents you have to go back to the virial expansion of the free energy density.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{F_{int}}{V k_B T}=F_{0}+ vc^2+ wc3+\ldots\]</div></div>
+<p>which essentially contains a contribution of the ideal chain, plus the corrections in orders of the segment density <span class="math notranslate nohighlight">\(c\)</span>. The ideal chain therby contributes the entropic part and the real chain correction gives the free volume correction. The main difference now to the good solvent model is now that the entropic part above has to include some additional term to include a repulsive</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[F_{\text {entropic }} \approx k_B T \frac{R^{2}}{N b^{2}}+ \underbrace{\frac{Nb^2}{R^2}}_{\rm new\, term}\]</div></div>
+<p>In this way, the free energy is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{F}{k_BT}=\frac{R^2}{Nb^2}+\frac{Nb^2}{R}+v \frac{N^2}{R^3}+w \frac{N^3}{R^6}+\ldots\]</div></div>
+<p>Defining now the ratio of the end to end distance of the real chain and the ideal chain gives</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\alpha^2=\frac{\langle R^2\rangle}{\langle R^2\rangle_0=\frac{R^2}{Nb^2}}\]</div></div>
+<p>results in</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{F}{k_B T}=\alpha^2+\alpha^{-2}+ \frac{vN^{172}}{b^3}\alpha^{-3}+\frac{w}{b^6}\alpha^{-6}\]</div></div>
+<p>This allows us to see that for</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha \gg 1\)</span> we have a good solvent with <span class="math notranslate nohighlight">\(R_F\propto N^{3/5}\)</span> and an extended polymer conformation</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha \ll 1\)</span> we find <span class="math notranslate nohighlight">\(R_F\propto N^{1/3}\)</span> with a collapsed polymer</p></li>
+</ul>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="Temperature-dependence-of-the-chain-size">
+<h2>Temperature dependence of the chain size<a class="headerlink" href="#Temperature-dependence-of-the-chain-size" title="Permalink to this headline">¶</a></h2>
+<p>Using the Mayer f-function we can now also write down some basic ideas about the temperature dependence of the chain size. This is essentially hidden in the Boltzman factor including the potential energy <span class="math notranslate nohighlight">\(U(r)\)</span>.</p>
+<p>If this potential energy is much bigger than the thermal eneryg, i.e. <span class="math notranslate nohighlight">\(U(r)\gg k_B T\)</span>, then we are commonly at small distances <span class="math notranslate nohighlight">\(r&lt;b\)</span> in the repulsive region. In this region, we can reduce the Mayer f-function to</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[f(r)=\exp\left ( \frac{U(r)}{k_B T}\right)-1 \approx -1\]</div></div>
+<p>essentially to <span class="math notranslate nohighlight">\(-1\)</span>.</p>
+<p>If, on the other side the distance is larger than the Kuhn length (<span class="math notranslate nohighlight">\(r&gt;b\)</span>), the interaction potential is small as compared to <span class="math notranslate nohighlight">\(k_B T\)</span> and we may write</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[f(r)=\exp\left ( \frac{U(r)}{k_B T}\right)-1 \approx -\frac{U(r)}{k_B T}\]</div></div>
+<p>Folowing these approximation we may split the intergral, which yields the excluded volume into two parts</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[v=-4\pi \int_0^{\infty}f(r)r^2 dr\approx 4\pi \int_0^{b}r^2 dr+\frac{4\pi}{k_B T}\int_b^{\infty}U(r)r^2dr\]</div></div>
+<p>This gives two terms, one the voume of the hard core repulsion and the second a term which comprises all the temperature dependent interaction. The dependencies can then be written as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[v\approx \left ( 1-\frac{\theta}{T}\right ) b^3\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the theta temperature, which is defined as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\theta\approx -\frac{1}{b^3 k_B}\int_B^{\infty}U(r) r^{2}dr\]</div></div>
+<p>According to this simplified formula for the excluded volume we see now the individual effects of solvent</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T&lt;\theta\)</span> means the free volume is negative and we are in a <strong>poor solvent</strong></p></li>
+<li><p><span class="math notranslate nohighlight">\(T=\theta\)</span> means that we have <span class="math notranslate nohighlight">\(v=0\)</span>, and we are in a <span class="math notranslate nohighlight">\(\theta\)</span>-solvent</p></li>
+<li><p><span class="math notranslate nohighlight">\(T&gt;\theta\)</span> means that we have <span class="math notranslate nohighlight">\(v&gt;0\)</span> and a <strong>swelling</strong> (growth) of the polymer</p></li>
+<li><p><span class="math notranslate nohighlight">\(T\gg\theta\)</span> means we are in the <strong>athermal</strong> situation such that <span class="math notranslate nohighlight">\(v=b^{3}\)</span></p></li>
+</ul>
+<p><strong>display experimental graph from Colby</strong></p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -855,6 +894,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <li><a class="reference internal" href="#Solvent-Classification">Solvent Classification</a></li>
 <li><a class="reference internal" href="#Flory-theory-(in-a-good-solvent)">Flory theory (in a good solvent)</a></li>
 <li><a class="reference internal" href="#Flory-Theory-(in-all-solvents)">Flory Theory (in all solvents)</a></li>
+<li><a class="reference internal" href="#Temperature-dependence-of-the-chain-size">Temperature dependence of the chain size</a></li>
 </ul>
 </li>
 </ul>
