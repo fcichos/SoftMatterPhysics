@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Real Polymers" href="../L22/1_real_polymers.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Scattering Techniques for Polymer Conformation - Soft Matter Lecture 21 documentation</title>
@@ -239,6 +239,10 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Scattering Techniques for Polymer Conformation</a></li>
 </ul>
 
 </div>
@@ -552,45 +556,62 @@ described by the <strong>form factor</strong>. Yet, this scale seperation might 
 <p>The scattered light is then observed in a different direction, e.g. along the direction <span class="math notranslate nohighlight">\(\vec{u}_s\)</span>, which results in a scattered wavevector <span class="math notranslate nohighlight">\(\vec{q}_s\)</span>. Considering now the scattered wave from two segments of the polymer at <span class="math notranslate nohighlight">\(\vec{R}_i\)</span> and <span class="math notranslate nohighlight">\(\vec{R}_j\)</span> results in a path length difference <span class="math notranslate nohighlight">\(\Delta\)</span> between the two waves, that is given by the indcident wave path different and the scattered wave path difference.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\Delta = \vec{u}_i\cdot \vec{R}_j - \vec{u}_s\cdot \vec{R}_j=(\vec{u}_i-\vec{u}_s)\cdot \vec{R}_j\]</div></div>
+<p>This path difference translates into a phase difference if the waves</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\varphi_{j}=\frac{2 \pi}{\lambda}\left(\vec{u}_{\mathrm{i}}-\vec{u}_{\mathrm{s}}\right) \cdot \vec{R}_{j}=\left(\vec{q}_{\mathrm{i}}-\vec{q}_{\mathrm{s}}\right) \cdot \vec{R}_{j}=\vec{q} \cdot \vec{R}_{j}\]</div></div>
+<p>Since the magnitude of the incident and the scattered wavevectors are the same, i.e.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\left|\vec{q}_{i}\right|=\left|\vec{q}_{s}\right|=\frac{2 \pi}{\lambda}\]</div></div>
+<p>we can express the magnitude of the vector <span class="math notranslate nohighlight">\(\vec{q}\)</span> denoting the momentum exchange during scattering, in terms of the scattering angle <span class="math notranslate nohighlight">\(\theta\)</span></p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[q \equiv|\vec{q}|=2\left|\vec{q}_{i}\right| \sin \left(\frac{\theta}{2}\right)=\frac{4 \pi}{\lambda} \sin \left(\frac{\theta}{2}\right)\]</div></div>
+<p>With the help of the phase angle, we can now find the electric field amplitude of the scattered waves of all segments <span class="math notranslate nohighlight">\(j\)</span> with</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[E_{\mathrm{s}}=E_{\mathrm{i}} \sum_{j=1}^{N} A \cos \left(2 \pi \nu t-\varphi_{j}\right)\]</div></div>
+<p>which provides with its magnitude square also the intensity of the scattered wave.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 I_{\mathrm{s}} &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=1}^{N} \cos \left(2 \pi \nu t-\varphi_{j}\right)\right]^{2} \mathrm{~d} t \\
 &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=1}^{N} \sum_{k=1}^{N} \cos \left(2 \pi \nu t-\varphi_{j}\right) \cos \left(2 \pi \nu t-\varphi_{k}\right)\right] \mathrm{d} t \\
 &amp;=I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=1}^{N} \sum_{k=1}^{N}\left(\cos \left(4 \pi \nu t-\varphi_{j}-\varphi_{k}\right)+\cos \left(\varphi_{k}-\varphi_{j}\right)\right)\right] \mathrm{d} t
 \end{aligned}\end{split}\]</div></div>
+<p>The first term in the sum turns out to be zero when integrated over time, such that only the difference of the the two individual phase angles is important.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[I_{s}(\vec{q})=\underbrace{I_{i} A^{2} N^{2}}_{I_{s}(0)} \underbrace{\frac{1}{N^{2}} \sum_{k=1}^{N} \sum_{j=1}^{N} \cos \left(\varphi_{k}-\varphi_{j}\right)}_{P(\vec{q})}\]</div></div>
+<p>The latter double sum inlcuding a prefactor defines the <strong>from factor</strong></p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[P(\vec{q}) \equiv \frac{I_{\mathrm{s}}(\vec{q})}{I_{\mathrm{s}}(0)}\]</div></div>
+\[P(\vec{q}) \equiv \frac{I_{\mathrm{s}}(\vec{q})}{I_{\mathrm{s}}(0)}\tag{form factor}\]</div></div>
+<p>Inserting the expression for the individual phase angles yields</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(\vec{q})=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \cos \left[\vec{q} \cdot\left(\vec{R}_{i}-\vec{R}_{j}\right)\right]\]</div></div>
+<p>We therefore have to calculate the average over the phase angles or exchanged momentum times the position difference between two segments</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\left\langle\cos \left[\vec{q} \cdot\left(\vec{R}_{i}-\vec{R}_{j}\right)\right]\right\rangle=\frac{1}{4 \pi} \int_{0}^{2 \pi}\left[\int_{0}^{\pi} \cos \left(q R_{i j} \cos \alpha\right) \sin \alpha \mathrm{d} \alpha\right] \mathrm{d} \beta\]</div></div>
+<p>Using</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\vec{q} \cdot\left(\vec{R}_{i}-\vec{R}_{j}\right)=q R_{i j} \cos \alpha\]</div></div>
+<p>directly gives us the idea that the averaged cosine results in a sinus cardinalis</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\left(\cos \left[\vec{q} \cdot\left(\vec{R}_{i}-\vec{R}_{j}\right)\right]\right\rangle=\frac{1}{2} \int_{-1}^{1} \cos \left(q R_{i j} x\right) \mathrm{d} x=\frac{\sin \left(q R_{i j}\right)}{q R_{i j}}\]</div></div>
+\[\left\langle\cos \left[\vec{q} \cdot\left(\vec{R}_{i}-\vec{R}_{j}\right)\right]\right\rangle=\frac{1}{2} \int_{-1}^{1} \cos \left(q R_{i j} x\right) \mathrm{d} x=\frac{\sin \left(q R_{i j}\right)}{q R_{i j}}\]</div></div>
+<p>which is reminiscent of the single slit result or the Fourier transform of the segment distribution in the scattering objects components:</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{\sin \left(q R_{i j}\right)}{q R_{i j}}\]</div></div>
 </div>
 <div class="section" id="Radius-of-Gyration">
 <h2>Radius of Gyration<a class="headerlink" href="#Radius-of-Gyration" title="Permalink to this headline">¶</a></h2>
+<p>We can relate the latter result directly with properties of the polymer chain, like the radius of gyration. If we consider only values of the sinc argument which are <span class="math notranslate nohighlight">\(q R_ij&lt;1\)</span>, i.e. we consider <strong>small angle scattering</strong>, we can expand the sinc function into</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\frac{\sin x}{x}=1-\frac{x^{2}}{3 !}+\frac{x^{4}}{5 !}-\cdots\]</div></div>
+<p>This yields a form factor</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[P(q)=1-\frac{q^{2}}{6 N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} R_{i j}^{2}+\cdots \quad \text { for } q R_{g}&lt;1\]</div></div>
+\[P(q)=1-\frac{q^{2}}{6 N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} R_{i j}^{2}+\cdots \quad \text { for } q R&lt;1\]</div></div>
+<p>which gives with the definition of the radius of gyration directly</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=1-\frac{1}{3} q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle+\cdots \quad \text { for } q R_{\mathrm{g}}&lt;1\]</div></div>
+<p>or</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=1-\frac{16 \pi^{2} n^{2}}{3 \lambda^{2}}\left\langle R_{\mathrm{g}}^{2}\right\rangle \sin ^{2}\left(\frac{\theta}{2}\right)+\cdots\]</div></div>
+<p>when inserting <span class="math notranslate nohighlight">\(q\)</span>. We will see in the derivation of the Debye function, that this inverse parabola can also be approximated with a Gaussian function</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong \exp \left(-\frac{q^{2} R_{\mathrm{g}}^{2}}{3}\right) \quad \text { for } q R_{\mathrm{g}}&lt;1\]</div></div>
 </div>
@@ -626,12 +647,22 @@ I_{\mathrm{s}} &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="../L22/1_real_polymers.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Real Polymers</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 21, 2022. |
+            Last updated on Jan 23, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
