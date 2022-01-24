@@ -309,7 +309,10 @@
    "id": "fb23b51e",
    "metadata": {},
    "source": [
-    "While the Debye function is the result for a simple ideal Gaussian chain, the form factor can also be derived for many other polymer shapes. The table below reports some examples."
+    "While the Debye function is the result for a simple ideal Gaussian chain, the form factor can also be derived for many other polymer shapes. The table below reports some examples.\n",
+    "\n",
+    "\n",
+    "![FormFactors](img/form.png)"
    ]
   }
  ],
