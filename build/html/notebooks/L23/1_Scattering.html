@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Real Polymers" href="../L22/1_real_polymers.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Viscoelasticity" href="2_Viscoelasticity.html" /><link rel="prev" title="Real Polymers" href="../L22/1_real_polymers.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Scattering Techniques for Polymer Conformation - Soft Matter Lecture 21 documentation</title>
@@ -243,6 +243,7 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Scattering Techniques for Polymer Conformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Viscoelasticity.html">Viscoelasticity</a></li>
 </ul>
 
 </div>
@@ -623,8 +624,10 @@ segments <span class="math notranslate nohighlight">\(i,j\)</span> at a distance
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[p(R_{i j} ; \underbrace{|i-j|}_{N}) d R_{i j}=\left(\frac{3}{2 \pi|i-j| b^{2}}\right)^{\frac{3}{2}} e^{-3 R^{2}\left(2|i-j| b^{2}\right)} 4 \pi R_{i j}^{2} d R_{i j}\]</div></div>
 <p>Note that the number of segments takes here the value N=|i-j|. Using this density distribution, we have to weight each contribution of the form factor with the corresponding probability density, i.e.</p>
-<p>\begin{e} P(q)=:nbsphinx-math:<cite>frac{1}{N^{2}}</cite> <span class="math">\sum</span><em>{i=1}^{N} :nbsphinx-math:`sum`</em>{j=1}^{N} <span class="math">\int</span><em>{0}^{:nbsphinx-math:`infty`} :nbsphinx-math:`frac{sin left(q R_{i j}right)}{q R_{i j}}` P:nbsphinx-math:`left`(R</em>{i j},|i-j|:nbsphinx-math:<cite>right</cite>) 4 <span class="math">\pi `R_{i j}^{2} :nbsphinx-math:</span>mathrm{~d}` R_{i j}=:nbsphinx-math:<cite>frac{1}{N^{2}}</cite> <span class="math">\sum</span><em>{i=1}^{N} :nbsphinx-math:`sum`</em>{j=1}^{N}
-<span class="math">\exp `:nbsphinx-math:</span>left`(-<span class="math">\frac{q^{2} b^{2}|i-j|}{6}</span><span class="math">\right</span>) $$</p>
+<p><span class="math">\begin{eqnarray}
+P(q)&amp;=&amp;\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \int_{0}^{\infty} \frac{\sin \left(q R_{i j}\right)}{q R_{i j}} P\left(R_{i j},|i-j|\right) 4 \pi R_{i j}^{2} \mathrm{~d} R_{i j}\\
+&amp;=&amp;\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \exp \left(-\frac{q^{2} b^{2}|i-j|}{6}\right)
+\end{eqnarray}</span></p>
 <p>One can transform the double sum above in the case of large segment number into a double integral. The result is the Debye function</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=\frac{2}{\left(q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)^{2}}\left[\exp \left(-q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)-1+q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right]\tag{Debye function}\]</div></div>
@@ -676,6 +679,7 @@ segments <span class="math notranslate nohighlight">\(i,j\)</span> at a distance
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong \frac{2}{q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle} \quad \text { for } q \sqrt{\left\langle R_{\mathrm{g}}^{2}\right\rangle}&gt;1\]</div></div>
 <p>in the limit of large q, where the form factor decays as <span class="math notranslate nohighlight">\(1/q^2\)</span>. Both limits are included in the plot above to see their range of validity.</p>
+<p>While the Debye function is the result for a simple ideal Gaussian chain, the form factor can also be derived for many other polymer shapes. The table below reports some examples.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -686,7 +690,15 @@ segments <span class="math notranslate nohighlight">\(i,j\)</span> at a distance
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="2_Viscoelasticity.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Viscoelasticity</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="../L22/1_real_polymers.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">

@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "1a021b3b",
+   "id": "8b239e3c",
    "metadata": {},
    "source": [
     "# Scattering Techniques for Polymer Conformation"
@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e3ee11f7",
+   "id": "b768e07e",
    "metadata": {},
    "source": [
     "The scattering of electromagnetic or matter waves is a commonly used tool to obtain information about the conformation of polymer chains. Light wave, X-rays (SAXS) but also neutrons (SANS) are used to study polymer solutions. While all waves have their own pecularities, they are all based on the intereference of partial waves scattered at different segments of the polymer."
@@ -19,7 +19,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "0224b996",
+   "id": "cec59cd2",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -39,7 +39,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9195ac38",
+   "id": "bb0e4030",
    "metadata": {},
    "source": [
     "A solution of different polymer chains (assume its dilute) has different length scales involved. There is an average distance between the polymer chains which is large as compared to the polymer size. Waves that interfere when being scattered from different polymers reflect the structure of the solution and is commonly addressed in a scattering quantity, which is the **structure factor**. Waves that are scattered by the same chain and interfer are a measure of the polymer conformation and described by the **form factor**. Yet, this scale seperation might not always be possible in dense polymer solutions."
@@ -47,7 +47,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e24ccf80",
+   "id": "8f8015e5",
    "metadata": {},
    "source": [
     "## Form Factor"
@@ -55,7 +55,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f2ed6532",
+   "id": "a1bed9bc",
    "metadata": {},
    "source": [
     "We would like to consider the form factor only, which gives us information on the polymer conformation. We have an incident plane wave with the wave vector $\\vec{q}_i$ which is falling on our polymer chain. The wavevector has a direction and magnitude according to \n",
@@ -158,7 +158,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c7f6cc22",
+   "id": "1ab7f736",
    "metadata": {},
    "source": [
     "## Radius of Gyration"
@@ -166,7 +166,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f8fc751b",
+   "id": "fa6c61eb",
    "metadata": {},
    "source": [
     "We can relate the latter result directly with properties of the polymer chain, like the radius of gyration.\n",
@@ -204,7 +204,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "0ae38456",
+   "id": "c5ff016b",
    "metadata": {},
    "source": [
     "## Debye Function\n",
@@ -218,9 +218,10 @@
     "\n",
     "Note that the number of segments takes here the value N=|i-j|. Using this density distribution, we have to weight each contribution of the form factor with the corresponding probability density, i.e.\n",
     "\n",
-    "\\begin{e}\n",
-    "P(q)=\\frac{1}{N^{2}} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\int_{0}^{\\infty} \\frac{\\sin \\left(q R_{i j}\\right)}{q R_{i j}} P\\left(R_{i j},|i-j|\\right) 4 \\pi R_{i j}^{2} \\mathrm{~d} R_{i j}=\\frac{1}{N^{2}} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\exp \\left(-\\frac{q^{2} b^{2}|i-j|}{6}\\right)\n",
-    "$$\n",
+    "\\begin{eqnarray}\n",
+    "P(q)&=&\\frac{1}{N^{2}} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\int_{0}^{\\infty} \\frac{\\sin \\left(q R_{i j}\\right)}{q R_{i j}} P\\left(R_{i j},|i-j|\\right) 4 \\pi R_{i j}^{2} \\mathrm{~d} R_{i j}\\\\\n",
+    "&=&\\frac{1}{N^{2}} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\exp \\left(-\\frac{q^{2} b^{2}|i-j|}{6}\\right)\n",
+    "\\end{eqnarray}\n",
     "\n",
     "One can transform the double sum above in the case of large segment number into a double integral. The result is the Debye function \n",
     "\n",
@@ -234,7 +235,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "087fdba7",
+   "id": "2cbd6b19",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -245,7 +246,7 @@
   {
    "cell_type": "code",
    "execution_count": 28,
-   "id": "8fa1e15a",
+   "id": "43fbb80a",
    "metadata": {},
    "outputs": [
     {
@@ -285,7 +286,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "82c14372",
+   "id": "e0e9263d",
    "metadata": {},
    "source": [
     "We can have a look at different limits again, e.g. the small angle limit for which we find the same result as in the derivation in the previous section\n",
@@ -301,6 +302,14 @@
     "$$\n",
     "\n",
     "in the limit of large q, where the form factor decays as $1/q^2$. Both limits are included in the plot above to see their range of validity."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fb23b51e",
+   "metadata": {},
+   "source": [
+    "While the Debye function is the result for a simple ideal Gaussian chain, the form factor can also be derived for many other polymer shapes. The table below reports some examples."
    ]
   }
  ],
