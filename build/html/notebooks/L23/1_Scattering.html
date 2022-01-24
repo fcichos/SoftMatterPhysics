@@ -525,7 +525,7 @@ div.rendered_html tbody tr:hover {
 <h1>Scattering Techniques for Polymer Conformation<a class="headerlink" href="#Scattering-Techniques-for-Polymer-Conformation" title="Permalink to this headline">¶</a></h1>
 <p>The scattering of electromagnetic or matter waves is a commonly used tool to obtain information about the conformation of polymer chains. Light wave, X-rays (SAXS) but also neutrons (SANS) are used to study polymer solutions. While all waves have their own pecularities, they are all based on the intereference of partial waves scattered at different segments of the polymer.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -625,16 +625,57 @@ segments <span class="math notranslate nohighlight">\(i,j\)</span> at a distance
 <p>Note that the number of segments takes here the value N=|i-j|. Using this density distribution, we have to weight each contribution of the form factor with the corresponding probability density, i.e.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \int_{0}^{\infty} \frac{\sin \left(q R_{i j}\right)}{q R_{i j}} P\left(R_{i j},|i-j|\right) 4 \pi R_{i j}^{2} \mathrm{~d} R_{i j}=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \exp \left(-\frac{q^{2} b^{2}|i-j|}{6}\right)\]</div></div>
-<p>One can transform the double sum above in the case of large segment number into a double integral. The results is the Debye function</p>
+<p>One can transform the double sum above in the case of large segment number into a double integral. The result is the Debye function</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=\frac{2}{\left(q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)^{2}}\left[\exp \left(-q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)-1+q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right]\tag{Debye function}\]</div></div>
-<p>describing the scattering of an ideal chain. We can have a look at different limits again, e.g. the small angle limit for which we find the same result as in the derivation in the previous section</p>
+<p>describing the scattering of an ideal chain, which is displayed in the graph below for two different radii of gyration.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">DebyeFunction</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">R_g</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">R_g</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">R_g</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="p">((</span><span class="n">q</span><span class="o">*</span><span class="n">R_g</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">q</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">R_g</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">DebyeFunction</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">R_g</span><span class="p">),</span><span class="s1">'k-'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$R_g=1$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">R_g</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="s1">'b--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">q</span><span class="o">*</span><span class="n">R_g</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">'b--'</span><span class="p">)</span>
+<span class="n">R_g</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">DebyeFunction</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">R_g</span><span class="p">),</span><span class="s1">'r-'</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$R_g=2$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'-.'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'-.'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$q$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$P(q)$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L23_1_Scattering_10_0.png" class="no-scaled-link" src="../../_images/notebooks_L23_1_Scattering_10_0.png" style="width: 525px; height: 398px;">
+</img></div>
+</div>
+<p>We can have a look at different limits again, e.g. the small angle limit for which we find the same result as in the derivation in the previous section</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong\left(1-\frac{q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle}{3}+\cdots\right) \quad \text { for } q \sqrt{\left\langle R_{\mathrm{g}}^{2}\right\rangle}&lt;1\]</div></div>
 <p>Similarly, we find</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong \frac{2}{q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle} \quad \text { for } q \sqrt{\left\langle R_{\mathrm{g}}^{2}\right\rangle}&gt;1\]</div></div>
-<p>in the limit of large q, where the fo</p>
+<p>in the limit of large q, where the form factor decays as <span class="math notranslate nohighlight">\(1/q^2\)</span>. Both limits are included in the plot above to see their range of validity.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
