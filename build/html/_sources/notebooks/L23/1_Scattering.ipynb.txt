@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "f0adb9d2",
+   "id": "28404f85",
    "metadata": {},
    "source": [
     "# Scattering Techniques for Polymer Conformation"
@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "45b017b4",
+   "id": "0899d79c",
    "metadata": {},
    "source": [
     "The scattering of electromagnetic or matter waves is a commonly used tool to obtain information about the conformation of polymer chains. Light wave, X-rays (SAXS) but also neutrons (SANS) are used to study polymer solutions. While all waves have their own pecularities, they are all based on the intereference of partial waves scattered at different segments of the polymer."
@@ -19,7 +19,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "a0d79979",
+   "id": "1c6011bc",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -39,7 +39,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8ad14b54",
+   "id": "9df16192",
    "metadata": {},
    "source": [
     "A solution of different polymer chains (assume its dilute) has different length scales involved. There is an average distance between the polymer chains which is large as compared to the polymer size. Waves that interfere when being scattered from different polymers reflect the structure of the solution and is commonly addressed in a scattering quantity, which is the **structure factor**. Waves that are scattered by the same chain and interfer are a measure of the polymer conformation and described by the **form factor**. Yet, this scale seperation might not always be possible in dense polymer solutions."
@@ -47,7 +47,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "99b1ca46",
+   "id": "c01b7924",
    "metadata": {},
    "source": [
     "## Form Factor"
@@ -55,7 +55,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "046384ed",
+   "id": "21e5dd01",
    "metadata": {},
    "source": [
     "We would like to consider the form factor only, which gives us information on the polymer conformation. We have an incident plane wave with the wave vector $\\vec{q}_i$ which is falling on our polymer chain. The wavevector has a direction and magnitude according to \n",
@@ -158,7 +158,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5120c934",
+   "id": "cd549d83",
    "metadata": {},
    "source": [
     "## Radius of Gyration"
@@ -166,7 +166,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b7ec116d",
+   "id": "c3c9010a",
    "metadata": {},
    "source": [
     "We can relate the latter result directly with properties of the polymer chain, like the radius of gyration.\n",
@@ -197,47 +197,51 @@
     "\n",
     "$$\n",
     "P(q) \\cong \\exp \\left(-\\frac{q^{2} R_{\\mathrm{g}}^{2}}{3}\\right) \\quad \\text { for } q R_{\\mathrm{g}}<1\n",
-    "$$"
+    "$$\n",
+    "\n",
+    "which is termed the **Guinier function**."
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "cab5fce7",
+   "id": "66118568",
    "metadata": {},
    "source": [
     "## Debye Function\n",
+    "\n",
+    "The above consideration is not taking into account that not all distances $R_{ij}$ have the same probability for a polymer chain. This was first taken into account by Pieter Debye in form of the ideal chain. The end-to-end distance distribution we have obtained earlier delivers the probability to find the ending segments of a polymer with $N$ Kuhn segments of length $b$ at a distance $R$. We can use this expression as well to give a probability density to find two segments $i,j$ at a distance $R_{ij}$, which is then given by\n",
+    "\n",
     "\n",
     "$$\n",
     "p(R_{i j} ; \\underbrace{|i-j|}_{N}) d R_{i j}=\\left(\\frac{3}{2 \\pi|i-j| b^{2}}\\right)^{\\frac{3}{2}} e^{-3 R^{2}\\left(2|i-j| b^{2}\\right)} 4 \\pi R_{i j}^{2} d R_{i j}\n",
     "$$\n",
     "\n",
+    "Note that the number of segments takes here the value N=|i-j|. Using this density distribution, we have to weight each contribution of the form factor with the corresponding probability density, i.e.\n",
     "\n",
     "$$\n",
     "P(q)=\\frac{1}{N^{2}} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\int_{0}^{\\infty} \\frac{\\sin \\left(q R_{i j}\\right)}{q R_{i j}} P\\left(R_{i j},|i-j|\\right) 4 \\pi R_{i j}^{2} \\mathrm{~d} R_{i j}=\\frac{1}{N^{2}} \\sum_{i=1}^{N} \\sum_{j=1}^{N} \\exp \\left(-\\frac{q^{2} b^{2}|i-j|}{6}\\right)\n",
     "$$\n",
     "\n",
+    "One can transform the double sum above in the case of large segment number into a double integral. The results is the Debye function \n",
+    "\n",
     "$$\n",
-    "P(q)=\\frac{2}{\\left(q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle\\right)^{2}}\\left[\\exp \\left(-q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle\\right)-1+q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle\\right]\n",
+    "P(q)=\\frac{2}{\\left(q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle\\right)^{2}}\\left[\\exp \\left(-q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle\\right)-1+q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle\\right]\\tag{Debye function}\n",
     "$$\n",
     "\n",
+    "describing the scattering of an ideal chain. We can have a look at different limits again, e.g. the small angle limit for which we find the same result as in the derivation in the previous section\n",
     "\n",
     "$$\n",
     "P(q) \\cong\\left(1-\\frac{q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle}{3}+\\cdots\\right) \\quad \\text { for } q \\sqrt{\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle}<1\n",
     "$$\n",
     "\n",
+    "Similarly, we find \n",
     "\n",
     "$$\n",
     "P(q) \\cong \\frac{2}{q^{2}\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle} \\quad \\text { for } q \\sqrt{\\left\\langle R_{\\mathrm{g}}^{2}\\right\\rangle}>1\n",
-    "$$"
+    "$$\n",
+    "\n",
+    "in the limit of large q, where the fo"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "71577f19",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {

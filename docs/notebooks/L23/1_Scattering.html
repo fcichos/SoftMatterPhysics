@@ -614,28 +614,27 @@ I_{\mathrm{s}} &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=
 <p>when inserting <span class="math notranslate nohighlight">\(q\)</span>. We will see in the derivation of the Debye function, that this inverse parabola can also be approximated with a Gaussian function</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong \exp \left(-\frac{q^{2} R_{\mathrm{g}}^{2}}{3}\right) \quad \text { for } q R_{\mathrm{g}}&lt;1\]</div></div>
+<p>which is termed the <strong>Guinier function</strong>.</p>
 </div>
 <div class="section" id="Debye-Function">
 <h2>Debye Function<a class="headerlink" href="#Debye-Function" title="Permalink to this headline">¶</a></h2>
+<p>The above consideration is not taking into account that not all distances <span class="math notranslate nohighlight">\(R_{ij}\)</span> have the same probability for a polymer chain. This was first taken into account by Pieter Debye in form of the ideal chain. The end-to-end distance distribution we have obtained earlier delivers the probability to find the ending segments of a polymer with <span class="math notranslate nohighlight">\(N\)</span> Kuhn segments of length <span class="math notranslate nohighlight">\(b\)</span> at a distance <span class="math notranslate nohighlight">\(R\)</span>. We can use this expression as well to give a probability density to find two
+segments <span class="math notranslate nohighlight">\(i,j\)</span> at a distance <span class="math notranslate nohighlight">\(R_{ij}\)</span>, which is then given by</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[p(R_{i j} ; \underbrace{|i-j|}_{N}) d R_{i j}=\left(\frac{3}{2 \pi|i-j| b^{2}}\right)^{\frac{3}{2}} e^{-3 R^{2}\left(2|i-j| b^{2}\right)} 4 \pi R_{i j}^{2} d R_{i j}\]</div></div>
+<p>Note that the number of segments takes here the value N=|i-j|. Using this density distribution, we have to weight each contribution of the form factor with the corresponding probability density, i.e.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \int_{0}^{\infty} \frac{\sin \left(q R_{i j}\right)}{q R_{i j}} P\left(R_{i j},|i-j|\right) 4 \pi R_{i j}^{2} \mathrm{~d} R_{i j}=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \exp \left(-\frac{q^{2} b^{2}|i-j|}{6}\right)\]</div></div>
+<p>One can transform the double sum above in the case of large segment number into a double integral. The results is the Debye function</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[P(q)=\frac{2}{\left(q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)^{2}}\left[\exp \left(-q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)-1+q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right]\]</div></div>
+\[P(q)=\frac{2}{\left(q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)^{2}}\left[\exp \left(-q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right)-1+q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle\right]\tag{Debye function}\]</div></div>
+<p>describing the scattering of an ideal chain. We can have a look at different limits again, e.g. the small angle limit for which we find the same result as in the derivation in the previous section</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong\left(1-\frac{q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle}{3}+\cdots\right) \quad \text { for } q \sqrt{\left\langle R_{\mathrm{g}}^{2}\right\rangle}&lt;1\]</div></div>
+<p>Similarly, we find</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong \frac{2}{q^{2}\left\langle R_{\mathrm{g}}^{2}\right\rangle} \quad \text { for } q \sqrt{\left\langle R_{\mathrm{g}}^{2}\right\rangle}&gt;1\]</div></div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<p>in the limit of large q, where the fo</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
@@ -662,7 +661,7 @@ I_{\mathrm{s}} &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 23, 2022. |
+            Last updated on Jan 24, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
