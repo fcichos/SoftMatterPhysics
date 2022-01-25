@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Viscoelasticity" href="../L24/1_Viscoelasticity.html" /><link rel="prev" title="Scattering Techniques for Polymer Conformation" href="1_Scattering.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Viscoelasticity" href="../L23/2_Viscoelasticity.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Viscoelasticity - Soft Matter Lecture 21 documentation</title>
@@ -241,13 +241,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Viscoelasticity</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Viscoelasticity</a></li>
 </ul>
 
 </div>
@@ -523,92 +523,88 @@ div.rendered_html tbody tr:hover {
 }
 </style>
 <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L23/2_Viscoelasticity.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L23/2_Viscoelasticity.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<p>This page was generated from <cite>notebooks/L24/1_Viscoelasticity.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L24/1_Viscoelasticity.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <div class="section" id="Viscoelasticity">
 <h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this headline">¶</a></h1>
-<img alt="Ranges" src="../../_images/ranges.png">
-<p>Viscoelsatic behavior is a mixture of viscous behavior, which we know already from simple liquids and elastic behavior, which is typical for solids. Yet, this mixture is not just a simple superposition but often quite complex and depdning on the way mechanical deformation is introduced.</p>
-<p><strong>insert sketch</strong></p>
-<p>As already previously introduced, we can define a <strong>shear stress</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=\frac{F}{A}\]</div></div>
-<p>as the tangential force <span class="math notranslate nohighlight">\(F\)</span> to an area <span class="math notranslate nohighlight">\(A\)</span>. As a response to such a stress, the material deforms and the deformation is called <strong>shear strain</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma =\frac{\Delta x}{L}\]</div></div>
-<p>which corresponds directly to the angle in the above sketch as long as the displacement is small. Within this description all parts of the sample experience the same shear stress and strain if the material is uniform.</p>
-<p>A perfectly elastic solid would give a very simple relation between stress and strain, i.e.</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=G \gamma\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(G\)</span> is the shear modulus. This corresponds to Hooke’s law of elasticity, which is valid for small deformations or small strain. In case of a simple liquid with a dynamic viscosity <span class="math notranslate nohighlight">\(\eta\)</span>, a constant strain leads to a zero shear stress. The liquid flow in response to the deformation and all flows have dissipated the initial deformation due to the internal friction of the liquid. Thus for liquids and viscous dissipation the <strong>shear rate</strong> may be of larger importance</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\dot{\gamma}=\frac{d\gamma}{dt}\]</div></div>
-<p>A constant stress in the liquid thus needs a constant strain rate such that</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=\eta \dot{\gamma} \tag{Newton's law of viscosity}\]</div></div>
-<p>The response of an elastic or viscous material to stepwise introduced stress or strain is therefore different and helps o classify the mechanical material response.</p>
-<img alt="Response" src="../../_images/response.png"/>
-<p>Accoding to this picture, and</p>
-<ul class="simple">
-<li><p><strong>elastic solid</strong> responds with a step stress to a step strain, but also with a step strain to a step stress</p></li>
-<li><p><strong>viscous liquid</strong> responds with a spike in the stress to a step strain and a linear strain to the step stress</p></li>
-<li><p><strong>viscoelastic material</strong> responds with an (exponential) decay to a stepp strain and an (exponential) increase to a limiting value to a step stress</p></li>
-</ul>
-<p>Viscoelasstic materials are thus materials that exhibit both viscous and elastic responses under applied mechanical stress and strain. As these responses are time dependent, viscoeleastic materials may show elastic behavior on short timescales but liquid on long timescales. Viscoelastic solids will always reach non-zero values for stress or strain after a certain amount of time, while for a viscoelastic material, the stress always decays to zero but the strain is able to grow without bounds.</p>
-<div class="section" id="Models-for-Viscoelastic-behavior">
-<h2>Models for Viscoelastic behavior<a class="headerlink" href="#Models-for-Viscoelastic-behavior" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="Maxwell-Model">
-<h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
-<p>A model for a viscoelastic liquid is the Maxwell model being a serial combination of a spring and a dashpot (viscous element).</p>
-<img alt="Maxwell" src="../../_images/maxwell.png"/>
-</div>
-<div class="section" id="Kelvin-Voigt">
-<h2>Kelvin-Voigt<a class="headerlink" href="#Kelvin-Voigt" title="Permalink to this headline">¶</a></h2>
-<p>The Kelvin-Voigt model is a parallel combination of both elements and can grasp some features of a viscoelastic solid. It can however not describe the behavior for step strain.</p>
-<img alt="Kelvin-Voigt" src="../../_images/kelvinvoigt.png"/>
-</div>
-<div class="section" id="Standard-Model">
-<h2>Standard Model<a class="headerlink" href="#Standard-Model" title="Permalink to this headline">¶</a></h2>
-<p>A better model for visoelastic solids is the standard linear solid model comprising three mechanical elements.</p>
-<img alt="Standard" src="../../_images/standard.png"/>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span><span class="n">q</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">"/tmp/ipykernel_644702/780178022.py"</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">10</span>
+<span class="ansi-red-fg">    style = json.load(fp)</span>
+    ^
+<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> unexpected indent
+
+</pre></div></div>
+</div>
+<div class="section" id="Maxwell-Model">
+<h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
+<img alt="Maxwell" src="../../_images/maxwell1.png">
+<p>Combing back to the Maxwell model, we have a serial combination of viscous and elastic element. Thus both elements feel the same stress <span class="math notranslate nohighlight">\(\sigma\)</span> and the deformation is the sum of the elastic and viscous deformation, i.e. <span class="math notranslate nohighlight">\(\gamma=\gamma_e+\gamma_v\)</span>.</p>
+<p>We therefore find</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma=G_M\gamma_e= \eta_M\frac{d\gamma}{dt}\]</div></div>
+<p>or</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\eta_M/G_M\)</span> defines a timescale for the viscous relaxation.</p>
+</img></div>
+<div class="section" id="Stress-Relaxation-after-Step-Strain">
+<h2>Stress Relaxation after Step Strain<a class="headerlink" href="#Stress-Relaxation-after-Step-Strain" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Boltzmann-Superposition">
+<h2>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Steady-Shear">
+<h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Creep-and-Creep-Recovery">
+<h2>Creep and Creep Recovery<a class="headerlink" href="#Creep-and-Creep-Recovery" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="Oscillatory-Shear">
+<h2>Oscillatory Shear<a class="headerlink" href="#Oscillatory-Shear" title="Permalink to this headline">¶</a></h2>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
-</img></div>
+</div>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L24/1_Viscoelasticity.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Viscoelasticity</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="1_Scattering.html">
+          
+          <a class="prev-page" href="../L23/2_Viscoelasticity.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Scattering Techniques for Polymer Conformation</div>
+                <div class="title">Viscoelasticity</div>
                 
               </div>
             </a>
@@ -621,7 +617,7 @@ div.rendered_html tbody tr:hover {
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L23/2_Viscoelasticity.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L24/1_Viscoelasticity.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -642,10 +638,12 @@ div.rendered_html tbody tr:hover {
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Viscoelasticity</a><ul>
-<li><a class="reference internal" href="#Models-for-Viscoelastic-behavior">Models for Viscoelastic behavior</a></li>
 <li><a class="reference internal" href="#Maxwell-Model">Maxwell Model</a></li>
-<li><a class="reference internal" href="#Kelvin-Voigt">Kelvin-Voigt</a></li>
-<li><a class="reference internal" href="#Standard-Model">Standard Model</a></li>
+<li><a class="reference internal" href="#Stress-Relaxation-after-Step-Strain">Stress Relaxation after Step Strain</a></li>
+<li><a class="reference internal" href="#Boltzmann-Superposition">Boltzmann Superposition</a></li>
+<li><a class="reference internal" href="#Steady-Shear">Steady Shear</a></li>
+<li><a class="reference internal" href="#Creep-and-Creep-Recovery">Creep and Creep Recovery</a></li>
+<li><a class="reference internal" href="#Oscillatory-Shear">Oscillatory Shear</a></li>
 </ul>
 </li>
 </ul>

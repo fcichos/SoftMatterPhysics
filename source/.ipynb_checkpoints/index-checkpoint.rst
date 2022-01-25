@@ -138,6 +138,12 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L23/1_Scattering.ipynb     
    notebooks/L23/2_Viscoelasticity.ipynb     
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 24:
+   
+   notebooks/L24/1_Viscoelasticity.ipynb  
    
 Indices and tables
 ==================
