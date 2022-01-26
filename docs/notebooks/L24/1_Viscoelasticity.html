@@ -597,7 +597,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/notebooks_L24_1_Viscoelasticity_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L24_1_Viscoelasticity_5_0.png" style="width: 413px; height: 283px;"/>
 </div>
 </div>
-<p>The Maxwell model, which is represented by a viscous dahspot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
+<p>The Maxwell model, which is represented by a viscous dashpot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}=\tau_M\frac{d\gamma_v}{dt}\]</div></div>
 <p>Since the two elements are in series the elastic strain is also expressed by</p>
@@ -615,15 +615,106 @@ div.rendered_html tbody tr:hover {
 <p>and for the stress</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\sigma(t)=G_M\gamma_e(t)=G_M \gamma \exp \left ( -\frac{t}{\tau_M}\right )\]</div></div>
+<p>Thus in the Maxwell model, the stress relaxation has a simple exponential decay with the characteristic time constant <span class="math notranslate nohighlight">\(\tau_M\)</span>. Such a characteristic time constant is characteristic for all viscoelastic materials. Many materials, e.g., polymers have multiple relaxation modes, each with its own time constant <span class="math notranslate nohighlight">\(\tau\)</span> as we will see later.It turns out, that any stress relaxation modulus can be described by a series of Maxwell elements.</p>
 <div class="section" id="Boltzmann-Superposition">
 <h3>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this headline">¶</a></h3>
+<p>The mechanical response of all materials has a region of linear response, where the relaxation modulus is independent of the strain. A manifestation of this linear response is the Boltzmann superposition principle.</p>
+<p>Stress from any combination of small step strains is simply the linear combination of stresses resulting from each individual step.</p>
+<p>If this individual strain step <span class="math notranslate nohighlight">\(\delta \gamma\)</span> is applied at <span class="math notranslate nohighlight">\(t_i\)</span>, then the stress at a time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma(t)=\sum_{i}G(t-t_i)\delta \gamma_i\]</div></div>
+<p>This means that the stress of each individual step is independent of the other steps and the system remembers the deformations that were imposed earlier and continue to relaxa from earlier deformations as new ones are applied.</p>
+<p>The stress relaxation modulus tells then how much stress remains at <span class="math notranslate nohighlight">\(t\)</span> past each deformation <span class="math notranslate nohighlight">\(\delta \gamma_i\)</span> through <span class="math notranslate nohighlight">\(t-t_i\)</span>. With</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\delta \gamma_i=\dot{\gamma}_i\delta t_i\]</div></div>
+<p>we obtain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma(t)=\sum_i G(t-t_i)\dot{\gamma}_i\delta t_i\]</div></div>
+<p>or from a smooth history of strains</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma(t)=\int_{-\infty}^{t}G(t-t^{\prime})\dot{\gamma}(t^{\prime})dt^{\prime}\]</div></div>
+<p>which tells you that the stress in any material is the result of all past deformations, which is expressed by this convolution. The momory of each past deformation only decays as the relaxation modulus decay ovet the elapsed time <span class="math notranslate nohighlight">\(t-t^{\prime}\)</span></p>
 </div>
 </div>
 <div class="section" id="Steady-Shear">
 <h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this headline">¶</a></h2>
+<p>We now switch to a different mode of mechanical perturbation of a material, which is the steady shear deformation. There we already considered the flow profile in the low Reynolds number section.</p>
+<img alt="Flow" src="../../_images/shear.png"/>
+<p>Here, the shear rate is given by the speed of the top surface <span class="math notranslate nohighlight">\(\dot{\gamma}=|\vec{v}|/h\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is the height of the film. According to our previous considerations the stress follows from</p>
+<p><span class="math">\begin{eqnarray}
+\sigma(t)&amp;=&amp;\dot{\gamma}\int_{-\infty}^{t}G(t-t^{\prime})dt^{\prime}\\
+&amp;=&amp; \dot{\gamma}\int_0^{\infty}G(s)dt
+\end{eqnarray}</span></p>
+<p>with <span class="math notranslate nohighlight">\(s=t-t^{\prime}\)</span>. With Newtons law of viscosity follows that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\eta=\int_{0}^{\infty}G(t)dt\]</div></div>
+<p>Using the Maxwell model this means that the viscosity is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\eta=G\int_{0}^{\infty}\exp\left (-\frac{t}{\tau}\right )dt=G\tau=\eta_M\]</div></div>
+<p>which is also the result for a viscoelastic liquid. If the modulus <span class="math notranslate nohighlight">\(G\)</span> is not constant, the viscosity can be also approximated by <span class="math notranslate nohighlight">\(\eta=G(\tau)\tau\)</span>.</p>
+<p>For a viscoelastic solid, the moduls <span class="math notranslate nohighlight">\(G(t)\)</span> does not decay to zero in time, but stays constant for long times. As a result the integral will diverge, as solids have an infinite viscosity.</p>
+<p>If the shear rate becomes very large, the linear response approximation we have asummed for the Boltzmann superposition will not hold and we will observe non-linear effects. This leads for example to a <strong>shear thinning</strong> in polymeric liquids but also to a <strong>shear thickening</strong> for other materials such as the corn starch.</p>
+<p>In these nonlinear regions, we can still define an apparent viscosity as the ration of shear stress divided by shear strain. The viscosity we commonly refer to is, however, the viscosity measured in the limit of <span class="math notranslate nohighlight">\(\gamma\ll \tau^{-1}\)</span>.</p>
+<p>Note that all liquids display viscoelasticity even though the range where the viscosity is independent of the shear rate is very wide. For water, for example, the molecular relaxations are fast and the viscoelastic regimes starts at shear rates of about <span class="math notranslate nohighlight">\(10^{10}\, s^{-1}\)</span></p>
 </div>
 <div class="section" id="Creep-and-Creep-Recovery">
 <h2>Creep and Creep Recovery<a class="headerlink" href="#Creep-and-Creep-Recovery" title="Permalink to this headline">¶</a></h2>
+<p>Another mechanical perturbation is the step stress that can be applied to watch the strain relax. This is called <strong>creep</strong> and switching of a constant stress is called <strong>creep recovery</strong>. For the study of creep relaxation processes we define a new quantity, which is the inverse of the shear modulus. It is called the <strong>shear creep compliance</strong></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}\]</div></div>
+<p>The relation of modulus and compliance is much like the relation of resistivity and conductivity. We can use again the Maxwell model to gain some insight. There the elastic element responds with an instantaneous strain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\sigma}{G_M}\]</div></div>
+<p>For the viscous element on the other hand we have</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{d\gamma_v(t)}{dt}=\frac{\sigma}{\eta_M}\]</div></div>
+<p>which results in a linear growth of the viscous strain with time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_v(t)=\frac{\sigma}{\eta_M}t\]</div></div>
+<p>The creep compliance in the Maxwell model is therefore</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[J(t)=\frac{\gamma_e+\gamma_v(t)}{\sigma}=\frac{1}{G_M}+\frac{t}{\eta_M}\]</div></div>
+<p>which is overall linear in time. At time <span class="math notranslate nohighlight">\(t=0\)</span>, the compliance is given by the elastic part <span class="math notranslate nohighlight">\(1/G_M\)</span>, while the slope at long times is given by <span class="math notranslate nohighlight">\(1/\eta\)</span>. For viscoelastic liquids we have in general</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[J(t)=J_{eq}+\frac{t}{\eta}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(J_{eq}\)</span> corresponds to the energy stored in the elastic part of the liquid, but the compliance grows linearly with time. For a viscoelastic solid we know, however, that</p>
+<p>J_{eq}=:nbsphinx-math:<cite>lim</cite><em>{t:nbsphinx-math:`rightarrow `:nbsphinx-math:`infty`}=:nbsphinx-math:`frac{1}{sigma}`:nbsphinx-math:`lim`</em>{t:nbsphinx-math:<cite>rightarrow `:nbsphinx-math:</cite>infty`}:nbsphinx-math:<cite>gamma`(t)=:nbsphinx-math:</cite>frac{1}{G_{eq}}`</p>
+<p>We can therefore use a different model to better describe a viscoelastic solid. This is done by the Kelvin Voigt model, where viscous and elastic part are connected in parallel. In this case the stresses add up</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma=\sigma_e(t)\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}\]</div></div>
+<p>Separation of variables yields</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\int_0^{\gamma}\frac{d\gamma(t)}{\frac{\sigma}{G}-\gamma(t)}=\frac{G}{\eta}\int_0^{t}dt\]</div></div>
+<p>which results in the strain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma(t)=\frac{\sigma}{G}(1-\exp(-t/(\eta/G))\]</div></div>
+<p>which gives for the creep compliance</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}(1-\exp(-t/\tau))\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mf">0.2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)),</span><span class="n">label</span><span class="o">=</span><span class="s2">"ve-solid"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mf">0.2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span><span class="o">+</span><span class="mf">0.08</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">"ve-liquid"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"time t"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$J(t)$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L24_1_Viscoelasticity_10_0.png" class="no-scaled-link" src="../../_images/notebooks_L24_1_Viscoelasticity_10_0.png" style="width: 414px; height: 290px;"/>
+</div>
+</div>
 </div>
 <div class="section" id="Oscillatory-Shear">
 <h2>Oscillatory Shear<a class="headerlink" href="#Oscillatory-Shear" title="Permalink to this headline">¶</a></h2>
