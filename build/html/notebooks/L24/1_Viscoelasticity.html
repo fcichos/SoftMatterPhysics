@@ -679,7 +679,9 @@ div.rendered_html tbody tr:hover {
 \[J(t)=J_{eq}+\frac{t}{\eta}\]</div></div>
 <p>where <span class="math notranslate nohighlight">\(J_{eq}\)</span> corresponds to the energy stored in the elastic part of the liquid, but the compliance grows linearly with time. For a viscoelastic solid we know, however, that</p>
 <p>J_{eq}=:nbsphinx-math:<cite>lim</cite><em>{t:nbsphinx-math:`rightarrow `:nbsphinx-math:`infty`}=:nbsphinx-math:`frac{1}{sigma}`:nbsphinx-math:`lim`</em>{t:nbsphinx-math:<cite>rightarrow `:nbsphinx-math:</cite>infty`}:nbsphinx-math:<cite>gamma`(t)=:nbsphinx-math:</cite>frac{1}{G_{eq}}`</p>
-<p>We can therefore use a different model to better describe a viscoelastic solid. This is done by the Kelvin Voigt model, where viscous and elastic part are connected in parallel. In this case the stresses add up</p>
+<p>We can therefore use a different model to better describe a viscoelastic solid. This is done by the Kelvin Voigt model, where viscous and elastic part are connected in parallel.</p>
+<img alt="Kelvin Voigt" src="../../_images/kelvinvoigt1.png"/>
+<p>In this case the stresses add up</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\sigma=\sigma_e(t)\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}\]</div></div>
 <p>Separation of variables yields</p>
@@ -693,7 +695,7 @@ div.rendered_html tbody tr:hover {
 \[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}(1-\exp(-t/\tau))\]</div></div>
 <p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
