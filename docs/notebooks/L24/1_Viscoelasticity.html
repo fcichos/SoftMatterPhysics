@@ -528,8 +528,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Viscoelasticity">
 <h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this headline">¶</a></h1>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -548,18 +548,6 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">"/tmp/ipykernel_644702/780178022.py"</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">10</span>
-<span class="ansi-red-fg">    style = json.load(fp)</span>
-    ^
-<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> unexpected indent
-
-</pre></div></div>
-</div>
 <div class="section" id="Maxwell-Model">
 <h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
 <img alt="Maxwell" src="../../_images/maxwell1.png">
@@ -570,13 +558,66 @@ div.rendered_html tbody tr:hover {
 <p>or</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(\eta_M/G_M\)</span> defines a timescale for the viscous relaxation.</p>
+<p>where <span class="math notranslate nohighlight">\(\eta_M/G_M\)</span> defines a timescale for the viscous relaxation. Such a timescale is always present in viscoelastic materials. In most materials even multiple timescales are relevant.</p>
+<p>In the following sections we explore the response of a viscoelastic material to different pertubations. They can be either formed by a <strong>step strain</strong>, a <strong>steady shear</strong> or a <strong>step stress or creep</strong>.</p>
 </img></div>
 <div class="section" id="Stress-Relaxation-after-Step-Strain">
 <h2>Stress Relaxation after Step Strain<a class="headerlink" href="#Stress-Relaxation-after-Step-Strain" title="Permalink to this headline">¶</a></h2>
+<p>Here we impose a step strain <span class="math notranslate nohighlight">\(\gamma\)</span> at a time <span class="math notranslate nohighlight">\(t=0\)</span>, such that the strain is constant for <span class="math notranslate nohighlight">\(t&gt;0\)</span>. Depending on the material we will get a different response. If we have for example an</p>
+<ul class="simple">
+<li><p><strong>elastic solid</strong> will repond with a jump in the stress according to <span class="math notranslate nohighlight">\(G\gamma\)</span> and the stress will stay constant as long as the strain is constant</p></li>
+<li><p><strong>Newtonian liquid</strong> will respond with a stress spike that instantaneously decays to zero</p></li>
+<li><p><strong>viscoelastic system</strong> will respond with some time dependent stress <span class="math notranslate nohighlight">\(\sigma(t)\)</span></p></li>
+</ul>
+<p>Due to the time dependence of the stress <span class="math notranslate nohighlight">\(\sigma(t)\)</span> for a viscoelastic material we can generalize Hooke’s law to</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)=\frac{\sigma(t)}{\gamma}\]</div></div>
+<p>The plot shows the reponse of either a viscoelastic liquid or a viscoelastic solid. The latter comprise a general elastic part, which lets the stress converge for infinity time to some constant value</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G_{\rm eq}=\lim_{t\rightarrow \infty} G(t)\]</div></div>
+<p>For viscoelestic liquids this residual stress is absent and the stress decays to zero.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">"ve-liquid"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mf">0.8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">"ve-solid"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"time t"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"stress $\sigma(t)$"</span><span class="p">);</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L24_1_Viscoelasticity_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L24_1_Viscoelasticity_5_0.png" style="width: 413px; height: 283px;"/>
+</div>
+</div>
+<p>The Maxwell model, which is represented by a viscous dahspot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}=\tau_M\frac{d\gamma_v}{dt}\]</div></div>
+<p>Since the two elements are in series the elastic strain is also expressed by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_e=\gamma-\gamma_v(t)\]</div></div>
+<p>Separation off variables leads to</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{d\gamma_v(t)}{\gamma-\gamma_v(t)}=\frac{dt}{\tau_M}\]</div></div>
+<p>from which we obtain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\ln(\gamma-\gamma_v(t))=\frac{-t}{\tau_M}+C\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(C=\ln(\gamma)\)</span> based on the initial condition that <span class="math notranslate nohighlight">\(\gamma(t=0)=\gamma\)</span>. As a result we obtain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_e(t)=\gamma-\gamma_v(t)=\gamma \exp\left (- \frac{t}{\tau_M} \right )\]</div></div>
+<p>and for the stress</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma(t)=G_M\gamma_e(t)=G_M \gamma \exp \left ( -\frac{t}{\tau_M}\right )\]</div></div>
 <div class="section" id="Boltzmann-Superposition">
-<h2>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this headline">¶</a></h2>
+<h3>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="Steady-Shear">
 <h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this headline">¶</a></h2>
@@ -612,7 +653,7 @@ div.rendered_html tbody tr:hover {
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 25, 2022. |
+            Last updated on Jan 26, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -639,8 +680,10 @@ div.rendered_html tbody tr:hover {
             <ul>
 <li><a class="reference internal" href="#">Viscoelasticity</a><ul>
 <li><a class="reference internal" href="#Maxwell-Model">Maxwell Model</a></li>
-<li><a class="reference internal" href="#Stress-Relaxation-after-Step-Strain">Stress Relaxation after Step Strain</a></li>
+<li><a class="reference internal" href="#Stress-Relaxation-after-Step-Strain">Stress Relaxation after Step Strain</a><ul>
 <li><a class="reference internal" href="#Boltzmann-Superposition">Boltzmann Superposition</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#Steady-Shear">Steady Shear</a></li>
 <li><a class="reference internal" href="#Creep-and-Creep-Recovery">Creep and Creep Recovery</a></li>
 <li><a class="reference internal" href="#Oscillatory-Shear">Oscillatory Shear</a></li>
