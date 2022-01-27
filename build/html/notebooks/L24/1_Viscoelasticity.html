@@ -686,7 +686,7 @@ div.rendered_html tbody tr:hover {
 <img alt="Kelvin Voigt" src="../../_images/kelvinvoigt1.png"/>
 <p>In this case the stresses add up</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=\sigma_e(t)\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}\]</div></div>
+\[\sigma=\sigma_e(t)+\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}\]</div></div>
 <p>Separation of variables yields</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\int_0^{\gamma}\frac{d\gamma(t)}{\frac{\sigma}{G}-\gamma(t)}=\frac{G}{\eta}\int_0^{t}dt\]</div></div>
@@ -695,7 +695,7 @@ div.rendered_html tbody tr:hover {
 \[\gamma(t)=\frac{\sigma}{G}(1-\exp(-t/(\eta/G))\]</div></div>
 <p>which gives for the creep compliance</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}(1-\exp(-t/\tau))\]</div></div>
+\[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)\]</div></div>
 <p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -834,8 +834,10 @@ div.rendered_html tbody tr:hover {
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\underbrace{\gamma_{0} e^{i \omega t}}_{\gamma}=\underbrace{\frac{\sigma_{0}}{G} e^{i \omega t}}_{\gamma_e}-i\underbrace{ \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}}_{\gamma_v}\]</div></div>
 <p>from which we can read the complex modulus</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\omega \eta}{\omega \eta / G-i}=\frac{\omega \eta(\omega \eta / G+i)}{(\omega \underbrace{\eta / G}_{\tau})^{2}+1}=\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}\]</div></div>
+<p><span class="math">\begin{eqnarray}
+G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\omega \eta}{\omega \eta / G-i}=\frac{\omega \eta(\omega \eta / G+i)}{(\omega \underbrace{\eta / G}_{\tau})^{2}+1}\\
+&amp;=&amp;\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}\tag{Comlex modulus Maxwell model}
+\end{eqnarray}</span></p>
 <p>The plot below shows the frequency dependence of the real and imaginary part of the modulus for the Maxwell model. The imaginary part has the shape of a Lorentzian, which is corresponding to the Fourier transform of an exponential in the time domain. The wings of <span class="math notranslate nohighlight">\(G^{\prime \prime}\)</span> increase or decay with <span class="math notranslate nohighlight">\(\omega\)</span>, while the real part <span class="math notranslate nohighlight">\(G^{\prime}\)</span> shows a steeper increase with <span class="math notranslate nohighlight">\(\omega^2\)</span> until it saturates. The saturation and the peak occur at the characteristic timescale
 <span class="math notranslate nohighlight">\(\tau=\eta/G\)</span>, indicated by the vertical dahsed line.</p>
 <div class="nbinput nblast docutils container">
@@ -877,7 +879,16 @@ div.rendered_html tbody tr:hover {
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\underbrace{\sigma_{0} e^{i \omega t}}_{\sigma}=\sigma_{e}+\sigma_{v}=G \gamma+\eta \frac{d \gamma}{d t}=G \gamma_{0} e^{i \omega t}+i \omega \eta \gamma_{0} e^{i \omega t}\]</div></div>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=G+i \omega \eta=\underbrace{G}_{G^{\prime}}+i \underbrace{G \omega \tau}_{G^{\prime \prime}}\]</div></div>
+\[G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=G+i \omega \eta=\underbrace{G}_{G^{\prime}}+i \underbrace{G \omega \tau}_{G^{\prime \prime}} \tag{Complex modulus Kelvin-Voigt model}\]</div></div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
