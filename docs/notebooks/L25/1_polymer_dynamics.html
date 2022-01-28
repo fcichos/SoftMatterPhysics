@@ -638,16 +638,6 @@ S(R)&amp;=&amp;k_B \ln(p(\vec{R},N))+{\rm const}\\
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\Delta F= \frac{n k_B T}{2}(\lambda^2+\frac{2}{\lambda}-3)\]</div></div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">free_energy</span><span class="p">(</span><span class="n">lam</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">lam</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="n">lam</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
@@ -655,25 +645,6 @@ S(R)&amp;=&amp;k_B \ln(p(\vec{R},N))+{\rm const}\\
 <span></span><span class="n">l</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">free_energy</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\lambda$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\Delta F$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L25_1_polymer_dynamics_16_0.png" class="no-scaled-link" src="../../_images/notebooks_L25_1_polymer_dynamics_16_0.png" style="width: 423px; height: 283px;">
-</img></div>
 </div>
 <p>The corresponding force that has to be applied to stretch the molecules can be calculated from the derivative</p>
 <p><span class="math">\begin{eqnarray}
@@ -748,7 +719,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 28, 2022. |
+            Last updated on Jan 29, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
