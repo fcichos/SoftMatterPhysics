@@ -533,7 +533,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Dynamics-of-Polymers">
 <h1>Dynamics of Polymers<a class="headerlink" href="#Dynamics-of-Polymers" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -625,6 +625,104 @@ coefficient will not be just the sum of all friction coefficients. This means th
 <h3>Affine Deformation and Entropy<a class="headerlink" href="#Affine-Deformation-and-Entropy" title="Permalink to this headline">¶</a></h3>
 <p>To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain.</p>
 <p><strong>insert image here</strong></p>
+<p>As we have discussed earlier, the entropy of a single chain with an end-to-end distance <span class="math notranslate nohighlight">\(R\)</span> can be calculated from</p>
+<p>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{eqnarray}
+S(R)&amp;=&amp;k_B ln(p(vec{R},N))+{rm const}\</p>
+<blockquote>
+<div><p>&amp;=&amp;-frac{3}{2}frac{k_B R^2}{Nb^2}+{rm const} tag{FJC}</p>
+</div></blockquote>
+<p>end{eqnarray}`</p>
+<p>In our lab system the end-to-edn vector length <span class="math notranslate nohighlight">\(R^2\)</span> can be expressed by its components such that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[S(R)=-\frac{3}{2}\frac{k_B (R_x^2+R_y^2+R_z^2)}{Nb^2}+{\rm const}\]</div></div>
+<p>If we now introduce a deformation</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[L_x=\lambda_x L_{X0},\, L_y=\lambda_y L_{Y0},\, L_z=\lambda_z L_{Z0}\]</div></div>
+<p>where the <span class="math notranslate nohighlight">\(\lambda\)</span> are just scaling factors for the volume, we can also assume that the components of the end-to-end vectro scale in the same way, i.e.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[R_x=\lambda_x R_{X0},\, R_y=\lambda_y R_{Y0},\, R_z=\lambda_z R_{Z0}\]</div></div>
+<p>such that we obtain for the change in entropy upon deformation</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Delta S=S(R)-S(R_0)=\frac{3}{2}\frac{k_B}{Nb^2}\left [(\lambda_x^2-1)R_{X0}^2 +(\lambda_y^2-1)R_{Y0}^2+(\lambda_z^2-1)R_{Z0}^2\right ]\]</div></div>
+<p>If we have now a system of <span class="math notranslate nohighlight">\(n\)</span>-chains in the solution, we have to sum up all squared components of the end-to-end distance</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sum_{i=1}^{n}(R_{X0})_i^2=n\frac{1}{n}\sum_{i=1}^{n}(R_{X0})_i^2=n\langle R_{XO}^2\rangle=n\frac{Nb^2}{3}\]</div></div>
+<p>using our previous result for the mean squared end-to-end distance. This finally results in</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Delta S=-\frac{n k_B}{2}(\lambda_x^2+\lambda_y^2+\lambda_z^2-3)\]</div></div>
+<p>for the entropy change of all chains. The results lets us calculate the change in free energy <span class="math notranslate nohighlight">\(\Delta F=-T \Delta S\)</span>, which is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Delta F=-\frac{n k_B T}{2}(\lambda_x^2+\lambda_y^2+\lambda_z^2-3)\]</div></div>
+<p>If we assume now that the volume is unchanged upon deformation, i.e. <span class="math notranslate nohighlight">\(V=\lambda_x\lambda_y\lambda_z V\)</span> or <span class="math notranslate nohighlight">\(\lambda_x\lambda_y\lambda_z=1\)</span>, we can express a uniaxial deformation along the x-axis as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\lambda_x=\lambda.\, \lambda_y=\lambda_z=\frac{1}{\sqrt{\lambda}}\]</div></div>
+<p>from whgich we obtain for the deformation</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Delta F= \frac{n k_B T}{2}(\lambda^2+\frac{2}{\lambda}-3)\]</div></div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">free_energy</span><span class="p">(</span><span class="n">lam</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">lam</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="n">lam</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">l</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">free_energy</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\lambda$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\Delta F$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L25_1_polymer_dynamics_16_0.png" class="no-scaled-link" src="../../_images/notebooks_L25_1_polymer_dynamics_16_0.png" style="width: 423px; height: 283px;">
+</img></div>
+</div>
+<p>The corresponding force that has to be applied to stretch the molecules can be calculated from the derivative</p>
+<p><span class="math">\begin{eqnarray}
+f_x&amp;=&amp;\frac{\partial \Delta F}{\partial L_x}=\frac{\partial \Delta F}{\partial\lambda L_{x0}}=\frac{1}{L_{x0}}\frac{\partial \Delta F}{\partial \lambda}\\
+&amp;=&amp;\frac{nK_B T}{L_{x0}}(\lambda-\frac{1}{\lambda^2})
+\end{eqnarray}</span></p>
+<p>which results in a stress</p>
+<p><span class="math">\begin{eqnarray}
+\sigma_{xx}&amp;=&amp;\frac{f_x}{L_yL_z}=\frac{nK_B T}{L_{x0}L_{y}L_{z}}\\
+&amp;=&amp;\frac{nk_B T}{L_{x0}L_{y0}L_{z0}}\lambda\left (\lambda-\frac{1}{\lambda^2}\right )\\
+&amp;=&amp;\frac{n}{V}k_B T \left (\lambda^2-\frac{1}{\lambda}\right )
+\end{eqnarray}</span></p>
+<p>As the stress is in general the result of a modulus <span class="math notranslate nohighlight">\(G\)</span> multiplied with a deformation and the term with the <span class="math notranslate nohighlight">\(\lambda\)</span> denotes the deformation, we have found the modulus to be</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G=\frac{n}{V}k_B T=\frac{\rho R_M T}{M_s}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(R_M\)</span> is gas constant, <span class="math notranslate nohighlight">\(\rho\)</span> the density and <span class="math notranslate nohighlight">\(M_s\)</span> the molar mass of a single strand. The stress is this</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\sigma=G \left (\lambda^2-\frac{1}{\lambda}\right )\]</div></div>
+<p>Returning to our calculation of the contribution of the polymer chain to the intrinsic viscosity we may write</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[[\eta]=\frac{1}{c}\frac{\eta-\eta_{s}}{\eta_{s}}=\frac{1}{c}\frac{G(\tau)\tau}{\eta_s}\]</div></div>
+<p>with</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(\tau)=\frac{\rho R_M T}{M_s}=\frac{\rho N_A k_B T}{N M_b}\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(M_b\)</span> being the molar mass of the monomer (Kuhn segment). The intrinsic viscosity is therefore</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[[\eta]=\frac{N_A k_B T}{ \eta_s N M_b}\tau\]</div></div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
