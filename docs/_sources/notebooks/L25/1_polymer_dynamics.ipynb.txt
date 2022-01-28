@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "5e0f1986",
+   "id": "4fbe7ac9",
    "metadata": {},
    "source": [
     "# Dynamics of Polymers"
@@ -11,10 +11,9 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "155b817e",
+   "id": "22d72d81",
    "metadata": {
-    "nbsphix": "hidden",
-    "tags": []
+    "nbsphinx": "hidden"
    },
    "outputs": [],
    "source": [
@@ -34,7 +33,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ea1450a0",
+   "id": "5b957454",
    "metadata": {},
    "source": [
     "After we have introduced a phenomenological model for the viscoelasticity of materials, we would like to connect this to the dynamics of polymers. This means, we have to connect the reponse of polmyer to deformations to the polymer chain in a way."
@@ -42,7 +41,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9f59b84f",
+   "id": "a9661427",
    "metadata": {},
    "source": [
     "## Diffusion of a single polymer chain"
@@ -50,7 +49,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "512a12ad",
+   "id": "2a7ee545",
    "metadata": {},
    "source": [
     "A first clue on the dynamics is already given by a process of the diffusion of the polymer chain. During diffusion, all segements fluctuate with the position and experience hdrodynamic friction. If the molecule would be a rigid sphere of radius $R$, the diffusion coefficient would be given by the Stokes-Einstein relation\n",
@@ -70,7 +69,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "cfa62ac9",
+   "id": "fc400dc7",
    "metadata": {},
    "source": [
     "### Rouse model"
@@ -78,7 +77,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "abefccac",
+   "id": "ad6cea74",
    "metadata": {},
    "source": [
     "In the Rouse model, the polymer is approximated by a bead spring model of $N$ segments\n",
@@ -132,7 +131,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2549283a",
+   "id": "b300e00d",
    "metadata": {},
    "source": [
     "### Zimm model"
@@ -140,7 +139,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2232d75b",
+   "id": "b92e060a",
    "metadata": {
     "tags": []
    },
@@ -179,7 +178,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5c11ea6b",
+   "id": "83224260",
    "metadata": {},
    "source": [
     "## Intrinsic viscosity of polymer solutions"
@@ -187,7 +186,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "097d0f9f",
+   "id": "c063ec28",
    "metadata": {},
    "source": [
     "In dilute solutions, polymer chains are isolated and deformed in an affine way. In such solutions, polymers linearly increase the viscosity of the solution with increasing concentration. To study the contribution of the polymer chains to the viscosity of the solution we define a specific viscosity \n",
@@ -212,7 +211,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ccf2a54e",
+   "id": "92a3f598",
    "metadata": {},
    "source": [
     "### Affine Deformation and Entropy"
@@ -220,7 +219,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "fbe53fdf",
+   "id": "740bb7cb",
    "metadata": {},
    "source": [
     "To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain. \n",
@@ -230,7 +229,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f70b4fc4",
+   "id": "641c9378",
    "metadata": {},
    "source": [
     "As we have discussed earlier, the entropy of a single chain with an end-to-end distance $R$ can be calculated from\n",
@@ -298,7 +297,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "c46989b6",
+   "id": "cd9bbe8c",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -309,7 +308,7 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "cd3235f3",
+   "id": "81d2a256",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -319,7 +318,7 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "3648d19d",
+   "id": "740b70be",
    "metadata": {},
    "outputs": [
     {
@@ -348,7 +347,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d75845bc",
+   "id": "74cc5a7b",
    "metadata": {},
    "source": [
     "The corresponding force that has to be applied to stretch the molecules can be calculated from the derivative\n",
@@ -415,7 +414,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "0d873d2f",
+   "id": "e2aef23c",
    "metadata": {},
    "source": [
     "A similar calculation can be done using the Zimm relaxation time\n",
@@ -437,6 +436,7 @@
   }
  ],
  "metadata": {
+  "celltoolbar": "Edit Metadata",
   "kernelspec": {
    "display_name": "Python 3 (ipykernel)",
    "language": "python",

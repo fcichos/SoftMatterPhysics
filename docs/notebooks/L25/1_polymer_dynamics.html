@@ -532,26 +532,6 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Dynamics-of-Polymers">
 <h1>Dynamics of Polymers<a class="headerlink" href="#Dynamics-of-Polymers" title="Permalink to this headline">¶</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 <p>After we have introduced a phenomenological model for the viscoelasticity of materials, we would like to connect this to the dynamics of polymers. This means, we have to connect the reponse of polmyer to deformations to the polymer chain in a way.</p>
 <div class="section" id="Diffusion-of-a-single-polymer-chain">
 <h2>Diffusion of a single polymer chain<a class="headerlink" href="#Diffusion-of-a-single-polymer-chain" title="Permalink to this headline">¶</a></h2>
