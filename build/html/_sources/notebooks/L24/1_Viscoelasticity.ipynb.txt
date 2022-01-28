@@ -507,7 +507,7 @@
     "For a viscoelastic material, we have now both responses, which we can summarize in a complex modulus $G$. The real part is called the **storage modulus** and the imaginary part is called the **loss modulus**\n",
     "\n",
     "$$\n",
-    "G(\\omega)=G^{\\prime}(\\omega)+i G^{\\prime}(\\omega)\n",
+    "G(\\omega)=G^{\\prime}(\\omega)+i G^{\\prime\\prime}(\\omega)\n",
     "$$\n",
     "\n",
     "Therefore, the time dependent stress is also a complex quantity and given by\n",
@@ -664,14 +664,6 @@
     "G^{*}=\\frac{\\sigma_{0}}{\\gamma_{0}}=G+i \\omega \\eta=\\underbrace{G}_{G^{\\prime}}+i \\underbrace{G \\omega \\tau}_{G^{\\prime \\prime}} \\tag{Complex modulus Kelvin-Voigt model}\n",
     "$$"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "7e0b1913-9295-4f2d-aa84-2cd96e0a916b",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
