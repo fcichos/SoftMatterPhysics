@@ -723,15 +723,26 @@ f_x&amp;=&amp;\frac{\partial \Delta F}{\partial L_x}=\frac{\partial \Delta F}{\p
 <p>with <span class="math notranslate nohighlight">\(M_b\)</span> being the molar mass of the monomer (Kuhn segment). The intrinsic viscosity is therefore</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[[\eta]=\frac{N_A k_B T}{ \eta_s N M_b}\tau\]</div></div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<p>With the result of Rouse for the Rouse time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_R=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_{B} T} N^{2\nu+1}=N\frac{\eta_s b}{k_B T}b^2 N^{2\nu}\frac{1}{6\pi^2}\]</div></div>
+<p>we find for the <strong>intrinsic viscosity of a Rouse chain</strong></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}[\eta]_R \approx \frac{N_A b^3}{M_b}N^{2\nu}\propto
+\begin{cases}
+N, &amp; \text{ideal chain}\\
+N^{6/5},  &amp; \text{real chain in good solvent}
+\end{cases}\end{split}\]</div></div>
+<p>A similar calculation can be done using the Zimm relaxation time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_{Z} \approx \frac{\eta b^{3}}{k_{B} T} N^{3 \nu}\]</div></div>
+<p>which gives for the <strong>intrinsic viscosity of a Zimm chain</strong></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}[\eta]_R \approx \frac{N_A b^3}{M_b}N^{3\nu-1}\propto
+\begin{cases}
+N^{1/2}, &amp; \text{ideal chain}\\
+N^{4/5},  &amp; \text{real chain in good solvent}
+\end{cases}\end{split}\]</div></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
