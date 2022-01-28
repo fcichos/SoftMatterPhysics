@@ -593,7 +593,38 @@ coefficient will not be just the sum of all friction coefficients. This means th
 </div>
 <div class="section" id="Zimm-model">
 <h3>Zimm model<a class="headerlink" href="#Zimm-model" title="Permalink to this headline">¶</a></h3>
-<p>The Zimm model is now</p>
+<p>The Zimm model now takes care of the fact that each segment is generating a flow field that decays as <span class="math notranslate nohighlight">\(1/r\)</span> and is thus typically long range. Thus segements in the chain volume (the so called pervaded volume) are coupled by hydrodynamics in solution. This has to be taken into account for the dynamics of the polymer chain and the fact that the Rouse model neglects that restricts its validity essentially to the melt region (a system of polymer chains without solvent) only.</p>
+<p>This hydrodynamic coupling of in the Zimm model changes the friction coefficient of the chain to</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma_Z\approx \eta R\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(R\)</span> being the root mean squared end-to-end distance of the polymwer chain as used also in the Rouse model. Thus the Zimm chain beahves hydrodynamically more like a solid sphere rather than a collection of individual beads.</p>
+<p>With <span class="math notranslate nohighlight">\(R=bN^{\nu}\)</span> we find for the Zimm relaxation time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_{Z} \approx \frac{R^{2}}{D_{Z}} \approx \frac{\gamma_{Z}}{k_{B} T} R^{2} \approx \frac{\eta}{k_{B} T} R^{3} \approx \frac{\eta b^{3}}{k_{B} T} N^{3 \nu}=\tau_{0} N^{3 \nu}\]</div></div>
+<p>while the full calculation by Zimm shows</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_{Z}=\frac{1}{2 \sqrt{3 \pi}} \frac{\eta}{k_{B} T} R^{3}\]</div></div>
+<p>Using the exponents <span class="math notranslate nohighlight">\(\nu\)</span> for the ideal and the real chain, we can now make predictions for the scaling of the Zimm relaxation time for both chains, which gives</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}\tau_{z} \propto \begin{cases}\tau_{0} N^{3 / 2}  &amp; \text { for ideal chain }(\nu=1 / 2) \\ \tau_{0} N^{9 / 5}  &amp; \text { for real chain in good solvent }(\nu=3 / 5)\end{cases}\end{split}\]</div></div>
+<p>Thus, the scaling of relaxation times as predicted by the Zimm and the Rouse model is different. WHich regime is valid has to be decided based on experimental results. As mentioned before, the Zimm model is rather valid for dilute polymer solutions, while the Rouse model rather applies to the dynamics of polymer chains in the melt.</p>
+</div>
+</div>
+<div class="section" id="Intrinsic-viscosity-of-polymer-solutions">
+<h2>Intrinsic viscosity of polymer solutions<a class="headerlink" href="#Intrinsic-viscosity-of-polymer-solutions" title="Permalink to this headline">¶</a></h2>
+<p>In dilute solutions, polymer chains are isolated and deformed in an affine way. In such solutions, polymers linearly increase the viscosity of the solution with increasing concentration. To study the contribution of the polymer chains to the viscosity of the solution we define a specific viscosity</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\eta_{sp}=\frac{\eta-\eta_s}{\eta_s}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity with polymers and <span class="math notranslate nohighlight">\(\eta_s\)</span> is the one of the solvent only. One may also write the same expression as <span class="math notranslate nohighlight">\(\eta_{sp}=\eta_r-1\)</span> where <span class="math notranslate nohighlight">\(\eta_r=\eta/\eta_s\)</span> is the reduced viscosity. The contribution of a single polymer chain is then measured by the intrinsic viscosity</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[[\eta]=\lim_{c\rightarrow 0}\frac{\eta_{sp}}{c}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the polymer concentration. Note that the intrinsic vsicosity now has the unit of an inverse concentration. Using this intrinsic value we may connect now the viscosity to the shear modulus, e.g. by using the result of the Maxwell model</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\eta \approx G(\tau)\int \exp(-t/\tau)dt=G(\tau)\tau\]</div></div>
+<div class="section" id="Affine-Deformation-and-Entropy">
+<h3>Affine Deformation and Entropy<a class="headerlink" href="#Affine-Deformation-and-Entropy" title="Permalink to this headline">¶</a></h3>
+<p>To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain.</p>
+<p><strong>insert image here</strong></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -659,6 +690,10 @@ coefficient will not be just the sum of all friction coefficients. This means th
 <li><a class="reference internal" href="#Diffusion-of-a-single-polymer-chain">Diffusion of a single polymer chain</a><ul>
 <li><a class="reference internal" href="#Rouse-model">Rouse model</a></li>
 <li><a class="reference internal" href="#Zimm-model">Zimm model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Intrinsic-viscosity-of-polymer-solutions">Intrinsic viscosity of polymer solutions</a><ul>
+<li><a class="reference internal" href="#Affine-Deformation-and-Entropy">Affine Deformation and Entropy</a></li>
 </ul>
 </li>
 </ul>
