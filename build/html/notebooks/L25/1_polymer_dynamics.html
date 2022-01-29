@@ -307,7 +307,7 @@
 coefficient will not be just the sum of all friction coefficients. This means the assumption of the Rouse model is now that the indivudal bead cause only localized flow fields when fluctuating, which are in turn not influencing the motion of the other segements.</p>
 <p>According to that, we may write down the time to diffuse the size <span class="math notranslate nohighlight">\(R\)</span> of the polymer as</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_R=\frac{R^2}{k_B T}N \gamma \tag{Rouse time}\]</div></div>
+\[\tau_R=\frac{R^2}{k_B T}N \gamma\]</div></div>
 <p>which is the Rouse time. At times shorter than the Rouse time, the polymer molecule exhibits viscoelastic relaxation modes. The longest reslaxation mode is that of the whole chain, which is the Rouse time <span class="math notranslate nohighlight">\(\tau_R\)</span>. As the size of the polymer chain is approximately given by <span class="math notranslate nohighlight">\(R\approx bN^{\nu}\)</span> with <span class="math notranslate nohighlight">\(\nu\)</span> beeing the fractal dimension (e.g. the Flory exponent) of the chain we obtain for the Rouse time</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\tau_{R}=N \frac{\gamma}{\underbrace{k_{B} T}_{\tau_{0}}} b^{2} N^{2 \nu}=\tau_{0} N^{2 \nu+1}\]</div></div>
@@ -334,8 +334,9 @@ coefficient will not be just the sum of all friction coefficients. This means th
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\tau_{Z} \approx \frac{R^{2}}{D_{Z}} \approx \frac{\gamma_{Z}}{k_{B} T} R^{2} \approx \frac{\eta}{k_{B} T} R^{3} \approx \frac{\eta b^{3}}{k_{B} T} N^{3 \nu}=\tau_{0} N^{3 \nu}\]</div></div>
 <p>while the full calculation by Zimm shows</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{Z}=\frac{1}{2 \sqrt{3 \pi}} \frac{\eta}{k_{B} T} R^{3}\]</div></div>
+<p><span class="math">\begin{equation}
+\tau_{Z}=\frac{1}{2 \sqrt{3 \pi}} \frac{\eta}{k_{B} T} R^{3}\tag{Zimm time}
+\end{equation}</span></p>
 <p>Using the exponents <span class="math notranslate nohighlight">\(\nu\)</span> for the ideal and the real chain, we can now make predictions for the scaling of the Zimm relaxation time for both chains, which gives</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\begin{split}\tau_{z} \propto \begin{cases}\tau_{0} N^{3 / 2}  &amp; \text { for ideal chain }(\nu=1 / 2) \\ \tau_{0} N^{9 / 5}  &amp; \text { for real chain in good solvent }(\nu=3 / 5)\end{cases}\end{split}\]</div></div>
@@ -360,7 +361,7 @@ coefficient will not be just the sum of all friction coefficients. This means th
 <p>As we have discussed earlier, the entropy of a single chain with an end-to-end distance <span class="math notranslate nohighlight">\(R\)</span> can be calculated from</p>
 <p><span class="math">\begin{eqnarray}
 S(R)&amp;=&amp;k_B \ln(p(\vec{R},N))+{\rm const}\\
-&amp;=&amp;-\frac{3}{2}\frac{k_B R^2}{Nb^2}+{\rm const} \tag{FJC}
+&amp;=&amp;-\frac{3}{2}\frac{k_B R^2}{Nb^2}+{\rm const}
 \end{eqnarray}</span></p>
 <p>In our lab system the end-to-edn vector length <span class="math notranslate nohighlight">\(R^2\)</span> can be expressed by its components such that</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -389,7 +390,8 @@ S(R)&amp;=&amp;k_B \ln(p(\vec{R},N))+{\rm const}\\
 <p>from whgich we obtain for the deformation</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\Delta F= \frac{n k_B T}{2}(\lambda^2+\frac{2}{\lambda}-3)\]</div></div>
-<img alt="../../_images/test.svg" src="../../_images/test.svg"><p>The corresponding force that has to be applied to stretch the molecules can be calculated from the derivative</p>
+<img alt="../../_images/test.pdf" src="../../_images/test.pdf">
+<p>The corresponding force that has to be applied to stretch the molecules can be calculated from the derivative</p>
 <p><span class="math">\begin{eqnarray}
 f_x&amp;=&amp;\frac{\partial \Delta F}{\partial L_x}=\frac{\partial \Delta F}{\partial\lambda L_{x0}}=\frac{1}{L_{x0}}\frac{\partial \Delta F}{\partial \lambda}\\
 &amp;=&amp;\frac{nK_B T}{L_{x0}}(\lambda-\frac{1}{\lambda^2})
