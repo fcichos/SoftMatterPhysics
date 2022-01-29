@@ -284,6 +284,7 @@
 </div>
 <div class="section" id="Viscoelasticity">
 <h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="1_Viscoelasticity.pdf">Download Lecture as PDF</a></p>
 <div class="section" id="Maxwell-Model">
 <h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
 <img alt="Maxwell" src="../../_images/maxwell1.png">
@@ -312,7 +313,8 @@
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[G_{\rm eq}=\lim_{t\rightarrow \infty} G(t)\]</div></div>
 <p>For viscoelestic liquids this residual stress is absent and the stress decays to zero.</p>
-<img alt="TMP" src="../../_images/tmp.svg"/><p>The Maxwell model, which is represented by a viscous dashpot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
+<img alt="TMP" src="../../_images/tmp.pdf"/>
+<p>The Maxwell model, which is represented by a viscous dashpot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}=\tau_M\frac{d\gamma_v}{dt}\]</div></div>
 <p>Since the two elements are in series the elastic strain is also expressed by</p>
@@ -377,8 +379,9 @@
 <div class="section" id="Creep">
 <h3>Creep<a class="headerlink" href="#Creep" title="Permalink to this headline">¶</a></h3>
 <p>Another mechanical perturbation is the step stress that can be applied to watch the strain relax. This is called <strong>creep</strong> and switching of a constant stress is called <strong>creep recovery</strong>. For the study of creep relaxation processes we define a new quantity, which is the inverse of the shear modulus. It is called the <strong>shear creep compliance</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}\]</div></div>
+<p><span class="math">\begin{equation}
+J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
+\end{equation}</span></p>
 <p>The relation of modulus and compliance is much like the relation of resistivity and conductivity. We can use again the Maxwell model to gain some insight. There the elastic element responds with an instantaneous strain</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\gamma_e=\frac{\sigma}{G_M}\]</div></div>
@@ -412,7 +415,8 @@
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)\]</div></div>
 <p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
-<img alt="test" src="../../_images/tmp1.svg"/></div>
+<img alt="test" src="../../_images/tmp12.pdf"/>
+</div>
 <div class="section" id="Creep-Recovery">
 <h3>Creep Recovery<a class="headerlink" href="#Creep-Recovery" title="Permalink to this headline">¶</a></h3>
 <p>When switching of the stress, the viscoelastic material recovers and we get an elastic recoil. The reocovery strain is defined as</p>
@@ -443,7 +447,8 @@
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\sigma(t)=\eta \frac{d \gamma(t)}{d t}=i \omega \eta \gamma_{0} e^{i \omega t}\]</div></div>
 <p>we obtain an out of phase signal, a purely imaginary response, of the stress, which trails the train as shown in the Figure below.</p>
-<img alt="tmp" src="../../_images/tmp2.svg"/><p>For a viscoelastic material, we have now both responses, which we can summarize in a complex modulus <span class="math notranslate nohighlight">\(G\)</span>. The real part is called the <strong>storage modulus</strong> and the imaginary part is called the <strong>loss modulus</strong></p>
+<img alt="tmp" src="../../_images/tmp21.pdf"/>
+<p>For a viscoelastic material, we have now both responses, which we can summarize in a complex modulus <span class="math notranslate nohighlight">\(G\)</span>. The real part is called the <strong>storage modulus</strong> and the imaginary part is called the <strong>loss modulus</strong></p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[G(\omega)=G^{\prime}(\omega)+i G^{\prime\prime}(\omega)\]</div></div>
 <p>Therefore, the time dependent stress is also a complex quantity and given by</p>
@@ -483,11 +488,12 @@
 <p>from which we can read the complex modulus</p>
 <p><span class="math">\begin{eqnarray}
 G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\omega \eta}{\omega \eta / G-i}=\frac{\omega \eta(\omega \eta / G+i)}{(\omega \underbrace{\eta / G}_{\tau})^{2}+1}\\
-&amp;=&amp;\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}\tag{Comlex modulus Maxwell model}
+&amp;=&amp;\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}
 \end{eqnarray}</span></p>
 <p>The plot below shows the frequency dependence of the real and imaginary part of the modulus for the Maxwell model. The imaginary part has the shape of a Lorentzian, which is corresponding to the Fourier transform of an exponential in the time domain. The wings of <span class="math notranslate nohighlight">\(G^{\prime \prime}\)</span> increase or decay with <span class="math notranslate nohighlight">\(\omega\)</span>, while the real part <span class="math notranslate nohighlight">\(G^{\prime}\)</span> shows a steeper increase with <span class="math notranslate nohighlight">\(\omega^2\)</span> until it saturates. The saturation and the peak occur at the characteristic timescale
 <span class="math notranslate nohighlight">\(\tau=\eta/G\)</span>, indicated by the vertical dahsed line.</p>
-<img alt="tmp3" src="../../_images/tmp3.svg"/></div>
+<img alt="tmp3" src="../../_images/tmp31.pdf"/>
+</div>
 <div class="section" id="Complex-shear-modulus-of-the-Kelvin-Voigt-model">
 <h3>Complex shear modulus of the Kelvin-Voigt model<a class="headerlink" href="#Complex-shear-modulus-of-the-Kelvin-Voigt-model" title="Permalink to this headline">¶</a></h3>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
