@@ -278,7 +278,255 @@
           </label>
         </div>
         <article role="main">
-          <div class="admonition note">
+          
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="admonition note">
 <p>This page was generated from <cite>notebooks/L25/1_polymer_dynamics.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L25/1_polymer_dynamics.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
@@ -438,9 +686,93 @@ N^{6/5},  &amp; \text{real chain in good solvent}
 N^{1/2}, &amp; \text{ideal chain}\\
 N^{4/5},  &amp; \text{real chain in good solvent}
 \end{cases}\end{split}\]</div></div>
+<p>A more general expression for the intrisinsic viscosity of a dilute polymer solution is the <strong>Fox Flory</strong> law</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[[\eta]=\Phi \frac{R^3}{M}\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(\Phi=0.425 N_A\approx 2.5\times 10^{23}\, {\rm mol^{-1}}\)</span>.</p>
+<p><strong>plot sime experimental data</strong></p>
+</img></div>
+</div>
+<div class="section" id="Relaxation-Modes-of-a-Polymer">
+<h2>Relaxation Modes of a Polymer<a class="headerlink" href="#Relaxation-Modes-of-a-Polymer" title="Permalink to this headline">¶</a></h2>
+<p>Polymers are self-similar objects, which means that shorter parts of a polymer behave like shorter chains. Thus there must be a spectrum of relaxation modes present for a polymer chain and we considered in the section before just the longest one.</p>
+<p>If there are <span class="math notranslate nohighlight">\(N\)</span> segments, the</p>
+<ul class="simple">
+<li><p>there are N modes index by <span class="math notranslate nohighlight">\(p=1\ldots N\)</span></p></li>
+<li><p>shortest mode <span class="math notranslate nohighlight">\(p=N\)</span> with <span class="math notranslate nohighlight">\(\tau_0\)</span></p></li>
+<li><p>largest mode <span class="math notranslate nohighlight">\(p=1\)</span> with <span class="math notranslate nohighlight">\(\tau_R\)</span></p></li>
+</ul>
+<div class="section" id="Rouse-modes">
+<h3>Rouse modes<a class="headerlink" href="#Rouse-modes" title="Permalink to this headline">¶</a></h3>
+<p>In the Rouse model, we therefore have the Rouse time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau=\tau_R\approx\tau_0 N^2\]</div></div>
+<p>and for the individua model</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_p\approx \tau_0 \left ( \frac{N}{p}\right )^2\, \text{for}\, p=1,2,\ldots, N\]</div></div>
+<p>or</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[p\approx \left( \frac{\tau_p}{\tau_0} \right )^{1/2} N\]</div></div>
+<p>Each of these modes relaxes independently.</p>
+<p>On a timescale <span class="math notranslate nohighlight">\(\tau=\tau_0\)</span> all of the <span class="math notranslate nohighlight">\(N\)</span> modes have not relaxed. At <span class="math notranslate nohighlight">\(\tau=\tau_p\)</span> <span class="math notranslate nohighlight">\(N-p\)</span> modes have not decayed. Eahc of these modes contributes <span class="math notranslate nohighlight">\(k_B T\)</span> to the energy density as we have seen before. With <span class="math notranslate nohighlight">\(N-p\)</span> modes devayed, there is <span class="math notranslate nohighlight">\(pk_B T\)</span> still stored in the deformation of the chain. Thus the modulus amplitude for each mode is found to be</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(\tau_P)\approx \frac{n}{V}k_B T p\]</div></div>
+<p>and the modulus itself</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)\approx \frac{n}{V}k_B T \sum_{p=1}^{N}\exp\left (\frac{t}{\tau_P}\right )\]</div></div>
+<p>with</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_p=\frac{\tau_0}{6\pi^2}\frac{N^2}{p^2}\]</div></div>
+<p>For large <span class="math notranslate nohighlight">\(N\)</span> we may convert the sum into an integral and obtain for the modulus</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)=n_{p} k_{B} T \int_{0}^{\infty} d p \exp \left(-p^{2} t / \tau_{R}\right)=\frac{\sqrt{\pi}}{2} n_{p} k_{B} T\left(\frac{\tau_{R}}{t}\right)^{1 / 2}\]</div></div>
+<p>which gives an inversse square root dependence for the modulus with time. This is valid only for short times, as the chain has a longest relaxation, which is teh Rouse time. Including this cut-off at long times we may write</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)\approx \underbrace{\frac{nNk_B T}{v}\frac{t}{\tau_0}^{-1/2}}_{\tau_0&lt;t&lt;\tau_R}\underbrace{\exp\left ( -\frac{t}{\tau_R}\right )}_{t&gt;\tau_R}\]</div></div>
+<img alt="tmp4" src="../../_images/tmp4.pdf"/>
+</div>
+<div class="section" id="Shear-modulus-with-oscillating-deformation">
+<h3>Shear modulus with oscillating deformation<a class="headerlink" href="#Shear-modulus-with-oscillating-deformation" title="Permalink to this headline">¶</a></h3>
+<p>With the calculations done above we may now also determine the frequency dependence of the shear modulus. Both can be obtained by Fourier transforming the time dependent modulus. The storage modulus <span class="math notranslate nohighlight">\(G^{\prime}(\omega)\)</span></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G^{\prime}(\omega)=G_{eq}+\omega \int_0^{\infty}[G(t)-G_eq]\sin(\omega t)dt\]</div></div>
+<p>which gives</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G^{\prime}(\omega) \approx \frac{n k_B T}{V} \frac{\left(\omega \tau_{\mathrm{R}}\right)^{2}}{\sqrt{\left[1+\left(\omega \tau_{\mathrm{R}}\right)^{2}\right]\left[\sqrt{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}+1\right]}} \text { for } \omega&lt;1 / \tau_{0}\]</div></div>
+<p>The loss modulus is found by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G^{\prime\prime}(\omega)=\omega \int_0^{\infty}[G(t)-G_eq]\cos(\omega t)dt\]</div></div>
+<p>resulting in</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G^{\prime \prime}(\omega) \approx \frac{n}{V} k_B T \omega \tau_{\mathrm{R}} \sqrt{\frac{\sqrt{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}+1}{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}} \text { for } \omega&lt;1 / \tau_{0}\]</div></div>
+<p>According to that both the storage and the loss modulus scale in the range <span class="math notranslate nohighlight">\(\frac{1}{\tau_R}&lt;\omega&lt;\frac{1}{\tau_0}\)</span> as <span class="math notranslate nohighlight">\(G^{\prime}\proptoG^{\prime\prime}\propto \omega^{1/2}\)</span>, while for <span class="math notranslate nohighlight">\(\omega&lt;\frac{1}{\tau_R}\)</span> the storage modulus scales as <span class="math notranslate nohighlight">\(G^{\prime}\sim \omega^2\)</span>.</p>
+<p>The viscosity of a dilute Rouse polymer solution is the obtained by integrating the time dependent modulus</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\eta=\int_0^{\infty}G(t)dt \approx \frac{k_B T}{V}nN \int_{0}^{\infty} \left ( \frac{t}{\tau_0}\right )^{-1/2}\exp\left (-\frac{t}{\tau_R} \right )dt\]</div></div>
+<p><strong>add part on the diffusion coefficient</strong></p>
+</div>
+<div class="section" id="Zimm-modes">
+<h3>Zimm modes<a class="headerlink" href="#Zimm-modes" title="Permalink to this headline">¶</a></h3>
+<p>The same calculation as for the Rouse model can be done for the Zimm modes as well</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_p=\tau_0\left (\frac{N}{p} \right )^{3\nu}\]</div></div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[p\approx N \left ( \frac{\tau_p}{\tau_0}\right)^{-1/3\nu}=N\left ( \frac{t}{\tau_0}\right )^{-1/3\nu}\]</div></div>
+<p>which then leads to the time dependent stress modulus</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)\approx \underbrace{\frac{n}{V}Nk_B T \left ( \frac{\tau_0}{t}) \right)^{1/3\nu}}_{\tau_0&lt;t&lt;\tau_Z}\underbrace{\exp\left (\frac{t}{\tau_Z} \right )}_{t&gt;\tau_Z}\]</div></div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></img></div>
+</script></div>
 </div>
 </div>
 
@@ -465,7 +797,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 29, 2022. |
+            Last updated on Jan 30, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -498,6 +830,12 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 </li>
 <li><a class="reference internal" href="#Intrinsic-viscosity-of-polymer-solutions">Intrinsic viscosity of polymer solutions</a><ul>
 <li><a class="reference internal" href="#Affine-Deformation-and-Entropy">Affine Deformation and Entropy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Relaxation-Modes-of-a-Polymer">Relaxation Modes of a Polymer</a><ul>
+<li><a class="reference internal" href="#Rouse-modes">Rouse modes</a></li>
+<li><a class="reference internal" href="#Shear-modulus-with-oscillating-deformation">Shear modulus with oscillating deformation</a></li>
+<li><a class="reference internal" href="#Zimm-modes">Zimm modes</a></li>
 </ul>
 </li>
 </ul>
