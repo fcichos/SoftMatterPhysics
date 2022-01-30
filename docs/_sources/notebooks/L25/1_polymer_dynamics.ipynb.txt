@@ -653,7 +653,7 @@
     "This then leads to the time dependent stress modulus \n",
     "\n",
     "$$\n",
-    "G(t)\\approx \\underbrace{\\frac{n}{V}Nk_B T \\left ( \\frac{\\tau_0}{t}) \\right)^{1/3\\nu}}_{\\tau_0<t<\\tau_Z}\\underbrace{\\exp\\left (\\frac{t}{\\tau_Z} \\right )}_{t>\\tau_Z}\n",
+    "G(t)\\approx \\underbrace{\\frac{n}{V}Nk_B T \\left ( \\frac{\\tau_0}{t} \\right)^{1/3\\nu}}_{\\tau_0<t<\\tau_Z}\\underbrace{\\exp\\left (\\frac{t}{\\tau_Z} \\right )}_{t>\\tau_Z}\n",
     "$$\n"
    ]
   },
