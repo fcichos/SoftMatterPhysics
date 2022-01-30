@@ -482,9 +482,8 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[G(t)\approx \underbrace{\frac{nNk_B T}{v}\frac{t}{\tau_0}^{-1/2}}_{\tau_0&lt;t&lt;\tau_R}\underbrace{\exp\left ( -\frac{t}{\tau_R}\right )}_{t&gt;\tau_R}\]</div></div>
 <img alt="tmp4" src="../../_images/tmp4.pdf"/>
-</div>
 <div class="section" id="Shear-modulus-with-oscillating-deformation">
-<h3>Shear modulus with oscillating deformation<a class="headerlink" href="#Shear-modulus-with-oscillating-deformation" title="Permalink to this headline">¶</a></h3>
+<h4>Shear modulus with oscillating deformation<a class="headerlink" href="#Shear-modulus-with-oscillating-deformation" title="Permalink to this headline">¶</a></h4>
 <p>With the calculations done above we may now also determine the frequency dependence of the shear modulus. Both can be obtained by Fourier transforming the time dependent modulus. The storage modulus <span class="math notranslate nohighlight">\(G^{\prime}(\omega)\)</span></p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[G^{\prime}(\omega)=G_{eq}+\omega \int_0^{\infty}[G(t)-G_eq]\sin(\omega t)dt\]</div></div>
@@ -503,6 +502,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 \[\eta=\int_0^{\infty}G(t)dt \approx \frac{k_B T}{V}nN \int_{0}^{\infty} \left ( \frac{t}{\tau_0}\right )^{-1/2}\exp\left (-\frac{t}{\tau_R} \right )dt\]</div></div>
 <p><strong>add part on the diffusion coefficient</strong></p>
 </div>
+</div>
 <div class="section" id="Zimm-modes">
 <h3>Zimm modes<a class="headerlink" href="#Zimm-modes" title="Permalink to this headline">¶</a></h3>
 <p>The same calculation as for the Rouse model can be done for the Zimm modes as well. The relaxation times for the Zimm model scale as</p>
@@ -515,9 +515,27 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[G(t)\approx \underbrace{\frac{n}{V}Nk_B T \left ( \frac{\tau_0}{t}) \right)^{1/3\nu}}_{\tau_0&lt;t&lt;\tau_Z}\underbrace{\exp\left (\frac{t}{\tau_Z} \right )}_{t&gt;\tau_Z}\]</div></div>
 <img alt="tmp5" src="../../_images/tmp5.pdf"/>
+<div class="section" id="id1">
+<h4>Shear modulus with oscillating deformation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Using this result we may now also obtained the frequency dependent storage and loss modulus of the Zimm chains.</p>
+<p><strong>storage modulus</strong></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G^{\prime}\approx \frac{n}{V}k_B T \frac{\omega \tau_Z \sin\left [(1-\frac{1}{3\nu})\arctan(\omega \tau_Z) \right ]}{\left [ 1+(\omega \tau_Z)^2\right ]^{(1-1/3\nu)/2}}\]</div></div>
+<p><strong>loss modulus</strong></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G^{\prime\prime}\approx \frac{n}{V}k_B T \frac{\omega \tau_Z \cos\left [(1-\frac{1}{3\nu})\arctan(\omega \tau_Z) \right ]}{\left [ 1+(\omega \tau_Z)^2\right ]^{(1-1/3\nu)/2}}\]</div></div>
+<p>The viscosity contribution of solution of Zimm chains is then</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\eta-\eta_s=\int_0^{\infty}G(t)dt \approx \eta_s \frac{n}{V}Nb^{3}N^{3\nu-1}\]</div></div>
+<p>We can summarize</p>
+<ul class="simple">
+<li><p>The <strong>Zimm limit</strong> applies to dilute solutions, where the solvent within the pervaded volume of the polymer is hydrodynamically coupled to the polymer. Polymer dynamics are described by the Zimm model in dilute solutions.</p></li>
+<li><p>The <strong>Rouse limit</strong> applies to unentangled polymer melts because hydrodynamic interactions are screened in melts (just as excluded volume interactions are screened in melts). Polymer dynamics in the melt state (with no solvent) are described by the Rouse model, for short chains that are not entangled.</p></li>
+</ul>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
 </div>
 </div>
 
@@ -578,9 +596,14 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 </ul>
 </li>
 <li><a class="reference internal" href="#Relaxation-Modes-of-a-Polymer">Relaxation Modes of a Polymer</a><ul>
-<li><a class="reference internal" href="#Rouse-modes">Rouse modes</a></li>
+<li><a class="reference internal" href="#Rouse-modes">Rouse modes</a><ul>
 <li><a class="reference internal" href="#Shear-modulus-with-oscillating-deformation">Shear modulus with oscillating deformation</a></li>
-<li><a class="reference internal" href="#Zimm-modes">Zimm modes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Zimm-modes">Zimm modes</a><ul>
+<li><a class="reference internal" href="#id1">Shear modulus with oscillating deformation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
