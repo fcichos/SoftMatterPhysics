@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Depletion Forces" href="../L12/1_depletion_forces.html" /><link rel="prev" title="van der Waals Interactions" href="../L10/1_van_der_Waals.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Dynamics of Polymers" href="../L25/1_polymer_dynamics.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
-        <title>van der Waals Interaction - Soft Matter Lecture 21 documentation</title>
+        <title>Semidilute Polymer Solutions - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -211,8 +211,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">van der Waals Interaction</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
 <ul>
@@ -254,8 +254,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Semidilute Polymer Solutions</a></li>
 </ul>
 
 </div>
@@ -276,129 +276,336 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L11/1_van_der_Waals.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L11/1_van_der_Waals.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+          
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="admonition note">
+<p>This page was generated from <cite>notebooks/L26/1_semidilute_polymers.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L26/1_semidilute_polymers.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="van-der-Waals-Interaction">
-<h1>van der Waals Interaction<a class="headerlink" href="#van-der-Waals-Interaction" title="Permalink to this headline">¶</a></h1>
-<p>The semiclassical theory we have developed in the last lecture can also be extended to objects and bodies which are embedded in media. We therefore consider a spherical particle of radius <span class="math notranslate nohighlight">\(a_i\)</span> of dielectric constant <span class="math notranslate nohighlight">\(\epsilon_i\)</span> in a mediums of dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. If an external electric field is applied, that the particle is polarized to obtain a dipole</p>
-<p><span class="math">\begin{equation}
-u_{\rm ind}=4\pi \epsilon_0 \epsilon \frac{\epsilon_i-\epsilon}{\epsilon_i+2\epsilon}a_i^3E
-\end{equation}</span></p>
-<p>This result is obtained as the spheres polarization is also influenced by the electric field generated in the medium around the sphere. This local electric field that is relevant has been considered by <strong>Clausius and Mossotti</strong>.</p>
-<p>According to <span class="math notranslate nohighlight">\(u_{\rm ind}=\alpha E\)</span>, we readily obtain the polarizability</p>
-<p><span class="math">\begin{equation}
-\alpha(\nu)=4\pi \epsilon_0 \epsilon_3(\nu)\frac{\epsilon_1(\nu)-\epsilon_3(\nu)}{\epsilon_1(\nu)+2\epsilon_3(\nu)}a_1^3
-\end{equation}</span></p>
-<p>This result shows that the dielectric function of the particle <span class="math notranslate nohighlight">\(\epsilon_1\)</span> needs to be different from the environment to obtain a contribution, which justifies the name excess polarizability.</p>
-<p>Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as</p>
-<p><strong>Zero Frequency</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3k_B T a_{1}^3a_2^3}{r^6}\left ( \frac{\epsilon_1(0)-\epsilon_3(0)}{\epsilon_1(0)+2\epsilon_3(0)}\right )\left ( \frac{\epsilon_2(0)-\epsilon_3(0)}{\epsilon_2(0)+2\epsilon_3(0)}\right )
-\end{equation}</span></p>
-<p>and at</p>
-<p><strong>Optical Frequencies</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1(i\nu)-\epsilon_3(i\nu)}{\epsilon_1(i\nu)+2\epsilon_3(i\nu)}\right )\left ( \frac{\epsilon_2(i\nu)-\epsilon_3(i\nu)}{\epsilon_2(i\nu)+2\epsilon_3(i\nu)}\right )d\nu
-\end{equation}</span></p>
-<p>To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at <span class="math notranslate nohighlight">\(\nu_e\)</span> then the dielectric function can be written as</p>
+<div class="section" id="Semidilute-Polymer-Solutions">
+<h1>Semidilute Polymer Solutions<a class="headerlink" href="#Semidilute-Polymer-Solutions" title="Permalink to this headline">¶</a></h1>
+<p>The properties of polymer solutions change when you increase the density of the solution. In the case of dilite solutions, we have already seen that the viscosity changes linearly with the concentration of the polymer. Whe the chains start to overlap, the neigboring chains impose constraints which influence the relaxation of the chains upon deformation.</p>
+<p>To identify, when such a semi-dilute regime is reached, we can have a look at the volume fraction</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\epsilon(\nu)=1+\frac{n^2-1}{1-\left (\frac{\nu}{\nu_e}\right )^2}\]</div></div>
-<p>which can be inserted and integrated in the above equations as a replacement.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>van der Waals interactions</strong></p>
-<p>Overall the van der Waals interactions have the following general properties</p>
+\[\phi=\frac{n V b^{3}}{V}\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of polymer chains, <span class="math notranslate nohighlight">\(V\)</span> is the sample vlume and <span class="math notranslate nohighlight">\(N\)</span> is the number of Kuhn segements of length <span class="math notranslate nohighlight">\(b\)</span>. If we have now polymer chains of a size <span class="math notranslate nohighlight">\(R\)</span> (end-to-end distance), with a volume of <span class="math notranslate nohighlight">\(R^3\)</span> we can then fill our sample volume space filling with <span class="math notranslate nohighlight">\(n\)</span> chains such that the sample volume <span class="math notranslate nohighlight">\(V=nR^3\)</span>. This results in a concentration that is given by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\phi^{*}\approx \frac{Nb^3}{R^3}\]</div></div>
+<p>which is the overlap concentration indicating that the chains start to overlap at this concentration. Since the size <span class="math notranslate nohighlight">\(R\)</span> of the chain can be now expressed by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[R\approx b \left (\frac{v}{b^{3}}\right )^{2\nu-1}N^{\nu}\]</div></div>
+<p>according to our consideration of the Flory chain (<span class="math notranslate nohighlight">\(v\)</span> free volume, <span class="math notranslate nohighlight">\(\nu\)</span> fractal dimension/Flory exponent), we find that the overlap concentration scales as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\phi^{*}\approx N^{1-3\nu}\]</div></div>
+<p>with the number of segments in the chain. We therefore have</p>
 <ul class="simple">
-<li><p>since <span class="math notranslate nohighlight">\(h\nu_e &gt;&gt;k_B T\)</span> the dispersion interaction is much bigger that the rest of the interaction. For <span class="math notranslate nohighlight">\(\epsilon=n^2\approx 2\)</span>, and <span class="math notranslate nohighlight">\(\nu_e=3\times 10^{15}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> we find <span class="math notranslate nohighlight">\(h\nu_e/2\sqrt{3}k_B T\approx 140\)</span></p></li>
-<li><p>the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For <span class="math notranslate nohighlight">\(n_1=n_2=1.5\)</span> and <span class="math notranslate nohighlight">\(n_3=1.4\)</span> we obtain a factor of 32 as compared to <span class="math notranslate nohighlight">\(n_3=1\)</span></p></li>
-<li><p>the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if <span class="math notranslate nohighlight">\(n_3\)</span> is between <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span></p></li>
-<li><p>the van der Waals interaction is not additive</p></li>
-<li><p>the dispersion interaction shows retardation effects, at distances larger than <span class="math notranslate nohighlight">\(100\)</span> nm, it decays with <span class="math notranslate nohighlight">\(r^{-7}\)</span></p></li>
+<li><p>a dilute solution for <span class="math notranslate nohighlight">\(\phi&lt;\phi^{*}\)</span></p></li>
+<li><p>a semidilute solution for <span class="math notranslate nohighlight">\(\phi^{*}&lt;\phi\ll 1\)</span></p></li>
+<li><p>a melt for <span class="math notranslate nohighlight">\(\phi=1\)</span></p></li>
 </ul>
+<p><strong>insert sketch showing this</strong></p>
+<p>Due to the overlap of the chains in the semidilute regime, there must be some length scale <span class="math notranslate nohighlight">\(\xi\)</span> (called correlation length),such that</p>
+<ul class="simple">
+<li><p>for <span class="math notranslate nohighlight">\(r&lt;\xi\)</span> the monomers are just surrounded by solvent mostly or same chain monomers</p></li>
+<li><p>for <span class="math notranslate nohighlight">\(r&gt;\xi\)</span> the monomer starts to see other chains</p></li>
+</ul>
+<p>This correlation length helps us to subdivide the chain into blobs of a size <span class="math notranslate nohighlight">\(\xi\)</span>. This size is determined by the free volume and the chain size again via</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\xi \approx b \left ( \right )^{2\nu-1} g^{\nu}\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(g\)</span> segments in the blob. The correlation volume is then given by <span class="math notranslate nohighlight">\(\phi=gb^3/\xi^3\)</span> such that we can express the blob size as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}\xi \approx b\phi^{-\frac{\nu}{3\nu-1}}
+\begin{cases}\phi^{-1}\,&amp;\text{for }\nu=1/2\\
+\phi^{-3/4}\,&amp;\text{for }\nu=3/5\end{cases}\end{split}\]</div></div>
+<p>From this, the number of segements per blob follow to scale as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[g\approx \phi^{-\frac{1}{3\nu-1}}\]</div></div>
+<p>Since for <span class="math notranslate nohighlight">\(r&gt;\xi\)</span> the monomers sees other chains, excluded volume interactions are screened. Thus, a semidilute solution of polymer is like a “melt” of blobs. The blobs are the new segments of a random walk of the size</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}R\approx \xi \left ( \frac{N}{g}\right )^{1/2}\approx bN^{1/2}\phi^{-\frac{2\nu-1}{6\nu-2}}\begin{cases}
+\phi^{0}\, &amp; \text{for }\nu=1/2\\
+\phi^{-1/8}\, &amp; \text{for }\nu=3/5
+\end{cases}\end{split}\]</div></div>
+<p>The polymer size therefore changes only very weakly with the concentration.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
 </div>
-<div class="section" id="Interaction-Between-Macroscopic-Bodies">
-<h2>Interaction Between Macroscopic Bodies<a class="headerlink" href="#Interaction-Between-Macroscopic-Bodies" title="Permalink to this headline">¶</a></h2>
-<p>The above equations, that we derived before are essentially valid between small objects at distances larger than their size. If objects become macroscopic, we have to consider the interaction of all components of a body with all components of the second body. To calculate those interactions, we will assume that all interactions are additive, while we know that this is not completely true for van der Waals forces.</p>
-<p>Our general law of interaction shall be</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[w(r)=-\frac{C}{r^n}\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(C\)</span> is the interaction constant, which comprises all additional constants in the interaction law.</p>
-<p><strong>a) a single molecule in front of a wall</strong></p>
-<img alt="molecule_wall" src="../../_images/molecule_body.png">
-<p>According to the image above we see that the single molecule interacts with all molecules in a tiny volume element at a distance <span class="math notranslate nohighlight">\(r=\sqrt{x^2+y^2}\)</span> in the same way. This cylindral volume is given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[2\pi x dx dz\]</div></div>
-<p>and contains, based on the number density <span class="math notranslate nohighlight">\(\rho\)</span> of molecules in the wall and amount of <span class="math notranslate nohighlight">\(2\pi x dx dz\rho\)</span> molecules. We then only have to sum up all contributions of shells with different <span class="math notranslate nohighlight">\(x\)</span> and different <span class="math notranslate nohighlight">\(z\)</span> which readily yields</p>
-<p><span class="math">\begin{eqnarray}
-w(D)&amp;=&amp;-2\pi C\rho\int_z=D^{\infty} dz \int_{x=0}^{\infty}\frac{x dx}{(z^2+x^2)^(n/2)}=-\frac{2\pi C \rho}{n-2}\int_{D}^{\infty}\frac{dz}{z^{n-2}}\\
-&amp;=&amp;-\frac{2\pi C \rho}{(n-2)(n-3)D^{n-3}}\; \forall\; n&gt;3
-\end{eqnarray}</span></p>
-<p>Thus, if we would use the van der Waals interaction with <span class="math notranslate nohighlight">\(n=6\)</span> we obtain</p>
-<p><span class="math">\begin{equation}
-w(D)=-\frac{\pi C \rho}{6D^3}
-\end{equation}</span></p>
-<p>which decays much weaker than the original power law of the van der Waals interaction law. This is a very general results, that the interactions law, which were obtained for point-like objects turn now into distance dependences that are more complex due to the extended shape of macroscopic bodies.</p>
-<p><strong>b) Interaction of a sphere with a wall</strong></p>
-<p>If we now turn now to a sphere in front of a wall, we have to add up all contributions of molecules in the sphere, which are at a certain distance <span class="math notranslate nohighlight">\(D\)</span>. Each of these molecules contributes according to a), so we have to add interactions of slices of the sphere, which are at a distance <span class="math notranslate nohighlight">\(D+z\)</span>.</p>
-<img alt="Sphere Wall" src="../../_images/sphere_wall.png"/>
-<p>According to the figure, the radius of the slices is given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[x^2=(2R-z)z\]</div></div>
-<p>which gives a volume of the slice, which is <span class="math notranslate nohighlight">\(\pi x^2 dz=\pi (2R-z)z dz\)</span> that finally gives the number of molecules <span class="math notranslate nohighlight">\(\rho \pi (2R-z)dz\)</span> with <span class="math notranslate nohighlight">\(\rho\)</span> being the number density of wall and sphere. Summing now up over all slices at a distance <span class="math notranslate nohighlight">\(z\)</span> results in</p>
-<p><span class="math">\begin{equation}
-w(D)=-\frac{2\pi^2 C \rho^2}{(n-2)(n-3)}\int_0^{2R}\frac{(2R-z)zdz}{(D+z)^{n-3}}
-\end{equation}</span></p>
-<p>This results can be considered in different limits.</p>
-<p>For <span class="math notranslate nohighlight">\(D\ll R\)</span> we have mainly contributions from <span class="math notranslate nohighlight">\(z\approx D\)</span>, which yield then</p>
-<p><span class="math">\begin{equation}
-w(D)=-\frac{4\pi^2 C \rho^2 R}{(n-2)(n-3)(n-4)(n-5)D^{n-5}}
-\end{equation}</span></p>
-<p>which would give for van der Waals interactions</p>
-<p><span class="math">\begin{equation}
-w(D)=-\frac{\pi^2 C \rho^2 R}{6D}
-\end{equation}</span></p>
-<p>which reveals a much weaker distance dependence than the original formula for the van der Waals interaction. This is again a general result for the interaction for the interaction of bodies at small distances.</p>
-<p>If the seperation of sphere and wall is much larger than the sphere itself <span class="math notranslate nohighlight">\(D\gg R\)</span>, we can approximate the above integral with</p>
-<p><span class="math">\begin{equation}
-w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
-\end{equation}</span></p>
-</img></div>
-<div class="section" id="Lifshitz-Theory">
-<h2>Lifshitz Theory<a class="headerlink" href="#Lifshitz-Theory" title="Permalink to this headline">¶</a></h2>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
-</div>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L12/1_depletion_forces.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Depletion Forces</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L10/1_van_der_Waals.html">
+          
+          <a class="prev-page" href="../L25/1_polymer_dynamics.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">van der Waals Interactions</div>
+                <div class="title">Dynamics of Polymers</div>
                 
               </div>
             </a>
@@ -411,7 +618,7 @@ w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L11/1_van_der_Waals.ipynb.txt"
+            <a class="muted-link" href="../../_sources/notebooks/L26/1_semidilute_polymers.ipynb.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -419,28 +626,8 @@ w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">van der Waals Interaction</a><ul>
-<li><a class="reference internal" href="#Interaction-Between-Macroscopic-Bodies">Interaction Between Macroscopic Bodies</a></li>
-<li><a class="reference internal" href="#Lifshitz-Theory">Lifshitz Theory</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

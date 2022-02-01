@@ -2,7 +2,7 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Viscoelasticity" href="../L24/1_Viscoelasticity.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Semidilute Polymer Solutions" href="../L26/1_semidilute_polymers.html" /><link rel="prev" title="Viscoelasticity" href="../L24/1_Viscoelasticity.html" />
 
     <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
         <title>Dynamics of Polymers - Soft Matter Lecture 21 documentation</title>
@@ -253,6 +253,10 @@
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -471,7 +475,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 \[G(\tau_P)\approx \frac{n}{V}k_B T p\]</div></div>
 <p>and the modulus itself</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \frac{n}{V}k_B T \sum_{p=1}^{N}\exp\left (\frac{t}{\tau_P}\right )\]</div></div>
+\[G(t)\approx \frac{n}{V}k_B T \sum_{p=1}^{N}\exp\left (-\frac{t}{\tau_P}\right )\]</div></div>
 <p>with</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\tau_p=\frac{\tau_0}{6\pi^2}\frac{N^2}{p^2}\]</div></div>
@@ -515,7 +519,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 \[p\approx N \left ( \frac{\tau_p}{\tau_0}\right)^{-1/3\nu}=N\left ( \frac{t}{\tau_0}\right )^{-1/3\nu}\]</div></div>
 <p>where we make a transition from the mode relaxation times <span class="math notranslate nohighlight">\(\tau_p\rightarrow t\)</span>. This then leads to the time dependent stress modulus</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \underbrace{\frac{n}{V}Nk_B T \left ( \frac{\tau_0}{t} \right)^{1/3\nu}}_{\tau_0&lt;t&lt;\tau_Z}\underbrace{\exp\left (\frac{t}{\tau_Z} \right )}_{t&gt;\tau_Z}\]</div></div>
+\[G(t)\approx \underbrace{\frac{n}{V}Nk_B T \left ( \frac{\tau_0}{t} \right)^{1/3\nu}}_{\tau_0&lt;t&lt;\tau_Z}\underbrace{\exp\left (-\frac{t}{\tau_Z} \right )}_{t&gt;\tau_Z}\]</div></div>
 <img alt="tmp5" src="../../_images/tmp5.pdf"/>
 <div class="section" id="id1">
 <h4>Shear modulus with oscillating deformation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
@@ -547,7 +551,15 @@ N^{4/5},  &amp; \text{real chain in good solvent}
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="../L26/1_semidilute_polymers.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Semidilute Polymer Solutions</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="../L24/1_Viscoelasticity.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -563,7 +575,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 31, 2022. |
+            Last updated on Feb 01, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

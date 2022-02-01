@@ -151,7 +151,13 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L25/1_polymer_dynamics.ipynb  
 
-
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 26:
+   
+   notebooks/L26/1_semidilute_polymers.ipynb  
+   
+   
 Indices and tables
 ==================
 
