@@ -133,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -276,7 +276,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -563,7 +563,7 @@ div.rendered_html tbody tr:hover {
 </ul>
 <p>This correlation length helps us to subdivide the chain into blobs of a size <span class="math notranslate nohighlight">\(\xi\)</span>. This size is determined by the free volume and the chain size again via</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\xi \approx b \left ( \right )^{2\nu-1} g^{\nu}\]</div></div>
+\[\xi \approx b \left ( \frac{\nu}{b^3}\right )^{2\nu-1} g^{\nu}\]</div></div>
 <p>with <span class="math notranslate nohighlight">\(g\)</span> segments in the blob. The correlation volume is then given by <span class="math notranslate nohighlight">\(\phi=gb^3/\xi^3\)</span> such that we can express the blob size as</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\begin{split}\xi \approx b\phi^{-\frac{\nu}{3\nu-1}}
@@ -578,7 +578,52 @@ div.rendered_html tbody tr:hover {
 \phi^{0}\, &amp; \text{for }\nu=1/2\\
 \phi^{-1/8}\, &amp; \text{for }\nu=3/5
 \end{cases}\end{split}\]</div></div>
-<p>The polymer size therefore changes only very weakly with the concentration.</p>
+<p>The polymer size therefore changes only very weakly with the concentration. To understand the dynamics of these polymer solutions, we now need the two models we have refered to already earlier</p>
+<ul class="simple">
+<li><p><strong>Zimm model</strong> which was valid for a dilute solution where monomers are hydrodynamically coupled</p></li>
+<li><p><strong>Rouse model</strong> which typically is valid in a melt in the absence of entanglements and neglects hydrodynamic coupling</p></li>
+</ul>
+<p>Since there is a characteristic length scale in the structure of the semidilute solutions, the hydrodynamic coupling must also possess a characteristic length scale <span class="math notranslate nohighlight">\(\xi_h\)</span> such that</p>
+<ul class="simple">
+<li><p>when <span class="math notranslate nohighlight">\(r&lt;\xi_h\)</span> the segments are coupled by hydrodynamics and the Zimm model can be applied</p></li>
+<li><p>when <span class="math notranslate nohighlight">\(r&gt;\xi_h\)</span> the hydrodynamics is screened and the system is comparable to a melt of blobs</p></li>
+</ul>
+<p>In fact, this hydrodynamic length scale is assumed to be the same as the structural length scale <span class="math notranslate nohighlight">\(\xi_h=\xi\)</span> such that we have for the short length scales</p>
+<p><strong>Zimm dynamics</strong></p>
+<p>Here the chain sections feel the hydrodynamic coupling which leads to a maximum relaxation time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_{\xi}\approx \frac{\eta_s \xi^{3}}{k_B T}\approx \frac{\eta_s b^{}3}{k_B T}\phi^{-\frac{3\nu}{3\nu-1}}\]</div></div>
+<p>as already used earlier. Beyond this length scale the dynamics becomes Rouse like and we have the</p>
+<p><strong>Rouse dynamics</strong></p>
+<p>with the longest relaxation time being for the whole chain of blobs</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tau_{chain}\approx \tau_{\xi}\left ( \frac{N}{g}\right )^{2}\approx \frac{\eta_s b^{3}}{k_B T}N^2 \phi^{\frac{2-3\nu}{3\nu-1}}\]</div></div>
+<p>scaling as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}\tau_{chain}\approx \begin{cases}
+\phi\, &amp; \text{for } \nu=1/2\\
+\phi^{0.31}\, &amp; \text{for } \nu=3/5
+\end{cases}\end{split}\]</div></div>
+<p>with the concentration of the chain <span class="math notranslate nohighlight">\(\phi\)</span>. With this longest relaxation time for the chain we can now obtain the diffusion coefficient of a chain in the semi-dilute regime, which is</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[D\approx \frac{R^2}{\tau_{chain}}\approx \frac{k_B T}{\eta_s b N} \phi^{-\frac{1-\nu}{3\nu -1}}\approx D_{z}\left (\frac{\phi}{\phi^{*}}\right )^{-\frac{1-\nu}{3\nu-1}}\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(D_z=k_B T/\eta_s b N^{\nu}\)</span>. The diffusion coefficient therefore scales as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}D\approx \begin{cases}
+\phi^{0}\, &amp; \text{for } \nu=1/2\\
+\phi^{-0.54}\, &amp; \text{for } \nu=3/5
+\end{cases}\end{split}\]</div></div>
+<p>This scaling for the real chain with an exponent of <span class="math notranslate nohighlight">\(-0.54\)</span> is also found in the experiments.</p>
+<p><strong>insert experimetal image</strong></p>
+<div class="section" id="Stress-Relaxation">
+<h2>Stress Relaxation<a class="headerlink" href="#Stress-Relaxation" title="Permalink to this headline">¶</a></h2>
+<p>The stress relaxation now follows the dynamics in the two regimes and can be obtained from the correponding relaxation time spectrum as we have introduced that also already earlier.</p>
+<p>For <span class="math notranslate nohighlight">\(\tau_0&lt;t&lt;\tau_{\xi}\)</span>:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)\approx \frac{k_B T}{b^3}\phi \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{3\nu}}\]</div></div>
+<p>For <span class="math notranslate nohighlight">\(\tau_{\xi}&lt;t&lt;\tau_{chain}\)</span>:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[G(t)\approx \frac{k_B T}{b^3}\phi^{\frac{3\nu}{3\nu-1}} \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{2}}\]</div></div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -591,6 +636,7 @@ div.rendered_html tbody tr:hover {
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
 
         </article>
       </div>
@@ -613,7 +659,7 @@ div.rendered_html tbody tr:hover {
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Feb 01, 2022. |
+            Last updated on Feb 04, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -626,8 +672,27 @@ div.rendered_html tbody tr:hover {
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Semidilute Polymer Solutions</a><ul>
+<li><a class="reference internal" href="#Stress-Relaxation">Stress Relaxation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

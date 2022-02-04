@@ -289,88 +289,88 @@
 <div class="section" id="Dynamics-of-Polymers">
 <h1>Dynamics of Polymers<a class="headerlink" href="#Dynamics-of-Polymers" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="1_polymer_dynamics.pdf">Download Lecture as PDF</a></p>
-<p>After we have introduced a phenomenological model for the viscoelasticity of materials, we would like to connect this to the dynamics of polymers. This means, we have to connect the reponse of polmyer to deformations to the polymer chain in a way.</p>
-<div class="section" id="Diffusion-of-a-single-polymer-chain">
-<h2>Diffusion of a single polymer chain<a class="headerlink" href="#Diffusion-of-a-single-polymer-chain" title="Permalink to this headline">¶</a></h2>
-<p>A first clue on the dynamics is already given by a process of the diffusion of the polymer chain. During diffusion, all segements fluctuate with the position and experience hdrodynamic friction. If the molecule would be a rigid sphere of radius <span class="math notranslate nohighlight">\(R\)</span>, the diffusion coefficient would be given by the Stokes-Einstein relation</p>
+<p>After we have introduced a phenomenological model for the viscoelasticity of materials, we would like to connect this to the dynamics of polymers. This means, that we have to connect the reponse of a polmyer to deformations to the polymer chain in a way.</p>
+<div class="section" id="Diffusion-of-a-Single-Polymer-Chain">
+<h2>Diffusion of a Single Polymer Chain<a class="headerlink" href="#Diffusion-of-a-Single-Polymer-Chain" title="Permalink to this headline">¶</a></h2>
+<p>A first clue on the dynamics is already given by a process of the diffusion of the polymer chain. During diffusion, all segments fluctuate with the position and experience hdrodynamic friction. If the molecule would be a rigid sphere of radius <span class="math notranslate nohighlight">\(R\)</span>, the diffusion coefficient would be given by the Stokes-Einstein relation</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[D=\frac{k_{B}T}{\gamma}=\frac{k_B T}{6\pi\eta R}\]</div></div>
-<p>Using the mean squared displacement <span class="math notranslate nohighlight">\(\langle r^{2}\rangle=6Dt\)</span>, this also means that the particle will diffusion a distance corresponding to its own size in a time</p>
+\[D=\frac{k_\mathrm{B}T}{\gamma}=\frac{k_\mathrm{B} T}{6\pi\eta R}.\]</div></div>
+<p>Using the mean-squared displacement <span class="math notranslate nohighlight">\(\langle r^{2}\rangle=6Dt\)</span>, this also means that the particle will diffuse a distance corresponding to its own size in a time</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau=\frac{R^2}{D}=\frac{R^2}{k_B T}\gamma\]</div></div>
-<p>For a polymer, which is now a flexible entity, this time means that all conformational fluctuations have relaxed at this time and the polymer chain is displaced by its own radius. This therefore sets the longest timescale of relaxation. This relaxation timescale can now be obtained with different dynamic approaches, which are the <strong>Rouse model</strong> and the <strong>Zimm model</strong>. Both models differ mainly in how the hydrodynamic coupling of individual segements are considered.</p>
-<div class="section" id="Rouse-model">
-<h3>Rouse model<a class="headerlink" href="#Rouse-model" title="Permalink to this headline">¶</a></h3>
-<p>In the Rouse model, the polymer is approximated by a bead spring model of <span class="math notranslate nohighlight">\(N\)</span> segments</p>
+\[\tau=\frac{R^2}{D}=\frac{R^2}{k_\mathrm{B} T}\gamma.\]</div></div>
+<p>For a polymer, which is now a flexible entity, this time means that all conformational fluctuations have relaxed at this time and the polymer chain is displaced by its own radius. This, therefore, sets the longest timescale of relaxation. This relaxation timescale can now be obtained with different dynamic approaches, which are the <strong>Rouse model</strong> and the <strong>Zimm model</strong>. Both models differ mainly in how the hydrodynamic coupling of individual segments are considered.</p>
+<div class="section" id="Rouse-Model">
+<h3>Rouse Model<a class="headerlink" href="#Rouse-Model" title="Permalink to this headline">¶</a></h3>
+<p>In the Rouse model, the polymer is approximated by a bead-spring model (Gaussian chain) of <span class="math notranslate nohighlight">\(N\)</span> segments:</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma\frac{d\vec{R}_n}{dt}=k\left [ \vec{R}_{n-1} - \vec{R}_{n} + \vec{R}_{n+1} - \vec{R}_{n}\right ] +\vec{f}_n(t)\]</div></div>
-<p>where the force on the segment <span class="math notranslate nohighlight">\(n\)</span> at a position <span class="math notranslate nohighlight">\(R_n\)</span> is given by the forces exerced from the neighboring elements with a spring constant <span class="math notranslate nohighlight">\(k=3k_B T/b^2\)</span> and the thermal noise force <span class="math notranslate nohighlight">\(\vec{f}_n(t)\)</span>.</p>
+\[\gamma\frac{\mathrm{d}\vec{R}_n}{\mathrm{d}t}=k\left [ \vec{R}_{n-1} - \vec{R}_{n} + \vec{R}_{n+1} - \vec{R}_{n}\right ] +\vec{f}_n(t),\]</div></div>
+<p>where the force on the segment <span class="math notranslate nohighlight">\(n\)</span> at a position <span class="math notranslate nohighlight">\(\vec{R}_n\)</span> is given by the forces exerted from the neighboring elements with a spring constant <span class="math notranslate nohighlight">\(k=3k_\mathrm{B} T/b^2\)</span> and the thermal noise force <span class="math notranslate nohighlight">\(\vec{f}_n(t)\)</span>.</p>
 <p>Each of the segments is experiencing a friction given by the factor <span class="math notranslate nohighlight">\(\gamma\)</span>. The total friction on the Rouse chain is now assumed to be</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_R=N\gamma\]</div></div>
-<p>which needs some short explanation, as this is one key assumption of the Rouse model. Imagine you have 5 different rigid spheres each experiencing the same friction coefficient and they are far apart from each other, the total friction coefficient will be <span class="math notranslate nohighlight">\(5\gamma\)</span>. Yet if the spheres come closer to each other, the hydrodynamic flow fields around each sphere influence each other until the point when they are in close contact and act as a new body again. In this case, the friction
-coefficient will not be just the sum of all friction coefficients. This means the assumption of the Rouse model is now that the indivudal bead cause only localized flow fields when fluctuating, which are in turn not influencing the motion of the other segements.</p>
+\[\gamma_\mathrm{R}=N\gamma\]</div></div>
+<p>which needs some short explanation, as this is one key assumption of the Rouse model. Imagine you have 5 different rigid spheres each experiencing the same friction coefficient and they are far apart from each other. The total friction coefficient will be <span class="math notranslate nohighlight">\(5\gamma\)</span>. Yet if the spheres come closer to each other, the hydrodynamic flow fields around each sphere influence each other until the point when they are in close contact and act as a new body. In this case, the friction coefficient
+will not be just the sum of all friction coefficients. This means, that the assumption of the Rouse model is now that the individual beads cause only localized flow fields when fluctuating, which are, in turn, not influencing the motion of the other segments.</p>
 <p>According to that, we may write down the time to diffuse the size <span class="math notranslate nohighlight">\(R\)</span> of the polymer as</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_R=\frac{R^2}{k_B T}N \gamma\]</div></div>
-<p>which is the Rouse time. At times shorter than the Rouse time, the polymer molecule exhibits viscoelastic relaxation modes. The longest reslaxation mode is that of the whole chain, which is the Rouse time <span class="math notranslate nohighlight">\(\tau_R\)</span>. As the size of the polymer chain is approximately given by <span class="math notranslate nohighlight">\(R\approx bN^{\nu}\)</span> with <span class="math notranslate nohighlight">\(\nu\)</span> beeing the fractal dimension (e.g. the Flory exponent) of the chain we obtain for the Rouse time</p>
+\[\tau_\mathrm{R}=\frac{R^2}{k_\mathrm{B} T}N \gamma\]</div></div>
+<p>which is the Rouse time. At times shorter than the Rouse time, the polymer exhibits viscoelastic relaxation modes. The longest relaxation mode is that of the whole chain, which is the Rouse time <span class="math notranslate nohighlight">\(\tau_\mathrm{R}\)</span>. As the size of the polymer chain is approximately given by <span class="math notranslate nohighlight">\(R\approx bN^{\nu}\)</span> with <span class="math notranslate nohighlight">\(\nu\)</span> beeing the fractal dimension (e.g., the Flory exponent) of the chain we obtain for the Rouse time</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{R}=N \frac{\gamma}{\underbrace{k_{B} T}_{\tau_{0}}} b^{2} N^{2 \nu}=\tau_{0} N^{2 \nu+1}\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(\tau_0\)</span> is the relaxation time for a single segment in the chain. Depending if we now consider an ideal or a real chain, we find different scaling of the Rouse time with the number of segments, i.e.</p>
+\[\tau_\mathrm{R}=N \frac{\gamma}{\underbrace{k_\mathrm{B} T}_{\tau_{0}}} b^{2} N^{2 \nu}=\tau_{0} N^{2 \nu+1},\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\tau_0\)</span> is the relaxation time for a single segment in the chain. Depending if we now consider an ideal or a real chain, we find different scaling of the Rouse time with the number of segments, i.e.:</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\begin{split}\tau_{R} \propto\left\{\begin{array}{l}
-\tau_{0} N^{2}  \quad \text { for ideal chain }(\nu=1 / 2) \\
-\tau_{0} N^{11 / 5} \quad \text { for real chain in good solvent }(\nu \approx 3 / 5)
+\[\begin{split}\tau_\mathrm{R} \propto\left\{\begin{array}{l}
+\tau_{0} N^{2}  \qquad \text { for ideal chain }(\nu=1 / 2) \\
+\tau_{0} N^{11 / 5} \quad \,\,\text {for real chain in good solvent }(\nu \approx 3 / 5)
 \end{array}\right.\end{split}\]</div></div>
 <p>which is just a simple estimate.</p>
 <p>The full calculation by Rouse for an ideal chain shows a similar result, which is</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{R}=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_{B} T} N^{2}.\]</div></div>
-<p>To summarize, on time scales smaller than <span class="math notranslate nohighlight">\(\tau_R\)</span>, we expect to find <strong>viscoelastic modes</strong> of the polymer contributing to the modulus, while for modes larger than <span class="math notranslate nohighlight">\(\tau_R\)</span> everythong should be <strong>diffusive</strong>.</p>
+\[\tau_\mathrm{R}=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_\mathrm{B} T} N^{2}.\]</div></div>
+<p>To summarize, on time scales smaller than <span class="math notranslate nohighlight">\(\tau_{\rm R}\)</span>, we expect to find <strong>viscoelastic modes</strong> of the polymer contributing to the modulus, while for modes larger than <span class="math notranslate nohighlight">\(\tau_{\rm R}\)</span> everything should be <strong>diffusive</strong>.</p>
 </div>
-<div class="section" id="Zimm-model">
-<h3>Zimm model<a class="headerlink" href="#Zimm-model" title="Permalink to this headline">¶</a></h3>
-<p>The Zimm model now takes care of the fact that each segment is generating a flow field that decays as <span class="math notranslate nohighlight">\(1/r\)</span> and is thus typically long range. Thus segements in the chain volume (the so called pervaded volume) are coupled by hydrodynamics in solution. This has to be taken into account for the dynamics of the polymer chain and the fact that the Rouse model neglects that restricts its validity essentially to the melt region (a system of polymer chains without solvent) only.</p>
-<p>This hydrodynamic coupling of in the Zimm model changes the friction coefficient of the chain to</p>
+<div class="section" id="Zimm-Model">
+<h3>Zimm Model<a class="headerlink" href="#Zimm-Model" title="Permalink to this headline">¶</a></h3>
+<p>The Zimm model takes care of the fact that each segment is generating a flow field that decays as <span class="math notranslate nohighlight">\(1/r\)</span> and is thus typically long range. Thus segments in the chain volume (the so-called pervaded volume) are coupled by hydrodynamics in solution. This has to be taken into account for the dynamics of the polymer chain and the fact that the Rouse model neglects that restricts its validity essentially to the melt region (a system of polymer chains without solvent) only.</p>
+<p>This hydrodynamic coupling in the Zimm model changes the friction coefficient of the chain to</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_Z\approx \eta R\]</div></div>
-<p>with <span class="math notranslate nohighlight">\(R\)</span> being the root mean squared end-to-end distance of the polymwer chain as used also in the Rouse model. Thus the Zimm chain beahves hydrodynamically more like a solid sphere rather than a collection of individual beads.</p>
+\[\gamma_\mathrm{Z}\approx \eta R\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(R\)</span> being the root-mean-squared end-to-end distance of the polymwer chain as used also in the Rouse model. Thus the Zimm chain behaves hydrodynamically more like a solid sphere rather than a collection of individual beads.</p>
 <p>With <span class="math notranslate nohighlight">\(R=bN^{\nu}\)</span> we find for the Zimm relaxation time</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{Z} \approx \frac{R^{2}}{D_{Z}} \approx \frac{\gamma_{Z}}{k_{B} T} R^{2} \approx \frac{\eta}{k_{B} T} R^{3} \approx \frac{\eta b^{3}}{k_{B} T} N^{3 \nu}=\tau_{0} N^{3 \nu}\]</div></div>
+\[\tau_{\rm Z} \approx \frac{R^{2}}{D_{\rm Z}} \approx \frac{\gamma_{\rm Z}}{k_{\rm B} T} R^{2} \approx \frac{\eta}{k_{\rm B} T} R^{3} \approx \frac{\eta b^{3}}{k_{\rm B} T} N^{3 \nu}=\tau_{0} N^{3 \nu}\]</div></div>
 <p>while the full calculation by Zimm shows</p>
 <p><span class="math">\begin{equation}
-\tau_{Z}=\frac{1}{2 \sqrt{3 \pi}} \frac{\eta}{k_{B} T} R^{3}\tag{Zimm time}
+\tau_{\rm Z}=\frac{1}{2 \sqrt{3 \pi}} \frac{\eta}{k_{\rm B} T} R^{3}\tag{Zimm time}.
 \end{equation}</span></p>
-<p>Using the exponents <span class="math notranslate nohighlight">\(\nu\)</span> for the ideal and the real chain, we can now make predictions for the scaling of the Zimm relaxation time for both chains, which gives</p>
+<p>Using the exponents <span class="math notranslate nohighlight">\(\nu\)</span> for the ideal and the real chains, we can now make predictions for the scaling of the Zimm relaxation time for both chains, which gives</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\begin{split}\tau_{z} \propto \begin{cases}\tau_{0} N^{3 / 2}  &amp; \text { for ideal chain }(\nu=1 / 2) \\ \tau_{0} N^{9 / 5}  &amp; \text { for real chain in good solvent }(\nu=3 / 5)\end{cases}\end{split}\]</div></div>
-<p>Thus, the scaling of relaxation times as predicted by the Zimm and the Rouse model is different. WHich regime is valid has to be decided based on experimental results. As mentioned before, the Zimm model is rather valid for dilute polymer solutions, while the Rouse model rather applies to the dynamics of polymer chains in the melt.</p>
+\[\begin{split}\tau_{\rm Z} \propto \begin{cases}\tau_{0} N^{3 / 2}  &amp; \text { for ideal chain }(\nu=1 / 2) \\ \tau_{0} N^{9 / 5}  &amp; \text { for real chain in good solvent }(\nu=3 / 5)\end{cases}.\end{split}\]</div></div>
+<p>Thus, the scaling of relaxation times as predicted by the Zimm and the Rouse model are different. Which regime is valid has to be decided based on experimental results. As mentioned before, the Zimm model is rather valid for dilute polymer solutions, while the Rouse model rather applies to the dynamics of polymer chains in the melt.</p>
 </div>
 </div>
 <div class="section" id="Intrinsic-viscosity-of-polymer-solutions">
 <h2>Intrinsic viscosity of polymer solutions<a class="headerlink" href="#Intrinsic-viscosity-of-polymer-solutions" title="Permalink to this headline">¶</a></h2>
 <p>In dilute solutions, polymer chains are isolated and deformed in an affine way. In such solutions, polymers linearly increase the viscosity of the solution with increasing concentration. To study the contribution of the polymer chains to the viscosity of the solution we define a specific viscosity</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta_{sp}=\frac{\eta-\eta_s}{\eta_s}\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity with polymers and <span class="math notranslate nohighlight">\(\eta_s\)</span> is the one of the solvent only. One may also write the same expression as <span class="math notranslate nohighlight">\(\eta_{sp}=\eta_r-1\)</span> where <span class="math notranslate nohighlight">\(\eta_r=\eta/\eta_s\)</span> is the reduced viscosity. The contribution of a single polymer chain is then measured by the intrinsic viscosity</p>
+\[\eta_{\rm sp}=\frac{\eta-\eta_{\rm s}}{\eta_{\rm s}},\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity of the solvent with polymers and <span class="math notranslate nohighlight">\(\eta_{\rm s}\)</span> is the one of the solvent only. One may also write the same expression as <span class="math notranslate nohighlight">\(\eta_{\rm sp}=\eta_{\rm r}-1\)</span> where <span class="math notranslate nohighlight">\(\eta_{\rm r}=\eta/\eta_{\rm s}\)</span> is the reduced viscosity. The contribution of a single polymer chain is then measured by the intrinsic viscosity</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[[\eta]=\lim_{c\rightarrow 0}\frac{\eta_{sp}}{c}\]</div></div>
-<p>where <span class="math notranslate nohighlight">\(c\)</span> is the polymer concentration. Note that the intrinsic vsicosity now has the unit of an inverse concentration. Using this intrinsic value we may connect now the viscosity to the shear modulus, e.g. by using the result of the Maxwell model</p>
+\[[\eta]=\lim_{c\rightarrow 0}\frac{\eta_{\rm sp}}{c},\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is the polymer concentration. Note that the intrinsic vsicosity now has the unit of an inverse concentration. Using this intrinsic value we may connect now the viscosity to the shear modulus, e.g., by using the result of the Maxwell model:</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta \approx G(\tau)\int \exp(-t/\tau)dt=G(\tau)\tau\]</div></div>
+\[\eta \approx G(\tau)\int \exp(-t/\tau)\mathrm{d}t=G(\tau)\tau.\]</div></div>
 <div class="section" id="Affine-Deformation-and-Entropy">
 <h3>Affine Deformation and Entropy<a class="headerlink" href="#Affine-Deformation-and-Entropy" title="Permalink to this headline">¶</a></h3>
 <p>To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain.</p>
 <p><strong>insert image here</strong></p>
 <p>As we have discussed earlier, the entropy of a single chain with an end-to-end distance <span class="math notranslate nohighlight">\(R\)</span> can be calculated from</p>
 <p><span class="math">\begin{eqnarray}
-S(R)&amp;=&amp;k_B \ln(p(\vec{R},N))+{\rm const}\\
-&amp;=&amp;-\frac{3}{2}\frac{k_B R^2}{Nb^2}+{\rm const}
+S(R)&amp;=&amp;k_\mathrm{B} \ln(p(\vec{R},N))+{\rm const}\\
+&amp;=&amp;-\frac{3}{2}\frac{k_\mathrm{B} R^2}{Nb^2}+{\rm const}.
 \end{eqnarray}</span></p>
-<p>In our lab system the end-to-edn vector length <span class="math notranslate nohighlight">\(R^2\)</span> can be expressed by its components such that</p>
+<p>In our lab system the end-to-end vector length <span class="math notranslate nohighlight">\(R^2\)</span> can be expressed by its components such that</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
-\[S(R)=-\frac{3}{2}\frac{k_B (R_x^2+R_y^2+R_z^2)}{Nb^2}+{\rm const}\]</div></div>
+\[S(R)=-\frac{3}{2}\frac{k_B (R_x^2+R_y^2+R_z^2)}{Nb^2}+{\rm const}.\]</div></div>
 <p>If we now introduce a deformation</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[L_x=\lambda_x L_{X0},\, L_y=\lambda_y L_{Y0},\, L_z=\lambda_z L_{Z0}\]</div></div>
@@ -575,7 +575,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Feb 01, 2022. |
+            Last updated on Feb 04, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -601,9 +601,9 @@ N^{4/5},  &amp; \text{real chain in good solvent}
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Dynamics of Polymers</a><ul>
-<li><a class="reference internal" href="#Diffusion-of-a-single-polymer-chain">Diffusion of a single polymer chain</a><ul>
-<li><a class="reference internal" href="#Rouse-model">Rouse model</a></li>
-<li><a class="reference internal" href="#Zimm-model">Zimm model</a></li>
+<li><a class="reference internal" href="#Diffusion-of-a-Single-Polymer-Chain">Diffusion of a Single Polymer Chain</a><ul>
+<li><a class="reference internal" href="#Rouse-Model">Rouse Model</a></li>
+<li><a class="reference internal" href="#Zimm-Model">Zimm Model</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#Intrinsic-viscosity-of-polymer-solutions">Intrinsic viscosity of polymer solutions</a><ul>
