@@ -31,6 +31,14 @@
   },
   {
    "cell_type": "markdown",
+   "id": "5b37e647-da49-451f-b9bc-b484c0388082",
+   "metadata": {},
+   "source": [
+    "## Langevin Equation"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "d4f564f7-7641-4794-af91-fed9bab653cf",
    "metadata": {},
    "source": [
@@ -115,7 +123,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 58,
+   "execution_count": 71,
    "id": "3fe6c4b5-006c-4115-8e19-4e37052a8bd1",
    "metadata": {
     "nbsphinx": "hidden",
@@ -137,7 +145,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 70,
+   "execution_count": 72,
    "id": "9ff007c5-beae-4eea-a190-ccb0e4c2ed1d",
    "metadata": {
     "nbsphinx": "hidden",
@@ -396,7 +404,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 73,
    "id": "e608a987-85b6-4681-9b68-3b0c2c3937d3",
    "metadata": {
     "nbsphinx": "hidden",
