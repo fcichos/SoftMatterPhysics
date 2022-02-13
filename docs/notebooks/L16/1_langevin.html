@@ -253,6 +253,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -278,17 +282,431 @@
           </label>
         </div>
         <article role="main">
-          <div class="admonition note">
+          
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="admonition note">
 <p>This page was generated from <cite>notebooks/L16/1_langevin.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L16/1_langevin.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <div class="section" id="Langevin-Theory">
 <h1>Langevin Theory<a class="headerlink" href="#Langevin-Theory" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Langevin theory provides now an equation of motion for objects whoch are subject to fluctuating forces. In the most general way, Newtons equation of motion is written as</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[m\frac{d\vec{v}}{dt}=\vec{F}(t)\]</div></div>
+<p>and contains on the right side the sum of all forces <span class="math notranslate nohighlight">\(\vec{F}\)</span> acting on a particle. This total force can be separated into</p>
+<ul class="simple">
+<li><p>a viscous drag force, e.g. <span class="math notranslate nohighlight">\(6\pi \eta R \vec{v}\)</span> for a spherical particle</p></li>
+<li><p>a force coming from and external potential <span class="math notranslate nohighlight">\(U\)</span></p></li>
+<li><p>random fluctuating force <span class="math notranslate nohighlight">\(\vec{\zeta}\)</span> due to the collisions with the solvent</p></li>
+</ul>
+<p>With the force arising from an external potential we find the Langevin equation</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[m\frac{d\vec{v}}{dt}=-6\pi \eta R \vec{v}-\nabla U +\vec{\zeta}(t) \tag{Langevin Equation}\]</div></div>
+<p>The time dependence of the fluctuating force is not known in detail. Thus we can only refer to the statistical properties (e.g. its moments) when solving the Langevin equation. Therefore also not analytical solution for the position can be written down, only average proerties over an ensemble or over time (given ergodicity).</p>
+<p>The first moment (the mean) of the fluctuating force gives</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle\vec{\zeta}(t) \rangle =0\]</div></div>
+<p>i.e. there is no net force acting on average on the particle considered. Yet the mean velocity of the particle is not zero, <span class="math notranslate nohighlight">\(\langle \vec{v}\rangle\neq 0\)</span>. Considering the mean velocity at short times, for example, yields</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[m\frac{d\langle \vec{v}\rangle}{dt}=-6\pi \eta R \langle \vec{v}\rangle\]</div></div>
+<p>giving</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle \vec{v}\rangle=\vec{v}(0)\exp\left ( -\frac{t}{\tau_{mr}}\right)\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(\tau_{mr}\)</span> being the momentum relaxation time we discussed already earlier. We can further continue to derive the mean squared position by taking the scalar product of the Langevin equation with <span class="math notranslate nohighlight">\(\vec{r}\)</span> and neglecting the potential. Taking the ensemble average yields</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[m\frac{d}{dt}\langle \vec{r}\cdot \vec{v}\rangle =-6\pi \eta R \langle \vec{r}\cdot \vec{v}\rangle + m\langle v^2\rangle\]</div></div>
+<p>since</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\vec{r}\cdot \frac{d\vec{v}}{dt}=\frac{d}{dt}(\vec{r}\cdot \vec{v})-v^2\]</div></div>
+<p>and <span class="math notranslate nohighlight">\(\langle \vec{r}\cdot \vec{zeta}\rangle =0\)</span>. Using our previous result for the mean squared velocity, i.e. <span class="math notranslate nohighlight">\(\langle v^2\rangle =3k_B T\)</span> we obtain after integrating over time</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle \vec{r}\cdot \vec{v}\rangle =C\exp\left ( -\frac{t}{\tau_{mr}}\right)+ \frac{k_B T}{2\pi\eta R}\]</div></div>
+<p>Using the initial condition <span class="math notranslate nohighlight">\(\vec{r}(t=0)=0\)</span> this gives</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle \vec{r}\cdot \vec{v}\rangle =\frac{k_B T}{2\pi\eta R}\left (1 -\exp\left ( -\frac{t}{\tau_{mr}}\right)\right)\]</div></div>
+<p>A second integration over time of <span class="math notranslate nohighlight">\(\langle \vec{r}\cdot \vec{v}\rangle\)</span> can be carried out using</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle \vec{r}\cdot \vec{v}\rangle=\frac{1}{2}\frac{d}{dt}\langle r^2\rangle\]</div></div>
+<p>and we finally obtain the mean squared displacement</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle r^2\rangle =\frac{k_B T}{\pi \eta R}\left [ t-\tau_{mr}\left ( 1-\exp\left (-\frac{t}{\tau_{mr}}\right )\right )\right ]\]</div></div>
+<p>This is the mean squared displacement for an Ornstein Uhlenbeck process, a process, which has a persistence for a certain time and then is randomized. It described the transition from the ballistic to diffusive regime for a Brownian particle except that it misses the hydrodynamic memory in the intermediate regime.</p>
+<p>We can look at different limits of the process with respect to the momentum relaxation time, ie.</p>
+<p><strong>1) long time limits:</strong> <span class="math notranslate nohighlight">\(t\gg \tau_{mr}\)</span> }</p>
+<p>In this regime, the exponential function has already decayed to zero and we obtain</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle r^{2}\rangle =6Dt\]</div></div>
+<p>with</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[D=\frac{k_B T}{6\pi\eta R}\]</div></div>
+<p><strong>1) short times:</strong> <span class="math notranslate nohighlight">\(t\approx \tau_{mr}\)</span> }</p>
+<p>For short times, we can expand the exponential function up to second order</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\exp\left ( -\frac{t}{\tau_{mr}}\right )\approx 1-\frac{t}{\tau_{mr}}+\frac{t^2}{\tau_{mr}^2}\]</div></div>
+<p>to obtain for</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[t-\tau_{mr}\left ( 1-\exp\left (-\frac{t}{\tau_{mr}}\right )\right )\approx =\frac{t^2}{2\tau_{mr}}\]</div></div>
+<p>and for the mean squared displacement</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle r^2 \rangle \propto t^2\]</div></div>
+<p>which is the result we expect for ballistic motion. Between both regimes, the MSD could be complicated as the short time motion starts a hydrodynamic flux in the environment which is influencing the particle motion again. These hydrodynamic memory effects cause the so called long time tails in the mean squared displacement. The full MSD for a colloidal particle is displayed in the figure below as measured for example in an optical tweezer in the Molecular Nanophotonics group.</p>
+<p><strong>insert MSD here</strong></p>
+<p>While we so far only know that <span class="math notranslate nohighlight">\(\langle\vec{\zeta}(t) \rangle =0\)</span>, we also know that there must be a certain magnitude of the random force that is connected to the temperature of the sample. The short time autocorrelation of the noise should be of the type</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle\vec{\zeta}(t_1)\cdot \vec{\zeta}(t_2) \rangle =A\delta (t_1-t_2)\]</div></div>
+<p>stating the the forces are truly random and only correlated, when the times conincide. We would like to determine the prefactor <span class="math notranslate nohighlight">\(A\)</span> now. We can write down the Langevin equation with</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{d}{dt}\vec{v}(t)=-\frac{1}{\tau_mr}\vec{v}(t)+\frac{1}{m}\vec{\zeta}(t)\]</div></div>
+<p>and multiply by <span class="math notranslate nohighlight">\(\exp(t/\tau_{mr})\)</span>, which results in</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\exp\left (\frac{t}{\tau_{mr}}\right )\frac{d}{dt}\vec{v}(t)+\frac{1}{\tau_mr}\exp\left (\frac{t}{\tau_{mr}}\right )\vec{v}(t)=\frac{d}{dt}\left (\exp\left (\frac{t}{\tau_{mr}}\right )\vec{v}(t) \right )=\exp\left(\frac{t}{\tau_{mr}}\right )\frac{1}{m}\vec{\zeta}(t)\]</div></div>
+<p>Integrating both sides of the two right parts over time results in</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\vec{v}(t)=\vec{v}(0)\exp \left (-\frac{t}{\tau_mr} \right )+\exp \left (-\frac{t}{\tau_mr} \right )\frac{1}{m}\int_0^t \exp \left (\frac{t'}{\tau_mr} \right )\vec{\zeta}(t')dt'\]</div></div>
+<p>which is the time evolution of the velocity. To obtain <span class="math notranslate nohighlight">\(\langle\vec{\zeta}(t_1)\cdot \vec{\zeta}(t_2) \rangle\)</span>, we need to calculate the product of the velocity at two times and take the ensemble average. The calculation is essentially a writing exercise which at the end yields three different terms.</p>
+<p>The first term contains</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle v_0^2 \rangle \exp\left (-\frac{2t}{\tau_{mr}} \right )\rightarrow 0\]</div></div>
+<p>which decays to zero for long times. The second term contains two mixed terms of the type</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{v_0}{m}\exp\left (-\frac{t}{\tau_{mr}} \right ) \int \ldots \rightarrow 0\]</div></div>
+<p>which also decay to zero for long times. The last term contains</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{1}{m^2}\int_{-\infty}^{t}dt' \int_{-\infty}^{t}dt''\exp\left ( -\frac{t-t'}{\tau_m} \right )\exp\left ( -\frac{t-t''}{\tau_m} \right )\langle \vec{\zeta}(t')\vec{\zeta}(t'')\rangle\]</div></div>
+<p>whcih is the only nonzero term. Inserting our initial assumption <span class="math notranslate nohighlight">\(\langle\vec{\zeta}(t_1)\cdot \vec{\zeta}(t_2) \rangle =A\delta (t_1-t_2)\)</span> results in the mean squared velocity</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle v^2\rangle =\frac{A}{2m}\int_{-\infty}^{t}dt' \exp\left ( -\frac{2(t-t')}{\tau_{mr}}\right)=\frac{A\tau_{mr}}{2m^2}\]</div></div>
+<p>Since the velocity also has to comply with equipartition, i.e.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle v^2\rangle=\frac{k_B T}{m}=\frac{A\tau_{mr}}{2m^2}\]</div></div>
+<p>we find</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[A=2\gamma k_B T\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(\gamma=6\pi\eta R\)</span> or</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle\vec{\zeta}(t_1)\cdot \vec{\zeta}(t_2) \rangle =2\gamma k_B T\delta (t_1-t_2)\]</div></div>
+<p>which is a very fundamental result. It states that the fluctuating force <span class="math notranslate nohighlight">\(\vec{\zeta}(t)\)</span> are related to the viscous forces expressed by the friction coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>. This makes sensse, since the friction forces must dissipate energy into heat. The motion would thus come to a rest if heat and dynamics would be decoupled. The law we obtained is thus stateing the dissipated energy goes back again into kinetic energy. This is the statement of the fluctuation dissipation theorem,</p>
 <div class="section" id="Fluctuation-Dissipation-Theorem">
 <h2>Fluctuation Dissipation Theorem<a class="headerlink" href="#Fluctuation-Dissipation-Theorem" title="Permalink to this headline">¶</a></h2>
+<p>The fluctuation dissipation theorem (FDT) generalizes the previous finding into</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\chi''(\omega)=\frac{\omega}{2k_B T}\langle |x_{\omega}|^2\rangle \tag{Fluctuation dissipation relation}\]</div></div>
+<p>which is now converted into frequency space. On the left side is the imaginary part of a response function or susceptibility <span class="math notranslate nohighlight">\(\chi\)</span>, which is connected to the dissipation. The right side contains the power spectral density of the fluctuation of a variable <span class="math notranslate nohighlight">\(x_{\omega}\)</span> at the frequency <span class="math notranslate nohighlight">\(\omega\)</span>. So the amplitude of a fluctuation at a certain frequency is connected to the dissipation in equilibrium.</p>
+<div class="section" id="Damped-Driven-Harmonic-Oscillator">
+<h3>Damped Driven Harmonic Oscillator<a class="headerlink" href="#Damped-Driven-Harmonic-Oscillator" title="Permalink to this headline">¶</a></h3>
+<p>We would like to have a look at the FDT using a 1d damped driven oscillator given by the following equation</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[m\ddot{x}+\gamma \dot{x}+kx=F(t)\]</div></div>
+<p>with <span class="math notranslate nohighlight">\(k\)</span> being the spring constant of the harmonic potential and <span class="math notranslate nohighlight">\(\gamma\)</span> the friction coefficient. Solving this differential equation yields for the amplitude of the oscillation at a certain driving frequency of <span class="math notranslate nohighlight">\(F(t)\)</span></p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[x_{\omega}=\frac{1}{k-m\omega^2-i\gamma \omega}F_{\omega}\]</div></div>
+<p>which is clearly a linear response relation as amplitude and force dependent lineraly on each other. The term converting the force into an amplitude is the response function</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\chi(\omega)=\frac{1}{k-m\omega^2-i\gamma \omega} \tag{response function}\]</div></div>
+<p>which can be split into real and imaginary part, i.e. <span class="math notranslate nohighlight">\(\chi=\chi'(\omega)+i\chi'' (\omega)\)</span>. A quick calculation shows that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\chi''(\omega)=\frac{\omega \gamma}{(k-m\omega^2)^2+(\omega \gamma)^2}\]</div></div>
+<p>In the overdamped regime (i.e. <span class="math notranslate nohighlight">\(m=0\)</span>) we therefore find for the imaginary part</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\chi''(\omega)=\frac{\omega \gamma}{k^2+(\omega \gamma)^2}\]</div></div>
+<p>If we furthe rswitch off the harmonic potential we just have</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\chi''(\omega)=\frac{\omega \gamma}{\omega^2 \gamma^2}\]</div></div>
+<p>which is the response function for Brownian motion. From this we find</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\chi''(\omega)}{\omega}=\frac{1}{\omega^2 \gamma}\langle |x_{\omega}|^2\rangle=\frac{1}{\gamma \omega^2}\]</div></div>
+<p>or</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle |x_{\omega}|^2\rangle=\frac{2k_B T}{\gamma \omega^2}\]</div></div>
+<p>for the amplitude and</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle |v_{\omega}|^2\rangle=\frac{2k_B T}{\gamma}\]</div></div>
+<p>for the velocity amplitude. This is the frequency spectrum of the positional and speed fluctuations of a Brownian particle. This is exactly what is found in an optical tweezer for a Brownian particle at high frequencies. At lower frequencies the particle bounces from the harmonic potential and the motion of the colloid is restricted.</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\chi''(\omega)}{\omega}=\frac{\gamma}{k^2+(\omega \gamma)^2}=\frac{1}{2k_B T}\langle |x_{\omega}|^2\rangle\]</div></div>
+<p>From thsi follows the power spectral density of tge positional fluctuations in an optical tweezers</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\langle |x_{\omega}|^2\rangle =\frac{2k_B T \gamma}{k^2}\frac{1}{1+(\omega/\omega_0)^2}\]</div></div>
+<p>Here <span class="math notranslate nohighlight">\(\omega_0=k/\gamma\)</span> is a particular frequency at which the <span class="math notranslate nohighlight">\(1/\omega^2\)</span> dependence of the power spectrum turns into a plateau at small frequencies. The last equation is heavily used to calibrate optical tweezers, as it can be used to measure the force constant <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
 </div>
 
         </article>
@@ -320,7 +738,7 @@
 
         <div class="related-information">
               Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+            Last updated on Feb 13, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -346,7 +764,10 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Langevin Theory</a><ul>
-<li><a class="reference internal" href="#Fluctuation-Dissipation-Theorem">Fluctuation Dissipation Theorem</a></li>
+<li><a class="reference internal" href="#Fluctuation-Dissipation-Theorem">Fluctuation Dissipation Theorem</a><ul>
+<li><a class="reference internal" href="#Damped-Driven-Harmonic-Oscillator">Damped Driven Harmonic Oscillator</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
