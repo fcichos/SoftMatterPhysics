@@ -248,7 +248,7 @@
     "    \n",
     "    \n",
     "We can have a look again at the barometric height formula using the framework of the chemical potential. Each height $[h,h+\\mathrm{d}h]$ is exchanging particles with other heights until the chemical potential in all regions is the same. We can thus write\n",
-    "    \n",
+    "\n",
     "\\begin{eqnarray}    \n",
     "\\mu(h=0)&=&\\mu_{0}(h=0)+k_\\mathrm{B} T\\ln \\left ( \\frac{n(h=0)}{n_0}\\right )\\\\\n",
     "&=&\\mu_{0}(h)+k_\\mathrm{B} T \\ln \\left ( \\frac{n(h)}{n_0}\\right )    \n",
@@ -278,6 +278,13 @@
     "    \n",
     "</div>    "
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
