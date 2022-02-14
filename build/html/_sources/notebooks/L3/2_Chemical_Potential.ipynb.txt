@@ -251,7 +251,7 @@
     "    \n",
     "\\begin{eqnarray}    \n",
     "\\mu(h=0)&=&\\mu_{0}(h=0)+k_\\mathrm{B} T\\ln \\left ( \\frac{n(h=0)}{n_0}\\right )\\\\\n",
-    "        &=&\\mu_{0}(h)+k_\\mathrm{B} T \\ln \\left ( \\frac{n(h)}{n_0}\\right )    \n",
+    "&=&\\mu_{0}(h)+k_\\mathrm{B} T \\ln \\left ( \\frac{n(h)}{n_0}\\right )    \n",
     "\\end{eqnarray}\n",
     "\n",
     "The standard chemical potential is just given by the potential energy, i.e.: \n",
