@@ -220,7 +220,7 @@
     "which is the result we expect for ballistic motion. Between both regimes, the MSD could be complicated as the short time motion starts a hydrodynamic flux in the environment which is influencing the particle motion again. These hydrodynamic memory effects cause the so called long time tails in the mean squared displacement.\n",
     "The full MSD for a colloidal particle is displayed in the figure below as measured for example in an optical tweezer in the Molecular Nanophotonics group.\n",
     "\n",
-    "**insert MSD here**"
+    "![MSD](img/msd_bead.png)"
    ]
   },
   {
