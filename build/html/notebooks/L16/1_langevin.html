@@ -350,7 +350,12 @@
 <p>and for the mean squared displacement</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\langle r^2 \rangle \propto t^2\]</div></div>
-<p>which is the result we expect for ballistic motion. Between both regimes, the MSD could be complicated as the short time motion starts a hydrodynamic flux in the environment which is influencing the particle motion again. These hydrodynamic memory effects cause the so called long time tails in the mean squared displacement. The full MSD for a colloidal particle is displayed in the figure below as measured for example in an optical tweezer in the Molecular Nanophotonics group.</p>
+<p>which is the result we expect for ballistic motion. Between both regimes, the MSD could be complicated as the short time motion starts a hydrodynamic flux in the environment which is influencing the particle motion again. These hydrodynamic memory effects cause the so called long time tails in the mean squared displacement. The Langevin equation in one dimension then reads like</p>
+<p><span class="math">\begin{equation}
+M^{\prime} \ddot{x}(t)=
+-6 \pi \eta R \dot{x}(t)-6 R^{2} \sqrt{\pi \rho_{f} \eta} \int_{0}^{t}\left(t-t^{\prime}\right)^{-1 / 2} \ddot{x}\left(t^{\prime}\right) \mathrm{d} t^{\prime} -\nabla U+\zeta(t)
+\end{equation}</span></p>
+<p>and contains the effective mass of the colloidal <span class="math notranslate nohighlight">\(M^{\prime}\)</span>, the fluid density <span class="math notranslate nohighlight">\(\rho_f\)</span> and the external potential $U. The full MSD for a colloidal particle is displayed in the figure below as measured for example in an optical tweezer in the Molecular Nanophotonics group. Note that the MSD axis goes down to <span class="math notranslate nohighlight">\(10^{-21}\, {\rm m}\)</span>, which corresponds to 30 picometer displacement, which is far below the size of a hydrodgen atom.</p>
 <img alt="MSD" src="../../_images/msd_bead.png"/>
 <p>While we so far only know that <span class="math notranslate nohighlight">\(\langle\vec{\zeta}(t) \rangle =0\)</span>, we also know that there must be a certain magnitude of the random force that is connected to the temperature of the sample. The short time autocorrelation of the noise should be of the type</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
