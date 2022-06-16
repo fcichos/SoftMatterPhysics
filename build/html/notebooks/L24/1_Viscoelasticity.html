@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dynamics of Polymers" href="../L25/1_polymer_dynamics.html" /><link rel="prev" title="Viscoelasticity" href="../L23/2_Viscoelasticity.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dynamics of Polymers" href="../L25/1_polymer_dynamics.html" /><link rel="prev" title="Viscoelasticity" href="../L23/2_Viscoelasticity.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Viscoelasticity - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,10 +287,10 @@
 <p>This page was generated from <cite>notebooks/L24/1_Viscoelasticity.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L24/1_Viscoelasticity.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Viscoelasticity">
+<section id="Viscoelasticity">
 <h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="1_Viscoelasticity.pdf">Download Lecture as PDF</a></p>
-<div class="section" id="Maxwell-Model">
+<section id="Maxwell-Model">
 <h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
 <img alt="Maxwell" src="../../_images/maxwell1.png">
 <p>Combing back to the Maxwell model, we have a serial combination of viscous and elastic element. Thus both elements feel the same stress <span class="math notranslate nohighlight">\(\sigma\)</span> and the deformation is the sum of the elastic and viscous deformation, i.e. <span class="math notranslate nohighlight">\(\gamma=\gamma_e+\gamma_v\)</span>.</p>
@@ -297,8 +302,8 @@
 \[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}\]</div></div>
 <p>where <span class="math notranslate nohighlight">\(\eta_M/G_M\)</span> defines a timescale for the viscous relaxation. Such a timescale is always present in viscoelastic materials. In most materials even multiple timescales are relevant.</p>
 <p>In the following sections we explore the response of a viscoelastic material to different pertubations. They can be either formed by a <strong>step strain</strong>, a <strong>steady shear</strong> or a <strong>step stress or creep</strong>.</p>
-</img></div>
-<div class="section" id="Stress-Relaxation-after-Step-Strain">
+</img></section>
+<section id="Stress-Relaxation-after-Step-Strain">
 <h2>Stress Relaxation after Step Strain<a class="headerlink" href="#Stress-Relaxation-after-Step-Strain" title="Permalink to this headline">¶</a></h2>
 <p>Here we impose a step strain <span class="math notranslate nohighlight">\(\gamma\)</span> at a time <span class="math notranslate nohighlight">\(t=0\)</span>, such that the strain is constant for <span class="math notranslate nohighlight">\(t&gt;0\)</span>. Depending on the material we will get a different response. If we have for example an</p>
 <ul class="simple">
@@ -333,7 +338,7 @@
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\sigma(t)=G_M\gamma_e(t)=G_M \gamma \exp \left ( -\frac{t}{\tau_M}\right )\]</div></div>
 <p>Thus in the Maxwell model, the stress relaxation has a simple exponential decay with the characteristic time constant <span class="math notranslate nohighlight">\(\tau_M\)</span>. Such a characteristic time constant is characteristic for all viscoelastic materials. Many materials, e.g., polymers have multiple relaxation modes, each with its own time constant <span class="math notranslate nohighlight">\(\tau\)</span> as we will see later.It turns out, that any stress relaxation modulus can be described by a series of Maxwell elements.</p>
-<div class="section" id="Boltzmann-Superposition">
+<section id="Boltzmann-Superposition">
 <h3>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this headline">¶</a></h3>
 <p>The mechanical response of all materials has a region of linear response, where the relaxation modulus is independent of the strain. A manifestation of this linear response is the Boltzmann superposition principle.</p>
 <p>Stress from any combination of small step strains is simply the linear combination of stresses resulting from each individual step.</p>
@@ -351,9 +356,9 @@
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\sigma(t)=\int_{-\infty}^{t}G(t-t^{\prime})\dot{\gamma}(t^{\prime})dt^{\prime}\]</div></div>
 <p>which tells you that the stress in any material is the result of all past deformations, which is expressed by this convolution. The momory of each past deformation only decays as the relaxation modulus decay ovet the elapsed time <span class="math notranslate nohighlight">\(t-t^{\prime}\)</span></p>
-</div>
-</div>
-<div class="section" id="Steady-Shear">
+</section>
+</section>
+<section id="Steady-Shear">
 <h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this headline">¶</a></h2>
 <p>We now switch to a different mode of mechanical perturbation of a material, which is the steady shear deformation. There we already considered the flow profile in the low Reynolds number section.</p>
 <img alt="Flow" src="../../_images/shear.png"/>
@@ -373,10 +378,10 @@
 <p>If the shear rate becomes very large, the linear response approximation we have asummed for the Boltzmann superposition will not hold and we will observe non-linear effects. This leads for example to a <strong>shear thinning</strong> in polymeric liquids but also to a <strong>shear thickening</strong> for other materials such as the corn starch.</p>
 <p>In these nonlinear regions, we can still define an apparent viscosity as the ration of shear stress divided by shear strain. The viscosity we commonly refer to is, however, the viscosity measured in the limit of <span class="math notranslate nohighlight">\(\gamma\ll \tau^{-1}\)</span>.</p>
 <p>Note that all liquids display viscoelasticity even though the range where the viscosity is independent of the shear rate is very wide. For water, for example, the molecular relaxations are fast and the viscoelastic regimes starts at shear rates of about <span class="math notranslate nohighlight">\(10^{10}\, s^{-1}\)</span></p>
-</div>
-<div class="section" id="Creep-and-Creep-Recovery">
+</section>
+<section id="Creep-and-Creep-Recovery">
 <h2>Creep and Creep Recovery<a class="headerlink" href="#Creep-and-Creep-Recovery" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Creep">
+<section id="Creep">
 <h3>Creep<a class="headerlink" href="#Creep" title="Permalink to this headline">¶</a></h3>
 <p>Another mechanical perturbation is the step stress that can be applied to watch the strain relax. This is called <strong>creep</strong> and switching of a constant stress is called <strong>creep recovery</strong>. For the study of creep relaxation processes we define a new quantity, which is the inverse of the shear modulus. It is called the <strong>shear creep compliance</strong></p>
 <p><span class="math">\begin{equation}
@@ -416,8 +421,8 @@ J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)\]</div></div>
 <p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
 <img alt="test" src="../../_images/tmp12.pdf"/>
-</div>
-<div class="section" id="Creep-Recovery">
+</section>
+<section id="Creep-Recovery">
 <h3>Creep Recovery<a class="headerlink" href="#Creep-Recovery" title="Permalink to this headline">¶</a></h3>
 <p>When switching of the stress, the viscoelastic material recovers and we get an elastic recoil. The reocovery strain is defined as</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -433,9 +438,9 @@ J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \[J_R(t)=J(t)\]</div></div>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\lim_{t\rightarrow\infty} J_R(t)=\lim_{t\rightarrow \infty}\left [ J(t)-\frac{t}{\eta}\right ]=J_{eq}\]</div></div>
-</div>
-</div>
-<div class="section" id="Oscillatory-Shear">
+</section>
+</section>
+<section id="Oscillatory-Shear">
 <h2>Oscillatory Shear<a class="headerlink" href="#Oscillatory-Shear" title="Permalink to this headline">¶</a></h2>
 <p>All the previous consideration were done in the time domain with step-like perturbations. The step-like perturbation responses have an analog in the frequency domain, which is commonly measured by a type of “spectroscopy”, which is termed <strong>rheology</strong>. In rheology you apply an oscillating strain at a frequency <span class="math notranslate nohighlight">\(\omega\)</span>, which can be written in the complex form as</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -468,7 +473,7 @@ J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \text { power }
 \end{array}}-\underbrace{i G^{\prime}}_{\text {reactive }}) \gamma_{0}^{2} \omega\end{split}\]</div></div>
 <p>The last part of the equation shows, that the imaginary part is responsible for the dissipation, while the real part adds some pseudo power much like the ac resistance in electronic circuitry.</p>
-<div class="section" id="Complex-shear-modulus-of-the-Maxwell-model">
+<section id="Complex-shear-modulus-of-the-Maxwell-model">
 <h3>Complex shear modulus of the Maxwell model<a class="headerlink" href="#Complex-shear-modulus-of-the-Maxwell-model" title="Permalink to this headline">¶</a></h3>
 <p>The elastic part in the Maxwell model is again given by</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -493,8 +498,8 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
 <p>The plot below shows the frequency dependence of the real and imaginary part of the modulus for the Maxwell model. The imaginary part has the shape of a Lorentzian, which is corresponding to the Fourier transform of an exponential in the time domain. The wings of <span class="math notranslate nohighlight">\(G^{\prime \prime}\)</span> increase or decay with <span class="math notranslate nohighlight">\(\omega\)</span>, while the real part <span class="math notranslate nohighlight">\(G^{\prime}\)</span> shows a steeper increase with <span class="math notranslate nohighlight">\(\omega^2\)</span> until it saturates. The saturation and the peak occur at the characteristic timescale
 <span class="math notranslate nohighlight">\(\tau=\eta/G\)</span>, indicated by the vertical dahsed line.</p>
 <img alt="tmp3" src="../../_images/tmp31.pdf"/>
-</div>
-<div class="section" id="Complex-shear-modulus-of-the-Kelvin-Voigt-model">
+</section>
+<section id="Complex-shear-modulus-of-the-Kelvin-Voigt-model">
 <h3>Complex shear modulus of the Kelvin-Voigt model<a class="headerlink" href="#Complex-shear-modulus-of-the-Kelvin-Voigt-model" title="Permalink to this headline">¶</a></h3>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\underbrace{\sigma_{0} e^{i \omega t}}_{\sigma}=\sigma_{e}+\sigma_{v}=G \gamma+\eta \frac{d \gamma}{d t}=G \gamma_{0} e^{i \omega t}+i \omega \eta \gamma_{0} e^{i \omega t}\]</div></div>
@@ -502,9 +507,9 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
 \[G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=G+i \omega \eta=\underbrace{G}_{G^{\prime}}+i \underbrace{G \omega \tau}_{G^{\prime \prime}} \tag{Complex modulus Kelvin-Voigt model}\]</div></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</div>
+</script></section>
+</section>
+</section>
 
         </article>
       </div>
@@ -534,8 +539,8 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 31, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -595,7 +600,7 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Forces and Interactions in Soft Matter - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,7 +287,7 @@
 <p>This page was generated from <cite>notebooks/LX/4_Forces and Interactions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/LX/4_Forces and Interactions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Forces-and-Interactions-in-Soft-Matter">
+<section id="Forces-and-Interactions-in-Soft-Matter">
 <h1>Forces and Interactions in Soft Matter<a class="headerlink" href="#Forces-and-Interactions-in-Soft-Matter" title="Permalink to this headline">¶</a></h1>
 <p>While we have discussed in the previous sections the thermodynamics of systems and the kinetics of phase transitions, we have made as few as possible assumptions on the interactions between the, i.e., liquid components of a mixture to highlight the importance of entropic and other effects. Now, we would like to have a close look at the possible types of interactions and their order of magnitude in soft matter systems. We may classify the interactions in the following way: - covalent interaction
 (chemical binding) - electrostatic (Coulomb) - dipolar (vdW) - dispersion (vdW) - fluctuation, depletion (entropic)</p>
@@ -326,7 +331,7 @@ U_{\rm vap}=-N_{A}\mu^0_{\rm liq}=7N_{\rm A}k_{\rm B}T.
 \end{equation}</span></p>
 <p>According to that, the ratio of latent heat of vaporization and boiling temperature is <span class="math notranslate nohighlight">\(\frac{\Delta H_{\rm vap}}{T_{B}}\approx 8 R\approx 80 \frac{\rm J}{\rm K\, mol}\)</span> per mole, or <span class="math notranslate nohighlight">\(9 k_{\rm B} T\)</span> per molecule. If we assume that each molecule has on average 6 neighbors in a liquid, than we obtain a value of $:nbsphinx-math:<cite>frac{3}{2}`k_{:nbsphinx-math:</cite>rm B`}T $ as energy molecular pair. The about rough rule is called <strong>Troutons rule</strong> and gives only a very rough estimate of the
 cohesive energy, as it completely neglects the details of the interactions. However, it demonstrates why the thermal energy is important in soft matter.</p>
-<div class="section" id="Coulomb-forces,-charge–charge-interactions">
+<section id="Coulomb-forces,-charge–charge-interactions">
 <h2>Coulomb forces, charge–charge interactions<a class="headerlink" href="#Coulomb-forces,-charge–charge-interactions" title="Permalink to this headline">¶</a></h2>
 <p>The simplest form but at the same time, also one of the most important types of interaction is the electrostatic interaction, e.g., of simple charges. This type of interaction is important not only due to its relevance in biological systems, but the electrostatic interaction is in principle the only one delivering a long range repulsive forces.</p>
 <p><strong>Charge–charge interactions</strong> Charge–charge interactions are mediated by the electric fields. Assume that we have a charge <span class="math notranslate nohighlight">\(Q_1\)</span> that creates an electric field</p>
@@ -442,11 +447,11 @@ about <span class="math notranslate nohighlight">\(39\, k_{\rm B}T\)</span>. Ion
 <p>end{equation}`</p>
 <p>Also in this case the dipole–dipole interaction yields an orientation dependence with either repulsive or attractive interactions. The figure below shows the distance dependence for two configurations where the dipoles are arranged parallel but either along the connecting line or perpendicular to it.</p>
 <p><strong>Rotating dipoles, angle averaged Potential</strong></p>
-</div>
-<div class="section" id="van-der-Waals-interactions">
+</section>
+<section id="van-der-Waals-interactions">
 <h2>van der Waals interactions<a class="headerlink" href="#van-der-Waals-interactions" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="Depletion-Forces">
+</section>
+<section id="Depletion-Forces">
 <h2>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this headline">¶</a></h2>
 <p><strong>Depletion force between two plates</strong></p>
 <p><strong>Depletion force between two spheres</strong> – To describe the depletion interaction between two spheres (radius <span class="math notranslate nohighlight">\(R\)</span>) in a solution of smaller spheres (radius <span class="math notranslate nohighlight">\(σ/2\)</span>), we may use the same approach of assuming an isotropic osmotic pressure of the smaller spheres. The smaller spheres can actually not approach a spherical shell of thickness <span class="math notranslate nohighlight">\(σ/2\)</span> around the larger spheres or a total volume of <span class="math notranslate nohighlight">\(4π(R+σ/2)^3/3\)</span> . The pressure on the large spheres has no consequences except in the
@@ -522,8 +527,8 @@ Z=\frac{1}{N!}\frac{1}{\Lambda^{3N}}\int \mathrm d^{3}q^{N}\exp(-\beta U(q^{N}))
 </dl>
 <p>end{equation}`</p>
 <p>for <span class="math notranslate nohighlight">\(r&lt;d+D\)</span>. For all other distances of the two centers of the spheres, the depletion force is zero.</p>
-</img></div>
-</div>
+</img></section>
+</section>
 
         </article>
       </div>
@@ -535,8 +540,8 @@ Z=\frac{1}{N!}\frac{1}{\Lambda^{3N}}\int \mathrm d^{3}q^{N}\exp(-\beta U(q^{N}))
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -583,7 +588,7 @@ Z=\frac{1}{N!}\frac{1}{\Lambda^{3N}}\int \mathrm d^{3}q^{N}\exp(-\beta U(q^{N}))
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

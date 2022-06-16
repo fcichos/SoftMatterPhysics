@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Kinetics of Liquid–Liquid Unmixing" href="2_Kinetics_LL_Unmixing.html" /><link rel="prev" title="Gibbs Distribution" href="../L4/2_Gibbs_Distribution.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Kinetics of Liquid–Liquid Unmixing" href="2_Kinetics_LL_Unmixing.html" /><link rel="prev" title="Gibbs Distribution" href="../L4/2_Gibbs_Distribution.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Phase Transitions - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -488,7 +493,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -530,15 +535,14 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L5/1_Phase_Transitions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L5/1_Phase_Transitions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Phase-Transitions">
+<section id="Phase-Transitions">
 <h1>Phase Transitions<a class="headerlink" href="#Phase-Transitions" title="Permalink to this headline">¶</a></h1>
 <p>The importance of looking at phase transitions resides in the multicomponent nature of soft matter and its interaction energy scales.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -561,7 +565,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Liquid-Liquid-Unmixing">
+<section id="Liquid-Liquid-Unmixing">
 <h2>Liquid-Liquid Unmixing<a class="headerlink" href="#Liquid-Liquid-Unmixing" title="Permalink to this headline">¶</a></h2>
 <p>Consider two liquids consisting of molecules A and B, which we will bring together and mix. The mixing should happen at constant volume and temperature. We can therefore use the Helmholtz free energy as the quantity that is minimized.</p>
 <p>Initially, the separated components have the free energies <span class="math notranslate nohighlight">\(F_{\rm A}\)</span> and <span class="math notranslate nohighlight">\(F_{\rm B}.\)</span> After the mixing, the free energy that derives from the mixing is <span class="math notranslate nohighlight">\(F_{\rm A+B}-(F_{\rm A}+F_{\rm B}).\)</span> If the volume fraction of component A is <span class="math notranslate nohighlight">\(\phi_{\rm A}\)</span> and the one of component B is <span class="math notranslate nohighlight">\(\phi_{\rm B}\)</span> such that <span class="math notranslate nohighlight">\(\phi_{\rm A}+\phi_{\rm B}=1\)</span> (incompressibility of the mixture), then we can calculate the mixing free energy .</p>
@@ -603,8 +607,7 @@ U_{\rm mix}=\frac{z}{2}\left [(\phi_{\rm A}^2-\phi_{\rm A})\epsilon_{\rm AA}+(\p
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># define volume fraction variable</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define volume fraction variable</span>
 <span class="n">phi</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.99</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -613,16 +616,14 @@ U_{\rm mix}=\frac{z}{2}\left [(\phi_{\rm A}^2-\phi_{\rm A})\epsilon_{\rm AA}+(\p
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># calculate mixing free energy</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate mixing free energy</span>
 <span class="k">def</span> <span class="nf">mix</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">m</span><span class="o">=</span><span class="n">phi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">phi</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="o">*</span><span class="n">phi</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">phi</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\frac{F_{\rm mix}}{k_B T}$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"volume fraction $\phi$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-</pre></div>
+<br/></pre></div>
 </div>
 </div>
 <p><em>Free energy of mixing as a function of the composition of the binary liquid mixture for different interaction parameters.</em></p>
@@ -630,8 +631,7 @@ U_{\rm mix}=\frac{z}{2}\left [(\phi_{\rm A}^2-\phi_{\rm A})\epsilon_{\rm AA}+(\p
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># display interaction slider</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display interaction slider</span>
 <span class="n">interact</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -670,8 +670,8 @@ curve. Eventually, the system will evolve towards the free energy minimum and th
 <p>We can now plot this free energy of mixing as a function of the volume fraction of component A.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
+</script></section>
+</section>
 
         </article>
       </div>
@@ -701,8 +701,8 @@ curve. Eventually, the system will evolve towards the free energy minimum and th
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -747,7 +747,7 @@ curve. Eventually, the system will evolve towards the free energy minimum and th
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

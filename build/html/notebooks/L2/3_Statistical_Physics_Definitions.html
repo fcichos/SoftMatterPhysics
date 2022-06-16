@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Equipartition" href="../L3/1_Equipartition.html" /><link rel="prev" title="Thermodynamics and Statistical Physics Revisited" href="../L1/2_Thermodynamics_Statistics.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Equipartition" href="../L3/1_Equipartition.html" /><link rel="prev" title="Thermodynamics and Statistical Physics Revisited" href="../L1/2_Thermodynamics_Statistics.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Statistical Physics Definitions - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -286,12 +287,12 @@
 <p>This page was generated from <cite>notebooks/L2/3_Statistical_Physics_Definitions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L2/3_Statistical_Physics_Definitions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Statistical-Physics-Definitions">
+<section id="Statistical-Physics-Definitions">
 <h1>Statistical Physics Definitions<a class="headerlink" href="#Statistical-Physics-Definitions" title="Permalink to this headline">¶</a></h1>
 <p>The field of statitical physics uses approaches of statistics and probability theory to address physical problems. It considers large populations and derives expressions for the ensemble (or the macrostate) of a system from the microscopic states in the system.</p>
-<div class="section" id="Entropy">
+<section id="Entropy">
 <h2>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Entropy-Definition-by-Boltzmann">
+<section id="Entropy-Definition-by-Boltzmann">
 <h3>Entropy Definition by Boltzmann<a class="headerlink" href="#Entropy-Definition-by-Boltzmann" title="Permalink to this headline">¶</a></h3>
 <p>The term of entropy becomes very important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by <strong>Boltzmann</strong> is well known, i.e.,</p>
 <p><span class="math">\begin{equation}
@@ -338,8 +339,8 @@ S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 </div>
 <p>Below you just find some Python code calculating the entropy as a function of “concentration” using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since <span class="math notranslate nohighlight">\(N=100\)</span>.</p>
 <img alt="../../_images/stirling.pdf" src="../../_images/stirling.pdf"/>
-</div>
-<div class="section" id="Shannon-Entropy">
+</section>
+<section id="Shannon-Entropy">
 <h3>Shannon Entropy<a class="headerlink" href="#Shannon-Entropy" title="Permalink to this headline">¶</a></h3>
 <p>A different access to entropy comes from the field of information theory and has been devised by Claude Shannon. Information theory is trying to mathematically assess the information content of a measurement facing uncertainty. It will turn out further below that this alternative description results in the Boltzmann distribution and effectively amounts to making a best guess about the probability distribution given some limited knowledge about the system such as the average energy.</p>
 <p>The Shannon entropy is defined by</p>
@@ -389,9 +390,9 @@ p_{i}=\frac{1}{N}
 \end{equation}</span></p>
 <p>which is the expected equal probability of finding one of the <span class="math notranslate nohighlight">\(N\)</span> outcomes.</p>
 </div>
-</div>
-</div>
-<div class="section" id="Boltzmann-Distribution">
+</section>
+</section>
+<section id="Boltzmann-Distribution">
 <h2>Boltzmann Distribution<a class="headerlink" href="#Boltzmann-Distribution" title="Permalink to this headline">¶</a></h2>
 <p>Our previous consideration of the state functions has shown, that thermal equibrium is associated with a minimum in free energy. As the free energy consists of internal energy <span class="math notranslate nohighlight">\(U\)</span> (or enthalpy <span class="math notranslate nohighlight">\(H\)</span>) and an entropic term (<span class="math notranslate nohighlight">\(-TS\)</span>), we may understand this minimization as a competition between the minimization of the internal energy and a maximization of the entropy (since it is <span class="math notranslate nohighlight">\(-TS\)</span>). The figure below illustrates this competition for a gas in the gravity field.</p>
 <img alt="entropy" src="../../_images/entropy_comp.png"/>
@@ -413,7 +414,7 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 <p><span class="math">\begin{equation}
 \sum_i p(E_i)=1.
 \end{equation}</span></p>
-<div class="section" id="Mean-Energy">
+<section id="Mean-Energy">
 <h3>Mean Energy<a class="headerlink" href="#Mean-Energy" title="Permalink to this headline">¶</a></h3>
 <p>The Boltzmann distribution is useful to calculate also expectation values, for example, of the total energy of the system (the mean energy <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>).</p>
 <p>The mean is defined by: <span class="math">\begin{equation}
@@ -431,8 +432,8 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 <p><span class="math">\begin{equation}
 \langle E \rangle=-\frac{\partial }{\partial \beta}\ln(Z).
 \end{equation}</span></p>
-</div>
-<div class="section" id="Free-Energy">
+</section>
+<section id="Free-Energy">
 <h3>Free Energy<a class="headerlink" href="#Free-Energy" title="Permalink to this headline">¶</a></h3>
 <p>Employ the Gibbs entropy <span class="math notranslate nohighlight">\(S=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i}\)</span> to find a relation between the free energy <span class="math notranslate nohighlight">\(F\)</span> (or <span class="math notranslate nohighlight">\(G\)</span>) and the partition function. Inserting the probability <span class="math notranslate nohighlight">\(p_i=Z^{-1}\exp(-\beta E_i)\)</span> and doing some transformations yields</p>
 <p><span class="math">\begin{equation}
@@ -448,8 +449,8 @@ F=-k_\mathrm{B} T \ln(Z)
 \end{equation}</span></p>
 <p>(or <span class="math notranslate nohighlight">\(G\)</span> in the same way).</p>
 <p>Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system. The partition function thus allows us to calculate the free energy.</p>
-</div>
-<div class="section" id="Deriving-the-Boltzmann-Distribution">
+</section>
+<section id="Deriving-the-Boltzmann-Distribution">
 <h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this headline">¶</a></h3>
 <p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.</p>
 <img alt="Test" src="../../_images/entropy_calc.png"/>
@@ -534,9 +535,9 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</div>
+</script></section>
+</section>
+</section>
 
         </article>
       </div>
@@ -566,8 +567,8 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Feb 16, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -622,7 +623,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

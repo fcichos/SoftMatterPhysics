@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Viscoelasticity" href="../L24/1_Viscoelasticity.html" /><link rel="prev" title="Scattering Techniques for Polymer Conformation" href="1_Scattering.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Viscoelasticity" href="../L24/1_Viscoelasticity.html" /><link rel="prev" title="Scattering Techniques for Polymer Conformation" href="1_Scattering.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Viscoelasticity - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -488,7 +493,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -530,7 +535,7 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L23/2_Viscoelasticity.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L23/2_Viscoelasticity.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Viscoelasticity">
+<section id="Viscoelasticity">
 <h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this headline">¶</a></h1>
 <img alt="Ranges" src="../../_images/ranges.png">
 <p>Viscoelsatic behavior is a mixture of viscous behavior, which we know already from simple liquids and elastic behavior, which is typical for solids. Yet, this mixture is not just a simple superposition but often quite complex and depdning on the way mechanical deformation is introduced.</p>
@@ -560,20 +565,20 @@ div.rendered_html tbody tr:hover {
 <li><p><strong>viscoelastic material</strong> responds with an (exponential) decay to a stepp strain and an (exponential) increase to a limiting value to a step stress</p></li>
 </ul>
 <p>Viscoelasstic materials are thus materials that exhibit both viscous and elastic responses under applied mechanical stress and strain. As these responses are time dependent, viscoeleastic materials may show elastic behavior on short timescales but liquid on long timescales. Viscoelastic solids will always reach non-zero values for stress or strain after a certain amount of time, while for a viscoelastic material, the stress always decays to zero but the strain is able to grow without bounds.</p>
-<div class="section" id="Models-for-Viscoelastic-behavior">
+<section id="Models-for-Viscoelastic-behavior">
 <h2>Models for Viscoelastic behavior<a class="headerlink" href="#Models-for-Viscoelastic-behavior" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="Maxwell-Model">
+</section>
+<section id="Maxwell-Model">
 <h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
 <p>A model for a viscoelastic liquid is the Maxwell model being a serial combination of a spring and a dashpot (viscous element).</p>
 <img alt="Maxwell" src="../../_images/maxwell.png"/>
-</div>
-<div class="section" id="Kelvin-Voigt">
+</section>
+<section id="Kelvin-Voigt">
 <h2>Kelvin-Voigt<a class="headerlink" href="#Kelvin-Voigt" title="Permalink to this headline">¶</a></h2>
 <p>The Kelvin-Voigt model is a parallel combination of both elements and can grasp some features of a viscoelastic solid. It can however not describe the behavior for step strain.</p>
 <img alt="Kelvin-Voigt" src="../../_images/kelvinvoigt.png"/>
-</div>
-<div class="section" id="Standard-Model">
+</section>
+<section id="Standard-Model">
 <h2>Standard Model<a class="headerlink" href="#Standard-Model" title="Permalink to this headline">¶</a></h2>
 <p>A better model for visoelastic solids is the standard linear solid model comprising three mechanical elements.</p>
 <img alt="Standard" src="../../_images/standard.png"/>
@@ -581,15 +586,14 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</img></div>
+</script></section>
+</img></section>
 
         </article>
       </div>
@@ -619,8 +623,8 @@ div.rendered_html tbody tr:hover {
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -668,7 +672,7 @@ div.rendered_html tbody tr:hover {
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

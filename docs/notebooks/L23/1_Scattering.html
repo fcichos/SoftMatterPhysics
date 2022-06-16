@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Viscoelasticity" href="2_Viscoelasticity.html" /><link rel="prev" title="Real Polymers" href="../L22/1_real_polymers.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Viscoelasticity" href="2_Viscoelasticity.html" /><link rel="prev" title="Real Polymers" href="../L22/1_real_polymers.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Scattering Techniques for Polymer Conformation - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,12 +287,12 @@
 <p>This page was generated from <cite>notebooks/L23/1_Scattering.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L23/1_Scattering.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Scattering-Techniques-for-Polymer-Conformation">
+<section id="Scattering-Techniques-for-Polymer-Conformation">
 <h1>Scattering Techniques for Polymer Conformation<a class="headerlink" href="#Scattering-Techniques-for-Polymer-Conformation" title="Permalink to this headline">¶</a></h1>
 <p>The scattering of electromagnetic or matter waves is a commonly used tool to obtain information about the conformation of polymer chains. Light wave, X-rays (SAXS) but also neutrons (SANS) are used to study polymer solutions. While all waves have their own pecularities, they are all based on the intereference of partial waves scattered at different segments of the polymer.</p>
 <p>A solution of different polymer chains (assume its dilute) has different length scales involved. There is an average distance between the polymer chains which is large as compared to the polymer size. Waves that interfere when being scattered from different polymers reflect the structure of the solution and is commonly addressed in a scattering quantity, which is the <strong>structure factor</strong>. Waves that are scattered by the same chain and interfer are a measure of the polymer conformation and
 described by the <strong>form factor</strong>. Yet, this scale seperation might not always be possible in dense polymer solutions.</p>
-<div class="section" id="Form-Factor">
+<section id="Form-Factor">
 <h2>Form Factor<a class="headerlink" href="#Form-Factor" title="Permalink to this headline">¶</a></h2>
 <p>We would like to consider the form factor only, which gives us information on the polymer conformation. We have an incident plane wave with the wave vector <span class="math notranslate nohighlight">\(\vec{q}_i\)</span> which is falling on our polymer chain. The wavevector has a direction and magnitude according to</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -337,8 +342,8 @@ I_{\mathrm{s}} &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=
 <p>which is reminiscent of the single slit result or the Fourier transform of the segment distribution in the scattering objects components:</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q)=\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \frac{\sin \left(q R_{i j}\right)}{q R_{i j}}\]</div></div>
-</img></div>
-<div class="section" id="Radius-of-Gyration">
+</img></section>
+<section id="Radius-of-Gyration">
 <h2>Radius of Gyration<a class="headerlink" href="#Radius-of-Gyration" title="Permalink to this headline">¶</a></h2>
 <p>We can relate the latter result directly with properties of the polymer chain, like the radius of gyration. If we consider only values of the sinc argument which are <span class="math notranslate nohighlight">\(q R_ij&lt;1\)</span>, i.e. we consider <strong>small angle scattering</strong>, we can expand the sinc function into</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -356,8 +361,8 @@ I_{\mathrm{s}} &amp;=2 I_{\mathrm{i}} A^{2} \nu \int_{0}^{1 / \nu}\left[\sum_{j=
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[P(q) \cong \exp \left(-\frac{q^{2} R_{\mathrm{g}}^{2}}{3}\right) \quad \text { for } q R_{\mathrm{g}}&lt;1\]</div></div>
 <p>which is termed the <strong>Guinier function</strong>.</p>
-</div>
-<div class="section" id="Debye-Function">
+</section>
+<section id="Debye-Function">
 <h2>Debye Function<a class="headerlink" href="#Debye-Function" title="Permalink to this headline">¶</a></h2>
 <p>The above consideration is not taking into account that not all distances <span class="math notranslate nohighlight">\(R_{ij}\)</span> have the same probability for a polymer chain. This was first taken into account by Pieter Debye in form of the ideal chain. The end-to-end distance distribution we have obtained earlier delivers the probability to find the ending segments of a polymer with <span class="math notranslate nohighlight">\(N\)</span> Kuhn segments of length <span class="math notranslate nohighlight">\(b\)</span> at a distance <span class="math notranslate nohighlight">\(R\)</span>. We can use this expression as well to give a probability density to find two
 segments <span class="math notranslate nohighlight">\(i,j\)</span> at a distance <span class="math notranslate nohighlight">\(R_{ij}\)</span>, which is then given by</p>
@@ -384,8 +389,8 @@ P(q)&amp;=&amp;\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \int_{0}^{\infty} \
 <img alt="FormFactors" src="../../_images/form.png"/>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
+</script></section>
+</section>
 
         </article>
       </div>
@@ -415,8 +420,8 @@ P(q)&amp;=&amp;\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \int_{0}^{\infty} \
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -463,7 +468,7 @@ P(q)&amp;=&amp;\frac{1}{N^{2}} \sum_{i=1}^{N} \sum_{j=1}^{N} \int_{0}^{\infty} \
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

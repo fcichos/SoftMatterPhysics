@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Solid–Liquid Phase Transitions" href="../L6/1_Solid_Liquid_Phase_Transitions.html" /><link rel="prev" title="Phase Transitions" href="1_Phase_Transitions.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Solid–Liquid Phase Transitions" href="../L6/1_Solid_Liquid_Phase_Transitions.html" /><link rel="prev" title="Phase Transitions" href="1_Phase_Transitions.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Kinetics of Liquid–Liquid Unmixing - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,7 +287,7 @@
 <p>This page was generated from <cite>notebooks/L5/2_Kinetics_LL_Unmixing.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L5/2_Kinetics_LL_Unmixing.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Kinetics-of-Liquid–Liquid-Unmixing">
+<section id="Kinetics-of-Liquid–Liquid-Unmixing">
 <h1>Kinetics of Liquid–Liquid Unmixing<a class="headerlink" href="#Kinetics-of-Liquid–Liquid-Unmixing" title="Permalink to this headline">¶</a></h1>
 <p>If two liquids are brought together at a composition that is either unstable or metastable, they will phase separate. The kinetics of this phase separation can proceed in different ways.</p>
 <ol class="arabic simple">
@@ -290,7 +295,7 @@
 <li><p><strong>Nucleation</strong> – In the case of nucleation, a thermal fluctuation will create a nucleus of a critical size, which further grows in time. The nucleus has a sharp boundary with the other phase. Nucleation is the process of phase separation in the metastable region.</p></li>
 </ol>
 <p>We will treat both kinetic regimes separately.</p>
-<div class="section" id="Spinodal-decomposition">
+<section id="Spinodal-decomposition">
 <h2>Spinodal decomposition<a class="headerlink" href="#Spinodal-decomposition" title="Permalink to this headline">¶</a></h2>
 <p>Based on Fick’s law, we know that the diffusion currents occur in the direction against a composition gradient, i.e., <span class="math notranslate nohighlight">\(J=-D∇\phi\)</span>. The result of that diffusion process is an equal composition in the whole sample. For phase separation to happen, material needs to flow from regions of low concentration to regions of higher concentration, so in the direction of the composition gradient. Material transport is therefore not balancing composition gradients. In the section about the chemical
 potential, we learned that in an open system the chemical potential of all species is balanced. The chemical potential is given by</p>
@@ -340,11 +345,11 @@ effective diffusion coefficient is negative which allows for our uphill diffusio
 R(q)= -D_{\rm eff} q^{2}\left (1+\frac{2\kappa q^{2}}{f_{0}^{''}}\right )
 \end{equation}</span></p>
 <p>which is nothing else as an inverse time or a rate coefficient. It provides the relaxation rate for a specific wavenumber. This rate coefficient is positive up to a certain wavenumber <span class="math notranslate nohighlight">\(q_0\)</span>. All fluctuations with wavelengths larger than <span class="math notranslate nohighlight">\(λ_0=2π/q_0\)</span> are amplified in time. The fastest-growing fluctuation is obtained at <span class="math notranslate nohighlight">\(q_{\rm max}\)</span>. This wavenumber sets the length scale of the structures, which typically appear during the spinodal decomposition.</p>
-</div>
-<div class="section" id="Nucleation">
+</section>
+<section id="Nucleation">
 <h2>Nucleation<a class="headerlink" href="#Nucleation" title="Permalink to this headline">¶</a></h2>
 <p>Nucleation is the phenomenon of spontaneously generating a phase-separated volume by thermal fluctuations. By doing that, we create an interface between the two phases, which costs energy. We, therefore, have a first simple look at the interfacial energy.</p>
-<div class="section" id="Interfacial-Tension">
+<section id="Interfacial-Tension">
 <h3>Interfacial Tension<a class="headerlink" href="#Interfacial-Tension" title="Permalink to this headline">¶</a></h3>
 <p>If we have a system of two components A and B and those components do not mix but form an interface, then, due to the fact that both sorts of molecules repel each other, we have to spend energy to bring them together. The work done to create an interfacial area is</p>
 <p><span class="math">\begin{equation}
@@ -354,9 +359,9 @@ W=F \Delta x=\gamma L \Delta x,
 <p><span class="math">\begin{equation}
 \gamma=\frac{1}{2v^{2/3}}(2\epsilon_{\rm AB}-\epsilon_{\rm AA}-\epsilon_{\rm BB})=\frac{\chi k_{\rm B}T}{zv^{2/3}}.
 \end{equation}</span></p>
-</div>
-</div>
-<div class="section" id="nucleation-1">
+</section>
+</section>
+<section id="nucleation-1">
 <span id="id1"></span><h2>Nucleation<a class="headerlink" href="#nucleation-1" title="Permalink to this headline">¶</a></h2>
 <p>If we have a liquid mixture now at a certain composition, which is in the metastable region, i.e., <span class="math notranslate nohighlight">\((∂^2 F)/(∂ϕ^2 )&gt;0\)</span>, all of the density fluctuations in our system are damped and the spinodal decomposition can not happen. Therefore, the system has to phase separate by nucleation, i.e., that spontaneously a droplet of a certain size is formed and grows further. As we need energy to create the interface but also gain free energy by forming a volume phase, we need to have a look at the
 total free energy change, when the droplet is formed.</p>
@@ -382,8 +387,8 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></img></div>
-</div>
+</script></img></section>
+</section>
 
         </article>
       </div>
@@ -413,8 +418,8 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -464,7 +469,7 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

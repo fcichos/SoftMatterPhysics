@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical Potential" href="2_Chemical_Potential.html" /><link rel="prev" title="Statistical Physics Definitions" href="../L2/3_Statistical_Physics_Definitions.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Chemical Potential" href="2_Chemical_Potential.html" /><link rel="prev" title="Statistical Physics Definitions" href="../L2/3_Statistical_Physics_Definitions.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Equipartition - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,7 +287,7 @@
 <p>This page was generated from <cite>notebooks/L3/1_Equipartition.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L3/1_Equipartition.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Equipartition">
+<section id="Equipartition">
 <h1>Equipartition<a class="headerlink" href="#Equipartition" title="Permalink to this headline">¶</a></h1>
 <p>In the previous section, we showed how the probability distribution for a system with average energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier <span class="math notranslate nohighlight">\(\beta\)</span>. We can derive a value for <span class="math notranslate nohighlight">\(\beta\)</span> with the help of the equipartition theorem.</p>
 <div class="admonition warning">
@@ -388,8 +393,8 @@ k=\frac{k_B T}{\langle x^2\rangle }
 achieved only about 10 years ago, while the distribution connected to the velocities, the <strong>Maxwell-Boltzmann distribution</strong> is already known for a very long time.</p>
 <p>Take some time to have a look at the Maxwell-Boltzmann distribution again.</p>
 </div>
-</div>
-<div class="section" id="When-a-Macrostate-is-a-Microstate">
+</section>
+<section id="When-a-Macrostate-is-a-Microstate">
 <h1>When a Macrostate is a Microstate<a class="headerlink" href="#When-a-Macrostate-is-a-Microstate" title="Permalink to this headline">¶</a></h1>
 <p>In practice, we are often interested in the likelihood that the system is in a state that is described by some macroscopic parameter <span class="math notranslate nohighlight">\(X\)</span> that we can measure. For example, for a DNA molecule inside a cell, an interesting quantity, which can be measured using fluorescent markers, is the distance R between two sites on the DNA chain. Repeated measurements of <span class="math notranslate nohighlight">\(R\)</span> can to construct the probability distribution p(R).</p>
 <p>In general, the probability of the macrostate <span class="math notranslate nohighlight">\(X\)</span> is given by the sum of probabilities of all the microstates of the system that adopt the specified value <span class="math notranslate nohighlight">\(X\)</span>,</p>
@@ -409,7 +414,7 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
 <img alt="micro_macro" src="../../_images/micro_macro.png"/>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
+</script></section>
 
         </article>
       </div>
@@ -439,8 +444,8 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -483,7 +488,7 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dipole-Dipole Interactions" href="../L8/1_Forces_and_Interactions.html" /><link rel="prev" title="Solid–Liquid Phase Transitions" href="../L6/1_Solid_Liquid_Phase_Transitions.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dipole-Dipole Interactions" href="../L8/1_Forces_and_Interactions.html" /><link rel="prev" title="Solid–Liquid Phase Transitions" href="../L6/1_Solid_Liquid_Phase_Transitions.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Forces and Interactions in Soft Matter - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -488,7 +493,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -530,7 +535,7 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L7/1_Forces and Interactions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L7/1_Forces and Interactions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Forces-and-Interactions-in-Soft-Matter">
+<section id="Forces-and-Interactions-in-Soft-Matter">
 <h1>Forces and Interactions in Soft Matter<a class="headerlink" href="#Forces-and-Interactions-in-Soft-Matter" title="Permalink to this headline">¶</a></h1>
 <p>While we have discussed in the previous sections the thermodynamics of systems and the kinetics of phase transitions, we have made as few as possible assumptions on the interactions between the liquid components of a mixture to highlight the importance of entropic and other effects. Now, we would like to have a close look at the possible types of interactions and their order of magnitude in soft matter systems. We may classify the interactions in the following way: - covalent interaction
 (chemical binding), - electrostatic (Coulomb), - dipolar (vdW), - hydrogen bonding, - dispersion (vdW), - fluctuation, depletion (entropic).</p>
@@ -539,8 +544,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
 <span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
@@ -564,7 +568,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Pairwise-interaction-energy">
+<section id="Pairwise-interaction-energy">
 <h2>Pairwise interaction energy<a class="headerlink" href="#Pairwise-interaction-energy" title="Permalink to this headline">¶</a></h2>
 <p>Before we go into further details, we may have a look at some general behavior again. Let us assume that the interaction energy between two atoms/molecules is given by</p>
 <p><span class="math">\begin{equation}
@@ -580,8 +584,8 @@ F(r)=-\frac{\mathrm dw(r)}{\mathrm dr}=-\frac{nC}{r^{n+1}}.
 \end{equation}</span></p>
 <p>The total interaction energy, and thus also the property of the system will, consequently, depend on the size <span class="math notranslate nohighlight">\(L\)</span> of the system, except we assume <span class="math notranslate nohighlight">\(n&gt;3\)</span> and <span class="math notranslate nohighlight">\(L&gt;&gt;σ\)</span>, where <span class="math notranslate nohighlight">\(σ\)</span> is the size of the molecule. This states nothing else, that long range interactions may yield system-dependent properties or bulk properties that do not depend on the volume size only if objects become small. Obviously, Coulomb interactions or dipolar interactions may not satisfy the above
 assumptions.</p>
-</div>
-<div class="section" id="Cohesive-energy-of-a-liquid">
+</section>
+<section id="Cohesive-energy-of-a-liquid">
 <h2>Cohesive energy of a liquid<a class="headerlink" href="#Cohesive-energy-of-a-liquid" title="Permalink to this headline">¶</a></h2>
 <p>We can find out some general rule about the cohesive energy of a molecule with its neighbors in a liquid, when comparing the molar gas and molar liquid volumes. A typical gas molar volume is <span class="math notranslate nohighlight">\(22.400~ \rm cm^3/mol\)</span>, while this is only <span class="math notranslate nohighlight">\(20~ \rm cm^3/mol\)</span> for a liquid. If liquid and gas coexist at a certain temperature <span class="math notranslate nohighlight">\(T\)</span>, then the chemical potential of gas and liquid have to be the same, i.e.:</p>
 <p><span class="math">\begin{equation}
@@ -609,11 +613,11 @@ estimate of the cohesive energy, as it completely neglects the details of the in
 \end{equation}</span></p>
 <p>with <span class="math notranslate nohighlight">\(R\)</span> being the gas constant.</p>
 </div>
-</div>
-<div class="section" id="Coulomb-forces,-charge–charge-interactions">
+</section>
+<section id="Coulomb-forces,-charge–charge-interactions">
 <h2>Coulomb forces, charge–charge interactions<a class="headerlink" href="#Coulomb-forces,-charge–charge-interactions" title="Permalink to this headline">¶</a></h2>
 <p>The simplest but at the same time also one of the most important types of interaction is the electrostatic interaction, e.g., of simple charges. This type of interaction is important not only due to its relevance in biological systems, but the electrostatic interaction is in principle the only one delivering a long range repulsive force.</p>
-<div class="section" id="Charge–charge-interactions">
+<section id="Charge–charge-interactions">
 <h3>Charge–charge interactions<a class="headerlink" href="#Charge–charge-interactions" title="Permalink to this headline">¶</a></h3>
 <p>Charge–charge interactions are mediated by the electric fields. Assume that we have a charge <span class="math notranslate nohighlight">\(Q_1\)</span> that creates an electric field</p>
 <p><span class="math">\begin{equation}
@@ -634,8 +638,8 @@ interaction energies for the total cohesive energy of the sodium ion in the crys
 \mu^{0}=-\frac{e^2}{4\pi \epsilon_{0}r}\left [ 6-\frac{12}{\sqrt{2}}+\frac{8}{\sqrt{3}}-\frac{6}{2}+\ldots\right]=-1.748\frac{e^2}{4\pi \epsilon_{0}r}.
 \end{equation}</span></p>
 <p>The factor in front of the Coulomb term (the one in the square brackets) is termed Madelung constant and is known from solid state physics. It is characteristic for specific lattice types such as a simple cubic lattice in this case. Note that the cohesive energy of one sodium ion therefore is about <span class="math notranslate nohighlight">\(350\, k_{\rm B}T\)</span> and is thus much larger than the thermal energy keeping the NaCl crystal stable. Yet it can be dissolved in water very easily.</p>
-</div>
-<div class="section" id="Born-energy-of-solvation">
+</section>
+<section id="Born-energy-of-solvation">
 <h3>Born energy of solvation<a class="headerlink" href="#Born-energy-of-solvation" title="Permalink to this headline">¶</a></h3>
 <p>The Born energy of solvation calculates the free energy of assembling a charge inside a dielectric medium of dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. Let us shortly reconsider the free energy:</p>
 <p><span class="math">\begin{eqnarray}
@@ -706,8 +710,8 @@ X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
 <li><p>that the theory just assumes continuous changes in the interactions, despite the fact that there is a near order, and</p></li>
 <li><p>that additional interactions like hydrogen bonds exist.</p></li>
 </ol>
-</img></div>
-<div class="section" id="Interactions-involving-polar-molecules">
+</img></section>
+<section id="Interactions-involving-polar-molecules">
 <h3>Interactions involving polar molecules<a class="headerlink" href="#Interactions-involving-polar-molecules" title="Permalink to this headline">¶</a></h3>
 <p>Many molecules exhibit a dipole or even higher moments due to the fact that the charges are not evenly distributed over the molecular structure. Some of the atoms exhibit a stronger tendency to accept charges than others. This is typically measured by electronegativity and provides an idea of whether atoms rather donate or accept a charge when binding to other atoms. While homo-atomic bonds therefore do not have dipole moments, hetero-atomic bonds do (see table).</p>
 <div class="table-wrapper"><table class="docutils align-default">
@@ -781,8 +785,7 @@ X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[145]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
 <span class="c1"># generate grid</span>
 <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
@@ -820,7 +823,7 @@ X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
 <img alt="../../_images/notebooks_L7_1_Forces_and_Interactions_10_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_1_Forces_and_Interactions_10_0.png" style="width: 650px; height: 627px;"/>
 </div>
 </div>
-<div class="section" id="Ion–dipole-interaction">
+<section id="Ion–dipole-interaction">
 <h4>Ion–dipole interaction<a class="headerlink" href="#Ion–dipole-interaction" title="Permalink to this headline">¶</a></h4>
 <p>The interaction energy of a dipole with a charge can be calculated by</p>
 <p><span class="math">\begin{equation}
@@ -838,8 +841,7 @@ stripping of the hydration shell.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">ion_dipole</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">epsilon</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ion_dipole</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">epsilon</span><span class="p">):</span>
     <span class="n">q</span><span class="o">=</span><span class="n">u</span><span class="o">/</span><span class="n">l</span>
     <span class="n">f</span><span class="o">=</span><span class="n">e</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">epsilon</span><span class="o">*</span><span class="n">epsilon_0</span><span class="p">)</span>
     <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))))</span>
@@ -850,8 +852,7 @@ stripping of the hydration shell.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">D</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">"atomic unit of electric dipole mom."</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">"atomic unit of electric dipole mom."</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">J2eV</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">"electron volt-joule relationship"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -860,8 +861,7 @@ stripping of the hydration shell.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1e-9</span><span class="p">,</span><span class="mf">0.5e-9</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1e-9</span><span class="p">,</span><span class="mf">0.5e-9</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">l</span><span class="o">=</span><span class="mf">0.02e-9</span>
 </pre></div>
 </div>
@@ -870,8 +870,7 @@ stripping of the hydration shell.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">'k--'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">'k--'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">'k'</span><span class="p">)</span>
@@ -932,10 +931,10 @@ stripping of the hydration shell.</p>
 </table></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</div>
-</div>
+</script></section>
+</section>
+</section>
+</section>
 
         </article>
       </div>
@@ -965,8 +964,8 @@ stripping of the hydration shell.</p>
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -1021,7 +1020,7 @@ stripping of the hydration shell.</p>
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

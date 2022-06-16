@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Soft Matter Lecture'
-copyright = '2021, Frank Cichos'
-author = 'Frank Cichos'
+copyright = '2021, Frank Cichos, Ralf Seidel'
+author = 'Frank Cichos, Ralf Seidel'
 master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags

@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Reynolds Number" href="../L18/1_Reynolds_Number.html" /><link rel="prev" title="Langevin Theory" href="../L16/1_langevin.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Reynolds Number" href="../L18/1_Reynolds_Number.html" /><link rel="prev" title="Langevin Theory" href="../L16/1_langevin.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Hydrodynamics - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,7 +287,7 @@
 <p>This page was generated from <cite>notebooks/L17/1_hydrodynamics.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L17/1_hydrodynamics.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Hydrodynamics">
+<section id="Hydrodynamics">
 <h1>Hydrodynamics<a class="headerlink" href="#Hydrodynamics" title="Permalink to this headline">¶</a></h1>
 <p>Hydrodynamics provides the fundamental equations to describe the motion of a fluid. Note that a fluid can therby be a gas or a liquid. Gases and liquids may have completely different flow properties as in liquids the mean free path of a molecule is much smaller than the size of the liquif container. This is something, that is not alway true for gases.</p>
 <p>In fluid dynamics, we are interested in the motion of a value element of a fluid, which flows with a velocity <span class="math notranslate nohighlight">\(\vec{u}\)</span>. As the whole fluid moves, each volume element may have a different flow velocity, which results in a flow field <span class="math notranslate nohighlight">\(\vec{u}(\vec{r},t)\)</span>. Each component of the flow field depends now on each coordinate, i.e.</p>
@@ -313,7 +318,7 @@ w(x,y,z,t)
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\frac{D}{Dt}=\frac{\partial}{\partial t} + \vec{u}\nabla\]</div></div>
 <p>and states, that a change in the velocity can be caused by a temporal change but also by a convective motion (different places have different velocities). The term $:nbsphinx-math:<cite>vec{u}</cite>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>nabla <a href="#id3"><span class="problematic" id="id4">`</span></a>$ is therefore called the <em>convective derivative</em>.</p>
-<div class="section" id="Navier-Stokes-Equation">
+<section id="Navier-Stokes-Equation">
 <h2>Navier Stokes Equation<a class="headerlink" href="#Navier-Stokes-Equation" title="Permalink to this headline">¶</a></h2>
 <p>We obtain a force density from the above equations if we multiply the above derived velocity change with the mass density <span class="math notranslate nohighlight">\(\rho\)</span> of the fluid. This force density is the result of all possible forces that are present in the system. We thus have to consider possible forces on a volume element.</p>
 <p><strong>a) We would like to simplify our considerations by assuming an incompressibility of the liquid, i.e.</strong></p>
@@ -366,7 +371,7 @@ d\vec{p}=\frac{\partial \vec{p}}{\partial t}dt +\underbrace{\frac{\partial \vec{
 \tau_{yx}=\frac{\eta}{\rho}\frac{\partial \rho u(y)}{\partial y}=\eta \frac{\partial u(y)}{dy}
 \end{equation}</span></p>
 <p>wher I have sneaked in the <strong>dynamic viscosity</strong> <span class="math notranslate nohighlight">\(\eta\)</span> and the index <span class="math notranslate nohighlight">\(yx\)</span>, as this is one element of the stress tensor for a momentum transport along the y-axis when stresses are applied along the x-axis.</p>
-<div class="section" id="Viscous-Stress-Tensor">
+<section id="Viscous-Stress-Tensor">
 <h3>Viscous Stress Tensor<a class="headerlink" href="#Viscous-Stress-Tensor" title="Permalink to this headline">¶</a></h3>
 <p>A similar treatment can be done for other velocity and force components can be done as well to construct the so-called visous stress tensor, which contains all the viscous stress components. They are</p>
 <p><span class="math">\begin{eqnarray}
@@ -422,8 +427,8 @@ d\vec{p}=\frac{\partial \vec{p}}{\partial t}dt +\underbrace{\frac{\partial \vec{
 <p><span class="math">\begin{equation}
 \rho \frac{D\vec{u}}{Dt}=\rho \left [\frac{\partial \vec{u}}{\partial t} +(\vec{u}\nabla)\vec{u}\right ]=-\nabla p + \rho \vec{g} +\nabla \tau
 \end{equation}</span></p>
-</div>
-<div class="section" id="Mechanical-Stress-Tensor">
+</section>
+<section id="Mechanical-Stress-Tensor">
 <h3>Mechanical Stress Tensor<a class="headerlink" href="#Mechanical-Stress-Tensor" title="Permalink to this headline">¶</a></h3>
 <p>Together with the pressure, we can define the mechanical stress tensor</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -463,9 +468,9 @@ I=\begin{bmatrix}
 \[\nabla \cdot \vec{u}=0 \tag{incompressibility condition}\]</div></div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</div>
+</script></section>
+</section>
+</section>
 
         </article>
       </div>
@@ -495,8 +500,8 @@ I=\begin{bmatrix}
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -545,7 +550,7 @@ I=\begin{bmatrix}
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

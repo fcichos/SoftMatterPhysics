@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Scattering Techniques for Polymer Conformation" href="../L23/1_Scattering.html" /><link rel="prev" title="Polymers" href="../L19/2_polymers.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Scattering Techniques for Polymer Conformation" href="../L23/1_Scattering.html" /><link rel="prev" title="Polymers" href="../L19/2_polymers.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Real Polymers - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -282,21 +287,21 @@
 <p>This page was generated from <cite>notebooks/L22/1_real_polymers.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L22/1_real_polymers.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Real-Polymers">
+<section id="Real-Polymers">
 <h1>Real Polymers<a class="headerlink" href="#Real-Polymers" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="1_real_polymers.pdf">Download Lecture as PDF</a></p>
 <p>We want to look at properties of real polymers in the following, which means that we have to incorporate interactions between monomers, which are of finite size and also have interactions with the solvent. We will do that in a mean field model introducing the so-called Mayer f-function.</p>
-<div class="section" id="Mayer-f-function-and-excluded-volume">
+<section id="Mayer-f-function-and-excluded-volume">
 <h2>Mayer f-function and excluded volume<a class="headerlink" href="#Mayer-f-function-and-excluded-volume" title="Permalink to this headline">¶</a></h2>
 <p>Consider for that purpose the interaction by two monomers in a solvent with an effective potential <span class="math notranslate nohighlight">\(U(r)\)</span>. This potential typically has some large repulsive component at very short distances, some attractive components (negative) at intermediate length scales and a zero value at very large length scales.</p>
 <img alt="Interaction" src="../../_images/interaction.png">
-<div class="section" id="Interaction-potential">
+<section id="Interaction-potential">
 <h3>Interaction potential<a class="headerlink" href="#Interaction-potential" title="Permalink to this headline">¶</a></h3>
 <p>The plots below show some example interaction potentials. The left graph displays the Lennard-Jones potential, the right one the ghard sphere potential, which is also called an athermal potential, as there is no temperature in it due to the missing minimum.</p>
 <p>Note again, that this potential includes all effects of the solvent asl well.</p>
 <img alt="tmp1" src="../../_images/tmp1.pdf"/>
-</div>
-<div class="section" id="Probability-distribution">
+</section>
+<section id="Probability-distribution">
 <h3>Probability distribution<a class="headerlink" href="#Probability-distribution" title="Permalink to this headline">¶</a></h3>
 <p>The probability distribution for finding the the monomers at a certain distance <span class="math notranslate nohighlight">\(r\)</span> is then given by the Boltzman factor</p>
 <p><span class="math">\begin{equation}
@@ -304,8 +309,8 @@ p(r)=\exp\left (-\frac{U(r)}{k_B T}\right)
 \end{equation}</span></p>
 <p>For the two potentials shown above, the probability therefore is zero wherever the potential is infinitely large. Whenever the potential is zero we find a probability density value of 1 while it is larger than 1 in the regions, where the potential is attractive.</p>
 <img alt="tmp2" src="../../_images/tmp2.pdf"/>
-</div>
-<div class="section" id="Mayer-f-function">
+</section>
+<section id="Mayer-f-function">
 <h3>Mayer f-function<a class="headerlink" href="#Mayer-f-function" title="Permalink to this headline">¶</a></h3>
 <p>The Mayer f-function measures now the deviation of the probability from the regions where the potential is zero or the probability density gives 1. It is defined by</p>
 <p><span class="math">\begin{equation}
@@ -317,8 +322,8 @@ f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1 \tag{Mayer f-function}
 v=-\int f(r)d^3r=\int 1-\exp\left (-\frac{U(r)}{k_B T}\right) d^3r
 \end{equation}</span></p>
 <p>which is giving in the case of the hard sphere interaction just <span class="math notranslate nohighlight">\(4\pi R^3/3\)</span>, where R is the contact separation distance of the two spheres. Thus the volume integral over the Mayer f-function is directly giving the excluded volume for the pairwise interaction. Note that the excluded volume can also be negative. This happens, when the attractive interaction is very strong. It can also be zero, when both positive and negative areas under the Mayer f-function are of the same size.</p>
-</div>
-<div class="section" id="Polymer-chain-as-a-real-gas">
+</section>
+<section id="Polymer-chain-as-a-real-gas">
 <h3>Polymer chain as a real gas<a class="headerlink" href="#Polymer-chain-as-a-real-gas" title="Permalink to this headline">¶</a></h3>
 <p>Our further calculations will now base the excluded volume influence on the conformation of a polymer chain on the assumtion that all monomers (or actually Kuhn segments) are independet and not correlation in their position. They will thus behave like a real gas and show effect which we know from the <strong>van der Waals gas</strong>, such as co-volume and cohesive pressure. The two effects are actually corrections to the equation of state of the <strong>ideal gas</strong>, which can be written as</p>
 <p><span class="math">\begin{equation}
@@ -348,9 +353,9 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[B(T)=-\int f(r)d^3r=-4 \pi \int_{0}^{\infty}\left(e^{-\frac{U(r)}{k_B T}}-1\right) r^{2} d^3r\]</div></div>
 <p>Using this relation, we have a way to introduce the monomer-monomer and monomer-solvent interaction that is hidden in the May f-function into the equation of state of a real gas of polymer segements. We will come back to this solution.</p>
-</div>
-</img></div>
-<div class="section" id="Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">
+</section>
+</img></section>
+<section id="Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">
 <h2>Non-spherical segments and Free energy of interaction of a real chain<a class="headerlink" href="#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain" title="Permalink to this headline">¶</a></h2>
 <p>While we have assumed so far (without emphasizing it to much) that the interaction of the monomers is radially symmatric (monomers are spheres), typical monomers are rather rod-like. Thus we should get an idea about how the free volume changes when we go from a sphere to the rod. The procedure below considers the free energy of the interaction and replaces a rod by a set of spheres. We can get an idea about the free energy of a chain by coming back to our osmotic pressure formula</p>
 <p><span class="math">\begin{equation}
@@ -381,8 +386,8 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[v_0=bd^2\]</div></div>
 <p>which is the result of random orientations. If the aspect ratio, i.e. the ratio of the two volumes <span class="math notranslate nohighlight">\(v_c/v_0\)</span> is large, this excess excluded volume is the driving force for a nematic (aligment) ordering of the rodlike segments as originally described by Onsager for liquid crystalline systems.</p>
-</div>
-<div class="section" id="Solvent-Classification">
+</section>
+<section id="Solvent-Classification">
 <h2>Solvent Classification<a class="headerlink" href="#Solvent-Classification" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Athermal Solvents</strong> Here, <span class="math notranslate nohighlight">\(v\)</span> is independent of temperature. The system only features hard core repulsion and <span class="math notranslate nohighlight">\(v ≈ b^2d\)</span>. Monomer-monomer contact is energetically indistinguishable from monomer-solvent contact, for example.</p></li>
@@ -391,8 +396,8 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 <li><p><strong>Poor solvents</strong> Excluded volume is negative due to large attractive interactions between the monomers, which prefer monomer-monomer contact strongly over monomer-solvent contact. Chain dimensions are reduced relative to ideal. <span class="math notranslate nohighlight">\(−b^2d &lt; v &lt; 0\)</span>.</p></li>
 <li><p><strong>Non-solvents</strong> Here, <span class="math notranslate nohighlight">\(v ≈ −b^2d\)</span> and the polymer collapses into a very compact structure that excludes all solvent.</p></li>
 </ul>
-</div>
-<div class="section" id="Flory-theory-(in-a-good-solvent)">
+</section>
+<section id="Flory-theory-(in-a-good-solvent)">
 <h2>Flory theory (in a good solvent)<a class="headerlink" href="#Flory-theory-(in-a-good-solvent)" title="Permalink to this headline">¶</a></h2>
 <p>Flory treated the question of equilibrium conformation of real chains using a mean field approach. The equilibrium size is set by a balance between excluded volume which tends to expand the chain size, and a restoring force due to loss of conformational entropy due to swelling. The energetic contribution due to excluded volume is given by the number of excluded volume interactions within a coil and the cost of each exclusion, <span class="math notranslate nohighlight">\(k_B T\)</span>. The number of excluded volume interactions is just the
 probability of finding a monomer within the excluded volume of another. If we assume a mean density of monomers in the coil, <span class="math notranslate nohighlight">\(N/R^3\)</span>, then the number of excluded volume interactions per monomer is <span class="math notranslate nohighlight">\(vN/R^3\)</span> and for <span class="math notranslate nohighlight">\(N\)</span> monomers in the coil, the energetic contribution is</p>
@@ -415,8 +420,8 @@ probability of finding a monomer within the excluded volume of another. If we as
 <p><strong>insert experimental plot here</strong></p>
 <p>The simple approach taken by Flory provides surprisingly good results - more modern theories/calculations provide <span class="math notranslate nohighlight">\(R ∼ N^{0.588}\)</span>. However, the success of the Flory theory is due to a cancelation of errors. The excluded volume contributions are overestimated as correlations between monomers (which decrease the probability of overlap) are not considered. At the same time, the entropic restoring force is also overestimated. Nevertheless, such approaches based on a mean field approximation of
 density combined with ideal chain conformation-derived entropy can provide quite useful results, for example in the case of an adsorbed chain. The treatment of the case for <span class="math notranslate nohighlight">\(v &lt; 0\)</span> in the preceding simple manner leads to an aphysical result for the coil size that minimizes the total free energy. Stabilizing terms need to be considered.</p>
-</div>
-<div class="section" id="Flory-Theory-(in-all-solvents)">
+</section>
+<section id="Flory-Theory-(in-all-solvents)">
 <h2>Flory Theory (in all solvents)<a class="headerlink" href="#Flory-Theory-(in-all-solvents)" title="Permalink to this headline">¶</a></h2>
 <p>To extend the Flory theory for all kinds of solvents you have to go back to the virial expansion of the free energy density.</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -438,8 +443,8 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <li><p><span class="math notranslate nohighlight">\(\alpha \gg 1\)</span> we have a good solvent with <span class="math notranslate nohighlight">\(R_F\propto N^{3/5}\)</span> and an extended polymer conformation</p></li>
 <li><p><span class="math notranslate nohighlight">\(\alpha \ll 1\)</span> we find <span class="math notranslate nohighlight">\(R_F\propto N^{1/3}\)</span> with a collapsed polymer</p></li>
 </ul>
-</div>
-<div class="section" id="Temperature-dependence-of-the-chain-size">
+</section>
+<section id="Temperature-dependence-of-the-chain-size">
 <h2>Temperature dependence of the chain size<a class="headerlink" href="#Temperature-dependence-of-the-chain-size" title="Permalink to this headline">¶</a></h2>
 <p>Using the Mayer f-function we can now also write down some basic ideas about the temperature dependence of the chain size. This is essentially hidden in the Boltzman factor including the potential energy <span class="math notranslate nohighlight">\(U(r)\)</span>.</p>
 <p>If this potential energy is much bigger than the thermal eneryg, i.e. <span class="math notranslate nohighlight">\(U(r)\gg k_B T\)</span>, then we are commonly at small distances <span class="math notranslate nohighlight">\(r&lt;b\)</span> in the repulsive region. In this region, we can reduce the Mayer f-function to</p>
@@ -468,8 +473,8 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <p><strong>display experimental graph from Colby</strong></p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
+</script></section>
+</section>
 
         </article>
       </div>
@@ -499,8 +504,8 @@ density combined with ideal chain conformation-derived entropy can provide quite
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -556,7 +561,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

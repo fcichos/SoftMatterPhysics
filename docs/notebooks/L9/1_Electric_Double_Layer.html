@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="van der Waals Interactions" href="../L10/1_van_der_Waals.html" /><link rel="prev" title="Dipole-Dipole Interactions" href="../L8/1_Forces_and_Interactions.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="van der Waals Interactions" href="../L10/1_van_der_Waals.html" /><link rel="prev" title="Dipole-Dipole Interactions" href="../L8/1_Forces_and_Interactions.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Electric Double Layer - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -488,7 +493,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -530,14 +535,13 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L9/1_Electric_Double_Layer.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L9/1_Electric_Double_Layer.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Electric-Double-Layer">
+<section id="Electric-Double-Layer">
 <h1>Electric Double Layer<a class="headerlink" href="#Electric-Double-Layer" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fsolve</span>
@@ -555,7 +559,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Charges-surfaces-in-solution,-no-salt">
+<section id="Charges-surfaces-in-solution,-no-salt">
 <h2>Charges surfaces in solution, no salt<a class="headerlink" href="#Charges-surfaces-in-solution,-no-salt" title="Permalink to this headline">¶</a></h2>
 <p>We are going to consider first a situation, in which there is a solid surface (for example glass) in contact with a solution, which is presumably water. In this case, surface chemical groups on the solid may dissociate due to the high dielectric constant of water such that the residular surface is charged and some ions are dissolved in the solution. We will assume that there is no extra salt which is dissolved in water.</p>
 <p>The questions that arise now are</p>
@@ -565,8 +569,8 @@ div.rendered_html tbody tr:hover {
 <li><p>How is the electrostatic potential inside the liquid?</p></li>
 </ul>
 <p>As the ions populate the regions according to their potential energy in the electric field of the surface charges, we have to combine the Poisson euqation with the Boltzmann equation to have a complete description. This combination will deliver us a mean field appraoch.</p>
-</div>
-<div class="section" id="Poisson-Boltzmann-equation">
+</section>
+<section id="Poisson-Boltzmann-equation">
 <h2>Poisson-Boltzmann equation<a class="headerlink" href="#Poisson-Boltzmann-equation" title="Permalink to this headline">¶</a></h2>
 <p>If we name the electrostatic potential <span class="math notranslate nohighlight">\(\psi\)</span> and number density of ions of a valancy <span class="math notranslate nohighlight">\(z\)</span> <span class="math notranslate nohighlight">\(\rho\)</span>, we can on one side write down the Boltzmann equation</p>
 <p><span class="math">\begin{equation}
@@ -632,7 +636,7 @@ E_{s}=-\frac{d\psi}{dx}\bigg|_s = \frac{2k_B T K}{z e}\tan\left (K \frac{D}{2}\r
 <p><span class="math">\begin{equation}
 \rho(x)=\rho_0\exp\left (\frac{-ze\psi }{k_B T}\right)=\frac{\rho_0}{\cos^{2}(Kx)}
 \end{equation}</span></p>
-<div class="section" id="Example">
+<section id="Example">
 <h3>Example<a class="headerlink" href="#Example" title="Permalink to this headline">¶</a></h3>
 <p>Two surfaces with a charge density of <span class="math notranslate nohighlight">\(\sigma=0.2\, C\cdot m^{-2}\)</span> are at a distance of <span class="math notranslate nohighlight">\(D=2 nm\)</span> in water at <span class="math notranslate nohighlight">\(T=293\,K\)</span>. We calculate the counter ion surface charge, the charge density, the electric field and the potential inside the water film between the two layers. We therefore first calculate a value of</p>
 <p><span class="math">\begin{equation}
@@ -643,8 +647,7 @@ KTK=\frac{ze\sigma}{2k_B T\epsilon_0\epsilon}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[225]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.2</span> <span class="c1"># C/m^2</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.2</span> <span class="c1"># C/m^2</span>
 <span class="n">epsilon</span><span class="o">=</span><span class="mi">80</span> <span class="c1"># water</span>
 <span class="n">D</span><span class="o">=</span><span class="mf">2e-9</span> <span class="c1"># m</span>
 <span class="n">T</span><span class="o">=</span><span class="mi">293</span> <span class="c1"># K</span>
@@ -658,22 +661,20 @@ KTK=\frac{ze\sigma}{2k_B T\epsilon_0\epsilon}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[226]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># numerically solve for K</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numerically solve for K</span>
 <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">K</span> <span class="p">:</span> <span class="n">KTK</span> <span class="o">-</span> <span class="n">K</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">K_initial_guess</span> <span class="o">=</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">D</span>
 <span class="n">K</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">K_initial_guess</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Plot-of-the-charge-density">
+<section id="Plot-of-the-charge-density">
 <h4>Plot of the charge density<a class="headerlink" href="#Plot-of-the-charge-density" title="Permalink to this headline">¶</a></h4>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[227]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># ion density in the mid plane</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ion density in the mid plane</span>
 <span class="n">rho0</span><span class="o">=</span><span class="n">K</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">epsilon_0</span><span class="o">*</span><span class="n">epsilon</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span>
 </pre></div>
 </div>
@@ -682,8 +683,7 @@ KTK=\frac{ze\sigma}{2k_B T\epsilon_0\epsilon}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[228]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># ion density in the gap</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ion density in the gap</span>
 <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">D</span><span class="p">,</span><span class="n">rho0</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'x/D'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
@@ -699,15 +699,14 @@ KTK=\frac{ze\sigma}{2k_B T\epsilon_0\epsilon}
 <img alt="../../_images/notebooks_L9_1_Electric_Double_Layer_15_0.png" class="no-scaled-link" src="../../_images/notebooks_L9_1_Electric_Double_Layer_15_0.png" style="width: 397px; height: 298px;"/>
 </div>
 </div>
-</div>
-<div class="section" id="Plot-of-the-electric-potential">
+</section>
+<section id="Plot-of-the-electric-potential">
 <h4>Plot of the electric potential<a class="headerlink" href="#Plot-of-the-electric-potential" title="Permalink to this headline">¶</a></h4>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[229]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># potential in the gap</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># potential in the gap</span>
 <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">D</span><span class="p">,</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'x/D'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
@@ -731,15 +730,14 @@ Text(0, 0.5, 'electric potential [V]')
 <img alt="../../_images/notebooks_L9_1_Electric_Double_Layer_17_1.png" class="no-scaled-link" src="../../_images/notebooks_L9_1_Electric_Double_Layer_17_1.png" style="width: 437px; height: 281px;"/>
 </div>
 </div>
-</div>
-<div class="section" id="Plot-of-the-electric-field">
+</section>
+<section id="Plot-of-the-electric-field">
 <h4>Plot of the electric field<a class="headerlink" href="#Plot-of-the-electric-field" title="Permalink to this headline">¶</a></h4>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[232]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># field in the gap</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># field in the gap</span>
 <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">D</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">D</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">K</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">e</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'x/D'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
@@ -767,17 +765,16 @@ Text(0, 0.5, 'electric field [V/m]')
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</img></div>
-</div>
+</script></section>
+</section>
+</img></section>
+</section>
 
         </article>
       </div>
@@ -807,8 +804,8 @@ Text(0, 0.5, 'electric field [V/m]')
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -862,7 +859,7 @@ Text(0, 0.5, 'electric field [V/m]')
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

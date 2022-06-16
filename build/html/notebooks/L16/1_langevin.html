@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Hydrodynamics" href="../L17/1_hydrodynamics.html" /><link rel="prev" title="Depletion Forces" href="../L12/1_depletion_forces.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Hydrodynamics" href="../L17/1_hydrodynamics.html" /><link rel="prev" title="Depletion Forces" href="../L12/1_depletion_forces.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Langevin Theory - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -286,9 +287,9 @@
 <p>This page was generated from <cite>notebooks/L16/1_langevin.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L16/1_langevin.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Langevin-Theory">
+<section id="Langevin-Theory">
 <h1>Langevin Theory<a class="headerlink" href="#Langevin-Theory" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Langevin-Equation">
+<section id="Langevin-Equation">
 <h2>Langevin Equation<a class="headerlink" href="#Langevin-Equation" title="Permalink to this headline">¶</a></h2>
 <p>Langevin theory provides now an equation of motion for objects whoch are subject to fluctuating forces. In the most general way, Newtons equation of motion is written as</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -392,14 +393,14 @@ M^{\prime} \ddot{x}(t)=
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\langle\vec{\zeta}(t_1)\cdot \vec{\zeta}(t_2) \rangle =2\gamma k_B T\delta (t_1-t_2)\]</div></div>
 <p>which is a very fundamental result. It states that the fluctuating force <span class="math notranslate nohighlight">\(\vec{\zeta}(t)\)</span> are related to the viscous forces expressed by the friction coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>. This makes sensse, since the friction forces must dissipate energy into heat. The motion would thus come to a rest if heat and dynamics would be decoupled. The law we obtained is thus stateing the dissipated energy goes back again into kinetic energy. This is the statement of the fluctuation dissipation theorem,</p>
-</img></div>
-<div class="section" id="Fluctuation-Dissipation-Theorem">
+</img></section>
+<section id="Fluctuation-Dissipation-Theorem">
 <h2>Fluctuation Dissipation Theorem<a class="headerlink" href="#Fluctuation-Dissipation-Theorem" title="Permalink to this headline">¶</a></h2>
 <p>The fluctuation dissipation theorem (FDT) generalizes the previous finding into</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\chi''(\omega)=\frac{\omega}{2k_B T}\langle |x_{\omega}|^2\rangle \tag{Fluctuation dissipation relation}\]</div></div>
 <p>which is now converted into frequency space. On the left side is the imaginary part of a response function or susceptibility <span class="math notranslate nohighlight">\(\chi\)</span>, which is connected to the dissipation. The right side contains the power spectral density of the fluctuation of a variable <span class="math notranslate nohighlight">\(x_{\omega}\)</span> at the frequency <span class="math notranslate nohighlight">\(\omega\)</span>. So the amplitude of a fluctuation at a certain frequency is connected to the dissipation in equilibrium.</p>
-<div class="section" id="Damped-Driven-Harmonic-Oscillator">
+<section id="Damped-Driven-Harmonic-Oscillator">
 <h3>Damped Driven Harmonic Oscillator<a class="headerlink" href="#Damped-Driven-Harmonic-Oscillator" title="Permalink to this headline">¶</a></h3>
 <p>We would like to have a look at the FDT using a 1d damped driven oscillator given by the following equation</p>
 <div class="math-wrapper"><div class="math notranslate nohighlight">
@@ -435,12 +436,12 @@ M^{\prime} \ddot{x}(t)=
 <div class="math-wrapper"><div class="math notranslate nohighlight">
 \[\langle |x_{\omega}|^2\rangle =\frac{2k_B T \gamma}{k^2}\frac{1}{1+(\omega/\omega_0)^2}\]</div></div>
 <p>Here <span class="math notranslate nohighlight">\(\omega_0=k/\gamma\)</span> is a particular frequency at which the <span class="math notranslate nohighlight">\(1/\omega^2\)</span> dependence of the power spectrum turns into a plateau at small frequencies. The last equation is heavily used to calibrate optical tweezers, as it can be used to measure the force constant <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<img alt="../../_images/test2.pdf" src="../../_images/test2.pdf"/>
+<img alt="../../_images/test.pdf" src="../../_images/test.pdf"/>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</div>
+</script></section>
+</section>
+</section>
 
         </article>
       </div>
@@ -470,8 +471,8 @@ M^{\prime} \ddot{x}(t)=
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Feb 16, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -520,7 +521,7 @@ M^{\prime} \ddot{x}(t)=
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

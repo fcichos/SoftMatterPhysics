@@ -2,9 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Forces and Interactions in Soft Matter" href="../L7/1_Forces%20and%20Interactions.html" /><link rel="prev" title="Kinetics of Liquid–Liquid Unmixing" href="../L5/2_Kinetics_LL_Unmixing.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Forces and Interactions in Soft Matter" href="../L7/1_Forces%20and%20Interactions.html" /><link rel="prev" title="Kinetics of Liquid–Liquid Unmixing" href="../L5/2_Kinetics_LL_Unmixing.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.08"/>
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Solid–Liquid Phase Transitions - Soft Matter Lecture 21 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -253,6 +254,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
+</ul>
 
 </div>
 </div>
@@ -488,7 +493,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -530,14 +535,13 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L6/1_Solid_Liquid_Phase_Transitions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L6/1_Solid_Liquid_Phase_Transitions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<div class="section" id="Solid–Liquid-Phase-Transitions">
+<section id="Solid–Liquid-Phase-Transitions">
 <h1>Solid–Liquid Phase Transitions<a class="headerlink" href="#Solid–Liquid-Phase-Transitions" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
@@ -563,7 +567,7 @@ div.rendered_html tbody tr:hover {
 result, the liquid cannot freeze directly at the freezing temperature. To freeze the liquid, undercooling is required. An undercooling by a temperature <span class="math notranslate nohighlight">\(ΔT\)</span> would create a free energy difference <span class="math notranslate nohighlight">\(ΔG\)</span> between liquid and solid.</p>
 <img alt="image-2.png" src="../../_images/freezing.png">
 <p><em>Free energy of solid and liquid phase of a material as a function of temperature</em></p>
-<div class="section" id="Kinetics-of-the-Liquid–Solid-Phase-Transition">
+<section id="Kinetics-of-the-Liquid–Solid-Phase-Transition">
 <h2>Kinetics of the Liquid–Solid Phase Transition<a class="headerlink" href="#Kinetics-of-the-Liquid–Solid-Phase-Transition" title="Permalink to this headline">¶</a></h2>
 <p>To start the phase transition from a liquid to a solid in the undercooled liquid, a nucleus of a certain size has to appear from thermal fluctuations. This goes along the lines we discussed for the liquid-liquid phase transitions. To create a nucleus of a radius <span class="math notranslate nohighlight">\(r\)</span> we need a free energy change</p>
 <p><span class="math">\begin{equation}
@@ -598,8 +602,7 @@ e^{-\frac{\Delta G^{*}}{k_{\rm B}T}}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">dG</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">dT</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dG</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">dT</span><span class="p">):</span>
     <span class="n">gamma_sl</span><span class="o">=</span><span class="mf">38e-3</span> <span class="c1">#(38mJ/m^2)</span>
     <span class="n">Tm</span><span class="o">=</span><span class="mf">273.15</span>
     <span class="n">dHm</span><span class="o">=</span><span class="mf">3.34e8</span> <span class="c1"># (J/m^3)</span>
@@ -611,8 +614,7 @@ e^{-\frac{\Delta G^{*}}{k_{\rm B}T}}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">kbT</span><span class="o">=</span><span class="mf">3.769e-21</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">dG</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="n">kbT</span><span class="p">,</span><span class="s1">'k-'</span><span class="p">)</span>
@@ -636,8 +638,7 @@ e^{-\frac{\Delta G^{*}}{k_{\rm B}T}}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">dGstar</span><span class="p">(</span><span class="n">dT</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dGstar</span><span class="p">(</span><span class="n">dT</span><span class="p">):</span>
     <span class="n">gamma_sl</span><span class="o">=</span><span class="mf">38e-3</span> <span class="c1">#(38mJ/m^2)</span>
     <span class="n">Tm</span><span class="o">=</span><span class="mf">273.15</span>
     <span class="n">dHm</span><span class="o">=</span><span class="mf">3.34e8</span> <span class="c1"># (J/m^3)</span>
@@ -649,8 +650,7 @@ e^{-\frac{\Delta G^{*}}{k_{\rm B}T}}
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">dt</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">kbT</span><span class="o">=</span><span class="mf">3.769e-21</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="n">dGstar</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">kbT</span><span class="p">)</span>
@@ -669,8 +669,8 @@ e^{-\frac{\Delta G^{*}}{k_{\rm B}T}}
 </div>
 </div>
 <p>According to that, homogeneous nucleation, i.e., the freezing of a liquid is very unlikely and actually does not happen. More likely are heterogeneous nucleation events, which occur at the boundaries of the container or at impurities.</p>
-</div>
-<div class="section" id="Heterogeneous-Nucleation">
+</section>
+<section id="Heterogeneous-Nucleation">
 <h2>Heterogeneous Nucleation<a class="headerlink" href="#Heterogeneous-Nucleation" title="Permalink to this headline">¶</a></h2>
 <p>To study the process of heterogeneous nucleation, we have a look at a container wall, which acts as a nucleation catalyst. At this container wall, a solid droplet in form of a spherical cap exists.</p>
 <img alt="image-5.png" src="../../_images/heterogeneous_nucleation.png"/>
@@ -692,8 +692,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
     <span class="k">return</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -702,8 +701,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -711,8 +709,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">theta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'contact angle $\theta$ [°]'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'f($\theta$)'</span><span class="p">)</span>
@@ -733,8 +730,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">kbT</span><span class="o">=</span><span class="mf">3.769e-21</span>
 
@@ -756,23 +752,22 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 </div>
 </div>
 <p><em>Nucleation barrier as a function of nucleus radius for heterogeneous nucleation at a wall. The curves display the results for the water/ice interface.</em></p>
-</div>
-</img></div>
-<div class="section" id="Classification-of-phase-transitions">
+</section>
+</img></section>
+<section id="Classification-of-phase-transitions">
 <h1>Classification of phase transitions<a class="headerlink" href="#Classification-of-phase-transitions" title="Permalink to this headline">¶</a></h1>
 <p>A classification of different phase transitions can be carried out using the scheme of <strong>Ehrenfest</strong>. According to that, a phase transition</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></div>
+</script></section>
 
         </article>
       </div>
@@ -802,8 +797,8 @@ graph below for the water/ice system. The nucleus size in that model stays the s
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos |
-            Last updated on Jan 30, 2022. |
+              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
+            Last updated on Jun 16, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -850,7 +845,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
     <script src="../../_static/scripts/main.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
