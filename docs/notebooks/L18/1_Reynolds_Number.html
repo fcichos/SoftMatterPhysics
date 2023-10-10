@@ -1,15 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Boundary Hydrodynamics" href="2_boundary_hydrodynamics.html" /><link rel="prev" title="Hydrodynamics" href="../L17/1_hydrodynamics.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
-        <title>Reynolds Number - Soft Matter Lecture 21 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Reynolds Number - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -20,38 +21,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +61,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +83,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +91,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -123,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,16 +144,16 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -169,98 +170,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Forces%20and%20Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/1_depletion_forces.html">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 25:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
-</ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -268,8 +181,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -283,260 +203,12 @@
           </label>
         </div>
         <article role="main">
-          
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-</style>
-<div class="admonition note">
+          <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L18/1_Reynolds_Number.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L18/1_Reynolds_Number.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L18/1_Reynolds_Number.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Reynolds-Number">
-<h1>Reynolds Number<a class="headerlink" href="#Reynolds-Number" title="Permalink to this headline">¶</a></h1>
+<h1>Reynolds Number<a class="headerlink" href="#Reynolds-Number" title="Permalink to this heading">#</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -548,9 +220,9 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;style.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
@@ -561,15 +233,15 @@ div.rendered_html tbody tr:hover {
 <p>A number which is useful with this respect is the <strong>Reynold number</strong>, which tells of how to scale the flow velocity when scaling the object.</p>
 <p>To obtain the Reynold number and its meaning, we introduce a Navier Stokes equation with dimensionless quatities. These use characteristic dimensions of the system to rescale. We use</p>
 <p><span class="math">\begin{eqnarray}
-x&amp;=&amp;x^{\prime} L\\
-\vec{u}&amp;=&amp;\vec{u}^{\prime} U\\
-t&amp;=&amp;t^{\prime} \frac{L}{U}
+x&=&x^{\prime} L\\
+\vec{u}&=&\vec{u}^{\prime} U\\
+t&=&t^{\prime} \frac{L}{U}
 \end{eqnarray}</span></p>
 <p>for the rescaling, where <span class="math notranslate nohighlight">\(L\)</span> is the characteristic size of the object, <span class="math notranslate nohighlight">\(U\)</span> a characteristic velocity and <span class="math notranslate nohighlight">\(L/U\)</span> the characteristic time for a fluid volume element to pass the object of size <span class="math notranslate nohighlight">\(L\)</span>. Using these quantities, the differential operators turn into</p>
 <p><span class="math">\begin{eqnarray}
-\nabla &amp;=&amp; \frac{\nabla^{\prime}}{L}\\
-\frac{\partial}{\partial t} &amp;=&amp; \frac{\partial}{\partial t^{\prime}}\frac{U}{L}\\
-p&amp;=&amp;p^{\prime} U^2/\rho
+\nabla &=& \frac{\nabla^{\prime}}{L}\\
+\frac{\partial}{\partial t} &=& \frac{\partial}{\partial t^{\prime}}\frac{U}{L}\\
+p&=&p^{\prime} U^2/\rho
 \end{eqnarray}</span></p>
 <p>Using these relations in the Navier Stokes equation</p>
 <p><span class="math">\begin{equation}
@@ -605,7 +277,7 @@ p&amp;=&amp;p^{\prime} U^2/\rho
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">'_dbnH-BBSNo'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;_dbnH-BBSNo&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -614,10 +286,17 @@ p&amp;=&amp;p^{\prime} U^2/\rho
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<iframe allowfullscreen="" frameborder="0" height="600" src="https://www.youtube.com/embed/_dbnH-BBSNo" width="800"></iframe></div>
+<iframe
+    width="800"
+    height="600"
+    src="https://www.youtube.com/embed/_dbnH-BBSNo"
+    frameborder="0"
+    allowfullscreen
+
+></iframe></div>
 </div>
 <section id="Stokes-Equation">
-<h2>Stokes Equation<a class="headerlink" href="#Stokes-Equation" title="Permalink to this headline">¶</a></h2>
+<h2>Stokes Equation<a class="headerlink" href="#Stokes-Equation" title="Permalink to this heading">#</a></h2>
 <p>In the realm of very small Reynolds number we may even neglect the inertial terms in the Navier Stokes equation and obtain just the Stokes equation</p>
 <p><span class="math">\begin{equation}
 0= -\nabla p+\eta \Delta \vec{u}+\vec{f}\tag{Stokes Equation}
@@ -628,11 +307,11 @@ p&amp;=&amp;p^{\prime} U^2/\rho
 \end{equation}</span></p>
 </section>
 <section id="Solutions-of-the-Stokes-Equation">
-<h2>Solutions of the Stokes Equation<a class="headerlink" href="#Solutions-of-the-Stokes-Equation" title="Permalink to this headline">¶</a></h2>
+<h2>Solutions of the Stokes Equation<a class="headerlink" href="#Solutions-of-the-Stokes-Equation" title="Permalink to this heading">#</a></h2>
 <p>The Stokes equation is easier to solve than the Navier-Stokes equation as it has no time dependence. This also means that it is time symmetric and the a reversal of the motion of an object typically also creates a reversed flow field. This is very important for example for micro-organisms that would like to swim in water. Due to their small dimension they live at low Reynolds numbers and every symmetric motion they take is just yielding a wiggeling back and forth but no net motion. They
 therefore have to come up with some time-asymmetric motion to swim. This is summarized in a theorem that has been put forward by Edward Purcell. We will talk about this later.</p>
 <p>We would first like to obtain two general solutions for the flow field from the Stokes equation and thereby consider two solid surfaces which confine a water film of height <span class="math notranslate nohighlight">\(h\)</span> according to the drawing below.</p>
-<img alt="Flow Field" src="../../_images/flow_field.png">
+<img alt="Flow Field" src="../../_images/flow_field.png" />
 <p>We chose the ccordinate system in the way that the horizontal axis is the <span class="math notranslate nohighlight">\(x\)</span>-axis and the vertical one the <span class="math notranslate nohighlight">\(y\)</span>-axis. In two dimensions the Stokes equation is now the following</p>
 <p><span class="math">\begin{equation}
 \eta \frac{d^2 u}{d y^2 }=\frac{dp}{dx}
@@ -665,7 +344,7 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
 <p>for the flow profile of the liquid film.</p>
 <p>We can now recognize two different solutions in the flow field.</p>
 <section id="Couette-Flow---Shear-Driven-Flow">
-<h3>Couette Flow - Shear Driven Flow<a class="headerlink" href="#Couette-Flow---Shear-Driven-Flow" title="Permalink to this headline">¶</a></h3>
+<h3>Couette Flow - Shear Driven Flow<a class="headerlink" href="#Couette-Flow---Shear-Driven-Flow" title="Permalink to this heading">#</a></h3>
 <p>To obtain a flow field purely driven by shear, we assume that <span class="math notranslate nohighlight">\(\frac{dp}{dx}=0\)</span>, which is leaving a flow velocity which linearly increases with the position <span class="math notranslate nohighlight">\(y\)</span></p>
 <p><span class="math">\begin{equation}
 u(y)=U\frac{y}{h}
@@ -675,15 +354,15 @@ u(y)=U\frac{y}{h}
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">y</span><span class="o">*</span><span class="mf">0.31</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)]</span>
 <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="mf">0.31</span><span class="o">/</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"position x "</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"position y "</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x &quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position y &quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -692,12 +371,12 @@ u(y)=U\frac{y}{h}
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L18_1_Reynolds_Number_8_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_8_0.png" style="width: 438px; height: 283px;"/>
+<img alt="../../_images/notebooks_L18_1_Reynolds_Number_8_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_8_0.png" style="width: 438px; height: 283px;" />
 </div>
 </div>
 </section>
 <section id="Poiseuille-Flow---Pressure-Driven-Flow">
-<h3>Poiseuille Flow - Pressure Driven Flow<a class="headerlink" href="#Poiseuille-Flow---Pressure-Driven-Flow" title="Permalink to this headline">¶</a></h3>
+<h3>Poiseuille Flow - Pressure Driven Flow<a class="headerlink" href="#Poiseuille-Flow---Pressure-Driven-Flow" title="Permalink to this heading">#</a></h3>
 <p>If we assume that both boundaries are at rest in the laboratory frame and the pressure gradient along the x-axis is constant, we find a parabolic flow field, which is typical for pressure driven flows.</p>
 <p><span class="math">\begin{equation}
 u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
@@ -707,15 +386,15 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)]</span>
 <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"position x "</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"position y "</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x &quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position y &quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -724,13 +403,13 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L18_1_Reynolds_Number_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_11_0.png" style="width: 438px; height: 283px;"/>
+<img alt="../../_images/notebooks_L18_1_Reynolds_Number_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_11_0.png" style="width: 438px; height: 283px;" />
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
-</img></section>
+</section>
 </section>
 
         </article>
@@ -738,39 +417,23 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="2_boundary_hydrodynamics.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Boundary Hydrodynamics</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L17/1_hydrodynamics.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Hydrodynamics</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
-            Last updated on Jun 16, 2022. |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L18/1_Reynolds_Number.ipynb.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -781,7 +444,7 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -806,12 +469,11 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/main.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>

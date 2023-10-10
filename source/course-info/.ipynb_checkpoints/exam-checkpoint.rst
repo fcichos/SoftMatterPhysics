@@ -4,11 +4,15 @@ Exercises and Exam
 Exercises
 ---------
 
-The exercises will start in the week of October 25, 2021.
-The seminar will start on October 25, 2021
-The first exercise sheet will be be available on October 18, 2021 **online**
+The first exercise will take place on October 24.
+The first exercise sheet will be published on October 19 **online**
 The solutions to the exercise sheets have to be handed in before the lecture on Tuesday in the following week
 For every solved problem 1 point can be obtained.
+
+Seminars
+---------
+The seminar will start on October 24, 2023
+The registration for your talk in the seminar starts on October 11, 2023 at 1 pm. At this time, a link for the registration will be provided here on the website.
 
 
 Exam

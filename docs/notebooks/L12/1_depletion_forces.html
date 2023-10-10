@@ -1,15 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Langevin Theory" href="../L16/1_langevin.html" /><link rel="prev" title="van der Waals Interaction" href="../L11/1_van_der_Waals.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
-        <title>Depletion Forces - Soft Matter Lecture 21 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Depletion Forces - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -20,38 +21,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +61,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +83,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +91,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -123,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,16 +144,16 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -169,98 +170,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Forces%20and%20Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 25:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
-</ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -268,8 +181,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -283,261 +203,13 @@
           </label>
         </div>
         <article role="main">
-          
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-</style>
-<div class="admonition note">
+          <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L12/1_depletion_forces.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L12/1_depletion_forces.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L12/1_depletion_forces.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Depletion-Forces">
-<h1>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this headline">¶</a></h1>
-<p>Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.</p>
+<h1>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this heading">#</a></h1>
+<p>Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
 </pre></div>
@@ -548,9 +220,9 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'style.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;style.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
     <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
@@ -558,9 +230,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <section id="Depletion-force-between-two-plates">
-<h2>Depletion force between two plates<a class="headerlink" href="#Depletion-force-between-two-plates" title="Permalink to this headline">¶</a></h2>
+<h2>Depletion force between two plates<a class="headerlink" href="#Depletion-force-between-two-plates" title="Permalink to this heading">#</a></h2>
 <p>Consider the picture below, where colloids are contained in a suspension together with two plates. Then there is a region, which is inaccessible by the centers of the colloids of radius <span class="math notranslate nohighlight">\(\sigma/2\)</span> that is indicated by the dahsed lines. If these regions between the plates overlap, not colloid can enter this region and the number density of the colloids is different inside as compared to the outside. This creates an osmotic pressure difference.</p>
-<img alt="depletion_plates" src="../../_images/depletion_plates.png">
+<img alt="depletion_plates" src="../../_images/depletion_plates.png" />
 <p>The osmotic pressure difference can be calculated with the help of the van’t Hoff equation for the osmotic pressure <span class="math notranslate nohighlight">\(\Pi=nk_B T\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number density. In the case the distance of the two plates is larger than the diamater of the two plates, <span class="math notranslate nohighlight">\(h&gt;\sigma\)</span>, we have <span class="math notranslate nohighlight">\(\Pi_i=\Pi_o= nk_B T\)</span> so the difference <span class="math notranslate nohighlight">\(P=\Pi_i-\Pi_o=0\)</span>, so there is not pressure difference. In the case when there is no colloid between the plates we have <span class="math notranslate nohighlight">\(\Pi_i =0\)</span> and
 <span class="math notranslate nohighlight">\(\Pi_o =nk_B T\)</span> such that</p>
 <p><span class="math">\begin{equation}
@@ -598,8 +270,8 @@ w(h)=-n k_B T (\sigma-h)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">depletion</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"distance h $[\mu m]$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"energy per area $[k_B T]$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;distance h $[\mu m]$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;energy per area $[k_B T]$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -609,19 +281,19 @@ w(h)=-n k_B T (\sigma-h)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L12_1_depletion_forces_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_1_depletion_forces_5_0.png" style="width: 412px; height: 285px;"/>
+<img alt="../../_images/notebooks_L12_1_depletion_forces_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_1_depletion_forces_5_0.png" style="width: 412px; height: 285px;" />
 </div>
 </div>
-</img></section>
+</section>
 <section id="Depletion-force-between-two-spheres">
-<h2>Depletion force between two spheres<a class="headerlink" href="#Depletion-force-between-two-spheres" title="Permalink to this headline">¶</a></h2>
+<h2>Depletion force between two spheres<a class="headerlink" href="#Depletion-force-between-two-spheres" title="Permalink to this heading">#</a></h2>
 <p>To describe the depletion interaction between two spheres (radius <span class="math notranslate nohighlight">\(R\)</span>) in a solution of smaller spheres (radius <span class="math notranslate nohighlight">\(σ/2\)</span>), we may use the same approach of assuming an isotropic osmotic pressure of the smaller spheres. The smaller spheres can actually not approach a spherical shell of thickness <span class="math notranslate nohighlight">\(σ/2\)</span> around the larger spheres or a total volume of <span class="math notranslate nohighlight">\(4π(R+σ/2)^3/3\)</span> . The pressure on the large spheres has no consequences except in the case where the two spheres approach closer
 than <span class="math notranslate nohighlight">\(r≤2(R+σ/2)=2R_d\)</span>. In this case the two excluded volumes around each sphere overlap to a lens-like volume. Due to this overall, the forces which create the pressure on the spherical surface up to an angle <span class="math notranslate nohighlight">\(θ_0\)</span> are unbalanced from the other side of the surface (see image) and result in an attractive interaction. The surface element between <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(\theta d\theta\)</span> is then given by</p>
 <p><span class="math">\begin{equation}
 2\pi R_{d}^2 \sin(\theta)d\theta
 \end{equation}</span></p>
 <p>but only the force components along the connecting line contribute.</p>
-<img alt="depletion_spheres" src="../../_images/depletion_spheres.png"/>
+<img alt="depletion_spheres" src="../../_images/depletion_spheres.png" />
 <p>The total force is then calculated from the osmotic pressure times the surface area of the spherical cap by just taking into account the force components along the connecting line (an additional factor <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>). This the read</p>
 <p><span class="math">\begin{equation}
 F(r)=-2nk_{\rm B}T\pi (R+\sigma/2)^2\int\limits_{0}^{\theta_{0}}\sin(\theta)\cos(\theta)\mathrm d\theta
@@ -632,11 +304,15 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 \end{equation}</span></p>
 <p>which is valid if the distance between the centers of the large spheres is <span class="math notranslate nohighlight">\(r&lt;2(R+σ/2)\)</span>. For <span class="math notranslate nohighlight">\(r≥2(R+σ/2)\)</span> there is no depletion of the smaller spheres from the region between the larger spheres and the force is zero, i.e., <span class="math notranslate nohighlight">\(F(r)=0\)</span>.</p>
 <p>Calculating again the interction free energy <span class="math notranslate nohighlight">\(w(r)\)</span>, we have to integrate the force betwen <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(2R_{d}\)</span>, which is given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[w(r)=\int_r^{2R_d}F(r)dr=-nk_B T V_{ov}(r)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[w(r)=\int_r^{2R_d}F(r)dr=-nk_B T V_{ov}(r)\]</div>
+</div>
 <p>where</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[V_{ov}=\frac{4\pi}{3}R_{d}^3\left [ 1-\frac{3}{4}\frac{r}{R_d}+\frac{1}{16}\left ( \frac{r}{R_d}\right )^3 \right ]\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[V_{ov}=\frac{4\pi}{3}R_{d}^3\left [ 1-\frac{3}{4}\frac{r}{R_d}+\frac{1}{16}\left ( \frac{r}{R_d}\right )^3 \right ]\]</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
@@ -664,8 +340,8 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">depletion_sphere</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"distance r $[\mu m]$"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"energy $[k_B T]$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;distance r $[\mu m]$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;energy $[k_B T]$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -675,12 +351,12 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L12_1_depletion_forces_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_1_depletion_forces_9_0.png" style="width: 412px; height: 285px;"/>
+<img alt="../../_images/notebooks_L12_1_depletion_forces_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_1_depletion_forces_9_0.png" style="width: 412px; height: 285px;" />
 </div>
 </div>
 </section>
 <section id="General-description">
-<h2>General description<a class="headerlink" href="#General-description" title="Permalink to this headline">¶</a></h2>
+<h2>General description<a class="headerlink" href="#General-description" title="Permalink to this heading">#</a></h2>
 <p>A more general description of the depletion interaction may be obtained based on our introduction into statistical physics at the beginning of the course. There we stated that the probability of finding a system in a stet of energy <span class="math notranslate nohighlight">\(E\)</span> is</p>
 <p><span class="math">\begin{equation}
 p(E)=\frac{e^{-\beta E}}{Z},
@@ -740,39 +416,23 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L16/1_langevin.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Langevin Theory</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L11/1_van_der_Waals.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">van der Waals Interaction</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
-            Last updated on Jun 16, 2022. |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L12/1_depletion_forces.ipynb.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -783,7 +443,7 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -805,12 +465,11 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/main.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>

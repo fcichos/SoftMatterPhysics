@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dynamics of Polymers" href="../L25/1_polymer_dynamics.html" /><link rel="prev" title="Viscoelasticity" href="../L23/2_Viscoelasticity.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
-        <title>Viscoelasticity - Soft Matter Lecture 21 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Viscoelasticity - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -20,38 +20,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +60,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +82,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +90,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,16 +143,16 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -169,98 +169,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Forces%20and%20Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/1_depletion_forces.html">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 25:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
-</ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -268,8 +180,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -285,26 +204,30 @@
         <article role="main">
           <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L24/1_Viscoelasticity.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L24/1_Viscoelasticity.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L24/1_Viscoelasticity.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Viscoelasticity">
-<h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this headline">¶</a></h1>
+<h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="1_Viscoelasticity.pdf">Download Lecture as PDF</a></p>
 <section id="Maxwell-Model">
-<h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this headline">¶</a></h2>
-<img alt="Maxwell" src="../../_images/maxwell1.png">
-<p>Combing back to the Maxwell model, we have a serial combination of viscous and elastic element. Thus both elements feel the same stress <span class="math notranslate nohighlight">\(\sigma\)</span> and the deformation is the sum of the elastic and viscous deformation, i.e. <span class="math notranslate nohighlight">\(\gamma=\gamma_e+\gamma_v\)</span>.</p>
+<h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this heading">#</a></h2>
+<img alt="Maxwell" src="../../_images/maxwell1.png" />
+<p>Combing back to the Maxwell model, we have a serial combination of viscous and elastic element. Thus both elements feel the same stress <span class="math notranslate nohighlight">\(\sigma\)</span> and the deformation is the sum of the elastic and viscous deformation, i.e. <span class="math notranslate nohighlight">\(\gamma=\gamma_e+\gamma_v\)</span>.</p>
 <p>We therefore find</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=G_M\gamma_e= \eta_M\frac{d\gamma}{dt}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma=G_M\gamma_e= \eta_M\frac{d\gamma}{dt}\]</div>
+</div>
 <p>or</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(\eta_M/G_M\)</span> defines a timescale for the viscous relaxation. Such a timescale is always present in viscoelastic materials. In most materials even multiple timescales are relevant.</p>
 <p>In the following sections we explore the response of a viscoelastic material to different pertubations. They can be either formed by a <strong>step strain</strong>, a <strong>steady shear</strong> or a <strong>step stress or creep</strong>.</p>
-</img></section>
+</section>
 <section id="Stress-Relaxation-after-Step-Strain">
-<h2>Stress Relaxation after Step Strain<a class="headerlink" href="#Stress-Relaxation-after-Step-Strain" title="Permalink to this headline">¶</a></h2>
+<h2>Stress Relaxation after Step Strain<a class="headerlink" href="#Stress-Relaxation-after-Step-Strain" title="Permalink to this heading">#</a></h2>
 <p>Here we impose a step strain <span class="math notranslate nohighlight">\(\gamma\)</span> at a time <span class="math notranslate nohighlight">\(t=0\)</span>, such that the strain is constant for <span class="math notranslate nohighlight">\(t&gt;0\)</span>. Depending on the material we will get a different response. If we have for example an</p>
 <ul class="simple">
 <li><p><strong>elastic solid</strong> will repond with a jump in the stress according to <span class="math notranslate nohighlight">\(G\gamma\)</span> and the stress will stay constant as long as the strain is constant</p></li>
@@ -312,67 +235,95 @@
 <li><p><strong>viscoelastic system</strong> will respond with some time dependent stress <span class="math notranslate nohighlight">\(\sigma(t)\)</span></p></li>
 </ul>
 <p>Due to the time dependence of the stress <span class="math notranslate nohighlight">\(\sigma(t)\)</span> for a viscoelastic material we can generalize Hooke’s law to</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)=\frac{\sigma(t)}{\gamma}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)=\frac{\sigma(t)}{\gamma}\]</div>
+</div>
 <p>The plot shows the reponse of either a viscoelastic liquid or a viscoelastic solid. The latter comprise a general elastic part, which lets the stress converge for infinity time to some constant value</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G_{\rm eq}=\lim_{t\rightarrow \infty} G(t)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G_{\rm eq}=\lim_{t\rightarrow \infty} G(t)\]</div>
+</div>
 <p>For viscoelestic liquids this residual stress is absent and the stress decays to zero.</p>
-<img alt="TMP" src="../../_images/tmp.pdf"/>
+<img alt="TMP" src="../../_images/tmp.pdf" />
 <p>The Maxwell model, which is represented by a viscous dashpot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}=\tau_M\frac{d\gamma_v}{dt}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}=\tau_M\frac{d\gamma_v}{dt}\]</div>
+</div>
 <p>Since the two elements are in series the elastic strain is also expressed by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_e=\gamma-\gamma_v(t)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_e=\gamma-\gamma_v(t)\]</div>
+</div>
 <p>Separation off variables leads to</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{d\gamma_v(t)}{\gamma-\gamma_v(t)}=\frac{dt}{\tau_M}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{d\gamma_v(t)}{\gamma-\gamma_v(t)}=\frac{dt}{\tau_M}\]</div>
+</div>
 <p>from which we obtain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\ln(\gamma-\gamma_v(t))=\frac{-t}{\tau_M}+C\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\ln(\gamma-\gamma_v(t))=\frac{-t}{\tau_M}+C\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(C=\ln(\gamma)\)</span> based on the initial condition that <span class="math notranslate nohighlight">\(\gamma(t=0)=\gamma\)</span>. As a result we obtain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_e(t)=\gamma-\gamma_v(t)=\gamma \exp\left (- \frac{t}{\tau_M} \right )\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_e(t)=\gamma-\gamma_v(t)=\gamma \exp\left (- \frac{t}{\tau_M} \right )\]</div>
+</div>
 <p>and for the stress</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=G_M\gamma_e(t)=G_M \gamma \exp \left ( -\frac{t}{\tau_M}\right )\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=G_M\gamma_e(t)=G_M \gamma \exp \left ( -\frac{t}{\tau_M}\right )\]</div>
+</div>
 <p>Thus in the Maxwell model, the stress relaxation has a simple exponential decay with the characteristic time constant <span class="math notranslate nohighlight">\(\tau_M\)</span>. Such a characteristic time constant is characteristic for all viscoelastic materials. Many materials, e.g., polymers have multiple relaxation modes, each with its own time constant <span class="math notranslate nohighlight">\(\tau\)</span> as we will see later.It turns out, that any stress relaxation modulus can be described by a series of Maxwell elements.</p>
 <section id="Boltzmann-Superposition">
-<h3>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this headline">¶</a></h3>
+<h3>Boltzmann Superposition<a class="headerlink" href="#Boltzmann-Superposition" title="Permalink to this heading">#</a></h3>
 <p>The mechanical response of all materials has a region of linear response, where the relaxation modulus is independent of the strain. A manifestation of this linear response is the Boltzmann superposition principle.</p>
 <p>Stress from any combination of small step strains is simply the linear combination of stresses resulting from each individual step.</p>
 <p>If this individual strain step <span class="math notranslate nohighlight">\(\delta \gamma\)</span> is applied at <span class="math notranslate nohighlight">\(t_i\)</span>, then the stress at a time <span class="math notranslate nohighlight">\(t\)</span> is given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=\sum_{i}G(t-t_i)\delta \gamma_i\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=\sum_{i}G(t-t_i)\delta \gamma_i\]</div>
+</div>
 <p>This means that the stress of each individual step is independent of the other steps and the system remembers the deformations that were imposed earlier and continue to relaxa from earlier deformations as new ones are applied.</p>
 <p>The stress relaxation modulus tells then how much stress remains at <span class="math notranslate nohighlight">\(t\)</span> past each deformation <span class="math notranslate nohighlight">\(\delta \gamma_i\)</span> through <span class="math notranslate nohighlight">\(t-t_i\)</span>. With</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\delta \gamma_i=\dot{\gamma}_i\delta t_i\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta \gamma_i=\dot{\gamma}_i\delta t_i\]</div>
+</div>
 <p>we obtain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=\sum_i G(t-t_i)\dot{\gamma}_i\delta t_i\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=\sum_i G(t-t_i)\dot{\gamma}_i\delta t_i\]</div>
+</div>
 <p>or from a smooth history of strains</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=\int_{-\infty}^{t}G(t-t^{\prime})\dot{\gamma}(t^{\prime})dt^{\prime}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=\int_{-\infty}^{t}G(t-t^{\prime})\dot{\gamma}(t^{\prime})dt^{\prime}\]</div>
+</div>
 <p>which tells you that the stress in any material is the result of all past deformations, which is expressed by this convolution. The momory of each past deformation only decays as the relaxation modulus decay ovet the elapsed time <span class="math notranslate nohighlight">\(t-t^{\prime}\)</span></p>
 </section>
 </section>
 <section id="Steady-Shear">
-<h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this headline">¶</a></h2>
+<h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this heading">#</a></h2>
 <p>We now switch to a different mode of mechanical perturbation of a material, which is the steady shear deformation. There we already considered the flow profile in the low Reynolds number section.</p>
-<img alt="Flow" src="../../_images/shear.png"/>
+<img alt="Flow" src="../../_images/shear.png" />
 <p>Here, the shear rate is given by the speed of the top surface <span class="math notranslate nohighlight">\(\dot{\gamma}=|\vec{v}|/h\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is the height of the film. According to our previous considerations the stress follows from</p>
 <p><span class="math">\begin{eqnarray}
-\sigma(t)&amp;=&amp;\dot{\gamma}\int_{-\infty}^{t}G(t-t^{\prime})dt^{\prime}\\
-&amp;=&amp; \dot{\gamma}\int_0^{\infty}G(s)dt
+\sigma(t)&=&\dot{\gamma}\int_{-\infty}^{t}G(t-t^{\prime})dt^{\prime}\\
+&=& \dot{\gamma}\int_0^{\infty}G(s)dt
 \end{eqnarray}</span></p>
 <p>with <span class="math notranslate nohighlight">\(s=t-t^{\prime}\)</span>. With Newtons law of viscosity follows that</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta=\int_{0}^{\infty}G(t)dt\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\eta=\int_{0}^{\infty}G(t)dt\]</div>
+</div>
 <p>Using the Maxwell model this means that the viscosity is</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta=G\int_{0}^{\infty}\exp\left (-\frac{t}{\tau}\right )dt=G\tau=\eta_M\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\eta=G\int_{0}^{\infty}\exp\left (-\frac{t}{\tau}\right )dt=G\tau=\eta_M\]</div>
+</div>
 <p>which is also the result for a viscoelastic liquid. If the modulus <span class="math notranslate nohighlight">\(G\)</span> is not constant, the viscosity can be also approximated by <span class="math notranslate nohighlight">\(\eta=G(\tau)\tau\)</span>.</p>
 <p>For a viscoelastic solid, the moduls <span class="math notranslate nohighlight">\(G(t)\)</span> does not decay to zero in time, but stays constant for long times. As a result the integral will diverge, as solids have an infinite viscosity.</p>
 <p>If the shear rate becomes very large, the linear response approximation we have asummed for the Boltzmann superposition will not hold and we will observe non-linear effects. This leads for example to a <strong>shear thinning</strong> in polymeric liquids but also to a <strong>shear thickening</strong> for other materials such as the corn starch.</p>
@@ -380,131 +331,193 @@
 <p>Note that all liquids display viscoelasticity even though the range where the viscosity is independent of the shear rate is very wide. For water, for example, the molecular relaxations are fast and the viscoelastic regimes starts at shear rates of about <span class="math notranslate nohighlight">\(10^{10}\, s^{-1}\)</span></p>
 </section>
 <section id="Creep-and-Creep-Recovery">
-<h2>Creep and Creep Recovery<a class="headerlink" href="#Creep-and-Creep-Recovery" title="Permalink to this headline">¶</a></h2>
+<h2>Creep and Creep Recovery<a class="headerlink" href="#Creep-and-Creep-Recovery" title="Permalink to this heading">#</a></h2>
 <section id="Creep">
-<h3>Creep<a class="headerlink" href="#Creep" title="Permalink to this headline">¶</a></h3>
+<h3>Creep<a class="headerlink" href="#Creep" title="Permalink to this heading">#</a></h3>
 <p>Another mechanical perturbation is the step stress that can be applied to watch the strain relax. This is called <strong>creep</strong> and switching of a constant stress is called <strong>creep recovery</strong>. For the study of creep relaxation processes we define a new quantity, which is the inverse of the shear modulus. It is called the <strong>shear creep compliance</strong></p>
 <p><span class="math">\begin{equation}
 J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \end{equation}</span></p>
 <p>The relation of modulus and compliance is much like the relation of resistivity and conductivity. We can use again the Maxwell model to gain some insight. There the elastic element responds with an instantaneous strain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_e=\frac{\sigma}{G_M}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\sigma}{G_M}\]</div>
+</div>
 <p>For the viscous element on the other hand we have</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{d\gamma_v(t)}{dt}=\frac{\sigma}{\eta_M}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{d\gamma_v(t)}{dt}=\frac{\sigma}{\eta_M}\]</div>
+</div>
 <p>which results in a linear growth of the viscous strain with time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_v(t)=\frac{\sigma}{\eta_M}t\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_v(t)=\frac{\sigma}{\eta_M}t\]</div>
+</div>
 <p>The creep compliance in the Maxwell model is therefore</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J(t)=\frac{\gamma_e+\gamma_v(t)}{\sigma}=\frac{1}{G_M}+\frac{t}{\eta_M}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J(t)=\frac{\gamma_e+\gamma_v(t)}{\sigma}=\frac{1}{G_M}+\frac{t}{\eta_M}\]</div>
+</div>
 <p>which is overall linear in time. At time <span class="math notranslate nohighlight">\(t=0\)</span>, the compliance is given by the elastic part <span class="math notranslate nohighlight">\(1/G_M\)</span>, while the slope at long times is given by <span class="math notranslate nohighlight">\(1/\eta\)</span>. For viscoelastic liquids we have in general</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J(t)=J_{eq}+\frac{t}{\eta}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J(t)=J_{eq}+\frac{t}{\eta}\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(J_{eq}\)</span> corresponds to the energy stored in the elastic part of the liquid, but the compliance grows linearly with time. For a viscoelastic solid we know, however, that</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J_{eq}=\lim_{t\rightarrow \infty}=\frac{1}{\sigma}\lim_{t\rightarrow \infty}\gamma(t)=\frac{1}{G_{eq}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J_{eq}=\lim_{t\rightarrow \infty}=\frac{1}{\sigma}\lim_{t\rightarrow \infty}\gamma(t)=\frac{1}{G_{eq}}\]</div>
+</div>
 <p>We can therefore use a different model to better describe a viscoelastic solid. This is done by the Kelvin Voigt model, where viscous and elastic part are connected in parallel.</p>
-<img alt="Kelvin Voigt" src="../../_images/kelvinvoigt1.png"/>
+<img alt="Kelvin Voigt" src="../../_images/kelvinvoigt1.png" />
 <p>In this case the stresses add up</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=\sigma_e(t)+\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma=\sigma_e(t)+\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}\]</div>
+</div>
 <p>Separation of variables yields</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\int_0^{\gamma}\frac{d\gamma(t)}{\frac{\sigma}{G}-\gamma(t)}=\frac{G}{\eta}\int_0^{t}dt\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\int_0^{\gamma}\frac{d\gamma(t)}{\frac{\sigma}{G}-\gamma(t)}=\frac{G}{\eta}\int_0^{t}dt\]</div>
+</div>
 <p>which results in the strain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma(t)=\frac{\sigma}{G}(1-\exp(-t/(\eta/G))\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma(t)=\frac{\sigma}{G}(1-\exp(-t/(\eta/G))\]</div>
+</div>
 <p>which gives for the creep compliance</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
-<img alt="test" src="../../_images/tmp12.pdf"/>
+<img alt="test" src="../../_images/tmp12.pdf" />
 </section>
 <section id="Creep-Recovery">
-<h3>Creep Recovery<a class="headerlink" href="#Creep-Recovery" title="Permalink to this headline">¶</a></h3>
+<h3>Creep Recovery<a class="headerlink" href="#Creep-Recovery" title="Permalink to this heading">#</a></h3>
 <p>When switching of the stress, the viscoelastic material recovers and we get an elastic recoil. The reocovery strain is defined as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_R =\gamma_0-\gamma(t)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_R =\gamma_0-\gamma(t)\]</div>
+</div>
 <p>where the switch off happens at <span class="math notranslate nohighlight">\(t=0\)</span>. The corresponding recovery compliance is then</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J_R(t)\equiv\frac{\gamma_R(t)}{\sigma}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J_R(t)\equiv\frac{\gamma_R(t)}{\sigma}\]</div>
+</div>
 <p>which directly gives</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J_R(t)=J(t)-\frac{t}{\eta}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J_R(t)=J(t)-\frac{t}{\eta}\]</div>
+</div>
 <p>for a viscoelastic liquid. For a solid, the viscosity is infinite an we obtain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[J_R(t)=J(t)\]</div></div>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\lim_{t\rightarrow\infty} J_R(t)=\lim_{t\rightarrow \infty}\left [ J(t)-\frac{t}{\eta}\right ]=J_{eq}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[J_R(t)=J(t)\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lim_{t\rightarrow\infty} J_R(t)=\lim_{t\rightarrow \infty}\left [ J(t)-\frac{t}{\eta}\right ]=J_{eq}\]</div>
+</div>
 </section>
 </section>
 <section id="Oscillatory-Shear">
-<h2>Oscillatory Shear<a class="headerlink" href="#Oscillatory-Shear" title="Permalink to this headline">¶</a></h2>
+<h2>Oscillatory Shear<a class="headerlink" href="#Oscillatory-Shear" title="Permalink to this heading">#</a></h2>
 <p>All the previous consideration were done in the time domain with step-like perturbations. The step-like perturbation responses have an analog in the frequency domain, which is commonly measured by a type of “spectroscopy”, which is termed <strong>rheology</strong>. In rheology you apply an oscillating strain at a frequency <span class="math notranslate nohighlight">\(\omega\)</span>, which can be written in the complex form as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma(t)=\gamma_0 \exp(i\omega t)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma(t)=\gamma_0 \exp(i\omega t)\]</div>
+</div>
 <p>For a pure eslastic solid, the response in instantaneous an the stress reads:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=G \gamma(t)=G \gamma_{0} e^{i \omega t}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=G \gamma(t)=G \gamma_{0} e^{i \omega t}\]</div>
+</div>
 <p>The stress is osciallting in phase with the strain. For a viscous liquid, however, the stress is related to the strain rate and thus</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=\eta \frac{d \gamma(t)}{d t}=i \omega \eta \gamma_{0} e^{i \omega t}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=\eta \frac{d \gamma(t)}{d t}=i \omega \eta \gamma_{0} e^{i \omega t}\]</div>
+</div>
 <p>we obtain an out of phase signal, a purely imaginary response, of the stress, which trails the train as shown in the Figure below.</p>
-<img alt="tmp" src="../../_images/tmp21.pdf"/>
+<img alt="tmp" src="../../_images/tmp21.pdf" />
 <p>For a viscoelastic material, we have now both responses, which we can summarize in a complex modulus <span class="math notranslate nohighlight">\(G\)</span>. The real part is called the <strong>storage modulus</strong> and the imaginary part is called the <strong>loss modulus</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(\omega)=G^{\prime}(\omega)+i G^{\prime\prime}(\omega)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(\omega)=G^{\prime}(\omega)+i G^{\prime\prime}(\omega)\]</div>
+</div>
 <p>Therefore, the time dependent stress is also a complex quantity and given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma(t)=\underbrace{G \gamma_{0}}_{\sigma_{0}} e^{i \omega t}=\underbrace{G^{\prime} \gamma_{0}}_{\operatorname{Re} \sigma_{0}} e^{i \omega t}+i \underbrace{G^{\prime \prime} \gamma_{0}}_{\operatorname{Im} \sigma_{0}} e^{i \omega t}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma(t)=\underbrace{G \gamma_{0}}_{\sigma_{0}} e^{i \omega t}=\underbrace{G^{\prime} \gamma_{0}}_{\operatorname{Re} \sigma_{0}} e^{i \omega t}+i \underbrace{G^{\prime \prime} \gamma_{0}}_{\operatorname{Im} \sigma_{0}} e^{i \omega t}\]</div>
+</div>
 <p>The phase angle <span class="math notranslate nohighlight">\(\delta\)</span> is given by the ratio of imaginary and real part</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tan \delta=\frac{\operatorname{Im} G}{\operatorname{Re} G}=\frac{G^{\prime \prime}}{G^{\prime}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tan \delta=\frac{\operatorname{Im} G}{\operatorname{Re} G}=\frac{G^{\prime \prime}}{G^{\prime}}\]</div>
+</div>
 <p>and the tangens of the phase angle is called the <strong>loss tangent</strong>.</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[P=\frac{d W}{d t}=\frac{F d x}{d t}=\underbrace{\sigma A}_{F} \frac{L d \gamma}{d t}\]</div></div>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{P}{V}=\sigma\left(\frac{d \gamma}{d t}\right)\]</div></div>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P=\frac{d W}{d t}=\frac{F d x}{d t}=\underbrace{\sigma A}_{F} \frac{L d \gamma}{d t}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{P}{V}=\sigma\left(\frac{d \gamma}{d t}\right)\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}\frac{P}{V}=\frac{1}{2} \sigma_{0}\left(\frac{d \gamma}{d t}\right)_{0}^{*} = \frac{1}{2}\left(G^{\prime} \gamma_{0}+i G^{\prime \prime} \gamma_{0}\right)\left(-i \omega \gamma_{0}\right) =\frac{1}{2}(\underbrace{G^{\prime \prime}}_{\begin{array}{c}
 \text { active } \\
 \text { power }
-\end{array}}-\underbrace{i G^{\prime}}_{\text {reactive }}) \gamma_{0}^{2} \omega\end{split}\]</div></div>
+\end{array}}-\underbrace{i G^{\prime}}_{\text {reactive }}) \gamma_{0}^{2} \omega\end{split}\]</div>
+</div>
 <p>The last part of the equation shows, that the imaginary part is responsible for the dissipation, while the real part adds some pseudo power much like the ac resistance in electronic circuitry.</p>
 <section id="Complex-shear-modulus-of-the-Maxwell-model">
-<h3>Complex shear modulus of the Maxwell model<a class="headerlink" href="#Complex-shear-modulus-of-the-Maxwell-model" title="Permalink to this headline">¶</a></h3>
+<h3>Complex shear modulus of the Maxwell model<a class="headerlink" href="#Complex-shear-modulus-of-the-Maxwell-model" title="Permalink to this heading">#</a></h3>
 <p>The elastic part in the Maxwell model is again given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_e=\frac{\sigma}{G}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_e=\frac{\sigma}{G}\]</div>
+</div>
 <p>while the viscous part is determined by the following differential equation</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{d \gamma_{v}}{d t}=\frac{\sigma}{\eta}=\frac{\sigma_{0}}{\eta} e^{i \omega t}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{d \gamma_{v}}{d t}=\frac{\sigma}{\eta}=\frac{\sigma_{0}}{\eta} e^{i \omega t}\]</div>
+</div>
 <p>which yields</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_{v}=\frac{1}{i} \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}=-i \frac{\sigma}{\omega \eta}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_{v}=\frac{1}{i} \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}=-i \frac{\sigma}{\omega \eta}\]</div>
+</div>
 <p>or</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=i \omega \eta \gamma_{v}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma=i \omega \eta \gamma_{v}\]</div>
+</div>
 <p>Thus inserting both in the total strain</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\underbrace{\gamma_{0} e^{i \omega t}}_{\gamma}=\underbrace{\frac{\sigma_{0}}{G} e^{i \omega t}}_{\gamma_e}-i\underbrace{ \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}}_{\gamma_v}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\underbrace{\gamma_{0} e^{i \omega t}}_{\gamma}=\underbrace{\frac{\sigma_{0}}{G} e^{i \omega t}}_{\gamma_e}-i\underbrace{ \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}}_{\gamma_v}\]</div>
+</div>
 <p>from which we can read the complex modulus</p>
 <p><span class="math">\begin{eqnarray}
-G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\omega \eta}{\omega \eta / G-i}=\frac{\omega \eta(\omega \eta / G+i)}{(\omega \underbrace{\eta / G}_{\tau})^{2}+1}\\
-&amp;=&amp;\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}
+G^{*}&=&\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\omega \eta}{\omega \eta / G-i}=\frac{\omega \eta(\omega \eta / G+i)}{(\omega \underbrace{\eta / G}_{\tau})^{2}+1}\\
+&=&\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}
 \end{eqnarray}</span></p>
 <p>The plot below shows the frequency dependence of the real and imaginary part of the modulus for the Maxwell model. The imaginary part has the shape of a Lorentzian, which is corresponding to the Fourier transform of an exponential in the time domain. The wings of <span class="math notranslate nohighlight">\(G^{\prime \prime}\)</span> increase or decay with <span class="math notranslate nohighlight">\(\omega\)</span>, while the real part <span class="math notranslate nohighlight">\(G^{\prime}\)</span> shows a steeper increase with <span class="math notranslate nohighlight">\(\omega^2\)</span> until it saturates. The saturation and the peak occur at the characteristic timescale
 <span class="math notranslate nohighlight">\(\tau=\eta/G\)</span>, indicated by the vertical dahsed line.</p>
-<img alt="tmp3" src="../../_images/tmp31.pdf"/>
+<img alt="tmp3" src="../../_images/tmp31.pdf" />
 </section>
 <section id="Complex-shear-modulus-of-the-Kelvin-Voigt-model">
-<h3>Complex shear modulus of the Kelvin-Voigt model<a class="headerlink" href="#Complex-shear-modulus-of-the-Kelvin-Voigt-model" title="Permalink to this headline">¶</a></h3>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\underbrace{\sigma_{0} e^{i \omega t}}_{\sigma}=\sigma_{e}+\sigma_{v}=G \gamma+\eta \frac{d \gamma}{d t}=G \gamma_{0} e^{i \omega t}+i \omega \eta \gamma_{0} e^{i \omega t}\]</div></div>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=G+i \omega \eta=\underbrace{G}_{G^{\prime}}+i \underbrace{G \omega \tau}_{G^{\prime \prime}} \tag{Complex modulus Kelvin-Voigt model}\]</div></div>
+<h3>Complex shear modulus of the Kelvin-Voigt model<a class="headerlink" href="#Complex-shear-modulus-of-the-Kelvin-Voigt-model" title="Permalink to this heading">#</a></h3>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\underbrace{\sigma_{0} e^{i \omega t}}_{\sigma}=\sigma_{e}+\sigma_{v}=G \gamma+\eta \frac{d \gamma}{d t}=G \gamma_{0} e^{i \omega t}+i \omega \eta \gamma_{0} e^{i \omega t}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=G+i \omega \eta=\underbrace{G}_{G^{\prime}}+i \underbrace{G \omega \tau}_{G^{\prime \prime}} \tag{Complex modulus Kelvin-Voigt model}\]</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
@@ -516,39 +529,23 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L25/1_polymer_dynamics.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Dynamics of Polymers</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L23/2_Viscoelasticity.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Viscoelasticity</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
-            Last updated on Jun 16, 2022. |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L24/1_Viscoelasticity.ipynb.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -559,7 +556,7 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -594,12 +591,11 @@ G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/main.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>

@@ -18,11 +18,11 @@ Seminar
 
 Email: *lastname@physik.uni-leipzig.de*
 
-* Prof. Dr. Claudia Mierke
+* Dr. Diptabrata Paul
 
   * Linnéstr. 5, 04103 Leipzig 
-  * Office: 326
-  * Phone: +0341 97 32541
+  * Office: 178a
+  * Phone: +0341 97 32570
   
   
 
@@ -31,14 +31,9 @@ Exercise
 
 Email: *lastname@physik.uni-leipzig.de*
 
-* Dr. Tobias Thalheim
+* Dr. Markus Anton
 
   * Linnéstr. 5, 04103 Leipzig 
-  * Office: 318
-  * Phone: +0341 97 32572
+  * Office: 
+  * Phone: +0341 97 32575
 
-* MSc Gordei Anchutkin
-
-  * Linnéstr. 5, 04103 Leipzig 
-  * Office: 127
-  * Phone: +0341 97 32581

@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Equipartition" href="../L3/1_Equipartition.html" /><link rel="prev" title="Thermodynamics and Statistical Physics Revisited" href="../L1/2_Thermodynamics_Statistics.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
-        <title>Statistical Physics Definitions - Soft Matter Lecture 21 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Statistical Physics Definitions - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -20,38 +20,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +60,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +82,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +90,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,16 +143,16 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -169,98 +169,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Forces%20and%20Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/1_depletion_forces.html">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 25:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
-</ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -268,8 +180,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -285,15 +204,15 @@
         <article role="main">
           <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L2/3_Statistical_Physics_Definitions.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L2/3_Statistical_Physics_Definitions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L2/3_Statistical_Physics_Definitions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Statistical-Physics-Definitions">
-<h1>Statistical Physics Definitions<a class="headerlink" href="#Statistical-Physics-Definitions" title="Permalink to this headline">¶</a></h1>
+<h1>Statistical Physics Definitions<a class="headerlink" href="#Statistical-Physics-Definitions" title="Permalink to this heading">#</a></h1>
 <p>The field of statitical physics uses approaches of statistics and probability theory to address physical problems. It considers large populations and derives expressions for the ensemble (or the macrostate) of a system from the microscopic states in the system.</p>
 <section id="Entropy">
-<h2>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this headline">¶</a></h2>
+<h2>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this heading">#</a></h2>
 <section id="Entropy-Definition-by-Boltzmann">
-<h3>Entropy Definition by Boltzmann<a class="headerlink" href="#Entropy-Definition-by-Boltzmann" title="Permalink to this headline">¶</a></h3>
+<h3>Entropy Definition by Boltzmann<a class="headerlink" href="#Entropy-Definition-by-Boltzmann" title="Permalink to this heading">#</a></h3>
 <p>The term of entropy becomes very important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by <strong>Boltzmann</strong> is well known, i.e.,</p>
 <p><span class="math">\begin{equation}
 S=k_\mathrm{B} \ln(W)
@@ -301,7 +220,7 @@ S=k_\mathrm{B} \ln(W)
 <p>where <span class="math notranslate nohighlight">\(W\)</span> is the number of microstates corresponding to a system’s macrostate with and energy <span class="math notranslate nohighlight">\(E\)</span>. Here <span class="math notranslate nohighlight">\(k_\mathrm{B}=1.38064852 × 10^{-23} {\rm m^2\, kg\, s^{-2}\, K^{-1}}\)</span> is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Entropy of an N letter word</strong></p>
-<img alt="letters" src="../../_images/letters.png">
+<img alt="letters" src="../../_images/letters.png" />
 <p>Consider the number of states <span class="math notranslate nohighlight">\(W\)</span> of a word with <span class="math notranslate nohighlight">\(N\)</span> letters of <span class="math notranslate nohighlight">\(M\)</span> different characters. The letter can be arranged in</p>
 <p><span class="math">\begin{equation}
 W=M^N
@@ -311,10 +230,10 @@ W=M^N
 S=N\, k_\mathrm{B} \ln(M) = k_{\rm B}\sum_{1}^{N} \ln(M)
 \end{equation}</span></p>
 <p>which just tells that entropy is an additive quantity.</p>
-</img></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Arrangement of molecules along a chain</strong></p>
-<img alt="binding" src="../../_images/binding.png"/>
+<img alt="binding" src="../../_images/binding.png" />
 <p>We consider a linear molecules (perhaps a DNA) that has <span class="math notranslate nohighlight">\(N\)</span> binding sites for, e.g., proteins. <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math notranslate nohighlight">\(N\)</span> sites is given by the binomial coefficient</p>
 <p><span class="math">\begin{equation}
 W(N_\mathrm{p};N)=\frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}.
@@ -338,10 +257,10 @@ S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 <p>with <span class="math notranslate nohighlight">\(c=N_\mathrm{p}/N\)</span> being the mean occupation of each site or the probability to find a state occupied.</p>
 </div>
 <p>Below you just find some Python code calculating the entropy as a function of “concentration” using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since <span class="math notranslate nohighlight">\(N=100\)</span>.</p>
-<img alt="../../_images/stirling.pdf" src="../../_images/stirling.pdf"/>
+<img alt="../../_images/stirling.pdf" src="../../_images/stirling.pdf" />
 </section>
 <section id="Shannon-Entropy">
-<h3>Shannon Entropy<a class="headerlink" href="#Shannon-Entropy" title="Permalink to this headline">¶</a></h3>
+<h3>Shannon Entropy<a class="headerlink" href="#Shannon-Entropy" title="Permalink to this heading">#</a></h3>
 <p>A different access to entropy comes from the field of information theory and has been devised by Claude Shannon. Information theory is trying to mathematically assess the information content of a measurement facing uncertainty. It will turn out further below that this alternative description results in the Boltzmann distribution and effectively amounts to making a best guess about the probability distribution given some limited knowledge about the system such as the average energy.</p>
 <p>The Shannon entropy is defined by</p>
 <p><span class="math">\begin{equation}
@@ -393,9 +312,9 @@ p_{i}=\frac{1}{N}
 </section>
 </section>
 <section id="Boltzmann-Distribution">
-<h2>Boltzmann Distribution<a class="headerlink" href="#Boltzmann-Distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Boltzmann Distribution<a class="headerlink" href="#Boltzmann-Distribution" title="Permalink to this heading">#</a></h2>
 <p>Our previous consideration of the state functions has shown, that thermal equibrium is associated with a minimum in free energy. As the free energy consists of internal energy <span class="math notranslate nohighlight">\(U\)</span> (or enthalpy <span class="math notranslate nohighlight">\(H\)</span>) and an entropic term (<span class="math notranslate nohighlight">\(-TS\)</span>), we may understand this minimization as a competition between the minimization of the internal energy and a maximization of the entropy (since it is <span class="math notranslate nohighlight">\(-TS\)</span>). The figure below illustrates this competition for a gas in the gravity field.</p>
-<img alt="entropy" src="../../_images/entropy_comp.png"/>
+<img alt="entropy" src="../../_images/entropy_comp.png" />
 <p>The internal energy minimization yields just a condensed layer at the bottom of the container, while the entropy maximization will try to spread the particles evenly (middle picture). The compromise of both at finite temperature is given by the <strong>barometric height formula</strong>, i.e.,</p>
 <p><span class="math">\begin{equation}
 p(z)=p_0\exp\left ( -\frac{m g z}{k_\mathrm{B} T}\right ),
@@ -415,7 +334,7 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 \sum_i p(E_i)=1.
 \end{equation}</span></p>
 <section id="Mean-Energy">
-<h3>Mean Energy<a class="headerlink" href="#Mean-Energy" title="Permalink to this headline">¶</a></h3>
+<h3>Mean Energy<a class="headerlink" href="#Mean-Energy" title="Permalink to this heading">#</a></h3>
 <p>The Boltzmann distribution is useful to calculate also expectation values, for example, of the total energy of the system (the mean energy <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>).</p>
 <p>The mean is defined by: <span class="math">\begin{equation}
 \langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}E_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right).
@@ -434,11 +353,11 @@ Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
 \end{equation}</span></p>
 </section>
 <section id="Free-Energy">
-<h3>Free Energy<a class="headerlink" href="#Free-Energy" title="Permalink to this headline">¶</a></h3>
+<h3>Free Energy<a class="headerlink" href="#Free-Energy" title="Permalink to this heading">#</a></h3>
 <p>Employ the Gibbs entropy <span class="math notranslate nohighlight">\(S=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i}\)</span> to find a relation between the free energy <span class="math notranslate nohighlight">\(F\)</span> (or <span class="math notranslate nohighlight">\(G\)</span>) and the partition function. Inserting the probability <span class="math notranslate nohighlight">\(p_i=Z^{-1}\exp(-\beta E_i)\)</span> and doing some transformations yields</p>
 <p><span class="math">\begin{equation}
-S=k_\mathrm{B} (\ln(Z)+\beta <e>).
-\end{equation}</e></span></p>
+S=k_\mathrm{B} (\ln(Z)+\beta <E>).
+\end{equation}</span></p>
 <p>Using</p>
 <p><span class="math">\begin{equation}
 F=U-TS
@@ -451,9 +370,9 @@ F=-k_\mathrm{B} T \ln(Z)
 <p>Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system. The partition function thus allows us to calculate the free energy.</p>
 </section>
 <section id="Deriving-the-Boltzmann-Distribution">
-<h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this headline">¶</a></h3>
+<h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this heading">#</a></h3>
 <p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.</p>
-<img alt="Test" src="../../_images/entropy_calc.png"/>
+<img alt="Test" src="../../_images/entropy_calc.png" />
 <p>System (index s) and reservoir (index r) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm r}+E_{\rm s}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_{\rm s}^{(i)})\)</span> with the energy <span class="math notranslate nohighlight">\(E_{\rm s}^{(i)}\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,</p>
 <p><span class="math">\begin{equation}
 \frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})}{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})}.
@@ -486,7 +405,7 @@ p(E_{\rm s}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm s}^{(i)}}{k_{\rm B} T}\r
 <p>The probability for finding the particle at position <span class="math notranslate nohighlight">\(z\)</span> is therefore</p>
 <p><span class="math">\begin{equation}
 p(z)=\frac{1}{Z}\exp\left( -\frac{mgz}{k_{\rm B} T}\right)=\frac{1}{<z>}\exp\left ( -\frac{z}{<z>}\right ).
-\end{equation}</z></z></span></p>
+\end{equation}</span></p>
 <p>Normalization provides the value of the partition function</p>
 <p><span class="math">\begin{equation}
 Z=\int_0^\infty\exp\left( -\frac{mgz}{k_{\rm B} T}\right)dz=\frac{k_{\rm B}T}{mg}.
@@ -494,11 +413,11 @@ Z=\int_0^\infty\exp\left( -\frac{mgz}{k_{\rm B} T}\right)dz=\frac{k_{\rm B}T}{mg
 <p>We may further calculate the mean height, which is the sedimentation length in sedimentation problems:</p>
 <p><span class="math">\begin{equation}
 <z>=\frac{1}{Z}\int_0^\infty h\exp\left( -\frac{mgz}{k_{\rm B} T}\right)\mathrm{d}z=\frac{k_{\rm B}T}{mg}
-\end{equation}</z></span></p>
+\end{equation}</span></p>
 <p>and the mean energy</p>
 <p><span class="math">\begin{equation}
-<e>=-\frac{\partial }{\partial \beta} \ln (Z)=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_{\rm B} T=mg <z>.
-\end{equation}</z></e></span></p>
+<E>=-\frac{\partial }{\partial \beta} \ln (Z)=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_{\rm B} T=mg <z>.
+\end{equation}</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Boltzmann distribution is the maximum entropy distribution in which the average energy is prescribed as a constraint</strong></p>
@@ -544,39 +463,23 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L3/1_Equipartition.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Equipartition</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L1/2_Thermodynamics_Statistics.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Thermodynamics and Statistical Physics Revisited</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
-            Last updated on Jun 16, 2022. |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L2/3_Statistical_Physics_Definitions.ipynb.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -587,7 +490,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -617,12 +520,11 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/main.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>

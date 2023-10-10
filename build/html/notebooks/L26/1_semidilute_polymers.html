@@ -1,15 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Dynamics of Polymers" href="../L25/1_polymer_dynamics.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
-        <title>Semidilute Polymer Solutions - Soft Matter Lecture 21 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Semidilute Polymer Solutions - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -20,38 +21,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +61,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +83,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +91,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -123,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,16 +144,16 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -169,98 +170,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Forces%20and%20Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/1_depletion_forces.html">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 25:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Semidilute Polymer Solutions</a></li>
-</ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -268,8 +181,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -283,273 +203,33 @@
           </label>
         </div>
         <article role="main">
-          
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-div.rendered_html th {
-  font-weight: bold;
-}
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-</style>
-<div class="admonition note">
+          <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L26/1_semidilute_polymers.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L26/1_semidilute_polymers.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L26/1_semidilute_polymers.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Semidilute-Polymer-Solutions">
-<h1>Semidilute Polymer Solutions<a class="headerlink" href="#Semidilute-Polymer-Solutions" title="Permalink to this headline">¶</a></h1>
+<h1>Semidilute Polymer Solutions<a class="headerlink" href="#Semidilute-Polymer-Solutions" title="Permalink to this heading">#</a></h1>
 <p>The properties of polymer solutions change when you increase the density of the solution. In the case of dilite solutions, we have already seen that the viscosity changes linearly with the concentration of the polymer. Whe the chains start to overlap, the neigboring chains impose constraints which influence the relaxation of the chains upon deformation.</p>
 <p>To identify, when such a semi-dilute regime is reached, we can have a look at the volume fraction</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\phi=\frac{n V b^{3}}{V}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\phi=\frac{n V b^{3}}{V}\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the number of polymer chains, <span class="math notranslate nohighlight">\(V\)</span> is the sample vlume and <span class="math notranslate nohighlight">\(N\)</span> is the number of Kuhn segements of length <span class="math notranslate nohighlight">\(b\)</span>. If we have now polymer chains of a size <span class="math notranslate nohighlight">\(R\)</span> (end-to-end distance), with a volume of <span class="math notranslate nohighlight">\(R^3\)</span> we can then fill our sample volume space filling with <span class="math notranslate nohighlight">\(n\)</span> chains such that the sample volume <span class="math notranslate nohighlight">\(V=nR^3\)</span>. This results in a concentration that is given by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\phi^{*}\approx \frac{Nb^3}{R^3}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\phi^{*}\approx \frac{Nb^3}{R^3}\]</div>
+</div>
 <p>which is the overlap concentration indicating that the chains start to overlap at this concentration. Since the size <span class="math notranslate nohighlight">\(R\)</span> of the chain can be now expressed by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[R\approx b \left (\frac{v}{b^{3}}\right )^{2\nu-1}N^{\nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[R\approx b \left (\frac{v}{b^{3}}\right )^{2\nu-1}N^{\nu}\]</div>
+</div>
 <p>according to our consideration of the Flory chain (<span class="math notranslate nohighlight">\(v\)</span> free volume, <span class="math notranslate nohighlight">\(\nu\)</span> fractal dimension/Flory exponent), we find that the overlap concentration scales as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\phi^{*}\approx N^{1-3\nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\phi^{*}\approx N^{1-3\nu}\]</div>
+</div>
 <p>with the number of segments in the chain. We therefore have</p>
 <ul class="simple">
 <li><p>a dilute solution for <span class="math notranslate nohighlight">\(\phi&lt;\phi^{*}\)</span></p></li>
@@ -563,22 +243,30 @@ div.rendered_html tbody tr:hover {
 <li><p>for <span class="math notranslate nohighlight">\(r&gt;\xi\)</span> the monomer starts to see other chains</p></li>
 </ul>
 <p>This correlation length helps us to subdivide the chain into blobs of a size <span class="math notranslate nohighlight">\(\xi\)</span>. This size is determined by the free volume and the chain size again via</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\xi \approx b \left ( \frac{\nu}{b^3}\right )^{2\nu-1} g^{\nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\xi \approx b \left ( \frac{\nu}{b^3}\right )^{2\nu-1} g^{\nu}\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(g\)</span> segments in the blob. The correlation volume is then given by <span class="math notranslate nohighlight">\(\phi=gb^3/\xi^3\)</span> such that we can express the blob size as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}\xi \approx b\phi^{-\frac{\nu}{3\nu-1}}
 \begin{cases}\phi^{-1}\,&amp;\text{for }\nu=1/2\\
-\phi^{-3/4}\,&amp;\text{for }\nu=3/5\end{cases}\end{split}\]</div></div>
+\phi^{-3/4}\,&amp;\text{for }\nu=3/5\end{cases}\end{split}\]</div>
+</div>
 <p>From this, the number of segements per blob follow to scale as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[g\approx \phi^{-\frac{1}{3\nu-1}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[g\approx \phi^{-\frac{1}{3\nu-1}}\]</div>
+</div>
 <p>Since for <span class="math notranslate nohighlight">\(r&gt;\xi\)</span> the monomers sees other chains, excluded volume interactions are screened. Thus, a semidilute solution of polymer is like a “melt” of blobs. The blobs are the new segments of a random walk of the size</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}R\approx \xi \left ( \frac{N}{g}\right )^{1/2}\approx bN^{1/2}\phi^{-\frac{2\nu-1}{6\nu-2}}\begin{cases}
 \phi^{0}\, &amp; \text{for }\nu=1/2\\
 \phi^{-1/8}\, &amp; \text{for }\nu=3/5
-\end{cases}\end{split}\]</div></div>
+\end{cases}\end{split}\]</div>
+</div>
 <p>The polymer size therefore changes only very weakly with the concentration. To understand the dynamics of these polymer solutions, we now need the two models we have refered to already earlier</p>
 <ul class="simple">
 <li><p><strong>Zimm model</strong> which was valid for a dilute solution where monomers are hydrodynamically coupled</p></li>
@@ -592,39 +280,53 @@ div.rendered_html tbody tr:hover {
 <p>In fact, this hydrodynamic length scale is assumed to be the same as the structural length scale <span class="math notranslate nohighlight">\(\xi_h=\xi\)</span> such that we have for the short length scales</p>
 <p><strong>Zimm dynamics</strong></p>
 <p>Here the chain sections feel the hydrodynamic coupling which leads to a maximum relaxation time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{\xi}\approx \frac{\eta_s \xi^{3}}{k_B T}\approx \frac{\eta_s b^{}3}{k_B T}\phi^{-\frac{3\nu}{3\nu-1}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_{\xi}\approx \frac{\eta_s \xi^{3}}{k_B T}\approx \frac{\eta_s b^{}3}{k_B T}\phi^{-\frac{3\nu}{3\nu-1}}\]</div>
+</div>
 <p>as already used earlier. Beyond this length scale the dynamics becomes Rouse like and we have the</p>
 <p><strong>Rouse dynamics</strong></p>
 <p>with the longest relaxation time being for the whole chain of blobs</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{chain}\approx \tau_{\xi}\left ( \frac{N}{g}\right )^{2}\approx \frac{\eta_s b^{3}}{k_B T}N^2 \phi^{\frac{2-3\nu}{3\nu-1}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_{chain}\approx \tau_{\xi}\left ( \frac{N}{g}\right )^{2}\approx \frac{\eta_s b^{3}}{k_B T}N^2 \phi^{\frac{2-3\nu}{3\nu-1}}\]</div>
+</div>
 <p>scaling as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}\tau_{chain}\approx \begin{cases}
 \phi\, &amp; \text{for } \nu=1/2\\
 \phi^{0.31}\, &amp; \text{for } \nu=3/5
-\end{cases}\end{split}\]</div></div>
+\end{cases}\end{split}\]</div>
+</div>
 <p>with the concentration of the chain <span class="math notranslate nohighlight">\(\phi\)</span>. With this longest relaxation time for the chain we can now obtain the diffusion coefficient of a chain in the semi-dilute regime, which is</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[D\approx \frac{R^2}{\tau_{chain}}\approx \frac{k_B T}{\eta_s b N} \phi^{-\frac{1-\nu}{3\nu -1}}\approx D_{z}\left (\frac{\phi}{\phi^{*}}\right )^{-\frac{1-\nu}{3\nu-1}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[D\approx \frac{R^2}{\tau_{chain}}\approx \frac{k_B T}{\eta_s b N} \phi^{-\frac{1-\nu}{3\nu -1}}\approx D_{z}\left (\frac{\phi}{\phi^{*}}\right )^{-\frac{1-\nu}{3\nu-1}}\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(D_z=k_B T/\eta_s b N^{\nu}\)</span>. The diffusion coefficient therefore scales as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}D\approx \begin{cases}
 \phi^{0}\, &amp; \text{for } \nu=1/2\\
 \phi^{-0.54}\, &amp; \text{for } \nu=3/5
-\end{cases}\end{split}\]</div></div>
+\end{cases}\end{split}\]</div>
+</div>
 <p>This scaling for the real chain with an exponent of <span class="math notranslate nohighlight">\(-0.54\)</span> is also found in the experiments.</p>
 <p><strong>insert experimetal image</strong></p>
 <section id="Stress-Relaxation">
-<h2>Stress Relaxation<a class="headerlink" href="#Stress-Relaxation" title="Permalink to this headline">¶</a></h2>
+<h2>Stress Relaxation<a class="headerlink" href="#Stress-Relaxation" title="Permalink to this heading">#</a></h2>
 <p>The stress relaxation now follows the dynamics in the two regimes and can be obtained from the correponding relaxation time spectrum as we have introduced that also already earlier.</p>
 <p>For <span class="math notranslate nohighlight">\(\tau_0&lt;t&lt;\tau_{\xi}\)</span>:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \frac{k_B T}{b^3}\phi \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{3\nu}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)\approx \frac{k_B T}{b^3}\phi \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{3\nu}}\]</div>
+</div>
 <p>For <span class="math notranslate nohighlight">\(\tau_{\xi}&lt;t&lt;\tau_{chain}\)</span>:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \frac{k_B T}{b^3}\phi^{\frac{3\nu}{3\nu-1}} \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{2}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)\approx \frac{k_B T}{b^3}\phi^{\frac{3\nu}{3\nu-1}} \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{2}}\]</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -644,30 +346,22 @@ div.rendered_html tbody tr:hover {
         
         <div class="related-pages">
           
-          <a class="prev-page" href="../L25/1_polymer_dynamics.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Dynamics of Polymers</div>
-                
-              </div>
-            </a>
+          
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
-            Last updated on Jun 16, 2022. |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L26/1_semidilute_polymers.ipynb.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -678,7 +372,7 @@ div.rendered_html tbody tr:hover {
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -698,12 +392,11 @@ div.rendered_html tbody tr:hover {
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/main.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>

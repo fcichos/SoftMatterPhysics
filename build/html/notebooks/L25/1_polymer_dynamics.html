@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Semidilute Polymer Solutions" href="../L26/1_semidilute_polymers.html" /><link rel="prev" title="Viscoelasticity" href="../L24/1_Viscoelasticity.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
-        <title>Dynamics of Polymers - Soft Matter Lecture 21 documentation</title>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Dynamics of Polymers - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -20,38 +20,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -60,14 +60,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -82,7 +82,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -90,7 +90,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Soft Matter Lecture 21 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,16 +143,16 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Soft Matter Lecture 21 documentation</span>
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -169,98 +169,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L5/2_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L6/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Forces%20and%20Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L12/1_depletion_forces.html">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 18:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L19/1_electroosmosis.html">Electro-osmosis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 25:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Dynamics of Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 26:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L26/1_semidilute_polymers.html">Semidilute Polymer Solutions</a></li>
-</ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -268,8 +180,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -285,173 +204,239 @@
         <article role="main">
           <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L25/1_polymer_dynamics.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L25/1_polymer_dynamics.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L25/1_polymer_dynamics.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Dynamics-of-Polymers">
-<h1>Dynamics of Polymers<a class="headerlink" href="#Dynamics-of-Polymers" title="Permalink to this headline">¶</a></h1>
+<h1>Dynamics of Polymers<a class="headerlink" href="#Dynamics-of-Polymers" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="1_polymer_dynamics.pdf">Download Lecture as PDF</a></p>
 <p>After we have introduced a phenomenological model for the viscoelasticity of materials, we would like to connect this to the dynamics of polymers. This means, that we have to connect the reponse of a polmyer to deformations to the polymer chain in a way.</p>
 <section id="Diffusion-of-a-Single-Polymer-Chain">
-<h2>Diffusion of a Single Polymer Chain<a class="headerlink" href="#Diffusion-of-a-Single-Polymer-Chain" title="Permalink to this headline">¶</a></h2>
+<h2>Diffusion of a Single Polymer Chain<a class="headerlink" href="#Diffusion-of-a-Single-Polymer-Chain" title="Permalink to this heading">#</a></h2>
 <p>A first clue on the dynamics is already given by a process of the diffusion of the polymer chain. During diffusion, all segments fluctuate with the position and experience hdrodynamic friction. If the molecule would be a rigid sphere of radius <span class="math notranslate nohighlight">\(R\)</span>, the diffusion coefficient would be given by the Stokes-Einstein relation</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[D=\frac{k_\mathrm{B}T}{\gamma}=\frac{k_\mathrm{B} T}{6\pi\eta R}.\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[D=\frac{k_\mathrm{B}T}{\gamma}=\frac{k_\mathrm{B} T}{6\pi\eta R}.\]</div>
+</div>
 <p>Using the mean-squared displacement <span class="math notranslate nohighlight">\(\langle r^{2}\rangle=6Dt\)</span>, this also means that the particle will diffuse a distance corresponding to its own size in a time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau=\frac{R^2}{D}=\frac{R^2}{k_\mathrm{B} T}\gamma.\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau=\frac{R^2}{D}=\frac{R^2}{k_\mathrm{B} T}\gamma.\]</div>
+</div>
 <p>For a polymer, which is now a flexible entity, this time means that all conformational fluctuations have relaxed at this time and the polymer chain is displaced by its own radius. This, therefore, sets the longest timescale of relaxation. This relaxation timescale can now be obtained with different dynamic approaches, which are the <strong>Rouse model</strong> and the <strong>Zimm model</strong>. Both models differ mainly in how the hydrodynamic coupling of individual segments are considered.</p>
 <section id="Rouse-Model">
-<h3>Rouse Model<a class="headerlink" href="#Rouse-Model" title="Permalink to this headline">¶</a></h3>
+<h3>Rouse Model<a class="headerlink" href="#Rouse-Model" title="Permalink to this heading">#</a></h3>
 <p>In the Rouse model, the polymer is approximated by a bead-spring model (Gaussian chain) of <span class="math notranslate nohighlight">\(N\)</span> segments:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma\frac{\mathrm{d}\vec{R}_n}{\mathrm{d}t}=k\left [ \vec{R}_{n-1} - \vec{R}_{n} + \vec{R}_{n+1} - \vec{R}_{n}\right ] +\vec{f}_n(t),\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma\frac{\mathrm{d}\vec{R}_n}{\mathrm{d}t}=k\left [ \vec{R}_{n-1} - \vec{R}_{n} + \vec{R}_{n+1} - \vec{R}_{n}\right ] +\vec{f}_n(t),\]</div>
+</div>
 <p>where the force on the segment <span class="math notranslate nohighlight">\(n\)</span> at a position <span class="math notranslate nohighlight">\(\vec{R}_n\)</span> is given by the forces exerted from the neighboring elements with a spring constant <span class="math notranslate nohighlight">\(k=3k_\mathrm{B} T/b^2\)</span> and the thermal noise force <span class="math notranslate nohighlight">\(\vec{f}_n(t)\)</span>.</p>
 <p>Each of the segments is experiencing a friction given by the factor <span class="math notranslate nohighlight">\(\gamma\)</span>. The total friction on the Rouse chain is now assumed to be</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_\mathrm{R}=N\gamma\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_\mathrm{R}=N\gamma\]</div>
+</div>
 <p>which needs some short explanation, as this is one key assumption of the Rouse model. Imagine you have 5 different rigid spheres each experiencing the same friction coefficient and they are far apart from each other. The total friction coefficient will be <span class="math notranslate nohighlight">\(5\gamma\)</span>. Yet if the spheres come closer to each other, the hydrodynamic flow fields around each sphere influence each other until the point when they are in close contact and act as a new body. In this case, the friction coefficient
 will not be just the sum of all friction coefficients. This means, that the assumption of the Rouse model is now that the individual beads cause only localized flow fields when fluctuating, which are, in turn, not influencing the motion of the other segments.</p>
 <p>According to that, we may write down the time to diffuse the size <span class="math notranslate nohighlight">\(R\)</span> of the polymer as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_\mathrm{R}=\frac{R^2}{k_\mathrm{B} T}N \gamma\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_\mathrm{R}=\frac{R^2}{k_\mathrm{B} T}N \gamma\]</div>
+</div>
 <p>which is the Rouse time. At times shorter than the Rouse time, the polymer exhibits viscoelastic relaxation modes. The longest relaxation mode is that of the whole chain, which is the Rouse time <span class="math notranslate nohighlight">\(\tau_\mathrm{R}\)</span>. As the size of the polymer chain is approximately given by <span class="math notranslate nohighlight">\(R\approx bN^{\nu}\)</span> with <span class="math notranslate nohighlight">\(\nu\)</span> beeing the fractal dimension (e.g., the Flory exponent) of the chain we obtain for the Rouse time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_\mathrm{R}=N \frac{\gamma}{\underbrace{k_\mathrm{B} T}_{\tau_{0}}} b^{2} N^{2 \nu}=\tau_{0} N^{2 \nu+1},\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_\mathrm{R}=N \frac{\gamma}{\underbrace{k_\mathrm{B} T}_{\tau_{0}}} b^{2} N^{2 \nu}=\tau_{0} N^{2 \nu+1},\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(\tau_0\)</span> is the relaxation time for a single segment in the chain. Depending if we now consider an ideal or a real chain, we find different scaling of the Rouse time with the number of segments, i.e.:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}\tau_\mathrm{R} \propto\left\{\begin{array}{l}
 \tau_{0} N^{2}  \qquad \text { for ideal chain }(\nu=1 / 2) \\
 \tau_{0} N^{11 / 5} \quad \,\,\text {for real chain in good solvent }(\nu \approx 3 / 5)
-\end{array}\right.\end{split}\]</div></div>
+\end{array}\right.\end{split}\]</div>
+</div>
 <p>which is just a simple estimate.</p>
 <p>The full calculation by Rouse for an ideal chain shows a similar result, which is</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_\mathrm{R}=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_\mathrm{B} T} N^{2}.\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_\mathrm{R}=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_\mathrm{B} T} N^{2}.\]</div>
+</div>
 <p>To summarize, on time scales smaller than <span class="math notranslate nohighlight">\(\tau_{\rm R}\)</span>, we expect to find <strong>viscoelastic modes</strong> of the polymer contributing to the modulus, while for modes larger than <span class="math notranslate nohighlight">\(\tau_{\rm R}\)</span> everything should be <strong>diffusive</strong>.</p>
 </section>
 <section id="Zimm-Model">
-<h3>Zimm Model<a class="headerlink" href="#Zimm-Model" title="Permalink to this headline">¶</a></h3>
+<h3>Zimm Model<a class="headerlink" href="#Zimm-Model" title="Permalink to this heading">#</a></h3>
 <p>The Zimm model takes care of the fact that each segment is generating a flow field that decays as <span class="math notranslate nohighlight">\(1/r\)</span> and is thus typically long range. Thus segments in the chain volume (the so-called pervaded volume) are coupled by hydrodynamics in solution. This has to be taken into account for the dynamics of the polymer chain and the fact that the Rouse model neglects that restricts its validity essentially to the melt region (a system of polymer chains without solvent) only.</p>
 <p>This hydrodynamic coupling in the Zimm model changes the friction coefficient of the chain to</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\gamma_\mathrm{Z}\approx \eta R\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\gamma_\mathrm{Z}\approx \eta R\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(R\)</span> being the root-mean-squared end-to-end distance of the polymwer chain as used also in the Rouse model. Thus the Zimm chain behaves hydrodynamically more like a solid sphere rather than a collection of individual beads.</p>
 <p>With <span class="math notranslate nohighlight">\(R=bN^{\nu}\)</span> we find for the Zimm relaxation time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{\rm Z} \approx \frac{R^{2}}{D_{\rm Z}} \approx \frac{\gamma_{\rm Z}}{k_{\rm B} T} R^{2} \approx \frac{\eta}{k_{\rm B} T} R^{3} \approx \frac{\eta b^{3}}{k_{\rm B} T} N^{3 \nu}=\tau_{0} N^{3 \nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_{\rm Z} \approx \frac{R^{2}}{D_{\rm Z}} \approx \frac{\gamma_{\rm Z}}{k_{\rm B} T} R^{2} \approx \frac{\eta}{k_{\rm B} T} R^{3} \approx \frac{\eta b^{3}}{k_{\rm B} T} N^{3 \nu}=\tau_{0} N^{3 \nu}\]</div>
+</div>
 <p>while the full calculation by Zimm shows</p>
 <p><span class="math">\begin{equation}
 \tau_{\rm Z}=\frac{1}{2 \sqrt{3 \pi}} \frac{\eta}{k_{\rm B} T} R^{3}\tag{Zimm time}.
 \end{equation}</span></p>
 <p>Using the exponents <span class="math notranslate nohighlight">\(\nu\)</span> for the ideal and the real chains, we can now make predictions for the scaling of the Zimm relaxation time for both chains, which gives</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\begin{split}\tau_{\rm Z} \propto \begin{cases}\tau_{0} N^{3 / 2}  &amp; \text { for ideal chain }(\nu=1 / 2) \\ \tau_{0} N^{9 / 5}  &amp; \text { for real chain in good solvent }(\nu=3 / 5)\end{cases}.\end{split}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\tau_{\rm Z} \propto \begin{cases}\tau_{0} N^{3 / 2}  &amp; \text { for ideal chain }(\nu=1 / 2) \\ \tau_{0} N^{9 / 5}  &amp; \text { for real chain in good solvent }(\nu=3 / 5)\end{cases}.\end{split}\]</div>
+</div>
 <p>Thus, the scaling of relaxation times as predicted by the Zimm and the Rouse model are different. Which regime is valid has to be decided based on experimental results. As mentioned before, the Zimm model is rather valid for dilute polymer solutions, while the Rouse model rather applies to the dynamics of polymer chains in the melt.</p>
 </section>
 </section>
 <section id="Intrinsic-viscosity-of-polymer-solutions">
-<h2>Intrinsic viscosity of polymer solutions<a class="headerlink" href="#Intrinsic-viscosity-of-polymer-solutions" title="Permalink to this headline">¶</a></h2>
+<h2>Intrinsic viscosity of polymer solutions<a class="headerlink" href="#Intrinsic-viscosity-of-polymer-solutions" title="Permalink to this heading">#</a></h2>
 <p>In dilute solutions, polymer chains are isolated and deformed in an affine way. In such solutions, polymers linearly increase the viscosity of the solution with increasing concentration. To study the contribution of the polymer chains to the viscosity of the solution we define a specific viscosity</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta_{\rm sp}=\frac{\eta-\eta_{\rm s}}{\eta_{\rm s}},\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\eta_{\rm sp}=\frac{\eta-\eta_{\rm s}}{\eta_{\rm s}},\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity of the solvent with polymers and <span class="math notranslate nohighlight">\(\eta_{\rm s}\)</span> is the one of the solvent only. One may also write the same expression as <span class="math notranslate nohighlight">\(\eta_{\rm sp}=\eta_{\rm r}-1\)</span> where <span class="math notranslate nohighlight">\(\eta_{\rm r}=\eta/\eta_{\rm s}\)</span> is the reduced viscosity. The contribution of a single polymer chain is then measured by the intrinsic viscosity</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[[\eta]=\lim_{c\rightarrow 0}\frac{\eta_{\rm sp}}{c},\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[[\eta]=\lim_{c\rightarrow 0}\frac{\eta_{\rm sp}}{c},\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is the polymer concentration. Note that the intrinsic vsicosity now has the unit of an inverse concentration. Using this intrinsic value we may connect now the viscosity to the shear modulus, e.g., by using the result of the Maxwell model:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta \approx G(\tau)\int \exp(-t/\tau)\mathrm{d}t=G(\tau)\tau.\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\eta \approx G(\tau)\int \exp(-t/\tau)\mathrm{d}t=G(\tau)\tau.\]</div>
+</div>
 <section id="Affine-Deformation-and-Entropy">
-<h3>Affine Deformation and Entropy<a class="headerlink" href="#Affine-Deformation-and-Entropy" title="Permalink to this headline">¶</a></h3>
+<h3>Affine Deformation and Entropy<a class="headerlink" href="#Affine-Deformation-and-Entropy" title="Permalink to this heading">#</a></h3>
 <p>To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain.</p>
 <p><strong>insert image here</strong></p>
 <p>As we have discussed earlier, the entropy of a single chain with an end-to-end distance <span class="math notranslate nohighlight">\(R\)</span> can be calculated from</p>
 <p><span class="math">\begin{eqnarray}
-S(R)&amp;=&amp;k_\mathrm{B} \ln(p(\vec{R},N))+{\rm const}\\
-&amp;=&amp;-\frac{3}{2}\frac{k_\mathrm{B} R^2}{Nb^2}+{\rm const}.
+S(R)&=&k_\mathrm{B} \ln(p(\vec{R},N))+{\rm const}\\
+&=&-\frac{3}{2}\frac{k_\mathrm{B} R^2}{Nb^2}+{\rm const}.
 \end{eqnarray}</span></p>
 <p>In our lab system the end-to-end vector length <span class="math notranslate nohighlight">\(R^2\)</span> can be expressed by its components such that</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[S(R)=-\frac{3}{2}\frac{k_B (R_x^2+R_y^2+R_z^2)}{Nb^2}+{\rm const}.\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S(R)=-\frac{3}{2}\frac{k_B (R_x^2+R_y^2+R_z^2)}{Nb^2}+{\rm const}.\]</div>
+</div>
 <p>If we now introduce a deformation</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[L_x=\lambda_x L_{X0},\, L_y=\lambda_y L_{Y0},\, L_z=\lambda_z L_{Z0}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[L_x=\lambda_x L_{X0},\, L_y=\lambda_y L_{Y0},\, L_z=\lambda_z L_{Z0}\]</div>
+</div>
 <p>where the <span class="math notranslate nohighlight">\(\lambda\)</span> are just scaling factors for the volume, we can also assume that the components of the end-to-end vectro scale in the same way, i.e.</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[R_x=\lambda_x R_{X0},\, R_y=\lambda_y R_{Y0},\, R_z=\lambda_z R_{Z0}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[R_x=\lambda_x R_{X0},\, R_y=\lambda_y R_{Y0},\, R_z=\lambda_z R_{Z0}\]</div>
+</div>
 <p>such that we obtain for the change in entropy upon deformation</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\Delta S=S(R)-S(R_0)=\frac{3}{2}\frac{k_B}{Nb^2}\left [(\lambda_x^2-1)R_{X0}^2 +(\lambda_y^2-1)R_{Y0}^2+(\lambda_z^2-1)R_{Z0}^2\right ]\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta S=S(R)-S(R_0)=\frac{3}{2}\frac{k_B}{Nb^2}\left [(\lambda_x^2-1)R_{X0}^2 +(\lambda_y^2-1)R_{Y0}^2+(\lambda_z^2-1)R_{Z0}^2\right ]\]</div>
+</div>
 <p>If we have now a system of <span class="math notranslate nohighlight">\(n\)</span>-chains in the solution, we have to sum up all squared components of the end-to-end distance</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sum_{i=1}^{n}(R_{X0})_i^2=n\frac{1}{n}\sum_{i=1}^{n}(R_{X0})_i^2=n\langle R_{XO}^2\rangle=n\frac{Nb^2}{3}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{n}(R_{X0})_i^2=n\frac{1}{n}\sum_{i=1}^{n}(R_{X0})_i^2=n\langle R_{XO}^2\rangle=n\frac{Nb^2}{3}\]</div>
+</div>
 <p>using our previous result for the mean squared end-to-end distance. This finally results in</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\Delta S=-\frac{n k_B}{2}(\lambda_x^2+\lambda_y^2+\lambda_z^2-3)\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta S=-\frac{n k_B}{2}(\lambda_x^2+\lambda_y^2+\lambda_z^2-3)\]</div>
+</div>
 <p>for the entropy change of all chains. The results lets us calculate the change in free energy <span class="math notranslate nohighlight">\(\Delta F=-T \Delta S\)</span>, which is</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\Delta F=-\frac{n k_B T}{2}(\lambda_x^2+\lambda_y^2+\lambda_z^2-3)\]</div></div>
-<p>If we assume now that the volume is unchanged upon deformation, i.e. <span class="math notranslate nohighlight">\(V=\lambda_x\lambda_y\lambda_z V\)</span> or <span class="math notranslate nohighlight">\(\lambda_x\lambda_y\lambda_z=1\)</span>, we can express a uniaxial deformation along the x-axis as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\lambda_x=\lambda.\, \lambda_y=\lambda_z=\frac{1}{\sqrt{\lambda}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta F=-\frac{n k_B T}{2}(\lambda_x^2+\lambda_y^2+\lambda_z^2-3)\]</div>
+</div>
+<p>If we assume now that the volume is unchanged upon deformation, i.e. <span class="math notranslate nohighlight">\(V=\lambda_x\lambda_y\lambda_z V\)</span> or <span class="math notranslate nohighlight">\(\lambda_x\lambda_y\lambda_z=1\)</span>, we can express a uniaxial deformation along the x-axis as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lambda_x=\lambda.\, \lambda_y=\lambda_z=\frac{1}{\sqrt{\lambda}}\]</div>
+</div>
 <p>from whgich we obtain for the deformation</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\Delta F= \frac{n k_B T}{2}(\lambda^2+\frac{2}{\lambda}-3)\]</div></div>
-<img alt="../../_images/test2.pdf" src="../../_images/test2.pdf">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\Delta F= \frac{n k_B T}{2}(\lambda^2+\frac{2}{\lambda}-3)\]</div>
+</div>
+<img alt="../../_images/test2.pdf" src="../../_images/test2.pdf" />
 <p>The corresponding force that has to be applied to stretch the molecules can be calculated from the derivative</p>
 <p><span class="math">\begin{eqnarray}
-f_x&amp;=&amp;\frac{\partial \Delta F}{\partial L_x}=\frac{\partial \Delta F}{\partial\lambda L_{x0}}=\frac{1}{L_{x0}}\frac{\partial \Delta F}{\partial \lambda}\\
-&amp;=&amp;\frac{nK_B T}{L_{x0}}(\lambda-\frac{1}{\lambda^2})
+f_x&=&\frac{\partial \Delta F}{\partial L_x}=\frac{\partial \Delta F}{\partial\lambda L_{x0}}=\frac{1}{L_{x0}}\frac{\partial \Delta F}{\partial \lambda}\\
+&=&\frac{nK_B T}{L_{x0}}(\lambda-\frac{1}{\lambda^2})
 \end{eqnarray}</span></p>
 <p>which results in a stress</p>
 <p><span class="math">\begin{eqnarray}
-\sigma_{xx}&amp;=&amp;\frac{f_x}{L_yL_z}=\frac{nK_B T}{L_{x0}L_{y}L_{z}}\\
-&amp;=&amp;\frac{nk_B T}{L_{x0}L_{y0}L_{z0}}\lambda\left (\lambda-\frac{1}{\lambda^2}\right )\\
-&amp;=&amp;\frac{n}{V}k_B T \left (\lambda^2-\frac{1}{\lambda}\right )
+\sigma_{xx}&=&\frac{f_x}{L_yL_z}=\frac{nK_B T}{L_{x0}L_{y}L_{z}}\\
+&=&\frac{nk_B T}{L_{x0}L_{y0}L_{z0}}\lambda\left (\lambda-\frac{1}{\lambda^2}\right )\\
+&=&\frac{n}{V}k_B T \left (\lambda^2-\frac{1}{\lambda}\right )
 \end{eqnarray}</span></p>
 <p>As the stress is in general the result of a modulus <span class="math notranslate nohighlight">\(G\)</span> multiplied with a deformation and the term with the <span class="math notranslate nohighlight">\(\lambda\)</span> denotes the deformation, we have found the modulus to be</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G=\frac{n}{V}k_B T=\frac{\rho R_M T}{M_s}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G=\frac{n}{V}k_B T=\frac{\rho R_M T}{M_s}\]</div>
+</div>
 <p>where <span class="math notranslate nohighlight">\(R_M\)</span> is gas constant, <span class="math notranslate nohighlight">\(\rho\)</span> the density and <span class="math notranslate nohighlight">\(M_s\)</span> the molar mass of a single strand. The stress is this</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\sigma=G \left (\lambda^2-\frac{1}{\lambda}\right )\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sigma=G \left (\lambda^2-\frac{1}{\lambda}\right )\]</div>
+</div>
 <p>Returning to our calculation of the contribution of the polymer chain to the intrinsic viscosity we may write</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[[\eta]=\frac{1}{c}\frac{\eta-\eta_{s}}{\eta_{s}}=\frac{1}{c}\frac{G(\tau)\tau}{\eta_s}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[[\eta]=\frac{1}{c}\frac{\eta-\eta_{s}}{\eta_{s}}=\frac{1}{c}\frac{G(\tau)\tau}{\eta_s}\]</div>
+</div>
 <p>with</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(\tau)=\frac{\rho R_M T}{M_s}=\frac{\rho N_A k_B T}{N M_b}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(\tau)=\frac{\rho R_M T}{M_s}=\frac{\rho N_A k_B T}{N M_b}\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(M_b\)</span> being the molar mass of the monomer (Kuhn segment). The intrinsic viscosity is therefore</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[[\eta]=\frac{N_A k_B T}{ \eta_s N M_b}\tau\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[[\eta]=\frac{N_A k_B T}{ \eta_s N M_b}\tau\]</div>
+</div>
 <p>With the result of Rouse for the Rouse time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_R=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_{B} T} N^{2\nu+1}=N\frac{\eta_s b}{k_B T}b^2 N^{2\nu}\frac{1}{6\pi^2}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_R=\frac{1}{6 \pi^{2}} \frac{\gamma b^{2}}{k_{B} T} N^{2\nu+1}=N\frac{\eta_s b}{k_B T}b^2 N^{2\nu}\frac{1}{6\pi^2}\]</div>
+</div>
 <p>we find for the <strong>intrinsic viscosity of a Rouse chain</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}[\eta]_R \approx \frac{N_A b^3}{M_b}N^{2\nu}\propto
 \begin{cases}
 N, &amp; \text{ideal chain}\\
 N^{6/5},  &amp; \text{real chain in good solvent}
-\end{cases}\end{split}\]</div></div>
+\end{cases}\end{split}\]</div>
+</div>
 <p>A similar calculation can be done using the Zimm relaxation time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_{Z} \approx \frac{\eta b^{3}}{k_{B} T} N^{3 \nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_{Z} \approx \frac{\eta b^{3}}{k_{B} T} N^{3 \nu}\]</div>
+</div>
 <p>which gives for the <strong>intrinsic viscosity of a Zimm chain</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
 \[\begin{split}[\eta]_Z \approx \frac{N_A b^3}{M_b}N^{3\nu-1}\propto
 \begin{cases}
 N^{1/2}, &amp; \text{ideal chain}\\
 N^{4/5},  &amp; \text{real chain in good solvent}
-\end{cases}\end{split}\]</div></div>
+\end{cases}\end{split}\]</div>
+</div>
 <p>A more general expression for the intrisinsic viscosity of a dilute polymer solution is the <strong>Fox Flory</strong> law</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[[\eta]=\Phi \frac{R^3}{M}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[[\eta]=\Phi \frac{R^3}{M}\]</div>
+</div>
 <p>with <span class="math notranslate nohighlight">\(\Phi=0.425 N_A\approx 2.5\times 10^{23}\, {\rm mol^{-1}}\)</span>.</p>
 <p><strong>plot sime experimental data</strong></p>
-</img></section>
+</section>
 </section>
 <section id="Relaxation-Modes-of-a-Polymer">
-<h2>Relaxation Modes of a Polymer<a class="headerlink" href="#Relaxation-Modes-of-a-Polymer" title="Permalink to this headline">¶</a></h2>
+<h2>Relaxation Modes of a Polymer<a class="headerlink" href="#Relaxation-Modes-of-a-Polymer" title="Permalink to this heading">#</a></h2>
 <p>Polymers are self-similar objects, which means that shorter parts of a polymer behave like shorter chains. Thus there must be a spectrum of relaxation modes present for a polymer chain and we considered in the section before just the longest one.</p>
 <p>If there are <span class="math notranslate nohighlight">\(N\)</span> segments, the</p>
 <ul class="simple">
@@ -460,81 +445,119 @@ N^{4/5},  &amp; \text{real chain in good solvent}
 <li><p>largest mode <span class="math notranslate nohighlight">\(p=1\)</span> with <span class="math notranslate nohighlight">\(\tau_R\)</span></p></li>
 </ul>
 <section id="Rouse-modes">
-<h3>Rouse modes<a class="headerlink" href="#Rouse-modes" title="Permalink to this headline">¶</a></h3>
+<h3>Rouse modes<a class="headerlink" href="#Rouse-modes" title="Permalink to this heading">#</a></h3>
 <p>In the Rouse model, we therefore have the Rouse time</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau=\tau_R\approx\tau_0 N^2\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau=\tau_R\approx\tau_0 N^2\]</div>
+</div>
 <p>and for the individua model</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_p\approx \tau_0 \left ( \frac{N}{p}\right )^2\, \text{for}\, p=1,2,\ldots, N\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_p\approx \tau_0 \left ( \frac{N}{p}\right )^2\, \text{for}\, p=1,2,\ldots, N\]</div>
+</div>
 <p>or</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[p\approx \left( \frac{\tau_p}{\tau_0} \right )^{1/2} N\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[p\approx \left( \frac{\tau_p}{\tau_0} \right )^{1/2} N\]</div>
+</div>
 <p>Each of these modes relaxes independently.</p>
 <p>On a timescale <span class="math notranslate nohighlight">\(\tau=\tau_0\)</span> all of the <span class="math notranslate nohighlight">\(N\)</span> modes have not relaxed. At <span class="math notranslate nohighlight">\(\tau=\tau_p\)</span> <span class="math notranslate nohighlight">\(N-p\)</span> modes have not decayed. Eahc of these modes contributes <span class="math notranslate nohighlight">\(k_B T\)</span> to the energy density as we have seen before. With <span class="math notranslate nohighlight">\(N-p\)</span> modes devayed, there is <span class="math notranslate nohighlight">\(pk_B T\)</span> still stored in the deformation of the chain. Thus the modulus amplitude for each mode is found to be</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(\tau_P)\approx \frac{n}{V}k_B T p\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(\tau_P)\approx \frac{n}{V}k_B T p\]</div>
+</div>
 <p>and the modulus itself</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \frac{n}{V}k_B T \sum_{p=1}^{N}\exp\left (-\frac{t}{\tau_P}\right )\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)\approx \frac{n}{V}k_B T \sum_{p=1}^{N}\exp\left (-\frac{t}{\tau_P}\right )\]</div>
+</div>
 <p>with</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_p=\frac{\tau_0}{6\pi^2}\frac{N^2}{p^2}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_p=\frac{\tau_0}{6\pi^2}\frac{N^2}{p^2}\]</div>
+</div>
 <p>For large <span class="math notranslate nohighlight">\(N\)</span> we may convert the sum into an integral and obtain for the modulus</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)=n_{p} k_{B} T \int_{0}^{\infty} d p \exp \left(-p^{2} t / \tau_{R}\right)=\frac{\sqrt{\pi}}{2} n_{p} k_{B} T\left(\frac{\tau_{R}}{t}\right)^{1 / 2}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)=n_{p} k_{B} T \int_{0}^{\infty} d p \exp \left(-p^{2} t / \tau_{R}\right)=\frac{\sqrt{\pi}}{2} n_{p} k_{B} T\left(\frac{\tau_{R}}{t}\right)^{1 / 2}\]</div>
+</div>
 <p>which gives an inversse square root dependence for the modulus with time. This is valid only for short times, as the chain has a longest relaxation, which is teh Rouse time. Including this cut-off at long times we may write</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \underbrace{\frac{nNk_B T}{v}\frac{t}{\tau_0}^{-1/2}}_{\tau_0&lt;t&lt;\tau_R}\underbrace{\exp\left ( -\frac{t}{\tau_R}\right )}_{t&gt;\tau_R}\]</div></div>
-<img alt="tmp4" src="../../_images/tmp4.pdf"/>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)\approx \underbrace{\frac{nNk_B T}{v}\frac{t}{\tau_0}^{-1/2}}_{\tau_0&lt;t&lt;\tau_R}\underbrace{\exp\left ( -\frac{t}{\tau_R}\right )}_{t&gt;\tau_R}\]</div>
+</div>
+<img alt="tmp4" src="../../_images/tmp4.pdf" />
 <section id="Shear-modulus-with-oscillating-deformation">
-<h4>Shear modulus with oscillating deformation<a class="headerlink" href="#Shear-modulus-with-oscillating-deformation" title="Permalink to this headline">¶</a></h4>
+<h4>Shear modulus with oscillating deformation<a class="headerlink" href="#Shear-modulus-with-oscillating-deformation" title="Permalink to this heading">#</a></h4>
 <p>With the calculations done above we may now also determine the frequency dependence of the shear modulus. Both can be obtained by Fourier transforming the time dependent modulus. The storage modulus <span class="math notranslate nohighlight">\(G^{\prime}(\omega)\)</span></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{\prime}(\omega)=G_{eq}+\omega \int_0^{\infty}[G(t)-G_eq]\sin(\omega t)dt\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{\prime}(\omega)=G_{eq}+\omega \int_0^{\infty}[G(t)-G_eq]\sin(\omega t)dt\]</div>
+</div>
 <p>which gives</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{\prime}(\omega) \approx \frac{n k_B T}{V} \frac{\left(\omega \tau_{\mathrm{R}}\right)^{2}}{\sqrt{\left[1+\left(\omega \tau_{\mathrm{R}}\right)^{2}\right]\left[\sqrt{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}+1\right]}} \text { for } \omega&lt;1 / \tau_{0}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{\prime}(\omega) \approx \frac{n k_B T}{V} \frac{\left(\omega \tau_{\mathrm{R}}\right)^{2}}{\sqrt{\left[1+\left(\omega \tau_{\mathrm{R}}\right)^{2}\right]\left[\sqrt{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}+1\right]}} \text { for } \omega&lt;1 / \tau_{0}\]</div>
+</div>
 <p>The loss modulus is found by</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{\prime\prime}(\omega)=\omega \int_0^{\infty}[G(t)-G_eq]\cos(\omega t)dt\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{\prime\prime}(\omega)=\omega \int_0^{\infty}[G(t)-G_eq]\cos(\omega t)dt\]</div>
+</div>
 <p>resulting in</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{\prime \prime}(\omega) \approx \frac{n}{V} k_B T \omega \tau_{\mathrm{R}} \sqrt{\frac{\sqrt{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}+1}{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}} \text { for } \omega&lt;1 / \tau_{0}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{\prime \prime}(\omega) \approx \frac{n}{V} k_B T \omega \tau_{\mathrm{R}} \sqrt{\frac{\sqrt{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}+1}{1+\left(\omega \tau_{\mathrm{R}}\right)^{2}}} \text { for } \omega&lt;1 / \tau_{0}\]</div>
+</div>
 <p>According to that both the storage and the loss modulus scale in the range <span class="math notranslate nohighlight">\(\frac{1}{\tau_R}&lt;\omega&lt;\frac{1}{\tau_0}\)</span> as <span class="math notranslate nohighlight">\(G^{\prime}\propto G^{\prime\prime}\propto \omega^{1/2}\)</span>, while for <span class="math notranslate nohighlight">\(\omega&lt;\frac{1}{\tau_R}\)</span> the storage modulus scales as <span class="math notranslate nohighlight">\(G^{\prime}\sim \omega^2\)</span>.</p>
 <p><strong>frequency dependence here</strong></p>
-<img alt="tmp6" src="../../_images/tmp6.pdf"/>
+<img alt="tmp6" src="../../_images/tmp6.pdf" />
 <p>The viscosity of a dilute Rouse polymer solution is the obtained by integrating the time dependent modulus</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta=\int_0^{\infty}G(t)dt \approx \frac{k_B T}{V}nN \int_{0}^{\infty} \left ( \frac{t}{\tau_0}\right )^{-1/2}\exp\left (-\frac{t}{\tau_R} \right )dt\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\eta=\int_0^{\infty}G(t)dt \approx \frac{k_B T}{V}nN \int_{0}^{\infty} \left ( \frac{t}{\tau_0}\right )^{-1/2}\exp\left (-\frac{t}{\tau_R} \right )dt\]</div>
+</div>
 <p><strong>add part on the diffusion coefficient</strong></p>
 </section>
 </section>
 <section id="Zimm-modes">
-<h3>Zimm modes<a class="headerlink" href="#Zimm-modes" title="Permalink to this headline">¶</a></h3>
+<h3>Zimm modes<a class="headerlink" href="#Zimm-modes" title="Permalink to this heading">#</a></h3>
 <p>The same calculation as for the Rouse model can be done for the Zimm modes as well. The relaxation times for the Zimm model scale as</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\tau_p=\tau_0\left (\frac{N}{p} \right )^{3\nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\tau_p=\tau_0\left (\frac{N}{p} \right )^{3\nu}\]</div>
+</div>
 <p>and we obtain for the mode index</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[p\approx N \left ( \frac{\tau_p}{\tau_0}\right)^{-1/3\nu}=N\left ( \frac{t}{\tau_0}\right )^{-1/3\nu}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[p\approx N \left ( \frac{\tau_p}{\tau_0}\right)^{-1/3\nu}=N\left ( \frac{t}{\tau_0}\right )^{-1/3\nu}\]</div>
+</div>
 <p>where we make a transition from the mode relaxation times <span class="math notranslate nohighlight">\(\tau_p\rightarrow t\)</span>. This then leads to the time dependent stress modulus</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G(t)\approx \underbrace{\frac{n}{V}Nk_B T \left ( \frac{\tau_0}{t} \right)^{1/3\nu}}_{\tau_0&lt;t&lt;\tau_Z}\underbrace{\exp\left (-\frac{t}{\tau_Z} \right )}_{t&gt;\tau_Z}\]</div></div>
-<img alt="tmp5" src="../../_images/tmp5.pdf"/>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G(t)\approx \underbrace{\frac{n}{V}Nk_B T \left ( \frac{\tau_0}{t} \right)^{1/3\nu}}_{\tau_0&lt;t&lt;\tau_Z}\underbrace{\exp\left (-\frac{t}{\tau_Z} \right )}_{t&gt;\tau_Z}\]</div>
+</div>
+<img alt="tmp5" src="../../_images/tmp5.pdf" />
 <section id="id1">
-<h4>Shear modulus with oscillating deformation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Shear modulus with oscillating deformation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <p>Using this result we may now also obtained the frequency dependent storage and loss modulus of the Zimm chains.</p>
 <p><strong>storage modulus</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{\prime}\approx \frac{n}{V}k_B T \frac{\omega \tau_Z \sin\left [(1-\frac{1}{3\nu})\arctan(\omega \tau_Z) \right ]}{\left [ 1+(\omega \tau_Z)^2\right ]^{(1-1/3\nu)/2}}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{\prime}\approx \frac{n}{V}k_B T \frac{\omega \tau_Z \sin\left [(1-\frac{1}{3\nu})\arctan(\omega \tau_Z) \right ]}{\left [ 1+(\omega \tau_Z)^2\right ]^{(1-1/3\nu)/2}}\]</div>
+</div>
 <p><strong>loss modulus</strong></p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[G^{\prime\prime}\approx \frac{n}{V}k_B T \frac{\omega \tau_Z \cos\left [(1-\frac{1}{3\nu})\arctan(\omega \tau_Z) \right ]}{\left [ 1+(\omega \tau_Z)^2\right ]^{(1-1/3\nu)/2}}\]</div></div>
-<img alt="tmp7" src="../../_images/tmp7.pdf"/>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[G^{\prime\prime}\approx \frac{n}{V}k_B T \frac{\omega \tau_Z \cos\left [(1-\frac{1}{3\nu})\arctan(\omega \tau_Z) \right ]}{\left [ 1+(\omega \tau_Z)^2\right ]^{(1-1/3\nu)/2}}\]</div>
+</div>
+<img alt="tmp7" src="../../_images/tmp7.pdf" />
 <p>The viscosity contribution of solution of Zimm chains is then</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\eta-\eta_s=\int_0^{\infty}G(t)dt \approx \eta_s \frac{n}{V}Nb^{3}N^{3\nu-1}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\eta-\eta_s=\int_0^{\infty}G(t)dt \approx \eta_s \frac{n}{V}Nb^{3}N^{3\nu-1}\]</div>
+</div>
 <p>We can summarize</p>
 <ul class="simple">
 <li><p>The <strong>Zimm limit</strong> applies to dilute solutions, where the solvent within the pervaded volume of the polymer is hydrodynamically coupled to the polymer. Polymer dynamics are described by the Zimm model in dilute solutions.</p></li>
@@ -552,39 +575,23 @@ N^{4/5},  &amp; \text{real chain in good solvent}
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L26/1_semidilute_polymers.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Semidilute Polymer Solutions</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L24/1_Viscoelasticity.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Viscoelasticity</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021, Frank Cichos, Ralf Seidel |
-            Last updated on Jun 16, 2022. |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../_sources/notebooks/L25/1_polymer_dynamics.ipynb.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Oct 10, 2023</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -595,7 +602,7 @@ N^{4/5},  &amp; \text{real chain in good solvent}
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -634,12 +641,11 @@ N^{4/5},  &amp; \text{real chain in good solvent}
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/main.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
