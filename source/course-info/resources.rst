@@ -1,6 +1,18 @@
 Resources
 =========
 
+The script with the lecture contents will be published on this website. Additional information may be alos found on the groups `Teaching Pages <https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/>`_.
+
+All exercise sheets will be avaiable at the `Teaching Pages <https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/>`_.
+
+All literature for the seminar will be available at the `Teaching Pages <https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/>`_.
+
+The presentation on the seminars will be available `here <https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2023/10/Soft_matter_seminar.pdf>`_
+
+
+Books
+=====
+
 There are several books available on the topic of Soft Matter. Many set their own focus. Here is a list of books useful for the lecture.
 
 Jacob N. Israelachvili: **Intermolecular and Surface Forces: With Applications to Colloidal and Biological Systems** (Academic Press)
