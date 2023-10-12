@@ -24,8 +24,13 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 1:
 
    notebooks/L1/1_introduction.ipynb
-   notebooks/L1/2_Thermodynamics_Statistics.ipynb 
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 2:
+   notebooks/L1/2_Thermodynamics_Statistics.ipynb 
+   notebooks/L2/3_Statistical_Physics_Definitions.ipynb
 
    
    
