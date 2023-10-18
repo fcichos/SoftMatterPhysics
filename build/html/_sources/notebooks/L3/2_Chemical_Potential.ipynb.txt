@@ -241,7 +241,7 @@
     "For a solvent we consequently write\n",
     "    \n",
     "\\begin{equation}    \n",
-    "\\mu_{\\rm H_2O}=\\frac{\\partial G_{\\rm tot}}{\\partial N_{\\rm H_2O}}\\bigg|_{T,p}=\\mu_{\\rm H_2O}^{0}-k_\\mathrm{B} T\\ln\\left ( \\frac{c_{\\rm s}}{c_{\\rm H_2O}}\\right).\n",
+    "\\mu_{\\rm H_2O}=\\frac{\\partial G_{\\rm tot}}{\\partial N_{\\rm H_2O}}\\bigg|_{T,p}=\\mu_{\\rm H_2O}^{0}-k_\\mathrm{B} T\\left ( \\frac{c_{\\rm s}}{c_{\\rm H_2O}}\\right).\n",
     "\\end{equation} \n",
     "    \n",
     "Finally, a chemical potential may be also defined for gases, e.g., for the ideal gas:\n",
