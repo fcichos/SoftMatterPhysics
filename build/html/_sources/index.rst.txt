@@ -41,7 +41,12 @@ Welcome to Soft Matter Physics Lecture Website!
    notebooks/L3/1_Equipartition.ipynb
    notebooks/L3/2_Chemical_Potential.ipynb
    
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 4:
    
+   notebooks/L4/1_Osmotic_Pressure.ipynb
+   notebooks/L4/2_Gibbs_Distribution.ipynb   
    
 Indices and tables
 ==================

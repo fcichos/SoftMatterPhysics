@@ -11,6 +11,13 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/90a0d6d32dcc333140ac0e56a8851a397a307f21/source/notebooks/L4/1_Osmotic_Pressure.pdf)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "The chemical potential as defined in the previous section also allows us to understand the osmotic pressure. Consider a volume that is seperated into two equally sized parts by a semipermeable membrane. One of the compartments is filled with pure water, the other compartment contains a number of additional solute molecules. The solute molecules thereby cannot pass the membrane while the water can easily pass it."
    ]
   },
