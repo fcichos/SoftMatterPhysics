@@ -306,7 +306,7 @@ F=-k x
 <p><span class="math">\begin{equation}
 E=\frac{1}{2}k x^2
 \end{equation}</span></p>
-<p>Using the Boltznmann distribution for the potential provides the probability distribution for finding the particle at a certain position <span class="math notranslate nohighlight">\(x\)</span></p>
+<p>Using the Boltzmann distribution for the potential provides the probability distribution for finding the particle at a certain position <span class="math notranslate nohighlight">\(x\)</span></p>
 <p><span class="math">\begin{equation}
 p(x)=\frac{1}{Z}\exp\left(-\frac{kx^2}{2k_B T} \right)
 \end{equation}</span></p>
@@ -333,6 +333,27 @@ k=\frac{k_B T}{\langle x^2\rangle }
 <p>The second degree of freedom of a particle in an optical tweezer is given by its velocity <span class="math notranslate nohighlight">\(v\)</span>. This is as well a quadratic degree in <span class="math notranslate nohighlight">\(v\)</span>, yet its measurement turns out to be tricky. As the particle is carrying out Brownian motion in the trap, its velocity is not given by the difference of positions divided by the difference in observation times. To measure the velocity accurately one has to got to very short times, when the particle is carrying out ballistic motion. This has been
 achieved only about 10 years ago, while the distribution connected to the velocities, the <strong>Maxwell-Boltzmann distribution</strong> is already known for a very long time.</p>
 <p>Take some time to have a look at the Maxwell-Boltzmann distribution again.</p>
+</div>
+<p>We could now come back to our example with the Barometric height formula to check the equipartition for a system with a linear and not a quadratic dependence of the energy on the degree of freedom.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Example: Barometric height formula</strong></p>
+<p>We have mentioned already the barometric height formula giving the probability of finding a particle at a height <span class="math notranslate nohighlight">\(z\)</span>. To derive that, we consider a constant gravitational force <span class="math notranslate nohighlight">\(F=-mg\)</span> along the <span class="math notranslate nohighlight">\(z\)</span>-direction such that the potential energy is given by <span class="math notranslate nohighlight">\(E=mgz\)</span> assuming that <span class="math notranslate nohighlight">\(E=0\)</span> at <span class="math notranslate nohighlight">\(z=0\)</span>.</p>
+<p>The probability for finding the particle at position <span class="math notranslate nohighlight">\(z\)</span> is therefore</p>
+<p><span class="math">\begin{equation}
+p(z)=\frac{1}{Z}\exp\left( -\frac{mgz}{k_{\rm B} T}\right)=\frac{1}{<z>}\exp\left ( -\frac{z}{<z>}\right ).
+\end{equation}</span></p>
+<p>Normalization provides the value of the partition function</p>
+<p><span class="math">\begin{equation}
+Z=\int_0^\infty\exp\left( -\frac{mgz}{k_{\rm B} T}\right)dz=\frac{k_{\rm B}T}{mg}.
+\end{equation}</span></p>
+<p>We may further calculate the mean height, which is the sedimentation length in sedimentation problems:</p>
+<p><span class="math">\begin{equation}
+<z>=\frac{1}{Z}\int_0^\infty h\exp\left( -\frac{mgz}{k_{\rm B} T}\right)\mathrm{d}z=\frac{k_{\rm B}T}{mg}
+\end{equation}</span></p>
+<p>and the mean energy</p>
+<p><span class="math">\begin{equation}
+<E>=-\frac{\partial }{\partial \beta} \ln (Z)=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_{\rm B} T=mg <z>.
+\end{equation}</span></p>
 </div>
 </section>
 <section id="When-a-Macrostate-is-a-Microstate">
@@ -392,7 +413,7 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 17, 2023</div>
+              Last updated on Oct 18, 2023</div>
           </div>
           <div class="right-details">
             
