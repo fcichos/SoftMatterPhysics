@@ -5,6 +5,9 @@
    "metadata": {},
    "source": [
     "# Kinetics of Liquid–Liquid Unmixing\n",
+    "\n",
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/5051aededf9f0ac18e3568878e0c77f8fd2f6c4f/source/notebooks/L5/2_Kinetics_LL_Unmixing.pdf)\n",
+    "\n",
     "If two liquids are brought together at a composition that is either unstable or metastable, they will phase separate. The kinetics of this phase separation can proceed in different ways.\n",
     "\n",
     "1. **Spinodal Decomposition** – In this case, thermal fluctuations will amplify density fluctuations. The material will diffuse “uphill” to the regions of higher concentration to yield phase separation. The boundaries of the two phases are blurred in this case. Spinodal decomposition is the process of phase separation in the unstable region.\n",
