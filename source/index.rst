@@ -47,7 +47,16 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L4/1_Osmotic_Pressure.ipynb
    notebooks/L4/2_Gibbs_Distribution.ipynb   
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 5:
    
+   notebooks/L5/1_Phase_Transitions.ipynb
+   notebooks/L5/2_Kinetics_LL_Unmixing.ipynb
+   
+
 Indices and tables
 ==================
 
