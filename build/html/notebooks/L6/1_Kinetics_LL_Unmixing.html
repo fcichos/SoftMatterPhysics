@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Phase Transitions" href="1_Phase_Transitions.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Phase Transitions" href="../L5/1_Phase_Transitions.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
         <title>Kinetics of Liquid–Liquid Unmixing - Soft Matter Lecture 23 documentation</title>
@@ -186,8 +186,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="1_Phase_Transitions.html">Phase Transitions</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Kinetics of Liquid–Liquid Unmixing</a></li>
 </ul>
 
@@ -224,16 +227,16 @@
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L5/2_Kinetics_LL_Unmixing.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L5/2_Kinetics_LL_Unmixing.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
+<p>This page was generated from <cite>notebooks/L6/1_Kinetics_LL_Unmixing.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L6/1_Kinetics_LL_Unmixing.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="Kinetics-of-Liquid–Liquid-Unmixing">
 <h1>Kinetics of Liquid–Liquid Unmixing<a class="headerlink" href="#Kinetics-of-Liquid–Liquid-Unmixing" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/5051aededf9f0ac18e3568878e0c77f8fd2f6c4f/source/notebooks/L5/2_Kinetics_LL_Unmixing.pdf">File as PDF</a></p>
 <p>If two liquids are brought together at a composition that is either unstable or metastable, they will phase separate. The kinetics of this phase separation can proceed in different ways.</p>
 <ol class="arabic simple">
-<li><p><strong>Spinodal Decomposition</strong> – In this case, thermal fluctuations will amplify density fluctuations. The material will diffuse “uphill” to the regions of higher concentration to yield phase separation. The boundaries of the two phases are blurred in this case. Spinodal decomposition is the process of phase separation in the unstable region.</p></li>
-<li><p><strong>Nucleation</strong> – In the case of nucleation, a thermal fluctuation will create a nucleus of a critical size, which further grows in time. The nucleus has a sharp boundary with the other phase. Nucleation is the process of phase separation in the metastable region.</p></li>
+<li><p><strong>Spinodal Decomposition</strong> – In this case, thermal fluctuations will amplify density fluctuations. The material will diffuse “uphill” to the regions of higher concentration to yield phase separation. The boundaries of the two phases are blurred in this case. Spinodal decomposition is the process of phase separation in the <em>unstable region</em>.</p></li>
+<li><p><strong>Nucleation</strong> – In the case of nucleation, a thermal fluctuation will create a nucleus of a critical size, which further grows in time. The nucleus has a sharp boundary with the other phase. Nucleation is the process of phase separation in the <em>metastable region</em>.</p></li>
 </ol>
 <p>We will treat both kinetic regimes separately.</p>
 <section id="Spinodal-decomposition">
@@ -286,6 +289,16 @@ effective diffusion coefficient is negative which allows for our uphill diffusio
 R(q)= -D_{\rm eff} q^{2}\left (1+\frac{2\kappa q^{2}}{f_{0}^{''}}\right )
 \end{equation}</span></p>
 <p>which is nothing else as an inverse time or a rate coefficient. It provides the relaxation rate for a specific wavenumber. This rate coefficient is positive up to a certain wavenumber <span class="math notranslate nohighlight">\(q_0\)</span>. All fluctuations with wavelengths larger than <span class="math notranslate nohighlight">\(λ_0=2π/q_0\)</span> are amplified in time. The fastest-growing fluctuation is obtained at <span class="math notranslate nohighlight">\(q_{\rm max}\)</span>. This wavenumber sets the length scale of the structures, which typically appear during the spinodal decomposition.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Spinodal decomposition</strong></p>
+<p>Here is an example of the structure formation by spinodal decomposition taken from a recent paper:</p>
+<p><a class="reference external" href="https://royalsocietypublishing.org/doi/epdf/10.1098/rsif.2008.0466.focus">Prum, R. O., Dufresne, E. R., Quinn, T. &amp; Waters, K. Development of colour-producing β-keratin nanostructures in avian feather barbs. J. R. Soc. Interface 6, (2009).</a></p>
+<p>The feathers of birds (see image) or even butterflies are in many cases not color because that contain dye molecules whose electronic transitions yield selective absorption.</p>
+<img alt="../../_images/barb.png" src="../../_images/barb.png" />
+<p>Rather than that, these feathers are equipped with nanostructures at a given lengthscale which coherently scatter light as a Bragg lattice for example, or a photonic crystal. The image below shows two examples of such nanostructures that can selectively scatter light.</p>
+<img alt="../../_images/barb_structure.png" src="../../_images/barb_structure.png" />
+<p>These structures are supposed to be formed by spinodal decomposition or nucleation and growth.</p>
+</div>
 </section>
 <section id="Nucleation">
 <h2>Nucleation<a class="headerlink" href="#Nucleation" title="Permalink to this heading">#</a></h2>
@@ -300,10 +313,6 @@ W=F \Delta x=\gamma L \Delta x,
 <p><span class="math">\begin{equation}
 \gamma=\frac{1}{2v^{2/3}}(2\epsilon_{\rm AB}-\epsilon_{\rm AA}-\epsilon_{\rm BB})=\frac{\chi k_{\rm B}T}{zv^{2/3}}.
 \end{equation}</span></p>
-</section>
-</section>
-<section id="nucleation-1">
-<span id="id1"></span><h2>Nucleation<a class="headerlink" href="#nucleation-1" title="Permalink to this heading">#</a></h2>
 <p>If we have a liquid mixture now at a certain composition, which is in the metastable region, i.e., <span class="math notranslate nohighlight">\((∂^2 F)/(∂ϕ^2 )&gt;0\)</span>, all of the density fluctuations in our system are damped and the spinodal decomposition can not happen. Therefore, the system has to phase separate by nucleation, i.e., that spontaneously a droplet of a certain size is formed and grows further. As we need energy to create the interface but also gain free energy by forming a volume phase, we need to have a look at the
 total free energy change, when the droplet is formed.</p>
 <ul class="simple">
@@ -318,17 +327,23 @@ total free energy change, when the droplet is formed.</p>
 <img alt="Download" src="../../_images/download.png" />
 <div class="admonition note">
 <p class="admonition-title"><strong>Liquid-Liquid Unmixing - Ouzo Effect</strong></p>
-<p>One example of liquid-liquid unmixing by nucleation is the Ouzo or Louche effect. The name denotes the spontaneous formation of a turbid microemulsion when a solution of anethol in ethanol is diluted with water. The figure below shows the phase digram of this ternary mixture.</p>
-<img alt="Ouzo" src="../../_images/ouzo.png" />
+<p>One example of liquid-liquid unmixing by nucleation is the Ouzo or Louche effect. The name denotes the spontaneous formation of a turbid microemulsion when a solution of anethol in ethanol is diluted with water. The figure below shows the phase digram of this ternary mixture, meaning that it has three components.</p>
+<img alt="../../_images/ouzo.png" src="../../_images/ouzo.png" />
 <p>When the emulsification happens, the solution rapidly moves to the metastable region between the binodal and spinodal lines. It occurs because the alcohol, as it diffuses from the anethol into the water, carries with it some of the anethol molecules that still have a finite solubility in alcohol and alcohol/water mixtures. As the alcohol diffuses further into the water, the associating anethol(oil) molecules become expelled from the water-rich solution and are stranded in the form of fine
 emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol mixtures leads to an abrupt decrease of the solubility of oil in the water-rich continuous phase. This effect causes the strong local concentration fluctuations of solute molecules and homogeneous nucleation can start.</p>
 <p>The image below shows the turbidity of the emulsion to appear as the water content is changed.</p>
-<img alt="Ouzo1" src="../../_images/ouzo_1.png" />
+<img alt="../../_images/ouzo_1.png" src="../../_images/ouzo_1.png" />
 <p>The data has been taken from: Sitnikova, N. L., Sprik, R., Wegdam, G. &amp; Eiser, E. Spontaneously Formed trans-Anethol/Water/Alcohol Emulsions: Mechanism of Formation and Stability. Langmuir 21, 7083–7089 (2005).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><strong>Nucleation and Growth</strong></p>
+<p>Another example of nucleation and growth is the growth of tiny ssemiconductor nanocrystals from solution. Such quantum dots confine electron hole pairs and have size dependent optical properties. This finding was awareded with the nobel prize in chemistry in 2023.</p>
+<img alt="../../_images/nucleation_growth.png" src="../../_images/nucleation_growth.png" />
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
+</section>
 </section>
 
         </article>
@@ -337,7 +352,7 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
         
         <div class="related-pages">
           
-          <a class="prev-page" href="1_Phase_Transitions.html">
+          <a class="prev-page" href="../L5/1_Phase_Transitions.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -358,7 +373,7 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Oct 25, 2023</div>
+              Last updated on Nov 01, 2023</div>
           </div>
           <div class="right-details">
             
@@ -385,7 +400,6 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
 <li><a class="reference internal" href="#Interfacial-Tension">Interfacial Tension</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nucleation-1">Nucleation</a></li>
 </ul>
 </li>
 </ul>
