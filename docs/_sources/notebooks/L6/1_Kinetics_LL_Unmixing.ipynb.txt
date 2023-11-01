@@ -6,7 +6,7 @@
    "source": [
     "# Kinetics of Liquid–Liquid Unmixing\n",
     "\n",
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/5051aededf9f0ac18e3568878e0c77f8fd2f6c4f/source/notebooks/L5/2_Kinetics_LL_Unmixing.pdf)\n",
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/1a30ec465c44b6d11b6022c92b17de6432fed717/source/notebooks/L6/1_Kinetics_LL_Unmixing.pdf)\n",
     "\n",
     "If two liquids are brought together at a composition that is either unstable or metastable, they will phase separate. The kinetics of this phase separation can proceed in different ways.\n",
     "\n",

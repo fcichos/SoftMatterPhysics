@@ -61,8 +61,17 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 6:
 
    notebooks/L6/1_Kinetics_LL_Unmixing.ipynb
+
+
    
    
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 7:
+   
+   notebooks/L7/1_Solid_Liquid_Phase_Transitions.ipynb
+   notebooks/L7/2_Forces and Interactions.ipynb
+
    
 Indices and tables
 ==================
