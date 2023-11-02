@@ -76,7 +76,7 @@ Welcome to Soft Matter Physics Lecture Website!
    :maxdepth: 2
    :caption: Lecture 8:
    
-   notebooks/L7/1_Solid_Liquid_Phase_Transitions.ipynb   
+   notebooks/L7/2_Forces and Interactions.ipynb   
 
    
 Indices and tables
