@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
-        <title>Ion–dipole interaction - Soft Matter Lecture 23 documentation</title>
+        <title>Interactions involving polar molecules - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
@@ -240,24 +240,17 @@
 <p>This page was generated from <cite>notebooks/L8/1_Forces and Interactions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L8/1_Forces and Interactions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
+<section id="Interactions-involving-polar-molecules">
+<h1>Interactions involving polar molecules<a class="headerlink" href="#Interactions-involving-polar-molecules" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/9c2451be904611bf506e41699b1daccfe7790143/source/notebooks/L8/1_Forces%20and%20Interactions.pdf">File as PDF</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Interactions involving polar molecules</span>
-
-<span class="p">[</span><span class="n">File</span> <span class="k">as</span> <span class="n">PDF</span><span class="p">]()</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span> <span class="s2">&quot;hide-input&quot;</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
 
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
 <span class="c1"># the lines below set a number of parameters for plotting, such as label font size,</span>
@@ -343,7 +336,7 @@
 <p>For <span class="math notranslate nohighlight">\(l=2a\)</span> this results in <span class="math notranslate nohighlight">\(\mu^0=q^2/(8\pi\epsilon_0 \epsilon a)=u^2/(4\pi\epsilon_0 \epsilon l^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math notranslate nohighlight">\(\epsilon\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
 <p>The plot below shows the electric field of a dipole:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -385,11 +378,11 @@
 </div>
 </div>
 <section id="Ion–dipole-interaction">
-<h1>Ion–dipole interaction<a class="headerlink" href="#Ion–dipole-interaction" title="Permalink to this heading">#</a></h1>
+<h2>Ion–dipole interaction<a class="headerlink" href="#Ion–dipole-interaction" title="Permalink to this heading">#</a></h2>
+<img alt="Charge Dipole" src="../../_images/dipole_q.png" />
 <p>The interaction energy of a dipole with a charge can be calculated by</p>
 <p><span class="math">\begin{equation}
-w(r)=-\frac{qQ}{4\pi\epsilon_{0}\epsilon}\left [ \frac{1}{r-\frac{1}{2}l \cos(\theta)}-\frac{1}{r+\frac{1}{2}l \cos(\theta)}\right ]=-\frac{qQ}{4\pi\epsilon_{0}\epsilon r^2}\cos(\theta)=-uE\cos(\theta),
-\label{eq:energy}
+w(r)=-\frac{qQ}{4\pi\epsilon_{0}\epsilon}\left [ \frac{1}{r-\frac{1}{2}l \cos(\theta)}-\frac{1}{r+\frac{1}{2}l \cos(\theta)}\right ]=-\frac{qQ}{4\pi\epsilon_{0}\epsilon r^2}\cos(\theta)=-uE\cos(\theta)
 \end{equation}</span></p>
 <p>where the last two equations are assuming that the distance between both objects <span class="math notranslate nohighlight">\(r\)</span> is much larger than the extent of the dipole <span class="math notranslate nohighlight">\(l\)</span> itself. From the last equation, we see that the interaction can be either attractive or repulsive. An angle <span class="math notranslate nohighlight">\(θ=0^°\)</span> results in an attractive interaction, while <span class="math notranslate nohighlight">\(θ=180^°\)</span> yields repulsive interaction. Using a single charge (e.g., an <span class="math notranslate nohighlight">\(\mathrm{Na^+}\)</span> ion) and a dipole of <span class="math notranslate nohighlight">\(u=1.85\, {\rm D}\)</span> (water molecule) results in an interaction
 energy of about <span class="math notranslate nohighlight">\(39\, k_{\rm B}T\)</span>. Ions align and bind polar molecules like water, for example. The alignment is caused by the torque <span class="math notranslate nohighlight">\(\tau=\vec{u}\times \vec{E}\)</span>. For arbitrary polar molecules this is called <strong>solvation</strong>, while for water the term <strong>hydration</strong> is used. The strength of the hydration can effect the mobility of ions in solution as it makes them effective charges and is of interest, for example, in the study of ion transport through ion channels, as this requires the
@@ -397,9 +390,10 @@ stripping of the hydration shell.</p>
 <div class="admonition note">
 <p><strong>Example: Sodium Ion Hydration</strong></p>
 </div>
+<img alt="../../_images/NA_hydration.png" src="../../_images/NA_hydration.png" />
 <p>The plot below shows the ion dipole interaction for a sodium ion and a water molecule as a function of distance.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ion_dipole</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">epsilon</span><span class="p">):</span>
@@ -410,7 +404,7 @@ stripping of the hydration shell.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;atomic unit of electric dipole mom.&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -419,7 +413,7 @@ stripping of the hydration shell.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1e-9</span><span class="p">,</span><span class="mf">0.5e-9</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
@@ -428,10 +422,10 @@ stripping of the hydration shell.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
@@ -449,7 +443,7 @@ stripping of the hydration shell.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L8_1_Forces_and_Interactions_8_0.png" src="../../_images/notebooks_L8_1_Forces_and_Interactions_8_0.png" />
+<img alt="../../_images/notebooks_L8_1_Forces_and_Interactions_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L8_1_Forces_and_Interactions_9_0.png" style="width: 512px; height: 502px;" />
 </div>
 </div>
 <p>The table below shows some selected hydration properties of ions. The hydrated radius determines the diffusion of the ion in water. The hydration number is the number of orientationally bound water molecules. Typically, smaller ions have a larger hydration number.</p>
@@ -486,8 +480,10 @@ stripping of the hydration shell.</p>
 </tbody>
 </table>
 </div>
+</section>
+</section>
 <section id="Dipole-Dipole-Interactions">
-<h2>Dipole-Dipole Interactions<a class="headerlink" href="#Dipole-Dipole-Interactions" title="Permalink to this heading">#</a></h2>
+<h1>Dipole-Dipole Interactions<a class="headerlink" href="#Dipole-Dipole-Interactions" title="Permalink to this heading">#</a></h1>
 <p>The interaction of two dipole will depend on three angles, the two angles of the dipoles with the connecting axis <span class="math notranslate nohighlight">\(\theta_1, \theta_2\)</span> and the angle <span class="math notranslate nohighlight">\(\phi\)</span> between the two planes which contain the individual dipoles and the axis. The figure below shows the corresponding geometry.</p>
 <img alt="Dipole" src="../../_images/dipole_dipole.png" />
 <p>The energy of the two dipoles at a distance <span class="math notranslate nohighlight">\(r\)</span> follows then wihtout a detailed calculation with</p>
@@ -499,11 +495,11 @@ w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [
 <p>The energies that are typically found are also larger than the thermal energy at room temperature and thefore lead to ordering effects.</p>
 </section>
 <section id="Rotating-Dipoles,-angle-averaged-Potential">
-<h2>Rotating Dipoles, angle averaged Potential<a class="headerlink" href="#Rotating-Dipoles,-angle-averaged-Potential" title="Permalink to this heading">#</a></h2>
+<h1>Rotating Dipoles, angle averaged Potential<a class="headerlink" href="#Rotating-Dipoles,-angle-averaged-Potential" title="Permalink to this heading">#</a></h1>
 <p>The equations we derived so far deliver the energy for a specific fixed orientation of dipoles for example. However, molecules with dipoles may rotate and undergo rotational Brownian motion driven by thermal energy. This rotational diffusion can be very fast and the rotational sampling creates an average interaction that may scale differently with the distance. To get an effective distance dependence in the interaction, we have to integrate the Boltzmann factor over the orientational degrees of
 freedoms, i.e.</p>
 <p><span class="math">\begin{equation}
-\exp\left ( \frac{w(r)}{k_B T} \right)=\frac{\int \exp\left (-\frac{w(r,\Omega)}{k_B T} d\Omega\right )}{\int d\Omega}=\left \langle  \exp\left (-\frac{w(r,\Omega)}{k_B T} d\Omega\right ) \right \rangle
+\exp\left ( -\frac{w(r)}{k_B T} \right)=\frac{\int \exp\left (-\frac{w(r,\Omega)}{k_B T} d\Omega\right )}{\int d\Omega}=\left \langle  \exp\left (-\frac{w(r,\Omega)}{k_B T}\right ) \right \rangle_{\Omega}
 \end{equation}</span></p>
 <p>with</p>
 <div class="math-wrapper docutils container">
@@ -515,10 +511,26 @@ freedoms, i.e.</p>
 <div class="math notranslate nohighlight">
 \[\int d\Omega=4\pi\]</div>
 </div>
+<p><span class="math">\begin{equation}
+\exp\left ( -\frac{w(r)}{k_B T} \right) =\frac{1}{4\pi}\int_0^{2\pi}d\phi\int_0^{\pi}\exp\left ( -\frac{w(r,\phi\theta)}{k_B T} \right)\sin(\theta)d\theta
+\end{equation}</span></p>
+<p>When <span class="math notranslate nohighlight">\(w(r,\theta)&lt;&lt; k_B T\)</span> then we can expand the Boltzmann factor</p>
+<p><span class="math">\begin{equation}
+\exp\left ( -\frac{w(r)}{k_B T} \right) \approx 1-\frac{w(r)}{k_B T}+\frac{1}{2}\left (\frac{w(r)}{k_B T} \right )^{2}+\ldots
+\end{equation}</span></p>
+<p>and therefore obtain</p>
+<p><span class="math">\begin{equation}
+w(r)=\langle w(r,\Omega)- \frac{w(r,\Omega)^2}{2k_B T}+\ldots \rangle _{\Omega}
+\end{equation}</span></p>
+<p>which we can readily use to calculate the interaction energy of a charge and a dipole</p>
+<p><span class="math">\begin{align}
+w(r)=&\langle -\frac{Q u \cos(\theta)}{4\pi\epsilon_0\epsilon r^2} - \left ( \frac{Q u }{4\pi\epsilon_0\epsilon r^2}\right) ^2 \frac{\cos(\theta)^2}{2k_B T}+\ldots )\rangle\\
+=&  \frac{Q^2 u^2}{6(4\pi\epsilon_0\epsilon)^2k_B T r^4}
+\end{align}</span></p>
+<p>when <span class="math notranslate nohighlight">\(k_B T&gt;\frac{Q u }{4\pi\epsilon_0\epsilon r^2}\)</span>. Interestingly, this interaction energy for the freely rotating dipole in the electric field of an ion decays as <span class="math notranslate nohighlight">\(r^{-4}\)</span>, while the static interation decayed as <span class="math notranslate nohighlight">\(r^{-2}\)</span>. Also, the interaction of the freely rotating dipole is always attrative as compared to the static dipole charge interaction.</p>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
-</section>
 
         </article>
       </div>
@@ -558,11 +570,12 @@ freedoms, i.e.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Ion–dipole interaction</a><ul>
-<li><a class="reference internal" href="#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
-<li><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
+<li><a class="reference internal" href="#">Interactions involving polar molecules</a><ul>
+<li><a class="reference internal" href="#Ion–dipole-interaction">Ion–dipole interaction</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
+<li><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 </ul>
 
           </div>
