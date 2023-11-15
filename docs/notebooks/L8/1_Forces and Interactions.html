@@ -528,6 +528,62 @@ w(r)=&\langle -\frac{Q u \cos(\theta)}{4\pi\epsilon_0\epsilon r^2} - \left ( \fr
 =&  \frac{Q^2 u^2}{6(4\pi\epsilon_0\epsilon)^2k_B T r^4}
 \end{align}</span></p>
 <p>when <span class="math notranslate nohighlight">\(k_B T&gt;\frac{Q u }{4\pi\epsilon_0\epsilon r^2}\)</span>. Interestingly, this interaction energy for the freely rotating dipole in the electric field of an ion decays as <span class="math notranslate nohighlight">\(r^{-4}\)</span>, while the static interation decayed as <span class="math notranslate nohighlight">\(r^{-2}\)</span>. Also, the interaction of the freely rotating dipole is always attrative as compared to the static dipole charge interaction.</p>
+<p>The previous result can also be obtained when using <span class="math notranslate nohighlight">\(G=-k_B T \ln(Z)\)</span>, where</p>
+<p><span class="math">\begin{equation}
+Z=\int \exp(-\frac{w(r,\Omega)}{k_B T}) d\Omega
+\end{equation}</span></p>
+<p>is the partition function.</p>
+</section>
+<section id="Dipole-Dipole-interactionn-with-rotating-dipoles">
+<h1>Dipole Dipole interactionn with rotating dipoles<a class="headerlink" href="#Dipole-Dipole-interactionn-with-rotating-dipoles" title="Permalink to this heading">#</a></h1>
+<p>We can extend the above calculation now also to two dipoles interacting when freely rotating. The interaction energy was given by</p>
+<p><span class="math">\begin{equation}
+w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [ 2\cos(\theta_1) \cos(\theta_2)-\sin(\theta_1)\sin(\theta_2)\cos(\phi)\right ]
+\end{equation}</span></p>
+<p>and therefore the partition function can be calculated as</p>
+<p><span class="math">\begin{equation}
+Z=\int_0^{\pi}\int_{0}^{\pi}\int_{0}^{2\pi}e\exp(-\beta e(r,\theta_1,\theta_2,\phi))\sin(\theta_1)\sin(\theta_2)d\phi d\theta_1 d\theta_2
+\end{equation}</span></p>
+<p>The result of this calculation is the <strong>Keesom interaction energy</strong></p>
+<p><span class="math">\begin{equation}
+w(r)=-\frac{u_1^{2}u_{2}^2}{3(4\pi\epsilon\epsilon_0)^2 k_B T r^6}
+\end{equation}</span></p>
+<p>when</p>
+<p><span class="math">\begin{equation}
+k_BT >\frac{u_1 u_2}{4\pi\epsilon_0 \epsilon r^3}
+\end{equation}</span></p>
+<p>The Keesom interaction tells on one side that permanent dipoles align themselves to be alway attractive. It further belongs to a set of 3 different electrostatic interactions, which scale as <span class="math notranslate nohighlight">\(r^{-6}\)</span> and which are termed <strong>van der Waals</strong> interactions.</p>
+<p>All atomic and molecular systems carry the potential to get polarized in an external electric field. This polarization gives rise to a dipole moment <span class="math notranslate nohighlight">\(u_{ind}\)</span>, that is in linear response proportional to the external electric field. The dipole itself also creates an electric field. There are different types of polarizability. We will address two of them, i) the electronic polarizability, i.e. shifting the center of mass of positive and negative charges of a molecule or atom, ii) the
+reorientation of a permanent electric dipole in and external electric field which is an orientational polarization.</p>
+<img alt="../../_images/polarizability1.png" src="../../_images/polarizability1.png" />
+<p>We consider a very simple classical model for the electronic polarizability. An electron is orbiting a positive nucleus and is subjected to en electric field according to the above image. In the stationary state, the forces on the charges exerted by the external electric field and the internal forces balance and give rise to the polarized state with a dipole moment.</p>
+<p>The external force on each charge is given by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F_{ext}=-eE\]</div>
+</div>
+<p>while the internal force between teh two charges is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[F_{int}=-\frac{e^{2}}{4\pi \epsilon_0 R^{2}}\sin(\theta)\approx \frac{e^{2}l}{4\pi \epsilon_0 R^{3}}=-\frac{e u_{ind}}{4\pi \epsilon_0 R^3}=F_{ext}\]</div>
+</div>
+<p>We can transform the latter equation to yield the induced dipole moment</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[u_{ind}=4\pi\epsilon_0 R^3 E=\alpha_0 E\]</div>
+</div>
+<p>Accordingly, the electronic polarizability of the atom is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\alpha_0=4\pi\epsilon_0 R^3\]</div>
+</div>
+<p>which just says that the polarizability scales with the volume of the object, which is found in many occations, including the scattering and absorption cross sections of nanoparticles.</p>
+</section>
+<section id="Ion-induced-dipole-interaction">
+<h1>Ion induced dipole interaction<a class="headerlink" href="#Ion-induced-dipole-interaction" title="Permalink to this heading">#</a></h1>
+</section>
+<section id="Polarizability-of-polar-molecules">
+<h1>Polarizability of polar molecules<a class="headerlink" href="#Polarizability-of-polar-molecules" title="Permalink to this heading">#</a></h1>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
@@ -576,6 +632,9 @@ w(r)=&\langle -\frac{Q u \cos(\theta)}{4\pi\epsilon_0\epsilon r^2} - \left ( \fr
 </li>
 <li><a class="reference internal" href="#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
 <li><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
+<li><a class="reference internal" href="#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
+<li><a class="reference internal" href="#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li><a class="reference internal" href="#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 
           </div>
