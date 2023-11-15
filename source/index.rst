@@ -78,6 +78,12 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L7/2_Forces and Interactions.ipynb   
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 8:
+   
+   notebooks/L8/1_Forces_and_Interactions.ipynb
    
 Indices and tables
 ==================
