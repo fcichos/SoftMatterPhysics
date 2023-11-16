@@ -427,6 +427,7 @@
   },
   {
    "cell_type": "markdown",
+   "id": "709e0082",
    "metadata": {},
    "source": [
     "We can extend the above calculation now also to two dipoles interacting when freely rotating. The interaction energy was given by\n",
@@ -458,13 +459,15 @@
   },
   {
    "cell_type": "markdown",
+   "id": "30220aea",
    "metadata": {},
    "source": [
-    "## Interactions involving polarizability"
+    "### Interactions involving polarizability"
    ]
   },
   {
    "cell_type": "markdown",
+   "id": "84fe8db9",
    "metadata": {},
    "source": [
     "All atomic and molecular systems carry the potential to get polarized in an external electric field. This polarization gives rise to a dipole moment $u_{ind}$, that is in linear response proportional to the external electric field. The dipole itself also creates an electric field. There are different types of polarizability. We will address two of them, i) the electronic polarizability, i.e. shifting the center of mass of positive and negative charges of a molecule or atom, ii) the reorientation of a permanent electric dipole in and external electric field which is an orientational polarization. \n",
@@ -502,6 +505,7 @@
   },
   {
    "cell_type": "markdown",
+   "id": "e540cb4d",
    "metadata": {},
    "source": [
     "### Ion induced dipole interaction\n",
@@ -510,16 +514,6 @@
     "\n",
     "### Polarizability of polar molecules"
    ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": []
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": []
   }
  ],
  "metadata": {
@@ -538,7 +532,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.8.16"
+   "version": "3.8.10"
   },
   "toc": {
    "base_numbering": 1,
