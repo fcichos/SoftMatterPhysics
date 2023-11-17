@@ -12,7 +12,7 @@ Thursday:	09:15 - 10:45 Uhr SR 224
 
 
 Exercise Schedule
-----------------
+-----------------
 
 Tuesday:	9:15 - 10:45 Uhr SR 221 (Will start 24. October 2023)
 
