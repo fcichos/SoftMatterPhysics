@@ -10,6 +10,14 @@
   },
   {
    "cell_type": "markdown",
+   "id": "cda6631d-8350-4bff-a684-33ba736d9640",
+   "metadata": {},
+   "source": [
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L10/1_van_der_Waals.pdf)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "b5f9ce86",
    "metadata": {},
    "source": [
@@ -164,7 +172,7 @@
     "    \n",
     "    \n",
     "    \n",
-    "    - Ne: $\\sigma=3.08$ Angstroem, $h\\nu_I=21.6$ eV, $\\frac{\\alpha_0}{4\\pi \\epsilon_0}=0.39\\times 10^{-30}$ m$^{-3}$, from which we obtain a boiling temperature of $T_{\\rm b}=22$ K, which nicely corresponds to the experimental value of $T_{\\rm b}=27$ K\n",
+    "- Ne: $\\sigma=3.08$ Angstroem, $h\\nu_I=21.6$ eV, $\\frac{\\alpha_0}{4\\pi \\epsilon_0}=0.39\\times 10^{-30}$ m$^{-3}$, from which we obtain a boiling temperature of $T_{\\rm b}=22$ K, which nicely corresponds to the experimental value of $T_{\\rm b}=27$ K\n",
     "    \n",
     "    \n",
     "- Ar: $\\sigma=3.76$ Angstroem, $h\\nu_I=15.8$ eV, $\\frac{\\alpha_0}{4\\pi \\epsilon_0}=1.63\\times 10^{-30}$ m$^{-3}$, from which we obtain a boiling temperature of $T_{\\rm b}=85$ K, which nicely corresponds to the experimental value of $T_{\\rm b}=87$ K    \n",
@@ -186,7 +194,7 @@
    "id": "e32b0107",
    "metadata": {},
    "source": [
-    "While the theory above provides us only with some idea about the disperion interaction, we can now summarize all three controbution to the van der Waals interaction\n",
+    "While the theory above provides us only with some idea about the dispersion interaction, we can now summarize all three contributions to the van der Waals interaction\n",
     "\n",
     "\n",
     "\\begin{equation}\n",
