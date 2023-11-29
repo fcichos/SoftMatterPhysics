@@ -91,7 +91,14 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 9:
    
    notebooks/L9/1_Electric_Double_Layer.ipynb
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 10:
    
+   notebooks/L10/1_van_der_Waals.ipynb   
+   notebooks/L11/1_van_der_Waals.ipynb
+
 Indices and tables
 ==================
 

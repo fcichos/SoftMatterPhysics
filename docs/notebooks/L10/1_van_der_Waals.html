@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Electric Double Layer" href="../L9/1_Electric_Double_Layer.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
         <title>van der Waals Interactions - Soft Matter Lecture 23 documentation</title>
@@ -217,6 +217,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">van der Waals Interactions</a></li>
+</ul>
 
 </div>
 </div>
@@ -374,7 +378,7 @@ w_{\mathrm{vdW}}(r)=-\frac{6 k_{\mathrm{B}} T}{\left(4 \pi \epsilon_{0}\right)^{
 <p><span class="math">\begin{equation}
 m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)
 \end{equation}</span></p>
-<p>Here <span class="math notranslate nohighlight">\(\omgea_0\)</span> is the resonance frequency, <span class="math notranslate nohighlight">\(m_e\)</span> the electron mass, <span class="math notranslate nohighlight">\(\Gamma\)</span> the damping constant and <span class="math notranslate nohighlight">\(E\)</span> the external electric field. Solving this differential equation and using <span class="math notranslate nohighlight">\(\omega=2\pi \nu\)</span> yields the frequency dependent electronic polarizability</p>
+<p>Here <span class="math notranslate nohighlight">\(\omega_0\)</span> is the resonance frequency, <span class="math notranslate nohighlight">\(m_e\)</span> the electron mass, <span class="math notranslate nohighlight">\(\Gamma\)</span> the damping constant and <span class="math notranslate nohighlight">\(E\)</span> the external electric field. Solving this differential equation and using <span class="math notranslate nohighlight">\(\omega=2\pi \nu\)</span> yields the frequency dependent electronic polarizability</p>
 <p><span class="math">\begin{equation}
 \alpha(\nu)=\frac{\alpha_0}{1-i\Gamma \frac{\nu}{\nu_0^2}-\left ( \frac{\nu}{\nu_0}\right)^2}
 \end{equation}</span></p>
@@ -429,6 +433,13 @@ m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)
 \[\alpha=\alpha_{0}+\frac{u^{2} }{3 k_{\mathrm{B}} T}\]</div>
 </div>
 <p>which results in the first term of the sum</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+w_{\mathrm{vdW}}(\nu=0, r) &amp;=-\frac{1}{2} \frac{6 k_{\mathrm{B}} T\left(\alpha_{01}+u_{1}^{2} /\left(3 k_{\mathrm{B}} T\right)\right)\left(\alpha_{02}+u_{2}^{2} /\left(3 k_{\mathrm{B}} T\right)\right)}{\left(4 \pi \epsilon_{0} \epsilon_{3}^{2}\right)^{2} r^{6}} \\
+&amp;=-\underbrace{\frac{u_{1}^{2} u_{2}^{2}}{3 k_{\mathrm{B}} T\left(4 \pi \epsilon_{0} \epsilon_{3}\right)^{2} r^{6}}}_{\text {Keesom }}-\underbrace{\frac{u_{1}^{2} \alpha_{02}+u_{2}^{2} \alpha_{01}}{\left(4 \pi \epsilon_{0} \epsilon_{3}\right)^{2} r^{6}}}_{\text {Debye }}-\underbrace{\frac{3 k_{\mathrm{B}} T \alpha_{01} \alpha_{02}}{\left(4 \pi \epsilon_{0} \epsilon_{3}\right)^{2} r^{6}}}_{\text {London(n=0) }}
+\end{aligned}\end{split}\]</div>
+</div>
 <p>We immediately see the recovery of the Keesom and Debye energies, as well as the <span class="math notranslate nohighlight">\(\alpha_{01} \alpha_{02}\)</span> term from mathematical derivation. In fact, the last part is the zero-frequency part of the dispersion energy. Comparing the magnitudes of <span class="math notranslate nohighlight">\(k_{\mathrm{B}} T\)</span> and <span class="math notranslate nohighlight">\(h v\)</span>, we can see that the zero-frequency contribution to the dispersion energy is negligible.</p>
 </section>
 </section>
@@ -462,7 +473,17 @@ coined as “dispersion interaction”.</p>
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="../L9/1_Electric_Double_Layer.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Electric Double Layer</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -473,7 +494,7 @@ coined as “dispersion interaction”.</p>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Nov 17, 2023</div>
+              Last updated on Nov 29, 2023</div>
           </div>
           <div class="right-details">
             
@@ -520,7 +541,7 @@ coined as “dispersion interaction”.</p>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
