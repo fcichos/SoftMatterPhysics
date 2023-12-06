@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="van der Waals Interactions" href="../L10/1_van_der_Waals.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="van der Waals Interaction" href="../L12/1_van_der_Waals_Lifshitz.html" /><link rel="prev" title="van der Waals Interactions" href="1_van_der_Waals_McLachlan.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
         <title>van der Waals Interaction - Soft Matter Lecture 23 documentation</title>
@@ -217,9 +217,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_van_der_Waals_McLachlan.html">van der Waals Interactions</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">van der Waals Interaction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L12/1_van_der_Waals_Lifshitz.html">van der Waals Interaction</a></li>
 </ul>
 
 </div>
@@ -255,59 +263,26 @@
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L11/1_van_der_Waals.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L11/1_van_der_Waals.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
+<p>This page was generated from <cite>notebooks/L11/1_van_der_Waals_Solid_Bodies.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L11/1_van_der_Waals_Solid_Bodies.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
 <section id="van-der-Waals-Interaction">
 <h1>van der Waals Interaction<a class="headerlink" href="#van-der-Waals-Interaction" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L11/1_van_der_Waals.pdf">File as PDF</a></p>
-<p>The semiclassical theory we have developed in the last lecture can also be extended to objects and bodies which are embedded in media. We therefore consider a spherical particle of radius <span class="math notranslate nohighlight">\(a_i\)</span> of dielectric constant <span class="math notranslate nohighlight">\(\epsilon_i\)</span> in a mediums of dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. If an external electric field is applied, that the particle is polarized to obtain a dipole</p>
-<p><span class="math">\begin{equation}
-u_{\rm ind}=4\pi \epsilon_0 \epsilon \frac{\epsilon_i-\epsilon}{\epsilon_i+2\epsilon}a_i^3E
-\end{equation}</span></p>
-<p>This result is obtained as the spheres polarization is also influenced by the electric field generated in the medium around the sphere. This local electric field that is relevant has been considered by <strong>Clausius and Mossotti</strong>.</p>
-<p>According to <span class="math notranslate nohighlight">\(u_{\rm ind}=\alpha E\)</span>, we readily obtain the polarizability</p>
-<p><span class="math">\begin{equation}
-\alpha(\nu)=4\pi \epsilon_0 \epsilon_3(\nu)\frac{\epsilon_1(\nu)-\epsilon_3(\nu)}{\epsilon_1(\nu)+2\epsilon_3(\nu)}a_1^3
-\end{equation}</span></p>
-<p>This result shows that the dielectric function of the particle <span class="math notranslate nohighlight">\(\epsilon_1\)</span> needs to be different from the environment to obtain a contribution, which justifies the name excess polarizability.</p>
-<p>Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as</p>
-<p><strong>Zero Frequency</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3k_B T a_{1}^3a_2^3}{r^6}\left ( \frac{\epsilon_1(0)-\epsilon_3(0)}{\epsilon_1(0)+2\epsilon_3(0)}\right )\left ( \frac{\epsilon_2(0)-\epsilon_3(0)}{\epsilon_2(0)+2\epsilon_3(0)}\right )
-\end{equation}</span></p>
-<p>and at</p>
-<p><strong>Optical Frequencies</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1(i\nu)-\epsilon_3(i\nu)}{\epsilon_1(i\nu)+2\epsilon_3(i\nu)}\right )\left ( \frac{\epsilon_2(i\nu)-\epsilon_3(i\nu)}{\epsilon_2(i\nu)+2\epsilon_3(i\nu)}\right )d\nu
-\end{equation}</span></p>
-<p>To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at <span class="math notranslate nohighlight">\(\nu_e\)</span> then the dielectric function can be written as</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\epsilon(\nu)=1+\frac{n^2-1}{1-\left (\frac{\nu}{\nu_e}\right )^2}\]</div>
-</div>
-<p>which can be inserted and integrated in the above equations as a replacement.</p>
-<div class="admonition warning">
-<p class="admonition-title"><strong>van der Waals interactions</strong></p>
-<p>Overall the van der Waals interactions have the following general properties</p>
-<ul class="simple">
-<li><p>since <span class="math notranslate nohighlight">\(h\nu_e &gt;&gt;k_B T\)</span> the dispersion interaction is much bigger that the rest of the interaction. For <span class="math notranslate nohighlight">\(\epsilon=n^2\approx 2\)</span>, and <span class="math notranslate nohighlight">\(\nu_e=3\times 10^{15}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> we find <span class="math notranslate nohighlight">\(h\nu_e/2\sqrt{3}k_B T\approx 140\)</span></p></li>
-<li><p>the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For <span class="math notranslate nohighlight">\(n_1=n_2=1.5\)</span> and <span class="math notranslate nohighlight">\(n_3=1.4\)</span> we obtain a factor of 32 as compared to <span class="math notranslate nohighlight">\(n_3=1\)</span></p></li>
-<li><p>the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if <span class="math notranslate nohighlight">\(n_3\)</span> is between <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span></p></li>
-<li><p>the van der Waals interaction is not additive</p></li>
-<li><p>the dispersion interaction shows retardation effects, at distances larger than <span class="math notranslate nohighlight">\(100\)</span> nm, it decays with <span class="math notranslate nohighlight">\(r^{-7}\)</span></p></li>
-</ul>
-</div>
+<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L11/1_van_der_Waals_Solid_Bodies.pdf">File as PDF</a></p>
 <section id="Interaction-Between-Macroscopic-Bodies">
 <h2>Interaction Between Macroscopic Bodies<a class="headerlink" href="#Interaction-Between-Macroscopic-Bodies" title="Permalink to this heading">#</a></h2>
-<p>The above equations, that we derived before are essentially valid between small objects at distances larger than their size. If objects become macroscopic, we have to consider the interaction of all components of a body with all components of the second body. To calculate those interactions, we will assume that all interactions are additive, while we know that this is not completely true for van der Waals forces.</p>
-<p>Our general law of interaction shall be</p>
+<p>The equations that we derived before are essentially valid between small objects at distances larger than their size. If objects become macroscopic, we have to consider the interaction of all components of a body with all components of the second body. To calculate those interactions, we will assume that all interactions are additive, while we know that this is not completely true for van der Waals forces.</p>
+<p>We will generalize also our law of interaction of the individual units to</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[w(r)=-\frac{C}{r^n}\]</div>
 </div>
-<p>where <span class="math notranslate nohighlight">\(C\)</span> is the interaction constant, which comprises all additional constants in the interaction law.</p>
-<p><strong>a) a single molecule in front of a wall</strong></p>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is the interaction constant. <span class="math notranslate nohighlight">\(C\)</span> comprises all additional constants in the interaction law. In the McLachlan case the constant <span class="math notranslate nohighlight">\(C\)</span> would be given as</p>
+<p><span class="math">\begin{equation}
+w_{\mathrm{vdW}}(r)=-\underbrace{\frac{6 k_{\mathrm{B}} T}{\left(4 \pi \epsilon_{0}\right)^{2}} \sum_{n=0}^{\infty}{}^{\prime} \frac{\alpha_{1}\left(i v_{n}\right) \alpha_{2}\left(i v_{n}\right)}{\epsilon_{3}^{2}\left(i v_{n}\right)}}_{C} \frac{1}{r^{6}}
+\end{equation}</span></p>
+<p>We start by evaluating the interaction of</p>
+<p><strong>a) a single molecule with a wall</strong></p>
 <img alt="molecule_wall" src="../../_images/molecule_body.png" />
 <p>According to the image above we see that the single molecule interacts with all molecules in a tiny volume element at a distance <span class="math notranslate nohighlight">\(r=\sqrt{x^2+y^2}\)</span> in the same way. This cylindral volume is given by</p>
 <div class="math-wrapper docutils container">
@@ -351,8 +326,37 @@ w(D)=-\frac{\pi^2 C \rho^2 R}{6D}
 w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
 \end{equation}</span></p>
 </section>
-<section id="Lifshitz-Theory">
-<h2>Lifshitz Theory<a class="headerlink" href="#Lifshitz-Theory" title="Permalink to this heading">#</a></h2>
+<section id="Hamaker-Constant">
+<h2>Hamaker Constant<a class="headerlink" href="#Hamaker-Constant" title="Permalink to this heading">#</a></h2>
+<p>Independent of the distance law that is resulting from the shape of the solid bodies that are interacting, there are some parameters, which persist in all of the equations and are related to the materials.</p>
+<p>This factor is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[A=\pi^2C \rho_{1}\rho_{2}\]</div>
+</div>
+<p>and is called the <strong>Hamaker Constant</strong>. It comprises the interaction constant <span class="math notranslate nohighlight">\(C\)</span> and the number density <span class="math notranslate nohighlight">\(\rho\)</span>, which is the same for the cases studied above where <span class="math notranslate nohighlight">\(\rho^2\)</span> appears. If the number densities of the interacting bodies are different we have to consider <span class="math notranslate nohighlight">\(\rho_1\)</span> and <span class="math notranslate nohighlight">\(\rho_2\)</span>, of course.</p>
+<p>Due to the fact that the Hamaker constant is related to the interaction constant <span class="math notranslate nohighlight">\(C\)</span>, which contains the according to the McLachlan theory the sum over the polarizabilities of the microscopic units it is strong where the polarizabilities and density are large as for example in diamond or metals. Yet we have to establish a description that is related to the continuum quantities dielectric function or refractive index, which is the Lifshitz theory following in the next lecture.</p>
+<img alt="molecule_wall" src="../../_images/hamaker_constants.png" />
+<p>We can now use the Hamaker constant to simplify the expressions of the interactions of bodies:</p>
+<img alt="molecule_wall" src="../../_images/interaction_table.png" />
+<p>To understand the meaning of the Hamaker constant a bit better we can have a look at the following example. We take a body made out of certain units that have a size <span class="math notranslate nohighlight">\(D_0\)</span> and form a lattice. If we split an infinite body of made out of these units into two half spaces, we create two interfaces at a distance <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<img alt="molecule_wall" src="../../_images/surfaces.png" />
+<p>The difference in interaction energy per unit are according to the above table is then given by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[w(D)=-\frac{A}{12\pi}\left ( \frac{1}{D_{0}^2}-\frac{1}{D^2} \right)\]</div>
+</div>
+<p>If take the limit of <span class="math notranslate nohighlight">\(D\rightarrow \infty\)</span>, we obtain</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{A}{12\pi D_{0}^2}=2\gamma\]</div>
+</div>
+<p>The energy per unit surface area is a surface energy and actually the energy to create two surfaces. It therefore corresponds to the interfacial energy of the material <span class="math notranslate nohighlight">\(\gamma\)</span> multiplied by two. So the Hamaker constant is related to the interfacial energies.</p>
+<p>While the above equations are derived for two objects of the same material with the same Hamaker constant, there is also a rule for the interaction of two different materials. If we have two bodies of material <span class="math notranslate nohighlight">\(L\)</span> and material <span class="math notranslate nohighlight">\(S\)</span> interacting with each other, then the Hamaker constants can be combined by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[A_{SL}=\sqrt{A_{S}A_{L}}\]</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
@@ -363,8 +367,16 @@ w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
       <footer>
         
         <div class="related-pages">
-          
-          <a class="prev-page" href="../L10/1_van_der_Waals.html">
+          <a class="next-page" href="../L12/1_van_der_Waals_Lifshitz.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">van der Waals Interaction</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="1_van_der_Waals_McLachlan.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -385,7 +397,7 @@ w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Nov 29, 2023</div>
+              Last updated on Dec 06, 2023</div>
           </div>
           <div class="right-details">
             
@@ -408,7 +420,7 @@ w(D)=-\frac{2\pi C \rho (4\pi R^3 \rho/3 )}{(n-2)(n-3)D^{n-3}}
             <ul>
 <li><a class="reference internal" href="#">van der Waals Interaction</a><ul>
 <li><a class="reference internal" href="#Interaction-Between-Macroscopic-Bodies">Interaction Between Macroscopic Bodies</a></li>
-<li><a class="reference internal" href="#Lifshitz-Theory">Lifshitz Theory</a></li>
+<li><a class="reference internal" href="#Hamaker-Constant">Hamaker Constant</a></li>
 </ul>
 </li>
 </ul>

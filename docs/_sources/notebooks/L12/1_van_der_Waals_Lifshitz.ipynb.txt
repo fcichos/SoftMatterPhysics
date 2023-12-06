@@ -1,0 +1,219 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "0fa67cd0",
+   "metadata": {},
+   "source": [
+    "# van der Waals Interaction"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da3260d4-3236-4582-99b1-e3d3efffd371",
+   "metadata": {},
+   "source": [
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L11/1_van_der_Waal_Lifshitz.pdf)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da2e4bdc-fb3d-4553-808b-e27c307afaa2",
+   "metadata": {},
+   "source": [
+    "## Lifshitz Theory"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "15bc8a1b-1114-4846-ab0b-f57d864809f7",
+   "metadata": {},
+   "source": [
+    "**This needs to be written**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "09dc4406-0105-4e0d-a6cf-018bfa1b78f3",
+   "metadata": {},
+   "source": [
+    "The semiclassical theory we have developed in the last lecture is still based on microscopic quantities, which are the polarizabilities. We would like to base that description rather on continuum quantities to simplify the descriptions. This is done in the Lifshitz theory. It is using continuum quantities like the dielectric function $\\epsilon_i$ or the refractive index $n_{i}$ to describe the interactions of macroscopic bodies. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ec72f552-9cad-4fb0-869e-b9bab4454253",
+   "metadata": {},
+   "source": [
+    "\n",
+    "Normal calculation\n",
+    "\n",
+    "$$\n",
+    "w_{q \\alpha}=-\\frac{q^2 \\alpha_1}{\\left(4 \\pi \\varepsilon_0 \\varepsilon_3\\right)^2 r^4}\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "w_{q 1}=\\int_\\delta^{\\infty} \\mathrm{dx} \\int_0^{\\infty} w_{q \\alpha}\\left(r=\\sqrt{\\left(x^2+y^2\\right)}\\right) \\rho_1(2 \\pi y) \\mathrm{d} y\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "w_{q 1}=-\\frac{\\pi q^2 \\rho_1 \\alpha_1}{\\left(4 \\pi \\varepsilon_0 \\varepsilon_3\\right)^2 \\delta}\n",
+    "$$\n",
+    "\n",
+    "Image charge calculation\n",
+    "\n",
+    "$$\n",
+    "\\phi(x, y)=\\frac{1}{\\left(4 \\pi \\varepsilon_0\\right) \\varepsilon_l}\\left[\\frac{q}{\\sqrt{(\\delta+x)^2+y^2}}+\\frac{q^{\\prime}}{\\sqrt{(\\delta-x)^2+y^2}}\\right], x<0\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "\\phi(x, y)=\\frac{1}{\\left(4 \\pi \\varepsilon_0\\right) \\varepsilon_r} \\frac{q^{\\prime \\prime}}{\\sqrt{(\\delta+x)^2+y^2}}, x>0\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "\\begin{aligned}\n",
+    "D_x^l & =D_x^r \\\\\n",
+    "\\left.\\frac{\\partial \\phi}{\\partial x} \\varepsilon_l\\right|_{x=0-} & =\\left.\\frac{\\partial \\phi}{\\partial x} \\varepsilon_r\\right|_{x=0+} \\\\\n",
+    "\\frac{\\left(q-q^{\\prime}\\right) \\delta}{\\sqrt{\\left(\\delta^2+y^2\\right)^3}} & =\\frac{\\left(q^{\\prime \\prime}\\right) \\delta}{\\sqrt{\\left(\\delta^2+y^2\\right)^3}}\n",
+    "\\end{aligned}\n",
+    "$$\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "\\begin{aligned}\n",
+    "E_y^l & =E_y^r \\\\\n",
+    "\\left.\\frac{\\partial \\phi}{\\partial y}\\right|_{x=0-} & =\\left.\\frac{\\partial \\phi}{\\partial y}\\right|_{x=0+} \\\\\n",
+    "\\frac{\\left(q+q^{\\prime}\\right) y}{\\varepsilon_l \\sqrt{\\left(\\delta^2+y^2\\right)^3}} & =\\frac{q^{\\prime \\prime} y}{\\varepsilon_r \\sqrt{\\left(\\delta^2+y^2\\right)^3}}\n",
+    "\\end{aligned}\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "q^{\\prime}=-\\frac{\\varepsilon_r-\\varepsilon_l}{\\varepsilon_r+\\varepsilon_l} q\n",
+    "$$\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "q^{\\prime \\prime}=\\frac{2 \\varepsilon_r}{\\varepsilon_r+\\varepsilon_l} q\n",
+    "$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b1f1a403-ee18-4cb4-bedd-65bffaf213d5",
+   "metadata": {},
+   "source": [
+    "$$\n",
+    "w_{q 1}=w_{q q^{\\prime}}=\\frac{q q^{\\prime}}{\\left(4 \\pi \\varepsilon_0\\right) \\varepsilon_3(2 \\delta)}=-\\frac{q^2}{\\left(4 \\pi \\varepsilon_0\\right) \\varepsilon_3(2 \\delta)} \\frac{\\varepsilon_1-\\varepsilon_3}{\\varepsilon_1+\\varepsilon_3}\n",
+    "$$\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "\\rho_1 \\alpha_1=2 \\varepsilon_0 \\varepsilon_3 \\frac{\\varepsilon_1-\\varepsilon_3}{\\varepsilon_1+\\varepsilon_3}\n",
+    "$$\n",
+    "\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "A=\\frac{3 k T}{2} \\sum_{n=0}^{\\infty},\\left[\\frac{\\varepsilon_1\\left(i \\nu_n\\right)-\\varepsilon_3\\left(i \\nu_n\\right)}{\\varepsilon_1\\left(i \\nu_n\\right)+\\varepsilon_3\\left(i \\nu_n\\right)}\\right]\\left[\\frac{\\varepsilon_2\\left(i \\nu_n\\right)-\\varepsilon_3\\left(i \\nu_n\\right)}{\\varepsilon_2\\left(i \\nu_n\\right)+\\varepsilon_3\\left(i \\nu_n\\right)}\\right]\n",
+    "$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fcdafbe9",
+   "metadata": {},
+   "source": [
+    "\n",
+    "Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as\n",
+    "\n",
+    "**Zero Frequency**\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w(r)=-\\frac{3k_B T a_{1}^3a_2^3}{r^6}\\left ( \\frac{\\epsilon_1(0)-\\epsilon_3(0)}{\\epsilon_1(0)+\\epsilon_3(0)}\\right )\\left ( \\frac{\\epsilon_2(0)-\\epsilon_3(0)}{\\epsilon_2(0)+\\epsilon_3(0)}\\right )\n",
+    "\\end{equation}\n",
+    "\n",
+    "and at "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4869c53c",
+   "metadata": {},
+   "source": [
+    "**Optical Frequencies**\n",
+    "\n",
+    "\\begin{equation}\n",
+    "w(r)=-\\frac{3h a_{1}^3a_2^3}{\\pi r^6}\\int_{\\nu_1}^\\infty\\left ( \\frac{\\epsilon_1(i\\nu)-\\epsilon_3(i\\nu)}{\\epsilon_1(i\\nu)+\\epsilon_3(i\\nu)}\\right )\\left ( \\frac{\\epsilon_2(i\\nu)-\\epsilon_3(i\\nu)}{\\epsilon_2(i\\nu)+\\epsilon_3(i\\nu)}\\right )d\\nu\n",
+    "\\end{equation}\n",
+    "\n",
+    "\n",
+    "To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at $\\nu_e$ then the dielectric function can be written as\n",
+    "\n",
+    "$$\\epsilon(\\nu)=1+\\frac{n^2-1}{1-\\left (\\frac{\\nu}{\\nu_e}\\right )^2}$$\n",
+    "\n",
+    "which can be inserted and integrated in the above equations as a replacement.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "978594f3",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-warning\">\n",
+    "    \n",
+    "**van der Waals interactions**\n",
+    "\n",
+    "Overall the van der Waals interactions have the following general properties\n",
+    "    \n",
+    "- since $h\\nu_e >>k_B T$ the dispersion interaction is much bigger that the rest of the interaction. For $\\epsilon=n^2\\approx 2$, and $\\nu_e=3\\times 10^{15}$ s$^{-1}$ we find $h\\nu_e/2\\sqrt{3}k_B T\\approx 140$\n",
+    "- the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For $n_1=n_2=1.5$ and $n_3=1.4$ we obtain a factor of 32 as compared to $n_3=1$\n",
+    "- the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if $n_3$ is between $n_1$ and $n_2$\n",
+    "- the van der Waals interaction is not additive\n",
+    "- the dispersion interaction shows retardation effects, at distances larger than $100$ nm, it decays with $r^{-7}$\n",
+    "    \n",
+    "</div>"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.16"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  },
+  "widgets": {
+   "application/vnd.jupyter.widget-state+json": {
+    "state": {},
+    "version_major": 2,
+    "version_minor": 0
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

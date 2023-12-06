@@ -99,6 +99,23 @@ Welcome to Soft Matter Physics Lecture Website!
    notebooks/L10/1_van_der_Waals.ipynb   
    notebooks/L11/1_van_der_Waals.ipynb
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 11:
+   
+   notebooks/L11/1_van_der_Waals_McLachlan.ipynb   
+   notebooks/L11/1_van_der_Waals_Solid_Bodies.ipynb
+   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 12:
+   
+   notebooks/L12/1_van_der_Waals_Lifshitz.ipynb   
+
+   
+   
 Indices and tables
 ==================
 
