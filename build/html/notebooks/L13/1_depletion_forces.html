@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="van der Waals Interaction" href="../L12/1_van_der_Waals_Lifshitz.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
         <title>Depletion Forces - Soft Matter Lecture 23 documentation</title>
@@ -230,6 +230,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L12/1_van_der_Waals_Lifshitz.html">van der Waals Interaction</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 13:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Depletion Forces</a></li>
+</ul>
 
 </div>
 </div>
@@ -269,6 +273,7 @@
 </div>
 <section id="Depletion-Forces">
 <h1>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this heading">#</a></h1>
+<p>[File as PDF]((<a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L11/1_depletion_forces.pdf">https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L11/1_depletion_forces.pdf</a>)</p>
 <p>Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
@@ -292,7 +297,7 @@
 <section id="Depletion-force-between-two-plates">
 <h2>Depletion force between two plates<a class="headerlink" href="#Depletion-force-between-two-plates" title="Permalink to this heading">#</a></h2>
 <p>Consider the picture below, where colloids are contained in a suspension together with two plates. Then there is a region, which is inaccessible by the centers of the colloids of radius <span class="math notranslate nohighlight">\(\sigma/2\)</span> that is indicated by the dahsed lines. If these regions between the plates overlap, not colloid can enter this region and the number density of the colloids is different inside as compared to the outside. This creates an osmotic pressure difference.</p>
-<img alt="depletion_plates" src="notebooks/L13/img/depletion_plates.png" />
+<img alt="depletion_plates" src="../../_images/depletion_plates.png" />
 <p>The osmotic pressure difference can be calculated with the help of the van’t Hoff equation for the osmotic pressure <span class="math notranslate nohighlight">\(\Pi=nk_B T\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number density. In the case the distance of the two plates is larger than the diamater of the two plates, <span class="math notranslate nohighlight">\(h&gt;\sigma\)</span>, we have <span class="math notranslate nohighlight">\(\Pi_i=\Pi_o= nk_B T\)</span> so the difference <span class="math notranslate nohighlight">\(P=\Pi_i-\Pi_o=0\)</span>, so there is not pressure difference. In the case when there is no colloid between the plates we have <span class="math notranslate nohighlight">\(\Pi_i =0\)</span> and
 <span class="math notranslate nohighlight">\(\Pi_o =nk_B T\)</span> such that</p>
 <p><span class="math">\begin{equation}
@@ -341,7 +346,7 @@ w(h)=-n k_B T (\sigma-h)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L13_1_depletion_forces_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L13_1_depletion_forces_5_0.png" style="width: 412px; height: 285px;" />
+<img alt="../../_images/notebooks_L13_1_depletion_forces_7_0.png" class="no-scaled-link" src="../../_images/notebooks_L13_1_depletion_forces_7_0.png" style="width: 412px; height: 285px;" />
 </div>
 </div>
 </section>
@@ -353,7 +358,7 @@ than <span class="math notranslate nohighlight">\(r≤2(R+σ/2)=2R_d\)</span>. I
 2\pi R_{d}^2 \sin(\theta)d\theta
 \end{equation}</span></p>
 <p>but only the force components along the connecting line contribute.</p>
-<img alt="depletion_spheres" src="notebooks/L13/img/depletion_spheres.png" />
+<img alt="depletion_spheres" src="../../_images/depletion_spheres.png" />
 <p>The total force is then calculated from the osmotic pressure times the surface area of the spherical cap by just taking into account the force components along the connecting line (an additional factor <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>). This the read</p>
 <p><span class="math">\begin{equation}
 F(r)=-2nk_{\rm B}T\pi (R+\sigma/2)^2\int\limits_{0}^{\theta_{0}}\sin(\theta)\cos(\theta)\mathrm d\theta
@@ -411,7 +416,7 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L13_1_depletion_forces_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L13_1_depletion_forces_9_0.png" style="width: 412px; height: 285px;" />
+<img alt="../../_images/notebooks_L13_1_depletion_forces_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L13_1_depletion_forces_11_0.png" style="width: 412px; height: 285px;" />
 </div>
 </div>
 </section>
@@ -477,7 +482,17 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="../L12/1_van_der_Waals_Lifshitz.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">van der Waals Interaction</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">

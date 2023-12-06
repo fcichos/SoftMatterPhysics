@@ -114,7 +114,11 @@ Welcome to Soft Matter Physics Lecture Website!
    
    notebooks/L12/1_van_der_Waals_Lifshitz.ipynb   
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 13:
    
+   notebooks/L13/1_depletion_forces.ipynb   
    
 Indices and tables
 ==================

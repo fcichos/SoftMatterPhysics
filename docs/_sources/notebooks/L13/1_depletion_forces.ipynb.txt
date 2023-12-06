@@ -2,13 +2,30 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "734f2986-c9c9-4945-9202-6eb972c4c72c",
+   "id": "0b611b8b-5cbf-4493-b003-a6b3998bb948",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "# Depletion Forces"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6c0d1fda-1bfb-404c-a57c-645ac8870ae4",
    "metadata": {},
    "source": [
-    "# Depletion Forces\n",
-    "\n",
-    "Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.\n",
-    "\n"
+    "[File as PDF]((https://github.com/fcichos/SoftMatterPhysics/blob/18078c2527fb336dee12a23e66f1ea2f1cd3cd6d/source/notebooks/L11/1_depletion_forces.pdf)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "734f2986-c9c9-4945-9202-6eb972c4c72c",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.\n"
    ]
   },
   {
