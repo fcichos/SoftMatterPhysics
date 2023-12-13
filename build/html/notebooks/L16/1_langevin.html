@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Depletion Forces" href="../L14/1_depletion_forces.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
         <title>Langevin Theory - Soft Matter Lecture 23 documentation</title>
@@ -233,6 +233,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L13/1_depletion_forces.html">Depletion Forces</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 14:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../L14/1_depletion_forces.html">Depletion Forces</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Langevin Theory</a></li>
+</ul>
 
 </div>
 </div>
@@ -337,7 +342,7 @@
 \[\langle r^2\rangle =\frac{k_B T}{\pi \eta R}\left [ t-\tau_{mr}\left ( 1-\exp\left (-\frac{t}{\tau_{mr}}\right )\right )\right ]\]</div>
 </div>
 <p>This is the mean squared displacement for an Ornstein Uhlenbeck process, a process, which has a persistence for a certain time and then is randomized. It described the transition from the ballistic to diffusive regime for a Brownian particle except that it misses the hydrodynamic memory in the intermediate regime.</p>
-<img alt="../../_images/test1.pdf" src="../../_images/test1.pdf" />
+<img alt="../../_images/test1.png" src="../../_images/test1.png" />
 <p>We can look at different limits of the process with respect to the momentum relaxation time, ie.</p>
 <p><strong>1) long time limits:</strong> <span class="math notranslate nohighlight">\(t\gg \tau_{mr}\)</span></p>
 <p>In this regime, the exponential function has already decayed to zero and we obtain</p>
@@ -371,7 +376,7 @@
 M^{\prime} \ddot{x}(t)=
 -6 \pi \eta R \dot{x}(t)-6 R^{2} \sqrt{\pi \rho_{f} \eta} \int_{0}^{t}\left(t-t^{\prime}\right)^{-1 / 2} \ddot{x}\left(t^{\prime}\right) \mathrm{d} t^{\prime} -\nabla U+\zeta(t)
 \end{equation}</span></p>
-<p>and contains the effective mass of the colloidal <span class="math notranslate nohighlight">\(M^{\prime}\)</span>, the fluid density <span class="math notranslate nohighlight">\(\rho_f\)</span> and the external potential $U. The full MSD for a colloidal particle is displayed in the figure below as measured for example in an optical tweezer in the Molecular Nanophotonics group. Note that the MSD axis goes down to <span class="math notranslate nohighlight">\(10^{-21}\, {\rm m}\)</span>, which corresponds to 30 picometer displacement, which is far below the size of a hydrodgen atom.</p>
+<p>and contains the effective mass of the colloidal <span class="math notranslate nohighlight">\(M^{\prime}\)</span>, the fluid density <span class="math notranslate nohighlight">\(\rho_f\)</span> and the external potential <span class="math notranslate nohighlight">\(U\)</span>. The full MSD for a colloidal particle is displayed in the figure below as measured for example in an optical tweezer in the Molecular Nanophotonics group. Note that the MSD axis goes down to <span class="math notranslate nohighlight">\(10^{-21}\, {\rm m}\)</span>, which corresponds to 30 picometer displacement, which is far below the size of a hydrodgen atom.</p>
 <img alt="MSD" src="../../_images/msd_bead.png" />
 <p>While we so far only know that <span class="math notranslate nohighlight">\(\langle\vec{\zeta}(t) \rangle =0\)</span>, we also know that there must be a certain magnitude of the random force that is connected to the temperature of the sample. The short time autocorrelation of the noise should be of the type</p>
 <div class="math-wrapper docutils container">
@@ -497,7 +502,7 @@ M^{\prime} \ddot{x}(t)=
 \[\langle |x_{\omega}|^2\rangle =\frac{2k_B T \gamma}{k^2}\frac{1}{1+(\omega/\omega_0)^2}\]</div>
 </div>
 <p>Here <span class="math notranslate nohighlight">\(\omega_0=k/\gamma\)</span> is a particular frequency at which the <span class="math notranslate nohighlight">\(1/\omega^2\)</span> dependence of the power spectrum turns into a plateau at small frequencies. The last equation is heavily used to calibrate optical tweezers, as it can be used to measure the force constant <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<img alt="../../_images/test.pdf" src="../../_images/test.pdf" />
+<img alt="../../_images/test.png" src="../../_images/test.png" />
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
@@ -510,7 +515,17 @@ M^{\prime} \ddot{x}(t)=
         
         <div class="related-pages">
           
-          
+          <a class="prev-page" href="../L14/1_depletion_forces.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Depletion Forces</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -521,7 +536,7 @@ M^{\prime} \ddot{x}(t)=
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 06, 2023</div>
+              Last updated on Dec 13, 2023</div>
           </div>
           <div class="right-details">
             
