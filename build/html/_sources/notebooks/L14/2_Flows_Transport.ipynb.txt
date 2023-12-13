@@ -1,0 +1,162 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "d15aace6-10b1-4526-9af0-5250fc078779",
+   "metadata": {},
+   "source": [
+    "# Flows and Transport in Liquids\n",
+    "## Diffusion and Brownian Motion"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5e97894a-e10b-46b6-8d06-890e2a13be2d",
+   "metadata": {},
+   "source": [
+    "a) Continuity\n",
+    "\n",
+    "$$\n",
+    "\\int_{S}\\textbf{j}\\cdot \\textbf{n}dS\n",
+    "$$\n",
+    "\n",
+    "and\n",
+    "\n",
+    "$$\n",
+    "\\int_{V}f\\cdot dV\n",
+    "$$\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "\\frac{d}{dt}\\int_{V}f\\cdot dV=\\int_{V}\\frac{df}{dt}\\cdot dV\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "\\frac{df}{dt}+\\nabla \\textbf{j}=0\\tag{Continuity Equation}\n",
+    "$$\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "50d5dc9c-84cd-4fd8-a8e7-44ee1ab2feba",
+   "metadata": {},
+   "source": [
+    "number density $n$:\n",
+    "\n",
+    "$$\n",
+    "\\frac{dn}{dt}+\\nabla (n\\textbf{v})=0 \\tag{Continuity Equation Density}\n",
+    "$$\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ea5cea44-ed13-499b-9216-eb9652460502",
+   "metadata": {},
+   "source": [
+    "Diffusion:\n",
+    "\n",
+    "$N(x)$ on the left \n",
+    "$N(x+\\Delta x)$ on the right of area $A$\n",
+    "\n",
+    "\n",
+    "$$\n",
+    "j=-\\frac{1}{2}\\frac{N(x+\\Delta x)-N(x))}{A\\tau}\n",
+    "$$\n",
+    "\n",
+    "\n",
+    "density\n",
+    "\n",
+    "$$\n",
+    "n(x)\\equiv \\frac{N(x)}{A\\Delta x}\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "j=-\\frac{1}{2}\\frac{n(x+\\Delta x)A\\Delta x-N(x)A\\Delta x)}{A\\tau}\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "j=-\\frac{1}{2}\\frac{\\Delta x^2}{\\tau}\\frac{n(x+\\Delta x)-n(x)}{\\Delta x}\n",
+    "$$\n",
+    "\n",
+    "$$\n",
+    "j=-D\\frac{dn}{dx}\n",
+    "$$\n",
+    "\n",
+    "with \n",
+    "\n",
+    "$$\n",
+    "D=\\frac{\\Delta x^2}{2\\tau}\n",
+    "$$\n",
+    "or\n",
+    "\n",
+    "$$\n",
+    "\\textbf{j}=-D\\nabla n \\tag{1. Ficks Law}\n",
+    "$$\n",
+    "\n",
+    "combine with continuity eq. \n",
+    "\n",
+    "$$\n",
+    "\\frac{dn}{dt}=D\\nabla^2n \\tag{2. Ficks Law}\n",
+    "$$\n",
+    "\n",
+    "general diffusion equation. $n$ exchangable by other densities:\n",
+    "\n",
+    "| flux | transport property | gradient |\n",
+    "| :---: | :---: | :---: |\n",
+    "| particles | diffusivity | particle density |\n",
+    "| charge | conductivity | potential |\n",
+    "| liquid | permeability | pressure |\n",
+    "| momentum | viscosity | momentum density |\n",
+    "| energy | heat conductivity | temperature |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aca9a39c-06e4-44f3-8baa-acec985daff6",
+   "metadata": {},
+   "source": [
+    "## Diffusion in External Potential - Smoluchowski Equation"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "56bd9da0-5d85-466e-88c6-66fe82488366",
+   "metadata": {},
+   "source": [
+    "\n",
+    "$$\n",
+    "F=-\\frac{dU}{dx}\n",
+    "$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9ae9dd86-13c5-4077-b70f-f961f6df73a9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.16"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

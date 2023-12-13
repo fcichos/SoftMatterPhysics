@@ -310,6 +310,14 @@
     "\n",
     "for $r<d+D$. For all other distances of the two centers of the spheres, the depletion force is zero."
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f21ee4fb-4021-4008-a2f9-abda77e968c9",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
