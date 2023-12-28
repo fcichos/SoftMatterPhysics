@@ -9,7 +9,6 @@
         <title>Flows and Transport in Liquids - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -281,50 +280,56 @@
 <h1>Flows and Transport in Liquids<a class="headerlink" href="#Flows-and-Transport-in-Liquids" title="Permalink to this heading">#</a></h1>
 <section id="Diffusion-and-Brownian-Motion">
 <h2>Diffusion and Brownian Motion<a class="headerlink" href="#Diffusion-and-Brownian-Motion" title="Permalink to this heading">#</a></h2>
-<ol class="loweralpha simple">
-<li><p>Continuity</p></li>
-</ol>
+<p>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density <span class="math notranslate nohighlight">\(\textbf{j}\)</span>. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal
+<span class="math notranslate nohighlight">\(\textbf{n}\)</span>.</p>
+<p>The total flow through a surface is then</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\int_{S}\textbf{j}\cdot \textbf{n}dS\]</div>
 </div>
-<p>and</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is now some quantity (a density, probability density or other) that can beb transporeted through a surface or exist inside a volume surrounded by an area, the total amount inside the volume is given by</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\int_{V}f\cdot dV\]</div>
 </div>
+<p>The change of the total content inside the volume with time is then</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt}\int_{V}f\cdot dV=\int_{V}\frac{df}{dt}\cdot dV\]</div>
 </div>
+<p>This then yields the continuity equation</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\frac{df}{dt}+\nabla \textbf{j}=0\tag{Continuity Equation}\]</div>
 </div>
-<p>number density <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<p>If we specifically consider the number density <span class="math notranslate nohighlight">\(n\)</span> and insert this as <span class="math notranslate nohighlight">\(f\)</span></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\frac{dn}{dt}+\nabla (n\textbf{v})=0 \tag{Continuity Equation Density}\]</div>
+\[\frac{dn}{dt}+\nabla (n\textbf{v})=0 \tag{Continuity Equation for n}\]</div>
 </div>
-<p>Diffusion:</p>
-<p><span class="math notranslate nohighlight">\(N(x)\)</span> on the left <span class="math notranslate nohighlight">\(N(x+\Delta x)\)</span> on the right of area <span class="math notranslate nohighlight">\(A\)</span></p>
+<p>The continuity equation states that the amount of the quantity (such as mass, charge, or energy) within a defined system can only change if there is a flow of that quantity into or out of the system. More generally, the continuity equation may have a source term on the right side instead of the <span class="math notranslate nohighlight">\(0\)</span> when there is a production or destruction of the quantity in the volume.</p>
+<p>As the next step, we would like to obtain an equation, which tells us about the flow of the density of objects, due to their Brownian motion. We consider a vertical wall of area <span class="math notranslate nohighlight">\(A\)</span>, which separates two regions. There are <span class="math notranslate nohighlight">\(N(x)\)</span> on the left and <span class="math notranslate nohighlight">\(N(x+\Delta x)\)</span> on the right of area <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We can calculate the number of particles that goes through the area from the difference of the number of particles on the left and on the right side and divided by the area where the particles go through and the time <span class="math notranslate nohighlight">\(\tau\)</span> they need to go through that this is the current density <span class="math notranslate nohighlight">\(j\)</span></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[j=-\frac{1}{2}\frac{N(x+\Delta x)-N(x))}{A\tau}\]</div>
 </div>
-<p>density</p>
+<p>The fact, the one half makes sure that we consider only 50% of the particles on the left side going through the area while the other 50% go further to the left.</p>
+<p>We can also rewrite the number of particles in terms of the density <span class="math notranslate nohighlight">\(n\)</span></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[n(x)\equiv \frac{N(x)}{A\Delta x}\]</div>
 </div>
+<p>where <span class="math notranslate nohighlight">\(\Delta x\)</span> and a span a volume from which the particles travel through the area <span class="math notranslate nohighlight">\(A\)</span>. With the help of the density, we can replace the number of particles in the equation before and obtain an equation, which only contains the density of the particles.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[j=-\frac{1}{2}\frac{n(x+\Delta x)A\Delta x-N(x)A\Delta x)}{A\tau}\]</div>
+\[j=-\frac{1}{2}\frac{n(x+\Delta x)A\Delta x-n(x)A\Delta x)}{A\tau}\]</div>
 </div>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[j=-\frac{1}{2}\frac{\Delta x^2}{\tau}\frac{n(x+\Delta x)-n(x)}{\Delta x}\]</div>
 </div>
+<p>You can see that the area a drops out of the equation and we can sub summarise the term with <span class="math notranslate nohighlight">\(\Delta x^2\)</span> and <span class="math notranslate nohighlight">\(\tau\)</span> into a new coefficient, which is the diffusion coefficient <span class="math notranslate nohighlight">\(D\)</span>. We just arrived at the DA fusion law, which is fixed first law, which tells us that the current density is proportional to the diffusion coefficient times the negative gradient of the density.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[j=-D\frac{dn}{dx}\]</div>
@@ -334,17 +339,17 @@
 <div class="math notranslate nohighlight">
 \[D=\frac{\Delta x^2}{2\tau}\]</div>
 </div>
-<p>or</p>
+<p>In 3 dimensions this yields</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\textbf{j}=-D\nabla n \tag{1. Ficks Law}\]</div>
 </div>
-<p>combine with continuity eq.</p>
+<p>which we can also combine with the continuity equation to give</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\frac{dn}{dt}=D\nabla^2n \tag{2. Ficks Law}\]</div>
 </div>
-<p>general diffusion equation. <span class="math notranslate nohighlight">\(n\)</span> exchangable by other densities:</p>
+<p>which describes the time evolution of the density <span class="math notranslate nohighlight">\(n\)</span>. This type of diffusion equation is found for many transport problems. We just have to exchange the density <span class="math notranslate nohighlight">\(n\)</span> by other densities:</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -380,18 +385,47 @@
 </section>
 <section id="Diffusion-in-External-Potential---Smoluchowski-Equation">
 <h2>Diffusion in External Potential - Smoluchowski Equation<a class="headerlink" href="#Diffusion-in-External-Potential---Smoluchowski-Equation" title="Permalink to this heading">#</a></h2>
+<p>And some of the cases we may need to describe the diffusion in the presence of an external force field like we did already for the sedimentation problems we studied at the beginning of the course. The force is given by a potential gradient.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[F=-\frac{dU}{dx}\]</div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+<p>If the force, for example, acts on a colloid in a liquid, a steady speed of the colloid will appear after a while, when the force is balanced by the frictional force in the liquid, which amounts to <span class="math notranslate nohighlight">\(F_{s}=-6\pi\eta R v\)</span>, where <span class="math notranslate nohighlight">\(R\)</span> is the radius of the colloid, <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity of the liquid. The steady speed of the colloid in the liquid under a force <span class="math notranslate nohighlight">\(F\)</span> is therefore given as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[v=-\frac{1}{\xi}\frac{dU}{dx}\]</div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<p>where <span class="math notranslate nohighlight">\(\xi=6\pi\eta R\)</span> is the friction coefficient for a sphere. Therefore we have an additional current density due to the external force, which is given by <span class="math notranslate nohighlight">\(j=nv\)</span> and therefore the total current density is given by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[j=-D \frac{dn}{dx}-\frac{n}{\xi}\frac{dU}{dx}\]</div>
 </div>
+<p>As we will see later, the diffusion coefficient can be als written as <span class="math notranslate nohighlight">\(D=k_{B}T/\xi\)</span>, which results in</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[j=-\frac{1}{\xi}\left( k_B T \frac{dn}{dx} +n \frac{dU}{dx} \right )\]</div>
 </div>
+<p>using</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx}\ln(n(x))=\frac{1}{n(x)}\frac{dn}{dx}\]</div>
+</div>
+<p>we find</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[j=-\frac{1}{\xi}n\frac{d}{dx}\left( \underbrace{k_B T \ln(x)+U }_{\text{chemical\, potential}} \right)=-\frac{1}{\xi}n\frac{d\mu}{dx}\]</div>
+</div>
+<p>where we recognize the term in the bracket as chemical potential. In general, an inhomogeneous chemical potential drives currents in a system. This is the general version of Fick’s first law, while Ficks second law results in</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{d n}{d t}=-\frac{d j}{d x}=\frac{1}{\xi} \frac{d}{d x}\left(k_B T \frac{d n}{d x}+n \frac{d U}{dx}\right)\]</div>
+</div>
+<p>or</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{dn}{dt}=\nabla \left (D \nabla n +n\frac{\textbf{F}}{\xi}\right ) \tag{Smoluchowski equation}\]</div>
+</div>
+<p>This may be even further generalized and leads to the Fokker-Planck-Equation, which we leave out here in the discussion.</p>
 </section>
 </section>
 
@@ -430,7 +464,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 13, 2023</div>
+              Last updated on Dec 28, 2023</div>
           </div>
           <div class="right-details">
             
