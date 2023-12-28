@@ -9,6 +9,7 @@
         <title>Flows and Transport in Liquids - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -426,6 +427,56 @@
 \[\frac{dn}{dt}=\nabla \left (D \nabla n +n\frac{\textbf{F}}{\xi}\right ) \tag{Smoluchowski equation}\]</div>
 </div>
 <p>This may be even further generalized and leads to the Fokker-Planck-Equation, which we leave out here in the discussion.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<p>The time dependet diffusion equation</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial t} n\left(\vec{r}, t \mid \vec{r}_0, t_0\right)=D \nabla^2 n\left(\vec{r}, t \mid \vec{r}_0, t_0\right)\]</div>
+</div>
+<p>can be solved for given boundary and initial conditions. For the following</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(\vec{r}, t \rightarrow t_0\left|\vec{r}_0, t_0\right|=\delta\left(\vec{r}-\vec{r}_0\right)\right. \tag{initial condition}\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(|\vec{r}| \rightarrow \infty, t \mid \vec{r}_0, t_0\right)=0 \tag{boundary condition}\]</div>
+</div>
+<p>we obtain the Greens function</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n(\vec{r},t|\vec{r}_{0},t_{0})=\frac{1}{(4\pi D(t-t_0))^{3/2}}e^{-\frac{(\vec{r}-\vec{r}_{0})^2}{4D(t-t_0)}}\]</div>
+</div>
+<p>for the diffusion equation and the corresponding boundary conditions. The Greens function is the impulse response. With the help of it, new solutions for any initial condition can be constructed. Lets assume we have an initial condition given by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(\vec{r}, t \rightarrow 0\right)=f\left(\vec{v}_0\right)\]</div>
+</div>
+<p>then the time dependent solution is a superposition of the Greens function solutions</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n(\vec{r}, t)=\int  n\left(\vec{r}, t \mid \vec{r}_0, t_0\right) f\left(\vec{r}_0 \right)dr_0\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\langle x\rangle=\int_{-\infty}^{+\infty} x \frac{\Delta}{\sqrt{4 \pi D\left(t-t_0\right)}} \cdot e^{\frac{-\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}} d x\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\langle x\rangle=x_0\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\left\langle\left(x-x_0\right)^2\right\rangle=\int_{-\infty}^{+\infty}\left(x-x_0\right)^2 n(x, t) d x = 2Dt\]</div>
+</div>
+<img alt="Table" src="../../_images/table.png" />
 </section>
 </section>
 
