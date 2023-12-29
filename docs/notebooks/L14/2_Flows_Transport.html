@@ -281,6 +281,25 @@
 <h1>Flows and Transport in Liquids<a class="headerlink" href="#Flows-and-Transport-in-Liquids" title="Permalink to this heading">#</a></h1>
 <section id="Diffusion-and-Brownian-Motion">
 <h2>Diffusion and Brownian Motion<a class="headerlink" href="#Diffusion-and-Brownian-Motion" title="Permalink to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.special</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;style.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <p>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density <span class="math notranslate nohighlight">\(\textbf{j}\)</span>. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal
 <span class="math notranslate nohighlight">\(\textbf{n}\)</span>.</p>
 <p>The total flow through a surface is then</p>
@@ -427,14 +446,6 @@
 \[\frac{dn}{dt}=\nabla \left (D \nabla n +n\frac{\textbf{F}}{\xi}\right ) \tag{Smoluchowski equation}\]</div>
 </div>
 <p>This may be even further generalized and leads to the Fokker-Planck-Equation, which we leave out here in the discussion.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 <p>The time dependet diffusion equation</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -452,7 +463,7 @@
 <p>we obtain the Greens function</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[n(\vec{r},t|\vec{r}_{0},t_{0})=\frac{1}{(4\pi D(t-t_0))^{3/2}}e^{-\frac{(\vec{r}-\vec{r}_{0})^2}{4D(t-t_0)}}\]</div>
+\[n(\vec{r},t|\vec{r}_{0},t_{0})=\frac{1}{(4\pi D(t-t_0))^{3/2}}e^{-\frac{(\vec{r}-\vec{r}_{0})^2}{4D(t-t_0)}} \tag{Greens function}\]</div>
 </div>
 <p>for the diffusion equation and the corresponding boundary conditions. The Greens function is the impulse response. With the help of it, new solutions for any initial condition can be constructed. Lets assume we have an initial condition given by</p>
 <div class="math-wrapper docutils container">
@@ -464,19 +475,157 @@
 <div class="math notranslate nohighlight">
 \[n(\vec{r}, t)=\int  n\left(\vec{r}, t \mid \vec{r}_0, t_0\right) f\left(\vec{r}_0 \right)dr_0\]</div>
 </div>
+<p>Let is quickly consider the solution in 1 dimension and derive some simple properties of it. The first is the mean position of the density. The mean position is calculated by</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\langle x\rangle=\int_{-\infty}^{+\infty} x \frac{\Delta}{\sqrt{4 \pi D\left(t-t_0\right)}} \cdot e^{\frac{-\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}} d x\]</div>
 </div>
+<p>and the result states</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\langle x\rangle=x_0\]</div>
 </div>
+<p>that it is constant, i.e. the initial position is staionary even though the particles spread in space. This is of course expected as there is no drift in the system to one or the other direction. As the particles still spread in space, the change is in the second moment of the distribution, which is the variance calculated by</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\left\langle\left(x-x_0\right)^2\right\rangle=\int_{-\infty}^{+\infty}\left(x-x_0\right)^2 n(x, t) d x = 2Dt\]</div>
 </div>
-<img alt="Table" src="../../_images/table.png" />
+<p>The result of this is corresponds to the mean squared displacement of a single particle. The variance of the distribution grows linearly in time and the coefficient characterizing the spread of the particles is the diffusion coefficient <span class="math notranslate nohighlight">\(D\)</span>. The law obtained here, can be generalized to <span class="math notranslate nohighlight">\(d=3\)</span> dimensions by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\left\langle\left(\mathbf{r}-\mathbf{r}_0\right)^2\right\rangle=2dDt=6Dt\]</div>
+</div>
+<p>A mean distance travelled is therefore related to the square root of time. This diffusion processes are rapid at short distances but very slow for largedistance as can be seen from the table below.</p>
+<img alt="Table Diffusion" src="../../_images/table.png" />
+<div class="alert alert-info"><section id="Application:-Fluorescence-Recovery-after-Photobleaching">
+<h3>Application: Fluorescence Recovery after Photobleaching<a class="headerlink" href="#Application:-Fluorescence-Recovery-after-Photobleaching" title="Permalink to this heading">#</a></h3>
+<p>One application of our Greens frunction approach that is frequently used in studying biological materials is Fluorescence Recovery after Photobleaching or short <strong>FRAP</strong>.</p>
+<p>Initial condition:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(x, t_0\right)=\Theta(-a-x)+\Theta(x-a)\]</div>
+</div>
+<p>Boundary Condition</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\lim _{|x| \rightarrow \infty} n(x, t)=0\]</div>
+</div>
+<p>Greens Function</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(x,t | x_0, t_0\right)=\frac{1}{\sqrt{4 \pi D\left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4D\left(t-t_0\right)}}\]</div>
+</div>
+<p>Therefore the total solution</p>
+<p><span class="math">\begin{align}
+n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\Theta (-a-x)+\Theta(x-a)]\\
+=& \int_{-\infty}^{-a} d x_0 \frac{1}{\sqrt{4 \pi D \left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}}\\
+=& \int_{a}^{\infty} d x_0 \frac{1}{\sqrt{4 \pi D\left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}}
+\end{align}</span></p>
+<p>The solution of the integration is</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n(x, t)=1-\frac{1}{2}\left(\operatorname{erf}\left[\frac{x+a}{2 \sqrt{D\left(t-t_0\right)}}\right]-\operatorname{erf}\left[\frac{x-a}{2 \sqrt{D\left(t-t_0\right)}}\right]\right)\]</div>
+</div>
+<p>with <span class="math notranslate nohighlight">\(\mathrm{erf}\)</span> being the error function</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{erf}(x)=\frac{1}{\sqrt{\pi}} \int_{-x}^x e^{-t^2} d t=\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} d t\]</div>
+</div>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Example of a FRAP density profile</span>
+<span class="k">def</span> <span class="nf">heaviside</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">n_step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">heaviside</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">heaviside</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">n_solution</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">):</span>
+    <span class="n">term1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))))</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">erf</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))))</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">term1</span> <span class="o">-</span> <span class="n">term2</span><span class="p">)</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># size of the bleached region</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># diffusion coefficient</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initial time</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>  <span class="c1"># times from 1 to 10 seconds</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>  <span class="c1"># range of x values</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n_step</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;n(x, t0)&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n_solution</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;n(x, t=</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">s)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;n(x, t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L14_2_Flows_Transport_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_2_Flows_Transport_11_0.png" style="width: 714px; height: 390px;" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">We can also characterize the amount of density in the bleached region as a function of time. This gives a single time trace, which we ca analyze to obtain the diffusion coefficient</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[N\left(t, t_0\right)= \int_{-a}^{+a}  n(x, t)\, d x\]</div>
+</div>
+<p>The integration of the previously obtained density then results in</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[N\left(t, t_0\right)=\frac{\sqrt{D\left(t-t_0\right)}}{a \sqrt{\pi}}\left(1-\exp\left[-\frac{a^2}{D\left(t-t_0\right)}\right]\right)+1-\operatorname{erf}\left[\frac{a}{\sqrt{D\left(t-t_0\right)}}\right]\]</div>
+</div>
+<p>which is plotted below.</p>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">N</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+    <span class="n">term1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">D</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))))</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">erf</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">D</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">term1</span> <span class="o">+</span> <span class="n">term2</span><span class="p">)</span>
+
+<span class="c1"># Interactive plotting function</span>
+<span class="k">def</span> <span class="nf">plot_function</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># constant a</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initial time t0</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>  <span class="c1"># time range from 0.1 to 10</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Diffusion Coefficient: D=</span><span class="si">{</span><span class="n">D</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t - t0&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;N(t, t0)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot of N(t, t0) with Variable Diffusion Coefficient&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Create the widget</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_function</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">));</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b807b87048134ef99067b34e42cc03ed", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -515,7 +664,7 @@
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 28, 2023</div>
+              Last updated on Dec 29, 2023</div>
           </div>
           <div class="right-details">
             
@@ -538,7 +687,10 @@
             <ul>
 <li><a class="reference internal" href="#">Flows and Transport in Liquids</a><ul>
 <li><a class="reference internal" href="#Diffusion-and-Brownian-Motion">Diffusion and Brownian Motion</a></li>
-<li><a class="reference internal" href="#Diffusion-in-External-Potential---Smoluchowski-Equation">Diffusion in External Potential - Smoluchowski Equation</a></li>
+<li><a class="reference internal" href="#Diffusion-in-External-Potential---Smoluchowski-Equation">Diffusion in External Potential - Smoluchowski Equation</a><ul>
+<li><a class="reference internal" href="#Application:-Fluorescence-Recovery-after-Photobleaching">Application: Fluorescence Recovery after Photobleaching</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
