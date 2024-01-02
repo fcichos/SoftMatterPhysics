@@ -287,7 +287,7 @@
 <section id="Diffusion-and-Brownian-Motion">
 <h2>Diffusion and Brownian Motion<a class="headerlink" href="#Diffusion-and-Brownian-Motion" title="Permalink to this heading">#</a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -305,6 +305,8 @@
 </pre></div>
 </div>
 </div>
+<section id="Diffusion">
+<h3>Diffusion<a class="headerlink" href="#Diffusion" title="Permalink to this heading">#</a></h3>
 <p>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density <span class="math notranslate nohighlight">\(\textbf{j}\)</span>. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal
 <span class="math notranslate nohighlight">\(\textbf{n}\)</span>.</p>
 <p>The total flow through a surface is then</p>
@@ -409,7 +411,7 @@
 </div>
 </section>
 <section id="Diffusion-in-External-Potential---Smoluchowski-Equation">
-<h2>Diffusion in External Potential - Smoluchowski Equation<a class="headerlink" href="#Diffusion-in-External-Potential---Smoluchowski-Equation" title="Permalink to this heading">#</a></h2>
+<h3>Diffusion in External Potential - Smoluchowski Equation<a class="headerlink" href="#Diffusion-in-External-Potential---Smoluchowski-Equation" title="Permalink to this heading">#</a></h3>
 <p>And some of the cases we may need to describe the diffusion in the presence of an external force field like we did already for the sedimentation problems we studied at the beginning of the course. The force is given by a potential gradient.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -502,6 +504,7 @@
 </div>
 <p>A mean distance travelled is therefore related to the square root of time. This diffusion processes are rapid at short distances but very slow for largedistance as can be seen from the table below.</p>
 <img alt="Table Diffusion" src="../../_images/table.png" />
+</section>
 <section id="Application:-Fluorescence-Recovery-after-Photobleaching">
 <h3>Application: Fluorescence Recovery after Photobleaching<a class="headerlink" href="#Application:-Fluorescence-Recovery-after-Photobleaching" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
@@ -579,7 +582,7 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L14_2_Flows_Transport_12_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_2_Flows_Transport_12_0.png" style="width: 714px; height: 390px;" />
+<img alt="../../_images/notebooks_L14_2_Flows_Transport_13_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_2_Flows_Transport_13_0.png" style="width: 714px; height: 390px;" />
 </div>
 </div>
 <div class="admonition note">
@@ -631,17 +634,92 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L14_2_Flows_Transport_14_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_2_Flows_Transport_14_0.png" style="width: 636px; height: 397px;" />
+<img alt="../../_images/notebooks_L14_2_Flows_Transport_15_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_2_Flows_Transport_15_0.png" style="width: 636px; height: 397px;" />
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+</section>
+<section id="Rotational-Diffusion">
+<h3>Rotational Diffusion<a class="headerlink" href="#Rotational-Diffusion" title="Permalink to this heading">#</a></h3>
+<p>If we constrain all the points that are diffusing to a sphere of radius 1, i.e. <span class="math notranslate nohighlight">\(\left|\vec{r}_0\right|=|\vec{r}|=1\)</span>, the we have in a spherical coordinate system no radial motion just angular motion along the remaining two angular coordinates <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>. The dynamics of the vector from the center of the unit sphere to the surface is therefore a orientational diffusion, which obeys the following diffusion equation</p>
+<p>The differential operator has, without any surprise, spherical harmonics as eigenfunctions, i.e.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[Y_l^m=N e^{i m \phi} P_l^m(\cos \theta)\]</div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is a nomralization factor and <span class="math notranslate nohighlight">\(P_l^m\)</span> are the assiciated Legendre polynomials. The time dependent solution of the density <span class="math notranslate nohighlight">\(n\)</span> at the surface of the sphere can therefore be expressed as a sum over all surface harmonics with time dependent amplitudes <span class="math notranslate nohighlight">\(A_{\operatorname{lm}}\left(t, \Omega_0, t_0\right)\)</span>, which depend on the initial distribution at <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(\Omega, t \mid \Omega_0, t_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^{+l} A_{l m}\left(t, \Omega_0, t_0\right) Y_l^m(\Omega)\]</div>
 </div>
+<p>To obtain a solution for the amplitudes, we insert the series into the diffusion equation to yield</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{l=0}^{\infty} \sum_{m=-l}^{+l} \frac{\partial A_{l m}}{\partial t} Y_l^m=-\frac{1}{\tau_R}\sum_{l=0}^{\infty} \sum_{m=-l}^l l(l+1)  A_{l m} Y_l^m\]</div>
 </div>
+<p>where <span class="math notranslate nohighlight">\(D_{\mathrm{rot}}=1/\tau_{R}\)</span> is the rotational diffusion coefficient. Due to the orthogonality of the surface harmonics, this finally yields</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{\partial A_{l m}}{\partial t}=-\frac{l(l+1)}{\tau_{R}} A_{l m}\]</div>
+</div>
+<p>for each value of the integer number <span class="math notranslate nohighlight">\(l\)</span> and <span class="math notranslate nohighlight">\(m\)</span>. This is solved by an exponential function</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[A_{\operatorname{lm}}\left(t \mid \Omega_0, t_0\right)=e^{-l(l+1) \frac{\left(t-t_0\right)}{\tau_R}} \quad a_{lm}\left(\Omega_0\right)\]</div>
+</div>
+<p>where the coefficients <span class="math notranslate nohighlight">\(a_{lm}\)</span> are determined by the initial conditions.</p>
+<p>The final solution is therefore</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(\Omega, t \mid \Omega_0, t_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^l e^{-l(l+1) \frac{\left(t-t_0\right)}{\tau_R}} a_{l_m}\left(\Omega_0\right) Y_l^m \tag{rotational diffusion}\]</div>
+</div>
+<p>A more specific solution can be obtained by assuming that there is a delta function for the density <span class="math notranslate nohighlight">\(n\)</span> as the initial condition, i.e.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n\left(\Omega, t_0|  \Omega_0, t_0\right)=\delta\left(\Omega-\Omega_0\right)\]</div>
+</div>
+<p>The delta function can be expressed in speherical coordinates as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\delta\left(\Omega-\Omega_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^l Y_{l m}^*\left(\Omega_0\right) Y_{l n}(\Omega)\]</div>
+</div>
+<p>an yields</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[a_{lm}\left(\Omega_0\right)=Y_{l m}\left(\Omega_0\right)\]</div>
+</div>
+<p>and this finally</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[n(\Omega, t| \Omega_0, t_0)=\sum_{l=0}^{\infty} \sum_{m=-l}^k e^{-l(l+1) \frac{(t-t_0)} {\tau_R}} Y_{lm}^*\left(\Omega_0\right) Y_{l m}(\Omega)\]</div>
+</div>
+<p>Analyzing this equation we see that the amplitudes decay exponentially with a time constant <span class="math notranslate nohighlight">\(\tau_{R}/(l(l+1))\)</span>. The largest time constant, i.e. the time constant that prevails at long times is <span class="math notranslate nohighlight">\(\tau_R/2\)</span>, while the dynamic behavior at short times can be multi-exponential.</p>
+<section id="NMR/Dielectric-Relaxation">
+<h4>NMR/Dielectric Relaxation<a class="headerlink" href="#NMR/Dielectric-Relaxation" title="Permalink to this heading">#</a></h4>
+<p>The results have some immediate consquences for the analysis of experimental data coming from dielectric spectroscopy or nuclear magnetic resonance (NMR). Both techniques are very common for studying soft matter, as they address either molecular electric dipoles or nuclear magnetic dipoles, which respond to a perturbation by an external field through various processes, among them an orientational diffusion.</p>
+<p>For dielectric spectroscopy one measures a dielectric polarization, i.e. a projection of dipoles onto an axis given by an electric field. Similarly NMR uses the projection of magnetic dipoles (nuclear spins) to the magnetic field direction to create a magnetization. If the dipole makes an angle <span class="math notranslate nohighlight">\(\theta\)</span> with the corresponding field, then the projection of the dipole is <span class="math notranslate nohighlight">\(\mu \cos(\theta)\)</span>, which is responsible for the polarization/magnetization. What is probed by NMR or dielectric
+spectroscopy is therefore the relaxation of that cosine term.</p>
+<p>In the sum of spherical surface harmonics, this is actually the term with <span class="math notranslate nohighlight">\(l=1\)</span>, which is accompanied with the first Legendre polynomial:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[P_1^0=P_0 \cos (\theta) \quad l=1\]</div>
+</div>
+<p>So both techniques would probe the first Legendre polynomial, but</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\left\langle P_{1}^0\right\rangle=\frac{1}{4 \pi} \int d \Omega P_0 \cos (\theta) \quad \rightarrow 0\]</div>
+</div>
+<p>This is because the dynamics of the dipoles is uncorrelated and doing Brownian motion. Yet, you can have a look at the dynamics if you calculate the autocorrelation function</p>
+<p><span class="math">\begin{align}
+\left\langle P_1^0(t) P_1^{0, *}\left(t_0\right)\right)=& P_0^2 \int d \Omega \int d \Omega_0 \cos (\theta) \cos \left(\theta_0\right) n\left(\Omega, t |\Omega_0 ,t_0\right) n_0\left(\Omega_0\right)\\
+= & \frac{4 \pi}{3} P_0^2 \sum_{m=1}^l e^{-l(l+1) \frac{t-t_0}{\tau_R}}\left|C_{10 l m}\right|^2
+\end{align}</span></p>
+<p>where the <span class="math notranslate nohighlight">\(C_{10 l m}\)</span> are again defined by the initial conditions. So if these are delta functions, one quickly finds that</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\left\langle P_3(t) P_3^*(t_0)\right\rangle=\frac{4 \pi}{3} P_0^2 e^{-2\left(t-t_0\right) /\tau_R}\]</div>
+</div>
+<p>So the correlation function decay with a time constant that is half the rotational diffusion time due to the projection of the dipole to a certain direction. Here are some more details on measurements based on NMR, even though focused on <a class="reference external" href="https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2017/03/MRT%20Lecture/assets/fallback/index.html">magnetic resonance imaging</a>.</p>
+</section>
 </section>
 </section>
 </section>
@@ -703,9 +781,14 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Flows and Transport in Liquids</a><ul>
-<li><a class="reference internal" href="#Diffusion-and-Brownian-Motion">Diffusion and Brownian Motion</a></li>
-<li><a class="reference internal" href="#Diffusion-in-External-Potential---Smoluchowski-Equation">Diffusion in External Potential - Smoluchowski Equation</a><ul>
+<li><a class="reference internal" href="#Diffusion-and-Brownian-Motion">Diffusion and Brownian Motion</a><ul>
+<li><a class="reference internal" href="#Diffusion">Diffusion</a></li>
+<li><a class="reference internal" href="#Diffusion-in-External-Potential---Smoluchowski-Equation">Diffusion in External Potential - Smoluchowski Equation</a></li>
 <li><a class="reference internal" href="#Application:-Fluorescence-Recovery-after-Photobleaching">Application: Fluorescence Recovery after Photobleaching</a></li>
+<li><a class="reference internal" href="#Rotational-Diffusion">Rotational Diffusion</a><ul>
+<li><a class="reference internal" href="#NMR/Dielectric-Relaxation">NMR/Dielectric Relaxation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
