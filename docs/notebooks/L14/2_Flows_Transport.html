@@ -238,7 +238,6 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../L13/1_depletion_forces.html">Depletion Forces</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Flows and Transport in Liquids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Langevin Theory</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 15:</span></p>
 <ul>
@@ -284,8 +283,6 @@
 <section id="Flows-and-Transport-in-Liquids">
 <h1>Flows and Transport in Liquids<a class="headerlink" href="#Flows-and-Transport-in-Liquids" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/729211f73aaf35557b8a58999ebafb5075c80b6d/source/notebooks/L14/2_Flows_Transport.pdf">File as PDF</a></p>
-<section id="Diffusion-and-Brownian-Motion">
-<h2>Diffusion and Brownian Motion<a class="headerlink" href="#Diffusion-and-Brownian-Motion" title="Permalink to this heading">#</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
@@ -305,8 +302,8 @@
 </pre></div>
 </div>
 </div>
-<section id="Diffusion">
-<h3>Diffusion<a class="headerlink" href="#Diffusion" title="Permalink to this heading">#</a></h3>
+<section id="Translational-Diffusion">
+<h2>Translational Diffusion<a class="headerlink" href="#Translational-Diffusion" title="Permalink to this heading">#</a></h2>
 <p>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density <span class="math notranslate nohighlight">\(\textbf{j}\)</span>. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal
 <span class="math notranslate nohighlight">\(\textbf{n}\)</span>.</p>
 <p>The total flow through a surface is then</p>
@@ -336,6 +333,7 @@
 </div>
 <p>The continuity equation states that the amount of the quantity (such as mass, charge, or energy) within a defined system can only change if there is a flow of that quantity into or out of the system. More generally, the continuity equation may have a source term on the right side instead of the <span class="math notranslate nohighlight">\(0\)</span> when there is a production or destruction of the quantity in the volume.</p>
 <p>As the next step, we would like to obtain an equation, which tells us about the flow of the density of objects, due to their Brownian motion. We consider a vertical wall of area <span class="math notranslate nohighlight">\(A\)</span>, which separates two regions. There are <span class="math notranslate nohighlight">\(N(x)\)</span> on the left and <span class="math notranslate nohighlight">\(N(x+\Delta x)\)</span> on the right of area <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<img alt="Diffusion" src="../../_images/diffusion.png" />
 <p>We can calculate the number of particles that goes through the area from the difference of the number of particles on the left and on the right side and divided by the area where the particles go through and the time <span class="math notranslate nohighlight">\(\tau\)</span> they need to go through that this is the current density <span class="math notranslate nohighlight">\(j\)</span></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -409,7 +407,6 @@
 </tbody>
 </table>
 </div>
-</section>
 <section id="Diffusion-in-External-Potential---Smoluchowski-Equation">
 <h3>Diffusion in External Potential - Smoluchowski Equation<a class="headerlink" href="#Diffusion-in-External-Potential---Smoluchowski-Equation" title="Permalink to this heading">#</a></h3>
 <p>And some of the cases we may need to describe the diffusion in the presence of an external force field like we did already for the sedimentation problems we studied at the beginning of the course. The force is given by a potential gradient.</p>
@@ -638,8 +635,9 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 </div>
 </div>
 </section>
+</section>
 <section id="Rotational-Diffusion">
-<h3>Rotational Diffusion<a class="headerlink" href="#Rotational-Diffusion" title="Permalink to this heading">#</a></h3>
+<h2>Rotational Diffusion<a class="headerlink" href="#Rotational-Diffusion" title="Permalink to this heading">#</a></h2>
 <p>If we constrain all the points that are diffusing to a sphere of radius 1, i.e. <span class="math notranslate nohighlight">\(\left|\vec{r}_0\right|=|\vec{r}|=1\)</span>, the we have in a spherical coordinate system no radial motion just angular motion along the remaining two angular coordinates <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>. The dynamics of the vector from the center of the unit sphere to the surface is therefore a orientational diffusion, which obeys the following diffusion equation</p>
 <p>The differential operator has, without any surprise, spherical harmonics as eigenfunctions, i.e.</p>
 <div class="math-wrapper docutils container">
@@ -693,8 +691,8 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 \[n(\Omega, t| \Omega_0, t_0)=\sum_{l=0}^{\infty} \sum_{m=-l}^k e^{-l(l+1) \frac{(t-t_0)} {\tau_R}} Y_{lm}^*\left(\Omega_0\right) Y_{l m}(\Omega)\]</div>
 </div>
 <p>Analyzing this equation we see that the amplitudes decay exponentially with a time constant <span class="math notranslate nohighlight">\(\tau_{R}/(l(l+1))\)</span>. The largest time constant, i.e. the time constant that prevails at long times is <span class="math notranslate nohighlight">\(\tau_R/2\)</span>, while the dynamic behavior at short times can be multi-exponential.</p>
-<section id="NMR/Dielectric-Relaxation">
-<h4>NMR/Dielectric Relaxation<a class="headerlink" href="#NMR/Dielectric-Relaxation" title="Permalink to this heading">#</a></h4>
+<section id="NMR-Spectroscopy/Dielectric-Relaxation">
+<h3>NMR Spectroscopy/Dielectric Relaxation<a class="headerlink" href="#NMR-Spectroscopy/Dielectric-Relaxation" title="Permalink to this heading">#</a></h3>
 <p>The results have some immediate consquences for the analysis of experimental data coming from dielectric spectroscopy or nuclear magnetic resonance (NMR). Both techniques are very common for studying soft matter, as they address either molecular electric dipoles or nuclear magnetic dipoles, which respond to a perturbation by an external field through various processes, among them an orientational diffusion.</p>
 <p>For dielectric spectroscopy one measures a dielectric polarization, i.e. a projection of dipoles onto an axis given by an electric field. Similarly NMR uses the projection of magnetic dipoles (nuclear spins) to the magnetic field direction to create a magnetization. If the dipole makes an angle <span class="math notranslate nohighlight">\(\theta\)</span> with the corresponding field, then the projection of the dipole is <span class="math notranslate nohighlight">\(\mu \cos(\theta)\)</span>, which is responsible for the polarization/magnetization. What is probed by NMR or dielectric
 spectroscopy is therefore the relaxation of that cosine term.</p>
@@ -719,7 +717,14 @@ spectroscopy is therefore the relaxation of that cosine term.</p>
 \[\left\langle P_3(t) P_3^*(t_0)\right\rangle=\frac{4 \pi}{3} P_0^2 e^{-2\left(t-t_0\right) /\tau_R}\]</div>
 </div>
 <p>So the correlation function decay with a time constant that is half the rotational diffusion time due to the projection of the dipole to a certain direction. Here are some more details on measurements based on NMR, even though focused on <a class="reference external" href="https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2017/03/MRT%20Lecture/assets/fallback/index.html">magnetic resonance imaging</a>.</p>
-</section>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -759,7 +764,7 @@ spectroscopy is therefore the relaxation of that cosine term.</p>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 02, 2024</div>
+              Last updated on Jan 03, 2024</div>
           </div>
           <div class="right-details">
             
@@ -781,14 +786,13 @@ spectroscopy is therefore the relaxation of that cosine term.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Flows and Transport in Liquids</a><ul>
-<li><a class="reference internal" href="#Diffusion-and-Brownian-Motion">Diffusion and Brownian Motion</a><ul>
-<li><a class="reference internal" href="#Diffusion">Diffusion</a></li>
+<li><a class="reference internal" href="#Translational-Diffusion">Translational Diffusion</a><ul>
 <li><a class="reference internal" href="#Diffusion-in-External-Potential---Smoluchowski-Equation">Diffusion in External Potential - Smoluchowski Equation</a></li>
 <li><a class="reference internal" href="#Application:-Fluorescence-Recovery-after-Photobleaching">Application: Fluorescence Recovery after Photobleaching</a></li>
-<li><a class="reference internal" href="#Rotational-Diffusion">Rotational Diffusion</a><ul>
-<li><a class="reference internal" href="#NMR/Dielectric-Relaxation">NMR/Dielectric Relaxation</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#Rotational-Diffusion">Rotational Diffusion</a><ul>
+<li><a class="reference internal" href="#NMR-Spectroscopy/Dielectric-Relaxation">NMR Spectroscopy/Dielectric Relaxation</a></li>
 </ul>
 </li>
 </ul>
