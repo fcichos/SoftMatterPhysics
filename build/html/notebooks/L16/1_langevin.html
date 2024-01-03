@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Flows and Transport in Liquids" href="../L14/2_Flows_Transport.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
-        <title>Langevin Theory - Soft Matter Lecture 23 documentation</title>
+        <title>Brownian Motion - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
@@ -235,14 +235,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../L13/1_depletion_forces.html">Depletion Forces</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 14:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L13/1_depletion_forces.html">Depletion Forces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L14/2_Flows_Transport.html">Flows and Transport in Liquids</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Langevin Theory</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 15:</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Langevin Theory</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Brownian Motion</a></li>
 </ul>
 
 </div>
@@ -281,11 +280,32 @@
 <p>This page was generated from <cite>notebooks/L16/1_langevin.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L16/1_langevin.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
 </div>
+<section id="Brownian-Motion">
+<h1>Brownian Motion<a class="headerlink" href="#Brownian-Motion" title="Permalink to this heading">#</a></h1>
+<p>Brownian motion is a hallmark of soft matter as it reveals besides the discrete nature of matter also ther presence of thermal fluctuations. The overall dynamics of the motion of a colloid o molecule inside a liquid is, however rather complex. We will first do some estimates of colloidal/molecular dynamics</p>
+<img alt="Colloidal Setup" src="../../_images/colloid.png" />
+<p>We will for the following assume a colloid (solute) in a solvent (water) with the following properties:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{|c|c|}
+\hline \text { sphere radius } &amp; \mathrm{R}=100 \mathrm{~nm} \\
+\hline \text { sphere mass density } &amp; \rho=1 \mathrm{~g} / \mathrm{cm}^3 \\
+\hline \text { temperature } &amp; \mathrm{T}=298 \mathrm{~K} \\
+\hline \text { water viscosity } &amp; \eta=1 \mathrm{cP} \\
+\hline
+\end{array}\end{split}\]</div>
+</div>
+<p>The dynamics of the colloid will span all times and the shortest relevant timescale is the one determining the collisions between the molecules of the solvent.</p>
+<ol class="arabic simple">
+<li><p>Molecular Collision Time</p></li>
+<li><p>Momentum Relaxation Time</p></li>
+<li><p>Brownian Motion</p></li>
+</ol>
 <section id="Langevin-Theory">
-<h1>Langevin Theory<a class="headerlink" href="#Langevin-Theory" title="Permalink to this heading">#</a></h1>
+<h2>Langevin Theory<a class="headerlink" href="#Langevin-Theory" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/1124ed8ae7f3929bbbfead265cfc90ed3bd19d2f/source/notebooks/L16/1_langevin.pdf">File as PDF</a></p>
 <section id="Langevin-Equation">
-<h2>Langevin Equation<a class="headerlink" href="#Langevin-Equation" title="Permalink to this heading">#</a></h2>
+<h3>Langevin Equation<a class="headerlink" href="#Langevin-Equation" title="Permalink to this heading">#</a></h3>
 <p>Langevin theory provides now an equation of motion for objects whoch are subject to fluctuating forces. In the most general way, Newtons equation of motion is written as</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -443,6 +463,7 @@ M^{\prime} \ddot{x}(t)=
 </div>
 <p>which is a very fundamental result. It states that the fluctuating force <span class="math notranslate nohighlight">\(\vec{\zeta}(t)\)</span> are related to the viscous forces expressed by the friction coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>. This makes sensse, since the friction forces must dissipate energy into heat. The motion would thus come to a rest if heat and dynamics would be decoupled. The law we obtained is thus stateing the dissipated energy goes back again into kinetic energy. This is the statement of the fluctuation dissipation theorem,</p>
 </section>
+</section>
 <section id="Fluctuation-Dissipation-Theorem">
 <h2>Fluctuation Dissipation Theorem<a class="headerlink" href="#Fluctuation-Dissipation-Theorem" title="Permalink to this heading">#</a></h2>
 <p>The fluctuation dissipation theorem (FDT) generalizes the previous finding into</p>
@@ -550,7 +571,7 @@ M^{\prime} \ddot{x}(t)=
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 02, 2024</div>
+              Last updated on Jan 03, 2024</div>
           </div>
           <div class="right-details">
             
@@ -571,8 +592,11 @@ M^{\prime} \ddot{x}(t)=
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Langevin Theory</a><ul>
+<li><a class="reference internal" href="#">Brownian Motion</a><ul>
+<li><a class="reference internal" href="#Langevin-Theory">Langevin Theory</a><ul>
 <li><a class="reference internal" href="#Langevin-Equation">Langevin Equation</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#Fluctuation-Dissipation-Theorem">Fluctuation Dissipation Theorem</a><ul>
 <li><a class="reference internal" href="#Damped-Driven-Harmonic-Oscillator">Damped Driven Harmonic Oscillator</a></li>
 </ul>
