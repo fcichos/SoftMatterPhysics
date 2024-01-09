@@ -134,6 +134,13 @@ Welcome to Soft Matter Physics Lecture Website!
    :caption: Lecture 15:
    
    notebooks/L16/1_langevin.ipynb
+   
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 16:
+   
+   notebooks/L17/1_hydrodynamics.ipynb   
 
 Indices and tables
 ==================
