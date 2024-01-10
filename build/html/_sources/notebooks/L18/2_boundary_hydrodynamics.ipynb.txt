@@ -5,7 +5,9 @@
    "id": "1ba3005b-6018-46f3-bb96-25c0a59ebda8",
    "metadata": {},
    "source": [
-    "# Boundary Hydrodynamics "
+    "# Boundary Hydrodynamics \n",
+    "\n",
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/6f8c52144e96267c628277ed11acc4329b9513fc/source/notebooks/L18/2_boundary_hydrodynamics.pdf)"
    ]
   },
   {
