@@ -7,7 +7,7 @@
    "source": [
     "# Real Polymers\n",
     "\n",
-    "[Download Lecture as PDF](1_real_polymers.pdf)"
+    "[File as PDF](1_real_polymers.pdf)"
    ]
   },
   {
