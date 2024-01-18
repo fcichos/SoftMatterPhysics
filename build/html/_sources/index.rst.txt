@@ -149,6 +149,20 @@ Welcome to Soft Matter Physics Lecture Website!
    notebooks/L18/1_Reynolds_Number.ipynb      
    notebooks/L18/2_boundary_hydrodynamics.ipynb
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 19:
+   
+   notebooks/L19/2_polymers.ipynb
+   
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 19:
+   
+   notebooks/L22/1_real_polymers.ipynb   
+
 Indices and tables
 ==================
 
