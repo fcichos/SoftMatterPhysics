@@ -7,7 +7,7 @@
    "source": [
     "# Real Polymers\n",
     "\n",
-    "[File as PDF](1_real_polymers.pdf)"
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/669c5137e6e7f996dcdba31d56ba96e5394ec11c/source/notebooks/L22/1_real_polymers.pdf)"
    ]
   },
   {
@@ -307,7 +307,7 @@
     "\n",
     "which is the viral expansion of the compressibility factor for a real gas. The coefficients $B(T),C(T),D(T)$ are called the viral expansion coefficient. \n",
     "\n",
-    "Let's have a look at the first one in the case of a van der Waals gas, which is $B(T)$. The presure of a vand der Waals gas reads\n",
+    "Let's have a look at the first one in the case of a van der Waals gas, which is $B(T)$. The presure of a van der Waals gas reads\n",
     "\n",
     "\\begin{equation}\n",
     "p=\\frac{RT}{(V_m-b)}-\\frac{a}{V_m^2}\n",
