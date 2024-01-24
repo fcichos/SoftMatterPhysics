@@ -13,7 +13,7 @@
    "id": "647f202b-84b0-479c-a39d-bdd215fa66fd",
    "metadata": {},
    "source": [
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/669c5137e6e7f996dcdba31d56ba96e5394ec11c/source/notebooks/L19/2_polymers.pdf)"
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/651340bf0dc9ab359d1ab26daed5b0ea4e22eba0/source/notebooks/L20/1_polymers.pdf)"
    ]
   },
   {
