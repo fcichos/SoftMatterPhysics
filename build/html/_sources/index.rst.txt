@@ -159,9 +159,18 @@ Welcome to Soft Matter Physics Lecture Website!
    
 .. toctree::
    :maxdepth: 2
-   :caption: Lecture 19:
+   :caption: Lecture 20:
+   
+   notebooks/L20/1_polymers.ipynb   
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 21:
    
    notebooks/L22/1_real_polymers.ipynb   
+
+
 
 Indices and tables
 ==================
