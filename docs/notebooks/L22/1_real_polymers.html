@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Ideal Polymer Models" href="../L20/1_polymers.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Scattering Techniques for Polymer Conformation" href="../L23/1_Scattering.html" /><link rel="prev" title="Ideal Polymer Models" href="../L20/1_polymers.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
         <title>Real Polymers - Soft Matter Lecture 23 documentation</title>
@@ -261,7 +261,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 21:</span></p>
 <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Real Polymers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
+<ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Real Polymers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
 </ul>
 
 </div>
@@ -465,7 +470,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <p>To extend the Flory theory for all kinds of solvents you have to go back to the virial expansion of the free energy density.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\frac{F_{int}}{V k_B T}=F_{0}+ vc^2+ wc3+\ldots\]</div>
+\[\frac{F_{int}}{V k_B T}=F_{0}+ vc^2+ wc^3+\ldots\]</div>
 </div>
 <p>which essentially contains a contribution of the ideal chain, plus the corrections in orders of the segment density <span class="math notranslate nohighlight">\(c\)</span>. The ideal chain therby contributes the entropic part and the real chain correction gives the free volume correction. The main difference now to the good solvent model is now that the entropic part above has to include some additional term to include a repulsive</p>
 <div class="math-wrapper docutils container">
@@ -485,7 +490,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <p>results in</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\frac{F}{k_B T}=\alpha^2+\alpha^{-2}+ \frac{vN^{172}}{b^3}\alpha^{-3}+\frac{w}{b^6}\alpha^{-6}\]</div>
+\[\frac{F}{k_B T}=\alpha^2+\alpha^{-2}+ \frac{vN^{1/2}}{b^3}\alpha^{-3}+\frac{w}{b^6}\alpha^{-6}\]</div>
 </div>
 <p>This allows us to see that for</p>
 <ul class="simple">
@@ -507,7 +512,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <div class="math notranslate nohighlight">
 \[f(r)=\exp\left ( \frac{U(r)}{k_B T}\right)-1 \approx -\frac{U(r)}{k_B T}\]</div>
 </div>
-<p>Folowing these approximation we may split the intergral, which yields the excluded volume into two parts</p>
+<p>Following these approximation we may split the intergral, which yields the excluded volume into two parts</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[v=-4\pi \int_0^{\infty}f(r)r^2 dr\approx 4\pi \int_0^{b}r^2 dr+\frac{4\pi}{k_B T}\int_b^{\infty}U(r)r^2dr\]</div>
@@ -540,7 +545,15 @@ density combined with ideal chain conformation-derived entropy can provide quite
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="../L23/1_Scattering.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Scattering Techniques for Polymer Conformation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="../L20/1_polymers.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -562,7 +575,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jan 24, 2024</div>
+              Last updated on Jan 25, 2024</div>
           </div>
           <div class="right-details">
             
