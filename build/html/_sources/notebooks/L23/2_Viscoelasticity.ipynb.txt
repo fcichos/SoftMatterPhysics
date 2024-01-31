@@ -13,7 +13,7 @@
    "id": "e1c403a4-4e25-49b2-99e0-d164bbe93ed8",
    "metadata": {},
    "source": [
-    "[File as PDF]()"
+    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/9e7003a7ff665ef3f4eb1e61be2aca830ea66baf/source/notebooks/L23/2_Viscoelasticity.pdf)"
    ]
   },
   {
