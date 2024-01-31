@@ -78,14 +78,6 @@
     "f(\\theta)=\\int_{0}^{2 \\pi} f(\\theta, \\phi) d \\phi\n",
     "$$"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "5804cb4c-d936-498e-891a-6f40ebd7d13d",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
@@ -104,7 +96,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.8.5"
+   "version": "3.8.16"
   },
   "widgets": {
    "application/vnd.jupyter.widget-state+json": {
