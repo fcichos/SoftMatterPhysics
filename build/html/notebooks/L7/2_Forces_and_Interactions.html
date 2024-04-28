@@ -1,0 +1,777 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
+        <title>Forces and Interactions in Soft Matter - Soft Matter Lecture 23 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/info.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/instructors.html">Instructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html#books">Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/exam.html">Exercises and Exam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html">Equipartition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/2_Chemical_Potential.html">Chemical Potential</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L5/1_Phase_Transitions.html">Phase Transitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L6/1_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Interactions involving polar molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals_McLachlan.html">van der Waals Interactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals_Solid_Bodies.html">van der Waals Interaction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L12/1_van_der_Waals_Lifshitz.html">van der Waals Interaction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 13:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L13/1_depletion_forces.html">Depletion Forces</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 14:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L13/1_depletion_forces.html">Depletion Forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L14/2_Flows_Transport.html">Flows and Transport in Liquids</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 15:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L16/1_langevin.html">Brownian Motion</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L17/1_hydrodynamics.html">Hydrodynamics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L18/1_Reynolds_Number.html">Reynolds Number</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L19/2_polymers.html">Polymers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 20:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L20/1_polymers.html">Ideal Polymer Models</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 21:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L22/1_real_polymers.html">Real Polymers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="admonition note">
+<p>This page was generated from <cite>notebooks/L7/2_Forces_and_Interactions.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/SoftMatterPhysics/main?urlpath=tree/source/notebooks/L7/2_Forces_and_Interactions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span>
+<span class="raw-html"><a href="https://fcichos.github.io/SoftMatterPhysics/source/notebooks/notebooks/L7/2_Forces_and_Interactions.ipynb" target="_blank">PDF.</a></span></p>
+</div>
+<section id="Forces-and-Interactions-in-Soft-Matter">
+<h1>Forces and Interactions in Soft Matter<a class="headerlink" href="#Forces-and-Interactions-in-Soft-Matter" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/565ee096c0d7e5c72b04b147e15e2d796d9e2ab9/source/notebooks/L7/2_Forces%20and%20Interactions.pdf">File as PDF</a></p>
+<p>While we have discussed in the previous sections the thermodynamics of systems and the kinetics of phase transitions, we have made as few as possible assumptions on the interactions between the liquid components of a mixture to highlight the importance of entropic and other effects. Now, we would like to have a close look at the possible types of interactions and their order of magnitude in soft matter systems. We may classify the interactions in the following way: - covalent interaction
+(chemical binding), - electrostatic (Coulomb), - dipolar (vdW), - hydrogen bonding, - dispersion (vdW), - fluctuation, depletion (entropic).</p>
+<p>These interactions deliver the forces that hold soft matter together, even though the phases are characterized by <em>density</em>, <em>free energy</em> and <em>entropy</em>, but not by the forces.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="c1"># the lines below set a number of parameters for plotting, such as label font size,</span>
+<span class="c1"># title font size, which you may find useful</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">&#39;font.family&#39;</span><span class="p">:</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">&#39;axes.labelpad&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                     <span class="s1">&#39;xtick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">&#39;ytick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">&#39;xtick.top&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">&#39;xtick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;ytick.right&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">&#39;ytick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,})</span>
+</pre></div>
+</div>
+</div>
+<section id="Pairwise-interaction-energy">
+<h2>Pairwise interaction energy<a class="headerlink" href="#Pairwise-interaction-energy" title="Permalink to this heading">#</a></h2>
+<p>Before we go into further details, we may have a look at some general behavior again. Let us assume that the interaction energy between two atoms/molecules is given by</p>
+<p><span class="math">\begin{equation}
+w(r)=-\frac{C}{r^n}
+\end{equation}</span></p>
+<p>with <span class="math notranslate nohighlight">\(C\)</span> being an interaction-specific constant, then the force between the two species at a distance <span class="math notranslate nohighlight">\(r\)</span> is given by</p>
+<p><span class="math">\begin{equation}
+F(r)=-\frac{\mathrm dw(r)}{\mathrm dr}=-\frac{nC}{r^{n+1}}.
+\end{equation}</span></p>
+<p>For a material, which has a number density <span class="math notranslate nohighlight">\(\rho\)</span> and, thus, the total number <span class="math notranslate nohighlight">\(\rho 4πr^2 \mathrm{d}r\)</span> molecules in a shell between <span class="math notranslate nohighlight">\(r,r+\mathrm{d}r\)</span> around a molecule, we obtain the following total interaction energy per molecule (the standard chemical potential):</p>
+<p><span class="math">\begin{equation}
+\mu^{0}=\int_{\sigma}^{L}w(r)\rho 4\pi r^2 \mathrm dr=\frac{-4\pi C\rho}{(n-3)\sigma^{n-3}}\left [ 1-\left (\frac{\sigma}{L}\right )^{n-3}\right ].
+\end{equation}</span></p>
+<p>The total interaction energy, and thus also the property of the system will, consequently, depend on the size <span class="math notranslate nohighlight">\(L\)</span> of the system, except we assume <span class="math notranslate nohighlight">\(n&gt;3\)</span> and <span class="math notranslate nohighlight">\(L&gt;&gt;σ\)</span>, where <span class="math notranslate nohighlight">\(σ\)</span> is the size of the molecule. This states nothing else, that long range interactions may yield system-dependent properties or bulk properties that do not depend on the volume size only if objects become small. Obviously, Coulomb interactions or dipolar interactions may not satisfy the above
+assumptions.</p>
+</section>
+<section id="Cohesive-energy-of-a-liquid">
+<h2>Cohesive energy of a liquid<a class="headerlink" href="#Cohesive-energy-of-a-liquid" title="Permalink to this heading">#</a></h2>
+<p>We can find out some general rule about the cohesive energy of a molecule with its neighbors in a liquid, when comparing the molar gas and molar liquid volumes. A typical gas molar volume is <span class="math notranslate nohighlight">\(22.400~ \rm cm^3/mol\)</span>, while this is only <span class="math notranslate nohighlight">\(20~ \rm cm^3/mol\)</span> for a liquid. If liquid and gas coexist at a certain temperature <span class="math notranslate nohighlight">\(T\)</span>, then the chemical potential of gas and liquid have to be the same, i.e.:</p>
+<p><span class="math">\begin{equation}
+\mu^{0}_{\rm gas}+k_{\rm B}T\ln(X_{\rm gas})=\mu^{0}_{\rm liq}+k_{\rm B}T\ln(X_{\rm liq})
+\end{equation}</span></p>
+<p>(with <span class="math notranslate nohighlight">\(X\)</span> the dimensionless concentration in the respective phases, e.g., <span class="math notranslate nohighlight">\(X_\mathrm{gas}=1/22.400\)</span>) or</p>
+<p><span class="math">\begin{equation}
+\mu^{0}_{\rm gas}-\mu^0_{\rm liq}\approx -\mu^{0}_{\rm liq}=k_{\rm B}T \ln\left (\frac{X_{\rm liq}}{X_{\rm gas}}\right)\approx 7 k_{\rm B}T
+\end{equation}</span></p>
+<p>assuming that there is essentially no cohesive energy in the gas phase. At the vaporization temperature <span class="math notranslate nohighlight">\(T_\mathrm{B}\)</span>, the energy required to release one mole of molecules from its cohesion with its neighboring molecules to the gas phase is thus</p>
+<p><span class="math">\begin{equation}
+U_{\rm vap}=-N_{\rm A}\mu^0_{\rm liq}=7N_{\rm A}k_{\rm B}T_\mathrm{B}=7RT_\mathrm{B}.
+\end{equation}</span></p>
+<p>This allows us to estimate the latent heat of vaporization</p>
+<p><span class="math">\begin{equation}
+\Delta H_{\rm vap}=U_{\rm vap}+pV\approx 7 R T_\mathrm{B}+RT_\mathrm{B}.
+\end{equation}</span></p>
+<p>According to that, the ratio of latent heat of vaporization and boiling temperature is <span class="math notranslate nohighlight">\(\frac{\Delta H_{\rm vap}}{T_\mathrm{B}}\approx 8 R\approx 80 \frac{\rm J}{\rm K\, mol}\)</span> per mole, or <span class="math notranslate nohighlight">\(9 k_{\rm B} T\)</span> per molecule. If we assume that each molecule has on average 6 neighbors in a liquid, then we obtain a value of <span class="math notranslate nohighlight">\(\frac{3}{2}k_{\rm B}T\)</span> as energy molecular pair. This approximate rule is called <strong>Trouton’s rule</strong> and gives only a very rough estimate of the cohesive energy, as
+it completely neglects the details of the interactions. However, it demonstrates, why the thermal energy is important in soft matter.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Trouton’s rule</strong></p>
+<p>The molar latent heat of vaporization, which is a measure for the cohesive energy of a liquid, is approximately</p>
+<p><span class="math">\begin{equation}
+\frac{\Delta H_{\rm vap}}{k_\mathrm{B}T}\approx 8R
+\end{equation}</span></p>
+<p>with <span class="math notranslate nohighlight">\(R\)</span> being the gas constant.</p>
+</div>
+</section>
+<section id="Coulomb-forces,-charge–charge-interactions">
+<h2>Coulomb forces, charge–charge interactions<a class="headerlink" href="#Coulomb-forces,-charge–charge-interactions" title="Permalink to this heading">#</a></h2>
+<p>The simplest but at the same time also one of the most important types of interaction is the electrostatic interaction, e.g., of simple charges. This type of interaction is important not only due to its relevance in biological systems, but the electrostatic interaction is in principle the only one delivering a long range repulsive force.</p>
+<section id="Charge–charge-interactions">
+<h3>Charge–charge interactions<a class="headerlink" href="#Charge–charge-interactions" title="Permalink to this heading">#</a></h3>
+<p>Charge–charge interactions are mediated by the electric fields. Assume that we have a charge <span class="math notranslate nohighlight">\(Q_1\)</span> that creates an electric field</p>
+<p><span class="math">\begin{equation}
+E_{1}=\frac{Q_{1}}{4\pi \epsilon_{0}\epsilon r^2}.
+\end{equation}</span></p>
+<p>We neglect the vectorial character of the electric field to avoid further complications. The electric field is creating a force on a second charge <span class="math notranslate nohighlight">\(Q_2\)</span></p>
+<p><span class="math">\begin{equation}
+F(r)=Q_{2}E_{1}=\frac{Q_{1}Q_{2}}{4\pi \epsilon_{0}\epsilon r^2}.
+\end{equation}</span></p>
+<p>For such a charge assembly at the distance <span class="math notranslate nohighlight">\(r\)</span> is an energy stored, which is the potential energy of assembling these two charges from infinity. The free energy of the two charges thus reads</p>
+<p><span class="math">\begin{equation}
+w(r)=\int_{\infty}^{r}-F(r)\mathrm dr=-\int_{\infty}^{r} \frac{Q_{1}Q_{2}}{4\pi \epsilon_{0}\epsilon r^{2}}\mathrm dr=\frac{Q_{1}Q_{2}}{4\pi \epsilon_{0}\epsilon r}.
+\end{equation}</span></p>
+<p>If we evaluate this energy, for example, for a sodium and a chlorine ion at a distance of <span class="math notranslate nohighlight">\(r=0.276\, {\rm nm}\)</span>, we find a free energy of interaction of <span class="math notranslate nohighlight">\(w=-8.4\cdot 10^{-19}\, {\rm J}\)</span>, which corresponds to about <span class="math notranslate nohighlight">\(200\, k_{\rm B}T\)</span> at <span class="math notranslate nohighlight">\(300~\rm K\)</span> temperature. This is on the same order of magnitude than covalent interactions. It requires about <span class="math notranslate nohighlight">\(3~\rm nN\)</span> to break this bond. The long range character of electrostatics becomes clear when evaluating the distance at which
+this interaction becomes comparable to <span class="math notranslate nohighlight">\(k_{\rm B}T\)</span>: <span class="math notranslate nohighlight">\(r=56\, {\rm nm}\)</span>. This is only considering a pair of ions. In a NaCl crystal, multiple neighbors contribute to the interaction energy of one sodium ion with its surrounding. One sodium ion has 6 <span class="math notranslate nohighlight">\(\mathrm{Cl^–}\)</span> neighbors at a distance of <span class="math notranslate nohighlight">\(r=0.276\, {\rm nm}\)</span>, 12 <span class="math notranslate nohighlight">\(\mathrm{Na^+}\)</span> neightbors at <span class="math notranslate nohighlight">\(\sqrt{2}r\)</span>,and further 8 <span class="math notranslate nohighlight">\(\mathrm{Cl^–}\)</span> neighbors at <span class="math notranslate nohighlight">\(\sqrt{3}r\)</span> and so on. We have to sum up all the
+interaction energies for the total cohesive energy of the sodium ion in the crystal</p>
+<p><span class="math">\begin{equation}
+\mu^{0}=-\frac{e^2}{4\pi \epsilon_{0}r}\left [ 6-\frac{12}{\sqrt{2}}+\frac{8}{\sqrt{3}}-\frac{6}{2}+\ldots\right]=-1.748\frac{e^2}{4\pi \epsilon_{0}r}.
+\end{equation}</span></p>
+<p>The factor in front of the Coulomb term (the one in the square brackets) is termed Madelung constant and is known from solid state physics. It is characteristic for specific lattice types such as a simple cubic lattice in this case. Note that the cohesive energy of one sodium ion therefore is about <span class="math notranslate nohighlight">\(350\, k_{\rm B}T\)</span> and is thus much larger than the thermal energy keeping the NaCl crystal stable. Yet it can be dissolved in water very easily.</p>
+</section>
+<section id="Born-energy-of-solvation">
+<h3>Born energy of solvation<a class="headerlink" href="#Born-energy-of-solvation" title="Permalink to this heading">#</a></h3>
+<p>The Born energy of solvation calculates the free energy of assembling a charge inside a dielectric medium of dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. Let us shortly reconsider the free energy:</p>
+<p><span class="math">\begin{eqnarray}
+\mathrm dU&=&\mathrm dQ+\mathrm dW\\ \Rightarrow\qquad\mathrm dU&=&T\mathrm dS+\mathrm dW\\ \Leftrightarrow\qquad\mathrm dW&=&\mathrm dU-T\mathrm dS
+\end{eqnarray}</span></p>
+<p>which leads to</p>
+<p><span class="math">\begin{equation}
+\mathrm dF=\mathrm dU-T\mathrm dS=\mathrm dW.
+\end{equation}</span></p>
+<p>Therefore, the free energy change is related to the energy to assemble a charge</p>
+<p><span class="math">\begin{equation}
+\Delta F=\frac{\epsilon \epsilon_{0}}{2}\int_{V}E^{2}\mathrm dV=\int \mathrm dw=\int_0^Q\frac{q\mathrm dq}{4\pi\epsilon_0\epsilon a}=\frac{1}{2}\frac{Q^2}{4\pi\epsilon_0\epsilon a}.
+\end{equation}</span></p>
+<p>To find the free energy, we, hence, integrated the square of the electric field over the volume (this is actually the same as adding tiny charge elements against previously assembled parts of the charge). According to that, the free energy of a charge <span class="math notranslate nohighlight">\(Q=z e\)</span> per charge in a medium with dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span> is</p>
+<p><span class="math">\begin{equation}
+\mu^{0}=\frac{z^2e^2}{8\pi \epsilon \epsilon_{0}a}
+\end{equation}</span></p>
+<p>if the charge has a radius <span class="math notranslate nohighlight">\(a\)</span>. If we look now at the difference of assembling the charge in vacuum (with <span class="math notranslate nohighlight">\(\epsilon\)</span> =1) and in a medium with <span class="math notranslate nohighlight">\(\epsilon\)</span>, we find the following difference in the chemical potential (free energy):</p>
+<p><span class="math">\begin{equation}
+\Delta \mu^{0}=-\frac{z^2e^2}{8\pi \epsilon_{0}a}\left (\frac{1}{\epsilon}-1\right )=-\frac{28z^2}{a}\left (\frac{1}{\epsilon}-1\right )k_\mathrm{B}T\mathrm{\, per\,ion\, at\,}T=300~\mathrm{K}.
+\end{equation}</span></p>
+<p>This is the Born free energy of solvation of a single ion. The molar free energy is then obtained by multiplication with the Avogadro number <span class="math notranslate nohighlight">\(N_{\rm A}\)</span></p>
+<p><span class="math">\begin{equation}
+\Delta G=N_{\rm A}\Delta \mu^{0}=-\frac{69z^2}{a}\left (\frac{1}{\epsilon}-1\right )\mathrm{kJ\,mol^{-1}}
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\Delta \mu^{0}\approx \frac{e^2}{4\pi\epsilon_{0}\epsilon (a_{+}+a_{-})}
+\end{equation}</span></p>
+<p>The mole fraction that is dissolved in water is then found by the Boltzmann factor</p>
+<p><span class="math">\begin{equation}
+X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
+\end{equation}</span></p>
+<p>which is a measure for the solubility of the ions. Inserting the formula for the chemical potential delivers the proportionality <span class="math notranslate nohighlight">\(X_{\rm s}\propto \exp(-{\rm const}/\epsilon)\)</span>. This dependency on the dielectric constant of the solvent is indeed observed in the experiment, even though this is only a trend and there are solvents with marked deviations.</p>
+<img alt="Solubility" src="../../_images/solubility.png" />
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Compound</p></th>
+<th class="head"><p>dielectric constant <span class="math notranslate nohighlight">\(\epsilon\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>water</p></td>
+<td><p>78.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>ethanol</p></td>
+<td><p>24.3</p></td>
+</tr>
+<tr class="row-even"><td><p>acetone</p></td>
+<td><p>20.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>hexane</p></td>
+<td><p>1.9</p></td>
+</tr>
+<tr class="row-even"><td><p>polystyrene</p></td>
+<td><p>2.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>sodium chloride</p></td>
+<td><p>6.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The reasons for that are essentially</p>
+<ol class="arabic simple">
+<li><p>that the theory just assumes continuous changes in the interactions, despite the fact that there is a near order, and</p></li>
+<li><p>that additional interactions like hydrogen bonds exist.</p></li>
+</ol>
+</section>
+<section id="Interactions-involving-polar-molecules">
+<h3>Interactions involving polar molecules<a class="headerlink" href="#Interactions-involving-polar-molecules" title="Permalink to this heading">#</a></h3>
+<p>Many molecules exhibit a dipole or even higher moments due to the fact that the charges are not evenly distributed over the molecular structure. Some of the atoms exhibit a stronger tendency to accept charges than others. This is typically measured by electronegativity and provides an idea of whether atoms rather donate or accept a charge when binding to other atoms. While homo-atomic bonds therefore do not have dipole moments, hetero-atomic bonds do (see table).</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bond</p></th>
+<th class="head"><p>Dipole moment [D]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>C-C</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>C-N</p></td>
+<td><p>0.22</p></td>
+</tr>
+<tr class="row-even"><td><p>O-H</p></td>
+<td><p>1.51</p></td>
+</tr>
+<tr class="row-odd"><td><p>F-H</p></td>
+<td><p>1.94</p></td>
+</tr>
+<tr class="row-even"><td><p>N=O</p></td>
+<td><p>2.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Molecule</p></th>
+<th class="head"><p>Dipole moment [D]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hexane</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>water</p></td>
+<td><p>1.85</p></td>
+</tr>
+<tr class="row-even"><td><p>ethanol</p></td>
+<td><p>1.7</p></td>
+</tr>
+<tr class="row-odd"><td><p>acetone</p></td>
+<td><p>2.9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The dipole moment of a molecule is measured by the displacement of two charges <span class="math notranslate nohighlight">\(±q\)</span> from each other:</p>
+<p><span class="math">\begin{equation}
+\vec{u}=q\vec{l}.
+\end{equation}</span></p>
+<p>Its direction is from the negative to the positive side. It creates an electric field that is given by</p>
+<p><span class="math">\begin{equation}
+\vec{E}=\frac{3(\vec{u}\cdot \hat{r})\hat{r}-\vec{u}}{4\pi \epsilon_{0}\epsilon r^{3}},
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(\hat{r}=\vec{r}/|r|\)</span>. The dipole self-energy, i.e., the energy to create the dipole in a solvent is given by</p>
+<p><span class="math">\begin{equation}
+\mu^{0}=\frac{1}{4\pi \epsilon_{0}\epsilon}\left [ \frac{q^2}{2a}+\frac{q^2}{2a}-\frac{q^2}{l}\right ].
+\end{equation}</span></p>
+<p>For <span class="math notranslate nohighlight">\(l=2a\)</span> this results in <span class="math notranslate nohighlight">\(\mu^0=q^2/(8\pi\epsilon_0 \epsilon a)=u^2/(4\pi\epsilon_0 \epsilon l^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math notranslate nohighlight">\(\epsilon\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
+<p>The plot below shows the electric field of a dipole:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[145]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># generate grid</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">E</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">q</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.5</span><span class="p">),</span> \
+        <span class="n">q</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+
+<span class="c1"># calculate vector field</span>
+<span class="n">Ex1</span><span class="p">,</span> <span class="n">Ey1</span><span class="o">=</span><span class="n">E</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">Ex2</span><span class="p">,</span> <span class="n">Ey2</span><span class="o">=</span><span class="n">E</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">Ex</span><span class="o">=</span><span class="n">Ex1</span><span class="o">+</span><span class="n">Ex2</span>
+<span class="n">Ey</span><span class="o">=</span><span class="n">Ey1</span><span class="o">+</span><span class="n">Ey2</span>
+
+<span class="n">E_max</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">E</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ex</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ey</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">Ex</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">E</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span><span class="o">&gt;</span><span class="n">E_max</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">Ey</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">E</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span><span class="o">&gt;</span><span class="n">E_max</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="c1"># plot vecor field</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Ex</span><span class="o">/</span><span class="n">E</span><span class="p">,</span> <span class="n">Ey</span><span class="o">/</span><span class="n">E</span><span class="p">,</span> <span class="n">pivot</span><span class="o">=</span><span class="s1">&#39;middle&#39;</span><span class="p">,</span> <span class="n">headwidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">headlength</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;dipole field&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L7_2_Forces_and_Interactions_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_2_Forces_and_Interactions_11_0.png" style="width: 650px; height: 627px;" />
+</div>
+</div>
+<section id="Ion–dipole-interaction">
+<h4>Ion–dipole interaction<a class="headerlink" href="#Ion–dipole-interaction" title="Permalink to this heading">#</a></h4>
+<p>The interaction energy of a dipole with a charge can be calculated by</p>
+<p><span class="math">\begin{equation}
+w(r)=-\frac{qQ}{4\pi\epsilon_{0}\epsilon}\left [ \frac{1}{r-\frac{1}{2}l \cos(\theta)}-\frac{1}{r+\frac{1}{2}l \cos(\theta)}\right ]=-\frac{qQ}{4\pi\epsilon_{0}\epsilon r^2}\cos(\theta)=-uE\cos(\theta),
+\label{eq:energy}
+\end{equation}</span></p>
+<p>where the last two equations are assuming that the distance between both objects <span class="math notranslate nohighlight">\(r\)</span> is much larger than the extent of the dipole <span class="math notranslate nohighlight">\(l\)</span> itself. From the last equation, we see that the interaction can be either attractive or repulsive. An angle <span class="math notranslate nohighlight">\(θ=0^°\)</span> results in an attractive interaction, while <span class="math notranslate nohighlight">\(θ=180^°\)</span> yields repulsive interaction. Using a single charge (e.g., an <span class="math notranslate nohighlight">\(\mathrm{Na^+}\)</span> ion) and a dipole of <span class="math notranslate nohighlight">\(u=1.85\, {\rm D}\)</span> (water molecule) results in an interaction
+energy of about <span class="math notranslate nohighlight">\(39\, k_{\rm B}T\)</span>. Ions align and bind polar molecules like water, for example. The alignment is caused by the torque <span class="math notranslate nohighlight">\(\tau=\vec{u}\times \vec{E}\)</span>. For arbitrary polar molecules this is called <strong>solvation</strong>, while for water the term <strong>hydration</strong> is used. The strength of the hydration can effect the mobility of ions in solution as it makes them effective charges and is of interest, for example, in the study of ion transport through ion channels, as this requires the
+stripping of the hydration shell.</p>
+<div class="admonition note">
+<p><strong>Example: Sodium Ion Hydration</strong></p>
+</div>
+<p>The plot below shows the ion dipole interaction for a sodium ion and a water molecule as a function of distance.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ion_dipole</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">epsilon</span><span class="p">):</span>
+    <span class="n">q</span><span class="o">=</span><span class="n">u</span><span class="o">/</span><span class="n">l</span>
+    <span class="n">f</span><span class="o">=</span><span class="n">e</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">epsilon</span><span class="o">*</span><span class="n">epsilon_0</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;atomic unit of electric dipole mom.&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">J2eV</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;electron volt-joule relationship&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1e-9</span><span class="p">,</span><span class="mf">0.5e-9</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">l</span><span class="o">=</span><span class="mf">0.02e-9</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">9.2</span><span class="p">,</span><span class="mf">9.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;distance [nm]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;energy [eV]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;dipole charge interaction&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L7_2_Forces_and_Interactions_16_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_2_Forces_and_Interactions_16_0.png" style="width: 424px; height: 355px;" />
+</div>
+</div>
+<p>The table below shows some selected hydration properties of ions. The hydrated radius determines the diffusion of the ion in water. The hydration number is the number of orientationally bound water molecules. Typically, smaller ions have a larger hydration number.</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ion</p></th>
+<th class="head"><p>Bare Ion radius (nm)</p></th>
+<th class="head"><p>Hydrated radius (nm)</p></th>
+<th class="head"><p>Hydration number</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Na+</p></td>
+<td><p>0.095</p></td>
+<td><p>0.36</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mg2+</p></td>
+<td><p>0.065</p></td>
+<td><p>0.43</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>Cl-</p></td>
+<td><p>0.181</p></td>
+<td><p>0.33</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>OH-</p></td>
+<td><p>0.176</p></td>
+<td><p>0.3</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            <div class="last-updated">
+              Last updated on Apr 23, 2024</div>
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Forces and Interactions in Soft Matter</a><ul>
+<li><a class="reference internal" href="#Pairwise-interaction-energy">Pairwise interaction energy</a></li>
+<li><a class="reference internal" href="#Cohesive-energy-of-a-liquid">Cohesive energy of a liquid</a></li>
+<li><a class="reference internal" href="#Coulomb-forces,-charge–charge-interactions">Coulomb forces, charge–charge interactions</a><ul>
+<li><a class="reference internal" href="#Charge–charge-interactions">Charge–charge interactions</a></li>
+<li><a class="reference internal" href="#Born-energy-of-solvation">Born energy of solvation</a></li>
+<li><a class="reference internal" href="#Interactions-involving-polar-molecules">Interactions involving polar molecules</a><ul>
+<li><a class="reference internal" href="#Ion–dipole-interaction">Ion–dipole interaction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
