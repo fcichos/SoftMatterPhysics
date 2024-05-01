@@ -108,7 +108,7 @@ html_logo = 'img/mona_logo.png'
 # This is processed by Jinja2 and inserted before each notebook
 
 nbsphinx_prolog = r"""
-{% set docname = env.doc2path(env.docname, base=None) %}
+{% set docname = env.doc2path(env.docname, base=False) %}
 
 .. only:: html
 
@@ -119,7 +119,7 @@ nbsphinx_prolog = r"""
         This page was generated from `{{ docname }}`.
         :raw-html:`<br/><a href="https://colab.research.google.com/github/fcichos/SoftMatterPhysics/blob/main/build/html/{{ docname }}"><img alt="Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a><br/>`
         You can download the pdf-version of this page using the link below.
-        :raw-html:`<br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/{{ docname }}">download</a>`
+        :raw-html:`<br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/{{ env.docname.split('/')|last|e + '.pdf' }}">download</a>`
 
 .. only:: latex
 
