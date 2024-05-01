@@ -117,7 +117,7 @@ nbsphinx_prolog = r"""
     .. nbinfo::
         This page was generated from `{{ docname }}`.
         :raw-html:`<br/><a href="https://colab.research.google.com/github/fcichos/SoftMatterPhysics/blob/main/build/html/{{ docname }}"><img alt="Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a><br/>`
-        You can download the pdf-version of this page using the link below.
+        You can directly download the pdf-version of this page using the link below.
         :raw-html:`<br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/{{ docname.rsplit('.', 1)[0] + '.pdf' }}">download</a>`
 
 .. only:: latex
