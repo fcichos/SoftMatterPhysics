@@ -108,7 +108,7 @@ html_logo = 'img/mona_logo.png'
 # This is processed by Jinja2 and inserted before each notebook
 
 nbsphinx_prolog = r"""
-{% set docname = env.doc2path(env.docname, base=False) %}
+{% set docname = env.doc2path(env.docname, base=True) %}
 
 .. only:: html
 
