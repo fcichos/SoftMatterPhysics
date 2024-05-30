@@ -210,7 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
@@ -351,11 +351,11 @@ You can directly download the pdf-version of this page using the link below.
 <p><span class="math">\begin{equation}
 \frac{\mathrm df}{\mathrm dt}+\vec \nabla\cdot\vec j = 0.
 \end{equation}</span></p>
-<p>For the density <span class="math notranslate nohighlight">\(n=f\)</span>, <span class="math notranslate nohighlight">\(j ⃗=n⋅v ⃗\)</span></p>
+<p>For the density <span class="math notranslate nohighlight">\(n=f\)</span>, <span class="math notranslate nohighlight">\(\vec{j}=n\cdot\vec{v}\)</span></p>
 <p><span class="math">\begin{equation}
 \frac{\partial n}{\partial t}+\vec \nabla(n\vec v)=0
 \end{equation}</span></p>
-<p>for <span class="math notranslate nohighlight">\(n=\rm const.\)</span> it is $:nbsphinx-math:<cite>vec `:nbsphinx-math:</cite>nabla`⋅:nbsphinx-math:<cite>vec{V}`=0 :math:</cite>, <cite>:nbsphinx-math:</cite>vec <cite>:nbsphinx-math:</cite>nabla`⋅:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>vec <a href="#id3"><span class="problematic" id="id4">`</span></a>j=0$ incompressible</p>
+<p>for <span class="math notranslate nohighlight">\(n=\rm const.\)</span> it is <span class="math notranslate nohighlight">\(\vec{\nabla}\cdot\vec{V}=0\)</span>, <span class="math notranslate nohighlight">\(\vec{\nabla}\cdot\vec{j}=0\)</span> incompressible</p>
 <p><strong>Diffusion</strong></p>
 <p><span class="math notranslate nohighlight">\(N(x)\)</span>, <span class="math notranslate nohighlight">\(N(x+Δx)\)</span>, <span class="math notranslate nohighlight">\(0.5⋅N(x)\)</span> to the right, <span class="math notranslate nohighlight">\(0.5⋅N(x+Δx)\)</span> to the left net number <span class="math notranslate nohighlight">\(-1⁄2 (N(x+Δx)-N(x))\)</span> thus</p>
 <p><span class="math">\begin{equation}
@@ -468,7 +468,6 @@ U=-k_{\mathrm B}T \ln(n(x))+\rm const.
 \frac{\partial}{\partial t}n(\vec r, t |\vec{r_0}, t_0)=D\nabla^2n(\vec r, t |\vec{r_0}, t_0)
 \end{equation}</span></p>
 <p>initial condition <span class="math notranslate nohighlight">\(n(\vec r,t→t_0 |\vec{r_0 },t_0 )=δ(\vec r-\vec{r_0 } )\)</span></p>
-<p>boundary condition $n(|:nbsphinx-math:<cite>vec `r |→∞,t|:nbsphinx-math:</cite>vec{r_0 }`,t_0 )=0 $</p>
 <p>solution:</p>
 <p><span class="math">\begin{equation}
 n(\vec r,t|\vec{r_0},t_0)=\frac{1}{(4\pi D (t-t_0))^\frac 3 2}\mathrm{exp}\left(-\frac{(\vec r-\vec r_0)^2}{4D(t-t_0)}\right)
@@ -480,7 +479,7 @@ n(\vec r, t)=\int\mathrm d^3r_0\,n(\vec r,t|\vec{r_0},t_0)\,f(\vec{r_0})
 \end{equation}</span></p>
 <p>properties: e.g., particle initially at <span class="math notranslate nohighlight">\(x_0\)</span> in 1D, initial distribution <span class="math notranslate nohighlight">\(δ(x_0 )\)</span></p>
 <dl class="simple">
-<dt>:nbsphinx-math:<a href="#id5"><span class="problematic" id="id6">`</span></a>begin{equation}</dt><dd><p>langle x rangle=int_{-infty}^infty x frac{1}{sqrt{4pi D(t-t_0)}}mathrm{exp}left(-frac{(x-x_0)^2}{4D(t-t_0)}right)mathrm dx</p>
+<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>langle x rangle=int_{-infty}^infty x frac{1}{sqrt{4pi D(t-t_0)}}mathrm{exp}left(-frac{(x-x_0)^2}{4D(t-t_0)}right)mathrm dx</p>
 </dd>
 </dl>
 <p>end{equation}`</p>
@@ -504,6 +503,12 @@ n(x,t_0)=\Theta(-a-x)+\Theta(x-a)
 \end{equation}</span></p>
 <p>boundary condition <span class="math notranslate nohighlight">\(\lim_{x→∞} n(x,t) =0\)</span> solution with Green’s function <span class="math">\begin{equation}
 n(x,t|x_0,t_0)=\frac{1}{\sqrt{4 \pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)} \right)
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\begin{split}
+n(x,t) &=\int_{-\infty}^\infty \mathrm dx_0\,n(x,t|x_0,t_0)\,\left[\Theta(-a-x)+\Theta(x-a)\right]\\
+&= \int_{-\infty}^{-a}\mathrm dx_0 \frac{1}{\sqrt{4 \pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)} \right)+\int_{a}^{\infty}\mathrm dx_0 \frac{1}{\sqrt{4 \pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)} \right)
+\end{split}
 \end{equation}</span></p>
 <p><span class="math">\begin{equation}
 \mathrm{erf}(x)=\frac{1}{\sqrt \pi}\int_{-x}^x\mathrm{exp}\left(-t^2\right)\,\mathrm dt=\frac{2}{\sqrt \pi}\int_0^x\mathrm{exp}\left(-t^2\right)\,\mathrm dt
@@ -542,7 +547,7 @@ p(\Omega,t|\Omega_0,t_0)=\sum_{l=0}^\infty\sum_{m=-l}^l \mathrm{exp}\left(-l(l+1
 \end{equation}</span></p>
 <p><span class="math notranslate nohighlight">\(a_{lm}\)</span> from <span class="math notranslate nohighlight">\(p(Ω,t_0 |Ω_0,t_0 )=δ(Ω-Ω_0)\)</span> and</p>
 <dl class="simple">
-<dt>:nbsphinx-math:<a href="#id7"><span class="problematic" id="id8">`</span></a>begin{equation}</dt><dd><p>delta(Ω-Ω_0 )=sum_{l=0}^{infty} sum_{m=-l}^{l} Y_l^m (Ω_0 ) Y_{lm} (Ω)</p>
+<dt>:nbsphinx-math:<a href="#id3"><span class="problematic" id="id4">`</span></a>begin{equation}</dt><dd><p>delta(Ω-Ω_0 )=sum_{l=0}^{infty} sum_{m=-l}^{l} Y_l^m (Ω_0 ) Y_{lm} (Ω)</p>
 </dd>
 </dl>
 <p>end{equation}`</p>
@@ -556,6 +561,11 @@ P_3=P_0\cos(\theta),\,l=1
 \langle P_3 \rangle=\frac{1}{4 \pi}\int \mathrm d\Omega\,P_0 \cos(\theta) \to 0
 \end{equation}</span></p>
 <p>?? correlation:</p>
+<p><span class="math">\begin{equation}
+\begin{split}
+\langle P_3(t)P_3^*(t_0) \rangle&=P_0^2\int\mathrm d\Omega\int\mathrm d\Omega_0\cos(\theta)\cos(\theta_0)\,p(\Omega,t|\Omega_0,t_0)\,p_0(\Omega_0)\\&=\frac{4 \pi}{3}P_0^2 \sum_{m=-l}^l\mathrm{exp}\left(-l(l+1)\frac{t-t_0}{\tau_r}\right)|C_{10lm}|^2
+\end{split}
+\end{equation}</span></p>
 <p><span class="math">\begin{equation}
 C_{10lm}=\int \mathrm d\Omega\,Y_{10}^*(\Omega)\,Y_{lm}(\Omega)=\delta_{l1}\delta_{m0}
 \langle P_3(t)P_3^*(t_0)\rangle = \frac{4 \pi}{3}\,P_0^2\,\mathrm{exp}\left(-\frac{2(t-t_0)}{\tau_r}\right)
@@ -580,6 +590,12 @@ n(\vartheta,\varphi,t)=\sum_{l=0}^\infty\sum_{m=-l}^lC_{lm}\,Y_l^m(\vartheta,\va
 2 \pi \int_0^\pi p(\theta, t)\sin(\theta)\,\mathrm d \theta=1
 \langle \cos(\theta)\rangle=2 \pi \int_0^\pi p \sin(\theta)\cos(\theta)\,\mathrm d \theta
 \end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\begin{split}
+\frac{\mathrm d}{\mathrm d t}\langle \cos(\theta)\rangle&=2 \pi \int_0^\pi\frac{\partial p}{\partial t} \sin(\theta)\cos(\theta)\,\mathrm d \theta \\
+&=2 \pi D_r\int_0^\pi\frac{1}{\sin(\theta)}\left[\frac{\partial}{\partial t}\left(\sin(\theta)\frac{\partial p}{\partial \theta}\right)\right]\sin(\theta)\cos(\theta)\,\mathrm d \theta
+\end{split}
+\end{equation}</span></p>
 </section>
 <section id="Hydrodynamics">
 <h2>Hydrodynamics<a class="headerlink" href="#Hydrodynamics" title="Permalink to this heading">#</a></h2>
@@ -591,7 +607,9 @@ n(\vartheta,\varphi,t)=\sum_{l=0}^\infty\sum_{m=-l}^lC_{lm}\,Y_l^m(\vartheta,\va
 </pre></div>
 </div>
 </div>
-</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
 </section>
 
         </article>
@@ -611,7 +629,7 @@ n(\vartheta,\varphi,t)=\sum_{l=0}^\infty\sum_{m=-l}^lC_{lm}\,Y_l^m(\vartheta,\va
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 01, 2024</div>
+              Last updated on May 30, 2024</div>
           </div>
           <div class="right-details">
             

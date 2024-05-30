@@ -209,7 +209,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
@@ -318,7 +318,6 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <section id="Statistical-Physics-Definitions">
 <h1>Statistical Physics Definitions<a class="headerlink" href="#Statistical-Physics-Definitions" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/35937a9269029b2c7807cb41fb0035e7774bdeb0/source/notebooks/L2/3_Statistical_Physics_Definitions.pdf">This file as PDF</a></p>
 <p>The field of statitical physics uses approaches of statistics and probability theory to address physical problems. It considers large populations and derives expressions for the ensemble (or the macrostate) of a system from the microscopic states in the system.</p>
 <section id="Entropy">
 <h2>Entropy<a class="headerlink" href="#Entropy" title="Permalink to this heading">#</a></h2>
@@ -331,7 +330,7 @@ S=k_\mathrm{B} \ln(W)
 <p>where <span class="math notranslate nohighlight">\(W\)</span> is the number of microstates corresponding to a system’s macrostate with and energy <span class="math notranslate nohighlight">\(E\)</span>. Here <span class="math notranslate nohighlight">\(k_\mathrm{B}=1.38064852 × 10^{-23} {\rm m^2\, kg\, s^{-2}\, K^{-1}}\)</span> is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Entropy of an N letter word</strong></p>
-<img alt="letters" src="../../_images/letters.png" />
+<p><img alt="letters" src="../../_images/letters.png" /></p>
 <p>Consider the number of states <span class="math notranslate nohighlight">\(W\)</span> of a word with <span class="math notranslate nohighlight">\(N\)</span> letters of <span class="math notranslate nohighlight">\(M\)</span> different characters. The letter can be arranged in</p>
 <p><span class="math">\begin{equation}
 W=M^N
@@ -344,7 +343,7 @@ S=N\, k_\mathrm{B} \ln(M) = k_{\rm B}\sum_{1}^{N} \ln(M)
 </div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Arrangement of molecules along a chain</strong></p>
-<img alt="binding" src="../../_images/binding.png" />
+<p><img alt="binding" src="../../_images/binding.png" /></p>
 <p>We consider a linear molecules (perhaps a DNA) that has <span class="math notranslate nohighlight">\(N\)</span> binding sites for, e.g., proteins. <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math notranslate nohighlight">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math notranslate nohighlight">\(N\)</span> sites is given by the binomial coefficient</p>
 <p><span class="math">\begin{equation}
 W(N_\mathrm{p};N)=\frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}.
@@ -368,7 +367,7 @@ S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
 <p>with <span class="math notranslate nohighlight">\(c=N_\mathrm{p}/N\)</span> being the mean occupation of each site or the probability to find a state occupied.</p>
 </div>
 <p>Below you just find some Python code calculating the entropy as a function of “concentration” using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since <span class="math notranslate nohighlight">\(N=100\)</span>.</p>
-<img alt="../../_images/stirling.pdf" src="../../_images/stirling.pdf" />
+<p><img alt="image0" src="../../_images/stirling.pdf" /></p>
 </section>
 <section id="Shannon-Entropy">
 <h3>Shannon Entropy<a class="headerlink" href="#Shannon-Entropy" title="Permalink to this heading">#</a></h3>
@@ -425,7 +424,7 @@ p_{i}=\frac{1}{N}
 <section id="Boltzmann-Distribution">
 <h2>Boltzmann Distribution<a class="headerlink" href="#Boltzmann-Distribution" title="Permalink to this heading">#</a></h2>
 <p>Our previous consideration of the state functions has shown, that thermal equibrium is associated with a minimum in free energy. As the free energy consists of internal energy <span class="math notranslate nohighlight">\(U\)</span> (or enthalpy <span class="math notranslate nohighlight">\(H\)</span>) and an entropic term (<span class="math notranslate nohighlight">\(-TS\)</span>), we may understand this minimization as a competition between the minimization of the internal energy and a maximization of the entropy (since it is <span class="math notranslate nohighlight">\(-TS\)</span>). The figure below illustrates this competition for a gas in the gravity field.</p>
-<img alt="entropy" src="../../_images/entropy_comp.png" />
+<p><img alt="entropy" src="../../_images/entropy_comp.png" /></p>
 <p>The internal energy minimization yields just a condensed layer at the bottom of the container, while the entropy maximization will try to spread the particles evenly (middle picture). The compromise of both at finite temperature is given by the <strong>barometric height formula</strong>, i.e.,</p>
 <p><span class="math">\begin{equation}
 p(z)=p_0\exp\left ( -\frac{m g z}{k_\mathrm{B} T}\right ),
@@ -483,7 +482,7 @@ F=-k_\mathrm{B} T \ln(Z)
 <section id="Deriving-the-Boltzmann-Distribution">
 <h3>Deriving the Boltzmann Distribution<a class="headerlink" href="#Deriving-the-Boltzmann-Distribution" title="Permalink to this heading">#</a></h3>
 <p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.</p>
-<img alt="Test" src="../../_images/entropy_calc.png" />
+<p><img alt="Test" src="../../_images/entropy_calc.png" /></p>
 <p>System (index s) and reservoir (index r) have total energy <span class="math notranslate nohighlight">\(E_{\rm tot}=E_{\rm r}+E_{\rm s}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math notranslate nohighlight">\(p(E_{\rm s}^{(i)})\)</span> with the energy <span class="math notranslate nohighlight">\(E_{\rm s}^{(i)}\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,</p>
 <p><span class="math">\begin{equation}
 \frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})}{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})}.
@@ -604,7 +603,7 @@ p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 01, 2024</div>
+              Last updated on May 30, 2024</div>
           </div>
           <div class="right-details">
             

@@ -210,7 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
@@ -321,7 +321,7 @@ You can directly download the pdf-version of this page using the link below.
 <h1>Depletion Forces<a class="headerlink" href="#Depletion-Forces" title="Permalink to this heading">#</a></h1>
 <p>Depletion forces are entropic forces which arise from osmotic pressure differences. These osmotic pressure differences are the result of regions in space which are excludeded from the access of certain components of a solution. In the simplest case, the a component of s solution is excluded due to steric interactions, i.e. the component does not fit into the region due to its size.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -342,7 +342,7 @@ You can directly download the pdf-version of this page using the link below.
 <section id="Depletion-force-between-two-plates">
 <h2>Depletion force between two plates<a class="headerlink" href="#Depletion-force-between-two-plates" title="Permalink to this heading">#</a></h2>
 <p>Consider the picture below, where colloids are contained in a suspension together with two plates. Then there is a region, which is inaccessible by the centers of the colloids of radius <span class="math notranslate nohighlight">\(\sigma/2\)</span> that is indicated by the dahsed lines. If these regions between the plates overlap, not colloid can enter this region and the number density of the colloids is different inside as compared to the outside. This creates an osmotic pressure difference.</p>
-<img alt="depletion_plates" src="notebooks/L14/img/depletion_plates.png" />
+<p><img alt="depletion_plates" src="../../_images/depletion_plates1.png" /></p>
 <p>The osmotic pressure difference can be calculated with the help of the van’t Hoff equation for the osmotic pressure <span class="math notranslate nohighlight">\(\Pi=nk_B T\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number density. In the case the distance of the two plates is larger than the diamater of the two plates, <span class="math notranslate nohighlight">\(h&gt;\sigma\)</span>, we have <span class="math notranslate nohighlight">\(\Pi_i=\Pi_o= nk_B T\)</span> so the difference <span class="math notranslate nohighlight">\(P=\Pi_i-\Pi_o=0\)</span>, so there is not pressure difference. In the case when there is no colloid between the plates we have <span class="math notranslate nohighlight">\(\Pi_i =0\)</span> and
 <span class="math notranslate nohighlight">\(\Pi_o =nk_B T\)</span> such that</p>
 <p><span class="math">\begin{equation}
@@ -358,7 +358,7 @@ w(h)=-n k_B T (\sigma-h)
 \end{equation}</span></p>
 <p>for all <span class="math notranslate nohighlight">\(h&lt;\sigma\)</span>, while it is zero for <span class="math notranslate nohighlight">\(h&gt;\sigma\)</span>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depletion</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
@@ -367,7 +367,7 @@ w(h)=-n k_B T (\sigma-h)
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span><span class="o">=</span><span class="mi">1</span>
@@ -376,7 +376,7 @@ w(h)=-n k_B T (\sigma-h)
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">depletion</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -391,7 +391,7 @@ w(h)=-n k_B T (\sigma-h)
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L14_1_depletion_forces_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_1_depletion_forces_5_0.png" style="width: 412px; height: 285px;" />
+<img alt="../../_images/notebooks_L14_1_depletion_forces_5_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_1_depletion_forces_5_0.png" style="width: 589px; height: 453px;" />
 </div>
 </div>
 </section>
@@ -403,7 +403,7 @@ than <span class="math notranslate nohighlight">\(r≤2(R+σ/2)=2R_d\)</span>. I
 2\pi R_{d}^2 \sin(\theta)d\theta
 \end{equation}</span></p>
 <p>but only the force components along the connecting line contribute.</p>
-<img alt="depletion_spheres" src="notebooks/L14/img/depletion_spheres.png" />
+<p><img alt="depletion_spheres" src="../../_images/depletion_spheres1.png" /></p>
 <p>The total force is then calculated from the osmotic pressure times the surface area of the spherical cap by just taking into account the force components along the connecting line (an additional factor <span class="math notranslate nohighlight">\(\cos(\theta)\)</span>). This the read</p>
 <p><span class="math">\begin{equation}
 F(r)=-2nk_{\rm B}T\pi (R+\sigma/2)^2\int\limits_{0}^{\theta_{0}}\sin(\theta)\cos(\theta)\mathrm d\theta
@@ -424,7 +424,7 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 \[V_{ov}=\frac{4\pi}{3}R_{d}^3\left [ 1-\frac{3}{4}\frac{r}{R_d}+\frac{1}{16}\left ( \frac{r}{R_d}\right )^3 \right ]\]</div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">depletion_sphere</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
@@ -435,7 +435,7 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span><span class="o">=</span><span class="mi">2</span>
@@ -446,7 +446,7 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">depletion_sphere</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
@@ -461,7 +461,7 @@ F(r)=-nk_{\rm B}T\pi (R_{d})^2\left [ 1+\left ( \frac{r}{2R_{d}}\right )^2\right
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L14_1_depletion_forces_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_1_depletion_forces_9_0.png" style="width: 412px; height: 285px;" />
+<img alt="../../_images/notebooks_L14_1_depletion_forces_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L14_1_depletion_forces_9_0.png" style="width: 589px; height: 453px;" />
 </div>
 </div>
 </section>
@@ -546,7 +546,7 @@ F=-\frac{N}{4V}k_{\rm B}T\pi(D+d-r)(D+d+r)
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 01, 2024</div>
+              Last updated on May 30, 2024</div>
           </div>
           <div class="right-details">
             

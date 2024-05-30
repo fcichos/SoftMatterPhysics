@@ -210,7 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
@@ -321,7 +321,7 @@ You can directly download the pdf-version of this page using the link below.
 <h1>Flows and Transport in Liquids<a class="headerlink" href="#Flows-and-Transport-in-Liquids" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/729211f73aaf35557b8a58999ebafb5075c80b6d/source/notebooks/L14/2_Flows_Transport.pdf">File as PDF</a></p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -370,7 +370,7 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <p>The continuity equation states that the amount of the quantity (such as mass, charge, or energy) within a defined system can only change if there is a flow of that quantity into or out of the system. More generally, the continuity equation may have a source term on the right side instead of the <span class="math notranslate nohighlight">\(0\)</span> when there is a production or destruction of the quantity in the volume.</p>
 <p>As the next step, we would like to obtain an equation, which tells us about the flow of the density of objects, due to their Brownian motion. We consider a vertical wall of area <span class="math notranslate nohighlight">\(A\)</span>, which separates two regions. There are <span class="math notranslate nohighlight">\(N(x)\)</span> on the left and <span class="math notranslate nohighlight">\(N(x+\Delta x)\)</span> on the right of area <span class="math notranslate nohighlight">\(A\)</span>.</p>
-<img alt="Diffusion" src="../../_images/diffusion.png" />
+<p><img alt="Diffusion" src="../../_images/diffusion.png" /></p>
 <p>We can calculate the number of particles that goes through the area from the difference of the number of particles on the left and on the right side and divided by the area where the particles go through and the time <span class="math notranslate nohighlight">\(\tau\)</span> they need to go through that this is the current density <span class="math notranslate nohighlight">\(j\)</span></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -537,7 +537,7 @@ You can directly download the pdf-version of this page using the link below.
 \[\left\langle\left(\mathbf{r}-\mathbf{r}_0\right)^2\right\rangle=2dDt=6Dt\]</div>
 </div>
 <p>A mean distance travelled is therefore related to the square root of time. This diffusion processes are rapid at short distances but very slow for largedistance as can be seen from the table below.</p>
-<img alt="Table Diffusion" src="../../_images/table.png" />
+<p><img alt="Table Diffusion" src="../../_images/table.png" /></p>
 </section>
 <section id="Application:-Fluorescence-Recovery-after-Photobleaching">
 <h3>Application: Fluorescence Recovery after Photobleaching<a class="headerlink" href="#Application:-Fluorescence-Recovery-after-Photobleaching" title="Permalink to this heading">#</a></h3>
@@ -576,7 +576,7 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Example of a FRAP density profile</span>
@@ -633,7 +633,7 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 <p>which is plotted below.</p>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">N</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
@@ -676,8 +676,14 @@ n(x, t)=&\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\
 <section id="Rotational-Diffusion">
 <h2>Rotational Diffusion<a class="headerlink" href="#Rotational-Diffusion" title="Permalink to this heading">#</a></h2>
 <p>If we constrain all the points that are diffusing to a sphere of radius 1, i.e. <span class="math notranslate nohighlight">\(\left|\vec{r}_0\right|=|\vec{r}|=1\)</span>, the we have in a spherical coordinate system no radial motion just angular motion along the remaining two angular coordinates <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<img alt="Rotational Diffusion" src="../../_images/rotdiff.png" />
+<p><img alt="Rotational Diffusion" src="../../_images/rotdiff.png" /></p>
 <p>The dynamics of the vector from the center of the unit sphere to the surface is therefore a orientational diffusion, which obeys the following diffusion equation</p>
+<p><span class="math">\begin{equation}
+\begin{aligned}
+\frac{\partial n\left(\Omega, t \mid \Omega_0, t_0\right)}{\partial t}=& D_{\mathrm{rot}}\left[\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial}{\partial \theta}\right)\right. \\
+& \left.+\frac{1}{\sin ^2 \theta} \frac{\partial^2}{\partial \varphi^2}\right] n\left(\Omega, t, \Omega_0, t_0\right)
+\end{aligned}
+\end{equation}</span></p>
 <p>The differential operator has, without any surprise, spherical harmonics as eigenfunctions, i.e.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -746,17 +752,21 @@ spectroscopy is therefore the relaxation of that cosine term.</p>
 \[\left\langle P_{1}^0\right\rangle=\frac{1}{4 \pi} \int d \Omega P_0 \cos (\theta) \quad \rightarrow 0\]</div>
 </div>
 <p>This is because the dynamics of the dipoles is uncorrelated and doing Brownian motion. Yet, you can have a look at the dynamics if you calculate the autocorrelation function</p>
-<p><span class="math">\begin{align}
+<p><span class="math">\begin{equation}
+\begin{aligned}
 \left\langle P_1^0(t) P_1^{0, *}\left(t_0\right)\right)=& P_0^2 \int d \Omega \int d \Omega_0 \cos (\theta) \cos \left(\theta_0\right) n\left(\Omega, t |\Omega_0 ,t_0\right) n_0\left(\Omega_0\right)\\
 = & \frac{4 \pi}{3} P_0^2 \sum_{m=1}^l e^{-l(l+1) \frac{t-t_0}{\tau_R}}\left|C_{10 l m}\right|^2
-\end{align}</span></p>
+\end{aligned}
+\end{equation}</span></p>
 <p>where the <span class="math notranslate nohighlight">\(C_{10 l m}\)</span> are again defined by the initial conditions. So if these are delta functions, one quickly finds that</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\left\langle P_3(t) P_3^*(t_0)\right\rangle=\frac{4 \pi}{3} P_0^2 e^{-2\left(t-t_0\right) /\tau_R}\]</div>
 </div>
 <p>So the correlation function decay with a time constant that is half the rotational diffusion time due to the projection of the dipole to a certain direction. Here are some more details on measurements based on NMR, even though focused on <a class="reference external" href="https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2017/03/MRT%20Lecture/assets/fallback/index.html">magnetic resonance imaging</a>.</p>
-</section>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
 </section>
 </section>
 
@@ -795,7 +805,7 @@ spectroscopy is therefore the relaxation of that cosine term.</p>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 01, 2024</div>
+              Last updated on May 30, 2024</div>
           </div>
           <div class="right-details">
             

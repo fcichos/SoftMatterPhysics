@@ -9,6 +9,7 @@
         <title>Equipartition - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -209,7 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
@@ -350,7 +351,7 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 \end{equation}</span></p>
 <p>which can be slightly simplified</p>
 <p><span class="math">\begin{equation}
-\langle E\rangle=\frac{\alpha^{3 / 2}}{\beta \sqrt{\pi}}\left(-\frac{\partial}{\partial \alpha}\right) \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha p_{x}^{2}} \mathrm{~d} p_{x}
+\langle E\rangle=\frac{\alpha^{3 / 2}}{\beta \sqrt{\pi}}\left(-\frac{\partial}{\partial \alpha}\right) \int_{-\infty}^{\infty} \mathrm{e}^{-\alpha p_{x}^{2}} \mathrm{d} p_{x}
 \end{equation}</span></p>
 <p>and calculated via some tricks valid for integrals over Gaussian functions. This finally leads us to the result that the value of the Lagrangian multiplier must be</p>
 <p><span class="math">\begin{equation}
@@ -363,7 +364,7 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Two-level-system</strong></p>
 <p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g., for spin systems. Such two level spin systems are, for example, very important for nuclear magnetic resonance (NMR), which is an important tool to study the structure and dynamics of soft matter.</p>
-<img alt="Two Level" src="../../_images/two_level.png" />
+<p><img alt="Two Level" src="../../_images/two_level.png" /></p>
 <p>Consider the image above, where a single energy level at zero magnetic field (<span class="math notranslate nohighlight">\(B=0\)</span>) splits into two energy levels due to the interaction of a proton spin (red arrow) with the external magnetic field.</p>
 <p>The magnetic moment of the proton spin may take two expectation values in the magnetic field, which are characterized by the magnetic quantum number <span class="math notranslate nohighlight">\(m_Z=\pm 1/2\)</span>. The magnetic moment projected along the magnetic field direction is then</p>
 <div class="math-wrapper docutils container">
@@ -396,7 +397,7 @@ P\left(p_{x}\right)=\frac{\mathrm{e}^{-\beta\left(p_{x}^{2} / 2 m\right)}}{\sum_
 <div class="admonition note">
 <p class="admonition-title"><strong>Example: Position of a Bead in an Optical Tweezer</strong></p>
 <p>In an optical tweezer, a polarizable object (e.g. a polymer bead) is hold in the intensity gradient of a focused laser beam. The nearly Gaussian intensity distribution of a focused beam leads, in first approximation to a linear force a parabolic potential and can be employed to measure tiny forces.</p>
-<img alt="tweezers" src="../../_images/tweezers.png" />
+<p><img alt="tweezers" src="../../_images/tweezers.png" /></p>
 <p>For one dimension of the 3D optical potential it can thus be written as</p>
 <p><span class="math">\begin{equation}
 F=-k x
@@ -406,12 +407,9 @@ F=-k x
 E=\frac{1}{2}k x^2
 \end{equation}</span></p>
 <p>Using the Boltzmann distribution for the potential provides the probability distribution for finding the particle at a certain position <span class="math notranslate nohighlight">\(x\)</span></p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\begin{equation}
+<p><span class="math">\begin{equation}
 p(x)=\frac{1}{Z}\exp\left(-\frac{kx^2}{2k_B T} \right)
-\end{equation}\]</div>
-</div>
+\end{equation}</span></p>
 <p>which resembles a Gaussian distribution with a variance of</p>
 <p><span class="math">\begin{equation}
 \sigma^2=\langle x^2 \rangle =\frac{k_B T}{k}
@@ -475,7 +473,15 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
 \end{equation}</span></p>
 <p>is the free energy of the macrostate <span class="math notranslate nohighlight">\(X\)</span>. Note that the formula for <span class="math notranslate nohighlight">\(p(X)\)</span> is identical to the Boltzmann formula for the probability of a microstate, with the energy of the microstate replaced by the free energy of the macrostate. Note that the sum on the right side of the last equation is not the partition function <span class="math notranslate nohighlight">\(Z\)</span> but that of the subensemble of microstates fulfilling the condition X, i.e. <span class="math notranslate nohighlight">\(Z_X\)</span>. Similarly, when writing down the states and weights for the macrostates
 <span class="math notranslate nohighlight">\(X\)</span>, the energy is replaced by the free energy, as shown in in the figure below. In this sense, one person’s macrostate is truly another person’s microstate.</p>
-<img alt="micro_macro" src="../../_images/micro_macro.png" />
+<p><img alt="micro_macro" src="../../_images/micro_macro.png" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
@@ -515,7 +521,7 @@ G(X)=-k_{\mathrm{B}} T \ln \left(\sum_{i_{X}} \mathrm{e}^{-\beta E_{i}}\right)
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 01, 2024</div>
+              Last updated on May 30, 2024</div>
           </div>
           <div class="right-details">
             

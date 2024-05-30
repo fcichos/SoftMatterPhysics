@@ -210,7 +210,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-induced-dipole-interaction">Ion induced dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
@@ -456,7 +456,7 @@ interaction energies for the total cohesive energy of the sodium ion in the crys
 X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
 \end{equation}</span></p>
 <p>which is a measure for the solubility of the ions. Inserting the formula for the chemical potential delivers the proportionality <span class="math notranslate nohighlight">\(X_{\rm s}\propto \exp(-{\rm const}/\epsilon)\)</span>. This dependency on the dielectric constant of the solvent is indeed observed in the experiment, even though this is only a trend and there are solvents with marked deviations.</p>
-<img alt="Solubility" src="../../_images/solubility.png" />
+<p><img alt="Solubility" src="../../_images/solubility.png" /></p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -559,10 +559,10 @@ X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
 <p>For <span class="math notranslate nohighlight">\(l=2a\)</span> this results in <span class="math notranslate nohighlight">\(\mu^0=q^2/(8\pi\epsilon_0 \epsilon a)=u^2/(4\pi\epsilon_0 \epsilon l^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math notranslate nohighlight">\(\epsilon\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
 <p>The plot below shows the electric field of a dipole:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[145]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="c1"># generate grid</span>
 <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
@@ -597,7 +597,7 @@ X_{\rm s}=e^{-\frac{\Delta \mu^{0}}{k_{\rm B}T}}
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L7_2_Forces_and_Interactions_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_2_Forces_and_Interactions_11_0.png" style="width: 650px; height: 627px;" />
+<img alt="../../_images/notebooks_L7_2_Forces_and_Interactions_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_2_Forces_and_Interactions_11_0.png" style="width: 492px; height: 502px;" />
 </div>
 </div>
 <section id="Ion–dipole-interaction">
@@ -615,7 +615,7 @@ stripping of the hydration shell.</p>
 </div>
 <p>The plot below shows the ion dipole interaction for a sodium ion and a water molecule as a function of distance.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ion_dipole</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">epsilon</span><span class="p">):</span>
@@ -626,7 +626,7 @@ stripping of the hydration shell.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;atomic unit of electric dipole mom.&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -635,7 +635,7 @@ stripping of the hydration shell.</p>
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1e-9</span><span class="p">,</span><span class="mf">0.5e-9</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
@@ -644,7 +644,7 @@ stripping of the hydration shell.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -665,7 +665,7 @@ stripping of the hydration shell.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L7_2_Forces_and_Interactions_16_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_2_Forces_and_Interactions_16_0.png" style="width: 424px; height: 355px;" />
+<img alt="../../_images/notebooks_L7_2_Forces_and_Interactions_16_0.png" class="no-scaled-link" src="../../_images/notebooks_L7_2_Forces_and_Interactions_16_0.png" style="width: 589px; height: 502px;" />
 </div>
 </div>
 <p>The table below shows some selected hydration properties of ions. The hydrated radius determines the diffusion of the ion in water. The hydration number is the number of orientationally bound water molecules. Typically, smaller ions have a larger hydration number.</p>
@@ -744,7 +744,7 @@ stripping of the hydration shell.</p>
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 01, 2024</div>
+              Last updated on May 30, 2024</div>
           </div>
           <div class="right-details">
             
