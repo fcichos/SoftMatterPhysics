@@ -16,13 +16,6 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/9848106ffebdeb2ece65367f2dfd0c79831ef1c0/source/notebooks/L3/2_Chemical_Potential.pdf)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "metadata": {
     "tags": []
    },

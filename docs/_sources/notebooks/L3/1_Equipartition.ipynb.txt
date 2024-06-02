@@ -16,15 +16,6 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {
-    "tags": []
-   },
-   "source": [
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/9848106ffebdeb2ece65367f2dfd0c79831ef1c0/source/notebooks/L3/1_Equipartition.pdf)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "metadata": {},
    "source": [
     "In the previous section, we showed how the probability distribution for a system with average energy $\\langle E \\rangle$ could be guessed by using the principle of maximum entropy. However, to finish that calculation, we need to determine the meaning and significance of the Lagrange multiplier $\\beta$. We can derive a value for $\\beta$ with the help of the equipartition theorem.\n",

@@ -49,14 +49,6 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "a405052f-e2d0-450d-ab04-2bb14387b9e9",
-   "metadata": {},
-   "source": [
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/1124ed8ae7f3929bbbfead265cfc90ed3bd19d2f/source/notebooks/L16/1_langevin.pdf)"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 1,
    "id": "ebfabe38-e60b-44cb-b00b-65eefdc94657",

@@ -9,14 +9,6 @@
    ]
   },
   {
-   "cell_type": "markdown",
-   "id": "647f202b-84b0-479c-a39d-bdd215fa66fd",
-   "metadata": {},
-   "source": [
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/651340bf0dc9ab359d1ab26daed5b0ea4e22eba0/source/notebooks/L20/1_polymers.pdf)"
-   ]
-  },
-  {
    "cell_type": "code",
    "execution_count": 2,
    "id": "cf8d40cf-5a5c-419b-9b9a-365852946251",

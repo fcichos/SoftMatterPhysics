@@ -323,12 +323,12 @@ You can directly download the pdf-version of this page using the link below.
 <section id="Mayer-f-function-and-excluded-volume">
 <h2>Mayer f-function and excluded volume<a class="headerlink" href="#Mayer-f-function-and-excluded-volume" title="Permalink to this heading">#</a></h2>
 <p>Consider for that purpose the interaction by two monomers in a solvent with an effective potential <span class="math notranslate nohighlight">\(U(r)\)</span>. This potential typically has some large repulsive component at very short distances, some attractive components (negative) at intermediate length scales and a zero value at very large length scales.</p>
-<img alt="Interaction" src="../../_images/interaction.png" />
+<p><img alt="Interaction" src="../../_images/interaction.png" /></p>
 <section id="Interaction-potential">
 <h3>Interaction potential<a class="headerlink" href="#Interaction-potential" title="Permalink to this heading">#</a></h3>
-<p>The plots below show some example interaction potentials. The left graph displays the Lennard-Jones potential, the right one the ghard sphere potential, which is also called an athermal potential, as there is no temperature in it due to the missing minimum.</p>
-<p>Note again, that this potential includes all effects of the solvent asl well.</p>
-<img alt="tmp1" src="../../_images/tmp1.png" />
+<p>The plots below show some example interaction potentials. The left graph displays the Lennard-Jones potential, the right one the hard sphere potential, which is also called an athermal potential, as there is no temperature in it due to the missing minimum.</p>
+<p>Note again, that this potential includes all effects of the solvent as well.</p>
+<p><img alt="tmp1" src="../../_images/tmp1.png" /></p>
 </section>
 <section id="Probability-distribution">
 <h3>Probability distribution<a class="headerlink" href="#Probability-distribution" title="Permalink to this heading">#</a></h3>
@@ -337,7 +337,7 @@ You can directly download the pdf-version of this page using the link below.
 p(r)=\exp\left (-\frac{U(r)}{k_B T}\right)
 \end{equation}</span></p>
 <p>For the two potentials shown above, the probability therefore is zero wherever the potential is infinitely large. Whenever the potential is zero we find a probability density value of 1 while it is larger than 1 in the regions, where the potential is attractive.</p>
-<img alt="tmp2" src="../../_images/tmp2.png" />
+<p><img alt="tmp2" src="../../_images/tmp2.png" /></p>
 </section>
 <section id="Mayer-f-function">
 <h3>Mayer f-function<a class="headerlink" href="#Mayer-f-function" title="Permalink to this heading">#</a></h3>
@@ -345,16 +345,16 @@ p(r)=\exp\left (-\frac{U(r)}{k_B T}\right)
 <p><span class="math">\begin{equation}
 f(r)=\exp\left (-\frac{U(r)}{k_B T}\right)-1 \tag{Mayer f-function}
 \end{equation}</span></p>
-<img alt="tmp3" src="../../_images/tmp3.png" />
+<p><img alt="tmp3" src="../../_images/tmp3.png" /></p>
 <p>This definition makes sense if we consider the right example of a hard sphere interaction. The free volume can then be calculated by</p>
 <p><span class="math">\begin{equation}
-v=-\int f(r)d^3r=\int 1-\exp\left (-\frac{U(r)}{k_B T}\right) d^3r
+v=-\int f(r)d^3r=\int \left[1-\exp\left (-\frac{U(r)}{k_B T}\right) \right]d^3r
 \end{equation}</span></p>
 <p>which is giving in the case of the hard sphere interaction just <span class="math notranslate nohighlight">\(4\pi R^3/3\)</span>, where R is the contact separation distance of the two spheres. Thus the volume integral over the Mayer f-function is directly giving the excluded volume for the pairwise interaction. Note that the excluded volume can also be negative. This happens, when the attractive interaction is very strong. It can also be zero, when both positive and negative areas under the Mayer f-function are of the same size.</p>
 </section>
 <section id="Polymer-chain-as-a-real-gas">
 <h3>Polymer chain as a real gas<a class="headerlink" href="#Polymer-chain-as-a-real-gas" title="Permalink to this heading">#</a></h3>
-<p>Our further calculations will now base the excluded volume influence on the conformation of a polymer chain on the assumtion that all monomers (or actually Kuhn segments) are independet and not correlation in their position. They will thus behave like a real gas and show effect which we know from the <strong>van der Waals gas</strong>, such as co-volume and cohesive pressure. The two effects are actually corrections to the equation of state of the <strong>ideal gas</strong>, which can be written as</p>
+<p>Our further calculations will now base the excluded volume influence on the conformation of a polymer chain under the assumtion that all monomers (or actually Kuhn segments) are independet and don’t correlate in their position. They will thus behave like a real gas and show effect which we know from the <strong>van der Waals gas</strong>, such as co-volume and cohesive pressure. The two effects are actually corrections to the equation of state of the <strong>ideal gas</strong>, which can be written as</p>
 <p><span class="math">\begin{equation}
 Z\equiv = \frac{pV_m}{R T}=1 \tag{compressibility factor}
 \end{equation}</span></p>
@@ -390,7 +390,7 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 </section>
 <section id="Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">
 <h2>Non-spherical segments and Free energy of interaction of a real chain<a class="headerlink" href="#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain" title="Permalink to this heading">#</a></h2>
-<p>While we have assumed so far (without emphasizing it to much) that the interaction of the monomers is radially symmatric (monomers are spheres), typical monomers are rather rod-like. Thus we should get an idea about how the free volume changes when we go from a sphere to the rod. The procedure below considers the free energy of the interaction and replaces a rod by a set of spheres. We can get an idea about the free energy of a chain by coming back to our osmotic pressure formula</p>
+<p>While we have assumed so far (without emphasizing it to much) that the interaction of the monomers is radially symmetric (monomers are spheres), typical monomers are rather rod-like. Thus we should get an idea about how the free volume changes when we go from a sphere to the rod. The procedure below considers the free energy of the interaction and replaces a rod by a set of spheres. We can get an idea about the free energy of a chain by coming back to our osmotic pressure formula</p>
 <p><span class="math">\begin{equation}
 \Pi=n k_B T
 \end{equation}</span></p>
@@ -404,7 +404,7 @@ Z=1+b\frac{1}{V_m}+b^2\frac{1}{V_m^2}+\ldots=1+b\rho +b^2 \rho^2 + \ldots
 \frac{F_{\rm int}}{V}=k_B T(vc_m^2 + w c_m^3+\ldots)=k_B T (v\frac{N^2}{R^6}+w\frac{N^3}{R^9}+\ldots)
 \end{equation}</span></p>
 <p>where <span class="math notranslate nohighlight">\(c_m=N/R^3\)</span> is the monomer concentration. The first term in the above equation results from the monomer-monomer contacts as we introduced. The second term is accordingly the result of the contact between three monomers and so on. Therefore, this is also a virial expansion and the first virial expansion coefficient <span class="math notranslate nohighlight">\(v\)</span> is the excluded volume of the bimolecular monomer contact.</p>
-<p>This consideration helps us to understand the role of non-spherical rodlike monomers or segments. If we have a rodlike segment of length <span class="math notranslate nohighlight">\(b\)</span> and radius <span class="math notranslate nohighlight">\(d\)</span>, then the ro can be replaced by spherical monomers of radius <span class="math notranslate nohighlight">\(d\)</span>. The number of spherical monomers per segment is then <span class="math notranslate nohighlight">\(b/d\)</span>. Thus if a chain has <span class="math notranslate nohighlight">\(N\)</span> rodlike segments, the it can be replaced by <span class="math notranslate nohighlight">\(n=Nb/d\)</span> spherical monomers.</p>
+<p>This consideration helps us to understand the role of non-spherical rodlike monomers or segments. If we have a rodlike segment of length <span class="math notranslate nohighlight">\(b\)</span> and radius <span class="math notranslate nohighlight">\(d\)</span>, then the rod can be replaced by spherical monomers of radius <span class="math notranslate nohighlight">\(d\)</span>. The number of spherical monomers per segment is then <span class="math notranslate nohighlight">\(b/d\)</span>. Thus if a chain has <span class="math notranslate nohighlight">\(N\)</span> rodlike segments, then it can be replaced by <span class="math notranslate nohighlight">\(n=Nb/d\)</span> spherical monomers.</p>
 <p>In case of hard-sphere interactions the overall contribution of the excluded volume to the free energy shall be independent of the fact if the rods are replaced by spheres so the term</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -483,7 +483,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
 <div class="math notranslate nohighlight">
 \[\frac{F_{int}}{V k_B T}=F_{0}+ vc^2+ wc^3+\ldots\]</div>
 </div>
-<p>which essentially contains a contribution of the ideal chain, plus the corrections in orders of the segment density <span class="math notranslate nohighlight">\(c\)</span>. The ideal chain therby contributes the entropic part and the real chain correction gives the free volume correction. The main difference now to the good solvent model is now that the entropic part above has to include some additional term to include a repulsive</p>
+<p>which essentially contains a contribution of the ideal chain, plus the corrections in orders of the segment density <span class="math notranslate nohighlight">\(c\)</span>. The ideal chain therby contributes the entropic part and the real chain correction gives the free volume correction. The main difference now to the good solvent model is that the entropic part above has to include some additional term to include a repulsive Term</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[F_{\text {entropic }} \approx k_B T \frac{R^{2}}{N b^{2}}+ \underbrace{\frac{Nb^2}{R^2}}_{\rm new\, term}\]</div>
@@ -586,7 +586,7 @@ density combined with ideal chain conformation-derived entropy can provide quite
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 01, 2024</div>
+              Last updated on Jun 02, 2024</div>
           </div>
           <div class="right-details">
             

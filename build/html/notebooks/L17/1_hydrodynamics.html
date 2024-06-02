@@ -318,7 +318,6 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <section id="Hydrodynamics">
 <h1>Hydrodynamics<a class="headerlink" href="#Hydrodynamics" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/077f11a55d2c08402f992361198af218a3a67e76/source/notebooks/L17/1_hydrodynamics.pdf">File as PDF</a></p>
 <p>Hydrodynamics provides the fundamental equations to describe the motion of a fluid. Note that a fluid can therby be a gas or a liquid. Gases and liquids may have completely different flow properties as in liquids the mean free path of a molecule is much smaller than the size of the liquid container. This is something, that is not alway true for gases.</p>
 <p>In fluid dynamics, we are interested in the motion of a volume element of a fluid, which moves with a velocity <span class="math notranslate nohighlight">\(\vec{u}\)</span>. As the whole fluid moves, each volume element may have a different flow velocity, which results in a flow field <span class="math notranslate nohighlight">\(\vec{u}(\vec{r},t)\)</span>. Each component of the flow field depends now on each coordinate, i.e.</p>
 <div class="math-wrapper docutils container">
@@ -365,7 +364,7 @@ w(x,y,z,t)
 \[\nabla \cdot \vec{u}=0 \tag{incompressibility}\]</div>
 </div>
 <p><strong>b) One of the causes of a flow could be a pressure acting on the surface of a volume element</strong></p>
-<img alt="Surface" src="../../_images/surface.png" />
+<!-- ![Surface](./img/surface.png) --><p><img alt="Surface with volume element" src="../../_images/surface_new.png" /></p>
 <p>If the pressure <span class="math notranslate nohighlight">\(p\)</span> acts on the surface we have for a surface element <span class="math notranslate nohighlight">\(\delta S\)</span> with a normal vector <span class="math notranslate nohighlight">\(\hat{n}\)</span> a force <span class="math notranslate nohighlight">\(-\hat{n}p\delta S\)</span> on the surface element. If we integrate the force over the whole surface we can write</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -390,7 +389,7 @@ w(x,y,z,t)
 <p>To go beyond that limitation, we have to introduce frction into the equations. Since this is a good occasion, we will introduce the stress tensor at the same time, which is expressing all possible force on a volume element of a fluid.</p>
 <p><strong>d) Introduce internal friction</strong></p>
 <p>Let’s consider the following system with two fluid sheets, which only have a constant velocity component along the x-direction, i.e. <span class="math notranslate nohighlight">\(\vec{u}=\{u(y),0,0\}\)</span> and <span class="math notranslate nohighlight">\(\partial u(y)/\partial x=0\)</span>.</p>
-<img alt="viscosity" src="../../_images/viscosity.png" />
+<!-- ![viscosity](./img/viscosity.png) --><p><img alt="viscosity_new" src="../../_images/viscosity_new.png" /></p>
 <p>The sheet at <span class="math notranslate nohighlight">\(y\)</span> moves along the x-direction with a speed <span class="math notranslate nohighlight">\(u(y)\)</span>. The sheet at <span class="math notranslate nohighlight">\(y+\Delta y\)</span>, which is <span class="math notranslate nohighlight">\(\Delta y\)</span> away from the otehr sheet moves with a speed <span class="math notranslate nohighlight">\(u(y+\Delta y)\)</span>. Consider now the momentum <span class="math notranslate nohighlight">\(\vec{p}=\{m u(y),0,0 \}\)</span> of the fluid sheet (don’t confuse with the pressure <span class="math notranslate nohighlight">\(p\)</span>). The total momentum change <span class="math notranslate nohighlight">\(d\vec{p}\)</span> can be written as a substantial derivative</p>
 <p><span class="math">\begin{equation}
 d\vec{p}=\frac{\partial \vec{p}}{\partial t}dt +\underbrace{\frac{\partial \vec{p}}{\partial x}dx}_{=0} + \frac{\partial \vec{p}}{\partial y}dy+\underbrace{\frac{\partial \vec{p}}{\partial z}dz}_{=0}
@@ -400,7 +399,7 @@ d\vec{p}=\frac{\partial \vec{p}}{\partial t}dt +\underbrace{\frac{\partial \vec{
 \frac{d\vec{p}}{dt}=\frac{\partial \vec{p}}{\partial t}+\frac{\partial \vec{p}}{\partial y}\frac{dy}{dt}=\frac{\partial m u(y)}{\partial y}\frac{dy}{dt}
 \end{equation}</span></p>
 <p>which is a force. This is the force that is responsible for the change in the fluid velocity along the y direction, which is parallel to the x-direction.</p>
-<img alt="Stress" src="../../_images/stress.png" />
+<!-- ![Stress](./img/stress.png) --><p><img alt="Stress" src="../../_images/stress_new.png" /></p>
 <p>Such a force tangential to an area in the direction of motion is called a shear stress <span class="math notranslate nohighlight">\(\tau\)</span>, i.e.</p>
 <p><span class="math">\begin{equation}
 \tau=\frac{F}{A}=\frac{1}{A}\frac{d\vec{p}}{dt}=\underbrace{\frac{dy}{dt}\frac{\partial m u(y)}{\partial y}}_{\frac{d\vec{p}}{dt}}\frac{1}{A}
@@ -462,7 +461,7 @@ d\vec{p}=\frac{\partial \vec{p}}{\partial t}dt +\underbrace{\frac{\partial \vec{
 </ul>
 </li>
 </ul>
-<img alt="Classification" src="../../_images/nonnewton.png" />
+<p><img alt="Classification" src="../../_images/nonnewton.png" /></p>
 <p>Stress vector</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -569,7 +568,7 @@ I=\begin{bmatrix}
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 01, 2024</div>
+              Last updated on Jun 02, 2024</div>
           </div>
           <div class="right-details">
             

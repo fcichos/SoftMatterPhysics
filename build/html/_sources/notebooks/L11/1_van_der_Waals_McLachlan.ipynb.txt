@@ -10,14 +10,6 @@
   },
   {
    "cell_type": "markdown",
-   "id": "cda6631d-8350-4bff-a684-33ba736d9640",
-   "metadata": {},
-   "source": [
-    "[File as PDF](https://github.com/fcichos/SoftMatterPhysics/blob/0c9f01cd463a5920e4501aabca84eb31164ad342/source/notebooks/L11/1_van_der_Waals_McLachlan.pdf)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "be135f7d",
    "metadata": {},
    "source": [

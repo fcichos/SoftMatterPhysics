@@ -14,7 +14,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 2,
    "id": "47e34b31-daed-4914-8ad0-2a5ba91b5dbe",
    "metadata": {
     "tags": []
@@ -40,7 +40,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 3,
    "id": "813b8929-40d5-4f2e-95d8-90c395d9ab2e",
    "metadata": {
     "tags": []
@@ -74,7 +74,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 4,
    "id": "ad68c14f-ae41-4e50-866c-09304b56b952",
    "metadata": {
     "tags": []
@@ -105,7 +105,7 @@
        "<IPython.core.display.Javascript object>"
       ]
      },
-     "execution_count": 10,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }

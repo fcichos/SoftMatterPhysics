@@ -318,10 +318,9 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <section id="Viscoelasticity">
 <h1>Viscoelasticity<a class="headerlink" href="#Viscoelasticity" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/9e7003a7ff665ef3f4eb1e61be2aca830ea66baf/source/notebooks/L24/1_Viscoelasticity.pdf">File as PDF</a></p>
 <section id="Maxwell-Model">
 <h2>Maxwell Model<a class="headerlink" href="#Maxwell-Model" title="Permalink to this heading">#</a></h2>
-<img alt="Maxwell" src="../../_images/maxwell1.png" />
+<p><img alt="Maxwell" src="../../_images/maxwell1.png" /></p>
 <p>Combing back to the Maxwell model, we have a serial combination of viscous and elastic element. Thus both elements feel the same stress <span class="math notranslate nohighlight">\(\sigma\)</span> and the deformation is the sum of the elastic and viscous deformation, i.e. <span class="math notranslate nohighlight">\(\gamma=\gamma_e+\gamma_v\)</span>.</p>
 <p>We therefore find</p>
 <div class="math-wrapper docutils container">
@@ -355,7 +354,7 @@ You can directly download the pdf-version of this page using the link below.
 \[G_{\rm eq}=\lim_{t\rightarrow \infty} G(t)\]</div>
 </div>
 <p>For viscoelestic liquids this residual stress is absent and the stress decays to zero.</p>
-<img alt="TMP" src="../../_images/tmp.png" />
+<p><img alt="TMP" src="../../_images/tmp.png" /></p>
 <p>The Maxwell model, which is represented by a viscous dashpot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -418,7 +417,7 @@ You can directly download the pdf-version of this page using the link below.
 <section id="Steady-Shear">
 <h2>Steady Shear<a class="headerlink" href="#Steady-Shear" title="Permalink to this heading">#</a></h2>
 <p>We now switch to a different mode of mechanical perturbation of a material, which is the steady shear deformation. There we already considered the flow profile in the low Reynolds number section.</p>
-<img alt="Flow" src="../../_images/shear.png" />
+<p><img alt="Flow" src="../../_images/shear.png" /></p>
 <p>Here, the shear rate is given by the speed of the top surface <span class="math notranslate nohighlight">\(\dot{\gamma}=|\vec{v}|/h\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is the height of the film. According to our previous considerations the stress follows from</p>
 <p><span class="math">\begin{eqnarray}
 \sigma(t)&=&\dot{\gamma}\int_{-\infty}^{t}G(t-t^{\prime})dt^{\prime}\\
@@ -479,7 +478,7 @@ J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \[J_{eq}=\lim_{t\rightarrow \infty}=\frac{1}{\sigma}\lim_{t\rightarrow \infty}\gamma(t)=\frac{1}{G_{eq}}\]</div>
 </div>
 <p>We can therefore use a different model to better describe a viscoelastic solid. This is done by the Kelvin Voigt model, where viscous and elastic part are connected in parallel.</p>
-<img alt="Kelvin Voigt" src="../../_images/kelvinvoigt1.png" />
+<p><img alt="Kelvin Voigt" src="../../_images/kelvinvoigt1.png" /></p>
 <p>In this case the stresses add up</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -501,7 +500,7 @@ J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \[J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)\]</div>
 </div>
 <p>with <span class="math notranslate nohighlight">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
-<img alt="test" src="../../_images/tmp11.png" />
+<p><img alt="test" src="../../_images/tmp11.png" /></p>
 </section>
 <section id="Creep-Recovery">
 <h3>Creep Recovery<a class="headerlink" href="#Creep-Recovery" title="Permalink to this heading">#</a></h3>
@@ -549,7 +548,7 @@ J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
 \[\sigma(t)=\eta \frac{d \gamma(t)}{d t}=i \omega \eta \gamma_{0} e^{i \omega t}\]</div>
 </div>
 <p>we obtain an out of phase signal, a purely imaginary response, of the stress, which trails the train as shown in the Figure below.</p>
-<img alt="tmp" src="../../_images/tmp21.png" />
+<p><img alt="tmp" src="../../_images/tmp21.png" /></p>
 <p>For a viscoelastic material, we have now both responses, which we can summarize in a complex modulus <span class="math notranslate nohighlight">\(G\)</span>. The real part is called the <strong>storage modulus</strong> and the imaginary part is called the <strong>loss modulus</strong></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -616,7 +615,7 @@ G^{*}&=&\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\om
 \end{eqnarray}</span></p>
 <p>The plot below shows the frequency dependence of the real and imaginary part of the modulus for the Maxwell model. The imaginary part has the shape of a Lorentzian, which is corresponding to the Fourier transform of an exponential in the time domain. The wings of <span class="math notranslate nohighlight">\(G^{\prime \prime}\)</span> increase or decay with <span class="math notranslate nohighlight">\(\omega\)</span>, while the real part <span class="math notranslate nohighlight">\(G^{\prime}\)</span> shows a steeper increase with <span class="math notranslate nohighlight">\(\omega^2\)</span> until it saturates. The saturation and the peak occur at the characteristic timescale
 <span class="math notranslate nohighlight">\(\tau=\eta/G\)</span>, indicated by the vertical dahsed line.</p>
-<img alt="tmp3" src="../../_images/tmp31.png" />
+<p><img alt="tmp3" src="../../_images/tmp31.png" /></p>
 </section>
 <section id="Complex-shear-modulus-of-the-Kelvin-Voigt-model">
 <h3>Complex shear modulus of the Kelvin-Voigt model<a class="headerlink" href="#Complex-shear-modulus-of-the-Kelvin-Voigt-model" title="Permalink to this heading">#</a></h3>
@@ -669,7 +668,7 @@ G^{*}&=&\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\om
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 01, 2024</div>
+              Last updated on Jun 02, 2024</div>
           </div>
           <div class="right-details">
             
