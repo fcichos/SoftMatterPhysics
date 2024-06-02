@@ -424,7 +424,7 @@
    "id": "e2eec581",
    "metadata": {},
    "source": [
-    "### Dipole Dipole interactionn with rotating dipoles"
+    "### Dipole Dipole interaction with rotating dipoles"
    ]
   },
   {
@@ -484,7 +484,7 @@
     "F_{ext}=-eE\n",
     "$$\n",
     "\n",
-    "while the internal force between teh two charges is\n",
+    "while the internal force between the two charges is\n",
     "\n",
     "$$\n",
     "F_{int}=-\\frac{e^{2}}{4\\pi \\epsilon_0 R^{2}}\\sin(\\theta)\\approx \\frac{e^{2}l}{4\\pi \\epsilon_0 R^{3}}=-\\frac{e u_{ind}}{4\\pi \\epsilon_0 R^3}=F_{ext}\n",

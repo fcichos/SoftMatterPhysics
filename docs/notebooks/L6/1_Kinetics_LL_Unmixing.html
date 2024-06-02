@@ -9,6 +9,7 @@
         <title>Kinetics of Liquid–Liquid Unmixing - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -207,7 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html">Interactions involving polar molecules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interactionn-with-rotating-dipoles">Dipole Dipole interactionn with rotating dipoles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Dipole-Dipole-interaction-with-rotating-dipoles">Dipole Dipole interaction with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
@@ -319,6 +320,32 @@ You can directly download the pdf-version of this page using the link below.
 <section id="Kinetics-of-Liquid–Liquid-Unmixing">
 <h1>Kinetics of Liquid–Liquid Unmixing<a class="headerlink" href="#Kinetics-of-Liquid–Liquid-Unmixing" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://github.com/fcichos/SoftMatterPhysics/blob/1a30ec465c44b6d11b6022c92b17de6432fed717/source/notebooks/L6/1_Kinetics_LL_Unmixing.pdf">File as PDF</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="c1"># the lines below set a number of parameters for plotting, such as label font size,</span>
+<span class="c1"># title font size, which you may find useful</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">&#39;font.family&#39;</span><span class="p">:</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">&#39;axes.labelpad&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                     <span class="s1">&#39;xtick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">&#39;ytick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">&#39;xtick.top&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">&#39;xtick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;ytick.right&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">&#39;ytick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,})</span>
+</pre></div>
+</div>
+</div>
 <p>If two liquids are brought together at a composition that is either unstable or metastable, they will phase separate. The kinetics of this phase separation can proceed in different ways.</p>
 <ol class="arabic simple">
 <li><p><strong>Spinodal Decomposition</strong> – In this case, thermal fluctuations will amplify density fluctuations. The material will diffuse “uphill” to the regions of higher concentration to yield phase separation. The boundaries of the two phases are blurred in this case. Spinodal decomposition is the process of phase separation in the <em>unstable region</em>.</p></li>
@@ -410,7 +437,41 @@ total free energy change, when the droplet is formed.</p>
 \Delta F(r)=\frac{4}{3}\pi r^3\Delta F_{v}+4\pi r^2 \gamma.
 \end{equation}</span></p>
 <p>Note, that the first term is negative as <span class="math notranslate nohighlight">\(ΔF_v\)</span> is negative. A typical free energy change with the particle size is shown in the figure below. It has a maximum at the position <span class="math notranslate nohighlight">\(r^*\)</span>,which creates a nucleation barrier <span class="math notranslate nohighlight">\(ΔG^*\)</span>. Droplets which are spontaneously formed at <span class="math notranslate nohighlight">\(r&lt;r^*\)</span> can decrease their free energy by dissolving.</p>
-<p><img alt="Download" src="../../_images/download.png" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dG</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">dT</span><span class="p">):</span>
+    <span class="n">gamma_sl</span><span class="o">=</span><span class="mf">38e-3</span> <span class="c1">#(38mJ/m^2)</span>
+    <span class="n">Tm</span><span class="o">=</span><span class="mf">273.15</span>
+    <span class="n">dHm</span><span class="o">=</span><span class="mf">3.34e8</span> <span class="c1"># (J/m^3)</span>
+    <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">dHm</span><span class="o">*</span><span class="n">dT</span><span class="o">/</span><span class="n">Tm</span><span class="o">/</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">gamma_sl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">kbT</span><span class="o">=</span><span class="mf">3.769e-21</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">dG</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="n">kbT</span><span class="p">,</span><span class="s1">&#39;k-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39; radius $r$ [nm] &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;free energy change $\Delta G/k_</span><span class="si">{B}</span><span class="s1">T$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L6_1_Kinetics_LL_Unmixing_6_0.png" class="no-scaled-link" src="../../_images/notebooks_L6_1_Kinetics_LL_Unmixing_6_0.png" style="width: 775px; height: 575px;" />
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title"><strong>Liquid-Liquid Unmixing - Ouzo Effect</strong></p>
 <p>One example of liquid-liquid unmixing by nucleation is the Ouzo or Louche effect. The name denotes the spontaneous formation of a turbid microemulsion when a solution of anethol in ethanol is diluted with water. The figure below shows the phase digram of this ternary mixture, meaning that it has three components.</p>
@@ -467,7 +528,7 @@ emulsion droplets. Thus, adding water to a solution of homogeneous oil/ethanol m
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on May 30, 2024</div>
+              Last updated on Jun 01, 2024</div>
           </div>
           <div class="right-details">
             
