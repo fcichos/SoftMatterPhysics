@@ -319,6 +319,25 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <section id="Semidilute-Polymer-Solutions">
 <h1>Semidilute Polymer Solutions<a class="headerlink" href="#Semidilute-Polymer-Solutions" title="Permalink to this heading">#</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">physical_constants</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;style.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <p>The properties of polymer solutions change when you increase the density of the solution. In the case of dilite solutions, we have already seen that the viscosity changes linearly with the concentration of the polymer. Whe the chains start to overlap, the neigboring chains impose constraints which influence the relaxation of the chains upon deformation.</p>
 <p>To identify, when such a semi-dilute regime is reached, we can have a look at the volume fraction</p>
 <div class="math-wrapper docutils container">
@@ -346,7 +365,7 @@ You can directly download the pdf-version of this page using the link below.
 <li><p>a semidilute solution for <span class="math notranslate nohighlight">\(\phi^{*}&lt;\phi\ll 1\)</span></p></li>
 <li><p>a melt for <span class="math notranslate nohighlight">\(\phi=1\)</span></p></li>
 </ul>
-<p><strong>insert sketch showing this</strong></p>
+<p><img alt="polymer states" src="../../_images/polymer_states.png" /></p>
 <p>Due to the overlap of the chains in the semidilute regime, there must be some length scale <span class="math notranslate nohighlight">\(\xi\)</span> (called correlation length),such that</p>
 <ul class="simple">
 <li><p>for <span class="math notranslate nohighlight">\(r&lt;\xi\)</span> the monomers are just surrounded by solvent mostly or same chain monomers</p></li>
@@ -437,14 +456,6 @@ You can directly download the pdf-version of this page using the link below.
 <div class="math notranslate nohighlight">
 \[G(t)\approx \frac{k_B T}{b^3}\phi^{\frac{3\nu}{3\nu-1}} \left ( \frac{t}{\tau_0}\right )^{-\frac{1}{2}}\]</div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
@@ -467,7 +478,7 @@ You can directly download the pdf-version of this page using the link below.
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 02, 2024</div>
+              Last updated on Jul 21, 2024</div>
           </div>
           <div class="right-details">
             

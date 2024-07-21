@@ -222,9 +222,15 @@
    "id": "ab30f7df",
    "metadata": {},
    "source": [
-    "To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain. \n",
-    "\n",
-    "**insert image here**"
+    "To include the polymer in the shear viscosity, we have to consider an affine deformation of the chain. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "494aded3-82df-4563-a6a7-bb064e63e135",
+   "metadata": {},
+   "source": [
+    "![affine deformation of chain](img/affine_deformation.drawio.png)"
    ]
   },
   {
@@ -323,7 +329,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 12,
    "id": "9ffb75b9",
    "metadata": {
     "nbsphinx": "hidden",
@@ -337,7 +343,7 @@
     "plt.xlabel(r\"$\\lambda$\")\n",
     "plt.ylabel(r\"$\\Delta F$\")\n",
     "plt.tight_layout()\n",
-    "plt.savefig(\"img/test.pdf\")\n",
+    "plt.savefig(\"img/test.png\")\n",
     "plt.close(fig)"
    ]
   },
@@ -346,7 +352,7 @@
    "id": "7c97e53a-bbeb-424e-9765-728d4e591657",
    "metadata": {},
    "source": [
-    "![](img/test.pdf)"
+    "![](img/test.png)"
    ]
   },
   {
@@ -539,7 +545,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 13,
    "id": "2562d36a",
    "metadata": {
     "nbsphinx": "hidden",
@@ -555,7 +561,7 @@
     "plt.ylabel(r\"$G(t)$\")\n",
     "plt.axvline(x=1,color=\"k\",ls='--')\n",
     "plt.tight_layout()\n",
-    "plt.savefig(\"img/tmp4.pdf\")\n",
+    "plt.savefig(\"img/tmp4.png\")\n",
     "plt.close(fig)"
    ]
   },
@@ -564,7 +570,7 @@
    "id": "47c6ac98",
    "metadata": {},
    "source": [
-    "![tmp4](img/tmp4.pdf)"
+    "![tmp4](img/tmp4.png)"
    ]
   },
   {
@@ -619,7 +625,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 15,
    "id": "b03fbadb",
    "metadata": {
     "nbsphinx": "hidden",
@@ -638,7 +644,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 16,
    "id": "dc781fe9",
    "metadata": {
     "nbsphinx": "hidden",
@@ -658,7 +664,7 @@
     "plt.ylabel(r\"$G^{\\prime}(\\omega),G^{\\prime\\prime}(\\omega)$\")\n",
     "plt.legend()\n",
     "plt.tight_layout()\n",
-    "plt.savefig(\"img/tmp6.pdf\")\n",
+    "plt.savefig(\"img/tmp6.png\")\n",
     "plt.close(fig)"
    ]
   },
@@ -667,7 +673,7 @@
    "id": "29398d46",
    "metadata": {},
    "source": [
-    "![tmp6](img/tmp6.pdf)"
+    "![tmp6](img/tmp6.png)"
    ]
   },
   {
@@ -719,7 +725,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 18,
    "id": "cb85942b",
    "metadata": {
     "nbsphinx": "hidden",
@@ -735,7 +741,7 @@
     "plt.ylabel(r\"$G(t)$\")\n",
     "plt.axvline(x=1,color='k',ls='--')\n",
     "plt.tight_layout()\n",
-    "plt.savefig(\"img/tmp5.pdf\")\n",
+    "plt.savefig(\"img/tmp5.png\")\n",
     "plt.close(fig)"
    ]
   },
@@ -744,7 +750,7 @@
    "id": "3f4adf5f",
    "metadata": {},
    "source": [
-    "![tmp5](img/tmp5.pdf)"
+    "![tmp5](img/tmp5.png)"
    ]
   },
   {
@@ -775,7 +781,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 19,
    "id": "f2f6fe3c",
    "metadata": {
     "nbsphinx": "hidden",
@@ -794,7 +800,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 20,
    "id": "c52f9e53",
    "metadata": {
     "nbsphinx": "hidden",
@@ -815,7 +821,7 @@
     "plt.ylabel(r\"$G^{\\prime}(\\omega),G^{\\prime\\prime}(\\omega)$\")\n",
     "plt.legend()\n",
     "plt.tight_layout()\n",
-    "plt.savefig(\"img/tmp7.pdf\")\n",
+    "plt.savefig(\"img/tmp7.png\")\n",
     "plt.close(fig)"
    ]
   },
@@ -824,7 +830,7 @@
    "id": "c1a934c3",
    "metadata": {},
    "source": [
-    "![tmp7](img/tmp7.pdf)"
+    "![tmp7](img/tmp7.png)"
    ]
   },
   {

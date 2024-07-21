@@ -538,10 +538,70 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 </section>
 <section id="Classification-of-phase-transitions">
 <h1>Classification of phase transitions<a class="headerlink" href="#Classification-of-phase-transitions" title="Permalink to this heading">#</a></h1>
-<p>A classification of different phase transitions can be carried out using the scheme of <strong>Ehrenfest</strong>. According to that, a phase transition</p>
+<p>A classification of different phase transitions can be carried out using the scheme of <strong>Ehrenfest</strong>. According to that, a phase transition is categorized based on the order of the derivative of the free energy that shows discontinuity at the transition point.</p>
+<p><span class="math">\begin{equation}
+dG=-SdT+VdP+\mu dN
+\end{equation}</span></p>
+<p><span class="math">\begin{equation}
+\left( \frac{\partial G}{\partial T} \right)_{P}=-S \quad \left( \frac{\partial G}{\partial P} \right)_{T}=V
+\end{equation}</span></p>
+<p><img alt="classification_fig_01" src="../../_images/classification_of_phase_transition_fig_01.png" /></p>
+<ul class="simple">
+<li><p>phase transitions at the phase boundary</p></li>
+<li><p>charge is</p>
+<ul>
+<li><p>discontinous - first order phase transition</p></li>
+<li><p>continous - second order phase transition</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="classification_fig_02" src="../../_images/classification_of_phase_transition_fig_02.png" /></p>
+<p>The Ehrenfest equations with <span class="math notranslate nohighlight">\(m = 1, \dots, n-1\)</span> are <span class="math">\begin{equation}
+\left.\frac{\partial^{m}G_{\alpha}}{\partial T^{m}}\right|_{P}=\left.\frac{\partial^{m}G_{\beta}}{\partial T^{m}}\right|_{P}
+\qquad
+\left.\frac{\partial^{m}G_{\alpha}}{\partial P^{m}}\right|_{T}=\left.\frac{\partial^{m}G_{\beta}}{\partial P^{m}}\right|_{T}
+\end{equation}</span> and <span class="math">\begin{equation}
+\left.\frac{\partial^{m}G_{\alpha}}{\partial T^{m}}\right|_{P}\neq\left.\frac{\partial^{m}G_{\beta}}{\partial T^{m}}\right|_{P}
+\qquad
+\left.\frac{\partial^{n}G_{\alpha}}{\partial P^{n}}\right|_{T}=\left.\frac{\partial^{n}G_{\beta}}{\partial P^{n}}\right|_{T}
+\end{equation}</span></p>
+<p>lack at the derivative of <span class="math notranslate nohighlight">\(G\)</span> as a fraction of the temperature.</p>
+<section id="1.-Order-Phase-Transitions">
+<h2>1. Order Phase Transitions<a class="headerlink" href="#1.-Order-Phase-Transitions" title="Permalink to this heading">#</a></h2>
+<p><span class="math">\begin{equation}
+\left. \frac{\partial G}{\partial T}\right|_{P}=-S,\,\left. \frac{\partial G}{\partial P}\right|_{T}=V,\,\left. \frac{\partial G}{\partial N}\right|_{T}=\mu
+\end{equation}</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G\)</span> has a kink (discontinous)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\curvearrowright\)</span> <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(V\)</span> have a jump</p></li>
+<li><p><span class="math notranslate nohighlight">\(\curvearrowright\)</span> <span class="math notranslate nohighlight">\(\mu\)</span> has a kink</p></li>
+</ul>
+<p><span class="math">\begin{equation}
+C_{P}=\left.\frac{dH}{dT}\right|_{P}=T\left(  \frac{\partial S}{\partial T} \right)_{P}\rightarrow\infty
+\end{equation}</span></p>
+<ul class="simple">
+<li><p>latent heat <span class="math notranslate nohighlight">\(\rightarrow\)</span> melting, evaporation</p></li>
+</ul>
+</section>
+<section id="2.-Order-Phase-Transitions">
+<h2>2. Order Phase Transitions<a class="headerlink" href="#2.-Order-Phase-Transitions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(G(T, P)\)</span> is continous</p></li>
+<li><p><span class="math notranslate nohighlight">\(S(T, P)\)</span>, <span class="math notranslate nohighlight">\(V(T, P)\)</span> is continous</p></li>
+<li><p>specific heat <span class="math">\begin{equation}
+C_{P}=T\left.  \frac{\partial S}{\partial T} \right|_{P}=-T \left( \frac{\partial^{2}G}{\partial T^{2}} \right)_{P}
+\end{equation}</span> is discontinous</p></li>
+<li><p>isothermal compressibility <span class="math">\begin{equation}
+\kappa_{T}=-\frac{1}{V} \left(\frac{\partial V}{\partial P}\right)_{T}=-\frac{1}{V}\left( \frac{\partial^{2}G}{\partial P^{2}} \right)_{T}
+\end{equation}</span></p></li>
+<li><p>thermial expansion coefficient <span class="math">\begin{equation}
+\alpha=\frac{1}{V}\left( \frac{\partial V}{\partial T} \right)=\frac{1}{V}\left( \frac{\partial^{2}G}{\partial T\partial P} \right)
+\end{equation}</span></p></li>
+</ul>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
+</section>
 
         </article>
       </div>
@@ -578,7 +638,7 @@ graph below for the water/ice system. The nucleus size in that model stays the s
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 02, 2024</div>
+              Last updated on Jul 21, 2024</div>
           </div>
           <div class="right-details">
             
@@ -604,7 +664,11 @@ graph below for the water/ice system. The nucleus size in that model stays the s
 <li><a class="reference internal" href="#Heterogeneous-Nucleation">Heterogeneous Nucleation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#Classification-of-phase-transitions">Classification of phase transitions</a></li>
+<li><a class="reference internal" href="#Classification-of-phase-transitions">Classification of phase transitions</a><ul>
+<li><a class="reference internal" href="#1.-Order-Phase-Transitions">1. Order Phase Transitions</a></li>
+<li><a class="reference internal" href="#2.-Order-Phase-Transitions">2. Order Phase Transitions</a></li>
+</ul>
+</li>
 </ul>
 
           </div>
