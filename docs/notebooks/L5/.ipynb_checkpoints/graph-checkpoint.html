@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Kinetics of Liquid–Liquid Unmixing" href="../L6/1_Kinetics_LL_Unmixing.html" /><link rel="prev" title="Gibbs Distribution" href="../L4/2_Gibbs_Distribution.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
-        <title>Phase Transitions - Soft Matter Lecture 23 documentation</title>
+        <title>&lt;no title&gt; - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -134,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -186,8 +187,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Phase Transitions</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_Phase_Transitions.html">Phase Transitions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
 <ul>
@@ -197,6 +198,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
@@ -301,127 +305,119 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L5/1_Phase_Transitions.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/SoftMatterPhysics/blob/main/build/html/notebooks/L5/1_Phase_Transitions.ipynb"><img alt="Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a><br/></span>
+<p>This page was generated from <cite>notebooks/L5/graph.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/SoftMatterPhysics/blob/main/build/html/notebooks/L5/graph.ipynb"><img alt="Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a><br/></span>
 You can directly download the pdf-version of this page using the link below.
-<span class="raw-html"><br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/notebooks/L5/1_Phase_Transitions.pdf">download</a></span></p>
+<span class="raw-html"><br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/notebooks/L5/graph.pdf">download</a></span></p>
 </div>
-<section id="Phase-Transitions">
-<h1>Phase Transitions<a class="headerlink" href="#Phase-Transitions" title="Permalink to this heading">#</a></h1>
-<p>The importance of looking at phase transitions resides in the multicomponent nature of soft matter and its interaction energy scales.</p>
-<p>When heat is applied, an ice cube undergoes melting, while water undergoes evaporation. These transformations involve the conversion of a solid into a liquid, which then changes into a vapor. Importantly, all of these changes are reversible. The term “phase” refers to a state of matter that is chemically and physically uniform. A substance can exist in solid, liquid, and gas phases, and some substances, like carbon, can have multiple solid phases, such as graphite and diamond.</p>
-<p>A phase transition is the spontaneous conversion of one phase to another, and it occurs at a specific temperature for a given pressure. At atmospheric pressure, ice melts at 0°C, and water boils at 100°C. The transition temperature is determined by the <em>equality of the chemical potential</em> of a specific element in the two phases.</p>
-<p>A phase diagram is a graphical representation that illustrates the conditions, such as temperature and pressure, at which different phases coexist or are present.</p>
-<p><img alt="cell" src="../../_images/cell.png" /></p>
-<p>We will approach phase transitions no tstarting directly with the solid-liquid phase transition but first exploring the transition of a single macromolecule from the extended conformaiton into globular state. Following that we will have a look at liquid-liquid unmixing as example and later turn into the liquid-solid phase transitions.</p>
-<section id="Liquid-Liquid-Unmixing">
-<h2>Liquid-Liquid Unmixing<a class="headerlink" href="#Liquid-Liquid-Unmixing" title="Permalink to this heading">#</a></h2>
-<p>Consider two liquids consisting of molecules A and B, which we will bring together and mix. The mixing should happen at constant volume and temperature. We can therefore use the Helmholtz free energy as the quantity that is minimized.</p>
-<p>Initially, the separated components have the free energies <span class="math notranslate nohighlight">\(F_{\rm A}\)</span> and <span class="math notranslate nohighlight">\(F_{\rm B}.\)</span> After the mixing, the free energy that derives from the mixing is <span class="math notranslate nohighlight">\(F_{\rm A+B}-(F_{\rm A}+F_{\rm B}).\)</span> If the volume fraction of component A is <span class="math notranslate nohighlight">\(\phi_{\rm A}\)</span> and the one of component B is <span class="math notranslate nohighlight">\(\phi_{\rm B}\)</span> such that <span class="math notranslate nohighlight">\(\phi_{\rm A}+\phi_{\rm B}=1\)</span> (incompressibility of the mixture), then we can calculate the mixing free energy .</p>
-<p>First we calculate the mixing entropy <span class="math notranslate nohighlight">\(S_{\rm mix}\)</span> from</p>
-<p><span class="math">\begin{equation}
-S=-k_{\rm B}\sum_{i}p_{i}\ln(p_{i})
-\end{equation}</span></p>
-<p>which results in</p>
-<p><span class="math">\begin{equation}
-S_{\rm mix}=-k_{\rm B}(\phi_{\rm A}\ln(\phi_{\rm A})+\phi_{\rm B}\ln(\phi_{\rm B})).
-\end{equation}</span></p>
-<p>In addition to the mixing entropy, we have to calculate the change of the internal energy as well. This internal energy consists of an energy term that comprises the interaction of two molecules of the same type A (<span class="math notranslate nohighlight">\(\epsilon_{\rm AA}\)</span>), one of two molecules of the same type B (<span class="math notranslate nohighlight">\(\epsilon_{\rm BB}\)</span>), and one between the molecules A and B (<span class="math notranslate nohighlight">\(\epsilon_{\rm AB}\)</span>). If we assume that each site in the liquid has a number of neighbors, then the interaction energy of this site is</p>
-<p><span class="math">\begin{equation}
-z\phi_{\rm A}\epsilon_{\rm AA}.
-\end{equation}</span></p>
-<p>A fraction of <span class="math notranslate nohighlight">\(\phi_{\rm A}\)</span> sites is occupied with molecules A and, thus, the interaction energy reads</p>
-<p><span class="math">\begin{equation}
-\frac{z}{2}\phi_{\rm A}^2\epsilon_{\rm AA}.
-\end{equation}</span></p>
-<p>Similarly, expressions for the interaction of B molecules and the interaction of A with B can be obtained. To calculate the change in internal energy when mixing the two species, we still have to subtract the internal energy of the two separated components, <span class="math notranslate nohighlight">\(z\phi_{\rm A}\epsilon_{\rm AA}/2\)</span> and <span class="math notranslate nohighlight">\(z\phi_{\rm B}\epsilon_{\rm BB}/2\)</span>, such that we obtain</p>
-<p><span class="math">\begin{equation}
-U_{\rm mix}=\frac{z}{2}\left [(\phi_{\rm A}^2-\phi_{\rm A})\epsilon_{\rm AA}+(\phi_{\rm B}^2-\phi_{\rm B})\epsilon_{\rm BB}+2\phi_{\rm A}\phi_{\rm B}\epsilon_{\rm AB}\right].
-\end{equation}</span></p>
-<p>Using this expression as well as <span class="math notranslate nohighlight">\(\phi_{\rm A}+\phi_{\rm B}=1\)</span>, we can define an interaction parameter</p>
-<p><span class="math">\begin{equation}
-\chi=\frac{z}{2k_{\rm B}T}(2\epsilon_{\rm AB}-\epsilon_{\rm AA}-\epsilon_{\rm BB})
-\end{equation}</span></p>
-<p>such that</p>
-<p><span class="math">\begin{equation}
-\frac{U_{\rm mix}}{k_{\rm B}T}=\chi\phi_{\rm A}\phi_{\rm B}
-\end{equation}</span></p>
-<p>by utilizing, for example, <span class="math notranslate nohighlight">\((\phi_{\rm A}^2-\phi_{\rm A})\epsilon_{\rm AA}=\phi_{\rm A}(\phi_{\rm A}-1)\epsilon_{\rm AA}=-\phi_{\rm A}\phi_{\rm B}\epsilon_{\rm AA}\)</span>.</p>
-<p>This finally yields the free energy of mixing</p>
-<p><span class="math">\begin{equation}
-\frac{F_{\rm mix}}{k_{\rm B}T}=\phi_{\rm A}\ln(\phi_{\rm A})+\phi_{\rm B}\ln(\phi_{\rm B})+\chi\phi_{\rm A}\phi_{\rm B}.
-\end{equation}</span></p>
-<p>We can now plot this free energy of mixing as a function of the volume fraction of component A.</p>
-<p><img alt="mix" src="../../_images/mix.png" /></p>
-<p><em>Free energy of mixing as a function of the composition of the binary liquid mixture for different interaction parameters.</em></p>
-<p>The free energy function has a minimum at a composition of <span class="math notranslate nohighlight">\(\phi=0.5\)</span> for all <span class="math notranslate nohighlight">\(\chi\)</span> smaller than 2. In this region of interaction parameters, the two liquids are always miscible at any composition. For <span class="math notranslate nohighlight">\(\chi\)</span> larger than two, the free energy function reveals two minima, i.e., there are two compositions under which the mixture is stable (one left in phase B and one right in A). The location of these two minima defines what is called the <strong>binodal</strong> or <strong>coexistence curve</strong>,
-which separates the unstable from the stable region in a phase diagram (Figure 4). As the interaction parameter is proportional to <span class="math notranslate nohighlight">\(1/T\)</span>, these stable compositions are a function of the temperature.</p>
-<p>To understand the stability of a mixture, let us shorten the notation first. In all of the following considerations, we will denote <span class="math notranslate nohighlight">\(\phi=\phi_{\rm A}.\)</span> We will start with two mixtures we have prepared, which have a composition <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span>. If we take a volume <span class="math notranslate nohighlight">\(V_1\)</span> of the first mixture and a volume <span class="math notranslate nohighlight">\(V_2\)</span> of the second one and combine them to a volume <span class="math notranslate nohighlight">\(V_0\)</span>, then the two mixtures form again a new composition with</p>
-<p><span class="math">\begin{equation}
-\phi_{0}V_{0}=\phi_{1}V_{1}+\phi_{2}V_{2}.
-\end{equation}</span></p>
-<p>We can divide by <span class="math notranslate nohighlight">\(V_0\)</span> and introduce two new volume fractions <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span> to yield</p>
-<p><span class="math">\begin{equation}
-\phi_{0}=\frac{V_{1}}{V_{0}}\phi_{1}+\frac{V_{2}}{V_{0}}\phi_{1}=\alpha_{1}\phi_{1}+\alpha_{2}\phi_{2}.
-\end{equation}</span></p>
-<p>The total free energy of the system of the two separated mixtures at these volume fractions can then be written as</p>
-<p><span class="math">\begin{equation}
-F_{\rm sep}=\alpha_{1}F_{\rm mix}(\phi_{1})+\alpha_{2}F_{\rm mix}(\phi_{2}).
-\end{equation}</span></p>
-<p>We can add this free energy as a function of the volume fraction <span class="math notranslate nohighlight">\(\phi_0\)</span> to our free energy curve, for example, for an interaction parameter <span class="math notranslate nohighlight">\(\chi&lt;2\)</span>. The two initial concentrations lie on the coexistence curve, but the starting composition <span class="math notranslate nohighlight">\(\phi_0\)</span> is not. Its initial free energy is <span class="math notranslate nohighlight">\(F_{\rm sep}(\phi_{0})\)</span> and it is on a line connecting the points with the initial compositions, <a class="reference external" href="PhaseTr_2.png">Figure 2</a>. Since the actual free energy curve of the mixture is always
-lower than any point of the line denoting the separate free energies, the mixture is <strong>stable</strong>. This is true as long as the free energy curve is convex.</p>
-<!--<img src="img/PhaseTr_2.png" alt="PT_2" name="PT_2" class="bg-primary mb-1" width="400px">--><p><img alt="mixing free energy example" src="../../_images/mix_example.png" /></p>
-<p>Lets change the free energy curve to a situation with a maximum at <span class="math notranslate nohighlight">\(\phi=0.5\)</span>. If we look at two situations, where one is in the region of the maximum and the second is next to the minimum (<strong>???</strong>). Close to the maximum, the line with the free energy of the separate components always falls below the free energy curve of the mixture. The composition is therefore <strong>unstable</strong>. Close to the minimum, however, the composition is stable, yet, the mixture is not at the minimum of the free energy
-curve. Eventually, the system will evolve towards the free energy minimum and thus the mixture is called <strong>metastable</strong>.</p>
-<p><img alt="image-2.png" src="../../_images/download-1.png" /></p>
-<p>Apparently the above analysis has done nothing else than measuring the sign of the curvature of the free energy curve. We can summarize the conditions as</p>
-<p><span class="math">\begin{eqnarray}
-\frac{\mathrm d^2F_{\rm mix}}{\mathrm d\phi^2} &>& 0\ldots {\rm stable}\\
-\frac{\mathrm d^2F_{\rm mix}}{\mathrm d\phi^2} &<& 0\ldots {\rm unstable}\\
-\frac{\mathrm d^2F_{\rm mix}}{\mathrm d\phi^2} &=& 0\ldots {\rm spinodal\, line}\\
-\frac{\mathrm d^3F_{\rm mix}}{\mathrm d\phi^3} &=& 0\ldots {\rm critical\, point}
-\end{eqnarray}</span></p>
-<p>The spinodal line therefore separates the metastable from the unstable region. It corresponds to the deflection points of the free energy curve. The critical point, beyond which no phase separation can be achieved at any concentration <span class="math notranslate nohighlight">\(\phi\)</span> is defined by setting the third derivative to zero.</p>
-<p><img alt="image-3.png" src="../../_images/download-2.png" /></p>
-<p><em>Phase diagram of an ideal mixture. The interaction parameter is plotted as a function of the composition. The individual regions as defined by the above equation are indicated.</em></p>
-<p>We can now plot this free energy of mixing as a function of the volume fraction of component A.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Javascript</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="w">    </span><span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;pre&gt;hello&lt;/pre&gt;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+    element.innerHTML = '<pre>hello</pre>'
+
+</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">script</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">script</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;//cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">d3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js';
+    document.head.appendChild(script);
+    console.log(window.d3)
+
+</script></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Javascript</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;graph.js&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+var svg = d3.select(element)
+    .append("svg")
+    .attr("width", 300)
+    .attr("height", 300);
+
+svg.append("circle")
+    .style("stroke", "gray")
+    .style("fill", "cyan")
+    .attr("r", 130)
+    .attr("cx", 150)
+    .attr("cy", 150)
+    .transition()
+        .delay(100)
+        .duration(10000)
+        .attr("r", 10)
+        .attr("cx", 150)
+        .style("fill", "blue");
+</script></div>
+</div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
-</script></section>
-</section>
-
+</script>
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L6/1_Kinetics_LL_Unmixing.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Kinetics of Liquid–Liquid Unmixing</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../L4/2_Gibbs_Distribution.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Gibbs Distribution</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -432,7 +428,7 @@ curve. Eventually, the system will evolve towards the free energy minimum and th
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Aug 25, 2024</div>
+              Last updated on Jun 02, 2024</div>
           </div>
           <div class="right-details">
             
@@ -441,27 +437,8 @@ curve. Eventually, the system will evolve towards the free energy minimum and th
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Phase Transitions</a><ul>
-<li><a class="reference internal" href="#Liquid-Liquid-Unmixing">Liquid-Liquid Unmixing</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>
