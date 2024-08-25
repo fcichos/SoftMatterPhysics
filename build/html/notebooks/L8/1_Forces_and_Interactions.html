@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -197,18 +197,19 @@
 <p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Interactions involving polar molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Ion–Dipole-interaction">Ion–Dipole interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Dipole-Dipole-interaction-with-rotating-dipoles">Dipole Dipole interaction with rotating dipoles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Dipole-Dipole-interaction-with-rotating-dipoles">Dipole-Dipole interaction with rotating dipoles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Dipole-Induced-Dipole">Dipole Induced Dipole</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
 <ul>
@@ -302,7 +303,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -380,8 +381,9 @@ You can directly download the pdf-version of this page using the link below.
 \end{equation}</span></p>
 <p>For <span class="math notranslate nohighlight">\(l=2a\)</span> this results in <span class="math notranslate nohighlight">\(\mu^0=q^2/(8\pi\epsilon_0 \epsilon a)=u^2/(4\pi\epsilon_0 \epsilon l^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math notranslate nohighlight">\(\epsilon\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
 <p>The plot below shows the electric field of a dipole:</p>
-<section id="Ion–dipole-interaction">
-<h2>Ion–dipole interaction<a class="headerlink" href="#Ion–dipole-interaction" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="Ion–Dipole-interaction">
+<h1>Ion–Dipole interaction<a class="headerlink" href="#Ion–Dipole-interaction" title="Permalink to this heading">#</a></h1>
 <p><img alt="Charge Dipole" src="../../_images/dipole_q.png" /></p>
 <p>The interaction energy of a dipole with a charge can be calculated by</p>
 <p><span class="math">\begin{equation}
@@ -429,7 +431,6 @@ requires the stripping of the hydration shell.</p>
 </tbody>
 </table>
 </div>
-</section>
 </section>
 <section id="Dipole-Dipole-Interactions">
 <h1>Dipole-Dipole Interactions<a class="headerlink" href="#Dipole-Dipole-Interactions" title="Permalink to this heading">#</a></h1>
@@ -484,7 +485,7 @@ Z=\int \exp(-\frac{w(r,\Omega)}{k_B T}) d\Omega
 <p>is the partition function.</p>
 </section>
 <section id="Dipole-Dipole-interaction-with-rotating-dipoles">
-<h1>Dipole Dipole interaction with rotating dipoles<a class="headerlink" href="#Dipole-Dipole-interaction-with-rotating-dipoles" title="Permalink to this heading">#</a></h1>
+<h1>Dipole-Dipole interaction with rotating dipoles<a class="headerlink" href="#Dipole-Dipole-interaction-with-rotating-dipoles" title="Permalink to this heading">#</a></h1>
 <p>We can extend the above calculation now also to two dipoles interacting when freely rotating. The interaction energy was given by</p>
 <p><span class="math">\begin{equation}
 w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [ 2\cos(\theta_1) \cos(\theta_2)-\sin(\theta_1)\sin(\theta_2)\cos(\phi)\right ]
@@ -593,6 +594,9 @@ reorientation of a permanent electric dipole in and external electric field whic
 </section>
 <section id="Polarizability-of-polar-molecules">
 <h1>Polarizability of polar molecules<a class="headerlink" href="#Polarizability-of-polar-molecules" title="Permalink to this heading">#</a></h1>
+</section>
+<section id="Dipole-Induced-Dipole">
+<h1>Dipole Induced Dipole<a class="headerlink" href="#Dipole-Induced-Dipole" title="Permalink to this heading">#</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -649,38 +653,8 @@ reorientation of a permanent electric dipole in and external electric field whic
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Interactions involving polar molecules</a><ul>
-<li><a class="reference internal" href="#Ion–dipole-interaction">Ion–dipole interaction</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
-<li><a class="reference internal" href="#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-<li><a class="reference internal" href="#Dipole-Dipole-interaction-with-rotating-dipoles">Dipole Dipole interaction with rotating dipoles</a></li>
-<li><a class="reference internal" href="#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li><a class="reference internal" href="#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a><ul>
-<li><a class="reference internal" href="#Field-of-the-Induced-Dipole">Field of the Induced Dipole</a></li>
-<li><a class="reference internal" href="#Force-and-Potential-Energy">Force and Potential Energy</a></li>
-<li><a class="reference internal" href="#Polarizability-by-Polar-Molecules">Polarizability by Polar Molecules</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

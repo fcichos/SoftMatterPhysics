@@ -4,6 +4,13 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "\\setcounter{section}{3}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "# Forces and Interactions in Soft Matter"
    ]
   },
