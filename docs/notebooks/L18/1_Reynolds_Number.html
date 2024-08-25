@@ -320,7 +320,7 @@ You can directly download the pdf-version of this page using the link below.
 <section id="Reynolds-Number">
 <h1>Reynolds Number<a class="headerlink" href="#Reynolds-Number" title="Permalink to this heading">#</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -383,27 +383,13 @@ p&=&p^{\prime} U^2/\rho
 \frac{\rho \frac{U^2}{L}}{\eta \frac{U}{L^2}}=\rho\frac{U L}{\eta}={\rm Re}
 \end{equation}</span></p>
 <p>which is just the Reynolds number. Thus large Reynolds numbers (<span class="math notranslate nohighlight">\({\rm Re &gt;1}\)</span>) state that inertia are important as compared to viscous forces and the flow may be turbulent. Otherwise, for <span class="math notranslate nohighlight">\({\rm Re}&lt;1\)</span>, viscous forces dominate the flow and the flowfield will always be laminar.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;_dbnH-BBSNo&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
-</pre></div>
-</div>
-<div class="output_area rendered_html docutils container">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/_dbnH-BBSNo"
-    frameborder="0"
-    allowfullscreen
-
-></iframe></div>
 </div>
 <section id="Stokes-Equation">
 <h2>Stokes Equation<a class="headerlink" href="#Stokes-Equation" title="Permalink to this heading">#</a></h2>
@@ -459,8 +445,8 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)+\frac{Uy}{h}
 <p><span class="math">\begin{equation}
 u(y)=U\frac{y}{h}
 \end{equation}</span></p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -477,13 +463,6 @@ u(y)=U\frac{y}{h}
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L18_1_Reynolds_Number_8_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_8_0.png" style="width: 438px; height: 283px;" />
-</div>
-</div>
 </section>
 <section id="Poiseuille-Flow---Pressure-Driven-Flow">
 <h3>Poiseuille Flow - Pressure Driven Flow<a class="headerlink" href="#Poiseuille-Flow---Pressure-Driven-Flow" title="Permalink to this heading">#</a></h3>
@@ -491,8 +470,8 @@ u(y)=U\frac{y}{h}
 <p><span class="math">\begin{equation}
 u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
 \end{equation}</span></p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -507,13 +486,6 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position y &quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L18_1_Reynolds_Number_11_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_1_Reynolds_Number_11_0.png" style="width: 438px; height: 283px;" />
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
@@ -557,7 +529,7 @@ u(y)=\frac{1}{2\eta}\frac{dp}{dx}y(y-h)
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 02, 2024</div>
+              Last updated on Aug 25, 2024</div>
           </div>
           <div class="right-details">
             

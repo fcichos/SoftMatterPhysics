@@ -317,6 +317,97 @@
 You can directly download the pdf-version of this page using the link below.
 <span class="raw-html"><br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/notebooks/L18/Untitled.pdf">download</a></span></p>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">cylinder_stream_function</span><span class="p">(</span><span class="n">U</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">U</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">r</span><span class="p">)</span> <span class="o">*</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">velocity_field</span><span class="p">(</span><span class="n">psi</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">lambdify</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="o">-</span><span class="n">psi</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">plot_streamlines</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span>
+    <span class="n">x0</span><span class="p">,</span> <span class="n">x1</span> <span class="o">=</span> <span class="n">xlim</span>
+    <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">ylim</span>
+    <span class="n">Y</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="n">y0</span><span class="p">:</span><span class="n">y1</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x1</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">u</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">),</span> <span class="n">v</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cornflowerblue&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">([])</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">spine</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">psi</span> <span class="o">=</span> <span class="n">cylinder_stream_function</span><span class="p">()</span>
+<span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">velocity_field</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+
+<span class="n">xlim</span> <span class="o">=</span> <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plot_streamlines</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">format_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L18_Untitled_0_0.png" src="../../_images/notebooks_L18_Untitled_0_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define parameters</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Radius of the pipe</span>
+<span class="n">Umax</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Maximum velocity at the center of the pipe</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Number of points</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># Radial positions</span>
+
+<span class="c1"># Velocity profile for laminar flow in a pipe (parabolic profile)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">Umax</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">r</span> <span class="o">/</span> <span class="n">R</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Plotting the laminar flow profile</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Laminar Flow Profile&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Radial Position (r)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (v)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Laminar Flow Velocity Profile in a Pipe&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_L18_Untitled_1_0.png" src="../../_images/notebooks_L18_Untitled_1_0.png" />
+</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -325,7 +416,9 @@ You can directly download the pdf-version of this page using the link below.
 </pre></div>
 </div>
 </div>
-
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
         </article>
       </div>
       <footer>
@@ -343,7 +436,7 @@ You can directly download the pdf-version of this page using the link below.
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 02, 2024</div>
+              Last updated on Aug 25, 2024</div>
           </div>
           <div class="right-details">
             
