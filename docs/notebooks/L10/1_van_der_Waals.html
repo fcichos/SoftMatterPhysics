@@ -9,7 +9,6 @@
         <title>van der Waals Interactions - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -198,9 +197,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
@@ -328,25 +324,6 @@ You can directly download the pdf-version of this page using the link below.
 <li><p>attractive and orienting</p></li>
 <li><p>not additive</p></li>
 </ul>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[150]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;style.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 <section id="Dispersion-Interaction">
 <h2>Dispersion Interaction<a class="headerlink" href="#Dispersion-Interaction" title="Permalink to this heading">#</a></h2>
 <p>The dispersion part in particular, will require a quantum electrodynamic approach, which is beyond the scope of this lecture. We will will consider a much simpler approach at the beginning and later study the more general approach by McLachlan.</p>
@@ -462,7 +439,7 @@ w_{\rm vdW}(r)=-\frac{C_{\rm vdW}}{r^6}=-\frac{C_{\rm Debye}+C_{\rm Keesom}+C_{\
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 02, 2024</div>
+              Last updated on Aug 25, 2024</div>
           </div>
           <div class="right-details">
             

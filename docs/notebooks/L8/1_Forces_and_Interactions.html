@@ -198,9 +198,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
@@ -319,34 +316,6 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <section id="Interactions-involving-polar-molecules">
 <h1>Interactions involving polar molecules<a class="headerlink" href="#Interactions-involving-polar-molecules" title="Permalink to this heading">#</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
-
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-<span class="c1"># the lines below set a number of parameters for plotting, such as label font size,</span>
-<span class="c1"># title font size, which you may find useful</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                     <span class="s1">&#39;font.family&#39;</span><span class="p">:</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.labelpad&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                     <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                     <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.top&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.right&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,})</span>
-</pre></div>
-</div>
-</div>
 <p>Many molecules exhibit a dipole or even higher moments due to the fact that the charges are not evenly distributed over the molecular structure. Some of the atoms exhibit a stronger tendency to accept charges than others. This is typically measured by electronegativity and provides an idea of whether atoms rather donate or accept a charge when binding to other atoms. While homo-atomic bonds therefore do not have dipole moments, hetero-atomic bonds do (see table).</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -411,48 +380,6 @@ You can directly download the pdf-version of this page using the link below.
 \end{equation}</span></p>
 <p>For <span class="math notranslate nohighlight">\(l=2a\)</span> this results in <span class="math notranslate nohighlight">\(\mu^0=q^2/(8\pi\epsilon_0 \epsilon a)=u^2/(4\pi\epsilon_0 \epsilon l^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math notranslate nohighlight">\(\epsilon\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
 <p>The plot below shows the electric field of a dipole:</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-
-<span class="c1"># generate grid</span>
-<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">E</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">q</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.5</span><span class="p">),</span> \
-        <span class="n">q</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-
-<span class="c1"># calculate vector field</span>
-<span class="n">Ex1</span><span class="p">,</span> <span class="n">Ey1</span><span class="o">=</span><span class="n">E</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">Ex2</span><span class="p">,</span> <span class="n">Ey2</span><span class="o">=</span><span class="n">E</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">Ex</span><span class="o">=</span><span class="n">Ex1</span><span class="o">+</span><span class="n">Ex2</span>
-<span class="n">Ey</span><span class="o">=</span><span class="n">Ey1</span><span class="o">+</span><span class="n">Ey2</span>
-
-<span class="n">E_max</span><span class="o">=</span><span class="mi">5</span>
-<span class="n">E</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ex</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ey</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">Ex</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">E</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span><span class="o">&gt;</span><span class="n">E_max</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">Ey</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">E</span><span class="o">.</span><span class="n">flat</span><span class="p">[:]</span><span class="o">&gt;</span><span class="n">E_max</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="c1"># plot vecor field</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Ex</span><span class="o">/</span><span class="n">E</span><span class="p">,</span> <span class="n">Ey</span><span class="o">/</span><span class="n">E</span><span class="p">,</span> <span class="n">pivot</span><span class="o">=</span><span class="s1">&#39;middle&#39;</span><span class="p">,</span> <span class="n">headwidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">headlength</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">scale</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;dipole field&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L8_1_Forces_and_Interactions_3_0.png" class="no-scaled-link" src="../../_images/notebooks_L8_1_Forces_and_Interactions_3_0.png" style="width: 492px; height: 502px;" />
-</div>
-</div>
 <section id="Ion–dipole-interaction">
 <h2>Ion–dipole interaction<a class="headerlink" href="#Ion–dipole-interaction" title="Permalink to this heading">#</a></h2>
 <p><img alt="Charge Dipole" src="../../_images/dipole_q.png" /></p>
@@ -468,60 +395,6 @@ requires the stripping of the hydration shell.</p>
 </div>
 <p><img alt="image0" src="../../_images/polarizability1.png" /></p>
 <p>The plot below shows the ion dipole interaction for a sodium ion and a water molecule as a function of distance.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ion_dipole</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">epsilon</span><span class="p">):</span>
-    <span class="n">q</span><span class="o">=</span><span class="n">u</span><span class="o">/</span><span class="n">l</span>
-    <span class="n">f</span><span class="o">=</span><span class="n">e</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">epsilon</span><span class="o">*</span><span class="n">epsilon_0</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">))))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;atomic unit of electric dipole mom.&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">J2eV</span><span class="o">=</span><span class="n">physical_constants</span><span class="p">[</span><span class="s2">&quot;electron volt-joule relationship&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1e-9</span><span class="p">,</span><span class="mf">0.5e-9</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-<span class="n">l</span><span class="o">=</span><span class="mf">0.02e-9</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="mf">1e9</span><span class="p">,</span><span class="n">ion_dipole</span><span class="p">(</span><span class="mf">1.8</span><span class="o">*</span><span class="n">D</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">l</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">J2eV</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">9.2</span><span class="p">,</span><span class="mf">9.2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;distance [nm]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;energy [eV]&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;dipole charge interaction&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L8_1_Forces_and_Interactions_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L8_1_Forces_and_Interactions_9_0.png" style="width: 512px; height: 502px;" />
-</div>
-</div>
 <p>The table below shows some selected hydration properties of ions. The hydrated radius determines the diffusion of the ion in water. The hydration number is the number of orientationally bound water molecules. Typically, smaller ions have a larger hydration number.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -767,7 +640,7 @@ reorientation of a permanent electric dipole in and external electric field whic
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jul 21, 2024</div>
+              Last updated on Aug 25, 2024</div>
           </div>
           <div class="right-details">
             

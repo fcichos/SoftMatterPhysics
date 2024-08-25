@@ -74,7 +74,10 @@
    "cell_type": "code",
    "execution_count": 151,
    "id": "8f9a938c",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [],
    "source": [
     "def alpha(nu,nu_0,gamma):\n",
@@ -85,7 +88,10 @@
    "cell_type": "code",
    "execution_count": 152,
    "id": "8af544ee",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [],
    "source": [
     "nu=np.linspace(1e5,1e17,1000)"
@@ -95,7 +101,10 @@
    "cell_type": "code",
    "execution_count": 153,
    "id": "ace308a1",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [
     {
      "data": {

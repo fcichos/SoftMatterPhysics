@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Depletion Forces" href="../L13/1_depletion_forces.html" /><link rel="prev" title="van der Waals Interaction" href="../L11/1_van_der_Waals_Solid_Bodies.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Statistical Physics Definitions" href="../L2/3_Statistical_Physics_Definitions.html" /><link rel="prev" title="Introduction" href="1_introduction.html" />
 
     <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
-        <title>van der Waals Interaction - Soft Matter Lecture 23 documentation</title>
+        <title>Thermodynamics and Statistical Physics Revisited - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -167,11 +167,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../L1/1_introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Thermodynamics and Statistical Physics Revisited</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
@@ -197,6 +197,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
@@ -223,8 +226,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../L11/1_van_der_Waals_Solid_Bodies.html">van der Waals Interaction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">van der Waals Interaction</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../L12/1_van_der_Waals_Lifshitz.html">van der Waals Interaction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 13:</span></p>
 <ul>
@@ -308,105 +311,125 @@
         </div>
         <article role="main">
           <div class="admonition note">
-<p>This page was generated from <cite>notebooks/L12/1_van_der_Waals_Lifshitz.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/SoftMatterPhysics/blob/main/build/html/notebooks/L12/1_van_der_Waals_Lifshitz.ipynb"><img alt="Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a><br/></span>
+<p>This page was generated from <cite>notebooks/L1/2_Thermodynamics_Statistics.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/SoftMatterPhysics/blob/main/build/html/notebooks/L1/2_Thermodynamics_Statistics.ipynb"><img alt="Colab badge" src="https://colab.research.google.com/assets/colab-badge.svg" style="vertical-align:text-bottom"></a><br/></span>
 You can directly download the pdf-version of this page using the link below.
-<span class="raw-html"><br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/notebooks/L12/1_van_der_Waals_Lifshitz.pdf">download</a></span></p>
+<span class="raw-html"><br/><a href="https://raw.githubusercontent.com/fcichos/SoftMatterPhysics/main/source/notebooks/L1/2_Thermodynamics_Statistics.pdf">download</a></span></p>
 </div>
-<section id="van-der-Waals-Interaction">
-<h1>van der Waals Interaction<a class="headerlink" href="#van-der-Waals-Interaction" title="Permalink to this heading">#</a></h1>
-<section id="Lifshitz-Theory">
-<h2>Lifshitz Theory<a class="headerlink" href="#Lifshitz-Theory" title="Permalink to this heading">#</a></h2>
-<p><strong>This needs to be written</strong></p>
-<p>The semiclassical theory we have developed in the last lecture is still based on microscopic quantities, which are the polarizabilities. We would like to base that description rather on continuum quantities to simplify the descriptions. This is done in the Lifshitz theory. It is using continuum quantities like the dielectric function <span class="math notranslate nohighlight">\(\epsilon_i\)</span> or the refractive index <span class="math notranslate nohighlight">\(n_{i}\)</span> to describe the interactions of macroscopic bodies.</p>
-<p>Normal calculation</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[w_{q \alpha}=-\frac{q^2 \alpha_1}{\left(4 \pi \varepsilon_0 \varepsilon_3\right)^2 r^4}\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[w_{q 1}=\int_\delta^{\infty} \mathrm{dx} \int_0^{\infty} w_{q \alpha}\left(r=\sqrt{\left(x^2+y^2\right)}\right) \rho_1(2 \pi y) \mathrm{d} y\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[w_{q 1}=-\frac{\pi q^2 \rho_1 \alpha_1}{\left(4 \pi \varepsilon_0 \varepsilon_3\right)^2 \delta}\]</div>
-</div>
-<p>Image charge calculation</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\phi(x, y)=\frac{1}{\left(4 \pi \varepsilon_0\right) \varepsilon_l}\left[\frac{q}{\sqrt{(\delta+x)^2+y^2}}+\frac{q^{\prime}}{\sqrt{(\delta-x)^2+y^2}}\right], x&lt;0\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\phi(x, y)=\frac{1}{\left(4 \pi \varepsilon_0\right) \varepsilon_r} \frac{q^{\prime \prime}}{\sqrt{(\delta+x)^2+y^2}}, x&gt;0\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-D_x^l &amp; =D_x^r \\
-\left.\frac{\partial \phi}{\partial x} \varepsilon_l\right|_{x=0-} &amp; =\left.\frac{\partial \phi}{\partial x} \varepsilon_r\right|_{x=0+} \\
-\frac{\left(q-q^{\prime}\right) \delta}{\sqrt{\left(\delta^2+y^2\right)^3}} &amp; =\frac{\left(q^{\prime \prime}\right) \delta}{\sqrt{\left(\delta^2+y^2\right)^3}}
-\end{aligned}\end{split}\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-E_y^l &amp; =E_y^r \\
-\left.\frac{\partial \phi}{\partial y}\right|_{x=0-} &amp; =\left.\frac{\partial \phi}{\partial y}\right|_{x=0+} \\
-\frac{\left(q+q^{\prime}\right) y}{\varepsilon_l \sqrt{\left(\delta^2+y^2\right)^3}} &amp; =\frac{q^{\prime \prime} y}{\varepsilon_r \sqrt{\left(\delta^2+y^2\right)^3}}
-\end{aligned}\end{split}\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[q^{\prime}=-\frac{\varepsilon_r-\varepsilon_l}{\varepsilon_r+\varepsilon_l} q\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[q^{\prime \prime}=\frac{2 \varepsilon_r}{\varepsilon_r+\varepsilon_l} q\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[w_{q 1}=w_{q q^{\prime}}=\frac{q q^{\prime}}{\left(4 \pi \varepsilon_0\right) \varepsilon_3(2 \delta)}=-\frac{q^2}{\left(4 \pi \varepsilon_0\right) \varepsilon_3(2 \delta)} \frac{\varepsilon_1-\varepsilon_3}{\varepsilon_1+\varepsilon_3}\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\rho_1 \alpha_1=2 \varepsilon_0 \varepsilon_3 \frac{\varepsilon_1-\varepsilon_3}{\varepsilon_1+\varepsilon_3}\]</div>
-</div>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[A=\frac{3 k T}{2} \sum_{n=0}^{\infty},\left[\frac{\varepsilon_1\left(i \nu_n\right)-\varepsilon_3\left(i \nu_n\right)}{\varepsilon_1\left(i \nu_n\right)+\varepsilon_3\left(i \nu_n\right)}\right]\left[\frac{\varepsilon_2\left(i \nu_n\right)-\varepsilon_3\left(i \nu_n\right)}{\varepsilon_2\left(i \nu_n\right)+\varepsilon_3\left(i \nu_n\right)}\right]\]</div>
-</div>
-<p>Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as</p>
-<p><strong>Zero Frequency</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3k_B T a_{1}^3a_2^3}{r^6}\left ( \frac{\epsilon_1(0)-\epsilon_3(0)}{\epsilon_1(0)+\epsilon_3(0)}\right )\left ( \frac{\epsilon_2(0)-\epsilon_3(0)}{\epsilon_2(0)+\epsilon_3(0)}\right )
-\end{equation}</span></p>
-<p>and at</p>
-<p><strong>Optical Frequencies</strong></p>
-<p><span class="math">\begin{equation}
-w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1(i\nu)-\epsilon_3(i\nu)}{\epsilon_1(i\nu)+\epsilon_3(i\nu)}\right )\left ( \frac{\epsilon_2(i\nu)-\epsilon_3(i\nu)}{\epsilon_2(i\nu)+\epsilon_3(i\nu)}\right )d\nu
-\end{equation}</span></p>
-<p>To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at <span class="math notranslate nohighlight">\(\nu_e\)</span> then the dielectric function can be written as</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\epsilon(\nu)=1+\frac{n^2-1}{1-\left (\frac{\nu}{\nu_e}\right )^2}\]</div>
-</div>
-<p>which can be inserted and integrated in the above equations as a replacement.</p>
+<section id="Thermodynamics-and-Statistical-Physics-Revisited">
+<h1>Thermodynamics and Statistical Physics Revisited<a class="headerlink" href="#Thermodynamics-and-Statistical-Physics-Revisited" title="Permalink to this heading">#</a></h1>
+<section id="Thermodynamics">
+<h2>Thermodynamics<a class="headerlink" href="#Thermodynamics" title="Permalink to this heading">#</a></h2>
+<section id="Fundamental-Quantities">
+<h3>Fundamental Quantities<a class="headerlink" href="#Fundamental-Quantities" title="Permalink to this heading">#</a></h3>
+<p>We can define different thermodynamic systems depending on their ability to exchange energy and particles with the environment.</p>
+<p><img alt="systems" class="bg-primary mb-1 no-scaled-link" src="../../_images/systems.png" style="width: 500px;" /></p>
+<p>A system is called <em>isolated</em> if it can neither exchange energy nor particles with its environment. This ensemble of particles is also called <span class="math notranslate nohighlight">\(micro-canonical\)</span>. The energy in such a system can not fluctuate. It is a <em>closed system</em> if it can exchange energy with the surrounding, i.e., a heat bath keeping it at a constant temperature. The ensemble of particles in such a system corresponds to a <em>canonical</em> ensemble. Energy can fluctuate. In case the system can also exchange particles, it is
+called an <em>open system</em> or <em>grand-canonical</em> ensemble.</p>
+<p>A thermodynamic system can be defined by <strong>state variables</strong> <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(V\)</span> and/or <span class="math notranslate nohighlight">\(T\)</span>. <strong>State functions</strong> are useful to formulate the laws of thermodynamics. A state function is independent of how one arrived at that particular state. They are most often used to characterize an equilibrium state.</p>
 <div class="admonition warning">
-<p class="admonition-title"><strong>van der Waals interactions</strong></p>
-<p>Overall the van der Waals interactions have the following general properties</p>
+<p class="admonition-title"><strong>Note:</strong> State Function and State Variables</p>
 <ul class="simple">
-<li><p>since <span class="math notranslate nohighlight">\(h\nu_e &gt;&gt;k_B T\)</span> the dispersion interaction is much bigger that the rest of the interaction. For <span class="math notranslate nohighlight">\(\epsilon=n^2\approx 2\)</span>, and <span class="math notranslate nohighlight">\(\nu_e=3\times 10^{15}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> we find <span class="math notranslate nohighlight">\(h\nu_e/2\sqrt{3}k_B T\approx 140\)</span></p></li>
-<li><p>the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For <span class="math notranslate nohighlight">\(n_1=n_2=1.5\)</span> and <span class="math notranslate nohighlight">\(n_3=1.4\)</span> we obtain a factor of 32 as compared to <span class="math notranslate nohighlight">\(n_3=1\)</span></p></li>
-<li><p>the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if <span class="math notranslate nohighlight">\(n_3\)</span> is between <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span></p></li>
-<li><p>the van der Waals interaction is not additive</p></li>
-<li><p>the dispersion interaction shows retardation effects, at distances larger than <span class="math notranslate nohighlight">\(100\)</span> nm, it decays with <span class="math notranslate nohighlight">\(r^{-7}\)</span></p></li>
+<li><p>State function is a function of state variables that depends only on the state of the system.</p></li>
+<li><p>State variables characterize the state of a system and are independent of how the system got there.</p></li>
 </ul>
+</div>
+<p>We will refer to a number of state functions during the course. Here is a list of the most useful ones:</p>
+<ul class="simple">
+<li><p><strong>Internal energy</strong> <span class="math notranslate nohighlight">\(U\)</span> (state function):</p></li>
+</ul>
+<p>State function. The total energy contained in a thermodynamic system. It is the energy necessary to create the system with the major components kinetic energy and potential energy.</p>
+<p><span class="math">\begin{equation}
+U=Q+W
+\end{equation}</span></p>
+<p>The internal energy can be changed by supplying heat or doing work on the system such that</p>
+<p><span class="math">\begin{equation}
+dU=dQ-pdV
+\end{equation}</span></p>
+<ul class="simple">
+<li><p><strong>Enthalpy</strong> <span class="math notranslate nohighlight">\(H\)</span> (state function):</p></li>
+</ul>
+<p>The enthalpy <span class="math notranslate nohighlight">\(H\)</span> of a system is measuring the internal energy plus the product of volume and pressure.</p>
+<p><span class="math">\begin{equation}
+H=U+pV
+\end{equation}</span></p>
+<p>The enthalpy is especially useful for a system at constant pressure <span class="math notranslate nohighlight">\(p={\rm const.}\)</span>, i.e., for processes where the volume can not be controlled.</p>
+<p><span class="math">\begin{equation}
+\mathrm{d}H=\mathrm{d}U+p\mathrm{d}V+V\mathrm{d}p=\delta Q + V\mathrm{d}p
+\end{equation}</span></p>
+<p>In this case the change in enthalpy of a system corresponds to the exchanged heat.</p>
+<ul class="simple">
+<li><p><strong>Entropy</strong> <span class="math notranslate nohighlight">\(S\)</span> (state function):</p></li>
+</ul>
+<p>The change of entropy of a system is given by</p>
+<p><span class="math">\begin{equation}
+\mathrm{d}S=\frac{\delta Q}{T},
+\end{equation}</span></p>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> denotes the temperature and <span class="math notranslate nohighlight">\(\delta Q\)</span> the heat exchanged in a reversible process.</p>
+<ul class="simple">
+<li><p><strong>Free Energy</strong> <span class="math notranslate nohighlight">\(G\)</span> or <span class="math notranslate nohighlight">\(F\)</span> (state function):</p></li>
+</ul>
+<p>Free energies are useful for systems which can exchange energy with the environment but not particles. In such non-isolated systems we define the</p>
+<p><strong>Gibbs Free Energy</strong></p>
+<p><span class="math">\begin{equation}
+G=H-TS
+\end{equation}</span></p>
+<p>for a system with constant pressure and</p>
+<p><strong>Helmholtz Free Energy</strong></p>
+<p><span class="math">\begin{equation}
+F=U-TS
+\end{equation}</span></p>
+<p>for a system with constant volume. Both quantities are used to indicate in which direction physical or chemical processes proceed. After we have written down the two first laws of thermodynamics, we will have a look at a specific example.</p>
+</section>
+<section id="Laws-of-Thermodynamics">
+<h3>Laws of Thermodynamics<a class="headerlink" href="#Laws-of-Thermodynamics" title="Permalink to this heading">#</a></h3>
+<section id="First-Law-of-Thermodynamics">
+<h4>First Law of Thermodynamics<a class="headerlink" href="#First-Law-of-Thermodynamics" title="Permalink to this heading">#</a></h4>
+<p>The internal energy <span class="math notranslate nohighlight">\(U\)</span> is connected to the first law of thermodynamics:</p>
+<p><span class="math">\begin{equation}
+\mathrm dU=\delta Q+\delta W=\delta Q-p\mathrm dV
+\end{equation}</span></p>
+<p>which states, that the energy contained in a system can be changed by providing heat or performing mechanical work on the system. Here <span class="math notranslate nohighlight">\(\delta Q\)</span> and <span class="math notranslate nohighlight">\(\delta W\)</span> are no state functions. They characterize a process of delivering heat or performing mechanical work.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Note:</strong> First Law of Thermodynamics</p>
+<ul class="simple">
+<li><p>The internal energy of a system can only be changed by exchanging heat with the environment or by doing mechanical work on it (energy cannot appear or disappear).</p></li>
+</ul>
+</div>
+</section>
+<section id="Second-Law-of-Thermodynamics">
+<h4>Second Law of Thermodynamics<a class="headerlink" href="#Second-Law-of-Thermodynamics" title="Permalink to this heading">#</a></h4>
+<p>While the internal energy <span class="math notranslate nohighlight">\(U\)</span> may be fixed (i.e., <span class="math notranslate nohighlight">\(\mathrm{d}U=0\)</span>), the system may exist in different configurations (see, for example, and ideal gas with different arrangements of molecules). Such an isolated system will always evolve such that the change in entropy is positive or zero (<span class="math notranslate nohighlight">\(\mathrm{d}S\ge 0\)</span>). This is equivalent to the formulation that the entropy becomes maximized.</p>
+<div class="alert alert-warning"><p><strong>Note:</strong> Second Law of Thermodynamics</p>
+<ul class="simple">
+<li><p>When an isolated system is left alone long enough it evolves to thermal equilibrium whose entropy is at least as great as before (<span class="math notranslate nohighlight">\(\mathrm{d}S \gt 0\)</span>).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title"><strong>Example: Closed System in Contact with Reservoir</strong></p>
+<p>Look at the above figure of the closed systems (inner part) inside a temperature bath (reservoir). If we apply the 2nd Law of thermodynamics to reservoir and system we write down</p>
+<p><span class="math">\begin{equation}
+\mathrm{d}S_{\rm tot}=\mathrm{d}S_{\rm R}+ \mathrm{d}S_{\rm S}\ge 0.
+\end{equation}</span> The system may exchange energy with the reservoir and, thus, according to the 1st Law of thermodynamics we have</p>
+<p><span class="math">\begin{equation}
+\mathrm{d}U_{\rm R}=T\mathrm{d}S_{\rm R}-p \mathrm{d}V_{\rm R}
+\end{equation}</span></p>
+<p>with <span class="math notranslate nohighlight">\(T\)</span> being the constant temperature of the reservoir. We may transform this equation and insert it into the 2nd law to obtain:</p>
+<p><span class="math">\begin{equation}
+\mathrm{d}S_{\rm S}+\frac{\mathrm{d}U_{\rm R}}{T}+\frac{p}{T}\mathrm{d}V_{\rm R}\ge 0.
+\end{equation}</span></p>
+<p>Using <span class="math notranslate nohighlight">\(\mathrm{d}U_{\rm R}=-\mathrm{d}U_{\rm S}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}V_{\rm R}=-\mathrm{d}V_{\rm S}\)</span> we can transform the equation for constant pressure and temperature to</p>
+<p><span class="math">\begin{equation}
+\mathrm{d}G=\mathrm{d}(U_{\rm S}+pV_{\rm S}-TS_{\rm S})\le 0.
+\end{equation}</span></p>
+<p>This indicates the direction in which a closed system, that can exchange energy with a bath, develops according to the 2nd Law of thermodynamics.</p>
+<p><strong>If we bring a small system into thermal contact with a reservoir, which is in equilibrium at temperature T, then the reservoir will stay in equilibrium at the same temperature, but the small system will come to a new equilibrium, which minimizes the free energy.</strong></p>
+<p>Thus, in equilibrium the free energy reaches a minimum value. Free energy minimization does two things at the same time: It tries to minimize the internal energy/enthalpy as well as to maximize the entropy (due to the negative sign in front of the entropy term) of a non-isolated object. The free energy minimum is, thus, the optimal balance between the two extrema.</p>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
+</section>
+</section>
 </section>
 
         </article>
@@ -414,23 +437,23 @@ w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../L13/1_depletion_forces.html">
+          <a class="next-page" href="../L2/3_Statistical_Physics_Definitions.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Depletion Forces</div>
+                <div class="title">Statistical Physics Definitions</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../L11/1_van_der_Waals_Solid_Bodies.html">
+          <a class="prev-page" href="1_introduction.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">van der Waals Interaction</div>
+                <div class="title">Introduction</div>
                 
               </div>
             </a>
@@ -444,7 +467,7 @@ w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Aug 25, 2024</div>
+              Last updated on Jun 02, 2024</div>
           </div>
           <div class="right-details">
             
@@ -465,8 +488,16 @@ w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">van der Waals Interaction</a><ul>
-<li><a class="reference internal" href="#Lifshitz-Theory">Lifshitz Theory</a></li>
+<li><a class="reference internal" href="#">Thermodynamics and Statistical Physics Revisited</a><ul>
+<li><a class="reference internal" href="#Thermodynamics">Thermodynamics</a><ul>
+<li><a class="reference internal" href="#Fundamental-Quantities">Fundamental Quantities</a></li>
+<li><a class="reference internal" href="#Laws-of-Thermodynamics">Laws of Thermodynamics</a><ul>
+<li><a class="reference internal" href="#First-Law-of-Thermodynamics">First Law of Thermodynamics</a></li>
+<li><a class="reference internal" href="#Second-Law-of-Thermodynamics">Second Law of Thermodynamics</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

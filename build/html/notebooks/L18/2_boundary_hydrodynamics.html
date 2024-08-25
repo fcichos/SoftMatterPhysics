@@ -9,7 +9,6 @@
         <title>Boundary Hydrodynamics - Soft Matter Lecture 23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -198,9 +197,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="../L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
@@ -319,25 +315,6 @@ You can directly download the pdf-version of this page using the link below.
 </div>
 <section id="Boundary-Hydrodynamics">
 <h1>Boundary Hydrodynamics<a class="headerlink" href="#Boundary-Hydrodynamics" title="Permalink to this heading">#</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">scipy.constants</span> <span class="kn">import</span> <span class="n">c</span><span class="p">,</span><span class="n">epsilon_0</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">physical_constants</span>
-<span class="kn">import</span> <span class="nn">json</span>
-
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;style.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-    <span class="n">style</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 <p>As another important example of hydrodynamical flow fields we would like to have a look at hydrodynamic flows that arise from interfacial forces. In most of the cases, these interfacial forces are often caused by osmotic pressure differences an are termed osmotic flows. The osmotic pressure difference may thereby arise from various properties, e.g. temperature gradients, electrostatic potential gradients, concentration gradients.</p>
 <p>To analyze this type of boundary flow, we first look at the geometry below.</p>
 <p><img alt="Boundary Flow" src="../../_images/boundary_flow.png" /></p>
@@ -398,75 +375,6 @@ u_B= -\frac{1}{\eta}\int_0^{\infty} z h(z)dz\frac{\nabla T_{||}}{T}
 <p>where <span class="math notranslate nohighlight">\(h(z)\)</span> is the excess enthalpy density of the interaction of the liquid with the solid as compared to the liquid alone. As the interaction between liquid and solid is often attractive (van der Waals alone already is attractive), the excess enthalpy density is negative and the difference of force density and pressure density results in forces along the temperarture gradient, e.g. from the cold region to the hot region. If the excess enthalpy is positive, the flow is driven from hot to
 cold regions. Note that this flow is established in a thin liquid layer of thickness <span class="math notranslate nohighlight">\(\lambda\)</span>, which is only a few nanometers thin. Within these few nanometers the flow velocity rises from 0 to a few 10 <span class="math notranslate nohighlight">\(\mu m/s\)</span>.</p>
 <p>The plot below calculates the integral over the product of <span class="math notranslate nohighlight">\(z\)</span> and the excess enthalpy for the electric double layer, assuming that some of the constants are 1 and the temperature gradient just gives a minus sign (assuming hot is on the left and cold is on the right).</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## electrostatic potential</span>
-<span class="k">def</span> <span class="nf">psi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="o">/</span><span class="n">lam_D</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## n+</span>
-<span class="k">def</span> <span class="nf">npl</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">psi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="c1">## n-</span>
-<span class="k">def</span> <span class="nf">nmi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[64]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## total n</span>
-<span class="k">def</span> <span class="nf">nt</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">psi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## excess enhalpy</span>
-
-<span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span><span class="p">((</span><span class="n">npl</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">nmi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">psi</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">)</span><span class="o">+</span><span class="n">nt</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">lam_D</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span><span class="n">b</span>
-<span class="n">inth</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">z</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">## numerically integrate the excess enthalpy *z</span>
-<span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">z</span><span class="p">[</span><span class="n">l</span><span class="p">],</span><span class="o">-</span><span class="n">inth</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">head_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="mi">50</span><span class="p">)]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;position x &quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;position y &quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../_images/notebooks_L18_2_boundary_hydrodynamics_13_0.png" class="no-scaled-link" src="../../_images/notebooks_L18_2_boundary_hydrodynamics_13_0.png" style="width: 400px; height: 285px;" />
-</div>
-</div>
 <p>The flow profile we have calculated saturates at the boundary velocity <span class="math notranslate nohighlight">\(u_B\)</span> as we have assumed this as the boundary condition at infinite distance. If there is a second surface at some distance, even though at finite distance but still large as compared to the interaction range, the velocity magnitude has to decay to zero towards this surface. Instead of assuming the complicated flow profile as depicted below, we can in cases where all other distances are large as compared to the
 interaction range <span class="math notranslate nohighlight">\(\lambda_D\)</span> assume that the velocity directly at the interface is <span class="math notranslate nohighlight">\(u_B\)</span>. The hydrodynamic boundary condition is thus altered from a <strong>no-slip boundary condition</strong> to a <strong>slip boundary condition</strong> with the slip velocity <span class="math notranslate nohighlight">\(u_B\)</span>.</p>
 <script type="application/vnd.jupyter.widget-state+json">
@@ -509,7 +417,7 @@ interaction range <span class="math notranslate nohighlight">\(\lambda_D\)</span
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Jun 02, 2024</div>
+              Last updated on Aug 25, 2024</div>
           </div>
           <div class="right-details">
             

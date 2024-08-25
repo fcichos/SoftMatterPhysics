@@ -13,6 +13,7 @@
    "execution_count": 1,
    "id": "768eb26c",
    "metadata": {
+    "nbsphinx": "hidden",
     "tags": [
      "parameters",
      "hide-input"
@@ -101,6 +102,7 @@
    "execution_count": 2,
    "id": "ca71232f",
    "metadata": {
+    "nbsphinx": "hidden",
     "tags": []
    },
    "outputs": [
@@ -193,7 +195,10 @@
    "cell_type": "code",
    "execution_count": 4,
    "id": "3bfda550",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [],
    "source": [
     "def ion_dipole(u,r,l,theta,epsilon):    \n",
@@ -206,7 +211,10 @@
    "cell_type": "code",
    "execution_count": 6,
    "id": "aa2115a4",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [],
    "source": [
     "D=physical_constants[\"atomic unit of electric dipole mom.\"][0]\n",
@@ -217,7 +225,10 @@
    "cell_type": "code",
    "execution_count": 7,
    "id": "12848566",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [],
    "source": [
     "r=np.linspace(0.1e-9,0.5e-9,200)\n",
@@ -228,7 +239,10 @@
    "cell_type": "code",
    "execution_count": 8,
    "id": "9297d1a8",
-   "metadata": {},
+   "metadata": {
+    "nbsphinx": "hidden",
+    "tags": []
+   },
    "outputs": [
     {
      "data": {
