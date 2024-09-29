@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Statistical Physics Definitions – SoftMatterLecture</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../source/notebooks/L3/1_Equipartition.html" rel="next">
+<link href="../../../source/notebooks/L1/2_Thermodynamics_Statistics.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="../../../SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../source/notebooks/L2/3_Statistical_Physics_Definitions.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../../../source/notebooks/L2/3_Statistical_Physics_Definitions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Physics Definitions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../source/img/mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/instructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises and Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L1/1_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L1/2_Thermodynamics_Statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thermodynamics and Statistical Physics Revisited</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L2/3_Statistical_Physics_Definitions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Physics Definitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L3/1_Equipartition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Equipartition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L3/2_Chemical_Potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chemical Potential</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L4/1_Osmotic_Pressure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Osmotic Pressure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L4/2_Gibbs_Distribution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gibbs Distribution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L5/1_Phase_Transitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phase Transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L6/1_Kinetics_LL_Unmixing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Kinetics of Liquid–Liquid Unmixing</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L7/1_Solid_Liquid_Phase_Transitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Solid–Liquid Phase Transitions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L7/2_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L8/1_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L9/1_Electric_Double_Layer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Electric Double Layer</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L10/1_van_der_Waals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L11/1_van_der_Waals_McLachlan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L11/1_van_der_Waals_Solid_Bodies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L12/1_van_der_Waals_Lifshitz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L13/1_depletion_forces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Depletion Forces</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L14/1_depletion_forces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Depletion Forces</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L14/2_Flows_Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L16/1_langevin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Brownian Motion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L17/1_hydrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Hydrodynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L18/1_Reynolds_Number.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Reynolds Number</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L18/2_boundary_hydrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Boundary Hydrodynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 19</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L19/1_electroosmosis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Electro-osmosis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L19/2_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 20</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L20/1_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Ideal Polymer Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L22/1_real_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Real Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L23/1_Scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scattering Techniques for Polymer Conformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L23/2_Viscoelasticity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L24/1_Viscoelasticity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L25/1_polymer_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Dynamics of Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L26/1_semidilute_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Semidilute Polymer Solutions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L27/1_liquid_crystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Liquid Crystals</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture X</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/LX/4_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/LX/5_Flows_and_Transport_in_Liquids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/LX/6_Membranes_Colloids_Liquid_Crystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">6_Membranes_Colloids_Liquid_Crystals.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#entropy" id="toc-entropy" class="nav-link active" data-scroll-target="#entropy"><span class="header-section-number">3.1</span> Entropy</a>
+  <ul>
+  <li><a href="#entropy-definition-by-boltzmann" id="toc-entropy-definition-by-boltzmann" class="nav-link" data-scroll-target="#entropy-definition-by-boltzmann"><span class="header-section-number">3.1.1</span> Entropy Definition by Boltzmann</a></li>
+  <li><a href="#shannon-entropy" id="toc-shannon-entropy" class="nav-link" data-scroll-target="#shannon-entropy"><span class="header-section-number">3.1.2</span> Shannon Entropy</a></li>
+  </ul></li>
+  <li><a href="#boltzmann-distribution" id="toc-boltzmann-distribution" class="nav-link" data-scroll-target="#boltzmann-distribution"><span class="header-section-number">3.2</span> Boltzmann Distribution</a>
+  <ul>
+  <li><a href="#mean-energy" id="toc-mean-energy" class="nav-link" data-scroll-target="#mean-energy"><span class="header-section-number">3.2.1</span> Mean Energy</a></li>
+  <li><a href="#free-energy" id="toc-free-energy" class="nav-link" data-scroll-target="#free-energy"><span class="header-section-number">3.2.2</span> Free Energy</a></li>
+  <li><a href="#deriving-the-boltzmann-distribution" id="toc-deriving-the-boltzmann-distribution" class="nav-link" data-scroll-target="#deriving-the-boltzmann-distribution"><span class="header-section-number">3.2.3</span> Deriving the Boltzmann Distribution</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../source/notebooks/L2/3_Statistical_Physics_Definitions.html">Lecture 2</a></li><li class="breadcrumb-item"><a href="../../../source/notebooks/L2/3_Statistical_Physics_Definitions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Physics Definitions</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Physics Definitions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The field of statitical physics uses approaches of statistics and probability theory to address physical problems. It considers large populations and derives expressions for the ensemble (or the macrostate) of a system from the microscopic states in the system.</p>
+<div id="313d9db9" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> factorial <span class="im">as</span> fac</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">'font.size'</span>: <span class="dv">12</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.titlesize'</span>: <span class="dv">18</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.labelsize'</span>: <span class="dv">16</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.labelpad'</span>: <span class="dv">14</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'lines.linewidth'</span>: <span class="dv">1</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'lines.markersize'</span>: <span class="dv">10</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.labelsize'</span> : <span class="dv">16</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.labelsize'</span> : <span class="dv">16</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.top'</span> : <span class="va">True</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.direction'</span> : <span class="st">'in'</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.right'</span> : <span class="va">True</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.direction'</span> : <span class="st">'in'</span>,}) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="entropy" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="entropy"><span class="header-section-number">3.1</span> Entropy</h2>
+<section id="entropy-definition-by-boltzmann" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="entropy-definition-by-boltzmann"><span class="header-section-number">3.1.1</span> Entropy Definition by Boltzmann</h3>
+<p>The term of entropy becomes very important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by <strong>Boltzmann</strong> is well known, i.e.,</p>
+<p><span class="math display">\[\begin{equation}
+S=k_\mathrm{B} \ln(W)
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(W\)</span> is the number of microstates corresponding to a system’s macrostate with and energy <span class="math inline">\(E\)</span>. Here <span class="math inline">\(k_\mathrm{B}=1.38064852 × 10^{-23} \mathrm{m^2\, kg\, s^{-2}\, K^{-1}}\)</span> is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.</p>
+<div class="alert alert-info">
+<p><strong>Example: Entropy of an N letter word</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/letters.png" class="img-fluid figure-img"></p>
+<figcaption>letters</figcaption>
+</figure>
+</div>
+<p>Consider the number of states <span class="math inline">\(W\)</span> of a word with <span class="math inline">\(N\)</span> letters of <span class="math inline">\(M\)</span> different characters. The letter can be arranged in</p>
+<p><span class="math display">\[\begin{equation}
+W=M^N
+\end{equation}\]</span></p>
+<p>different ways such that the entropy is given by</p>
+<p><span class="math display">\[\begin{equation}
+S=N\, k_\mathrm{B} \ln(M) = k_{\text{B}}\sum_{1}^{N} \ln(M)
+\end{equation}\]</span></p>
+<p>which just tells that entropy is an additive quantity.</p>
+</div>
+<div class="alert alert-info">
+<p><strong>Example: Arrangement of molecules along a chain</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/binding.png" class="img-fluid figure-img"></p>
+<figcaption>binding</figcaption>
+</figure>
+</div>
+<p>We consider a linear molecules (perhaps a DNA) that has <span class="math inline">\(N\)</span> binding sites for, e.g., proteins. <span class="math inline">\(N_\mathrm{p}\)</span> sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the <span class="math inline">\(N_\mathrm{p}\)</span> proteins can be arranged on the <span class="math inline">\(N\)</span> sites is given by the binomial coefficient</p>
+<p><span class="math display">\[\begin{equation}
+W(N_\mathrm{p};N)=\frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}.
+\end{equation}\]</span></p>
+<p>Therefore, the entropy is given by</p>
+<p><span class="math display">\[\begin{equation}
+S=k_\mathrm{B} \ln\left ( \frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}\right )
+\end{equation}\]</span></p>
+<p>which can be further simplified using the identity</p>
+<p><span class="math display">\[\begin{equation}
+\ln(N!)=\sum_{n=1}^{N}\ln(n)
+\end{equation}\]</span></p>
+<p>and the <em>Stirling approximation</em></p>
+<p><span class="math display">\[\begin{equation}
+\sum_{n=1}^{N}\ln(n)\approx \int_1^{N}\ln(x)\,\mathrm{d}x\approx N\ln(N)-N.
+\end{equation}\]</span></p>
+<p>This, finally, leads to</p>
+<p><span class="math display">\[\begin{equation}
+S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
+\end{equation}\]</span></p>
+<p>with <span class="math inline">\(c=N_\mathrm{p}/N\)</span> being the mean occupation of each site or the probability to find a state occupied.</p>
+</div>
+<p>Below you just find some Python code calculating the entropy as a function of “concentration” using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since <span class="math inline">\(N=100\)</span>.</p>
+<div id="5950142a" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>epsilon<span class="op">=</span><span class="fl">1e-3</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>c<span class="op">=</span>np.linspace(epsilon,<span class="dv">1</span><span class="op">-</span>epsilon,<span class="dv">100</span>)<span class="op">;</span>N<span class="op">=</span><span class="dv">100</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Np<span class="op">=</span>np.arange(<span class="dv">1</span>,N)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> S(x):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(np.log(fac(N)<span class="op">/</span>(fac(x)<span class="op">*</span>fac(N<span class="op">-</span>x))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ec8fe085" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>plt.figure()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.ion()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.plot(c,<span class="op">-</span>(c<span class="op">*</span>np.log(c)<span class="op">+</span>(<span class="dv">1</span><span class="op">-</span>c)<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">-</span>c)),<span class="st">'r-'</span>,label<span class="op">=</span><span class="st">"Stirling"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.plot(Np<span class="op">/</span>N,S(Np)<span class="op">/</span>N,<span class="st">'k--'</span>,label<span class="op">=</span><span class="st">"Original"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"$c$"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"$S$ [$k_\mathrm</span><span class="sc">{B}</span><span class="vs">$]"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Accuracy of the Stirling Formula"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/stirling.png"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/stirling.png" class="img-fluid figure-img"></p>
+<figcaption>stirling</figcaption>
+</figure>
+</div>
+</section>
+<section id="shannon-entropy" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="shannon-entropy"><span class="header-section-number">3.1.2</span> Shannon Entropy</h3>
+<p>A different access to entropy comes from the field of information theory and has been devised by Claude Shannon. Information theory is trying to mathematically assess the information content of a measurement facing uncertainty. It will turn out further below that this alternative description results in the Boltzmann distribution and effectively amounts to making a best guess about the probability distribution given some limited knowledge about the system such as the average energy.</p>
+<p>The Shannon entropy is defined by</p>
+<p><span class="math display">\[\begin{equation}
+S\left(p_{1}, p_{2}, \ldots, p_{N}\right)=S\left(\left\{p_{i}\right\}\right)=-\sum_{i=1}^{N} p_{i} \ln p_{i}
+\end{equation}\]</span></p>
+<p>and relates to its thermodynamic version, the Gibbs entropy</p>
+<p><span class="math display">\[\begin{equation}
+S\left(\left\{p_{i}\right\}\right)=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i},
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(p_i\)</span> is the probability of the <span class="math inline">\(i\)</span>th microstate (or outcome). The example below will show, that if only the normalization of the probability is known, maximization of the Shannon entropy will directly lead to an equal probability of events (uniform distribution). Later, we see that similar calculations can be done to yield the Boltzmann distribution.</p>
+<div class="alert alert-info">
+<p><strong>Example: Uniform distribution</strong></p>
+<p>To figure out that the Shannon entropy is indeed delivering some useful measure, we will have a look at a measurement which has <span class="math inline">\(N\)</span> outcomes (e.g., rolling a dice). We, of course, know that in this case all numbers of the dice have equal probability, but we can test this by maximizing the Shannon entropy as required by our thermodynamic considerations earlier.</p>
+<p>To do so, we use the technique of Lagrange multipliers, which allows us to set a constraint while maximizing the entropy. This contraint is for this example, that</p>
+<p><span class="math display">\[\begin{equation}
+\sum_{i}^{N} p_{i}=1
+\end{equation}\]</span></p>
+<p>i.e., that the probability is normalized to 1. With this constraint we maximize the entropy by adding an additional term with the contrain multilied by the Lagrange multiplier <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right).
+\end{equation}\]</span></p>
+<p>We see, that if the probability is normalized to 1, we do not change the entropy. Our procedure is to find that set of probabilities <span class="math inline">\(p_i\)</span> which maximizes this augmented entropy function.</p>
+<p>The derivative of the augmented entropy with respect to <span class="math inline">\(\lambda\)</span> yields the normalization condition, i.e.,</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\partial S^{\prime}}{\partial \lambda}=-\left(\sum_{i} p_{i}-1\right)\overset{!}{=} 0.
+\end{equation}\]</span></p>
+<p>Differentiation with respect to the probabilities yields</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\partial S^{\prime}}{\partial p_{i}}=-\ln p_{i}-1-\lambda\overset{!}{=} 0
+\end{equation}\]</span></p>
+<p>which directly gives</p>
+<p><span class="math display">\[\begin{equation}
+p_{i}=\mathrm{e}^{-1-\lambda}.
+\end{equation}\]</span></p>
+<p>Together with the normalization condition we therefore obtain</p>
+<p><span class="math display">\[\begin{equation}
+\sum_{i=1}^{N} \mathrm{e}^{-1-\lambda}=1
+\end{equation}\]</span></p>
+<p>and since the exponent does not depend on <span class="math inline">\(i\)</span> we find</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{e}^{-1-\lambda}=\frac{1}{N}
+\end{equation}\]</span></p>
+<p>or</p>
+<p><span class="math display">\[\begin{equation}
+p_{i}=\frac{1}{N}
+\end{equation}\]</span></p>
+<p>which is the expected equal probability of finding one of the <span class="math inline">\(N\)</span> outcomes.</p>
+</div>
+</section>
+</section>
+<section id="boltzmann-distribution" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="boltzmann-distribution"><span class="header-section-number">3.2</span> Boltzmann Distribution</h2>
+<p>Our previous consideration of the state functions has shown, that thermal equibrium is associated with a minimum in free energy. As the free energy consists of internal energy <span class="math inline">\(U\)</span> (or enthalpy <span class="math inline">\(H\)</span>) and an entropic term (<span class="math inline">\(-TS\)</span>), we may understand this minimization as a competition between the minimization of the internal energy and a maximization of the entropy (since it is <span class="math inline">\(-TS\)</span>). The figure below illustrates this competition for a gas in the gravity field.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/entropy_comp.png" class="img-fluid figure-img"></p>
+<figcaption>entropy</figcaption>
+</figure>
+</div>
+<p>The internal energy minimization yields just a condensed layer at the bottom of the container, while the entropy maximization will try to spread the particles evenly (middle picture). The compromise of both at finite temperature is given by the <strong>barometric height formula</strong>, i.e.,</p>
+<p><span class="math display">\[\begin{equation}
+p(z)=p_0\exp\left ( -\frac{m g z}{k_\mathrm{B} T}\right ),
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(p(z)\)</span> is the probability to find a particle at height <span class="math inline">\(z\)</span>, <span class="math inline">\(m\)</span> is the mass of a particle, <span class="math inline">\(g\)</span> is the gravitational acceleration and <span class="math inline">\(p_0\)</span> is a normalization constant. The result actually gives a hint at some very fundamental distribution, which always provides the free energy minimum in thermal equilibirum. This distribution is the Boltzmann distribution.</p>
+<p>The Boltzmann distribution is an approach of statistical physics to describe a thermodynamic system in equilibrium. The idea is hereby to deliver probability distributions for the probability of all different microstates. Key distinguishing feature of different microstates is their energy <span class="math inline">\(E_i\)</span> (that was so far neglected in the examples above), where <span class="math inline">\(i\)</span> indicates the <span class="math inline">\(i\)</span>th microstate.</p>
+<p>The Boltzmann distribution tells us precisely the probability of finding a given microstate with energy <span class="math inline">\(E_i\)</span>: If a particle is in equilibrium with its environment then the probability of finding the particle in state <span class="math inline">\(i\)</span> with energy <span class="math inline">\(E_i\)</span> is</p>
+<p><span class="math display">\[\begin{equation}
+p(E_i)=\frac{1}{Z}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right ).
+\end{equation}\]</span></p>
+<p>The normalization factor <span class="math inline">\(1/Z\)</span> contains the so-called partition function <span class="math inline">\(Z\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\text{const}}.
+\end{equation}\]</span></p>
+<p>It ensures that the total probablity to find a system in any of the states is</p>
+<p><span class="math display">\[\begin{equation}
+\sum_i p(E_i)=1.
+\end{equation}\]</span></p>
+<section id="mean-energy" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="mean-energy"><span class="header-section-number">3.2.1</span> Mean Energy</h3>
+<p>The Boltzmann distribution is useful to calculate also expectation values, for example, of the total energy of the system (the mean energy <span class="math inline">\(\langle E\rangle\)</span>).</p>
+<p>The mean is defined by: <span class="math display">\[\begin{equation}
+\langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}E_{i}\exp\left ( -\frac{E_i}{k_\text{B} T}\right).
+\end{equation}\]</span></p>
+<p>Abbrevating <span class="math inline">\(\beta=(k_\mathrm{B} T)^{-1}\)</span> we find</p>
+<p><span class="math display">\[\begin{equation}
+\langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}\bigg(- \frac{\partial }{\partial \beta}\exp\left ( -\beta E_i\right)\bigg),
+\end{equation}\]</span></p>
+<p>where the sum is nothing else than the derivative of the partition function</p>
+<p><span class="math display">\[\begin{equation}
+\langle E \rangle=-\frac{1}{Z} \frac{\partial }{\partial \beta}Z
+\end{equation}\]</span></p>
+<p>or just</p>
+<p><span class="math display">\[\begin{equation}
+\langle E \rangle=-\frac{\partial }{\partial \beta}\ln(Z).
+\end{equation}\]</span></p>
+</section>
+<section id="free-energy" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="free-energy"><span class="header-section-number">3.2.2</span> Free Energy</h3>
+<p>Employ the Gibbs entropy <span class="math inline">\(S=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i}\)</span> to find a relation between the free energy <span class="math inline">\(F\)</span> (or <span class="math inline">\(G\)</span>) and the partition function. Inserting the probability <span class="math inline">\(p_i=Z^{-1}\exp(-\beta E_i)\)</span> and doing some transformations yields</p>
+<p><span class="math display">\[\begin{equation}
+S=k_\mathrm{B} (\ln(Z)+\beta &lt;E&gt;).
+\end{equation}\]</span></p>
+<p>Using</p>
+<p><span class="math display">\[\begin{equation}
+F=U-TS
+\end{equation}\]</span></p>
+<p>for the free energy, we can insert the above result for the entropy and obtain</p>
+<p><span class="math display">\[\begin{equation}
+F=-k_\mathrm{B} T \ln(Z)
+\end{equation}\]</span></p>
+<p>(or <span class="math inline">\(G\)</span> in the same way).</p>
+<p>Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system. The partition function thus allows us to calculate the free energy.</p>
+</section>
+<section id="deriving-the-boltzmann-distribution" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="deriving-the-boltzmann-distribution"><span class="header-section-number">3.2.3</span> Deriving the Boltzmann Distribution</h3>
+<p>There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/entropy_calc.png" class="img-fluid figure-img"></p>
+<figcaption>Test</figcaption>
+</figure>
+</div>
+<p>System (index s) and reservoir (index r) have total energy <span class="math inline">\(E_{\text{tot}} = E_{\text{r}} + E_{\text{s}}\)</span>. We assert now, that the probability to find the system in a specific microstate <span class="math inline">\(p(E_{\text{s}}^{(i)})\)</span> with the energy <span class="math inline">\(E_{\text{s}}^{(i)}\)</span> is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,</p>
+<p><span class="math display">\[
+\frac{p(E_{\text{s}}^{(1)})}{p(E_{\text{s}}^{(2)})} = \frac{W_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(1)})}{W_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(2)})}.
+\]</span></p>
+<p>Here, the function <span class="math inline">\(W_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(1)})\)</span> is the number of states available to the reservoir, when the system is having the energy <span class="math inline">\(E_{\text{s}}^{(1)}\)</span>.</p>
+<p>We can now rewrite the above equation in terms of the entropy using <span class="math inline">\(W(S(E)) = \exp(S(E)/k_\mathrm{B})\)</span> such that</p>
+<p><span class="math display">\[
+\frac{W_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(1)})}{W_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(2)})} = \frac{\exp(S_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(1)})/k_{\text{B}})}{\exp(S_{\text{r}}(E_{\text{tot}} - E_{\text{s}}^{(2)})/k_{\text{B}})}.
+\]</span></p>
+<p>We may now expand the entropy to first order</p>
+<p><span class="math display">\[
+S_{\text{r}}(E_{\text{tot}} - E_{\text{s}}) \approx S_{\text{r}}(E_{\text{tot}}) - \frac{\partial S_{\text{r}}}{\partial E} E_{\text{s}}
+\]</span></p>
+<p>considering that <span class="math inline">\(E_{\text{s}}\)</span> is only very tiny as compared to the total energy of the reservoir. Using the thermodynamic identity that</p>
+<p><span class="math display">\[
+\frac{\partial S_{\text{r}}}{\partial E}|_{V,N} = \frac{1}{T}
+\]</span></p>
+<p>we finally find</p>
+<p><span class="math display">\[
+\frac{p(E_{\text{s}}^{(1)})}{p(E_{\text{s}}^{(2)})} = \frac{\exp(-E_{\text{s}}^{(1)}/k_{\text{B}} T)}{\exp(-E_{\text{s}}^{(2)}/k_{\text{B}} T)}
+\]</span></p>
+<p>which corresponds to the ratio of two Boltzmann distributions</p>
+<p><span class="math display">\[
+p(E_{\text{s}}^{(i)}) = \frac{1}{Z} \exp\left( - \frac{E_{\text{s}}^{(i)}}{k_{\text{B}} T} \right),
+\]</span></p>
+<p>where <span class="math inline">\(Z\)</span> is the previously mentioned normalization factor, which is called <em>partition function</em>.</p>
+<div class="alert alert-info">
+<p><strong>Example: Barometric height formula</strong></p>
+<p>We have mentioned already the barometric height formula giving the probability of finding a particle at a height <span class="math inline">\(z\)</span>. To derive that, we consider a constant gravitational force <span class="math inline">\(F = -mg\)</span> along the <span class="math inline">\(z\)</span>-direction such that the potential energy is given by <span class="math inline">\(E = mgz\)</span>, assuming that <span class="math inline">\(E = 0\)</span> at <span class="math inline">\(z = 0\)</span>.</p>
+<p>The probability for finding the particle at position <span class="math inline">\(z\)</span> is therefore</p>
+<p><span class="math inline">\(p(z) = \frac{1}{Z} \exp\left( -\frac{mgz}{k_{\text{B}} T} \right) = \frac{1}{\langle z \rangle} \exp\left( -\frac{z}{\langle z \rangle} \right)\)</span>.</p>
+<p>Normalization provides the value of the partition function</p>
+<p><span class="math inline">\(Z = \int_0^\infty \exp\left( -\frac{mgz}{k_{\text{B}} T} \right) \mathrm{d}z = \frac{k_{\text{B}} T}{mg}\)</span>.</p>
+<p>We may further calculate the mean height, which is the sedimentation length in sedimentation problems:</p>
+<p><span class="math inline">\(\langle z \rangle = \frac{1}{Z} \int_0^\infty z \exp\left( -\frac{mgz}{k_{\text{B}} T} \right) \mathrm{d}z = \frac{k_{\text{B}} T}{mg}\)</span></p>
+<p>and the mean energy:</p>
+<p><span class="math inline">\(\langle E \rangle = -\frac{\partial}{\partial \beta} \ln(Z) = +\frac{\partial}{\partial \beta} \ln(\beta mg) = \frac{1}{\beta} = k_{\text{B}} T = mg \langle z \rangle\)</span>.</p>
+</div>
+<div class="alert alert-info">
+<p><strong>Example: Boltzmann distribution is the maximum entropy distribution in which the average energy is prescribed as a constraint</strong></p>
+<p>We can also obtain the Boltzmann distribution from the Shannon entropy by constraining the Shannon entropy. With only the normalization as a constraint in entropy maximization, we obtained equally likely microsates. If we now constrain the mean energy <span class="math inline">\(\langle E\rangle\)</span> of the system, we obtain a distribution which maximizes the entropy under this condition. The mean energy is given by</p>
+<p><span class="math display">\[\begin{equation}      
+\langle E\rangle=\sum_{i} E_{i} p_{i},
+\end{equation}\]</span></p>
+<p>such that we can add another constraint to our augmented entropy. We now have a Lagrange multiplier <span class="math inline">\(\lambda\)</span> for the normalization of the probability and a second one <span class="math inline">\(\beta\)</span> which is multiplied by the energy constraint.</p>
+<p><span class="math display">\[\begin{equation}    
+S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right)-\beta\left(\sum_{i} p_{i} E_{i}-\langle E\rangle\right).    
+\end{equation}\]</span></p>
+<p>Taking the derivative</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\partial S^{\prime}}{\partial p_{i}}=-\ln p_{i}-1-\lambda-\beta E_i\overset{!}{=} 0
+\end{equation}\]</span></p>
+<p>results in</p>
+<p><span class="math display">\[\begin{equation}     
+p_{i}=\mathrm{e}^{-1-\lambda-\beta E_{i}}
+\end{equation}\]</span></p>
+<p>and together with the normalization condition <span class="math inline">\(\sum p_i=1\)</span> finally</p>
+<p><span class="math display">\[\begin{equation}    
+\mathrm{e}^{-1-\lambda}=\frac{1}{\sum_{i} \mathrm{e}^{-\beta E_{i}}},
+\end{equation}\]</span></p>
+<p>where we already recognized that we can replace the prefactor <span class="math inline">\(\mathrm{e}^{-1-\lambda}\)</span> by <span class="math inline">\(1/Z\)</span> with <span class="math inline">\(Z\)</span> being the partition function</p>
+<p><span class="math display">\[\begin{equation}     
+Z=\sum_{i} \mathrm{e}^{-\beta E_{i}}.
+\end{equation}\]</span></p>
+<p>Overall this, therefore, leads to the Boltzmann distribution</p>
+<p><span class="math display">\[\begin{equation}
+p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
+\end{equation}\]</span></p>
+<p>which is quite interesting. We have just fixed the mean energy of the system and maximized the entropy. The Boltzmann distribution is therefore the probability distribution which maximizes the entropy under as little as possible additional information (just the mean energy).</p>
+<p>The only thing that is missing in the above formula is an expression for the value of <span class="math inline">\(\beta\)</span>, the Lagrange multiplier. This can be obtained when knowning the mean energy. In thermal euilibrium, this mean energy can be obtained from the equipartition theorem.</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../source/notebooks/L1/2_Thermodynamics_Statistics.html" class="pagination-link" aria-label="Thermodynamics and Statistical Physics Revisited">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thermodynamics and Statistical Physics Revisited</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../source/notebooks/L3/1_Equipartition.html" class="pagination-link" aria-label="Equipartition">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Equipartition</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

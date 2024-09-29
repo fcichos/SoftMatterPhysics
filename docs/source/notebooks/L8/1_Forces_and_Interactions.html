@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Forces and Interactions in Soft Matter – SoftMatterLecture</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../source/notebooks/L9/1_Electric_Double_Layer.html" rel="next">
+<link href="../../../source/notebooks/L7/2_Forces_and_Interactions.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="../../../SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../source/notebooks/L8/1_Forces_and_Interactions.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../../../source/notebooks/L8/1_Forces_and_Interactions.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../source/img/mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/instructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises and Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L1/1_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L1/2_Thermodynamics_Statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thermodynamics and Statistical Physics Revisited</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L2/3_Statistical_Physics_Definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Physics Definitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L3/1_Equipartition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Equipartition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L3/2_Chemical_Potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chemical Potential</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L4/1_Osmotic_Pressure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Osmotic Pressure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L4/2_Gibbs_Distribution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gibbs Distribution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L5/1_Phase_Transitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phase Transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L6/1_Kinetics_LL_Unmixing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Kinetics of Liquid–Liquid Unmixing</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L7/1_Solid_Liquid_Phase_Transitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Solid–Liquid Phase Transitions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L7/2_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L8/1_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L9/1_Electric_Double_Layer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Electric Double Layer</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L10/1_van_der_Waals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L11/1_van_der_Waals_McLachlan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L11/1_van_der_Waals_Solid_Bodies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L12/1_van_der_Waals_Lifshitz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L13/1_depletion_forces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Depletion Forces</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L14/1_depletion_forces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Depletion Forces</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L14/2_Flows_Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L16/1_langevin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Brownian Motion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L17/1_hydrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Hydrodynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L18/1_Reynolds_Number.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Reynolds Number</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L18/2_boundary_hydrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Boundary Hydrodynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 19</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L19/1_electroosmosis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Electro-osmosis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L19/2_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 20</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L20/1_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Ideal Polymer Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L22/1_real_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Real Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L23/1_Scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scattering Techniques for Polymer Conformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L23/2_Viscoelasticity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L24/1_Viscoelasticity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L25/1_polymer_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Dynamics of Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L26/1_semidilute_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Semidilute Polymer Solutions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/L27/1_liquid_crystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Liquid Crystals</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture X</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/LX/4_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/LX/5_Flows_and_Transport_in_Liquids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../source/notebooks/LX/6_Membranes_Colloids_Liquid_Crystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">6_Membranes_Colloids_Liquid_Crystals.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interactions-involving-polar-molecules" id="toc-interactions-involving-polar-molecules" class="nav-link active" data-scroll-target="#interactions-involving-polar-molecules"><span class="header-section-number">12.0.1</span> Interactions involving polar molecules</a></li>
+  <li><a href="#iondipole-interaction" id="toc-iondipole-interaction" class="nav-link" data-scroll-target="#iondipole-interaction"><span class="header-section-number">12.0.2</span> Ion–Dipole interaction</a></li>
+  <li><a href="#dipole-dipole-interactions" id="toc-dipole-dipole-interactions" class="nav-link" data-scroll-target="#dipole-dipole-interactions"><span class="header-section-number">12.0.3</span> Dipole-Dipole Interactions</a></li>
+  <li><a href="#rotating-dipoles-angle-averaged-potential" id="toc-rotating-dipoles-angle-averaged-potential" class="nav-link" data-scroll-target="#rotating-dipoles-angle-averaged-potential"><span class="header-section-number">12.0.4</span> Rotating Dipoles, angle averaged Potential</a></li>
+  <li><a href="#dipole-dipole-interaction-with-rotating-dipoles" id="toc-dipole-dipole-interaction-with-rotating-dipoles" class="nav-link" data-scroll-target="#dipole-dipole-interaction-with-rotating-dipoles"><span class="header-section-number">12.0.5</span> Dipole-Dipole interaction with rotating dipoles</a></li>
+  <li><a href="#interactions-involving-polarizability" id="toc-interactions-involving-polarizability" class="nav-link" data-scroll-target="#interactions-involving-polarizability"><span class="header-section-number">12.0.6</span> Interactions involving polarizability</a></li>
+  <li><a href="#ion-induced-dipole-interaction" id="toc-ion-induced-dipole-interaction" class="nav-link" data-scroll-target="#ion-induced-dipole-interaction"><span class="header-section-number">12.0.7</span> Ion-Induced Dipole Interaction</a>
+  <ul>
+  <li><a href="#field-of-the-induced-dipole" id="toc-field-of-the-induced-dipole" class="nav-link" data-scroll-target="#field-of-the-induced-dipole"><span class="header-section-number">12.0.7.1</span> Field of the Induced Dipole</a></li>
+  <li><a href="#force-and-potential-energy" id="toc-force-and-potential-energy" class="nav-link" data-scroll-target="#force-and-potential-energy"><span class="header-section-number">12.0.7.2</span> Force and Potential Energy</a></li>
+  <li><a href="#polarizability-by-polar-molecules" id="toc-polarizability-by-polar-molecules" class="nav-link" data-scroll-target="#polarizability-by-polar-molecules"><span class="header-section-number">12.0.7.3</span> Polarizability by Polar Molecules</a></li>
+  </ul></li>
+  <li><a href="#polarizability-of-polar-molecules" id="toc-polarizability-of-polar-molecules" class="nav-link" data-scroll-target="#polarizability-of-polar-molecules"><span class="header-section-number">12.0.8</span> Polarizability of polar molecules</a></li>
+  <li><a href="#dipole-induced-dipole" id="toc-dipole-induced-dipole" class="nav-link" data-scroll-target="#dipole-induced-dipole"><span class="header-section-number">12.0.9</span> Dipole Induced Dipole</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../source/notebooks/L8/1_Forces_and_Interactions.html">Lecture 8</a></li><li class="breadcrumb-item"><a href="../../../source/notebooks/L8/1_Forces_and_Interactions.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="interactions-involving-polar-molecules" class="level3" data-number="12.0.1">
+<h3 data-number="12.0.1" class="anchored" data-anchor-id="interactions-involving-polar-molecules"><span class="header-section-number">12.0.1</span> Interactions involving polar molecules</h3>
+<div id="e0691662" class="cell" data-nbsphinx="hidden" data-tags="[&quot;parameters&quot;,&quot;hide-input&quot;]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> norm</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.constants <span class="im">import</span> c,epsilon_0,e,physical_constants</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># the lines below set a number of parameters for plotting, such as label font size, </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># title font size, which you may find useful</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update({<span class="st">'font.size'</span>: <span class="dv">14</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'font.family'</span>:<span class="st">'sans-serif'</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.titlesize'</span>: <span class="dv">16</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.labelsize'</span>: <span class="dv">18</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'axes.labelpad'</span>: <span class="dv">14</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'lines.linewidth'</span>: <span class="dv">1</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'lines.markersize'</span>: <span class="dv">10</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.labelsize'</span> : <span class="dv">18</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.labelsize'</span> : <span class="dv">18</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.top'</span> : <span class="va">True</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'xtick.direction'</span> : <span class="st">'in'</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.right'</span> : <span class="va">True</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                     <span class="st">'ytick.direction'</span> : <span class="st">'in'</span>,})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Many molecules exhibit a dipole or even higher moments due to the fact that the charges are not evenly distributed over the molecular structure. Some of the atoms exhibit a stronger tendency to accept charges than others. This is typically measured by electronegativity and provides an idea of whether atoms rather donate or accept a charge when binding to other atoms. While homo-atomic bonds therefore do not have dipole moments, hetero-atomic bonds do (see table).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Bond</th>
+<th style="text-align: center;">Dipole moment [D]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C-C</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C-N</td>
+<td style="text-align: center;">0.22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">O-H</td>
+<td style="text-align: center;">1.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">F-H</td>
+<td style="text-align: center;">1.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">N=O</td>
+<td style="text-align: center;">2.0</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Molecule</th>
+<th style="text-align: center;">Dipole moment [D]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">hexane</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">water</td>
+<td style="text-align: center;">1.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ethanol</td>
+<td style="text-align: center;">1.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">acetone</td>
+<td style="text-align: center;">2.9</td>
+</tr>
+</tbody>
+</table>
+<p>The dipole moment of a molecule is measured by the displacement of two charges <span class="math inline">\(±q\)</span> from each other:</p>
+<p><span class="math display">\[\begin{equation}
+\vec{u}=q\vec{l}.
+\end{equation}\]</span></p>
+<p>Its direction is from the negative to the positive side. It creates an electric field that is given by</p>
+<p><span class="math display">\[\begin{equation}
+\vec{E}=\frac{3(\vec{u}\cdot \hat{r})\hat{r}-\vec{u}}{4\pi \epsilon_{0}\epsilon r^{3}},
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\hat{r}=\vec{r}/|r|\)</span>. The dipole self-energy, i.e., the energy to create the dipole in a solvent is given by</p>
+<p><span class="math display">\[\begin{equation}
+\mu^{0}=\frac{1}{4\pi \epsilon_{0}\epsilon}\left [ \frac{q^2}{2a}+\frac{q^2}{2a}-\frac{q^2}{l}\right ].
+\end{equation}\]</span></p>
+<p>For <span class="math inline">\(l=2a\)</span> this results in <span class="math inline">\(\mu^0=q^2/(8\pi\epsilon_0 \epsilon a)=u^2/(4\pi\epsilon_0 \epsilon l^3 )\)</span> and thus yields a similar dependence of the chemical potential on the dielectric function <span class="math inline">\(\epsilon\)</span> as in the case of a single charge. The result is a similar dependence of the solubility on the dielectric function.</p>
+<p>The plot below shows the electric field of a dipole:</p>
+<div id="8bee2589" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># generate grid</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">32</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">32</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>x, y<span class="op">=</span>np.meshgrid(x, y)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> E(q, a, x, y):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> q<span class="op">*</span>(x<span class="op">-</span>a[<span class="dv">0</span>])<span class="op">/</span>((x<span class="op">-</span>a[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span><span class="op">+</span>(y<span class="op">-</span>a[<span class="dv">1</span>])<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="fl">1.5</span>), <span class="op">\</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        q<span class="op">*</span>(y<span class="op">-</span>a[<span class="dv">1</span>])<span class="op">/</span>((x<span class="op">-</span>a[<span class="dv">0</span>])<span class="op">**</span><span class="dv">2</span><span class="op">+</span>(y<span class="op">-</span>a[<span class="dv">1</span>])<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span>(<span class="fl">1.5</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate vector field</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Ex1, Ey1<span class="op">=</span>E(<span class="op">-</span><span class="dv">1</span>, [<span class="op">-</span><span class="fl">0.1</span>, <span class="dv">0</span>], x, y)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Ex2, Ey2<span class="op">=</span>E(<span class="dv">1</span>, [<span class="fl">0.1</span>, <span class="dv">0</span>], x, y)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>Ex<span class="op">=</span>Ex1<span class="op">+</span>Ex2</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Ey<span class="op">=</span>Ey1<span class="op">+</span>Ey2</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>E_max<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>E<span class="op">=</span>np.sqrt(Ex<span class="op">**</span><span class="dv">2</span><span class="op">+</span>Ey<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>Ex.flat[E.flat[:]<span class="op">&gt;</span>E_max]<span class="op">=</span>np.nan</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>Ey.flat[E.flat[:]<span class="op">&gt;</span>E_max]<span class="op">=</span>np.nan</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># plot vecor field</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.quiver(x, y, Ex<span class="op">/</span>E, Ey<span class="op">/</span>E, pivot<span class="op">=</span><span class="st">'middle'</span>, headwidth<span class="op">=</span><span class="dv">3</span>, headlength<span class="op">=</span><span class="dv">5</span>,scale<span class="op">=</span><span class="dv">40</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'$x$'</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'$y$'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'dipole field'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_Forces_and_Interactions_files/figure-html/cell-3-output-1.png" width="473" height="484" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="iondipole-interaction" class="level3" data-number="12.0.2">
+<h3 data-number="12.0.2" class="anchored" data-anchor-id="iondipole-interaction"><span class="header-section-number">12.0.2</span> Ion–Dipole interaction</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/dipole_q.png" class="img-fluid figure-img"></p>
+<figcaption>Charge Dipole</figcaption>
+</figure>
+</div>
+<p>The interaction energy of a dipole with a charge can be calculated by</p>
+<p><span class="math display">\[\begin{equation}
+w(r)=-\frac{qQ}{4\pi\epsilon_{0}\epsilon}\left [ \frac{1}{r-\frac{1}{2}l \cos(\theta)}-\frac{1}{r+\frac{1}{2}l \cos(\theta)}\right ]=-\frac{qQ}{4\pi\epsilon_{0}\epsilon r^2}\cos(\theta)=-uE\cos(\theta)
+\end{equation}\]</span></p>
+<p>where the last two equations are assuming that the distance between both objects <span class="math inline">\(r\)</span> is much larger than the extent of the dipole <span class="math inline">\(l\)</span> itself. From the last equation, we see that the interaction can be either attractive or repulsive. An angle <span class="math inline">\(θ=0^\circ\)</span> results in an attractive interaction, while <span class="math inline">\(θ=180^\circ\)</span> yields repulsive interaction. Using a single charge (e.g., an <span class="math inline">\(\mathrm{Na^+}\)</span> ion) and a dipole of <span class="math inline">\(u=1.85\, \mathrm{D}\)</span> (water molecule) results in an interaction energy of about <span class="math inline">\(39\, k_\mathrm{B}T\)</span>. Ions align and bind polar molecules like water, for example. The alignment is caused by the torque <span class="math inline">\(\tau=\vec{u}\times \vec{E}\)</span>. For arbitrary polar molecules this is called <strong>solvation</strong>, while for water the term <strong>hydration</strong> is used. The strength of the hydration can effect the mobility of ions in solution as it makes them effective charges and is of interest, for example, in the study of ion transport through ion channels, as this requires the stripping of the hydration shell.</p>
+<div class="alert alert-info">
+<p><strong>Example: Sodium Ion Hydration</strong></p>
+</div>
+<p><img src="img/NA_hydration.png" class="img-fluid"></p>
+<p>The plot below shows the ion dipole interaction for a sodium ion and a water molecule as a function of distance.</p>
+<div id="81f6faf8" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ion_dipole(u,r,l,theta,epsilon):    </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    q<span class="op">=</span>u<span class="op">/</span>l</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    f<span class="op">=</span>e<span class="op">*</span>q<span class="op">/</span>(<span class="dv">4</span><span class="op">*</span>np.pi<span class="op">*</span>epsilon<span class="op">*</span>epsilon_0)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="op">-</span>f<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span>(r<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>l<span class="op">*</span>np.cos(theta))<span class="op">-</span><span class="dv">1</span><span class="op">/</span>(r<span class="op">+</span><span class="fl">0.5</span><span class="op">*</span>l<span class="op">*</span>np.cos(theta))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f1079b66" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>D<span class="op">=</span>physical_constants[<span class="st">"atomic unit of electric dipole mom."</span>][<span class="dv">0</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>J2eV<span class="op">=</span>physical_constants[<span class="st">"electron volt-joule relationship"</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="fed70946" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r<span class="op">=</span>np.linspace(<span class="fl">0.1e-9</span>,<span class="fl">0.5e-9</span>,<span class="dv">200</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>l<span class="op">=</span><span class="fl">0.02e-9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4d5733ab" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">5</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.plot(r<span class="op">*</span><span class="fl">1e9</span>,ion_dipole(<span class="fl">1.8</span><span class="op">*</span>D,r,l,<span class="dv">0</span>,<span class="dv">1</span>)<span class="op">/</span>J2eV,<span class="st">'k--'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.plot(r<span class="op">*</span><span class="fl">1e9</span>,ion_dipole(<span class="fl">1.8</span><span class="op">*</span>D,r,l,np.pi,<span class="dv">1</span>)<span class="op">/</span>J2eV,<span class="st">'k--'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.plot(r<span class="op">*</span><span class="fl">1e9</span>,ion_dipole(<span class="fl">1.8</span><span class="op">*</span>D,r,l<span class="op">*</span><span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">1</span>)<span class="op">/</span>J2eV,<span class="st">'k'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.plot(r<span class="op">*</span><span class="fl">1e9</span>,ion_dipole(<span class="fl">1.8</span><span class="op">*</span>D,r,l<span class="op">*</span><span class="dv">5</span>,np.pi,<span class="dv">1</span>)<span class="op">/</span>J2eV,<span class="st">'k'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">9.2</span>,<span class="fl">9.2</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>,<span class="fl">0.5</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"distance [nm]"</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"energy [eV]"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"dipole charge interaction"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="1_Forces_and_Interactions_files/figure-html/cell-7-output-1.png" width="493" height="484" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The table below shows some selected hydration properties of ions. The hydrated radius determines the diffusion of the ion in water. The hydration number is the number of orientationally bound water molecules. Typically, smaller ions have a larger hydration number.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Ion</th>
+<th style="text-align: center;">Bare Ion radius (nm)</th>
+<th style="text-align: center;">Hydrated radius (nm)</th>
+<th style="text-align: center;">Hydration number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Na+</td>
+<td style="text-align: center;">0.095</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mg2+</td>
+<td style="text-align: center;">0.065</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cl-</td>
+<td style="text-align: center;">0.181</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OH-</td>
+<td style="text-align: center;">0.176</td>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dipole-dipole-interactions" class="level3" data-number="12.0.3">
+<h3 data-number="12.0.3" class="anchored" data-anchor-id="dipole-dipole-interactions"><span class="header-section-number">12.0.3</span> Dipole-Dipole Interactions</h3>
+<p>The interaction of two dipole will depend on three angles, the two angles of the dipoles with the connecting axis <span class="math inline">\(\theta_1, \theta_2\)</span> and the angle <span class="math inline">\(\phi\)</span> between the two planes which contain the individual dipoles and the axis. The figure below shows the corresponding geometry.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/dipole_dipole.png" class="img-fluid figure-img"></p>
+<figcaption>Dipole</figcaption>
+</figure>
+</div>
+<p>The energy of the two dipoles at a distance <span class="math inline">\(r\)</span> follows then without a detailed calculation with</p>
+<p><span class="math display">\[
+w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [ 2\cos(\theta_1) \cos(\theta_2)-\sin(\theta_1)\sin(\theta_2)\cos(\phi)\right ]
+\]</span></p>
+<p>The image below (taken from the book by Israelachvili) shows the dipole dipole interaction energy for the <strong>parallel</strong> and the <strong>in-line</strong> configuration as indicated. As shown, the in-line configutation with facing opposite charges is more favorable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/dipole_energy.png" class="img-fluid figure-img"></p>
+<figcaption>Dipole Energy</figcaption>
+</figure>
+</div>
+<p>The energies that are typically found are also larger than the thermal energy at room temperature and thefore lead to ordering effects.</p>
+</section>
+<section id="rotating-dipoles-angle-averaged-potential" class="level3" data-number="12.0.4">
+<h3 data-number="12.0.4" class="anchored" data-anchor-id="rotating-dipoles-angle-averaged-potential"><span class="header-section-number">12.0.4</span> Rotating Dipoles, angle averaged Potential</h3>
+<p>The equations we derived so far deliver the energy for a specific fixed orientation of dipoles for example. However, molecules with dipoles may rotate and undergo rotational Brownian motion driven by thermal energy. This rotational diffusion can be very fast and the rotational sampling creates an average interaction that may scale differently with the distance. To get an effective distance dependence in the interaction, we have to integrate the Boltzmann factor over the orientational degrees of freedoms, i.e.</p>
+<p><span class="math display">\[
+\exp\left ( -\frac{w(r)}{k_B T} \right)=\frac{\int \exp\left (-\frac{w(r,\Omega)}{k_B T} d\Omega\right )}{\int d\Omega}=\left \langle  \exp\left (-\frac{w(r,\Omega)}{k_B T}\right ) \right \rangle_{\Omega}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[d\Omega =\sin(\theta)d\theta d\phi\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\int d\Omega=4\pi\]</span></p>
+<p><span class="math display">\[
+\exp\left ( -\frac{w(r)}{k_B T} \right) =\frac{1}{4\pi}\int_0^{2\pi}d\phi\int_0^{\pi}\exp\left ( -\frac{w(r,\phi\theta)}{k_B T} \right)\sin(\theta)d\theta
+\]</span></p>
+<p>When <span class="math inline">\(w(r,\theta)&lt;&lt; k_B T\)</span> then we can expand the Boltzmann factor</p>
+<p><span class="math display">\[
+\exp\left ( -\frac{w(r)}{k_B T} \right) \approx 1-\frac{w(r)}{k_B T}+\frac{1}{2}\left (\frac{w(r)}{k_B T} \right )^{2}+\ldots
+\]</span></p>
+<p>and therefore obtain</p>
+<p><span class="math display">\[
+w(r)=\langle w(r,\Omega)- \frac{w(r,\Omega)^2}{2k_B T}+\ldots \rangle_{\Omega}
+\]</span></p>
+<p>which we can readily use to calculate the interaction energy of a charge and a dipole</p>
+<p><span class="math display">\[
+\begin{aligned}
+w(r)=&amp;\langle -\frac{Q u \cos(\theta)}{4\pi\epsilon_0\epsilon r^2} - \left ( \frac{Q u }{4\pi\epsilon_0\epsilon r^2}\right)^2 \frac{\cos(\theta)^2}{2k_B T}+\ldots \rangle\\
+=&amp;  \frac{Q^2 u^2}{6(4\pi\epsilon_0\epsilon)^2k_B T r^4}
+\end{aligned}
+\]</span></p>
+<p>when <span class="math inline">\(k_B T&gt;\frac{Q u }{4\pi\epsilon_0\epsilon r^2}\)</span>. Interestingly, this interaction energy for the freely rotating dipole in the electric field of an ion decays as <span class="math inline">\(r^{-4}\)</span>, while the static interation decayed as <span class="math inline">\(r^{-2}\)</span>. Also, the interaction of the freely rotating dipole is always attrative as compared to the static dipole charge interaction.</p>
+<p>The previous result can also be obtained when using <span class="math inline">\(G=-k_B T \ln(Z)\)</span>, where</p>
+<p><span class="math display">\[
+Z=\int \exp(-\frac{w(r,\Omega)}{k_B T}) d\Omega
+\]</span></p>
+<p>is the partition function.</p>
+</section>
+<section id="dipole-dipole-interaction-with-rotating-dipoles" class="level3" data-number="12.0.5">
+<h3 data-number="12.0.5" class="anchored" data-anchor-id="dipole-dipole-interaction-with-rotating-dipoles"><span class="header-section-number">12.0.5</span> Dipole-Dipole interaction with rotating dipoles</h3>
+<p>We can extend the above calculation now also to two dipoles interacting when freely rotating. The interaction energy was given by</p>
+<p><span class="math display">\[
+w(r,\theta_2,\theta_2,\phi)=-\frac{u_1 u_2}{4\pi \epsilon_0 \epsilon r^3}\left [ 2\cos(\theta_1) \cos(\theta_2)-\sin(\theta_1)\sin(\theta_2)\cos(\phi)\right ]
+\]</span></p>
+<p>and therefore the partition function can be calculated as</p>
+<p><span class="math display">\[
+Z=\int_0^{\pi}\int_{0}^{\pi}\int_{0}^{2\pi}e\exp(-\beta w(r,\theta_1,\theta_2,\phi))\sin(\theta_1)\sin(\theta_2)d\phi d\theta_1 d\theta_2
+\]</span></p>
+<p>The result of this calculation is the <strong>Keesom interaction energy</strong></p>
+<p><span class="math display">\[
+w(r)=-\frac{u_1^{2}u_{2}^2}{3(4\pi\epsilon\epsilon_0)^2 k_B T r^6}
+\]</span></p>
+<p>when</p>
+<p><span class="math display">\[
+k_BT &gt;\frac{u_1 u_2}{4\pi\epsilon_0 \epsilon r^3}
+\]</span></p>
+<p>The Keesom interaction tells on one side that permanent dipoles align themselves to be always attractive. It further belongs to a set of 3 different electrostatic interactions, which scale as <span class="math inline">\(r^{-6}\)</span> and which are termed <strong>van der Waals</strong> interactions.</p>
+</section>
+<section id="interactions-involving-polarizability" class="level3" data-number="12.0.6">
+<h3 data-number="12.0.6" class="anchored" data-anchor-id="interactions-involving-polarizability"><span class="header-section-number">12.0.6</span> Interactions involving polarizability</h3>
+<p>All atomic and molecular systems carry the potential to get polarized in an external electric field. This polarization gives rise to a dipole moment <span class="math inline">\(u_{ind}\)</span>, that is in linear response proportional to the external electric field. The dipole itself also creates an electric field. There are different types of polarizability. We will address two of them, i) the electronic polarizability, i.e.&nbsp;shifting the center of mass of positive and negative charges of a molecule or atom, ii) the reorientation of a permanent electric dipole in and external electric field which is an orientational polarization.</p>
+<p><img src="img/polarizability.png" class="img-fluid"></p>
+<p>We consider a very simple classical model for the electronic polarizability. An electron is orbiting a positive nucleus and is subjected to en electric field according to the above image. In the stationary state, the forces on the charges exerted by the external electric field and the internal forces balance and give rise to the polarized state with a dipole moment.</p>
+<p>The external force on each charge is given by</p>
+<p><span class="math display">\[
+F_{ext}=-eE
+\]</span></p>
+<p>while the internal force between the two charges is</p>
+<p><span class="math display">\[
+F_{int}=-\frac{e^{2}}{4\pi \epsilon_0 R^{2}}\sin(\theta)\approx \frac{e^{2}l}{4\pi \epsilon_0 R^{3}}=-\frac{e u_{ind}}{4\pi \epsilon_0 R^3}=F_{ext}
+\]</span></p>
+<p>We can transform the latter equation to yield the induced dipole moment</p>
+<p><span class="math display">\[
+u_{ind}=4\pi\epsilon_0 R^3 E=\alpha_0 E
+\]</span></p>
+<p>Accordingly, the electronic polarizability of the atom is</p>
+<p><span class="math display">\[
+\alpha_0=4\pi\epsilon_0 R^3
+\]</span></p>
+<p>which just says that the polarizability scales with the volume of the object, which is found in many occations, including the scattering and absorption cross sections of nanoparticles.</p>
+</section>
+<section id="ion-induced-dipole-interaction" class="level3" data-number="12.0.7">
+<h3 data-number="12.0.7" class="anchored" data-anchor-id="ion-induced-dipole-interaction"><span class="header-section-number">12.0.7</span> Ion-Induced Dipole Interaction</h3>
+<p>Ion-induced dipole interactions occur when an ion distorts the electron cloud of a nearby neutral molecule, creating an induced dipole. This interaction can be described through the following key points:</p>
+<section id="field-of-the-induced-dipole" class="level4" data-number="12.0.7.1">
+<h4 data-number="12.0.7.1" class="anchored" data-anchor-id="field-of-the-induced-dipole"><span class="header-section-number">12.0.7.1</span> Field of the Induced Dipole</h4>
+<p>The electric field <span class="math inline">\(E\)</span> created by an ion at a distance <span class="math inline">\(r\)</span> induces a dipole moment <span class="math inline">\(\mu_{\text{ind}}\)</span> in a neutral molecule:</p>
+<p><span class="math display">\[
+\mu_{\text{ind}} = \alpha E
+\]</span></p>
+<p>where <span class="math inline">\(\alpha\)</span> is the polarizability of the molecule, and <span class="math inline">\(E\)</span> is given by:</p>
+<p><span class="math display">\[
+E = \frac{q}{4 \pi \epsilon_0 r^2}
+\]</span></p>
+<p>The resulting induced dipole field <span class="math inline">\(E_d\)</span> is:</p>
+<p><span class="math display">\[
+E_d = -\frac{2 \mu_{\text{ind}}}{4 \pi \epsilon_0 r^3} = -\frac{2 \alpha E}{4 \pi \epsilon_0 r^3} = -\frac{2 \alpha q}{(4 \pi \epsilon_0)^2 r^5}
+\]</span></p>
+</section>
+<section id="force-and-potential-energy" class="level4" data-number="12.0.7.2">
+<h4 data-number="12.0.7.2" class="anchored" data-anchor-id="force-and-potential-energy"><span class="header-section-number">12.0.7.2</span> Force and Potential Energy</h4>
+<p>The force <span class="math inline">\(F\)</span> between the ion and the induced dipole is given by:</p>
+<p><span class="math display">\[
+F(r) = -\frac{\partial U}{\partial r} = -2 \alpha \left( \frac{q}{4 \pi \epsilon_0 r^2} \right)^2 = -\frac{2 \alpha q^2}{(4 \pi \epsilon_0)^2 r^5}
+\]</span></p>
+<p>Integrating this force gives the potential energy <span class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[
+U(r) = \int F \, dr = -\frac{\alpha q^2}{(4 \pi \epsilon_0)^2 r^4}
+\]</span></p>
+<p>This shows that the interaction energy decreases rapidly with the fourth power of the distance.</p>
+</section>
+<section id="polarizability-by-polar-molecules" class="level4" data-number="12.0.7.3">
+<h4 data-number="12.0.7.3" class="anchored" data-anchor-id="polarizability-by-polar-molecules"><span class="header-section-number">12.0.7.3</span> Polarizability by Polar Molecules</h4>
+<p>For polar molecules, an electric field <span class="math inline">\(E\)</span> induces a dipole moment that can be averaged over all orientations, leading to an additional orientational polarization. The total induced dipole moment <span class="math inline">\(\mu_{\text{ind}}\)</span> for a polar molecule with permanent dipole moment <span class="math inline">\(\mu_0\)</span> is:</p>
+<p><span class="math display">\[
+\mu_{\text{ind}} = \mu_0 \cos(\theta) + \alpha E \cos^2(\theta)
+\]</span></p>
+<p>Averaging over all orientations gives the mean induced dipole moment:</p>
+<p><span class="math display">\[
+\langle \mu_{\text{ind}} \rangle = \frac{\mu_0^2 E}{3 k_{\text{B}} T}
+\]</span></p>
+<p>Therefore, the overall polarizability <span class="math inline">\(\alpha_{\text{total}}\)</span> is a combination of the intrinsic polarizability <span class="math inline">\(\alpha_0\)</span> and the orientational contribution:</p>
+<p><span class="math display">\[
+\alpha_{\text{total}} = \alpha_0 + \frac{\mu_0^2}{3 k_{\text{B}} T}
+\]</span></p>
+<p>For example, for an ion-induced dipole interaction at 300 K with <span class="math inline">\(\mu_0 = 4 \times 10^{-30} \, \text{Cm}\)</span> and <span class="math inline">\(\alpha_0\)</span>:</p>
+<p><span class="math display">\[
+\alpha_{\text{total}} = 4 \pi \epsilon_0 \times 8 \times 10^{-30} \, \text{m}^3 + \frac{\mu_0^2}{3 k_{\text{B}} T}
+\]</span></p>
+<p>These principles explain how ion-induced dipole interactions influence the behavior of molecules in various environments, including solutions and biological systems.</p>
+</section>
+</section>
+<section id="polarizability-of-polar-molecules" class="level3" data-number="12.0.8">
+<h3 data-number="12.0.8" class="anchored" data-anchor-id="polarizability-of-polar-molecules"><span class="header-section-number">12.0.8</span> Polarizability of polar molecules</h3>
+</section>
+<section id="dipole-induced-dipole" class="level3" data-number="12.0.9">
+<h3 data-number="12.0.9" class="anchored" data-anchor-id="dipole-induced-dipole"><span class="header-section-number">12.0.9</span> Dipole Induced Dipole</h3>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../source/notebooks/L7/2_Forces_and_Interactions.html" class="pagination-link" aria-label="Forces and Interactions in Soft Matter">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../source/notebooks/L9/1_Electric_Double_Layer.html" class="pagination-link" aria-label="Electric Double Layer">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Electric Double Layer</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

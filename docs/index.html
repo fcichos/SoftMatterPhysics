@@ -1,678 +1,1181 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Course Information" href="course-info/info.html" />
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-    <!-- Generated with Sphinx 6.1.3 and Furo 2023.03.27 -->
-        <title>Soft Matter Lecture 23 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
-    
-    
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Frank Cichos, Ralf Seidel">
+<meta name="dcterms.date" content="2026-05-09">
+
+<title>SoftMatterLecture</title>
 <style>
-  body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./source/course-info/info.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
-  @media not print {
-    body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+}</script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="./SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Index</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./source/img/mona_logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Index</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course Info</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/course-info/info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Information</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/course-info/instructors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/course-info/resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/course-info/exam.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises and Exam</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 1</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L1/1_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L1/2_Thermodynamics_Statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Thermodynamics and Statistical Physics Revisited</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 2</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L2/3_Statistical_Physics_Definitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistical Physics Definitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 3</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L3/1_Equipartition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Equipartition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L3/2_Chemical_Potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chemical Potential</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 4</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L4/1_Osmotic_Pressure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Osmotic Pressure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L4/2_Gibbs_Distribution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Gibbs Distribution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 5</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L5/1_Phase_Transitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Phase Transitions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 6</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L6/1_Kinetics_LL_Unmixing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Kinetics of Liquid–Liquid Unmixing</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 7</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L7/1_Solid_Liquid_Phase_Transitions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Solid–Liquid Phase Transitions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L7/2_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 8</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L8/1_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 9</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L9/1_Electric_Double_Layer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Electric Double Layer</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 10</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L10/1_van_der_Waals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 11</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L11/1_van_der_Waals_McLachlan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L11/1_van_der_Waals_Solid_Bodies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 12</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L12/1_van_der_Waals_Lifshitz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 13</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L13/1_depletion_forces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Depletion Forces</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 14</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L14/1_depletion_forces.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Depletion Forces</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L14/2_Flows_Transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 16</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L16/1_langevin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Brownian Motion</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 17</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L17/1_hydrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Hydrodynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 18</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L18/1_Reynolds_Number.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Reynolds Number</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L18/2_boundary_hydrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Boundary Hydrodynamics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 19</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L19/1_electroosmosis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Electro-osmosis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L19/2_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 20</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L20/1_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Ideal Polymer Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 22</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L22/1_real_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Real Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 23</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L23/1_Scattering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Scattering Techniques for Polymer Conformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L23/2_Viscoelasticity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 24</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L24/1_Viscoelasticity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 25</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L25/1_polymer_dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Dynamics of Polymers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 26</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L26/1_semidilute_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Semidilute Polymer Solutions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture 27</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-26" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-26" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/L27/1_liquid_crystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Liquid Crystals</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lecture X</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-27" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-27" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/LX/4_Forces_and_Interactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Forces and Interactions in Soft Matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/LX/5_Flows_and_Transport_in_Liquids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./source/notebooks/LX/6_Membranes_Colloids_Liquid_Crystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">6_Membranes_Colloids_Liquid_Crystals.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#index" id="toc-index" class="nav-link active" data-scroll-target="#index">Index</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SoftMatterLecture</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
   
+    <div class="quarto-title-meta-contents">
+    <p class="author">Frank Cichos, Ralf Seidel <a href="mailto:cichos@physik.uni-leipzig.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="http://www.uni-leipzig.de/~mona">
+            Leipzig University
+            </a>
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 9, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>Abstract</p>
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="index" class="level1 unnumbered">
+<h1 class="unnumbered">Index</h1>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    @media (prefers-color-scheme: dark) {
-      body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
   }
-</style></head>
-  <body>
-    
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <symbol id="svg-toc" viewBox="0 0 24 24">
-    <title>Contents</title>
-    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
-      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
-    </svg>
-  </symbol>
-  <symbol id="svg-menu" viewBox="0 0 24 24">
-    <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
-      <line x1="3" y1="12" x2="21" y2="12"></line>
-      <line x1="3" y1="6" x2="21" y2="6"></line>
-      <line x1="3" y1="18" x2="21" y2="18"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
-    <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </symbol>
-  <symbol id="svg-sun" viewBox="0 0 24 24">
-    <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-  </symbol>
-  <symbol id="svg-moon" viewBox="0 0 24 24">
-    <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-    </svg>
-  </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
-</svg>
-
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
-
-
-
-<div class="page">
-  <header class="mobile-header">
-    <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-      </label>
-    </div>
-    <div class="header-center">
-      <a href="#"><div class="brand">Soft Matter Lecture 23 documentation</div></a>
-    </div>
-    <div class="header-right">
-      <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-        </button>
-      </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-      </label>
-    </div>
-  </header>
-  <aside class="sidebar-drawer">
-    <div class="sidebar-container">
-      
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
-  
-  <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/mona_logo.png" alt="Logo"/>
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
   </div>
-  
-  <span class="sidebar-brand-text">Soft Matter Lecture 23 documentation</span>
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
-<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="course-info/info.html">Course Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/instructors.html">Instructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/resources.html">Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/resources.html#books">Books</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/exam.html">Exercises and Exam</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L1/1_introduction.html">Introduction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L3/2_Chemical_Potential.html">Chemical Potential</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L4/1_Osmotic_Pressure.html">Osmotic Pressure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L5/1_Phase_Transitions.html">Phase Transitions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L6/1_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L9/1_Electric_Double_Layer.html">Electric Double Layer</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L10/1_van_der_Waals.html">van der Waals Interactions</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_McLachlan.html">van der Waals Interactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_Solid_Bodies.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L12/1_van_der_Waals_Lifshitz.html">van der Waals Interaction</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 13:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html">Depletion Forces</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 14:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html">Depletion Forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L14/2_Flows_Transport.html">Flows and Transport in Liquids</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 15:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L16/1_langevin.html">Brownian Motion</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L17/1_hydrodynamics.html">Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L18/1_Reynolds_Number.html">Reynolds Number</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L19/2_polymers.html">Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 20:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L20/1_polymers.html">Ideal Polymer Models</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 21:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L22/1_real_polymers.html">Real Polymers</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L22/1_real_polymers.html">Real Polymers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L23/2_Viscoelasticity.html">Viscoelasticity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html">Viscoelasticity</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L25/1_polymer_dynamics.html">Dynamics of Polymers</a></li>
-</ul>
-
-</div>
-</div>
-
-      </div>
-      
-    </div>
-  </aside>
-  <div class="main">
-    <div class="content">
-      <div class="article-container">
-        <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
-          <span>Back to top</span>
-        </a>
-        <div class="content-icon-container">
-          
-<div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
-            </button>
-          </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-          </label>
-        </div>
-        <article role="main">
-          <figure class="align-default">
-<img alt="_images/FluffyParticles.png" src="_images/FluffyParticles.png" />
-</figure>
-<section id="welcome-to-soft-matter-physics-lecture-website">
-<h1>Welcome to Soft Matter Physics Lecture Website!<a class="headerlink" href="#welcome-to-soft-matter-physics-lecture-website" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="course-info/info.html">Course Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/instructors.html">Instructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/resources.html">Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/resources.html#books">Books</a></li>
-<li class="toctree-l1"><a class="reference internal" href="course-info/exam.html">Exercises and Exam</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L1/1_introduction.html">Introduction</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L1/2_Thermodynamics_Statistics.html">Thermodynamics and Statistical Physics Revisited</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L1/2_Thermodynamics_Statistics.html#Thermodynamics">Thermodynamics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L2/3_Statistical_Physics_Definitions.html">Statistical Physics Definitions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L2/3_Statistical_Physics_Definitions.html#Entropy">Entropy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L2/3_Statistical_Physics_Definitions.html#Boltzmann-Distribution">Boltzmann Distribution</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L3/1_Equipartition.html">Equipartition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L3/1_Equipartition.html#When-a-Macrostate-is-a-Microstate">When a Macrostate is a Microstate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L3/2_Chemical_Potential.html">Chemical Potential</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L3/2_Chemical_Potential.html#Phase-equilibria">Phase equilibria</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L3/2_Chemical_Potential.html#Chemical-equilibria">Chemical equilibria</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L4/1_Osmotic_Pressure.html">Osmotic Pressure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L4/1_Osmotic_Pressure.html#Shape-of-red-blood-cells">Shape of red blood cells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L4/1_Osmotic_Pressure.html#Reverse-Osmosis">Reverse Osmosis</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L4/2_Gibbs_Distribution.html">Gibbs Distribution</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L5/1_Phase_Transitions.html">Phase Transitions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L5/1_Phase_Transitions.html#Liquid-Liquid-Unmixing">Liquid-Liquid Unmixing</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 6:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L6/1_Kinetics_LL_Unmixing.html">Kinetics of Liquid–Liquid Unmixing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L6/1_Kinetics_LL_Unmixing.html#Spinodal-decomposition">Spinodal decomposition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L6/1_Kinetics_LL_Unmixing.html#Nucleation">Nucleation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 7:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L7/1_Solid_Liquid_Phase_Transitions.html">Solid–Liquid Phase Transitions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L7/1_Solid_Liquid_Phase_Transitions.html#Kinetics-of-the-Liquid–Solid-Phase-Transition">Kinetics of the Liquid–Solid Phase Transition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L7/1_Solid_Liquid_Phase_Transitions.html#Heterogeneous-Nucleation">Heterogeneous Nucleation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L7/1_Solid_Liquid_Phase_Transitions.html#Classification-of-phase-transitions">Classification of phase transitions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L7/2_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L7/2_Forces_and_Interactions.html#Pairwise-interaction-energy">Pairwise interaction energy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L7/2_Forces_and_Interactions.html#Cohesive-energy-of-a-liquid">Cohesive energy of a liquid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L7/2_Forces_and_Interactions.html#Coulomb-forces,-charge–charge-interactions">Coulomb forces, charge–charge interactions</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html">Forces and Interactions in Soft Matter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Interactions-involving-polar-molecules">Interactions involving polar molecules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Ion–Dipole-interaction">Ion–Dipole interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Dipole-Dipole-Interactions">Dipole-Dipole Interactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Rotating-Dipoles,-angle-averaged-Potential">Rotating Dipoles, angle averaged Potential</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Dipole-Dipole-interaction-with-rotating-dipoles">Dipole-Dipole interaction with rotating dipoles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Interactions-involving-polarizability">Interactions involving polarizability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Ion-Induced-Dipole-Interaction">Ion-Induced Dipole Interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Polarizability-of-polar-molecules">Polarizability of polar molecules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L8/1_Forces_and_Interactions.html#Dipole-Induced-Dipole">Dipole Induced Dipole</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L9/1_Electric_Double_Layer.html">Electric Double Layer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L9/1_Electric_Double_Layer.html#Charges-surfaces-in-solution,-no-salt">Charges surfaces in solution, no salt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L9/1_Electric_Double_Layer.html#Poisson-Boltzmann-equation">Poisson-Boltzmann equation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L10/1_van_der_Waals.html">van der Waals Interactions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L10/1_van_der_Waals.html#Dispersion-Interaction">Dispersion Interaction</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 11:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_McLachlan.html">van der Waals Interactions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_McLachlan.html#McLachlan-Theory">McLachlan Theory</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_Solid_Bodies.html">van der Waals Interaction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_Solid_Bodies.html#Interaction-Between-Macroscopic-Bodies">Interaction Between Macroscopic Bodies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L11/1_van_der_Waals_Solid_Bodies.html#Hamaker-Constant">Hamaker Constant</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L12/1_van_der_Waals_Lifshitz.html">van der Waals Interaction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L12/1_van_der_Waals_Lifshitz.html#Lifshitz-Theory">Lifshitz Theory</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 13:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html">Depletion Forces</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html#Depletion-force-between-two-plates">Depletion force between two plates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html#Depletion-force-between-two-spheres">Depletion force between two spheres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html#General-description">General description</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 14:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html">Depletion Forces</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html#Depletion-force-between-two-plates">Depletion force between two plates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html#Depletion-force-between-two-spheres">Depletion force between two spheres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L13/1_depletion_forces.html#General-description">General description</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L14/2_Flows_Transport.html">Flows and Transport in Liquids</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L14/2_Flows_Transport.html#Translational-Diffusion">Translational Diffusion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L14/2_Flows_Transport.html#Rotational-Diffusion">Rotational Diffusion</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 15:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L16/1_langevin.html">Brownian Motion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L16/1_langevin.html#Langevin-Theory">Langevin Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L16/1_langevin.html#Fluctuation-Dissipation-Theorem">Fluctuation Dissipation Theorem</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 16:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L17/1_hydrodynamics.html">Hydrodynamics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L17/1_hydrodynamics.html#Navier-Stokes-Equation">Navier Stokes Equation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 17:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L18/1_Reynolds_Number.html">Reynolds Number</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L18/1_Reynolds_Number.html#Stokes-Equation">Stokes Equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L18/1_Reynolds_Number.html#Solutions-of-the-Stokes-Equation">Solutions of the Stokes Equation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L18/2_boundary_hydrodynamics.html">Boundary Hydrodynamics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L18/2_boundary_hydrodynamics.html#Thermo-osmosis">Thermo-osmosis</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 19:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L19/2_polymers.html">Polymers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L19/2_polymers.html#Freely-Jointed-Chain">Freely Jointed Chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L19/2_polymers.html#Force-extension-behavior-of-a-FJC">Force-extension behavior of a FJC</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 20:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L20/1_polymers.html">Ideal Polymer Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L20/1_polymers.html#Freely-Rotating-Chain">Freely Rotating Chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L20/1_polymers.html#Gaussian-Chain">Gaussian Chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L20/1_polymers.html#Wormlike-Chain">Wormlike Chain</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 21:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L22/1_real_polymers.html">Real Polymers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Mayer-f-function-and-excluded-volume">Mayer f-function and excluded volume</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">Non-spherical segments and Free energy of interaction of a real chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Solvent-Classification">Solvent Classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Flory-theory-(in-a-good-solvent)">Flory theory (in a good solvent)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Flory-Theory-(in-all-solvents)">Flory Theory (in all solvents)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Temperature-dependence-of-the-chain-size">Temperature dependence of the chain size</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 22:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L22/1_real_polymers.html">Real Polymers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Mayer-f-function-and-excluded-volume">Mayer f-function and excluded volume</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Non-spherical-segments-and-Free-energy-of-interaction-of-a-real-chain">Non-spherical segments and Free energy of interaction of a real chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Solvent-Classification">Solvent Classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Flory-theory-(in-a-good-solvent)">Flory theory (in a good solvent)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Flory-Theory-(in-all-solvents)">Flory Theory (in all solvents)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L22/1_real_polymers.html#Temperature-dependence-of-the-chain-size">Temperature dependence of the chain size</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L23/1_Scattering.html">Scattering Techniques for Polymer Conformation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/1_Scattering.html#Form-Factor">Form Factor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/1_Scattering.html#Radius-of-Gyration">Radius of Gyration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/1_Scattering.html#Debye-Function">Debye Function</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 23:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L23/2_Viscoelasticity.html">Viscoelasticity</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/2_Viscoelasticity.html#Models-for-Viscoelastic-behavior">Models for Viscoelastic behavior</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/2_Viscoelasticity.html#Maxwell-Model">Maxwell Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/2_Viscoelasticity.html#Kelvin-Voigt">Kelvin-Voigt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L23/2_Viscoelasticity.html#Standard-Model">Standard Model</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html">Viscoelasticity</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html#Maxwell-Model">Maxwell Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html#Stress-Relaxation-after-Step-Strain">Stress Relaxation after Step Strain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html#Steady-Shear">Steady Shear</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html#Creep-and-Creep-Recovery">Creep and Creep Recovery</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L24/1_Viscoelasticity.html#Oscillatory-Shear">Oscillatory Shear</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Lecture 24:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/L25/1_polymer_dynamics.html">Dynamics of Polymers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L25/1_polymer_dynamics.html#Diffusion-of-a-Single-Polymer-Chain">Diffusion of a Single Polymer Chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L25/1_polymer_dynamics.html#Intrinsic-viscosity-of-polymer-solutions">Intrinsic viscosity of polymer solutions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/L25/1_polymer_dynamics.html#Relaxation-Modes-of-a-Polymer">Relaxation Modes of a Polymer</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
-</section>
-
-        </article>
-      </div>
-      <footer>
-        
-        <div class="related-pages">
-          <a class="next-page" href="course-info/info.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Course Information</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          
-        </div>
-        <div class="bottom-of-page">
-          <div class="left-details">
-            <div class="copyright">
-                Copyright &#169; 2023, Frank Cichos, Ralf Seidel
-            </div>
-            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-            
-            <a href="https://github.com/pradyunsg/furo">Furo</a>
-            <div class="last-updated">
-              Last updated on Aug 25, 2024</div>
-          </div>
-          <div class="right-details">
-            
-          </div>
-        </div>
-        
-      </footer>
-    </div>
-    <aside class="toc-drawer">
-      
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Welcome to Soft Matter Physics Lecture Website!</a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
-          </div>
-        </div>
-      </div>
-      
-      
-    </aside>
+  <div class="nav-page nav-page-next">
+      <a href="./source/course-info/info.html" class="pagination-link" aria-label="Course Information">
+        <span class="nav-page-text">Course Information</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-    </body>
-</html>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
