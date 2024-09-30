@@ -1,0 +1,23 @@
+# Resources {.unnumbered}
+
+The script with the lecture contents will be published on this website. Additional information may also be found on the group's [Teaching Pages](https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/).
+
+All exercise sheets will be available on the [Teaching Pages](https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/).
+
+All literature for the seminar will be available on the [Teaching Pages](https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/).
+
+The presentation for the seminars will be available [here](https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2023/10/Soft_matter_seminar.pdf).
+
+# Books
+
+There are several books available on the topic of Soft Matter. Many set their own focus. Here is a list of books useful for the lecture.
+
+- Jacob N. Israelachvili: **Intermolecular and Surface Forces: With Applications to Colloidal and Biological Systems** (Academic Press)
+- Rob Phillips, Jane Kondev, Julie Theriot: **Physical Biology of the Cell** (Garland Science)
+- Richard A.L. Jones: **Soft Condensed Matter** (Oxford University Press)
+- Michael Rubinstein, Ralph H. Colby: **Polymer Physics** (Oxford University Press)
+- Jonathan Howard: **Mechanics of Motor Proteins and the Cytoskeleton** (Sinauer Associates)
+- M. Doi and S.F. Edwards: **The Theory of Polymer Dynamics** (Oxford Academic Press)
+- P.G. de Gennes and J. Prost: **The Physics of Liquid Crystals** (Oxford Academic Press)
+
+In addition, we will make current literature from different journals available.
