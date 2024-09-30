@@ -762,7 +762,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../source/notebooks/L11/1_van_der_Waals_McLachlan.html">Lecture 11</a></li><li class="breadcrumb-item"><a href="../../../source/notebooks/L11/1_van_der_Waals_McLachlan.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">van der Waals Interactions</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -802,29 +802,7 @@ m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)
 <p><span class="math display">\[\begin{equation}
 \alpha(\nu)=\frac{\alpha_0}{1-i\Gamma \frac{\nu}{\nu_0^2}-\left ( \frac{\nu}{\nu_0}\right)^2}
 \end{equation}\]</span></p>
-<div id="833283c9" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> alpha(nu,nu_0,gamma):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">10</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>nu<span class="op">/</span>nu_0<span class="op">**</span><span class="dv">2</span><span class="op">-</span>(nu<span class="op">/</span>nu_0)<span class="op">**</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="53a7af7d" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nu<span class="op">=</span>np.linspace(<span class="fl">1e5</span>,<span class="fl">1e17</span>,<span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="c2febdac" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>nu_0<span class="op">=</span><span class="fl">3.3e15</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.semilogx(nu,alpha(nu,nu_0,<span class="fl">1e15</span>).real,label<span class="op">=</span><span class="st">"real"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.semilogx(nu,alpha(nu,nu_0,<span class="fl">1e15</span>).imag,label<span class="op">=</span><span class="st">"imag"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.semilogx(nu,alpha(<span class="ot">1j</span><span class="op">*</span>nu,nu_0,<span class="fl">1e15</span>).real,label<span class="op">=</span><span class="vs">r"$\alpha(i\nu)$"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"frequency $\nu$ [Hz]"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"$\alpha(\nu)$ [a.u.]"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="fl">1e12</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ff3b0d6f" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -862,6 +840,8 @@ w(\nu&gt;0, r)=-\frac{3 \alpha_{01} \alpha_{02}}{2\left(4 \pi \epsilon_{0}\right
 \end{equation}\]</span></p>
 <p>which is finally the London form of dispersion energy. Now we know why this interaction is called “dispersion”. The largest contribution to the energy comes from the range where <span class="math inline">\(v\)</span> is close to <span class="math inline">\(v_{\mathrm{I}}\)</span>. Since <span class="math inline">\(v_{\mathrm{I}}\)</span> is usually in UV range, such interaction is dominated by the polarizabilities from Vis to UV frequencies. As the polarizability and permittivity are closely related to the dispersion of light, it is not hard to understand why it is originally coined as “dispersion interaction”.</p>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -956,6 +936,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1298,7 +1329,118 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">van der Waals Interaction</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> van der Waals Interactions</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## McLachlan Theory</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>The first complete microscopic theory for the vdW interaction involving 2 atoms in a medium, was proposed by McLachlan, which is expressed as</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>w_{\mathrm{vdW}}(r)=-\frac{6 k_{\mathrm{B}} T}{\left(4 \pi \epsilon_{0}\right)^{2} r^{6}} \sum_{n=0}^{\infty}{}^{\prime} \frac{\alpha_{1}\left(i v_{n}\right) \alpha_{2}\left(i v_{n}\right)}{\epsilon_{3}^{2}\left(i v_{n}\right)}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>The $\sum^{\prime}$ notation denotes that the first term in the summation is multiplied by $1/2$. The frequencies are sampled, only at discreet values that $h v_{n}=2 \pi k_{\mathrm{B}} \operatorname{Tn}$ (known as the Matsubara frequencies). The typical $\alpha(i v)-v$ plots of polar and non-polar molecules using the Lorentz model can be seen in the Figure below.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="al">![Polarizability](img/polarizability.png)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Frequency Dependent Polarizability</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>The electronic polarizability of a single atom can classically be approximated by a damped harmonic oscillator, i.e.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>m_{e}\ddot{x}+\Gamma m_e \dot{x}+m_e \omega_0^2  x=-e E(\omega)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Here $\omega_0$ is the resonance frequency, $m_e$ the electron mass, $\Gamma$ the damping constant and $E$ the external electric field. Solving this differential equation and using $\omega=2\pi \nu$ yields the frequency dependent electronic polarizability </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>\alpha(\nu)=\frac{\alpha_0}{1-i\Gamma \frac{\nu}{\nu_0^2}-\left ( \frac{\nu}{\nu_0}\right)^2}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| nbsphinx: hidden</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> alpha(nu,nu_0,gamma):</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">10</span><span class="op">/</span>(<span class="dv">1</span><span class="op">-</span><span class="ot">1j</span><span class="op">*</span>gamma<span class="op">*</span>nu<span class="op">/</span>nu_0<span class="op">**</span><span class="dv">2</span><span class="op">-</span>(nu<span class="op">/</span>nu_0)<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| nbsphinx: hidden</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>nu<span class="op">=</span>np.linspace(<span class="fl">1e5</span>,<span class="fl">1e17</span>,<span class="dv">1000</span>)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| nbsphinx: hidden</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">5</span>))</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>nu_0<span class="op">=</span><span class="fl">3.3e15</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>plt.semilogx(nu,alpha(nu,nu_0,<span class="fl">1e15</span>).real,label<span class="op">=</span><span class="st">"real"</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>plt.semilogx(nu,alpha(nu,nu_0,<span class="fl">1e15</span>).imag,label<span class="op">=</span><span class="st">"imag"</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>plt.semilogx(nu,alpha(<span class="ot">1j</span><span class="op">*</span>nu,nu_0,<span class="fl">1e15</span>).real,label<span class="op">=</span><span class="vs">r"$\alpha(i\nu)$"</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"frequency $\nu$ [Hz]"</span>)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"$\alpha(\nu)$ [a.u.]"</span>)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="fl">1e12</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Zero Frequency Contribution</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>At zero frequency, we know that the polarizability reduces to the form of </span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>$$\alpha=\alpha_{0}+\frac{u^{2} }{3 k_{\mathrm{B}} T}$$</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>which results in the first term of the sum</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>w_{\mathrm{vdW}}(\nu=0, r) &amp;=-\frac{1}{2} \frac{6 k_{\mathrm{B}} T\left(\alpha_{01}+u_{1}^{2} /\left(3 k_{\mathrm{B}} T\right)\right)\left(\alpha_{02}+u_{2}^{2} /\left(3 k_{\mathrm{B}} T\right)\right)}{\left(4 \pi \epsilon_{0} \epsilon_{3}^{2}\right)^{2} r^{6}} <span class="sc">\\</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>&amp;=-\underbrace{\frac{u_{1}^{2} u_{2}^{2}}{3 k_{\mathrm{B}} T\left(4 \pi \epsilon_{0} \epsilon_{3}\right)^{2} r^{6}}}_{\text {Keesom }}-\underbrace{\frac{u_{1}^{2} \alpha_{02}+u_{2}^{2} \alpha_{01}}{\left(4 \pi \epsilon_{0} \epsilon_{3}\right)^{2} r^{6}}}_{\text {Debye }}-\underbrace{\frac{3 k_{\mathrm{B}} T \alpha_{01} \alpha_{02}}{\left(4 \pi \epsilon_{0} \epsilon_{3}\right)^{2} r^{6}}}_{\text {London(n=0) }}</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>We immediately see the recovery of the Keesom and Debye energies, as well as the $\alpha_{01} \alpha_{02}$ term from mathematical derivation. In fact, the last part is the zero-frequency part of the dispersion energy. Comparing the magnitudes of $k_{\mathrm{B}} T$ and $h v$, we can see that the zero-frequency contribution to the dispersion energy is negligible.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Optical Frequency Contribution</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>The lowest legal frequency $h v_{1}=2 \pi k_{\mathrm{B}} T \approx 0.16 \mathrm{eV}$. The permanent dipoles cannot respond to such high frequency, therefore the dipole polarizability has no effect on the dispersion energy at optical frequencies. The electronic polarizability govern the dispersion energy at such frequencies. We first consider $\epsilon_{3}=1$, that the 2 molecules are in vacuum.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>The summation in the original equation can be estimated using continuous integral at optical frequencies, if temperature is very low. Since $h \mathrm{~d} \nu=2 \pi k_{\mathrm{B}} T \mathrm{~d} n$, we can rewrite the integral from $n=1$ to</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>w_{\mathrm{vdw}}(\nu&gt;0)=\frac{h}{2 \pi} \frac{6}{\left(4 \pi \epsilon_{0}\right)^{2} r^{6}} \int_{\nu_{1}}^{\infty} \alpha_{1}(i v) \alpha_{2}(i v) \mathrm{d} v</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Using the approximate form of the polarizability</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>$$\alpha(i v)=\frac{\alpha_{0}}{\left<span class="co">[</span><span class="ot">1+\left(v / v_{\mathrm{I}}\right)^{2}\right</span><span class="co">]</span>}$$</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>and $\epsilon_3=1$ we end up at</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>w(\nu&gt;0, r)=-\frac{3 \alpha_{01} \alpha_{02}}{2\left(4 \pi \epsilon_{0}\right)^{2} r^{6}} \frac{h v_{\mathrm{I} 1} v_{\mathrm{I} 2}}{v_{\mathrm{I} 1}+v_{\mathrm{I} 2}}</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>which is finally the London form of dispersion energy.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>Now we know why this interaction is called "dispersion". The largest contribution to the energy comes from the range where $v$ is close to $v_{\mathrm{I}}$. Since $v_{\mathrm{I}}$ is usually in UV range, such interaction is dominated by the polarizabilities from Vis to UV frequencies. As the polarizability and permittivity are closely related to the dispersion of light, it is not hard to understand why it is originally coined as "dispersion interaction".</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

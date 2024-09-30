@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,6 +102,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -763,7 +767,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../source/notebooks/L14/1_depletion_forces.html">Lecture 14</a></li><li class="breadcrumb-item"><a href="../../../source/notebooks/L14/2_Flows_Transport.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></h1>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -780,20 +784,6 @@ window.Quarto = {
 </header>
 
 
-<div id="7e678fb5" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.special <span class="im">as</span> sp</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'style.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> fp:</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    style <span class="op">=</span> json.load(fp)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(style) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <section id="translational-diffusion" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="translational-diffusion"><span class="header-section-number">20.1</span> Translational Diffusion</h2>
 <p>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density <span class="math inline">\(\textbf{j}\)</span>. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal <span class="math inline">\(\textbf{n}\)</span>.</p>
@@ -1006,41 +996,11 @@ n(x, t)=1-\frac{1}{2}\left(\operatorname{erf}\left[\frac{x+a}{2 \sqrt{D\left(t-t
 \mathrm{erf}(x)=\frac{1}{\sqrt{\pi}} \int_{-x}^x e^{-t^2} d t=\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} d t
 \]</span></p>
 </div>
-<div id="2c400c6b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Example of a FRAP density profile</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> heaviside(x):</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.where(x <span class="op">&gt;=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_step(x, a):</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> heaviside(<span class="op">-</span>a <span class="op">-</span> x) <span class="op">+</span> heaviside(x <span class="op">-</span> a)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_solution(x, a, D, t, t0):</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    term1 <span class="op">=</span> sp.erf((x <span class="op">+</span> a) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    term2 <span class="op">=</span> sp.erf((x <span class="op">-</span> a) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (term1 <span class="op">-</span> term2)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># size of the bleached region</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># diffusion coefficient</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>t0 <span class="op">=</span> <span class="dv">0</span>  <span class="co"># initial time</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)  <span class="co"># times from 1 to 10 seconds</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">400</span>)  <span class="co"># range of x values</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.plot(x, n_step(x, a), label<span class="op">=</span><span class="st">'n(x, t0)'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> times:</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, n_solution(x, a, D, t, t0), label<span class="op">=</span><span class="ss">f'n(x, t=</span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">s)'</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'n(x, t)'</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c8f9c5a5" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="2_Flows_Transport_files/figure-html/cell-3-output-1.png" width="686" height="375" class="figure-img"></p>
+<p><img src="2_Flows_Transport_files/figure-html/cell-3-output-1.png" width="747" height="362" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1056,38 +1016,14 @@ N\left(t, t_0\right)=\frac{\sqrt{D\left(t-t_0\right)}}{a \sqrt{\pi}}\left(1-\exp
 \]</span></p>
 <p>which is plotted below.</p>
 </div>
-<div id="80a80514" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> N(t, t0, D, a):</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    term1 <span class="op">=</span> (np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0)) <span class="op">/</span> (a <span class="op">*</span> np.sqrt(np.pi))) <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>np.exp(<span class="op">-</span>a<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    term2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> sp.erf(a <span class="op">/</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0)))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (term1 <span class="op">+</span> term2)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive plotting function</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(D):</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># constant a</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    t0 <span class="op">=</span> <span class="dv">0</span>  <span class="co"># initial time t0</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="dv">400</span>)  <span class="co"># time range from 0.1 to 10</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, N(t, t0, D, a), label<span class="op">=</span><span class="ss">f'Diffusion Coefficient: D=</span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'t - t0'</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'N(t, t0)'</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    plt.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the widget</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#interact(plot_function, D=(0.01, 1.0, 0.01));</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plot_function(<span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="2d8809c0" class="cell" data-tags="[]" data-execution_count="4">
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2_Flows_Transport_files/figure-html/cell-4-output-1.png" width="612" height="382" class="figure-img"></p>
-</figure>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"fd274658b1b040689740ab1396734406","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
 </div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>&lt;function __main__.plot_function(D)&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -1176,10 +1112,21 @@ P_1^0=P_0 \cos (\theta) \quad l=1
 <p>So the correlation function decay with a time constant that is half the rotational diffusion time due to the projection of the dipole to a certain direction. Here are some more details on measurements based on NMR, even though focused on <a href="https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2017/03/MRT%20Lecture/assets/fallback/index.html">magnetic resonance imaging</a>.</p>
 
 
+<!-- -->
+
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+      (() => {
+        const scriptTag = document.createElement("script");
+        const base64State = "JTdCJTIyc3RhdGUlMjIlM0ElN0IlMjIyMGUyNDAxZjczNTQ0OGEyYjU5YmFhMDkyNDI0MjFhNSUyMiUzQSU3QiUyMm1vZGVsX21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmJhc2UlMjIlMkMlMjJtb2RlbF9tb2R1bGVfdmVyc2lvbiUyMiUzQSUyMjIuMC4wJTIyJTJDJTIybW9kZWxfbmFtZSUyMiUzQSUyMkxheW91dE1vZGVsJTIyJTJDJTIyc3RhdGUlMjIlM0ElN0IlMjJfbW9kZWxfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGYmFzZSUyMiUyQyUyMl9tb2RlbF9tb2R1bGVfdmVyc2lvbiUyMiUzQSUyMjIuMC4wJTIyJTJDJTIyX21vZGVsX25hbWUlMjIlM0ElMjJMYXlvdXRNb2RlbCUyMiUyQyUyMl92aWV3X2NvdW50JTIyJTNBbnVsbCUyQyUyMl92aWV3X21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmJhc2UlMjIlMkMlMjJfdmlld19tb2R1bGVfdmVyc2lvbiUyMiUzQSUyMjIuMC4wJTIyJTJDJTIyX3ZpZXdfbmFtZSUyMiUzQSUyMkxheW91dFZpZXclMjIlMkMlMjJhbGlnbl9jb250ZW50JTIyJTNBbnVsbCUyQyUyMmFsaWduX2l0ZW1zJTIyJTNBbnVsbCUyQyUyMmFsaWduX3NlbGYlMjIlM0FudWxsJTJDJTIyYm9yZGVyX2JvdHRvbSUyMiUzQW51bGwlMkMlMjJib3JkZXJfbGVmdCUyMiUzQW51bGwlMkMlMjJib3JkZXJfcmlnaHQlMjIlM0FudWxsJTJDJTIyYm9yZGVyX3RvcCUyMiUzQW51bGwlMkMlMjJib3R0b20lMjIlM0FudWxsJTJDJTIyZGlzcGxheSUyMiUzQW51bGwlMkMlMjJmbGV4JTIyJTNBbnVsbCUyQyUyMmZsZXhfZmxvdyUyMiUzQW51bGwlMkMlMjJncmlkX2FyZWElMjIlM0FudWxsJTJDJTIyZ3JpZF9hdXRvX2NvbHVtbnMlMjIlM0FudWxsJTJDJTIyZ3JpZF9hdXRvX2Zsb3clMjIlM0FudWxsJTJDJTIyZ3JpZF9hdXRvX3Jvd3MlMjIlM0FudWxsJTJDJTIyZ3JpZF9jb2x1bW4lMjIlM0FudWxsJTJDJTIyZ3JpZF9nYXAlMjIlM0FudWxsJTJDJTIyZ3JpZF9yb3clMjIlM0FudWxsJTJDJTIyZ3JpZF90ZW1wbGF0ZV9hcmVhcyUyMiUzQW51bGwlMkMlMjJncmlkX3RlbXBsYXRlX2NvbHVtbnMlMjIlM0FudWxsJTJDJTIyZ3JpZF90ZW1wbGF0ZV9yb3dzJTIyJTNBbnVsbCUyQyUyMmhlaWdodCUyMiUzQW51bGwlMkMlMjJqdXN0aWZ5X2NvbnRlbnQlMjIlM0FudWxsJTJDJTIyanVzdGlmeV9pdGVtcyUyMiUzQW51bGwlMkMlMjJsZWZ0JTIyJTNBbnVsbCUyQyUyMm1hcmdpbiUyMiUzQW51bGwlMkMlMjJtYXhfaGVpZ2h0JTIyJTNBbnVsbCUyQyUyMm1heF93aWR0aCUyMiUzQW51bGwlMkMlMjJtaW5faGVpZ2h0JTIyJTNBbnVsbCUyQyUyMm1pbl93aWR0aCUyMiUzQW51bGwlMkMlMjJvYmplY3RfZml0JTIyJTNBbnVsbCUyQyUyMm9iamVjdF9wb3NpdGlvbiUyMiUzQW51bGwlMkMlMjJvcmRlciUyMiUzQW51bGwlMkMlMjJvdmVyZmxvdyUyMiUzQW51bGwlMkMlMjJwYWRkaW5nJTIyJTNBbnVsbCUyQyUyMnJpZ2h0JTIyJTNBbnVsbCUyQyUyMnRvcCUyMiUzQW51bGwlMkMlMjJ2aXNpYmlsaXR5JTIyJTNBbnVsbCUyQyUyMndpZHRoJTIyJTNBbnVsbCU3RCU3RCUyQyUyMjgwZjA4ZmY0M2FhNzQ0NTJiOGRjMDBlOTUxM2Q4OTBjJTIyJTNBJTdCJTIybW9kZWxfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGb3V0cHV0JTIyJTJDJTIybW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIxLjAuMCUyMiUyQyUyMm1vZGVsX25hbWUlMjIlM0ElMjJPdXRwdXRNb2RlbCUyMiUyQyUyMnN0YXRlJTIyJTNBJTdCJTIyX2RvbV9jbGFzc2VzJTIyJTNBJTVCJTVEJTJDJTIyX21vZGVsX21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRm91dHB1dCUyMiUyQyUyMl9tb2RlbF9tb2R1bGVfdmVyc2lvbiUyMiUzQSUyMjEuMC4wJTIyJTJDJTIyX21vZGVsX25hbWUlMjIlM0ElMjJPdXRwdXRNb2RlbCUyMiUyQyUyMl92aWV3X2NvdW50JTIyJTNBbnVsbCUyQyUyMl92aWV3X21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRm91dHB1dCUyMiUyQyUyMl92aWV3X21vZHVsZV92ZXJzaW9uJTIyJTNBJTIyMS4wLjAlMjIlMkMlMjJfdmlld19uYW1lJTIyJTNBJTIyT3V0cHV0VmlldyUyMiUyQyUyMmxheW91dCUyMiUzQSUyMklQWV9NT0RFTF8yMGUyNDAxZjczNTQ0OGEyYjU5YmFhMDkyNDI0MjFhNSUyMiUyQyUyMm1zZ19pZCUyMiUzQSUyMiUyMiUyQyUyMm91dHB1dHMlMjIlM0ElNUIlN0IlMjJkYXRhJTIyJTNBJTdCJTIydGV4dCUyRmh0bWwlMjIlM0ElMjIlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NzY3JpcHQlMjB0eXBlJTNEJTVDJTIydGV4dCUyRmphdmFzY3JpcHQlNUMlMjIlM0UlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwd2luZG93LlBsb3RseUNvbmZpZyUyMCUzRCUyMCU3Qk1hdGhKYXhDb25maWclM0ElMjAnbG9jYWwnJTdEJTNCJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGlmJTIwKHdpbmRvdy5NYXRoSmF4KSUyMCU3Qk1hdGhKYXguSHViLkNvbmZpZyglN0JTVkclM0ElMjAlN0Jmb250JTNBJTIwJTVDJTIyU1RJWC1XZWIlNUMlMjIlN0QlN0QpJTNCJTdEJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGlmJTIwKHR5cGVvZiUyMHJlcXVpcmUlMjAhJTNEJTNEJTIwJ3VuZGVmaW5lZCcpJTIwJTdCJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHJlcXVpcmUudW5kZWYoJTVDJTIycGxvdGx5JTVDJTIyKSUzQiU1Q24lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjByZXF1aXJlanMuY29uZmlnKCU3QiU1Q24lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBwYXRocyUzQSUyMCU3QiU1Q24lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAncGxvdGx5JyUzQSUyMCU1QidodHRwcyUzQSUyRiUyRmNkbi5wbG90Lmx5JTJGcGxvdGx5LTIuOS4wLm1pbiclNUQlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTdEJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCklM0IlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwcmVxdWlyZSglNUIncGxvdGx5JyU1RCUyQyUyMGZ1bmN0aW9uKFBsb3RseSklMjAlN0IlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwd2luZG93Ll9QbG90bHklMjAlM0QlMjBQbG90bHklM0IlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTdEKSUzQiU1Q24lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDJTJGc2NyaXB0JTNFJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMiU3RCUyQyUyMm1ldGFkYXRhJTIyJTNBJTdCJTdEJTJDJTIyb3V0cHV0X3R5cGUlMjIlM0ElMjJkaXNwbGF5X2RhdGElMjIlN0QlMkMlN0IlMjJkYXRhJTIyJTNBJTdCJTIydGV4dCUyRmh0bWwlMjIlM0ElMjIlM0NkaXYlM0UlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NkaXYlMjBpZCUzRCU1QyUyMmM5OWU0NGNkLTBhMzgtNDI5Yy1hZDAyLWQ2ZjVmN2ZkZGQ4ZiU1QyUyMiUyMGNsYXNzJTNEJTVDJTIycGxvdGx5LWdyYXBoLWRpdiU1QyUyMiUyMHN0eWxlJTNEJTVDJTIyaGVpZ2h0JTNBNTAwcHglM0IlMjB3aWR0aCUzQTcwMHB4JTNCJTVDJTIyJTNFJTNDJTJGZGl2JTNFJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDc2NyaXB0JTIwdHlwZSUzRCU1QyUyMnRleHQlMkZqYXZhc2NyaXB0JTVDJTIyJTNFJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwcmVxdWlyZSglNUIlNUMlMjJwbG90bHklNUMlMjIlNUQlMkMlMjBmdW5jdGlvbihQbG90bHkpJTIwJTdCJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwd2luZG93LlBMT1RMWUVOViUzRHdpbmRvdy5QTE9UTFlFTlYlMjAlN0MlN0MlMjAlN0IlN0QlM0IlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBpZiUyMChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCglNUMlMjJjOTllNDRjZC0wYTM4LTQyOWMtYWQwMi1kNmY1ZjdmZGRkOGYlNUMlMjIpKSUyMCU3QiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMFBsb3RseS5uZXdQbG90KCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU1QyUyMmM5OWU0NGNkLTBhMzgtNDI5Yy1hZDAyLWQ2ZjVmN2ZkZGQ4ZiU1QyUyMiUyQyUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU1QiU3QiU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvciU1QyUyMiUzQSU1QyUyMmJsdWUlNUMlMjIlN0QlMkMlNUMlMjJtb2RlJTVDJTIyJTNBJTVDJTIybGluZXMlNUMlMjIlMkMlNUMlMjJuYW1lJTVDJTIyJTNBJTVDJTIyRGlmZnVzaW9uJTIwQ29lZmZpY2llbnQlM0ElMjBEJTNEMC41JTVDJTIyJTJDJTVDJTIyeCU1QyUyMiUzQSU1QjAuMSUyQzAuMTI0ODEyMDMwMDc1MTg3OTclMkMwLjE0OTYyNDA2MDE1MDM3NTk0JTJDMC4xNzQ0MzYwOTAyMjU1NjM5MiUyQzAuMTk5MjQ4MTIwMzAwNzUxOSUyQzAuMjI0MDYwMTUwMzc1OTM5ODUlMkMwLjI0ODg3MjE4MDQ1MTEyNzgzJTJDMC4yNzM2ODQyMTA1MjYzMTU3NSUyQzAuMjk4NDk2MjQwNjAxNTAzNzYlMkMwLjMyMzMwODI3MDY3NjY5MTc3JTJDMC4zNDgxMjAzMDA3NTE4Nzk3JTJDMC4zNzI5MzIzMzA4MjcwNjc2NyUyQzAuMzk3NzQ0MzYwOTAyMjU1NiUyQzAuNDIyNTU2MzkwOTc3NDQzNiUyQzAuNDQ3MzY4NDIxMDUyNjMxNSUyQzAuNDcyMTgwNDUxMTI3ODE5NiUyQzAuNDk2OTkyNDgxMjAzMDA3NTQlMkMwLjUyMTgwNDUxMTI3ODE5NTUlMkMwLjU0NjYxNjU0MTM1MzM4MzQlMkMwLjU3MTQyODU3MTQyODU3MTQlMkMwLjU5NjI0MDYwMTUwMzc1OTMlMkMwLjYyMTA1MjYzMTU3ODk0NzMlMkMwLjY0NTg2NDY2MTY1NDEzNTMlMkMwLjY3MDY3NjY5MTcyOTMyMzMlMkMwLjY5NTQ4ODcyMTgwNDUxMTMlMkMwLjcyMDMwMDc1MTg3OTY5OTIlMkMwLjc0NTExMjc4MTk1NDg4NzIlMkMwLjc2OTkyNDgxMjAzMDA3NTElMkMwLjc5NDczNjg0MjEwNTI2MzElMkMwLjgxOTU0ODg3MjE4MDQ1MTElMkMwLjg0NDM2MDkwMjI1NTYzOTElMkMwLjg2OTE3MjkzMjMzMDgyNyUyQzAuODkzOTg0OTYyNDA2MDE1JTJDMC45MTg3OTY5OTI0ODEyMDMlMkMwLjk0MzYwOTAyMjU1NjM5MDklMkMwLjk2ODQyMTA1MjYzMTU3ODglMkMwLjk5MzIzMzA4MjcwNjc2NjklMkMxLjAxODA0NTExMjc4MTk1NSUyQzEuMDQyODU3MTQyODU3MTQzJTJDMS4wNjc2NjkxNzI5MzIzMzA5JTJDMS4wOTI0ODEyMDMwMDc1MTg4JTJDMS4xMTcyOTMyMzMwODI3MDY4JTJDMS4xNDIxMDUyNjMxNTc4OTQ3JTJDMS4xNjY5MTcyOTMyMzMwODI3JTJDMS4xOTE3MjkzMjMzMDgyNzA2JTJDMS4yMTY1NDEzNTMzODM0NTg4JTJDMS4yNDEzNTMzODM0NTg2NDY4JTJDMS4yNjYxNjU0MTM1MzM4MzQ3JTJDMS4yOTA5Nzc0NDM2MDkwMjI3JTJDMS4zMTU3ODk0NzM2ODQyMTA2JTJDMS4zNDA2MDE1MDM3NTkzOTg2JTJDMS4zNjU0MTM1MzM4MzQ1ODY1JTJDMS4zOTAyMjU1NjM5MDk3NzQ1JTJDMS40MTUwMzc1OTM5ODQ5NjI0JTJDMS40Mzk4NDk2MjQwNjAxNTA0JTJDMS40NjQ2NjE2NTQxMzUzMzgzJTJDMS40ODk0NzM2ODQyMTA1MjYzJTJDMS41MTQyODU3MTQyODU3MTQyJTJDMS41MzkwOTc3NDQzNjA5MDI0JTJDMS41NjM5MDk3NzQ0MzYwOTA0JTJDMS41ODg3MjE4MDQ1MTEyNzgzJTJDMS42MTM1MzM4MzQ1ODY0NjYzJTJDMS42MzgzNDU4NjQ2NjE2NTQyJTJDMS42NjMxNTc4OTQ3MzY4NDIyJTJDMS42ODc5Njk5MjQ4MTIwMzAxJTJDMS43MTI3ODE5NTQ4ODcyMTglMkMxLjczNzU5Mzk4NDk2MjQwNiUyQzEuNzYyNDA2MDE1MDM3NTk0JTJDMS43ODcyMTgwNDUxMTI3ODIlMkMxLjgxMjAzMDA3NTE4Nzk2OTklMkMxLjgzNjg0MjEwNTI2MzE1NzglMkMxLjg2MTY1NDEzNTMzODM0NiUyQzEuODg2NDY2MTY1NDEzNTM0JTJDMS45MTEyNzgxOTU0ODg3MjIlMkMxLjkzNjA5MDIyNTU2MzkwOTklMkMxLjk2MDkwMjI1NTYzOTA5NzglMkMxLjk4NTcxNDI4NTcxNDI4NTglMkMyLjAxMDUyNjMxNTc4OTQ3MzclMkMyLjAzNTMzODM0NTg2NDY2MTclMkMyLjA2MDE1MDM3NTkzOTg0OTYlMkMyLjA4NDk2MjQwNjAxNTAzNzYlMkMyLjEwOTc3NDQzNjA5MDIyNTUlMkMyLjEzNDU4NjQ2NjE2NTQxMzUlMkMyLjE1OTM5ODQ5NjI0MDYwMTQlMkMyLjE4NDIxMDUyNjMxNTc4OTQlMkMyLjIwOTAyMjU1NjM5MDk3NzMlMkMyLjIzMzgzNDU4NjQ2NjE2NTMlMkMyLjI1ODY0NjYxNjU0MTM1MzIlMkMyLjI4MzQ1ODY0NjYxNjU0MSUyQzIuMzA4MjcwNjc2NjkxNzI5JTJDMi4zMzMwODI3MDY3NjY5MTc1JTJDMi4zNTc4OTQ3MzY4NDIxMDU1JTJDMi4zODI3MDY3NjY5MTcyOTM0JTJDMi40MDc1MTg3OTY5OTI0ODE0JTJDMi40MzIzMzA4MjcwNjc2NjkzJTJDMi40NTcxNDI4NTcxNDI4NTczJTJDMi40ODE5NTQ4ODcyMTgwNDUyJTJDMi41MDY3NjY5MTcyOTMyMzMlMkMyLjUzMTU3ODk0NzM2ODQyMSUyQzIuNTU2MzkwOTc3NDQzNjA5JTJDMi41ODEyMDMwMDc1MTg3OTclMkMyLjYwNjAxNTAzNzU5Mzk4NSUyQzIuNjMwODI3MDY3NjY5MTczJTJDMi42NTU2MzkwOTc3NDQzNjElMkMyLjY4MDQ1MTEyNzgxOTU0OSUyQzIuNzA1MjYzMTU3ODk0NzM3JTJDMi43MzAwNzUxODc5Njk5MjQ4JTJDMi43NTQ4ODcyMTgwNDUxMTI3JTJDMi43Nzk2OTkyNDgxMjAzMDA3JTJDMi44MDQ1MTEyNzgxOTU0ODg2JTJDMi44MjkzMjMzMDgyNzA2NzY2JTJDMi44NTQxMzUzMzgzNDU4NjQ1JTJDMi44Nzg5NDczNjg0MjEwNTI1JTJDMi45MDM3NTkzOTg0OTYyNDA0JTJDMi45Mjg1NzE0Mjg1NzE0Mjg0JTJDMi45NTMzODM0NTg2NDY2MTYzJTJDMi45NzgxOTU0ODg3MjE4MDQ3JTJDMy4wMDMwMDc1MTg3OTY5OTI3JTJDMy4wMjc4MTk1NDg4NzIxODA2JTJDMy4wNTI2MzE1Nzg5NDczNjg2JTJDMy4wNzc0NDM2MDkwMjI1NTY1JTJDMy4xMDIyNTU2MzkwOTc3NDQ1JTJDMy4xMjcwNjc2NjkxNzI5MzI0JTJDMy4xNTE4Nzk2OTkyNDgxMjA0JTJDMy4xNzY2OTE3MjkzMjMzMDgzJTJDMy4yMDE1MDM3NTkzOTg0OTYzJTJDMy4yMjYzMTU3ODk0NzM2ODQyJTJDMy4yNTExMjc4MTk1NDg4NzIlMkMzLjI3NTkzOTg0OTYyNDA2JTJDMy4zMDA3NTE4Nzk2OTkyNDglMkMzLjMyNTU2MzkwOTc3NDQzNiUyQzMuMzUwMzc1OTM5ODQ5NjI0JTJDMy4zNzUxODc5Njk5MjQ4MTIlMkMzLjQlMkMzLjQyNDgxMjAzMDA3NTE4OCUyQzMuNDQ5NjI0MDYwMTUwMzc2JTJDMy40NzQ0MzYwOTAyMjU1NjM4JTJDMy40OTkyNDgxMjAzMDA3NTE3JTJDMy41MjQwNjAxNTAzNzU5Mzk3JTJDMy41NDg4NzIxODA0NTExMjc2JTJDMy41NzM2ODQyMTA1MjYzMTU2JTJDMy41OTg0OTYyNDA2MDE1MDQlMkMzLjYyMzMwODI3MDY3NjY5MiUyQzMuNjQ4MTIwMzAwNzUxODglMkMzLjY3MjkzMjMzMDgyNzA2OCUyQzMuNjk3NzQ0MzYwOTAyMjU2JTJDMy43MjI1NTYzOTA5Nzc0NDM3JTJDMy43NDczNjg0MjEwNTI2MzE3JTJDMy43NzIxODA0NTExMjc4MTk2JTJDMy43OTY5OTI0ODEyMDMwMDc2JTJDMy44MjE4MDQ1MTEyNzgxOTU1JTJDMy44NDY2MTY1NDEzNTMzODM1JTJDMy44NzE0Mjg1NzE0Mjg1NzE0JTJDMy44OTYyNDA2MDE1MDM3NTk0JTJDMy45MjEwNTI2MzE1Nzg5NDczJTJDMy45NDU4NjQ2NjE2NTQxMzUzJTJDMy45NzA2NzY2OTE3MjkzMjMyJTJDMy45OTU0ODg3MjE4MDQ1MTElMkM0LjAyMDMwMDc1MTg3OTY5OSUyQzQuMDQ1MTEyNzgxOTU0ODg3JTJDNC4wNjk5MjQ4MTIwMzAwNzUlMkM0LjA5NDczNjg0MjEwNTI2MyUyQzQuMTE5NTQ4ODcyMTgwNDUwNSUyQzQuMTQ0MzYwOTAyMjU1NjM5JTJDNC4xNjkxNzI5MzIzMzA4MjYlMkM0LjE5Mzk4NDk2MjQwNjAxNSUyQzQuMjE4Nzk2OTkyNDgxMjAyJTJDNC4yNDM2MDkwMjI1NTYzOTElMkM0LjI2ODQyMTA1MjYzMTU3OCUyQzQuMjkzMjMzMDgyNzA2NzY3JTJDNC4zMTgwNDUxMTI3ODE5NTQlMkM0LjM0Mjg1NzE0Mjg1NzE0MjUlMkM0LjM2NzY2OTE3MjkzMjMzJTJDNC4zOTI0ODEyMDMwMDc1MTglMkM0LjQxNzI5MzIzMzA4MjcwNiUyQzQuNDQyMTA1MjYzMTU3ODk0JTJDNC40NjY5MTcyOTMyMzMwODIlMkM0LjQ5MTcyOTMyMzMwODI3JTJDNC41MTY1NDEzNTMzODM0NTglMkM0LjU0MTM1MzM4MzQ1ODY0NiUyQzQuNTY2MTY1NDEzNTMzODM0NSUyQzQuNTkwOTc3NDQzNjA5MDIyJTJDNC42MTU3ODk0NzM2ODQyMSUyQzQuNjQwNjAxNTAzNzU5Mzk4JTJDNC42NjU0MTM1MzM4MzQ1ODYlMkM0LjY5MDIyNTU2MzkwOTc3NCUyQzQuNzE1MDM3NTkzOTg0OTYyJTJDNC43Mzk4NDk2MjQwNjAxNSUyQzQuNzY0NjYxNjU0MTM1MzM4JTJDNC43ODk0NzM2ODQyMTA1MjYlMkM0LjgxNDI4NTcxNDI4NTcxNCUyQzQuODM5MDk3NzQ0MzYwOTAyJTJDNC44NjM5MDk3NzQ0MzYwOSUyQzQuODg4NzIxODA0NTExMjc3NSUyQzQuOTEzNTMzODM0NTg2NDY2JTJDNC45MzgzNDU4NjQ2NjE2NTMlMkM0Ljk2MzE1Nzg5NDczNjg0MiUyQzQuOTg3OTY5OTI0ODEyMDI5JTJDNS4wMTI3ODE5NTQ4ODcyMTglMkM1LjAzNzU5Mzk4NDk2MjQwNSUyQzUuMDYyNDA2MDE1MDM3NTk0JTJDNS4wODcyMTgwNDUxMTI3ODElMkM1LjExMjAzMDA3NTE4Nzk2OTUlMkM1LjEzNjg0MjEwNTI2MzE1NyUyQzUuMTYxNjU0MTM1MzM4MzQ1JTJDNS4xODY0NjYxNjU0MTM1MzQlMkM1LjIxMTI3ODE5NTQ4ODcyMSUyQzUuMjM2MDkwMjI1NTYzOTElMkM1LjI2MDkwMjI1NTYzOTA5NyUyQzUuMjg1NzE0Mjg1NzE0Mjg2JTJDNS4zMTA1MjYzMTU3ODk0NzMlMkM1LjMzNTMzODM0NTg2NDY2MTUlMkM1LjM2MDE1MDM3NTkzOTg0OSUyQzUuMzg0OTYyNDA2MDE1MDM3JTJDNS40MDk3NzQ0MzYwOTAyMjUlMkM1LjQzNDU4NjQ2NjE2NTQxMyUyQzUuNDU5Mzk4NDk2MjQwNjAxJTJDNS40ODQyMTA1MjYzMTU3ODklMkM1LjUwOTAyMjU1NjM5MDk3NyUyQzUuNTMzODM0NTg2NDY2MTY1JTJDNS41NTg2NDY2MTY1NDEzNTMlMkM1LjU4MzQ1ODY0NjYxNjU0MSUyQzUuNjA4MjcwNjc2NjkxNzI4NSUyQzUuNjMzMDgyNzA2NzY2OTE3JTJDNS42NTc4OTQ3MzY4NDIxMDQlMkM1LjY4MjcwNjc2NjkxNzI5MyUyQzUuNzA3NTE4Nzk2OTkyNDglMkM1LjczMjMzMDgyNzA2NzY2OSUyQzUuNzU3MTQyODU3MTQyODU2JTJDNS43ODE5NTQ4ODcyMTgwNDUlMkM1LjgwNjc2NjkxNzI5MzIzMiUyQzUuODMxNTc4OTQ3MzY4NDIwNSUyQzUuODU2MzkwOTc3NDQzNjA5JTJDNS44ODEyMDMwMDc1MTg3OTYlMkM1LjkwNjAxNTAzNzU5Mzk4NSUyQzUuOTMwODI3MDY3NjY5MTcyJTJDNS45NTU2MzkwOTc3NDQzNjElMkM1Ljk4MDQ1MTEyNzgxOTU0OCUyQzYuMDA1MjYzMTU3ODk0NzM3JTJDNi4wMzAwNzUxODc5Njk5MjQlMkM2LjA1NDg4NzIxODA0NTExMjUlMkM2LjA3OTY5OTI0ODEyMDMlMkM2LjEwNDUxMTI3ODE5NTQ4OCUyQzYuMTI5MzIzMzA4MjcwNjc2JTJDNi4xNTQxMzUzMzgzNDU4NjQlMkM2LjE3ODk0NzM2ODQyMTA1MiUyQzYuMjAzNzU5Mzk4NDk2MjQlMkM2LjIyODU3MTQyODU3MTQyOCUyQzYuMjUzMzgzNDU4NjQ2NjE2JTJDNi4yNzgxOTU0ODg3MjE4MDQlMkM2LjMwMzAwNzUxODc5Njk5MiUyQzYuMzI3ODE5NTQ4ODcyMTglMkM2LjM1MjYzMTU3ODk0NzM2OCUyQzYuMzc3NDQzNjA5MDIyNTU1NSUyQzYuNDAyMjU1NjM5MDk3NzQ0JTJDNi40MjcwNjc2NjkxNzI5MzElMkM2LjQ1MTg3OTY5OTI0ODEyJTJDNi40NzY2OTE3MjkzMjMzMDglMkM2LjUwMTUwMzc1OTM5ODQ5NiUyQzYuNTI2MzE1Nzg5NDczNjg0JTJDNi41NTExMjc4MTk1NDg4NzIlMkM2LjU3NTkzOTg0OTYyNDA2JTJDNi42MDA3NTE4Nzk2OTkyNDc1JTJDNi42MjU1NjM5MDk3NzQ0MzYlMkM2LjY1MDM3NTkzOTg0OTYyMyUyQzYuNjc1MTg3OTY5OTI0ODEyJTJDNi42OTk5OTk5OTk5OTk5OTklMkM2LjcyNDgxMjAzMDA3NTE4OCUyQzYuNzQ5NjI0MDYwMTUwMzc1JTJDNi43NzQ0MzYwOTAyMjU1NjQlMkM2Ljc5OTI0ODEyMDMwMDc1MSUyQzYuODI0MDYwMTUwMzc1OTM5NSUyQzYuODQ4ODcyMTgwNDUxMTI3JTJDNi44NzM2ODQyMTA1MjYzMTUlMkM2Ljg5ODQ5NjI0MDYwMTUwMyUyQzYuOTIzMzA4MjcwNjc2NjkxJTJDNi45NDgxMjAzMDA3NTE4NzklMkM2Ljk3MjkzMjMzMDgyNzA2NyUyQzYuOTk3NzQ0MzYwOTAyMjU1JTJDNy4wMjI1NTYzOTA5Nzc0NDMlMkM3LjA0NzM2ODQyMTA1MjYzMSUyQzcuMDcyMTgwNDUxMTI3ODE5JTJDNy4wOTY5OTI0ODEyMDMwMDclMkM3LjEyMTgwNDUxMTI3ODE5NSUyQzcuMTQ2NjE2NTQxMzUzMzgzJTJDNy4xNzE0Mjg1NzE0Mjg1NzElMkM3LjE5NjI0MDYwMTUwMzc1OSUyQzcuMjIxMDUyNjMxNTc4OTQ3JTJDNy4yNDU4NjQ2NjE2NTQxMzUlMkM3LjI3MDY3NjY5MTcyOTMyMyUyQzcuMjk1NDg4NzIxODA0NTExJTJDNy4zMjAzMDA3NTE4Nzk2OTg1JTJDNy4zNDUxMTI3ODE5NTQ4ODclMkM3LjM2OTkyNDgxMjAzMDA3NCUyQzcuMzk0NzM2ODQyMTA1MjYzJTJDNy40MTk1NDg4NzIxODA0NSUyQzcuNDQ0MzYwOTAyMjU1NjM5JTJDNy40NjkxNzI5MzIzMzA4MjYlMkM3LjQ5Mzk4NDk2MjQwNjAxNSUyQzcuNTE4Nzk2OTkyNDgxMjAyJTJDNy41NDM2MDkwMjI1NTYzOTA1JTJDNy41Njg0MjEwNTI2MzE1NzglMkM3LjU5MzIzMzA4MjcwNjc2NjQlMkM3LjYxODA0NTExMjc4MTk1NCUyQzcuNjQyODU3MTQyODU3MTQyJTJDNy42Njc2NjkxNzI5MzIzMyUyQzcuNjkyNDgxMjAzMDA3NTE4JTJDNy43MTcyOTMyMzMwODI3MDYlMkM3Ljc0MjEwNTI2MzE1Nzg5NCUyQzcuNzY2OTE3MjkzMjMzMDgyNiUyQzcuNzkxNzI5MzIzMzA4MjclMkM3LjgxNjU0MTM1MzM4MzQ1ODUlMkM3Ljg0MTM1MzM4MzQ1ODY0NiUyQzcuODY2MTY1NDEzNTMzODM0JTJDNy44OTA5Nzc0NDM2MDkwMjIlMkM3LjkxNTc4OTQ3MzY4NDIxJTJDNy45NDA2MDE1MDM3NTkzOTglMkM3Ljk2NTQxMzUzMzgzNDU4NiUyQzcuOTkwMjI1NTYzOTA5Nzc0JTJDOC4wMTUwMzc1OTM5ODQ5NjIlMkM4LjAzOTg0OTYyNDA2MDE1JTJDOC4wNjQ2NjE2NTQxMzUzMzklMkM4LjA4OTQ3MzY4NDIxMDUyNiUyQzguMTE0Mjg1NzE0Mjg1NzE0JTJDOC4xMzkwOTc3NDQzNjA5MDElMkM4LjE2MzkwOTc3NDQzNjA4OSUyQzguMTg4NzIxODA0NTExMjc4JTJDOC4yMTM1MzM4MzQ1ODY0NjYlMkM4LjIzODM0NTg2NDY2MTY1MyUyQzguMjYzMTU3ODk0NzM2ODQlMkM4LjI4Nzk2OTkyNDgxMjAzJTJDOC4zMTI3ODE5NTQ4ODcyMTclMkM4LjMzNzU5Mzk4NDk2MjQwNSUyQzguMzYyNDA2MDE1MDM3NTk0JTJDOC4zODcyMTgwNDUxMTI3ODIlMkM4LjQxMjAzMDA3NTE4Nzk3JTJDOC40MzY4NDIxMDUyNjMxNTclMkM4LjQ2MTY1NDEzNTMzODM0NiUyQzguNDg2NDY2MTY1NDEzNTM0JTJDOC41MTEyNzgxOTU0ODg3MjElMkM4LjUzNjA5MDIyNTU2MzkwOSUyQzguNTYwOTAyMjU1NjM5MDk4JTJDOC41ODU3MTQyODU3MTQyODUlMkM4LjYxMDUyNjMxNTc4OTQ3MyUyQzguNjM1MzM4MzQ1ODY0NjYlMkM4LjY2MDE1MDM3NTkzOTg1JTJDOC42ODQ5NjI0MDYwMTUwMzclMkM4LjcwOTc3NDQzNjA5MDIyNSUyQzguNzM0NTg2NDY2MTY1NDEyJTJDOC43NTkzOTg0OTYyNDA2MDIlMkM4Ljc4NDIxMDUyNjMxNTc4OSUyQzguODA5MDIyNTU2MzkwOTc3JTJDOC44MzM4MzQ1ODY0NjYxNjQlMkM4Ljg1ODY0NjYxNjU0MTM1MyUyQzguODgzNDU4NjQ2NjE2NTQlMkM4LjkwODI3MDY3NjY5MTcyOCUyQzguOTMzMDgyNzA2NzY2OTE2JTJDOC45NTc4OTQ3MzY4NDIxMDUlMkM4Ljk4MjcwNjc2NjkxNzI5MyUyQzkuMDA3NTE4Nzk2OTkyNDglMkM5LjAzMjMzMDgyNzA2NzY3JTJDOS4wNTcxNDI4NTcxNDI4NTclMkM5LjA4MTk1NDg4NzIxODA0NCUyQzkuMTA2NzY2OTE3MjkzMjMyJTJDOS4xMzE1Nzg5NDczNjg0MjElMkM5LjE1NjM5MDk3NzQ0MzYwOSUyQzkuMTgxMjAzMDA3NTE4Nzk2JTJDOS4yMDYwMTUwMzc1OTM5ODQlMkM5LjIzMDgyNzA2NzY2OTE3MyUyQzkuMjU1NjM5MDk3NzQ0MzYlMkM5LjI4MDQ1MTEyNzgxOTU0OCUyQzkuMzA1MjYzMTU3ODk0NzM2JTJDOS4zMzAwNzUxODc5Njk5MjUlMkM5LjM1NDg4NzIxODA0NTExMiUyQzkuMzc5Njk5MjQ4MTIwMyUyQzkuNDA0NTExMjc4MTk1NDg3JTJDOS40MjkzMjMzMDgyNzA2NzclMkM5LjQ1NDEzNTMzODM0NTg2NCUyQzkuNDc4OTQ3MzY4NDIxMDUyJTJDOS41MDM3NTkzOTg0OTYyNCUyQzkuNTI4NTcxNDI4NTcxNDI4JTJDOS41NTMzODM0NTg2NDY2MTYlMkM5LjU3ODE5NTQ4ODcyMTgwMyUyQzkuNjAzMDA3NTE4Nzk2OTkxJTJDOS42Mjc4MTk1NDg4NzIxOCUyQzkuNjUyNjMxNTc4OTQ3MzY4JTJDOS42Nzc0NDM2MDkwMjI1NTUlMkM5LjcwMjI1NTYzOTA5Nzc0NSUyQzkuNzI3MDY3NjY5MTcyOTMyJTJDOS43NTE4Nzk2OTkyNDgxMiUyQzkuNzc2NjkxNzI5MzIzMzA3JTJDOS44MDE1MDM3NTkzOTg0OTYlMkM5LjgyNjMxNTc4OTQ3MzY4NCUyQzkuODUxMTI3ODE5NTQ4ODcxJTJDOS44NzU5Mzk4NDk2MjQwNTklMkM5LjkwMDc1MTg3OTY5OTI0OCUyQzkuOTI1NTYzOTA5Nzc0NDM2JTJDOS45NTAzNzU5Mzk4NDk2MjMlMkM5Ljk3NTE4Nzk2OTkyNDgxJTJDMTAuMCU1RCUyQyU1QyUyMnklNUMlMjIlM0ElNUIwLjEyNjE1NjYyNjA5NDk0MjY2JTJDMC4xNDA5NDEzMDQ4NzA5MjE3NCUyQzAuMTU0MzE1OTMwMDA4MTk3OCUyQzAuMTY2NjIwMzU3MDQ2NzkzJTJDMC4xNzgwNzYzOTM0MTc0MjA4OCUyQzAuMTg4ODM4MDgwMjc5Mjk0NDclMkMwLjE5OTAxNzI3MjQ3OTI2NTI2JTJDMC4yMDg2OTc5MjY0OTc1ODc1JTJDMC4yMTc5NDQ2ODc4NzEyMTc4NyUyQzAuMjI2ODA4MzY2NjQ5Mjk2OTYlMkMwLjIzNTMyOTU5Nzk5NTUwMjE1JTJDMC4yNDM1NDEzODIyNDk1Mzc2NyUyQzAuMjUxNDcwODk4NzIzMjE2MjYlMkMwLjI1OTE0MDgyOTU4MTMwNTQlMkMwLjI2NjU3MDM0MjU1MDg5NDElMkMwLjI3Mzc3NTgzMDA4NzEwMjQlMkMwLjI4MDc3MTQ3MTM0Mjg1OTI0JTJDMC4yODc1Njk2NjMzMDU3ODczNyUyQzAuMjk0MTgxMzU0MjEzNDEyNTclMkMwLjMwMDYxNjMwMzI5NjI3NjIlMkMwLjMwNjg4MzI4NDU0NzYyMDElMkMwLjMxMjk5MDI0NzY4MDI2MTYlMkMwLjMxODk0NDQ0NjEzOTIwNjUzJTJDMC4zMjQ3NTI1Mzk2MjE4NjA1JTJDMC4zMzA0MjA2NzY3NjY3NDc4NiUyQzAuMzM1OTU0NTYyMzM0MTQ1OCUyQzAuMzQxMzU5NTEyMTk2Njk0MjUlMkMwLjM0NjY0MDQ5ODY5ODE0NTE3JTJDMC4zNTE4MDIxODgzNjExODg0MyUyQzAuMzU2ODQ4OTczNDg0ODU0ODQlMkMwLjM2MTc4NDk5ODgzNDUxNTA0JTJDMC4zNjY2MTQxODQzNjc4ODk3JTJDMC4zNzEzNDAyNDQ3NDAwMDg5JTJDMC4zNzU5NjY3MDYxNzQ2OTE5JTJDMC4zODA0OTY5MjExNjkyNDY0NCUyQzAuMzg0OTM0MDgxNDA0NzQ2NjYlMkMwLjM4OTI4MTIyOTE2MDMxNSUyQzAuMzkzNTQxMjY3NDcxNzI2NDYlMkMwLjM5NzcxNjk2OTIyODc4MDQ3JTJDMC40MDE4MTA5ODUzNjk1NzQxJTJDMC40MDU4MjU4NTIzMDA5MzU5MyUyQzAuNDA5NzYzOTk4NjUxMjQ3OCUyQzAuNDEzNjI3NzUxNDQzNDMyODMlMkMwLjQxNzQxOTM0MTc2MTA1NjElMkMwLjQyMTE0MDkwOTk2ODUwNjclMkMwLjQyNDc5NDUxMDUzNjUyMzIlMkMwLjQyODM4MjExNjUxNjQxODklMkMwLjQzMTkwNTYyMzY5OTkwNiUyQzAuNDM1MzY2ODU0NDk2MDkzOTclMkMwLjQzODc2NzU2MTU1Mjg3MzclMkMwLjQ0MjEwOTQzMTE0NjI0NzU3JTJDMC40NDUzOTQwODYzNTgxNDY1MyUyQzAuNDQ4NjIzMDkwMDYwNzMzMDMlMkMwLjQ1MTc5Nzk0NzcyMzA1MjU0JTJDMC40NTQ5MjAxMTAwNTQwODYyJTJDMC40NTc5OTA5NzU0OTQ3MjA3JTJDMC40NjEwMTE4OTI1Njk4MjgwNSUyQzAuNDYzOTg0MTYyMTEwNTIxODUlMkMwLjQ2NjkwOTAzOTM1NTY2ODYzJTJDMC40Njk3ODc3MzU5NDA4ODk0NiUyQzAuNDcyNjIxNDIxNzgyNTMyNCUyQzAuNDc1NDExMjI2ODYzNDUzNTUlMkMwLjQ3ODE1ODI0MjkyNjg1NSUyQzAuNDgwODYzNTI1MDgzOTI2NTUlMkMwLjQ4MzUyODA5MzM0MDU3NzA2JTJDMC40ODYxNTI5MzQwNDgxMzIlMkMwLjQ4ODczOTAwMTI4MjUxMTQ2JTJDMC40OTEyODcyMTgxNTYwNjk2JTJDMC40OTM3OTg0NzgwNjU5NzgxJTJDMC40OTYyNzM2NDU4ODI3NjUwNyUyQzAuNDk4NzEzNTU5MDgyMzcyOTclMkMwLjUwMTExOTAyODgyNDg3NTIlMkMwLjUwMzQ5MDg0MDk4Mjc3OSUyQzAuNTA1ODI5NzU3MTIxNjU5MSUyQzAuNTA4MTM2NTE1NDM1Njg4NSUyQzAuNTEwNDExODMxNjQwNDY3MSUyQzAuNTEyNjU2Mzk5ODI1NDElMkMwLjUxNDg3MDg5MzI2NzgwODglMkMwLjUxNzA1NTk2NTIxMDU1ODYlMkMwLjUxOTIxMjI0OTYwNTQyMTQlMkMwLjUyMTM0MDM2MTgyMzU4NjMlMkMwLjUyMzQ0MDg5OTMzNTE4NSUyQzAuNTI1NTE0NDQyMzU5MzI0NSUyQzAuNTI3NTYxNTU0NDg2MTA5NCUyQzAuNTI5NTgyNzgzMjcyMDQ0OSUyQzAuNTMxNTc4NjYwODEwMTI2NyUyQzAuNTMzNTQ5NzA0Mjc1ODYxJTJDMC41MzU0OTY0MTY0NTAzODEzJTJDMC41Mzc0MTkyODYyMjE3NjUlMkMwLjUzOTMxODc4OTA2NTYwMDQlMkMwLjU0MTE5NTM4NzUwNTc4NDQlMkMwLjU0MzA0OTUzMTU1NjQ5NDIlMkMwLjU0NDg4MTY1OTE0NjIxMDglMkMwLjU0NjY5MjE5NjUyNDY0MiUyQzAuNTQ4NDgxNTU4NjUzMzI2MyUyQzAuNTUwMjUwMTQ5NTgwNjgzMyUyQzAuNTUxOTk4MzYyODAyMjE1MSUyQzAuNTUzNzI2NTgxNjA2NTQxOCUyQzAuNTU1NDM1MTc5NDA3OTA1OCUyQzAuNTU3MTI0NTIwMDY1NzYzNSUyQzAuNTU4Nzk0OTU4MTkyMDMzNSUyQzAuNTYwNDQ2ODM5NDQ2NTU2MyUyQzAuNTYyMDgwNTAwODIxMjg1OSUyQzAuNTYzNjk2MjcwOTEzNzA4NiUyQzAuNTY1Mjk0NDcwMTg5OTU3NiUyQzAuNTY2ODc1NDExMjM4MDc4NyUyQzAuNTY4NDM5Mzk5MDExODYyNiUyQzAuNTY5OTg2NzMxMDY1NjU4NiUyQzAuNTcxNTE3Njk3NzgwNTQ5MyUyQzAuNTczMDMyNTgyNTgyMjU2JTJDMC41NzQ1MzE2NjIxNTExMjQ5JTJDMC41NzYwMTUyMDY2MjQ1MjE0JTJDMC41Nzc0ODM0Nzk3OTE5NTc3JTJDMC41Nzg5MzY3MzkyODMyNTA3JTJDMC41ODAzNzUyMzY3NDk5OTc3JTJDMC41ODE3OTkyMTgwNDA2NDY4JTJDMC41ODMyMDg5MjMzNjk0MjMxJTJDMC41ODQ2MDQ1ODc0NzkzNiUyQzAuNTg1OTg2NDM5Nzk5NjcxOCUyQzAuNTg3MzU0NzA0NTk3NzAxJTJDMC41ODg3MDk2MDExMjU2NDg1JTJDMC41OTAwNTEzNDM3NjIzMDMlMkMwLjU5MTM4MDE0MjE0OTk1OTklMkMwLjU5MjY5NjIwMTMyNjcyNTYlMkMwLjU5Mzk5OTcyMTg1NDM3OTMlMkMwLjU5NTI5MDg5OTk0MTk3NTklMkMwLjU5NjU2OTkyNzU2NTM0NDclMkMwLjU5NzgzNjk5MjU4MjY0NjYlMkMwLjU5OTA5MjI3ODg0NjE0MzclMkMwLjYwMDMzNTk2NjMxMDMxNzklMkMwLjYwMTU2ODIzMTEzNjQ4MzQlMkMwLjYwMjc4OTI0NTc5NDAyMzIlMkMwLjYwMzk5OTE3OTE1ODM3NDMlMkMwLjYwNTE5ODE5NjYwNTg4NzMlMkMwLjYwNjM4NjQ2MDEwNTY2ODUlMkMwLjYwNzU2NDEyODMwODUyODglMkMwLjYwODczMTM1NjYzMzEyOTglMkMwLjYwOTg4ODI5NzM0OTQ0MjIlMkMwLjYxMTAzNTA5OTY1OTYwOTklMkMwLjYxMjE3MTkwOTc3NjMwOTklMkMwLjYxMzI5ODg3MDk5ODcwNDMlMkMwLjYxNDQxNjEyMzc4NjA2NzQlMkMwLjYxNTUyMzgwNTgyOTE3JTJDMC42MTY2MjIwNTIxMTk1MDM4JTJDMC42MTc3MTA5OTUwMTY0MTU3JTJDMC42MTg3OTA3NjQzMTIyMzQ4JTJDMC42MTk4NjE0ODcyOTU0NTE3JTJDMC42MjA5MjMyODg4MTIwMjY5JTJDMC42MjE5NzYyOTEzMjQ4ODclMkMwLjYyMzAyMDYxNDk3MTY3MjclMkMwLjYyNDA1NjM3NzYyMDgwMDQlMkMwLjYyNTA4MzY5NDkyNTg5MTglMkMwLjYyNjEwMjY4MDM3ODYyODklMkMwLjYyNzExMzQ0NTM2MDA4ODIlMkMwLjYyODExNjA5OTE5MDU5OTYlMkMwLjYyOTExMDc0OTE3ODE5MDclMkMwLjYzMDA5NzUwMDY2NTY0ODclMkMwLjYzMTA3NjQ1NzA3NjI1ODglMkMwLjYzMjA0NzcxOTk1ODI1NjElMkMwLjYzMzAxMTM4OTAyODAzMjQlMkMwLjYzMzk2NzU2MjIxMjE0MzclMkMwLjYzNDkxNjMzNTY4ODE1MDYlMkMwLjYzNTg1NzgwMzkyNDMzNzclMkMwLjYzNjc5MjA1OTcxODMzNjclMkMwLjYzNzcxOTE5NDIzNDcwMjklMkMwLjYzODYzOTI5NzA0MTQ2MjklMkMwLjYzOTU1MjQ1NjE0NTY3OTElMkMwLjY0MDQ1ODc1ODAyODA1NDMlMkMwLjY0MTM1ODI4NzY3NjYwOTIlMkMwLjY0MjI1MTEyODYxOTQ2MjElMkMwLjY0MzEzNzM2Mjk1NjczODUlMkMwLjY0NDAxNzA3MTM5MTYzNjklMkMwLjY0NDg5MDMzMzI2MDY3NjElMkMwLjY0NTc1NzIyNjU2MzE1NDYlMkMwLjY0NjYxNzgyNzk4OTgzNjIlMkMwLjY0NzQ3MjIxMjk1MDg5NzQlMkMwLjY0ODMyMDQ1NTYwMzE0NjElMkMwLjY0OTE2MjYyODg3NjU0NzUlMkMwLjY0OTk5ODgwNDUwMDA2NDYlMkMwLjY1MDgyOTA1MzAyNjg0NDQlMkMwLjY1MTY1MzQ0Mzg1ODc2MjQlMkMwLjY1MjQ3MjA0NTI3MDM0ODclMkMwLjY1MzI4NDkyNDQzMjExMTclMkMwLjY1NDA5MjE0NzQzMzI3NjQlMkMwLjY1NDg5Mzc3OTMwMzk1ODQlMkMwLjY1NTY4OTg4NDAzNjc4NTMlMkMwLjY1NjQ4MDUyNDYwNzk4NSUyQzAuNjU3MjY1NzYyOTk3OTU0NiUyQzAuNjU4MDQ1NjYwMjExMzI0MyUyQzAuNjU4ODIwMjc2Mjk2NTMzJTJDMC42NTk1ODk2NzAzNjQ5MjkxJTJDMC42NjAzNTM5MDA2MDk0MDY2JTJDMC42NjExMTMwMjQzMjI1OTM3JTJDMC42NjE4NjcwOTc5MTQ2MDY5JTJDMC42NjI2MTYxNzY5MzAzNzcyJTJDMC42NjMzNjAzMTYwNjY1Njc1JTJDMC42NjQwOTk1NjkxODgwODcyJTJDMC42NjQ4MzM5ODkzNDQyMTg5JTJDMC42NjU1NjM2Mjg3ODQzNjQzJTJDMC42NjYyODg1Mzg5NzM0MjMyJTJDMC42NjcwMDg3NzA2MDY4MTQ1JTJDMC42Njc3MjQzNzM2MjUxNDY3JTJDMC42Njg0MzUzOTcyMjg1NTA4JTJDMC42NjkxNDE4ODk4OTA2ODQ1JTJDMC42Njk4NDM4OTkzNzI0MTIlMkMwLjY3MDU0MTQ3MjczNTE3NDclMkMwLjY3MTIzNDY1NjM1NDA1NjglMkMwLjY3MTkyMzQ5NTkzMDU1MzQlMkMwLjY3MjYwODAzNjUwNTA1NDklMkMwLjY3MzI4ODMyMjQ2OTA0NDYlMkMwLjY3Mzk2NDM5NzU3NzAyOTUlMkMwLjY3NDYzNjMwNDk1ODIwMSUyQzAuNjc1MzA0MDg3MTI3ODM4NiUyQzAuNjc1OTY3Nzg1OTk4NDYxNSUyQzAuNjc2NjI3NDQyODkwNzMyOCUyQzAuNjc3MjgzMDk4NTQ0MTI2NyUyQzAuNjc3OTM0NzkzMTI3MzYxMiUyQzAuNjc4NTgyNTY2MjQ4NjAyOSUyQzAuNjc5MjI2NDU2OTY1NDUyOCUyQzAuNjc5ODY2NTAzNzk0NzE0JTJDMC42ODA1MDI3NDQ3MjE5NTA5JTJDMC42ODExMzUyMTcyMTA4NDE0JTJDMC42ODE3NjM5NTgyMTIzMzE4JTJDMC42ODIzODkwMDQxNzM1OTQ1JTJDMC42ODMwMTAzOTEwNDY3OTc1JTJDMC42ODM2MjgxNTQyOTc2ODg1JTJDMC42ODQyNDIzMjg5MTM5OTYxJTJDMC42ODQ4NTI5NDk0MTM2NTg2JTJDMC42ODU0NjAwNDk4NTI4NzglMkMwLjY4NjA2MzY2MzgzNDAwNzklMkMwLjY4NjY2MzgyNDUxMzI3NiUyQzAuNjg3MjYwNTY0NjA4MzUwOSUyQzAuNjg3ODUzOTE2NDA1NzQ4MiUyQzAuNjg4NDQzOTExNzY4MDg4MyUyQzAuNjg5MDMwNTgyMTQxMjA0OCUyQzAuNjg5NjEzOTU4NTYxMTA4NyUyQzAuNjkwMTk0MDcxNjYwODA5NSUyQzAuNjkwNzcwOTUxNjc3MDAwNCUyQzAuNjkxMzQ0NjI4NDU2NjA5OCUyQzAuNjkxOTE1MTMxNDYzMjE2NCUyQzAuNjkyNDgyNDg5NzgzMzQyNSUyQzAuNjkzMDQ2NzMyMTMyNjE3NSUyQzAuNjkzNjA3ODg2ODYxODIwMSUyQzAuNjk0MTY1OTgxOTYyODAxOSUyQzAuNjk0NzIxMDQ1MDc0MjkzMSUyQzAuNjk1MjczMTAzNDg3NTk0MSUyQzAuNjk1ODIyMTg0MTUyMTU3NCUyQzAuNjk2MzY4MzEzNjgxMDU3OSUyQzAuNjk2OTExNTE4MzU2MzU5NCUyQzAuNjk3NDUxODI0MTM0Mzc1MiUyQzAuNjk3OTg5MjU2NjUwODI4NiUyQzAuNjk4NTIzODQxMjI1OTEyNSUyQzAuNjk5MDU1NjAyODY5MjU0MyUyQzAuNjk5NTg0NTY2Mjg0NzgzMyUyQzAuNzAwMTEwNzU1ODc1NTA3MSUyQzAuNzAwNjM0MTk1NzQ4MTk2NyUyQzAuNzAxMTU0OTA5NzE3OTg0NiUyQzAuNzAxNjcyOTIxMzEyODcxOCUyQzAuNzAyMTg4MjUzNzc4MTU2MSUyQzAuNzAyNzAwOTMwMDgwNzcyNSUyQzAuNzAzMjEwOTcyOTEzNTU1NiUyQzAuNzAzNzE4NDA0Njk5NDIxMiUyQzAuNzA0MjIzMjQ3NTk1NDcxMSUyQzAuNzA0NzI1NTIzNDk3MDIxMiUyQzAuNzA1MjI1MjU0MDQxNTU3MyUyQzAuNzA1NzIyNDYwNjEyNjE1MiUyQzAuNzA2MjE3MTY0MzQzNTkyOCUyQzAuNzA2NzA5Mzg2MTIxNDkxOSUyQzAuNzA3MTk5MTQ2NTkwNTg5MSUyQzAuNzA3Njg2NDY2MTU2MDQ2MSUyQzAuNzA4MTcxMzY0OTg3NDQ4NCUyQzAuNzA4NjUzODYzMDIyMjg0NiUyQzAuNzA5MTMzOTc5OTY5MzYxNyUyQzAuNzA5NjExNzM1MzEyMTU5NCUyQzAuNzEwMDg3MTQ4MzEyMTIzOCUyQzAuNzEwNTYwMjM4MDExOTA1NiUyQzAuNzExMDMxMDIzMjM4NTM2NCUyQzAuNzExNDk5NTIyNjA2NTUyOCUyQzAuNzExOTY1NzU0NTIxMDYyOSUyQzAuNzEyNDI5NzM3MTgwNzYwNSUyQzAuNzEyODkxNDg4NTgwODg2NyUyQzAuNzEzMzUxMDI2NTE2MTM3OCUyQzAuNzEzODA4MzY4NTgzNTI2MSUyQzAuNzE0MjYzNTMyMTg1MTg2OSUyQzAuNzE0NzE2NTM0NTMxMTQwOCUyQzAuNzE1MTY3MzkyNjQyMDA1OSUyQzAuNzE1NjE2MTIzMzUxNjY0OSUyQzAuNzE2MDYyNzQzMzA5ODg2MSUyQzAuNzE2NTA3MjY4OTg0ODk4NCUyQzAuNzE2OTQ5NzE2NjY1OTI1NiUyQzAuNzE3MzkwMTAyNDY1NjczNyUyQzAuNzE3ODI4NDQyMzIyNzc5MyUyQzAuNzE4MjY0NzUyMDA0MjE1OCUyQzAuNzE4Njk5MDQ3MTA3NjU4JTJDMC43MTkxMzEzNDMwNjM4MDkxJTJDMC43MTk1NjE2NTUxMzg2ODY5JTJDMC43MTk5ODk5OTg0MzU4NzI5JTJDMC43MjA0MTYzODc4OTg3MjQyJTJDMC43MjA4NDA4MzgzMTI1NDklMkMwLjcyMTI2MzM2NDMwNjc0MzglMkMwLjcyMTY4Mzk4MDM1Njg5OTIlMkMwLjcyMjEwMjcwMDc4Njg2ODElMkMwLjcyMjUxOTUzOTc3MDgwMTYlMkMwLjcyMjkzNDUxMTMzNTE1MTYlMkMwLjcyMzM0NzYyOTM2MDYzODklMkMwLjcyMzc1ODkwNzU4NDE5MjclMkMwLjcyNDE2ODM1OTYwMDg1NjMlMkMwLjcyNDU3NTk5ODg2NTY2MjQlMkMwLjcyNDk4MTgzODY5NTQ3OSUyQzAuNzI1Mzg1ODkyMjcwODI0NyUyQzAuNzI1Nzg4MTcyNjM3NjU2JTJDMC43MjYxODg2OTI3MDkxMjU5JTJDMC43MjY1ODc0NjUyNjczMTM3JTJDMC43MjY5ODQ1MDI5NjQ5MjglMkMwLjcyNzM3OTgxODMyNjk4MjYlMkMwLjcyNzc3MzQyMzc1MjQ0NzElMkMwLjcyODE2NTMzMTUxNTg2OTQlMkMwLjcyODU1NTU1Mzc2ODk3NDUlMkMwLjcyODk0NDEwMjU0MjIzNzclMkMwLjcyOTMzMDk4OTc0NjQzMjglMkMwLjcyOTcxNjIyNzE3NDE1ODElMkMwLjczMDA5OTgyNjUwMTMzNjElMkMwLjczMDQ4MTc5OTI4ODY5MTQlMkMwLjczMDg2MjE1Njk4MzIwNjYlMkMwLjczMTI0MDkxMDkxOTU1NDglMkMwLjczMTYxODA3MjMyMTUwOTMlMkMwLjczMTk5MzY1MjMwMzMzMzUlMkMwLjczMjM2NzY2MTg3MTE0OTUlMkMwLjczMjc0MDExMTkyNDI4NDclMkMwLjczMzExMTAxMzI1NjU5NzYlMkMwLjczMzQ4MDM3NjU1Nzc4NjIlMkMwLjczMzg0ODIxMjQxNDY3MzclMkMwLjczNDIxNDUzMTMxMjQ3NjglMkMwLjczNDU3OTM0MzYzNjA1NDUlMkMwLjczNDk0MjY1OTY3MTEzNzMlMkMwLjczNTMwNDQ4OTYwNTUzOSUyQzAuNzM1NjY0ODQzNTMwMzUxMyUyQzAuNzM2MDIzNzMxNDQxMTE4MSUyQzAuNzM2MzgxMTYzMjM4OTk1JTJDMC43MzY3MzcxNDg3MzE4OTAzJTJDMC43MzcwOTE2OTc2MzU1ODk5JTJDMC43Mzc0NDQ4MTk1NzQ4NjUlMkMwLjczNzc5NjUyNDA4NDU2NDElMkMwLjczODE0NjgyMDYxMDY4ODQlMkMwLjczODQ5NTcxODUxMTQ1MzYlMkMwLjczODg0MzIyNzA1ODMzMjUlMkMwLjczOTE4OTM1NTQzNzA4NjElMkMwLjczOTUzNDExMjc0ODc3ODclMkMwLjczOTg3NzUwODAxMDc3NjYlMkMwLjc0MDIxOTU1MDE1NzczNTMlMkMwLjc0MDU2MDI0ODA0MjU3MDUlMkMwLjc0MDg5OTYxMDQzNzQxNTklMkMwLjc0MTIzNzY0NjAzNDU2NzMlMkMwLjc0MTU3NDM2MzQ0NzQxNDIlMkMwLjc0MTkwOTc3MTIxMTM1NTMlMkMwLjc0MjI0Mzg3Nzc4NDcwNDYlMkMwLjc0MjU3NjY5MTU0OTU4MjclMkMwLjc0MjkwODIyMDgxMjc5NTclMkMwLjc0MzIzODQ3MzgwNjcwMjIlMkMwLjc0MzU2NzQ1ODY5MDA2NzklMkMwLjc0Mzg5NTE4MzU0ODkwOCUyQzAuNzQ0MjIxNjU2Mzk3MzE5JTJDMC43NDQ1NDY4ODUxNzgyOTY3JTJDMC43NDQ4NzA4Nzc3NjQ1NDYlMkMwLjc0NTE5MzY0MTk1OTI3NTclMkMwLjc0NTUxNTE4NTQ5Njk4NjclMkMwLjc0NTgzNTUxNjA0NDI0NDglMkMwLjc0NjE1NDY0MTIwMDQ0NiUyQzAuNzQ2NDcyNTY4NDk4NTcwOSUyQzAuNzQ2Nzg5MzA1NDA1OTI3NyUyQzAuNzQ3MTA0ODU5MzI0ODg1NyUyQzAuNzQ3NDE5MjM3NTkzNTk4OSUyQzAuNzQ3NzMyNDQ3NDg2NzE5OSUyQzAuNzQ4MDQ0NDk2MjE2MTAyNiUyQzAuNzQ4MzU1MzkwOTMxNDk5NyUyQzAuNzQ4NjY1MTM4NzIxMjQ0JTJDMC43NDg5NzM3NDY2MTI5MjczJTJDMC43NDkyODEyMjE1NzQwNjYlMkMwLjc0OTU4NzU3MDUxMjc1ODclMkMwLjc0OTg5MjgwMDI3ODMzNzQlMkMwLjc1MDE5NjkxNzY2MjAwNTQlMkMwLjc1MDQ5OTkyOTM5NzQ3MSUyQzAuNzUwODAxODQyMTYxNTcxJTJDMC43NTExMDI2NjI1NzQ4ODUzJTJDMC43NTE0MDIzOTcyMDIzNDU3JTJDMC43NTE3MDEwNTI1NTM4MzM4JTJDMC43NTE5OTg2MzUwODQ3NzI5JTJDMC43NTIyOTUxNTExOTY3MTI5JTJDMC43NTI1OTA2MDcyMzc5MDM3JTJDMC43NTI4ODUwMDk1MDM4Njc2JTJDMC43NTMxNzgzNjQyMzc5NTY4JTJDMC43NTM0NzA2Nzc2MzE5MSUyQzAuNzUzNzYxOTU1ODI2Mzk3MyUyQzAuNzU0MDUyMjA0OTExNTYxOCUyQzAuNzU0MzQxNDMwOTI3NTUwNiUyQzAuNzU0NjI5NjM5ODY1MDQxOCUyQzAuNzU0OTE2ODM3NjY1NzY0JTJDMC43NTUyMDMwMzAyMjMwMDczJTJDMC43NTU0ODgyMjMzODIxMzA2JTJDMC43NTU3NzI0MjI5NDEwNjE2JTVEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMnNjYXR0ZXIlNUMlMjIlN0QlNUQlMkMlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0IlNUMlMjJ0ZW1wbGF0ZSU1QyUyMiUzQSU3QiU1QyUyMmRhdGElNUMlMjIlM0ElN0IlNUMlMjJiYXIlNUMlMjIlM0ElNUIlN0IlNUMlMjJlcnJvcl94JTVDJTIyJTNBJTdCJTVDJTIyY29sb3IlNUMlMjIlM0ElNUMlMjIlMjMyYTNmNWYlNUMlMjIlN0QlMkMlNUMlMjJlcnJvcl95JTVDJTIyJTNBJTdCJTVDJTIyY29sb3IlNUMlMjIlM0ElNUMlMjIlMjMyYTNmNWYlNUMlMjIlN0QlMkMlNUMlMjJtYXJrZXIlNUMlMjIlM0ElN0IlNUMlMjJsaW5lJTVDJTIyJTNBJTdCJTVDJTIyY29sb3IlNUMlMjIlM0ElNUMlMjIlMjNFNUVDRjYlNUMlMjIlMkMlNUMlMjJ3aWR0aCU1QyUyMiUzQTAuNSU3RCUyQyU1QyUyMnBhdHRlcm4lNUMlMjIlM0ElN0IlNUMlMjJmaWxsbW9kZSU1QyUyMiUzQSU1QyUyMm92ZXJsYXklNUMlMjIlMkMlNUMlMjJzaXplJTVDJTIyJTNBMTAlMkMlNUMlMjJzb2xpZGl0eSU1QyUyMiUzQTAuMiU3RCU3RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJiYXIlNUMlMjIlN0QlNUQlMkMlNUMlMjJiYXJwb2xhciU1QyUyMiUzQSU1QiU3QiU1QyUyMm1hcmtlciU1QyUyMiUzQSU3QiU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvciU1QyUyMiUzQSU1QyUyMiUyM0U1RUNGNiU1QyUyMiUyQyU1QyUyMndpZHRoJTVDJTIyJTNBMC41JTdEJTJDJTVDJTIycGF0dGVybiU1QyUyMiUzQSU3QiU1QyUyMmZpbGxtb2RlJTVDJTIyJTNBJTVDJTIyb3ZlcmxheSU1QyUyMiUyQyU1QyUyMnNpemUlNUMlMjIlM0ExMCUyQyU1QyUyMnNvbGlkaXR5JTVDJTIyJTNBMC4yJTdEJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmJhcnBvbGFyJTVDJTIyJTdEJTVEJTJDJTVDJTIyY2FycGV0JTVDJTIyJTNBJTVCJTdCJTVDJTIyYWF4aXMlNUMlMjIlM0ElN0IlNUMlMjJlbmRsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjIlMjMyYTNmNWYlNUMlMjIlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmxpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIybWlub3JncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnN0YXJ0bGluZWNvbG9yJTVDJTIyJTNBJTVDJTIyJTIzMmEzZjVmJTVDJTIyJTdEJTJDJTVDJTIyYmF4aXMlNUMlMjIlM0ElN0IlNUMlMjJlbmRsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjIlMjMyYTNmNWYlNUMlMjIlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmxpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIybWlub3JncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnN0YXJ0bGluZWNvbG9yJTVDJTIyJTNBJTVDJTIyJTIzMmEzZjVmJTVDJTIyJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmNhcnBldCU1QyUyMiU3RCU1RCUyQyU1QyUyMmNob3JvcGxldGglNUMlMjIlM0ElNUIlN0IlNUMlMjJjb2xvcmJhciU1QyUyMiUzQSU3QiU1QyUyMm91dGxpbmV3aWR0aCU1QyUyMiUzQTAlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJjaG9yb3BsZXRoJTVDJTIyJTdEJTVEJTJDJTVDJTIyY29udG91ciU1QyUyMiUzQSU1QiU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTJDJTVDJTIyY29sb3JzY2FsZSU1QyUyMiUzQSU1QiU1QjAuMCUyQyU1QyUyMiUyMzBkMDg4NyU1QyUyMiU1RCUyQyU1QjAuMTExMTExMTExMTExMTExMSUyQyU1QyUyMiUyMzQ2MDM5ZiU1QyUyMiU1RCUyQyU1QjAuMjIyMjIyMjIyMjIyMjIyMiUyQyU1QyUyMiUyMzcyMDFhOCU1QyUyMiU1RCUyQyU1QjAuMzMzMzMzMzMzMzMzMzMzMyUyQyU1QyUyMiUyMzljMTc5ZSU1QyUyMiU1RCUyQyU1QjAuNDQ0NDQ0NDQ0NDQ0NDQ0NCUyQyU1QyUyMiUyM2JkMzc4NiU1QyUyMiU1RCUyQyU1QjAuNTU1NTU1NTU1NTU1NTU1NiUyQyU1QyUyMiUyM2Q4NTc2YiU1QyUyMiU1RCUyQyU1QjAuNjY2NjY2NjY2NjY2NjY2NiUyQyU1QyUyMiUyM2VkNzk1MyU1QyUyMiU1RCUyQyU1QjAuNzc3Nzc3Nzc3Nzc3Nzc3OCUyQyU1QyUyMiUyM2ZiOWYzYSU1QyUyMiU1RCUyQyU1QjAuODg4ODg4ODg4ODg4ODg4OCUyQyU1QyUyMiUyM2ZkY2EyNiU1QyUyMiU1RCUyQyU1QjEuMCUyQyU1QyUyMiUyM2YwZjkyMSU1QyUyMiU1RCU1RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJjb250b3VyJTVDJTIyJTdEJTVEJTJDJTVDJTIyY29udG91cmNhcnBldCU1QyUyMiUzQSU1QiU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmNvbnRvdXJjYXJwZXQlNUMlMjIlN0QlNUQlMkMlNUMlMjJoZWF0bWFwJTVDJTIyJTNBJTVCJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlMkMlNUMlMjJjb2xvcnNjYWxlJTVDJTIyJTNBJTVCJTVCMC4wJTJDJTVDJTIyJTIzMGQwODg3JTVDJTIyJTVEJTJDJTVCMC4xMTExMTExMTExMTExMTExJTJDJTVDJTIyJTIzNDYwMzlmJTVDJTIyJTVEJTJDJTVCMC4yMjIyMjIyMjIyMjIyMjIyJTJDJTVDJTIyJTIzNzIwMWE4JTVDJTIyJTVEJTJDJTVCMC4zMzMzMzMzMzMzMzMzMzMzJTJDJTVDJTIyJTIzOWMxNzllJTVDJTIyJTVEJTJDJTVCMC40NDQ0NDQ0NDQ0NDQ0NDQ0JTJDJTVDJTIyJTIzYmQzNzg2JTVDJTIyJTVEJTJDJTVCMC41NTU1NTU1NTU1NTU1NTU2JTJDJTVDJTIyJTIzZDg1NzZiJTVDJTIyJTVEJTJDJTVCMC42NjY2NjY2NjY2NjY2NjY2JTJDJTVDJTIyJTIzZWQ3OTUzJTVDJTIyJTVEJTJDJTVCMC43Nzc3Nzc3Nzc3Nzc3Nzc4JTJDJTVDJTIyJTIzZmI5ZjNhJTVDJTIyJTVEJTJDJTVCMC44ODg4ODg4ODg4ODg4ODg4JTJDJTVDJTIyJTIzZmRjYTI2JTVDJTIyJTVEJTJDJTVCMS4wJTJDJTVDJTIyJTIzZjBmOTIxJTVDJTIyJTVEJTVEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmhlYXRtYXAlNUMlMjIlN0QlNUQlMkMlNUMlMjJoZWF0bWFwZ2wlNUMlMjIlM0ElNUIlN0IlNUMlMjJjb2xvcmJhciU1QyUyMiUzQSU3QiU1QyUyMm91dGxpbmV3aWR0aCU1QyUyMiUzQTAlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCUyQyU1QyUyMmNvbG9yc2NhbGUlNUMlMjIlM0ElNUIlNUIwLjAlMkMlNUMlMjIlMjMwZDA4ODclNUMlMjIlNUQlMkMlNUIwLjExMTExMTExMTExMTExMTElMkMlNUMlMjIlMjM0NjAzOWYlNUMlMjIlNUQlMkMlNUIwLjIyMjIyMjIyMjIyMjIyMjIlMkMlNUMlMjIlMjM3MjAxYTglNUMlMjIlNUQlMkMlNUIwLjMzMzMzMzMzMzMzMzMzMzMlMkMlNUMlMjIlMjM5YzE3OWUlNUMlMjIlNUQlMkMlNUIwLjQ0NDQ0NDQ0NDQ0NDQ0NDQlMkMlNUMlMjIlMjNiZDM3ODYlNUMlMjIlNUQlMkMlNUIwLjU1NTU1NTU1NTU1NTU1NTYlMkMlNUMlMjIlMjNkODU3NmIlNUMlMjIlNUQlMkMlNUIwLjY2NjY2NjY2NjY2NjY2NjYlMkMlNUMlMjIlMjNlZDc5NTMlNUMlMjIlNUQlMkMlNUIwLjc3Nzc3Nzc3Nzc3Nzc3NzglMkMlNUMlMjIlMjNmYjlmM2ElNUMlMjIlNUQlMkMlNUIwLjg4ODg4ODg4ODg4ODg4ODglMkMlNUMlMjIlMjNmZGNhMjYlNUMlMjIlNUQlMkMlNUIxLjAlMkMlNUMlMjIlMjNmMGY5MjElNUMlMjIlNUQlNUQlMkMlNUMlMjJ0eXBlJTVDJTIyJTNBJTVDJTIyaGVhdG1hcGdsJTVDJTIyJTdEJTVEJTJDJTVDJTIyaGlzdG9ncmFtJTVDJTIyJTNBJTVCJTdCJTVDJTIybWFya2VyJTVDJTIyJTNBJTdCJTVDJTIycGF0dGVybiU1QyUyMiUzQSU3QiU1QyUyMmZpbGxtb2RlJTVDJTIyJTNBJTVDJTIyb3ZlcmxheSU1QyUyMiUyQyU1QyUyMnNpemUlNUMlMjIlM0ExMCUyQyU1QyUyMnNvbGlkaXR5JTVDJTIyJTNBMC4yJTdEJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmhpc3RvZ3JhbSU1QyUyMiU3RCU1RCUyQyU1QyUyMmhpc3RvZ3JhbTJkJTVDJTIyJTNBJTVCJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlMkMlNUMlMjJjb2xvcnNjYWxlJTVDJTIyJTNBJTVCJTVCMC4wJTJDJTVDJTIyJTIzMGQwODg3JTVDJTIyJTVEJTJDJTVCMC4xMTExMTExMTExMTExMTExJTJDJTVDJTIyJTIzNDYwMzlmJTVDJTIyJTVEJTJDJTVCMC4yMjIyMjIyMjIyMjIyMjIyJTJDJTVDJTIyJTIzNzIwMWE4JTVDJTIyJTVEJTJDJTVCMC4zMzMzMzMzMzMzMzMzMzMzJTJDJTVDJTIyJTIzOWMxNzllJTVDJTIyJTVEJTJDJTVCMC40NDQ0NDQ0NDQ0NDQ0NDQ0JTJDJTVDJTIyJTIzYmQzNzg2JTVDJTIyJTVEJTJDJTVCMC41NTU1NTU1NTU1NTU1NTU2JTJDJTVDJTIyJTIzZDg1NzZiJTVDJTIyJTVEJTJDJTVCMC42NjY2NjY2NjY2NjY2NjY2JTJDJTVDJTIyJTIzZWQ3OTUzJTVDJTIyJTVEJTJDJTVCMC43Nzc3Nzc3Nzc3Nzc3Nzc4JTJDJTVDJTIyJTIzZmI5ZjNhJTVDJTIyJTVEJTJDJTVCMC44ODg4ODg4ODg4ODg4ODg4JTJDJTVDJTIyJTIzZmRjYTI2JTVDJTIyJTVEJTJDJTVCMS4wJTJDJTVDJTIyJTIzZjBmOTIxJTVDJTIyJTVEJTVEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmhpc3RvZ3JhbTJkJTVDJTIyJTdEJTVEJTJDJTVDJTIyaGlzdG9ncmFtMmRjb250b3VyJTVDJTIyJTNBJTVCJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlMkMlNUMlMjJjb2xvcnNjYWxlJTVDJTIyJTNBJTVCJTVCMC4wJTJDJTVDJTIyJTIzMGQwODg3JTVDJTIyJTVEJTJDJTVCMC4xMTExMTExMTExMTExMTExJTJDJTVDJTIyJTIzNDYwMzlmJTVDJTIyJTVEJTJDJTVCMC4yMjIyMjIyMjIyMjIyMjIyJTJDJTVDJTIyJTIzNzIwMWE4JTVDJTIyJTVEJTJDJTVCMC4zMzMzMzMzMzMzMzMzMzMzJTJDJTVDJTIyJTIzOWMxNzllJTVDJTIyJTVEJTJDJTVCMC40NDQ0NDQ0NDQ0NDQ0NDQ0JTJDJTVDJTIyJTIzYmQzNzg2JTVDJTIyJTVEJTJDJTVCMC41NTU1NTU1NTU1NTU1NTU2JTJDJTVDJTIyJTIzZDg1NzZiJTVDJTIyJTVEJTJDJTVCMC42NjY2NjY2NjY2NjY2NjY2JTJDJTVDJTIyJTIzZWQ3OTUzJTVDJTIyJTVEJTJDJTVCMC43Nzc3Nzc3Nzc3Nzc3Nzc4JTJDJTVDJTIyJTIzZmI5ZjNhJTVDJTIyJTVEJTJDJTVCMC44ODg4ODg4ODg4ODg4ODg4JTJDJTVDJTIyJTIzZmRjYTI2JTVDJTIyJTVEJTJDJTVCMS4wJTJDJTVDJTIyJTIzZjBmOTIxJTVDJTIyJTVEJTVEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmhpc3RvZ3JhbTJkY29udG91ciU1QyUyMiU3RCU1RCUyQyU1QyUyMm1lc2gzZCU1QyUyMiUzQSU1QiU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMm1lc2gzZCU1QyUyMiU3RCU1RCUyQyU1QyUyMnBhcmNvb3JkcyU1QyUyMiUzQSU1QiU3QiU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvcmJhciU1QyUyMiUzQSU3QiU1QyUyMm91dGxpbmV3aWR0aCU1QyUyMiUzQTAlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCU3RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJwYXJjb29yZHMlNUMlMjIlN0QlNUQlMkMlNUMlMjJwaWUlNUMlMjIlM0ElNUIlN0IlNUMlMjJhdXRvbWFyZ2luJTVDJTIyJTNBdHJ1ZSUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJwaWUlNUMlMjIlN0QlNUQlMkMlNUMlMjJzY2F0dGVyJTVDJTIyJTNBJTVCJTdCJTVDJTIybWFya2VyJTVDJTIyJTNBJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlN0QlMkMlNUMlMjJ0eXBlJTVDJTIyJTNBJTVDJTIyc2NhdHRlciU1QyUyMiU3RCU1RCUyQyU1QyUyMnNjYXR0ZXIzZCU1QyUyMiUzQSU1QiU3QiU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvcmJhciU1QyUyMiUzQSU3QiU1QyUyMm91dGxpbmV3aWR0aCU1QyUyMiUzQTAlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCU3RCUyQyU1QyUyMm1hcmtlciU1QyUyMiUzQSU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMnNjYXR0ZXIzZCU1QyUyMiU3RCU1RCUyQyU1QyUyMnNjYXR0ZXJjYXJwZXQlNUMlMjIlM0ElNUIlN0IlNUMlMjJtYXJrZXIlNUMlMjIlM0ElN0IlNUMlMjJjb2xvcmJhciU1QyUyMiUzQSU3QiU1QyUyMm91dGxpbmV3aWR0aCU1QyUyMiUzQTAlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCU3RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJzY2F0dGVyY2FycGV0JTVDJTIyJTdEJTVEJTJDJTVDJTIyc2NhdHRlcmdlbyU1QyUyMiUzQSU1QiU3QiU1QyUyMm1hcmtlciU1QyUyMiUzQSU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMnNjYXR0ZXJnZW8lNUMlMjIlN0QlNUQlMkMlNUMlMjJzY2F0dGVyZ2wlNUMlMjIlM0ElNUIlN0IlNUMlMjJtYXJrZXIlNUMlMjIlM0ElN0IlNUMlMjJjb2xvcmJhciU1QyUyMiUzQSU3QiU1QyUyMm91dGxpbmV3aWR0aCU1QyUyMiUzQTAlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCU3RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJzY2F0dGVyZ2wlNUMlMjIlN0QlNUQlMkMlNUMlMjJzY2F0dGVybWFwYm94JTVDJTIyJTNBJTVCJTdCJTVDJTIybWFya2VyJTVDJTIyJTNBJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlN0QlMkMlNUMlMjJ0eXBlJTVDJTIyJTNBJTVDJTIyc2NhdHRlcm1hcGJveCU1QyUyMiU3RCU1RCUyQyU1QyUyMnNjYXR0ZXJwb2xhciU1QyUyMiUzQSU1QiU3QiU1QyUyMm1hcmtlciU1QyUyMiUzQSU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMnNjYXR0ZXJwb2xhciU1QyUyMiU3RCU1RCUyQyU1QyUyMnNjYXR0ZXJwb2xhcmdsJTVDJTIyJTNBJTVCJTdCJTVDJTIybWFya2VyJTVDJTIyJTNBJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlN0QlMkMlNUMlMjJ0eXBlJTVDJTIyJTNBJTVDJTIyc2NhdHRlcnBvbGFyZ2wlNUMlMjIlN0QlNUQlMkMlNUMlMjJzY2F0dGVydGVybmFyeSU1QyUyMiUzQSU1QiU3QiU1QyUyMm1hcmtlciU1QyUyMiUzQSU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMnNjYXR0ZXJ0ZXJuYXJ5JTVDJTIyJTdEJTVEJTJDJTVDJTIyc3VyZmFjZSU1QyUyMiUzQSU1QiU3QiU1QyUyMmNvbG9yYmFyJTVDJTIyJTNBJTdCJTVDJTIyb3V0bGluZXdpZHRoJTVDJTIyJTNBMCUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTJDJTVDJTIyY29sb3JzY2FsZSU1QyUyMiUzQSU1QiU1QjAuMCUyQyU1QyUyMiUyMzBkMDg4NyU1QyUyMiU1RCUyQyU1QjAuMTExMTExMTExMTExMTExMSUyQyU1QyUyMiUyMzQ2MDM5ZiU1QyUyMiU1RCUyQyU1QjAuMjIyMjIyMjIyMjIyMjIyMiUyQyU1QyUyMiUyMzcyMDFhOCU1QyUyMiU1RCUyQyU1QjAuMzMzMzMzMzMzMzMzMzMzMyUyQyU1QyUyMiUyMzljMTc5ZSU1QyUyMiU1RCUyQyU1QjAuNDQ0NDQ0NDQ0NDQ0NDQ0NCUyQyU1QyUyMiUyM2JkMzc4NiU1QyUyMiU1RCUyQyU1QjAuNTU1NTU1NTU1NTU1NTU1NiUyQyU1QyUyMiUyM2Q4NTc2YiU1QyUyMiU1RCUyQyU1QjAuNjY2NjY2NjY2NjY2NjY2NiUyQyU1QyUyMiUyM2VkNzk1MyU1QyUyMiU1RCUyQyU1QjAuNzc3Nzc3Nzc3Nzc3Nzc3OCUyQyU1QyUyMiUyM2ZiOWYzYSU1QyUyMiU1RCUyQyU1QjAuODg4ODg4ODg4ODg4ODg4OCUyQyU1QyUyMiUyM2ZkY2EyNiU1QyUyMiU1RCUyQyU1QjEuMCUyQyU1QyUyMiUyM2YwZjkyMSU1QyUyMiU1RCU1RCUyQyU1QyUyMnR5cGUlNUMlMjIlM0ElNUMlMjJzdXJmYWNlJTVDJTIyJTdEJTVEJTJDJTVDJTIydGFibGUlNUMlMjIlM0ElNUIlN0IlNUMlMjJjZWxscyU1QyUyMiUzQSU3QiU1QyUyMmZpbGwlNUMlMjIlM0ElN0IlNUMlMjJjb2xvciU1QyUyMiUzQSU1QyUyMiUyM0VCRjBGOCU1QyUyMiU3RCUyQyU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTdEJTdEJTJDJTVDJTIyaGVhZGVyJTVDJTIyJTNBJTdCJTVDJTIyZmlsbCU1QyUyMiUzQSU3QiU1QyUyMmNvbG9yJTVDJTIyJTNBJTVDJTIyJTIzQzhENEUzJTVDJTIyJTdEJTJDJTVDJTIybGluZSU1QyUyMiUzQSU3QiU1QyUyMmNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlN0QlN0QlMkMlNUMlMjJ0eXBlJTVDJTIyJTNBJTVDJTIydGFibGUlNUMlMjIlN0QlNUQlN0QlMkMlNUMlMjJsYXlvdXQlNUMlMjIlM0ElN0IlNUMlMjJhbm5vdGF0aW9uZGVmYXVsdHMlNUMlMjIlM0ElN0IlNUMlMjJhcnJvd2NvbG9yJTVDJTIyJTNBJTVDJTIyJTIzMmEzZjVmJTVDJTIyJTJDJTVDJTIyYXJyb3doZWFkJTVDJTIyJTNBMCUyQyU1QyUyMmFycm93d2lkdGglNUMlMjIlM0ExJTdEJTJDJTVDJTIyYXV0b3R5cGVudW1iZXJzJTVDJTIyJTNBJTVDJTIyc3RyaWN0JTVDJTIyJTJDJTVDJTIyY29sb3JheGlzJTVDJTIyJTNBJTdCJTVDJTIyY29sb3JiYXIlNUMlMjIlM0ElN0IlNUMlMjJvdXRsaW5ld2lkdGglNUMlMjIlM0EwJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlN0QlMkMlNUMlMjJjb2xvcnNjYWxlJTVDJTIyJTNBJTdCJTVDJTIyZGl2ZXJnaW5nJTVDJTIyJTNBJTVCJTVCMCUyQyU1QyUyMiUyMzhlMDE1MiU1QyUyMiU1RCUyQyU1QjAuMSUyQyU1QyUyMiUyM2M1MWI3ZCU1QyUyMiU1RCUyQyU1QjAuMiUyQyU1QyUyMiUyM2RlNzdhZSU1QyUyMiU1RCUyQyU1QjAuMyUyQyU1QyUyMiUyM2YxYjZkYSU1QyUyMiU1RCUyQyU1QjAuNCUyQyU1QyUyMiUyM2ZkZTBlZiU1QyUyMiU1RCUyQyU1QjAuNSUyQyU1QyUyMiUyM2Y3ZjdmNyU1QyUyMiU1RCUyQyU1QjAuNiUyQyU1QyUyMiUyM2U2ZjVkMCU1QyUyMiU1RCUyQyU1QjAuNyUyQyU1QyUyMiUyM2I4ZTE4NiU1QyUyMiU1RCUyQyU1QjAuOCUyQyU1QyUyMiUyMzdmYmM0MSU1QyUyMiU1RCUyQyU1QjAuOSUyQyU1QyUyMiUyMzRkOTIyMSU1QyUyMiU1RCUyQyU1QjElMkMlNUMlMjIlMjMyNzY0MTklNUMlMjIlNUQlNUQlMkMlNUMlMjJzZXF1ZW50aWFsJTVDJTIyJTNBJTVCJTVCMC4wJTJDJTVDJTIyJTIzMGQwODg3JTVDJTIyJTVEJTJDJTVCMC4xMTExMTExMTExMTExMTExJTJDJTVDJTIyJTIzNDYwMzlmJTVDJTIyJTVEJTJDJTVCMC4yMjIyMjIyMjIyMjIyMjIyJTJDJTVDJTIyJTIzNzIwMWE4JTVDJTIyJTVEJTJDJTVCMC4zMzMzMzMzMzMzMzMzMzMzJTJDJTVDJTIyJTIzOWMxNzllJTVDJTIyJTVEJTJDJTVCMC40NDQ0NDQ0NDQ0NDQ0NDQ0JTJDJTVDJTIyJTIzYmQzNzg2JTVDJTIyJTVEJTJDJTVCMC41NTU1NTU1NTU1NTU1NTU2JTJDJTVDJTIyJTIzZDg1NzZiJTVDJTIyJTVEJTJDJTVCMC42NjY2NjY2NjY2NjY2NjY2JTJDJTVDJTIyJTIzZWQ3OTUzJTVDJTIyJTVEJTJDJTVCMC43Nzc3Nzc3Nzc3Nzc3Nzc4JTJDJTVDJTIyJTIzZmI5ZjNhJTVDJTIyJTVEJTJDJTVCMC44ODg4ODg4ODg4ODg4ODg4JTJDJTVDJTIyJTIzZmRjYTI2JTVDJTIyJTVEJTJDJTVCMS4wJTJDJTVDJTIyJTIzZjBmOTIxJTVDJTIyJTVEJTVEJTJDJTVDJTIyc2VxdWVudGlhbG1pbnVzJTVDJTIyJTNBJTVCJTVCMC4wJTJDJTVDJTIyJTIzMGQwODg3JTVDJTIyJTVEJTJDJTVCMC4xMTExMTExMTExMTExMTExJTJDJTVDJTIyJTIzNDYwMzlmJTVDJTIyJTVEJTJDJTVCMC4yMjIyMjIyMjIyMjIyMjIyJTJDJTVDJTIyJTIzNzIwMWE4JTVDJTIyJTVEJTJDJTVCMC4zMzMzMzMzMzMzMzMzMzMzJTJDJTVDJTIyJTIzOWMxNzllJTVDJTIyJTVEJTJDJTVCMC40NDQ0NDQ0NDQ0NDQ0NDQ0JTJDJTVDJTIyJTIzYmQzNzg2JTVDJTIyJTVEJTJDJTVCMC41NTU1NTU1NTU1NTU1NTU2JTJDJTVDJTIyJTIzZDg1NzZiJTVDJTIyJTVEJTJDJTVCMC42NjY2NjY2NjY2NjY2NjY2JTJDJTVDJTIyJTIzZWQ3OTUzJTVDJTIyJTVEJTJDJTVCMC43Nzc3Nzc3Nzc3Nzc3Nzc4JTJDJTVDJTIyJTIzZmI5ZjNhJTVDJTIyJTVEJTJDJTVCMC44ODg4ODg4ODg4ODg4ODg4JTJDJTVDJTIyJTIzZmRjYTI2JTVDJTIyJTVEJTJDJTVCMS4wJTJDJTVDJTIyJTIzZjBmOTIxJTVDJTIyJTVEJTVEJTdEJTJDJTVDJTIyY29sb3J3YXklNUMlMjIlM0ElNUIlNUMlMjIlMjM2MzZlZmElNUMlMjIlMkMlNUMlMjIlMjNFRjU1M0IlNUMlMjIlMkMlNUMlMjIlMjMwMGNjOTYlNUMlMjIlMkMlNUMlMjIlMjNhYjYzZmElNUMlMjIlMkMlNUMlMjIlMjNGRkExNUElNUMlMjIlMkMlNUMlMjIlMjMxOWQzZjMlNUMlMjIlMkMlNUMlMjIlMjNGRjY2OTIlNUMlMjIlMkMlNUMlMjIlMjNCNkU4ODAlNUMlMjIlMkMlNUMlMjIlMjNGRjk3RkYlNUMlMjIlMkMlNUMlMjIlMjNGRUNCNTIlNUMlMjIlNUQlMkMlNUMlMjJmb250JTVDJTIyJTNBJTdCJTVDJTIyY29sb3IlNUMlMjIlM0ElNUMlMjIlMjMyYTNmNWYlNUMlMjIlN0QlMkMlNUMlMjJnZW8lNUMlMjIlM0ElN0IlNUMlMjJiZ2NvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJsYWtlY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmxhbmRjb2xvciU1QyUyMiUzQSU1QyUyMiUyM0U1RUNGNiU1QyUyMiUyQyU1QyUyMnNob3dsYWtlcyU1QyUyMiUzQXRydWUlMkMlNUMlMjJzaG93bGFuZCU1QyUyMiUzQXRydWUlMkMlNUMlMjJzdWJ1bml0Y29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiU3RCUyQyU1QyUyMmhvdmVybGFiZWwlNUMlMjIlM0ElN0IlNUMlMjJhbGlnbiU1QyUyMiUzQSU1QyUyMmxlZnQlNUMlMjIlN0QlMkMlNUMlMjJob3Zlcm1vZGUlNUMlMjIlM0ElNUMlMjJjbG9zZXN0JTVDJTIyJTJDJTVDJTIybWFwYm94JTVDJTIyJTNBJTdCJTVDJTIyc3R5bGUlNUMlMjIlM0ElNUMlMjJsaWdodCU1QyUyMiU3RCUyQyU1QyUyMnBhcGVyX2JnY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnBsb3RfYmdjb2xvciU1QyUyMiUzQSU1QyUyMiUyM0U1RUNGNiU1QyUyMiUyQyU1QyUyMnBvbGFyJTVDJTIyJTNBJTdCJTVDJTIyYW5ndWxhcmF4aXMlNUMlMjIlM0ElN0IlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmxpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlN0QlMkMlNUMlMjJiZ2NvbG9yJTVDJTIyJTNBJTVDJTIyJTIzRTVFQ0Y2JTVDJTIyJTJDJTVDJTIycmFkaWFsYXhpcyU1QyUyMiUzQSU3QiU1QyUyMmdyaWRjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIybGluZWNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCU3RCUyQyU1QyUyMnNjZW5lJTVDJTIyJTNBJTdCJTVDJTIyeGF4aXMlNUMlMjIlM0ElN0IlNUMlMjJiYWNrZ3JvdW5kY29sb3IlNUMlMjIlM0ElNUMlMjIlMjNFNUVDRjYlNUMlMjIlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmdyaWR3aWR0aCU1QyUyMiUzQTIlMkMlNUMlMjJsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnNob3diYWNrZ3JvdW5kJTVDJTIyJTNBdHJ1ZSUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTJDJTVDJTIyemVyb2xpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTdEJTJDJTVDJTIyeWF4aXMlNUMlMjIlM0ElN0IlNUMlMjJiYWNrZ3JvdW5kY29sb3IlNUMlMjIlM0ElNUMlMjIlMjNFNUVDRjYlNUMlMjIlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmdyaWR3aWR0aCU1QyUyMiUzQTIlMkMlNUMlMjJsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnNob3diYWNrZ3JvdW5kJTVDJTIyJTNBdHJ1ZSUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTJDJTVDJTIyemVyb2xpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTdEJTJDJTVDJTIyemF4aXMlNUMlMjIlM0ElN0IlNUMlMjJiYWNrZ3JvdW5kY29sb3IlNUMlMjIlM0ElNUMlMjIlMjNFNUVDRjYlNUMlMjIlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmdyaWR3aWR0aCU1QyUyMiUzQTIlMkMlNUMlMjJsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnNob3diYWNrZ3JvdW5kJTVDJTIyJTNBdHJ1ZSUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTJDJTVDJTIyemVyb2xpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTdEJTdEJTJDJTVDJTIyc2hhcGVkZWZhdWx0cyU1QyUyMiUzQSU3QiU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvciU1QyUyMiUzQSU1QyUyMiUyMzJhM2Y1ZiU1QyUyMiU3RCU3RCUyQyU1QyUyMnRlcm5hcnklNUMlMjIlM0ElN0IlNUMlMjJhYXhpcyU1QyUyMiUzQSU3QiU1QyUyMmdyaWRjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIybGluZWNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJ0aWNrcyU1QyUyMiUzQSU1QyUyMiU1QyUyMiU3RCUyQyU1QyUyMmJheGlzJTVDJTIyJTNBJTdCJTVDJTIyZ3JpZGNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTJDJTVDJTIyYmdjb2xvciU1QyUyMiUzQSU1QyUyMiUyM0U1RUNGNiU1QyUyMiUyQyU1QyUyMmNheGlzJTVDJTIyJTNBJTdCJTVDJTIyZ3JpZGNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJsaW5lY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMnRpY2tzJTVDJTIyJTNBJTVDJTIyJTVDJTIyJTdEJTdEJTJDJTVDJTIydGl0bGUlNUMlMjIlM0ElN0IlNUMlMjJ4JTVDJTIyJTNBMC4wNSU3RCUyQyU1QyUyMnhheGlzJTVDJTIyJTNBJTdCJTVDJTIyYXV0b21hcmdpbiU1QyUyMiUzQXRydWUlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmxpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlMkMlNUMlMjJ0aXRsZSU1QyUyMiUzQSU3QiU1QyUyMnN0YW5kb2ZmJTVDJTIyJTNBMTUlN0QlMkMlNUMlMjJ6ZXJvbGluZWNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJ6ZXJvbGluZXdpZHRoJTVDJTIyJTNBMiU3RCUyQyU1QyUyMnlheGlzJTVDJTIyJTNBJTdCJTVDJTIyYXV0b21hcmdpbiU1QyUyMiUzQXRydWUlMkMlNUMlMjJncmlkY29sb3IlNUMlMjIlM0ElNUMlMjJ3aGl0ZSU1QyUyMiUyQyU1QyUyMmxpbmVjb2xvciU1QyUyMiUzQSU1QyUyMndoaXRlJTVDJTIyJTJDJTVDJTIydGlja3MlNUMlMjIlM0ElNUMlMjIlNUMlMjIlMkMlNUMlMjJ0aXRsZSU1QyUyMiUzQSU3QiU1QyUyMnN0YW5kb2ZmJTVDJTIyJTNBMTUlN0QlMkMlNUMlMjJ6ZXJvbGluZWNvbG9yJTVDJTIyJTNBJTVDJTIyd2hpdGUlNUMlMjIlMkMlNUMlMjJ6ZXJvbGluZXdpZHRoJTVDJTIyJTNBMiU3RCUyQyU1QyUyMm1hcmdpbiU1QyUyMiUzQSU3QiU1QyUyMmIlNUMlMjIlM0EwJTJDJTVDJTIybCU1QyUyMiUzQTAlMkMlNUMlMjJyJTVDJTIyJTNBMCUyQyU1QyUyMnQlNUMlMjIlM0EzMCU3RCU3RCU3RCUyQyU1QyUyMnNoYXBlcyU1QyUyMiUzQSU1QiU3QiU1QyUyMmxpbmUlNUMlMjIlM0ElN0IlNUMlMjJjb2xvciU1QyUyMiUzQSU1QyUyMmJsYWNrJTVDJTIyJTJDJTVDJTIyZGFzaCU1QyUyMiUzQSU1QyUyMmRhc2glNUMlMjIlMkMlNUMlMjJ3aWR0aCU1QyUyMiUzQTElN0QlMkMlNUMlMjJ0eXBlJTVDJTIyJTNBJTVDJTIybGluZSU1QyUyMiUyQyU1QyUyMngwJTVDJTIyJTNBMC4xJTJDJTVDJTIyeDElNUMlMjIlM0ExMCUyQyU1QyUyMnkwJTVDJTIyJTNBMC41JTJDJTVDJTIyeTElNUMlMjIlM0EwLjUlN0QlMkMlN0IlNUMlMjJsaW5lJTVDJTIyJTNBJTdCJTVDJTIyY29sb3IlNUMlMjIlM0ElNUMlMjJibGFjayU1QyUyMiUyQyU1QyUyMmRhc2glNUMlMjIlM0ElNUMlMjJkYXNoJTVDJTIyJTJDJTVDJTIyd2lkdGglNUMlMjIlM0ExJTdEJTJDJTVDJTIydHlwZSU1QyUyMiUzQSU1QyUyMmxpbmUlNUMlMjIlMkMlNUMlMjJ4MCU1QyUyMiUzQTAlMkMlNUMlMjJ4MSU1QyUyMiUzQTAlMkMlNUMlMjJ5MCU1QyUyMiUzQTAlMkMlNUMlMjJ5MSU1QyUyMiUzQTElN0QlNUQlMkMlNUMlMjJ5YXhpcyU1QyUyMiUzQSU3QiU1QyUyMnRpdGxlJTVDJTIyJTNBJTdCJTVDJTIydGV4dCU1QyUyMiUzQSU1QyUyMk4odCUyQyUyMHQwKSU1QyUyMiU3RCUyQyU1QyUyMnJhbmdlJTVDJTIyJTNBJTVCMCUyQzElNUQlN0QlMkMlNUMlMjJ0aXRsZSU1QyUyMiUzQSU3QiU1QyUyMnRleHQlNUMlMjIlM0ElNUMlMjJOKHQlMkMlMjB0MCklMjB2cyUyMHQlMjBmb3IlMjBEJTNEMC41JTVDJTIyJTdEJTJDJTVDJTIyeGF4aXMlNUMlMjIlM0ElN0IlNUMlMjJ0aXRsZSU1QyUyMiUzQSU3QiU1QyUyMnRleHQlNUMlMjIlM0ElNUMlMjJ0JTIwLSUyMHQwJTVDJTIyJTdEJTdEJTJDJTVDJTIyd2lkdGglNUMlMjIlM0E3MDAlMkMlNUMlMjJoZWlnaHQlNUMlMjIlM0E1MDAlN0QlMkMlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0IlNUMlMjJyZXNwb25zaXZlJTVDJTIyJTNBJTIwdHJ1ZSU3RCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCkudGhlbihmdW5jdGlvbigpJTdCJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU1Q252YXIlMjBnZCUyMCUzRCUyMGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjOTllNDRjZC0wYTM4LTQyOWMtYWQwMi1kNmY1ZjdmZGRkOGYnKSUzQiU1Q252YXIlMjB4JTIwJTNEJTIwbmV3JTIwTXV0YXRpb25PYnNlcnZlcihmdW5jdGlvbiUyMChtdXRhdGlvbnMlMkMlMjBvYnNlcnZlciklMjAlN0IlN0IlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwdmFyJTIwZGlzcGxheSUyMCUzRCUyMHdpbmRvdy5nZXRDb21wdXRlZFN0eWxlKGdkKS5kaXNwbGF5JTNCJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGlmJTIwKCFkaXNwbGF5JTIwJTdDJTdDJTIwZGlzcGxheSUyMCUzRCUzRCUzRCUyMCdub25lJyklMjAlN0IlN0IlNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwY29uc29sZS5sb2coJTVCZ2QlMkMlMjAncmVtb3ZlZCEnJTVEKSUzQiU1Q24lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBQbG90bHkucHVyZ2UoZ2QpJTNCJTVDbiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG9ic2VydmVyLmRpc2Nvbm5lY3QoKSUzQiU1Q24lMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlN0QlNUNuJTdEJTdEKSUzQiU1Q24lNUNuJTJGJTJGJTIwTGlzdGVuJTIwZm9yJTIwdGhlJTIwcmVtb3ZhbCUyMG9mJTIwdGhlJTIwZnVsbCUyMG5vdGVib29rJTIwY2VsbHMlNUNudmFyJTIwbm90ZWJvb2tDb250YWluZXIlMjAlM0QlMjBnZC5jbG9zZXN0KCclMjNub3RlYm9vay1jb250YWluZXInKSUzQiU1Q25pZiUyMChub3RlYm9va0NvbnRhaW5lciklMjAlN0IlN0IlNUNuJTIwJTIwJTIwJTIweC5vYnNlcnZlKG5vdGVib29rQ29udGFpbmVyJTJDJTIwJTdCY2hpbGRMaXN0JTNBJTIwdHJ1ZSU3RCklM0IlNUNuJTdEJTdEJTVDbiU1Q24lMkYlMkYlMjBMaXN0ZW4lMjBmb3IlMjB0aGUlMjBjbGVhcmluZyUyMG9mJTIwdGhlJTIwY3VycmVudCUyMG91dHB1dCUyMGNlbGwlNUNudmFyJTIwb3V0cHV0RWwlMjAlM0QlMjBnZC5jbG9zZXN0KCcub3V0cHV0JyklM0IlNUNuaWYlMjAob3V0cHV0RWwpJTIwJTdCJTdCJTVDbiUyMCUyMCUyMCUyMHgub2JzZXJ2ZShvdXRwdXRFbCUyQyUyMCU3QmNoaWxkTGlzdCUzQSUyMHRydWUlN0QpJTNCJTVDbiU3RCU3RCU1Q24lNUNuJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTdEKSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUzQiUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCklM0IlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MlMkZzY3JpcHQlM0UlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MlMkZkaXYlM0UlMjIlN0QlMkMlMjJtZXRhZGF0YSUyMiUzQSU3QiU3RCUyQyUyMm91dHB1dF90eXBlJTIyJTNBJTIyZGlzcGxheV9kYXRhJTIyJTdEJTVEJTJDJTIydGFiYmFibGUlMjIlM0FudWxsJTJDJTIydG9vbHRpcCUyMiUzQW51bGwlN0QlN0QlMkMlMjJhN2FlODliNjVmYWU0ZjgxODBiM2FjOGI2ZThlMTI2NiUyMiUzQSU3QiUyMm1vZGVsX21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmNvbnRyb2xzJTIyJTJDJTIybW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMm1vZGVsX25hbWUlMjIlM0ElMjJGbG9hdFNsaWRlck1vZGVsJTIyJTJDJTIyc3RhdGUlMjIlM0ElN0IlMjJfZG9tX2NsYXNzZXMlMjIlM0ElNUIlNUQlMkMlMjJfbW9kZWxfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGY29udHJvbHMlMjIlMkMlMjJfbW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMl9tb2RlbF9uYW1lJTIyJTNBJTIyRmxvYXRTbGlkZXJNb2RlbCUyMiUyQyUyMl92aWV3X2NvdW50JTIyJTNBbnVsbCUyQyUyMl92aWV3X21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmNvbnRyb2xzJTIyJTJDJTIyX3ZpZXdfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMl92aWV3X25hbWUlMjIlM0ElMjJGbG9hdFNsaWRlclZpZXclMjIlMkMlMjJiZWhhdmlvciUyMiUzQSUyMmRyYWctdGFwJTIyJTJDJTIyY29udGludW91c191cGRhdGUlMjIlM0F0cnVlJTJDJTIyZGVzY3JpcHRpb24lMjIlM0ElMjJEJTIyJTJDJTIyZGVzY3JpcHRpb25fYWxsb3dfaHRtbCUyMiUzQWZhbHNlJTJDJTIyZGlzYWJsZWQlMjIlM0FmYWxzZSUyQyUyMmxheW91dCUyMiUzQSUyMklQWV9NT0RFTF9iNGEzMDc0MzAxZDU0NGU3ODJiZjJkYmUwNjQ2MTc1MyUyMiUyQyUyMm1heCUyMiUzQTElMkMlMjJtaW4lMjIlM0EwLjAxJTJDJTIyb3JpZW50YXRpb24lMjIlM0ElMjJob3Jpem9udGFsJTIyJTJDJTIycmVhZG91dCUyMiUzQXRydWUlMkMlMjJyZWFkb3V0X2Zvcm1hdCUyMiUzQSUyMi4yZiUyMiUyQyUyMnN0ZXAlMjIlM0EwLjAxJTJDJTIyc3R5bGUlMjIlM0ElMjJJUFlfTU9ERUxfY2U1NjRjODVmMzBiNDk3Njk2OTczMDg4NGYyOGUyNmElMjIlMkMlMjJ0YWJiYWJsZSUyMiUzQW51bGwlMkMlMjJ0b29sdGlwJTIyJTNBbnVsbCUyQyUyMnZhbHVlJTIyJTNBMC41JTdEJTdEJTJDJTIyYjRhMzA3NDMwMWQ1NDRlNzgyYmYyZGJlMDY0NjE3NTMlMjIlM0ElN0IlMjJtb2RlbF9tb2R1bGUlMjIlM0ElMjIlNDBqdXB5dGVyLXdpZGdldHMlMkZiYXNlJTIyJTJDJTIybW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMm1vZGVsX25hbWUlMjIlM0ElMjJMYXlvdXRNb2RlbCUyMiUyQyUyMnN0YXRlJTIyJTNBJTdCJTIyX21vZGVsX21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmJhc2UlMjIlMkMlMjJfbW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMl9tb2RlbF9uYW1lJTIyJTNBJTIyTGF5b3V0TW9kZWwlMjIlMkMlMjJfdmlld19jb3VudCUyMiUzQW51bGwlMkMlMjJfdmlld19tb2R1bGUlMjIlM0ElMjIlNDBqdXB5dGVyLXdpZGdldHMlMkZiYXNlJTIyJTJDJTIyX3ZpZXdfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMl92aWV3X25hbWUlMjIlM0ElMjJMYXlvdXRWaWV3JTIyJTJDJTIyYWxpZ25fY29udGVudCUyMiUzQW51bGwlMkMlMjJhbGlnbl9pdGVtcyUyMiUzQW51bGwlMkMlMjJhbGlnbl9zZWxmJTIyJTNBbnVsbCUyQyUyMmJvcmRlcl9ib3R0b20lMjIlM0FudWxsJTJDJTIyYm9yZGVyX2xlZnQlMjIlM0FudWxsJTJDJTIyYm9yZGVyX3JpZ2h0JTIyJTNBbnVsbCUyQyUyMmJvcmRlcl90b3AlMjIlM0FudWxsJTJDJTIyYm90dG9tJTIyJTNBbnVsbCUyQyUyMmRpc3BsYXklMjIlM0FudWxsJTJDJTIyZmxleCUyMiUzQW51bGwlMkMlMjJmbGV4X2Zsb3clMjIlM0FudWxsJTJDJTIyZ3JpZF9hcmVhJTIyJTNBbnVsbCUyQyUyMmdyaWRfYXV0b19jb2x1bW5zJTIyJTNBbnVsbCUyQyUyMmdyaWRfYXV0b19mbG93JTIyJTNBbnVsbCUyQyUyMmdyaWRfYXV0b19yb3dzJTIyJTNBbnVsbCUyQyUyMmdyaWRfY29sdW1uJTIyJTNBbnVsbCUyQyUyMmdyaWRfZ2FwJTIyJTNBbnVsbCUyQyUyMmdyaWRfcm93JTIyJTNBbnVsbCUyQyUyMmdyaWRfdGVtcGxhdGVfYXJlYXMlMjIlM0FudWxsJTJDJTIyZ3JpZF90ZW1wbGF0ZV9jb2x1bW5zJTIyJTNBbnVsbCUyQyUyMmdyaWRfdGVtcGxhdGVfcm93cyUyMiUzQW51bGwlMkMlMjJoZWlnaHQlMjIlM0FudWxsJTJDJTIyanVzdGlmeV9jb250ZW50JTIyJTNBbnVsbCUyQyUyMmp1c3RpZnlfaXRlbXMlMjIlM0FudWxsJTJDJTIybGVmdCUyMiUzQW51bGwlMkMlMjJtYXJnaW4lMjIlM0FudWxsJTJDJTIybWF4X2hlaWdodCUyMiUzQW51bGwlMkMlMjJtYXhfd2lkdGglMjIlM0FudWxsJTJDJTIybWluX2hlaWdodCUyMiUzQW51bGwlMkMlMjJtaW5fd2lkdGglMjIlM0FudWxsJTJDJTIyb2JqZWN0X2ZpdCUyMiUzQW51bGwlMkMlMjJvYmplY3RfcG9zaXRpb24lMjIlM0FudWxsJTJDJTIyb3JkZXIlMjIlM0FudWxsJTJDJTIyb3ZlcmZsb3clMjIlM0FudWxsJTJDJTIycGFkZGluZyUyMiUzQW51bGwlMkMlMjJyaWdodCUyMiUzQW51bGwlMkMlMjJ0b3AlMjIlM0FudWxsJTJDJTIydmlzaWJpbGl0eSUyMiUzQW51bGwlMkMlMjJ3aWR0aCUyMiUzQW51bGwlN0QlN0QlMkMlMjJjZTU2NGM4NWYzMGI0OTc2OTY5NzMwODg0ZjI4ZTI2YSUyMiUzQSU3QiUyMm1vZGVsX21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmNvbnRyb2xzJTIyJTJDJTIybW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMm1vZGVsX25hbWUlMjIlM0ElMjJTbGlkZXJTdHlsZU1vZGVsJTIyJTJDJTIyc3RhdGUlMjIlM0ElN0IlMjJfbW9kZWxfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGY29udHJvbHMlMjIlMkMlMjJfbW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMl9tb2RlbF9uYW1lJTIyJTNBJTIyU2xpZGVyU3R5bGVNb2RlbCUyMiUyQyUyMl92aWV3X2NvdW50JTIyJTNBbnVsbCUyQyUyMl92aWV3X21vZHVsZSUyMiUzQSUyMiU0MGp1cHl0ZXItd2lkZ2V0cyUyRmJhc2UlMjIlMkMlMjJfdmlld19tb2R1bGVfdmVyc2lvbiUyMiUzQSUyMjIuMC4wJTIyJTJDJTIyX3ZpZXdfbmFtZSUyMiUzQSUyMlN0eWxlVmlldyUyMiUyQyUyMmRlc2NyaXB0aW9uX3dpZHRoJTIyJTNBJTIyJTIyJTJDJTIyaGFuZGxlX2NvbG9yJTIyJTNBbnVsbCU3RCU3RCUyQyUyMmRhMmQyMTM1YjczOTRhMTg4YTcyMjIyM2ZlOTAzZGFlJTIyJTNBJTdCJTIybW9kZWxfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGYmFzZSUyMiUyQyUyMm1vZGVsX21vZHVsZV92ZXJzaW9uJTIyJTNBJTIyMi4wLjAlMjIlMkMlMjJtb2RlbF9uYW1lJTIyJTNBJTIyTGF5b3V0TW9kZWwlMjIlMkMlMjJzdGF0ZSUyMiUzQSU3QiUyMl9tb2RlbF9tb2R1bGUlMjIlM0ElMjIlNDBqdXB5dGVyLXdpZGdldHMlMkZiYXNlJTIyJTJDJTIyX21vZGVsX21vZHVsZV92ZXJzaW9uJTIyJTNBJTIyMi4wLjAlMjIlMkMlMjJfbW9kZWxfbmFtZSUyMiUzQSUyMkxheW91dE1vZGVsJTIyJTJDJTIyX3ZpZXdfY291bnQlMjIlM0FudWxsJTJDJTIyX3ZpZXdfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGYmFzZSUyMiUyQyUyMl92aWV3X21vZHVsZV92ZXJzaW9uJTIyJTNBJTIyMi4wLjAlMjIlMkMlMjJfdmlld19uYW1lJTIyJTNBJTIyTGF5b3V0VmlldyUyMiUyQyUyMmFsaWduX2NvbnRlbnQlMjIlM0FudWxsJTJDJTIyYWxpZ25faXRlbXMlMjIlM0FudWxsJTJDJTIyYWxpZ25fc2VsZiUyMiUzQW51bGwlMkMlMjJib3JkZXJfYm90dG9tJTIyJTNBbnVsbCUyQyUyMmJvcmRlcl9sZWZ0JTIyJTNBbnVsbCUyQyUyMmJvcmRlcl9yaWdodCUyMiUzQW51bGwlMkMlMjJib3JkZXJfdG9wJTIyJTNBbnVsbCUyQyUyMmJvdHRvbSUyMiUzQW51bGwlMkMlMjJkaXNwbGF5JTIyJTNBbnVsbCUyQyUyMmZsZXglMjIlM0FudWxsJTJDJTIyZmxleF9mbG93JTIyJTNBbnVsbCUyQyUyMmdyaWRfYXJlYSUyMiUzQW51bGwlMkMlMjJncmlkX2F1dG9fY29sdW1ucyUyMiUzQW51bGwlMkMlMjJncmlkX2F1dG9fZmxvdyUyMiUzQW51bGwlMkMlMjJncmlkX2F1dG9fcm93cyUyMiUzQW51bGwlMkMlMjJncmlkX2NvbHVtbiUyMiUzQW51bGwlMkMlMjJncmlkX2dhcCUyMiUzQW51bGwlMkMlMjJncmlkX3JvdyUyMiUzQW51bGwlMkMlMjJncmlkX3RlbXBsYXRlX2FyZWFzJTIyJTNBbnVsbCUyQyUyMmdyaWRfdGVtcGxhdGVfY29sdW1ucyUyMiUzQW51bGwlMkMlMjJncmlkX3RlbXBsYXRlX3Jvd3MlMjIlM0FudWxsJTJDJTIyaGVpZ2h0JTIyJTNBbnVsbCUyQyUyMmp1c3RpZnlfY29udGVudCUyMiUzQW51bGwlMkMlMjJqdXN0aWZ5X2l0ZW1zJTIyJTNBbnVsbCUyQyUyMmxlZnQlMjIlM0FudWxsJTJDJTIybWFyZ2luJTIyJTNBbnVsbCUyQyUyMm1heF9oZWlnaHQlMjIlM0FudWxsJTJDJTIybWF4X3dpZHRoJTIyJTNBbnVsbCUyQyUyMm1pbl9oZWlnaHQlMjIlM0FudWxsJTJDJTIybWluX3dpZHRoJTIyJTNBbnVsbCUyQyUyMm9iamVjdF9maXQlMjIlM0FudWxsJTJDJTIyb2JqZWN0X3Bvc2l0aW9uJTIyJTNBbnVsbCUyQyUyMm9yZGVyJTIyJTNBbnVsbCUyQyUyMm92ZXJmbG93JTIyJTNBbnVsbCUyQyUyMnBhZGRpbmclMjIlM0FudWxsJTJDJTIycmlnaHQlMjIlM0FudWxsJTJDJTIydG9wJTIyJTNBbnVsbCUyQyUyMnZpc2liaWxpdHklMjIlM0FudWxsJTJDJTIyd2lkdGglMjIlM0FudWxsJTdEJTdEJTJDJTIyZmQyNzQ2NThiMWIwNDA2ODk3NDBhYjEzOTY3MzQ0MDYlMjIlM0ElN0IlMjJtb2RlbF9tb2R1bGUlMjIlM0ElMjIlNDBqdXB5dGVyLXdpZGdldHMlMkZjb250cm9scyUyMiUyQyUyMm1vZGVsX21vZHVsZV92ZXJzaW9uJTIyJTNBJTIyMi4wLjAlMjIlMkMlMjJtb2RlbF9uYW1lJTIyJTNBJTIyVkJveE1vZGVsJTIyJTJDJTIyc3RhdGUlMjIlM0ElN0IlMjJfZG9tX2NsYXNzZXMlMjIlM0ElNUIlMjJ3aWRnZXQtaW50ZXJhY3QlMjIlNUQlMkMlMjJfbW9kZWxfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGY29udHJvbHMlMjIlMkMlMjJfbW9kZWxfbW9kdWxlX3ZlcnNpb24lMjIlM0ElMjIyLjAuMCUyMiUyQyUyMl9tb2RlbF9uYW1lJTIyJTNBJTIyVkJveE1vZGVsJTIyJTJDJTIyX3ZpZXdfY291bnQlMjIlM0FudWxsJTJDJTIyX3ZpZXdfbW9kdWxlJTIyJTNBJTIyJTQwanVweXRlci13aWRnZXRzJTJGY29udHJvbHMlMjIlMkMlMjJfdmlld19tb2R1bGVfdmVyc2lvbiUyMiUzQSUyMjIuMC4wJTIyJTJDJTIyX3ZpZXdfbmFtZSUyMiUzQSUyMlZCb3hWaWV3JTIyJTJDJTIyYm94X3N0eWxlJTIyJTNBJTIyJTIyJTJDJTIyY2hpbGRyZW4lMjIlM0ElNUIlMjJJUFlfTU9ERUxfYTdhZTg5YjY1ZmFlNGY4MTgwYjNhYzhiNmU4ZTEyNjYlMjIlMkMlMjJJUFlfTU9ERUxfODBmMDhmZjQzYWE3NDQ1MmI4ZGMwMGU5NTEzZDg5MGMlMjIlNUQlMkMlMjJsYXlvdXQlMjIlM0ElMjJJUFlfTU9ERUxfZGEyZDIxMzViNzM5NGExODhhNzIyMjIzZmU5MDNkYWUlMjIlMkMlMjJ0YWJiYWJsZSUyMiUzQW51bGwlMkMlMjJ0b29sdGlwJTIyJTNBbnVsbCU3RCU3RCU3RCUyQyUyMnZlcnNpb25fbWFqb3IlMjIlM0EyJTJDJTIydmVyc2lvbl9taW5vciUyMiUzQTAlN0Q=";
+        scriptTag.type = "application/vnd.jupyter.widget-state+json";
+        scriptTag.textContent = decodeURIComponent(atob(base64State));
+        document.body.appendChild(scriptTag);
+      })();
+      </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1269,6 +1216,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -1611,7 +1609,580 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Brownian Motion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Flows and Transport in Liquids</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| editable: true</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| slideshow: {slide_type: ''}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objs <span class="im">as</span> go</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, HTML</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.special <span class="im">as</span> sp</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'style.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> fp:</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    style <span class="op">=</span> json.load(fp)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(style) </span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Translational Diffusion</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density $\textbf{j}$. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal $\textbf{n}$. </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>The total flow through a surface is then</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>\int_{S}\textbf{j}\cdot \textbf{n}dS</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>If $f$ is now some quantity (a density, probability density or other) that can beb transporeted through a surface or exist inside a volume surrounded by an area, the total amount inside the volume is given by</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>\int_{V}f\cdot dV</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>The change of the total content inside the volume with time is then</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>\frac{d}{dt}\int_{V}f\cdot dV=\int_{V}\frac{df}{dt}\cdot dV</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>This then yields the continuity equation</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>\frac{df}{dt}+\nabla \textbf{j}=0\tag{Continuity Equation}</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>If we specifically consider the number density $n$ and insert this as $f$</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>\frac{dn}{dt}+\nabla (n\textbf{v})=0 \tag{Continuity Equation for n}</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>The continuity equation states that the amount of the quantity (such as mass, charge, or energy) within a defined system can only change if there is a flow of that quantity into or out of the system. More generally, the continuity equation may have a source term on the right side instead of the $0$ when there is a production or destruction of the quantity in the volume.</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>As the next step, we would like to obtain an equation, which tells us about the flow of the density of objects, due to their Brownian motion. We consider a vertical wall of area $A$, which separates two regions.</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>There are $N(x)$ on the left and $N(x+\Delta x)$ on the right of area $A$.</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="al">![Diffusion](img/diffusion.png)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>We can calculate the number of particles that goes through the area from the difference of the number of particles on the left and on the right side and divided by the area where the particles go through and the time $\tau$ they need to go through that this is the current density $j$</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>j=-\frac{1}{2}\frac{N(x+\Delta x)-N(x))}{A\tau}</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>The fact, the one half makes sure that we consider only 50% of the particles on the left side going through the area while the other 50% go further to the left.</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>We can also rewrite the number of particles in terms of the density $n$</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>n(x)\equiv \frac{N(x)}{A\Delta x}</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>where $\Delta x$ and a span a volume from which the particles travel through the area $A$. With the help of the density, we can replace the number of particles in the equation before and obtain an equation, which only contains the density of the particles.</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>j=-\frac{1}{2}\frac{n(x+\Delta x)A\Delta x-n(x)A\Delta x)}{A\tau}</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>j=-\frac{1}{2}\frac{\Delta x^2}{\tau}\frac{n(x+\Delta x)-n(x)}{\Delta x}</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>You can see that the area a drops out of the equation and we can sub summarise the term with $\Delta x^2$  and $\tau$ into a new coefficient, which is the diffusion coefficient $D$. We just arrived at the DA fusion law, which is fixed first law, which tells us that the current density is proportional to the diffusion coefficient times the negative gradient of the density.</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>j=-D\frac{dn}{dx}</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>with </span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>D=\frac{\Delta x^2}{2\tau}</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>In 3 dimensions this yields</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>\textbf{j}=-D\nabla n \tag{1. Ficks Law}</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>which we can also combine with the continuity equation to give </span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>\frac{dn}{dt}=D\nabla^2n \tag{2. Ficks Law}</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>which describes the time evolution of the density $n$. This type of diffusion equation is found for many transport problems. We just have to exchange the density $n$ by other densities:</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>| flux | transport property | gradient |</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>| :---: | :---: | :---: |</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>| particles | diffusivity | particle density |</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>| charge | conductivity | potential |</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>| liquid | permeability | pressure |</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>| momentum | viscosity | momentum density |</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>| energy | heat conductivity | temperature |</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diffusion in External Potential - Smoluchowski Equation</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>And some of the cases we may need to describe the diffusion in the presence of an external force field like we did already for the sedimentation problems we studied at the beginning of the course. The force is given by a potential gradient. </span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>F=-\frac{dU}{dx}</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>If the force, for example, acts on a colloid in a liquid, a steady speed of the colloid will appear after a while, when the force is balanced by the frictional force in the liquid, which amounts to $F_{s}=-6\pi\eta R v$, where $R$ is the radius of the colloid, $\eta$ is the viscosity of the liquid. The steady speed of the colloid in the liquid under a force $F$ is therefore given as</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>v=-\frac{1}{\xi}\frac{dU}{dx}</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>where $\xi=6\pi\eta R$ is the friction coefficient for a sphere. Therefore we have an additional current density due to the external force, which is given by $j=nv$ and therefore the total current density is given by</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>j=-D \frac{dn}{dx}-\frac{n}{\xi}\frac{dU}{dx}</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>As we will see later, the diffusion coefficient can be als written as $D=k_{B}T/\xi$, which results in </span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>j=-\frac{1}{\xi}\left( k_B T \frac{dn}{dx} +n \frac{dU}{dx} \right )</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>using </span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>\frac{d}{dx}\ln(n(x))=\frac{1}{n(x)}\frac{dn}{dx}</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>we find</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>j=-\frac{1}{\xi}n\frac{d}{dx}\left( \underbrace{k_B T \ln(x)+U }_{\text{chemical\, potential}} \right)=-\frac{1}{\xi}n\frac{d\mu}{dx}</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>where we recognize the term in the bracket as chemical potential. In general, an inhomogeneous chemical potential drives currents in a system. This is the general version of Fick's first law, while Ficks second law results in </span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>\frac{d n}{d t}=-\frac{d j}{d x}=\frac{1}{\xi} \frac{d}{d x}\left(k_B T \frac{d n}{d x}+n \frac{d U}{dx}\right)</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>or </span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>\frac{dn}{dt}=\nabla \left (D \nabla n +n\frac{\textbf{F}}{\xi}\right ) \tag{Smoluchowski equation}</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>This may be even further generalized and leads to the Fokker-Planck-Equation, which we leave out here in the discussion.</span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>The time dependet diffusion equation </span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>\frac{\partial}{\partial t} n\left(\vec{r}, t \mid \vec{r}_0, t_0\right)=D \nabla^2 n\left(\vec{r}, t \mid \vec{r}_0, t_0\right)</span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>can be solved for given boundary and initial conditions. For the following </span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>n\left(\vec{r}, t \rightarrow t_0\left|\vec{r}_0, t_0\right|=\delta\left(\vec{r}-\vec{r}_0\right)\right. \tag{initial condition}</span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>n\left(|\vec{r}| \rightarrow \infty, t \mid \vec{r}_0, t_0\right)=0 \tag{boundary condition}</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>we obtain the Greens function </span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>n(\vec{r},t|\vec{r}_{0},t_{0})=\frac{1}{(4\pi D(t-t_0))^{3/2}}e^{-\frac{(\vec{r}-\vec{r}_{0})^2}{4D(t-t_0)}} \tag{Greens function}</span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>for the diffusion equation and the corresponding boundary conditions. The Greens function is the impulse response. With the help of it, new solutions for any initial condition can be constructed. Lets assume we have an initial condition given by </span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a>n\left(\vec{r}, t \rightarrow 0\right)=f\left(\vec{v}_0\right)</span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a>then the time dependent solution is a superposition of the Greens function solutions </span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a>n(\vec{r}, t)=\int  n\left(\vec{r}, t \mid \vec{r}_0, t_0\right) f\left(\vec{r}_0 \right)dr_0 </span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>Let is quickly consider the solution in 1 dimension and derive some simple properties of it. The first is the mean position of the density. The mean position is calculated by </span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>\langle x\rangle=\int_{-\infty}^{+\infty} x \frac{\Delta}{\sqrt{4 \pi D\left(t-t_0\right)}} \cdot e^{\frac{-\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}} d x</span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a>and the result states</span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a>\langle x\rangle=x_0</span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a>that it is constant, i.e. the initial position is staionary even though the particles spread in space. This is of course expected as there is no drift in the system to one or the other direction. As the particles still spread in space, the change is in the second moment of the distribution, which is the variance calculated by</span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>\left\langle\left(x-x_0\right)^2\right\rangle=\int_{-\infty}^{+\infty}\left(x-x_0\right)^2 n(x, t) d x = 2Dt</span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a>The result of this is corresponds to the mean squared displacement of a single particle. The variance of the distribution grows linearly in time and the coefficient characterizing the spread of the particles is the diffusion coefficient $D$. The law obtained here, can be generalized to $d=3$ dimensions by </span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>\left\langle\left(\mathbf{r}-\mathbf{r}_0\right)^2\right\rangle=2dDt=6Dt</span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>A mean distance travelled is therefore related to the square root of time. This diffusion processes are rapid at short distances but very slow for largedistance as can be seen from the table below.</span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a><span class="al">![Table Diffusion](img/table.png)</span></span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a><span class="fu">### Application: Fluorescence Recovery after Photobleaching</span></span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>&lt;div class="alert alert-info"&gt;</span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a>One application of our Greens frunction approach that is frequently used in studying biological materials is Fluorescence Recovery after Photobleaching or short **FRAP**. </span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>Initial condition:</span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>n\left(x, t_0\right)=\Theta(-a-x)+\Theta(x-a)</span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a>Boundary Condition</span>
+<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>\lim _{|x| \rightarrow \infty} n(x, t)=0</span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a>Greens Function</span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a>n\left(x,t | x_0, t_0\right)=\frac{1}{\sqrt{4 \pi D\left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4D\left(t-t_0\right)}}</span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a>Therefore the total solution</span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a>n(x, t)=&amp;\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot<span class="co">[</span><span class="ot">\Theta (-a-x)+\Theta(x-a)</span><span class="co">]</span><span class="sc">\\</span></span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a>=&amp; \int_{-\infty}^{-a} d x_0 \frac{1}{\sqrt{4 \pi D \left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}}<span class="sc">\\</span></span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a>=&amp; \int_{a}^{\infty} d x_0 \frac{1}{\sqrt{4 \pi D\left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}}</span>
+<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a>The solution of the integration is</span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a>n(x, t)=1-\frac{1}{2}\left(\operatorname{erf}\left<span class="co">[</span><span class="ot">\frac{x+a}{2 \sqrt{D\left(t-t_0\right)}}\right</span><span class="co">]</span>-\operatorname{erf}\left<span class="co">[</span><span class="ot">\frac{x-a}{2 \sqrt{D\left(t-t_0\right)}}\right</span><span class="co">]</span>\right)</span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a>with $\mathrm{erf}$ being the error function</span>
+<span id="cb2-300"><a href="#cb2-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a>\mathrm{erf}(x)=\frac{1}{\sqrt{\pi}} \int_{-x}^x e^{-t^2} d t=\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} d t</span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-310"><a href="#cb2-310" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a><span class="co">## Example of a FRAP density profile</span></span>
+<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> heaviside(x):</span>
+<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.where(x <span class="op">&gt;=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb2-314"><a href="#cb2-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-315"><a href="#cb2-315" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_step(x, a):</span>
+<span id="cb2-316"><a href="#cb2-316" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> heaviside(<span class="op">-</span>a <span class="op">-</span> x) <span class="op">+</span> heaviside(x <span class="op">-</span> a)</span>
+<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_solution(x, a, D, t, t0):</span>
+<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a>    term1 <span class="op">=</span> sp.erf((x <span class="op">+</span> a) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
+<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a>    term2 <span class="op">=</span> sp.erf((x <span class="op">-</span> a) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
+<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (term1 <span class="op">-</span> term2)</span>
+<span id="cb2-322"><a href="#cb2-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-323"><a href="#cb2-323" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb2-324"><a href="#cb2-324" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># size of the bleached region</span></span>
+<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># diffusion coefficient</span></span>
+<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a>t0 <span class="op">=</span> <span class="dv">0</span>  <span class="co"># initial time</span></span>
+<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)  <span class="co"># times from 1 to 10 seconds</span></span>
+<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">400</span>)  <span class="co"># range of x values</span></span>
+<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a>plt.plot(x, n_step(x, a), label<span class="op">=</span><span class="st">'n(x, t0)'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> times:</span>
+<span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, n_solution(x, a, D, t, t0), label<span class="op">=</span><span class="ss">f'n(x, t=</span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">s)'</span>)</span>
+<span id="cb2-335"><a href="#cb2-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'n(x, t)'</span>)</span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/FRAP_density_profile.png"</span>)</span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a>::: {.content-visible unless-format="html"}</span>
+<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/FRAP_density_profile.png)</span></span>
+<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a>&lt;div class="alert alert-info"&gt;</span>
+<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a>We can also characterize the amount of density in the bleached region as a function of time. This gives a single time trace, which we ca analyze to obtain the diffusion coefficient</span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-358"><a href="#cb2-358" aria-hidden="true" tabindex="-1"></a>N\left(t, t_0\right)= \int_{-a}^{+a}  n(x, t)\, d x</span>
+<span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a>The integration of the previously obtained density then results in </span>
+<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a>N\left(t, t_0\right)=\frac{\sqrt{D\left(t-t_0\right)}}{a \sqrt{\pi}}\left(1-\exp\left<span class="co">[</span><span class="ot">-\frac{a^2}{D\left(t-t_0\right)}\right</span><span class="co">]</span>\right)+1-\operatorname{erf}\left<span class="co">[</span><span class="ot">\frac{a}{\sqrt{D\left(t-t_0\right)}}\right</span><span class="co">]</span></span>
+<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a>which is plotted below.</span>
+<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-375"><a href="#cb2-375" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-376"><a href="#cb2-376" aria-hidden="true" tabindex="-1"></a><span class="co">#def N(t, t0, D, a):</span></span>
+<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a><span class="co">#    term1 = (np.sqrt(D * (t - t0)) / (a * np.sqrt(np.pi))) * (1-np.exp(-a**2 / (D * (t - t0))))</span></span>
+<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a><span class="co">#    term2 = 1 - sp.erf(a / np.sqrt(D * (t - t0)))</span></span>
+<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a><span class="co">#    return (term1 + term2)</span></span>
+<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a><span class="co">## Interactive plotting function</span></span>
+<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a><span class="co">#def plot_function(D):</span></span>
+<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a><span class="co">#    a = 1  # constant a</span></span>
+<span id="cb2-384"><a href="#cb2-384" aria-hidden="true" tabindex="-1"></a><span class="co">#    t0 = 0  # initial time t0</span></span>
+<span id="cb2-385"><a href="#cb2-385" aria-hidden="true" tabindex="-1"></a><span class="co">#    t = np.linspace(0.1, 10, 400)  # time range from 0.1 to 10</span></span>
+<span id="cb2-386"><a href="#cb2-386" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.figure(figsize=(7, 4))</span></span>
+<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.plot(t, N(t, t0, D, a), label=f'Diffusion Coefficient: D={D}')</span></span>
+<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.xlabel('t - t0')</span></span>
+<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.ylabel('N(t, t0)')</span></span>
+<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.axhline(0.5, color='black', linewidth=0.5)</span></span>
+<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.axvline(0, color='black', linewidth=0.5)</span></span>
+<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.ylim(0,1)</span></span>
+<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.legend()</span></span>
+<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a><span class="co">#    plt.show()</span></span>
+<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a><span class="co">## Create the widget</span></span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a><span class="co">##interact(plot_function, D=(0.01, 1.0, 0.01));</span></span>
+<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a><span class="co">#plot_function(0.1)</span></span>
+<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-406"><a href="#cb2-406" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-407"><a href="#cb2-407" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb2-408"><a href="#cb2-408" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
+<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.special <span class="im">as</span> sp</span>
+<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function N(t, t0, D, a)</span></span>
+<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> N(t, t0, D, a):</span>
+<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a>    term1 <span class="op">=</span> (np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0)) <span class="op">/</span> (a <span class="op">*</span> np.sqrt(np.pi))) <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>a<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
+<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a>    term2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> sp.erf(a <span class="op">/</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0)))</span>
+<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> term1 <span class="op">+</span> term2</span>
+<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the plotting function using Plotly</span></span>
+<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(D):</span>
+<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># constant a</span></span>
+<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a>    t0 <span class="op">=</span> <span class="dv">0</span>  <span class="co"># initial time t0</span></span>
+<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="dv">400</span>)  <span class="co"># time range from 0.1 to 10</span></span>
+<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate N(t, t0, D, a)</span></span>
+<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a>    N_values <span class="op">=</span> N(t, t0, D, a)</span>
+<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create the figure</span></span>
+<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> go.Figure()</span>
+<span id="cb2-428"><a href="#cb2-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-429"><a href="#cb2-429" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add the plot trace for N(t, t0, D, a)</span></span>
+<span id="cb2-430"><a href="#cb2-430" aria-hidden="true" tabindex="-1"></a>    fig.add_trace(go.Scatter(</span>
+<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>t, y<span class="op">=</span>N_values,</span>
+<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a>        mode<span class="op">=</span><span class="st">'lines'</span>,</span>
+<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="ss">f'Diffusion Coefficient: D=</span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a>        line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-437"><a href="#cb2-437" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add the horizontal line at y=0.5 and vertical line at t=0</span></span>
+<span id="cb2-438"><a href="#cb2-438" aria-hidden="true" tabindex="-1"></a>    fig.add_shape(<span class="bu">type</span><span class="op">=</span><span class="st">"line"</span>, x0<span class="op">=</span><span class="fl">0.1</span>, y0<span class="op">=</span><span class="fl">0.5</span>, x1<span class="op">=</span><span class="dv">10</span>, y1<span class="op">=</span><span class="fl">0.5</span>, line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="dv">1</span>, dash<span class="op">=</span><span class="st">"dash"</span>))</span>
+<span id="cb2-439"><a href="#cb2-439" aria-hidden="true" tabindex="-1"></a>    fig.add_shape(<span class="bu">type</span><span class="op">=</span><span class="st">"line"</span>, x0<span class="op">=</span><span class="dv">0</span>, y0<span class="op">=</span><span class="dv">0</span>, x1<span class="op">=</span><span class="dv">0</span>, y1<span class="op">=</span><span class="dv">1</span>, line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="dv">1</span>, dash<span class="op">=</span><span class="st">"dash"</span>))</span>
+<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set the layout for the figure</span></span>
+<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a>    fig.update_layout(</span>
+<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="ss">f'N(t, t0) vs t for D=</span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a>        xaxis_title<span class="op">=</span><span class="st">'t - t0'</span>,</span>
+<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a>        yaxis_title<span class="op">=</span><span class="st">'N(t, t0)'</span>,</span>
+<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a>        yaxis<span class="op">=</span><span class="bu">dict</span>(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>]),</span>
+<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a>        width<span class="op">=</span><span class="dv">700</span>,</span>
+<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a>        height<span class="op">=</span><span class="dv">500</span>,</span>
+<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Show the figure</span></span>
+<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a>    fig.show()</span>
+<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the interactive slider using interact</span></span>
+<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a>interact(plot_function, D<span class="op">=</span>(<span class="fl">0.01</span>, <span class="fl">1.0</span>, <span class="fl">0.01</span>))</span>
+<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a>::: {.content-visible unless-format="html"}</span>
+<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/diffusion_coefficient.png)</span></span>
+<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-463"><a href="#cb2-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-464"><a href="#cb2-464" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rotational Diffusion</span></span>
+<span id="cb2-465"><a href="#cb2-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a>If we constrain all the points that are diffusing to a sphere of radius 1, i.e. $\left|\vec{r}_0\right|=|\vec{r}|=1$, the we have in a spherical coordinate system no radial motion just angular motion along the remaining two angular coordinates $\phi$ and $\theta$.</span>
+<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a><span class="al">![Rotational Diffusion](img/rotdiff.png)</span></span>
+<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a>The dynamics of the vector from the center of the unit sphere to the surface is therefore a orientational diffusion, which obeys the following diffusion equation</span>
+<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a>\frac{\partial n\left(\Omega, t \mid \Omega_0, t_0\right)}{\partial t}=&amp; D_{\mathrm{rot}}\left[\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial}{\partial \theta}\right)\right. <span class="sc">\\</span></span>
+<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a>&amp; \left.+\frac{1}{\sin ^2 \theta} \frac{\partial^2}{\partial \varphi^2}\right] n\left(\Omega, t, \Omega_0, t_0\right)</span>
+<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-479"><a href="#cb2-479" aria-hidden="true" tabindex="-1"></a>The differential operator has, without any surprise, spherical harmonics as eigenfunctions, i.e.</span>
+<span id="cb2-480"><a href="#cb2-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-481"><a href="#cb2-481" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a>Y_l^m=N e^{i m \phi} P_l^m(\cos \theta)</span>
+<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-485"><a href="#cb2-485" aria-hidden="true" tabindex="-1"></a>where $N$ is a nomralization factor and $P_l^m$ are the assiciated Legendre polynomials. The time dependent solution of the density $n$ at the surface of the sphere can therefore be expressed as a sum over all surface harmonics with time dependent amplitudes $A_{\operatorname{lm}}\left(t, \Omega_0, t_0\right)$, which depend on the initial distribution at $t_0$.</span>
+<span id="cb2-486"><a href="#cb2-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-487"><a href="#cb2-487" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-488"><a href="#cb2-488" aria-hidden="true" tabindex="-1"></a>n\left(\Omega, t \mid \Omega_0, t_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^{+l} A_{l m}\left(t, \Omega_0, t_0\right) Y_l^m(\Omega)</span>
+<span id="cb2-489"><a href="#cb2-489" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-490"><a href="#cb2-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-491"><a href="#cb2-491" aria-hidden="true" tabindex="-1"></a>To obtain a solution for the amplitudes, we insert the series into the diffusion equation to yield</span>
+<span id="cb2-492"><a href="#cb2-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-493"><a href="#cb2-493" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-494"><a href="#cb2-494" aria-hidden="true" tabindex="-1"></a>\sum_{l=0}^{\infty} \sum_{m=-l}^{+l} \frac{\partial A_{l m}}{\partial t} Y_l^m=-\frac{1}{\tau_R}\sum_{l=0}^{\infty} \sum_{m=-l}^l l(l+1)  A_{l m} Y_l^m</span>
+<span id="cb2-495"><a href="#cb2-495" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-496"><a href="#cb2-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-497"><a href="#cb2-497" aria-hidden="true" tabindex="-1"></a>where $D_{\mathrm{rot}}=1/\tau_{R}$ is the rotational diffusion coefficient. Due to the orthogonality of the surface harmonics, this finally yields </span>
+<span id="cb2-498"><a href="#cb2-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-499"><a href="#cb2-499" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-500"><a href="#cb2-500" aria-hidden="true" tabindex="-1"></a>\frac{\partial A_{l m}}{\partial t}=-\frac{l(l+1)}{\tau_{R}} A_{l m}</span>
+<span id="cb2-501"><a href="#cb2-501" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-502"><a href="#cb2-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-503"><a href="#cb2-503" aria-hidden="true" tabindex="-1"></a>for each value of the integer number $l$ and $m$. This is solved by an exponential function </span>
+<span id="cb2-504"><a href="#cb2-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-505"><a href="#cb2-505" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a>A_{\operatorname{lm}}\left(t \mid \Omega_0, t_0\right)=e^{-l(l+1) \frac{\left(t-t_0\right)}{\tau_R}} \quad a_{lm}\left(\Omega_0\right)</span>
+<span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a>where the coefficients $a_{lm}$ are determined by the initial conditions. </span>
+<span id="cb2-510"><a href="#cb2-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-511"><a href="#cb2-511" aria-hidden="true" tabindex="-1"></a>The final solution is therefore </span>
+<span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-513"><a href="#cb2-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-514"><a href="#cb2-514" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-515"><a href="#cb2-515" aria-hidden="true" tabindex="-1"></a>n\left(\Omega, t \mid \Omega_0, t_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^l e^{-l(l+1) \frac{\left(t-t_0\right)}{\tau_R}} a_{l_m}\left(\Omega_0\right) Y_l^m \tag{rotational diffusion}</span>
+<span id="cb2-516"><a href="#cb2-516" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-517"><a href="#cb2-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-518"><a href="#cb2-518" aria-hidden="true" tabindex="-1"></a>A more specific solution can be obtained by assuming that there is a delta function for the density $n$ as the initial condition, i.e. </span>
+<span id="cb2-519"><a href="#cb2-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-520"><a href="#cb2-520" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-521"><a href="#cb2-521" aria-hidden="true" tabindex="-1"></a>n\left(\Omega, t_0|  \Omega_0, t_0\right)=\delta\left(\Omega-\Omega_0\right)</span>
+<span id="cb2-522"><a href="#cb2-522" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-523"><a href="#cb2-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a>The delta function can be expressed in speherical coordinates as</span>
+<span id="cb2-525"><a href="#cb2-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a>\delta\left(\Omega-\Omega_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^l Y_{l m}^*\left(\Omega_0\right) Y_{l n}(\Omega)</span>
+<span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-531"><a href="#cb2-531" aria-hidden="true" tabindex="-1"></a>an yields </span>
+<span id="cb2-532"><a href="#cb2-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-533"><a href="#cb2-533" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a>a_{lm}\left(\Omega_0\right)=Y_{l m}\left(\Omega_0\right)</span>
+<span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-536"><a href="#cb2-536" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-537"><a href="#cb2-537" aria-hidden="true" tabindex="-1"></a>and this finally</span>
+<span id="cb2-538"><a href="#cb2-538" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a>n(\Omega, t| \Omega_0, t_0)=\sum_{l=0}^{\infty} \sum_{m=-l}^k e^{-l(l+1) \frac{(t-t_0)} {\tau_R}} Y_{lm}^*\left(\Omega_0\right) Y_{l m}(\Omega)</span>
+<span id="cb2-541"><a href="#cb2-541" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-543"><a href="#cb2-543" aria-hidden="true" tabindex="-1"></a>Analyzing this equation we see that the amplitudes decay exponentially with a time constant $\tau_{R}/(l(l+1))$. The largest time constant, i.e. the time constant that prevails at long times is $\tau_R/2$, while the dynamic behavior at short times can be multi-exponential. </span>
+<span id="cb2-544"><a href="#cb2-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a><span class="fu">### NMR Spectroscopy/Dielectric Relaxation</span></span>
+<span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a>The results have some immediate consquences for the analysis of experimental data coming from dielectric spectroscopy or nuclear magnetic resonance (NMR). Both techniques are very common for studying soft matter, as they address either molecular electric dipoles or nuclear magnetic dipoles, which respond to a perturbation by an external field through various processes, among them an orientational diffusion.</span>
+<span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a>For dielectric spectroscopy one measures a dielectric polarization, i.e. a projection of dipoles onto an axis given by an electric field. Similarly NMR uses the projection of magnetic dipoles (nuclear spins) to the magnetic field direction to create a magnetization. If the dipole makes an angle $\theta$ with the corresponding field, then the projection of the dipole is $\mu \cos(\theta)$, which is responsible for the polarization/magnetization. What is probed by NMR or dielectric spectroscopy is therefore the relaxation of that cosine term. </span>
+<span id="cb2-550"><a href="#cb2-550" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-551"><a href="#cb2-551" aria-hidden="true" tabindex="-1"></a>In the sum of spherical surface harmonics, this is actually the term with $l=1$, which is accompanied with the first Legendre polynomial:</span>
+<span id="cb2-552"><a href="#cb2-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-553"><a href="#cb2-553" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-554"><a href="#cb2-554" aria-hidden="true" tabindex="-1"></a>P_1^0=P_0 \cos (\theta) \quad l=1</span>
+<span id="cb2-555"><a href="#cb2-555" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-556"><a href="#cb2-556" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-557"><a href="#cb2-557" aria-hidden="true" tabindex="-1"></a>So both techniques would probe the first Legendre polynomial, but </span>
+<span id="cb2-558"><a href="#cb2-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-559"><a href="#cb2-559" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-560"><a href="#cb2-560" aria-hidden="true" tabindex="-1"></a>\left\langle P_{1}^0\right\rangle=\frac{1}{4 \pi} \int d \Omega P_0 \cos (\theta) \quad \rightarrow 0</span>
+<span id="cb2-561"><a href="#cb2-561" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-562"><a href="#cb2-562" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-563"><a href="#cb2-563" aria-hidden="true" tabindex="-1"></a>This is because the dynamics of the dipoles is uncorrelated and doing Brownian motion. Yet, you can have a look at the dynamics if you calculate the autocorrelation function </span>
+<span id="cb2-564"><a href="#cb2-564" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-565"><a href="#cb2-565" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb2-566"><a href="#cb2-566" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb2-567"><a href="#cb2-567" aria-hidden="true" tabindex="-1"></a>\left\langle P_1^0(t) P_1^{0, *}\left(t_0\right)\right)=&amp; P_0^2 \int d \Omega \int d \Omega_0 \cos (\theta) \cos \left(\theta_0\right) n\left(\Omega, t |\Omega_0 ,t_0\right) n_0\left(\Omega_0\right)<span class="sc">\\</span></span>
+<span id="cb2-568"><a href="#cb2-568" aria-hidden="true" tabindex="-1"></a>= &amp; \frac{4 \pi}{3} P_0^2 \sum_{m=1}^l e^{-l(l+1) \frac{t-t_0}{\tau_R}}\left|C_{10 l m}\right|^2</span>
+<span id="cb2-569"><a href="#cb2-569" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb2-570"><a href="#cb2-570" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
+<span id="cb2-571"><a href="#cb2-571" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-572"><a href="#cb2-572" aria-hidden="true" tabindex="-1"></a>where the $C_{10 l m}$ are again defined by the initial conditions. So if these are delta functions, one quickly finds that</span>
+<span id="cb2-573"><a href="#cb2-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-574"><a href="#cb2-574" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-575"><a href="#cb2-575" aria-hidden="true" tabindex="-1"></a>\left\langle P_3(t) P_3^*(t_0)\right\rangle=\frac{4 \pi}{3} P_0^2 e^{-2\left(t-t_0\right) /\tau_R}</span>
+<span id="cb2-576"><a href="#cb2-576" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-577"><a href="#cb2-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-578"><a href="#cb2-578" aria-hidden="true" tabindex="-1"></a>So the correlation function decay with a time constant that is half the rotational diffusion time due to the projection of the dipole to a certain direction. </span>
+<span id="cb2-579"><a href="#cb2-579" aria-hidden="true" tabindex="-1"></a>Here are some more details on measurements based on NMR, even though focused on <span class="co">[</span><span class="ot">magnetic resonance imaging</span><span class="co">](https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2017/03/MRT%20Lecture/assets/fallback/index.html)</span>.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
