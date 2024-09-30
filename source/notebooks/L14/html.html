@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>21&nbsp; Flows and Transport in Liquids – SoftMatterLecture</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+<meta property="og:title" content="Title for Open Graph">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="SoftMatterLecture">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="../../../SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#translational-diffusion" id="toc-translational-diffusion" class="nav-link active" data-scroll-target="#translational-diffusion"><span class="header-section-number">21.1</span> Translational Diffusion</a>
+  <ul>
+  <li><a href="#diffusion-in-external-potential---smoluchowski-equation" id="toc-diffusion-in-external-potential---smoluchowski-equation" class="nav-link" data-scroll-target="#diffusion-in-external-potential---smoluchowski-equation"><span class="header-section-number">21.1.1</span> Diffusion in External Potential - Smoluchowski Equation</a></li>
+  <li><a href="#application-fluorescence-recovery-after-photobleaching" id="toc-application-fluorescence-recovery-after-photobleaching" class="nav-link" data-scroll-target="#application-fluorescence-recovery-after-photobleaching"><span class="header-section-number">21.1.2</span> Application: Fluorescence Recovery after Photobleaching</a></li>
+  </ul></li>
+  <li><a href="#rotational-diffusion" id="toc-rotational-diffusion" class="nav-link" data-scroll-target="#rotational-diffusion"><span class="header-section-number">21.2</span> Rotational Diffusion</a>
+  <ul>
+  <li><a href="#nmr-spectroscopydielectric-relaxation" id="toc-nmr-spectroscopydielectric-relaxation" class="nav-link" data-scroll-target="#nmr-spectroscopydielectric-relaxation"><span class="header-section-number">21.2.1</span> NMR Spectroscopy/Dielectric Relaxation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Flows and Transport in Liquids</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="30145e99-3a76-46b8-82da-8205aedf6505" class="cell" data-editable="true" data-slideshow="{&quot;slide_type&quot;:&quot;&quot;}" data-tags="[]" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.special <span class="im">as</span> sp</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'style.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> fp:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    style <span class="op">=</span> json.load(fp)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(style) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="translational-diffusion" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="translational-diffusion"><span class="header-section-number">21.1</span> Translational Diffusion</h2>
+<p>For describing the transport and the dynamics of objects we need to write down some basic relations that will later gover our analysis. One is of course the continuity equation essentially stating that in the absence of sources or sinks, material flowing into a system has to move out of it as well. The flow is characterized by a current density <span class="math inline">\(\textbf{j}\)</span>. The flow through a surface is then goverened by the normal components of the flow with respect to the surface having a normal <span class="math inline">\(\textbf{n}\)</span>.</p>
+<p>The total flow through a surface is then</p>
+<p><span class="math display">\[
+\int_{S}\textbf{j}\cdot \textbf{n}dS
+\]</span></p>
+<p>If <span class="math inline">\(f\)</span> is now some quantity (a density, probability density or other) that can beb transporeted through a surface or exist inside a volume surrounded by an area, the total amount inside the volume is given by</p>
+<p><span class="math display">\[
+\int_{V}f\cdot dV
+\]</span></p>
+<p>The change of the total content inside the volume with time is then</p>
+<p><span class="math display">\[
+\frac{d}{dt}\int_{V}f\cdot dV=\int_{V}\frac{df}{dt}\cdot dV
+\]</span></p>
+<p>This then yields the continuity equation</p>
+<p><span class="math display">\[
+\frac{df}{dt}+\nabla \textbf{j}=0\tag{Continuity Equation}
+\]</span></p>
+<p>If we specifically consider the number density <span class="math inline">\(n\)</span> and insert this as <span class="math inline">\(f\)</span></p>
+<p><span class="math display">\[
+\frac{dn}{dt}+\nabla (n\textbf{v})=0 \tag{Continuity Equation for n}
+\]</span></p>
+<p>The continuity equation states that the amount of the quantity (such as mass, charge, or energy) within a defined system can only change if there is a flow of that quantity into or out of the system. More generally, the continuity equation may have a source term on the right side instead of the <span class="math inline">\(0\)</span> when there is a production or destruction of the quantity in the volume.</p>
+<p>As the next step, we would like to obtain an equation, which tells us about the flow of the density of objects, due to their Brownian motion. We consider a vertical wall of area <span class="math inline">\(A\)</span>, which separates two regions. There are <span class="math inline">\(N(x)\)</span> on the left and <span class="math inline">\(N(x+\Delta x)\)</span> on the right of area <span class="math inline">\(A\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/diffusion.png" class="img-fluid figure-img"></p>
+<figcaption>Diffusion</figcaption>
+</figure>
+</div>
+<p>We can calculate the number of particles that goes through the area from the difference of the number of particles on the left and on the right side and divided by the area where the particles go through and the time <span class="math inline">\(\tau\)</span> they need to go through that this is the current density <span class="math inline">\(j\)</span></p>
+<p><span class="math display">\[
+j=-\frac{1}{2}\frac{N(x+\Delta x)-N(x))}{A\tau}
+\]</span></p>
+<p>The fact, the one half makes sure that we consider only 50% of the particles on the left side going through the area while the other 50% go further to the left.</p>
+<p>We can also rewrite the number of particles in terms of the density <span class="math inline">\(n\)</span></p>
+<p><span class="math display">\[
+n(x)\equiv \frac{N(x)}{A\Delta x}
+\]</span></p>
+<p>where <span class="math inline">\(\Delta x\)</span> and a span a volume from which the particles travel through the area <span class="math inline">\(A\)</span>. With the help of the density, we can replace the number of particles in the equation before and obtain an equation, which only contains the density of the particles.</p>
+<p><span class="math display">\[
+j=-\frac{1}{2}\frac{n(x+\Delta x)A\Delta x-n(x)A\Delta x)}{A\tau}
+\]</span></p>
+<p><span class="math display">\[
+j=-\frac{1}{2}\frac{\Delta x^2}{\tau}\frac{n(x+\Delta x)-n(x)}{\Delta x}
+\]</span></p>
+<p>You can see that the area a drops out of the equation and we can sub summarise the term with <span class="math inline">\(\Delta x^2\)</span> and <span class="math inline">\(\tau\)</span> into a new coefficient, which is the diffusion coefficient <span class="math inline">\(D\)</span>. We just arrived at the DA fusion law, which is fixed first law, which tells us that the current density is proportional to the diffusion coefficient times the negative gradient of the density.</p>
+<p><span class="math display">\[
+j=-D\frac{dn}{dx}
+\]</span></p>
+<p>with</p>
+<p><span class="math display">\[
+D=\frac{\Delta x^2}{2\tau}
+\]</span></p>
+<p>In 3 dimensions this yields</p>
+<p><span class="math display">\[
+\textbf{j}=-D\nabla n \tag{1. Ficks Law}
+\]</span></p>
+<p>which we can also combine with the continuity equation to give</p>
+<p><span class="math display">\[
+\frac{dn}{dt}=D\nabla^2n \tag{2. Ficks Law}
+\]</span></p>
+<p>which describes the time evolution of the density <span class="math inline">\(n\)</span>. This type of diffusion equation is found for many transport problems. We just have to exchange the density <span class="math inline">\(n\)</span> by other densities:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">flux</th>
+<th style="text-align: center;">transport property</th>
+<th style="text-align: center;">gradient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">particles</td>
+<td style="text-align: center;">diffusivity</td>
+<td style="text-align: center;">particle density</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">charge</td>
+<td style="text-align: center;">conductivity</td>
+<td style="text-align: center;">potential</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">liquid</td>
+<td style="text-align: center;">permeability</td>
+<td style="text-align: center;">pressure</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">momentum</td>
+<td style="text-align: center;">viscosity</td>
+<td style="text-align: center;">momentum density</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">energy</td>
+<td style="text-align: center;">heat conductivity</td>
+<td style="text-align: center;">temperature</td>
+</tr>
+</tbody>
+</table>
+<section id="diffusion-in-external-potential---smoluchowski-equation" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="diffusion-in-external-potential---smoluchowski-equation"><span class="header-section-number">21.1.1</span> Diffusion in External Potential - Smoluchowski Equation</h3>
+<p>And some of the cases we may need to describe the diffusion in the presence of an external force field like we did already for the sedimentation problems we studied at the beginning of the course. The force is given by a potential gradient.</p>
+<p><span class="math display">\[
+F=-\frac{dU}{dx}
+\]</span></p>
+<p>If the force, for example, acts on a colloid in a liquid, a steady speed of the colloid will appear after a while, when the force is balanced by the frictional force in the liquid, which amounts to <span class="math inline">\(F_{s}=-6\pi\eta R v\)</span>, where <span class="math inline">\(R\)</span> is the radius of the colloid, <span class="math inline">\(\eta\)</span> is the viscosity of the liquid. The steady speed of the colloid in the liquid under a force <span class="math inline">\(F\)</span> is therefore given as</p>
+<p><span class="math display">\[
+v=-\frac{1}{\xi}\frac{dU}{dx}
+\]</span></p>
+<p>where <span class="math inline">\(\xi=6\pi\eta R\)</span> is the friction coefficient for a sphere. Therefore we have an additional current density due to the external force, which is given by <span class="math inline">\(j=nv\)</span> and therefore the total current density is given by</p>
+<p><span class="math display">\[
+j=-D \frac{dn}{dx}-\frac{n}{\xi}\frac{dU}{dx}
+\]</span></p>
+<p>As we will see later, the diffusion coefficient can be als written as <span class="math inline">\(D=k_{B}T/\xi\)</span>, which results in</p>
+<p><span class="math display">\[
+j=-\frac{1}{\xi}\left( k_B T \frac{dn}{dx} +n \frac{dU}{dx} \right )
+\]</span></p>
+<p>using</p>
+<p><span class="math display">\[
+\frac{d}{dx}\ln(n(x))=\frac{1}{n(x)}\frac{dn}{dx}
+\]</span></p>
+<p>we find</p>
+<p><span class="math display">\[
+j=-\frac{1}{\xi}n\frac{d}{dx}\left( \underbrace{k_B T \ln(x)+U }_{\text{chemical\, potential}} \right)=-\frac{1}{\xi}n\frac{d\mu}{dx}
+\]</span></p>
+<p>where we recognize the term in the bracket as chemical potential. In general, an inhomogeneous chemical potential drives currents in a system. This is the general version of Fick’s first law, while Ficks second law results in</p>
+<p><span class="math display">\[
+\frac{d n}{d t}=-\frac{d j}{d x}=\frac{1}{\xi} \frac{d}{d x}\left(k_B T \frac{d n}{d x}+n \frac{d U}{dx}\right)
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\frac{dn}{dt}=\nabla \left (D \nabla n +n\frac{\textbf{F}}{\xi}\right ) \tag{Smoluchowski equation}
+\]</span></p>
+<p>This may be even further generalized and leads to the Fokker-Planck-Equation, which we leave out here in the discussion.</p>
+<p>The time dependet diffusion equation</p>
+<p><span class="math display">\[
+\frac{\partial}{\partial t} n\left(\vec{r}, t \mid \vec{r}_0, t_0\right)=D \nabla^2 n\left(\vec{r}, t \mid \vec{r}_0, t_0\right)
+\]</span></p>
+<p>can be solved for given boundary and initial conditions. For the following</p>
+<p><span class="math display">\[
+n\left(\vec{r}, t \rightarrow t_0\left|\vec{r}_0, t_0\right|=\delta\left(\vec{r}-\vec{r}_0\right)\right. \tag{initial condition}
+\]</span></p>
+<p><span class="math display">\[
+n\left(|\vec{r}| \rightarrow \infty, t \mid \vec{r}_0, t_0\right)=0 \tag{boundary condition}
+\]</span></p>
+<p>we obtain the Greens function <span class="math display">\[
+n(\vec{r},t|\vec{r}_{0},t_{0})=\frac{1}{(4\pi D(t-t_0))^{3/2}}e^{-\frac{(\vec{r}-\vec{r}_{0})^2}{4D(t-t_0)}} \tag{Greens function}
+\]</span></p>
+<p>for the diffusion equation and the corresponding boundary conditions. The Greens function is the impulse response. With the help of it, new solutions for any initial condition can be constructed. Lets assume we have an initial condition given by</p>
+<p><span class="math display">\[
+n\left(\vec{r}, t \rightarrow 0\right)=f\left(\vec{v}_0\right)
+\]</span></p>
+<p>then the time dependent solution is a superposition of the Greens function solutions</p>
+<p><span class="math display">\[
+n(\vec{r}, t)=\int  n\left(\vec{r}, t \mid \vec{r}_0, t_0\right) f\left(\vec{r}_0 \right)dr_0
+\]</span></p>
+<p>Let is quickly consider the solution in 1 dimension and derive some simple properties of it. The first is the mean position of the density. The mean position is calculated by</p>
+<p><span class="math display">\[
+\langle x\rangle=\int_{-\infty}^{+\infty} x \frac{\Delta}{\sqrt{4 \pi D\left(t-t_0\right)}} \cdot e^{\frac{-\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}} d x
+\]</span></p>
+<p>and the result states</p>
+<p><span class="math display">\[
+\langle x\rangle=x_0
+\]</span></p>
+<p>that it is constant, i.e.&nbsp;the initial position is staionary even though the particles spread in space. This is of course expected as there is no drift in the system to one or the other direction. As the particles still spread in space, the change is in the second moment of the distribution, which is the variance calculated by</p>
+<p><span class="math display">\[
+\left\langle\left(x-x_0\right)^2\right\rangle=\int_{-\infty}^{+\infty}\left(x-x_0\right)^2 n(x, t) d x = 2Dt
+\]</span></p>
+<p>The result of this is corresponds to the mean squared displacement of a single particle. The variance of the distribution grows linearly in time and the coefficient characterizing the spread of the particles is the diffusion coefficient <span class="math inline">\(D\)</span>. The law obtained here, can be generalized to <span class="math inline">\(d=3\)</span> dimensions by</p>
+<p><span class="math display">\[
+\left\langle\left(\mathbf{r}-\mathbf{r}_0\right)^2\right\rangle=2dDt=6Dt
+\]</span></p>
+<p>A mean distance travelled is therefore related to the square root of time. This diffusion processes are rapid at short distances but very slow for largedistance as can be seen from the table below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/table.png" class="img-fluid figure-img"></p>
+<figcaption>Table Diffusion</figcaption>
+</figure>
+</div>
+</section>
+<section id="application-fluorescence-recovery-after-photobleaching" class="level3" data-number="21.1.2">
+<h3 data-number="21.1.2" class="anchored" data-anchor-id="application-fluorescence-recovery-after-photobleaching"><span class="header-section-number">21.1.2</span> Application: Fluorescence Recovery after Photobleaching</h3>
+<div class="alert alert-info">
+<p>One application of our Greens frunction approach that is frequently used in studying biological materials is Fluorescence Recovery after Photobleaching or short <strong>FRAP</strong>.</p>
+<p>Initial condition:</p>
+<p><span class="math display">\[
+n\left(x, t_0\right)=\Theta(-a-x)+\Theta(x-a)
+\]</span></p>
+<p>Boundary Condition</p>
+<p><span class="math display">\[
+\lim _{|x| \rightarrow \infty} n(x, t)=0
+\]</span></p>
+<p>Greens Function</p>
+<p><span class="math display">\[
+n\left(x,t | x_0, t_0\right)=\frac{1}{\sqrt{4 \pi D\left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4D\left(t-t_0\right)}}
+\]</span></p>
+<p>Therefore the total solution</p>
+<p><span class="math display">\[\begin{align}
+n(x, t)=&amp;\int_{-\infty}^{+\infty} d x_0 n\left(x, t \mid x_0, t_0\right) \cdot[\Theta (-a-x)+\Theta(x-a)]\\
+=&amp; \int_{-\infty}^{-a} d x_0 \frac{1}{\sqrt{4 \pi D \left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}}\\
+=&amp; \int_{a}^{\infty} d x_0 \frac{1}{\sqrt{4 \pi D\left(t-t_0\right)}} e^{-\frac{\left(x-x_0\right)^2}{4 D\left(t-t_0\right)}}
+\end{align}\]</span></p>
+<p>The solution of the integration is</p>
+<p><span class="math display">\[
+n(x, t)=1-\frac{1}{2}\left(\operatorname{erf}\left[\frac{x+a}{2 \sqrt{D\left(t-t_0\right)}}\right]-\operatorname{erf}\left[\frac{x-a}{2 \sqrt{D\left(t-t_0\right)}}\right]\right)
+\]</span></p>
+<p>with <span class="math inline">\(\mathrm{erf}\)</span> being the error function</p>
+<p><span class="math display">\[
+\mathrm{erf}(x)=\frac{1}{\sqrt{\pi}} \int_{-x}^x e^{-t^2} d t=\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} d t
+\]</span></p>
+</div>
+<div id="8d10b57d-73c5-4ad9-a177-b8e4648a907e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Example of a FRAP density profile</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> heaviside(x):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.where(x <span class="op">&gt;=</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_step(x, a):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> heaviside(<span class="op">-</span>a <span class="op">-</span> x) <span class="op">+</span> heaviside(x <span class="op">-</span> a)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> n_solution(x, a, D, t, t0):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    term1 <span class="op">=</span> sp.erf((x <span class="op">+</span> a) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    term2 <span class="op">=</span> sp.erf((x <span class="op">-</span> a) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (term1 <span class="op">-</span> term2)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># size of the bleached region</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># diffusion coefficient</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>t0 <span class="op">=</span> <span class="dv">0</span>  <span class="co"># initial time</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)  <span class="co"># times from 1 to 10 seconds</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">400</span>)  <span class="co"># range of x values</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.plot(x, n_step(x, a), label<span class="op">=</span><span class="st">'n(x, t0)'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> times:</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, n_solution(x, a, D, t, t0), label<span class="op">=</span><span class="ss">f'n(x, t=</span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">s)'</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'n(x, t)'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_Flows_Transport_files/figure-html/cell-3-output-1.png" width="714" height="390" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="alert alert-info">
+<p>We can also characterize the amount of density in the bleached region as a function of time. This gives a single time trace, which we ca analyze to obtain the diffusion coefficient</p>
+<p><span class="math display">\[
+N\left(t, t_0\right)= \int_{-a}^{+a}  n(x, t)\, d x
+\]</span></p>
+<p>The integration of the previously obtained density then results in</p>
+<p><span class="math display">\[
+N\left(t, t_0\right)=\frac{\sqrt{D\left(t-t_0\right)}}{a \sqrt{\pi}}\left(1-\exp\left[-\frac{a^2}{D\left(t-t_0\right)}\right]\right)+1-\operatorname{erf}\left[\frac{a}{\sqrt{D\left(t-t_0\right)}}\right]
+\]</span></p>
+<p>which is plotted below.</p>
+</div>
+<div id="836f8d89-6fd9-420b-9822-5c8474f7bdd6" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> N(t, t0, D, a):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    term1 <span class="op">=</span> (np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0)) <span class="op">/</span> (a <span class="op">*</span> np.sqrt(np.pi))) <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>np.exp(<span class="op">-</span>a<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (D <span class="op">*</span> (t <span class="op">-</span> t0))))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    term2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> sp.erf(a <span class="op">/</span> np.sqrt(D <span class="op">*</span> (t <span class="op">-</span> t0)))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (term1 <span class="op">+</span> term2)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Interactive plotting function</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_function(D):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">1</span>  <span class="co"># constant a</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    t0 <span class="op">=</span> <span class="dv">0</span>  <span class="co"># initial time t0</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">10</span>, <span class="dv">400</span>)  <span class="co"># time range from 0.1 to 10</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    plt.plot(t, N(t, t0, D, a), label<span class="op">=</span><span class="ss">f'Diffusion Coefficient: D=</span><span class="sc">{</span>D<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">'t - t0'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">'N(t, t0)'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    plt.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the widget</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#interact(plot_function, D=(0.01, 1.0, 0.01));</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plot_function(<span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_Flows_Transport_files/figure-html/cell-4-output-1.png" width="636" height="397" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="rotational-diffusion" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="rotational-diffusion"><span class="header-section-number">21.2</span> Rotational Diffusion</h2>
+<p>If we constrain all the points that are diffusing to a sphere of radius 1, i.e.&nbsp;<span class="math inline">\(\left|\vec{r}_0\right|=|\vec{r}|=1\)</span>, the we have in a spherical coordinate system no radial motion just angular motion along the remaining two angular coordinates <span class="math inline">\(\phi\)</span> and <span class="math inline">\(\theta\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rotdiff.png" class="img-fluid figure-img"></p>
+<figcaption>Rotational Diffusion</figcaption>
+</figure>
+</div>
+<p>The dynamics of the vector from the center of the unit sphere to the surface is therefore a orientational diffusion, which obeys the following diffusion equation</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\frac{\partial n\left(\Omega, t \mid \Omega_0, t_0\right)}{\partial t}=&amp; D_{\mathrm{rot}}\left[\frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial}{\partial \theta}\right)\right. \\
+&amp; \left.+\frac{1}{\sin ^2 \theta} \frac{\partial^2}{\partial \varphi^2}\right] n\left(\Omega, t, \Omega_0, t_0\right)
+\end{aligned}
+\end{equation}\]</span></p>
+<p>The differential operator has, without any surprise, spherical harmonics as eigenfunctions, i.e.</p>
+<p><span class="math display">\[
+Y_l^m=N e^{i m \phi} P_l^m(\cos \theta)
+\]</span></p>
+<p>where <span class="math inline">\(N\)</span> is a nomralization factor and <span class="math inline">\(P_l^m\)</span> are the assiciated Legendre polynomials. The time dependent solution of the density <span class="math inline">\(n\)</span> at the surface of the sphere can therefore be expressed as a sum over all surface harmonics with time dependent amplitudes <span class="math inline">\(A_{\operatorname{lm}}\left(t, \Omega_0, t_0\right)\)</span>, which depend on the initial distribution at <span class="math inline">\(t_0\)</span>.</p>
+<p><span class="math display">\[
+n\left(\Omega, t \mid \Omega_0, t_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^{+l} A_{l m}\left(t, \Omega_0, t_0\right) Y_l^m(\Omega)
+\]</span></p>
+<p>To obtain a solution for the amplitudes, we insert the series into the diffusion equation to yield</p>
+<p><span class="math display">\[
+\sum_{l=0}^{\infty} \sum_{m=-l}^{+l} \frac{\partial A_{l m}}{\partial t} Y_l^m=-\frac{1}{\tau_R}\sum_{l=0}^{\infty} \sum_{m=-l}^l l(l+1)  A_{l m} Y_l^m
+\]</span></p>
+<p>where <span class="math inline">\(D_{\mathrm{rot}}=1/\tau_{R}\)</span> is the rotational diffusion coefficient. Due to the orthogonality of the surface harmonics, this finally yields</p>
+<p><span class="math display">\[
+\frac{\partial A_{l m}}{\partial t}=-\frac{l(l+1)}{\tau_{R}} A_{l m}
+\]</span></p>
+<p>for each value of the integer number <span class="math inline">\(l\)</span> and <span class="math inline">\(m\)</span>. This is solved by an exponential function</p>
+<p><span class="math display">\[
+A_{\operatorname{lm}}\left(t \mid \Omega_0, t_0\right)=e^{-l(l+1) \frac{\left(t-t_0\right)}{\tau_R}} \quad a_{lm}\left(\Omega_0\right)
+\]</span></p>
+<p>where the coefficients <span class="math inline">\(a_{lm}\)</span> are determined by the initial conditions.</p>
+<p>The final solution is therefore</p>
+<p><span class="math display">\[
+n\left(\Omega, t \mid \Omega_0, t_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^l e^{-l(l+1) \frac{\left(t-t_0\right)}{\tau_R}} a_{l_m}\left(\Omega_0\right) Y_l^m \tag{rotational diffusion}
+\]</span></p>
+<p>A more specific solution can be obtained by assuming that there is a delta function for the density <span class="math inline">\(n\)</span> as the initial condition, i.e.&nbsp;</p>
+<p><span class="math display">\[
+n\left(\Omega, t_0|  \Omega_0, t_0\right)=\delta\left(\Omega-\Omega_0\right)
+\]</span></p>
+<p>The delta function can be expressed in speherical coordinates as</p>
+<p><span class="math display">\[
+\delta\left(\Omega-\Omega_0\right)=\sum_{l=0}^{\infty} \sum_{m=-l}^l Y_{l m}^*\left(\Omega_0\right) Y_{l n}(\Omega)
+\]</span></p>
+<p>an yields</p>
+<p><span class="math display">\[
+a_{lm}\left(\Omega_0\right)=Y_{l m}\left(\Omega_0\right)
+\]</span></p>
+<p>and this finally</p>
+<p><span class="math display">\[
+n(\Omega, t| \Omega_0, t_0)=\sum_{l=0}^{\infty} \sum_{m=-l}^k e^{-l(l+1) \frac{(t-t_0)} {\tau_R}} Y_{lm}^*\left(\Omega_0\right) Y_{l m}(\Omega)
+\]</span></p>
+<p>Analyzing this equation we see that the amplitudes decay exponentially with a time constant <span class="math inline">\(\tau_{R}/(l(l+1))\)</span>. The largest time constant, i.e.&nbsp;the time constant that prevails at long times is <span class="math inline">\(\tau_R/2\)</span>, while the dynamic behavior at short times can be multi-exponential.</p>
+<section id="nmr-spectroscopydielectric-relaxation" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="nmr-spectroscopydielectric-relaxation"><span class="header-section-number">21.2.1</span> NMR Spectroscopy/Dielectric Relaxation</h3>
+<p>The results have some immediate consquences for the analysis of experimental data coming from dielectric spectroscopy or nuclear magnetic resonance (NMR). Both techniques are very common for studying soft matter, as they address either molecular electric dipoles or nuclear magnetic dipoles, which respond to a perturbation by an external field through various processes, among them an orientational diffusion.</p>
+<p>For dielectric spectroscopy one measures a dielectric polarization, i.e.&nbsp;a projection of dipoles onto an axis given by an electric field. Similarly NMR uses the projection of magnetic dipoles (nuclear spins) to the magnetic field direction to create a magnetization. If the dipole makes an angle <span class="math inline">\(\theta\)</span> with the corresponding field, then the projection of the dipole is <span class="math inline">\(\mu \cos(\theta)\)</span>, which is responsible for the polarization/magnetization. What is probed by NMR or dielectric spectroscopy is therefore the relaxation of that cosine term.</p>
+<p>In the sum of spherical surface harmonics, this is actually the term with <span class="math inline">\(l=1\)</span>, which is accompanied with the first Legendre polynomial:</p>
+<p><span class="math display">\[
+P_1^0=P_0 \cos (\theta) \quad l=1
+\]</span></p>
+<p>So both techniques would probe the first Legendre polynomial, but</p>
+<p><span class="math display">\[
+\left\langle P_{1}^0\right\rangle=\frac{1}{4 \pi} \int d \Omega P_0 \cos (\theta) \quad \rightarrow 0
+\]</span></p>
+<p>This is because the dynamics of the dipoles is uncorrelated and doing Brownian motion. Yet, you can have a look at the dynamics if you calculate the autocorrelation function</p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+\left\langle P_1^0(t) P_1^{0, *}\left(t_0\right)\right)=&amp; P_0^2 \int d \Omega \int d \Omega_0 \cos (\theta) \cos \left(\theta_0\right) n\left(\Omega, t |\Omega_0 ,t_0\right) n_0\left(\Omega_0\right)\\
+= &amp; \frac{4 \pi}{3} P_0^2 \sum_{m=1}^l e^{-l(l+1) \frac{t-t_0}{\tau_R}}\left|C_{10 l m}\right|^2
+\end{aligned}
+\end{equation}\]</span></p>
+<p>where the <span class="math inline">\(C_{10 l m}\)</span> are again defined by the initial conditions. So if these are delta functions, one quickly finds that</p>
+<p><span class="math display">\[
+\left\langle P_3(t) P_3^*(t_0)\right\rangle=\frac{4 \pi}{3} P_0^2 e^{-2\left(t-t_0\right) /\tau_R}
+\]</span></p>
+<p>So the correlation function decay with a time constant that is half the rotational diffusion time due to the projection of the dipole to a certain direction. Here are some more details on measurements based on NMR, even though focused on <a href="https://home.uni-leipzig.de/~physik/sites/mona/wp-content/uploads/sites/3/2017/03/MRT%20Lecture/assets/fallback/index.html">magnetic resonance imaging</a>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Boundary Hydrodynamics</title>
+<title>28&nbsp; Ideal Polymer Models – SoftMatterLecture</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,16 +57,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="2_boundary_hydrodynamics_files/libs/clipboard/clipboard.min.js"></script>
-<script src="2_boundary_hydrodynamics_files/libs/quarto-html/quarto.js"></script>
-<script src="2_boundary_hydrodynamics_files/libs/quarto-html/popper.min.js"></script>
-<script src="2_boundary_hydrodynamics_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="2_boundary_hydrodynamics_files/libs/quarto-html/anchor.min.js"></script>
-<link href="2_boundary_hydrodynamics_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="2_boundary_hydrodynamics_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="2_boundary_hydrodynamics_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="2_boundary_hydrodynamics_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="2_boundary_hydrodynamics_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -98,17 +131,63 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+<meta property="og:title" content="Title for Open Graph">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="SoftMatterLecture">
 </head>
 
-<body class="fullcontent">
+<body class="nav-fixed">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="../../../SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#freely-rotating-chain" id="toc-freely-rotating-chain" class="nav-link active" data-scroll-target="#freely-rotating-chain"><span class="header-section-number">28.1</span> Freely Rotating Chain</a></li>
+  <li><a href="#gaussian-chain" id="toc-gaussian-chain" class="nav-link" data-scroll-target="#gaussian-chain"><span class="header-section-number">28.2</span> Gaussian Chain</a></li>
+  <li><a href="#wormlike-chain" id="toc-wormlike-chain" class="nav-link" data-scroll-target="#wormlike-chain"><span class="header-section-number">28.3</span> Wormlike Chain</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Boundary Hydrodynamics</h1>
+<h1 class="title"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Ideal Polymer Models</span></h1>
 </div>
 
 
@@ -125,7 +204,7 @@ window.Quarto = {
 </header>
 
 
-<div id="cf8d40cf-5a5c-419b-9b9a-365852946251" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="1">
+<div id="cf8d40cf-5a5c-419b-9b9a-365852946251" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> norm</span>
@@ -139,138 +218,202 @@ window.Quarto = {
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(style) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>As another important example of hydrodynamical flow fields we would like to have a look at hydrodynamic flows that arise from interfacial forces. In most of the cases, these interfacial forces are often caused by osmotic pressure differences an are termed osmotic flows. The osmotic pressure difference may thereby arise from various properties, e.g.&nbsp;temperature gradients, electrostatic potential gradients, concentration gradients.</p>
-<p>To analyze this type of boundary flow, we first look at the geometry below.</p>
+<section id="freely-rotating-chain" class="level2" data-number="28.1">
+<h2 data-number="28.1" class="anchored" data-anchor-id="freely-rotating-chain"><span class="header-section-number">28.1</span> Freely Rotating Chain</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/boundary_flow.png" class="img-fluid figure-img"></p>
-<figcaption>Boundary Flow</figcaption>
+<p><img src="img/frc.png" class="img-fluid figure-img"></p>
+<figcaption>FRC</figcaption>
 </figure>
 </div>
-<p>The boundary flows are the results of the fact that the interaction between liquid molecules is altered by the presence of the substrate depicted below (some symmetry breaking). This altered interaction is present at a length scale of nanometers (!) only. Think for example about the influence of van der Waals forces or the electric double layer. Beyond this interfacial region of a few nanometers the influence of the solid surface has decayed and the liquid exhibits bulk-like properties. It is this tiny interfacial region which we will consider in the description below.</p>
-<p>According to the above picture, we can use the Stokes equation</p>
-<p><span class="math display">\[\begin{equation}
-\eta \Delta \vec{u}= -\nabla p-\vec{f}
-\end{equation}\]</span></p>
-<p>and split it according to the <span class="math inline">\(x\)</span> (tangential) and <span class="math inline">\(z\)</span> (nromal) components.</p>
-<div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-rule: 1px dotted #e0e0e0; -moz-column-rule: 1px dotted #e0e0e0; column-rule: 1px dotted #e0e0e0;">
-<pre><code>&lt;div style="display: inline-block; width: 50%"&gt;
-    &lt;h4&gt;normal to surface&lt;/h4&gt;
-    $\frac{\partial^2 \vec{u}}{\partial z^2}=0$
-    &lt;p&gt;
-    $0=\frac{\partial p}{\partial z}-f_z$
-&lt;/div&gt;
-&lt;div style="display: inline-block;"&gt;
-    &lt;h4&gt;tangential to surface&lt;/h4&gt;
-    $\eta \frac{\partial^2 \vec{u}}{\partial z^2}=\frac{\partial p}{\partial x}-f_x$
-&lt;/div&gt;</code></pre>
-</div>
-<p>We assume that close to the boundary there will be no flow component normal to the surface, which simplifies the normal components of the Stokes equation into a balance of pressure gradient (presumably osmotic pressure) and normal force density.</p>
-<p>For the tangential component we have a tangential pressure gradient (osmotic) and a tangential force density which determine the flow.</p>
-<p>We can now integrate the equation for the tangential component by parts with two boundary conditions, i.e.&nbsp;<span class="math inline">\(u(z=0)=0\)</span> and <span class="math inline">\(u(z\gg\lambda)=u_B={\rm const.}\)</span> and find</p>
-<p><span class="math display">\[\begin{equation}
-u_B=\frac{1}{\eta}\int_0^{\infty} z\left (f_x-\frac{dp}{dx}\right )dz
-\end{equation}\]</span></p>
-<p>for the value of the boundary velocity <span class="math inline">\(u_B\)</span>, which is established rounghly at a distance <span class="math inline">\(\lambda\)</span> from the interface. Note that this upper boundary condition says that there is no solid boundary (with no-slip boundary condition) at infinity. We can introduce the boundary condition at large distance later. The question is now what in detail the term in the brackets of the previous equation is.</p>
-<section id="thermo-osmosis" class="level2">
-<h2 class="anchored" data-anchor-id="thermo-osmosis">Thermo-osmosis</h2>
-<p>We want to evaluate the boundary flow for the case when the surface is charged and in contact with an electrolyte solution. In this case, we can refer to the Debye-Hückel theory, which we earlier developed. In addition, this double layer is subject to a temperature gradient tangential to the surface, which will be the source of the osmotic pressure gradient along the surface.</p>
+<p><span class="math display">\[
+\left\langle\vec{r}_i \cdot \vec{r}_j\right\rangle=l^2(\cos \theta)^{|j-i|}
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R^2\right\rangle=\sum_{i=1}^n \sum_{j=1}^n\left\langle\vec{r}_i \cdot \vec{r}_j\right\rangle
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R^2\right\rangle=n l^2+2 n l^2 \frac{\cos \theta}{1-\cos \theta}=n l^2 \frac{1+\cos \theta}{1-\cos \theta}
+\]</span></p>
+<p><span class="math display">\[
+C_{\infty}=\frac{1+\cos \theta}{1-\cos \theta} \cong 2
+\]</span></p>
+</section>
+<section id="gaussian-chain" class="level2" data-number="28.2">
+<h2 data-number="28.2" class="anchored" data-anchor-id="gaussian-chain"><span class="header-section-number">28.2</span> Gaussian Chain</h2>
+<p>We have previously seen that in the limit of N → ∞ all ideal chains become identical and follow the normal distribution as long as each step of the random walk for the chain conformation satisfies that it is uncorrelated with the previous step. A generalization of this concept is the Gaussian chain, which no longer considers the exact Kuhn segment length, but divides a long chain into equal flexible segments of arbitrary length:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/charged_surface.png" class="img-fluid figure-img"></p>
-<figcaption>DoubleLayer</figcaption>
+<p><img src="img/ssc.png" class="img-fluid figure-img"></p>
+<figcaption>SSC</figcaption>
 </figure>
 </div>
-<p>For this situation we have all equations at hand. We have first of all</p>
-<ul>
-<li>excess charge density: <span class="math inline">\(\rho = e (n_+-n_-)\)</span></li>
-<li>total ion density: <span class="math inline">\(n=n_++n_-\)</span></li>
-<li>the ion density distribution: <span class="math inline">\(n_{\pm}=n_0(\exp\left (\mp \frac{e\psi}{k_B T}\right )-1)\)</span></li>
-<li><span class="math inline">\(n_0\)</span> the bulk ion density</li>
-<li><span class="math inline">\(\psi\)</span> the electrostatic potential</li>
-</ul>
-<p>The force density in the system is given by</p>
-<p><span class="math display">\[\begin{equation}
-f=-\rho \nabla \psi + \ldots
-\end{equation}\]</span></p>
-<p>where the dots denote other terms (electrostriction, change of dielectric constant …), which exist, but which we neglect.</p>
-<p>Further, we can write the pressure as the osmotic pressure of the ion density</p>
-<p><span class="math display">\[\begin{equation}
-p=n k_B T=(n_++n_-)k_B T=\left ( n_0(\exp\left (- \frac{e\psi}{k_B T}\right )-1)+ n_0(\exp\left ( \frac{e\psi}{k_B T}\right )-1) \right ) k_B T
-\end{equation}\]</span></p>
-<p>The task is now to calculate the term <span class="math inline">\(f_x-\frac{\partial p}{\partial x}\)</span> using derivatives of the above written pressure. Note that we have to take the derivative of the temperature with respect to the position but assume the temperature in the Boltzmann factors constant.</p>
-<p>The result of this a bit more lengthy calculation is that</p>
-<p><span class="math display">\[\begin{equation}
-f_x-\frac{\partial p}{\partial x} =-nk_B T \frac{1}{T}\frac{\partial T}{\partial x} - \rho \psi \frac{1}{T}\frac{\partial T}{\partial x}
-\end{equation}\]</span></p>
-<p>or in 3-dimensions</p>
-<p><span class="math display">\[\begin{equation}
-{\bf f}-\nabla p= -\left(\varrho \psi+n k_{\mathrm{B}} T\right) \frac{\nabla T}{T}
-\end{equation}\]</span></p>
-<p>The term in fron of the fraction is an electrostatic interaction energy related term and a term corresponding to the ideal gas pressure. Both terms together clearly make up an enthalpy (energy + pressure x volume). In this case, they correspond to an excess enthalpy density as there is no contribution if there is no electrostatic surface charge involved.</p>
-<p>We can therefore also write the boundary velocity <span class="math inline">\(u_B\)</span> as</p>
-<p><span class="math display">\[\begin{equation}
-u_B= -\frac{1}{\eta}\int_0^{\infty} z h(z)dz\frac{\nabla T_{||}}{T}
-\end{equation}\]</span></p>
-<p>where <span class="math inline">\(h(z)\)</span> is the excess enthalpy density of the interaction of the liquid with the solid as compared to the liquid alone. As the interaction between liquid and solid is often attractive (van der Waals alone already is attractive), the excess enthalpy density is negative and the difference of force density and pressure density results in forces along the temperarture gradient, e.g.&nbsp;from the cold region to the hot region. If the excess enthalpy is positive, the flow is driven from hot to cold regions. Note that this flow is established in a thin liquid layer of thickness <span class="math inline">\(\lambda\)</span>, which is only a few nanometers thin. Within these few nanometers the flow velocity rises from 0 to a few 10 <span class="math inline">\(\mu m/s\)</span>.</p>
-<p>The plot below calculates the integral over the product of <span class="math inline">\(z\)</span> and the excess enthalpy for the electric double layer, assuming that some of the constants are 1 and the temperature gradient just gives a minus sign (assuming hot is on the left and cold is on the right).</p>
-<div id="47c4c707-cc95-4f57-acda-c57fbfe52bcc" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">## electrostatic potential</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> psi(z,lam_D):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(np.exp(<span class="op">-</span>z<span class="op">/</span>lam_D))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="6ffe74c5-01e7-4bce-a4e1-fccb2feccdef" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## n+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> npl(z,lam_D,n):</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(n<span class="op">*</span>(np.exp(<span class="op">-</span>psi(z,lam_D))<span class="op">-</span><span class="dv">1</span>))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">## n-    </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nmi(z,lam_D,n):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(n<span class="op">*</span>(np.exp(psi(z,lam_D))<span class="op">-</span><span class="dv">1</span>))    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="91853530-20bd-4c42-9606-122287005fc4" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## total n</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nt(z,lam_D,n):</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">2</span><span class="op">*</span>n<span class="op">*</span>(np.cosh(psi(z,lam_D))<span class="op">-</span><span class="dv">1</span>))    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="243fc09e-d756-4850-b8af-bdf65a0f235c" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## excess enhalpy </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> h(z,lam_D,n):</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>((npl(z,lam_D,<span class="dv">1</span>)<span class="op">-</span>nmi(z,lam_D,<span class="dv">1</span>))<span class="op">*</span>psi(z,lam_D)<span class="op">+</span>nt(z,lam_D,<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-fig-polar" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="6">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">4</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>,linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">1</span>,linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>np.linspace(<span class="fl">0.1</span>,<span class="dv">5</span>,<span class="dv">1000</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>inth<span class="op">=-</span>np.cumsum(z<span class="op">*</span>(h(z,<span class="dv">1</span>,<span class="dv">1</span>))<span class="op">*</span>(z[<span class="dv">1</span>]<span class="op">-</span>z[<span class="dv">0</span>])) <span class="co">## numerically integrate the excess enthalpy *z</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>[plt.arrow(<span class="dv">0</span>,z[l],<span class="op">-</span>inth[l]<span class="op">*</span><span class="dv">5</span>,<span class="dv">0</span>,head_width<span class="op">=</span><span class="fl">0.2</span>,head_length<span class="op">=</span><span class="fl">0.1</span>) <span class="cf">for</span> l <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(z),<span class="dv">50</span>)]</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">4</span>,<span class="dv">2</span>)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"position x "</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"position y "</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="2_boundary_hydrodynamics_files/figure-html/fig-polar-output-1.png" width="557" height="403" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A line plot on a polar axis
-</figcaption>
+<p>In this case, the “segment length” b is not a real length, but the ends of a segment have a square end-to-end distance of b. The end-to-end distance of a segment is also no longer fixed/rigid. Instead, the end-to-end vector of each segment is determined by the Gaussian probability distribution for an ideal chain:</p>
+<p><span class="math display">\[
+p\left(\vec{r}_i ; N\right)=\left(\frac{3}{2 \pi b^2}\right)^{\frac{3}{2}} e^{-3\left|\vec{r}_i\right|^2 /\left(2 b^2\right)}
+\]</span></p>
+<p>with a variance of b2. The probability distribution for the end-to-end vector of the whole chain containing N Gaussian chain segments is according to the central limit theorem again Gaussian distributed and has N times the single segment variance:</p>
+<p><span class="math display">\[
+\left\langle R_N{ }^2\right\rangle=N \cdot b^2
+\]</span></p>
+<p>Let us now consider that each segment is composed of n smaller Gaussian chain segments with root-mean-squared end-to-end distance of b0. In this case the mean squared end-to-end distance of the large Gaussian segments is given as:</p>
+<p><span class="math display">\[
+b^2=n b_0^2
+\]</span></p>
+<p>The mean-squared end-to-end distance of the whole chain is then given as:</p>
+<p><span class="math display">\[
+\left\langle R_N{ }^2\right\rangle=\underbrace{N \cdot n}_{n_0} \cdot b_0{ }^2
+\]</span></p>
+<p>with n0 being the total number of small Gaussian chain segments in the whole chain, i.e.&nbsp;which is the expected result when using small segements for the whole chain. This shows that ideal chains are self-similar (one also calls this the fractal nature), i.e.&nbsp;the length range of the compartmentalization does not matter and provides the same result for small and large compartments. Using this approach the contour length of the whole chain remains however undefined.</p>
+<p>One can represent the Gaussian chain also as a bead-spring model, where each spring has the spring constant k of an entropic spring:</p>
+<p><span class="math display">\[
+\vec{f}_i=\underbrace{\frac{3 k_B T}{b^2}}_k\left\langle\vec{r}_i\right\rangle
+\]</span></p>
+<p>The total free energy of the chain is then given by the elastic (entropic) spring energy as well as its configurational entropy.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/gc.png" class="img-fluid figure-img"></p>
+<figcaption>GC</figcaption>
 </figure>
 </div>
+<p>The Gaussian chain model can be applied as long as each Gaussian segment can be approximated by the Gaussian statistics.</p>
+</section>
+<section id="wormlike-chain" class="level2" data-number="28.3">
+<h2 data-number="28.3" class="anchored" data-anchor-id="wormlike-chain"><span class="header-section-number">28.3</span> Wormlike Chain</h2>
+<p>Many polymers, especially biological filaments, are often freely articulated and there are no single discrete bond angles leading to the chain conformations. Such polymers are called semiflexible polymers or wormlike chains because they appear stiff on short length scales but flexible on long length scales due to the L3 dependence of the deflection of a cantilevered beam under load:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/wlc.png" class="img-fluid figure-img"></p>
+<figcaption>wlc</figcaption>
+</figure>
 </div>
+<p><span class="math display">\[
+\varepsilon(z)=\frac{L(z)-L(0)}{L(0)}=\frac{(R+z) \theta-R \theta}{R \theta}=\frac{z}{R}
+\]</span></p>
+<p><span class="math display">\[
+\kappa(s)=\frac{1}{R(s)}=\left|\frac{d \theta}{d s}\right|
+\]</span></p>
+<p><span class="math display">\[
+W(\varepsilon)=\frac{1}{2} E \varepsilon^2
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/curve.png" class="img-fluid figure-img"></p>
+<figcaption>Curve</figcaption>
+</figure>
 </div>
-<p>The flow profile we have calculated saturates at the boundary velocity <span class="math inline">\(u_B\)</span> as we have assumed this as the boundary condition at infinite distance. If there is a second surface at some distance, even though at finite distance but still large as compared to the interaction range, the velocity magnitude has to decay to zero towards this surface. Instead of assuming the complicated flow profile as depicted below, we can in cases where all other distances are large as compared to the interaction range <span class="math inline">\(\lambda_D\)</span> assume that the velocity directly at the interface is <span class="math inline">\(u_B\)</span>. The hydrodynamic boundary condition is thus altered from a <strong>no-slip boundary condition</strong> to a <strong>slip boundary condition</strong> with the slip velocity <span class="math inline">\(u_B\)</span>.</p>
+<p><span class="math display">\[
+d E_{\text {bend }}=d s \int_{\delta \Omega} d A \cdot W(\varepsilon)=d s \int_{\delta \Omega} d A \frac{E}{2} \varepsilon(z)^2=d s \int_{\delta \Omega} d A \frac{E}{2 R(s)^2} z^2
+\]</span></p>
+<p><span class="math display">\[
+d E_{\text {bend }}=d s \frac{E I}{2 R(s)^2}
+\]</span></p>
+<p><span class="math display">\[
+I=\int_{\delta \Omega} d A \cdot z^2
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{lc}
+\hline \hline \text { Shape } &amp; \text { Second moment } I \\
+\hline \text { Solid cylinder (radius } r \text { ) } &amp; \frac{\pi}{4} r^4 \\
+\text { Hollow cylinder (outer radius } r_2, \text { inner radius } r_1 \text { ) } &amp; \frac{\pi}{4}\left(r_2^4-r_1^4\right) \\
+\text { Ring-like filament of } n \text {-cylinders each with radius } r \text { (e.g. microtubule) } &amp; \left(\frac{2}{\pi^2} n^3+n\right) \frac{\pi}{4} r^4 \\
+\hline
+\end{array}
+\]</span></p>
+<p><strong>Persistence Length</strong></p>
+<p>Now let us consider thermal fluctuations of a short semi-flexible beam segment of length Δs in 2D(within a plane). Its mean bending energy is given by the equipartition theorem as, since the fluctuations have only one degree of freedom:</p>
+<p><span class="math display">\[
+\left\langle\Delta E_{\text {bend }}\right\rangle=\left\langle\Delta s \frac{E I}{2}\left(\frac{\Delta \theta}{\Delta s}\right)^2\right\rangle=\frac{E I}{2} \frac{\left\langle\Delta \theta^2\right\rangle}{\Delta s}=\frac{1}{2} k_B T
+\]</span></p>
+<p>i.e.&nbsp;the mean-squared angular displacement is given as:</p>
+<p><span class="math display">\[
+\left\langle\Delta \theta^2\right\rangle=\frac{k_B T}{E I} \cdot \Delta s=\frac{\Delta s}{p} \quad \text { if } \Delta \theta^2 \ll 1
+\]</span></p>
+<p>It is proportional to the beam length, i.e.&nbsp;longer beams appear more flexible. The fraction in the central equation defines an inverse length based on kT and the beam material and shape parameters. We call the ratio:</p>
+<p><span class="math display">\[
+p=\frac{E I}{k_B T}
+\]</span></p>
+<p>persistence length p, that provides the a measure of the flexural rigidity per length of the beam balanced by the thermal fluctuations.</p>
+<p>Let us describe the deflection of the tangent angles over larger length scales. i.e.&nbsp;Δs may be larger than p.&nbsp;Instead of the mean angular displacement we take the tangent-tangent correlation function as descriptor:</p>
+<p><span class="math display">\[
+g(s)=\langle\vec{t}(s) \cdot \vec{t}(0)\rangle=\langle\cos \theta(s)\rangle
+\]</span></p>
+<p><span class="math display">\[
+\Delta\langle\cos \theta(s)\rangle=\frac{d\langle\cos \theta(s)\rangle}{d s} \Delta s=\langle\cos \underbrace{\theta(s+\Delta s)}_{\theta(s)+\Delta \theta}-\cos \theta(s)\rangle
+\]</span></p>
+<p><span class="math display">\[
+\Delta\langle\cos \theta(s)\rangle=\underbrace{\langle\cos \theta \cos \Delta \theta-\sin \theta \sin \Delta \theta\rangle}_{\langle\cos \theta\rangle\langle\cos \Delta \theta\rangle-\underbrace{\sin \theta\rangle \sin \Delta \theta\rangle}_0}-\langle\cos \theta(s)\rangle=\langle\cos \theta(s)\rangle(\langle\cos \Delta \theta\rangle-1)
+\]</span></p>
+<p><span class="math display">\[
+\Delta \theta\langle\cos \Delta \theta\rangle \approx 1-\left\langle\Delta \theta^2\right\rangle / 2
+\]</span></p>
+<p><span class="math display">\[
+\frac{d\langle\cos \theta(s)\rangle}{d s} \Delta s=\langle\cos \theta(s)\rangle \frac{\left\langle\Delta \theta^2\right\rangle}{2}=\langle\cos \theta(s)\rangle \frac{\Delta s}{2 p}
+\]</span></p>
+<p><span class="math display">\[
+\int_1^{\langle\cos \theta(s)\rangle} \frac{d\langle\cos \theta(s)\rangle}{\langle\cos \theta(s)\rangle}=\int_0^s \frac{d s}{2 p}
+\]</span></p>
+<p><span class="math display">\[
+\langle\cos \theta(s)\rangle=e^{-s / 2 p}
+\]</span></p>
+<p>In 3D we have an additional degree of freedom for the angular fluctuations, such that the mean-squared angular deflection for a short segment is twice as large. In 3D the tangent correlation function thus becomes:</p>
+<p><span class="math display">\[
+\langle\vec{t}(s) \cdot \vec{t}(0)\rangle=e^{-s k_B T I(E I)}=e^{-s / p}
+\]</span></p>
+<p>i.e.&nbsp;the persistence length provides the distance scale at which the correlation between the tangent angles decays. The persistence length thus defines the length over which a polymer is still remaining rigid.</p>
+<p><strong>Mean-square end-to-end distance of a long semiflexible chain (worm-like-chain)</strong></p>
+<p><span class="math display">\[
+\mathbf{R}=\int_0^L \mathrm{~d} s \mathbf{t}(s)
+\]</span></p>
+<p><span class="math display">\[
+\left\langle\mathbf{R}^2\right\rangle=\left\langle\int_0^L \mathrm{~d} s \mathbf{t}(s) \cdot \int_0^L \mathrm{~d} u \mathbf{t}(u)\right\rangle
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\left\langle\vec{R}^2\right\rangle &amp; =\left\langle\int_0^L d s \int_0^L d u \vec{t}(s) \cdot \vec{t}(u)\right\rangle \\
+&amp; =\int_0^L d s \int_0^L d u \cdot e^{-|u-s| / p} \\
+&amp; =2 \int_0^L d s \int_s^L d u \cdot e^{-(u-s) / p} \\
+&amp; =2 \int_0^L d s \int_0^{L-s} d x \cdot e^{-x / p} \\
+&amp; =2 p \int_0^L d s\left(1-e^{-(L-s) / p}\right)
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\left\langle\vec{R}^2\right\rangle=2 p L\left[1-\frac{p}{L}\left(1-e^{-L / p}\right)\right]
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_G^2\right\rangle=\frac{1}{6}\left\langle\vec{R}^2\right\rangle=\frac{1}{6} L b
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_G^2\right\rangle=\frac{1}{3} L p
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{lccc}
+\hline \hline \text { Organism } &amp; \text { genome length in bp } &amp; R_G \text { in } \mu \mathrm{m} &amp; \text { compartment size in } \mu \mathrm{m} \\
+\hline \lambda \text {-phage } &amp; 50,000 &amp; 0.5 &amp; 0.1 \text { (capsid) } \\
+E . \text { coli } &amp; 6 \cdot 10^6 &amp; 6.8 &amp; 1 \\
+\text { H.sapiens } &amp; 6 \cdot 10^9 &amp; 200 &amp; \text { few } \mu \mathrm{m} \text { (nucleus) } \\
+\hline
+\end{array}
+\]</span></p>
+<p><strong>Force-extension relation of a worm-like chain!</strong></p>
+<p><span class="math display">\[
+F=\frac{k_B T}{p}\left[\frac{1}{4\left(1-z / L_0\right)^2}+\frac{z}{L}-\frac{1}{4}\right]
+\]</span></p>
+<p><strong>Adding elastic stretching to entropic force-extension behavior</strong></p>
+<p><span class="math display">\[
+\frac{z_{\text {total }}}{L_0}=\frac{z_{\text {entr }}}{L_0}+\frac{z_{\text {elastic }}}{L_0}=\frac{z_{\text {entr }}}{L_0}+\frac{F}{S}
+\]</span></p>
+<p><span class="math display">\[
+\left\langle z_{\text {total }}\right\rangle=L_0\left[\operatorname{coth}\left(\frac{a F}{k_B T}\right)-\frac{k_B T}{a F}+\frac{F}{S}\right]
+\]</span></p>
+<p><span class="math display">\[
+F=\frac{k_B T}{p}\left[\frac{1}{4\left(1-z / L_0+F / S\right)^2}+\frac{z}{L}-\frac{F}{S}-\frac{1}{4}\right]
+\]</span></p>
+
+
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

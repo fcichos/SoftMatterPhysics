@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>32&nbsp; Viscoelasticity – SoftMatterLecture</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+<meta property="og:title" content="Title for Open Graph">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="SoftMatterLecture">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="../../../SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#maxwell-model" id="toc-maxwell-model" class="nav-link active" data-scroll-target="#maxwell-model"><span class="header-section-number">32.1</span> Maxwell Model</a></li>
+  <li><a href="#stress-relaxation-after-step-strain" id="toc-stress-relaxation-after-step-strain" class="nav-link" data-scroll-target="#stress-relaxation-after-step-strain"><span class="header-section-number">32.2</span> Stress Relaxation after Step Strain</a>
+  <ul>
+  <li><a href="#boltzmann-superposition" id="toc-boltzmann-superposition" class="nav-link" data-scroll-target="#boltzmann-superposition"><span class="header-section-number">32.2.1</span> Boltzmann Superposition</a></li>
+  </ul></li>
+  <li><a href="#steady-shear" id="toc-steady-shear" class="nav-link" data-scroll-target="#steady-shear"><span class="header-section-number">32.3</span> Steady Shear</a></li>
+  <li><a href="#creep-and-creep-recovery" id="toc-creep-and-creep-recovery" class="nav-link" data-scroll-target="#creep-and-creep-recovery"><span class="header-section-number">32.4</span> Creep and Creep Recovery</a>
+  <ul>
+  <li><a href="#creep" id="toc-creep" class="nav-link" data-scroll-target="#creep"><span class="header-section-number">32.4.1</span> Creep</a></li>
+  <li><a href="#creep-recovery" id="toc-creep-recovery" class="nav-link" data-scroll-target="#creep-recovery"><span class="header-section-number">32.4.2</span> Creep Recovery</a></li>
+  </ul></li>
+  <li><a href="#oscillatory-shear" id="toc-oscillatory-shear" class="nav-link" data-scroll-target="#oscillatory-shear"><span class="header-section-number">32.5</span> Oscillatory Shear</a>
+  <ul>
+  <li><a href="#complex-shear-modulus-of-the-maxwell-model" id="toc-complex-shear-modulus-of-the-maxwell-model" class="nav-link" data-scroll-target="#complex-shear-modulus-of-the-maxwell-model"><span class="header-section-number">32.5.1</span> Complex shear modulus of the Maxwell model</a></li>
+  <li><a href="#complex-shear-modulus-of-the-kelvin-voigt-model" id="toc-complex-shear-modulus-of-the-kelvin-voigt-model" class="nav-link" data-scroll-target="#complex-shear-modulus-of-the-kelvin-voigt-model"><span class="header-section-number">32.5.2</span> Complex shear modulus of the Kelvin-Voigt model</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Viscoelasticity</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="166775b7" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> norm</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.constants <span class="im">import</span> c,epsilon_0,e,physical_constants</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'style.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> fp:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    style <span class="op">=</span> json.load(fp)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(style) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="maxwell-model" class="level2" data-number="32.1">
+<h2 data-number="32.1" class="anchored" data-anchor-id="maxwell-model"><span class="header-section-number">32.1</span> Maxwell Model</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/maxwell.png" class="img-fluid figure-img"></p>
+<figcaption>Maxwell</figcaption>
+</figure>
+</div>
+<p>Combing back to the Maxwell model, we have a serial combination of viscous and elastic element. Thus both elements feel the same stress <span class="math inline">\(\sigma\)</span> and the deformation is the sum of the elastic and viscous deformation, i.e.&nbsp;<span class="math inline">\(\gamma=\gamma_e+\gamma_v\)</span>.</p>
+<p>We therefore find</p>
+<p><span class="math display">\[
+\sigma=G_M\gamma_e= \eta_M\frac{d\gamma}{dt}
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}
+\]</span></p>
+<p>where <span class="math inline">\(\eta_M/G_M\)</span> defines a timescale for the viscous relaxation. Such a timescale is always present in viscoelastic materials. In most materials even multiple timescales are relevant.</p>
+<p>In the following sections we explore the response of a viscoelastic material to different pertubations. They can be either formed by a <strong>step strain</strong>, a <strong>steady shear</strong> or a <strong>step stress or creep</strong>.</p>
+</section>
+<section id="stress-relaxation-after-step-strain" class="level2" data-number="32.2">
+<h2 data-number="32.2" class="anchored" data-anchor-id="stress-relaxation-after-step-strain"><span class="header-section-number">32.2</span> Stress Relaxation after Step Strain</h2>
+<p>Here we impose a step strain <span class="math inline">\(\gamma\)</span> at a time <span class="math inline">\(t=0\)</span>, such that the strain is constant for <span class="math inline">\(t&gt;0\)</span>. Depending on the material we will get a different response. If we have for example an</p>
+<ul>
+<li><strong>elastic solid</strong> will repond with a jump in the stress according to <span class="math inline">\(G\gamma\)</span> and the stress will stay constant as long as the strain is constant</li>
+<li><strong>Newtonian liquid</strong> will respond with a stress spike that instantaneously decays to zero</li>
+<li><strong>viscoelastic system</strong> will respond with some time dependent stress <span class="math inline">\(\sigma(t)\)</span></li>
+</ul>
+<p>Due to the time dependence of the stress <span class="math inline">\(\sigma(t)\)</span> for a viscoelastic material we can generalize Hooke’s law to</p>
+<p><span class="math display">\[
+G(t)=\frac{\sigma(t)}{\gamma}
+\]</span></p>
+<p>The plot shows the reponse of either a viscoelastic liquid or a viscoelastic solid. The latter comprise a general elastic part, which lets the stress converge for infinity time to some constant value</p>
+<p><span class="math display">\[
+G_{\rm eq}=\lim_{t\rightarrow \infty} G(t)
+\]</span></p>
+<p>For viscoelestic liquids this residual stress is absent and the stress decays to zero.</p>
+<div id="dc08ff27-1c97-48ef-995f-9cd1c6bb09f0" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>plt.figure()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.ion()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.plot(t,np.exp(<span class="op">-</span>t),label<span class="op">=</span><span class="st">"ve-liquid"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.plot(t,<span class="fl">0.8</span><span class="op">*</span>np.exp(<span class="op">-</span>t)<span class="op">+</span><span class="fl">0.2</span>,label<span class="op">=</span><span class="st">"ve-solid"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time t"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"stress $\sigma(t)$"</span>)<span class="op">;</span>plt.legend()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/tmp.png"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tmp.png" class="img-fluid figure-img"></p>
+<figcaption>TMP</figcaption>
+</figure>
+</div>
+<p>The Maxwell model, which is represented by a viscous dashpot element and an elastic spring represents such a viscoelastic liquid. The elastic strain thereby is</p>
+<p><span class="math display">\[
+\gamma_e=\frac{\eta_M}{G_M}\frac{d\gamma_v}{dt}=\tau_M\frac{d\gamma_v}{dt}
+\]</span></p>
+<p>Since the two elements are in series the elastic strain is also expressed by</p>
+<p><span class="math display">\[
+\gamma_e=\gamma-\gamma_v(t)
+\]</span></p>
+<p>Separation off variables leads to</p>
+<p><span class="math display">\[
+\frac{d\gamma_v(t)}{\gamma-\gamma_v(t)}=\frac{dt}{\tau_M}
+\]</span></p>
+<p>from which we obtain</p>
+<p><span class="math display">\[
+\ln(\gamma-\gamma_v(t))=\frac{-t}{\tau_M}+C
+\]</span></p>
+<p>with <span class="math inline">\(C=\ln(\gamma)\)</span> based on the initial condition that <span class="math inline">\(\gamma(t=0)=\gamma\)</span>. As a result we obtain</p>
+<p><span class="math display">\[
+\gamma_e(t)=\gamma-\gamma_v(t)=\gamma \exp\left (- \frac{t}{\tau_M} \right )
+\]</span></p>
+<p>and for the stress</p>
+<p><span class="math display">\[
+\sigma(t)=G_M\gamma_e(t)=G_M \gamma \exp \left ( -\frac{t}{\tau_M}\right )
+\]</span></p>
+<p>Thus in the Maxwell model, the stress relaxation has a simple exponential decay with the characteristic time constant <span class="math inline">\(\tau_M\)</span>. Such a characteristic time constant is characteristic for all viscoelastic materials. Many materials, e.g., polymers have multiple relaxation modes, each with its own time constant <span class="math inline">\(\tau\)</span> as we will see later.It turns out, that any stress relaxation modulus can be described by a series of Maxwell elements.</p>
+<section id="boltzmann-superposition" class="level3" data-number="32.2.1">
+<h3 data-number="32.2.1" class="anchored" data-anchor-id="boltzmann-superposition"><span class="header-section-number">32.2.1</span> Boltzmann Superposition</h3>
+<p>The mechanical response of all materials has a region of linear response, where the relaxation modulus is independent of the strain. A manifestation of this linear response is the Boltzmann superposition principle.</p>
+<p>Stress from any combination of small step strains is simply the linear combination of stresses resulting from each individual step.</p>
+<p>If this individual strain step <span class="math inline">\(\delta \gamma\)</span> is applied at <span class="math inline">\(t_i\)</span>, then the stress at a time <span class="math inline">\(t\)</span> is given by</p>
+<p><span class="math display">\[
+\sigma(t)=\sum_{i}G(t-t_i)\delta \gamma_i
+\]</span></p>
+<p>This means that the stress of each individual step is independent of the other steps and the system remembers the deformations that were imposed earlier and continue to relaxa from earlier deformations as new ones are applied.</p>
+<p>The stress relaxation modulus tells then how much stress remains at <span class="math inline">\(t\)</span> past each deformation <span class="math inline">\(\delta \gamma_i\)</span> through <span class="math inline">\(t-t_i\)</span>. With</p>
+<p><span class="math display">\[
+\delta \gamma_i=\dot{\gamma}_i\delta t_i
+\]</span></p>
+<p>we obtain</p>
+<p><span class="math display">\[
+\sigma(t)=\sum_i G(t-t_i)\dot{\gamma}_i\delta t_i
+\]</span></p>
+<p>or from a smooth history of strains</p>
+<p><span class="math display">\[
+\sigma(t)=\int_{-\infty}^{t}G(t-t^{\prime})\dot{\gamma}(t^{\prime})dt^{\prime}
+\]</span></p>
+<p>which tells you that the stress in any material is the result of all past deformations, which is expressed by this convolution. The momory of each past deformation only decays as the relaxation modulus decay ovet the elapsed time <span class="math inline">\(t-t^{\prime}\)</span></p>
+</section>
+</section>
+<section id="steady-shear" class="level2" data-number="32.3">
+<h2 data-number="32.3" class="anchored" data-anchor-id="steady-shear"><span class="header-section-number">32.3</span> Steady Shear</h2>
+<p>We now switch to a different mode of mechanical perturbation of a material, which is the steady shear deformation. There we already considered the flow profile in the low Reynolds number section.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/shear.png" class="img-fluid figure-img"></p>
+<figcaption>Flow</figcaption>
+</figure>
+</div>
+<p>Here, the shear rate is given by the speed of the top surface <span class="math inline">\(\dot{\gamma}=|\vec{v}|/h\)</span>, where <span class="math inline">\(h\)</span> is the height of the film. According to our previous considerations the stress follows from</p>
+<p><span class="math display">\[\begin{eqnarray}
+\sigma(t)&amp;=&amp;\dot{\gamma}\int_{-\infty}^{t}G(t-t^{\prime})dt^{\prime}\\
+&amp;=&amp; \dot{\gamma}\int_0^{\infty}G(s)dt
+\end{eqnarray}\]</span></p>
+<p>with <span class="math inline">\(s=t-t^{\prime}\)</span>. With Newtons law of viscosity follows that</p>
+<p><span class="math display">\[
+\eta=\int_{0}^{\infty}G(t)dt
+\]</span></p>
+<p>Using the Maxwell model this means that the viscosity is</p>
+<p><span class="math display">\[
+\eta=G\int_{0}^{\infty}\exp\left (-\frac{t}{\tau}\right )dt=G\tau=\eta_M
+\]</span></p>
+<p>which is also the result for a viscoelastic liquid. If the modulus <span class="math inline">\(G\)</span> is not constant, the viscosity can be also approximated by <span class="math inline">\(\eta=G(\tau)\tau\)</span>.</p>
+<p>For a viscoelastic solid, the moduls <span class="math inline">\(G(t)\)</span> does not decay to zero in time, but stays constant for long times. As a result the integral will diverge, as solids have an infinite viscosity.</p>
+<p>If the shear rate becomes very large, the linear response approximation we have asummed for the Boltzmann superposition will not hold and we will observe non-linear effects. This leads for example to a <strong>shear thinning</strong> in polymeric liquids but also to a <strong>shear thickening</strong> for other materials such as the corn starch.</p>
+<p>In these nonlinear regions, we can still define an apparent viscosity as the ration of shear stress divided by shear strain. The viscosity we commonly refer to is, however, the viscosity measured in the limit of <span class="math inline">\(\gamma\ll \tau^{-1}\)</span>.</p>
+<p>Note that all liquids display viscoelasticity even though the range where the viscosity is independent of the shear rate is very wide. For water, for example, the molecular relaxations are fast and the viscoelastic regimes starts at shear rates of about <span class="math inline">\(10^{10}\, s^{-1}\)</span></p>
+</section>
+<section id="creep-and-creep-recovery" class="level2" data-number="32.4">
+<h2 data-number="32.4" class="anchored" data-anchor-id="creep-and-creep-recovery"><span class="header-section-number">32.4</span> Creep and Creep Recovery</h2>
+<section id="creep" class="level3" data-number="32.4.1">
+<h3 data-number="32.4.1" class="anchored" data-anchor-id="creep"><span class="header-section-number">32.4.1</span> Creep</h3>
+<p>Another mechanical perturbation is the step stress that can be applied to watch the strain relax. This is called <strong>creep</strong> and switching of a constant stress is called <strong>creep recovery</strong>. For the study of creep relaxation processes we define a new quantity, which is the inverse of the shear modulus. It is called the <strong>shear creep compliance</strong></p>
+<p><span class="math display">\[\begin{equation}
+J(t)\equiv \frac{\gamma(t)}{\sigma} \tag{Creep Compliance}
+\end{equation}\]</span></p>
+<p>The relation of modulus and compliance is much like the relation of resistivity and conductivity. We can use again the Maxwell model to gain some insight. There the elastic element responds with an instantaneous strain</p>
+<p><span class="math display">\[
+\gamma_e=\frac{\sigma}{G_M}
+\]</span></p>
+<p>For the viscous element on the other hand we have</p>
+<p><span class="math display">\[
+\frac{d\gamma_v(t)}{dt}=\frac{\sigma}{\eta_M}
+\]</span></p>
+<p>which results in a linear growth of the viscous strain with time</p>
+<p><span class="math display">\[
+\gamma_v(t)=\frac{\sigma}{\eta_M}t
+\]</span></p>
+<p>The creep compliance in the Maxwell model is therefore</p>
+<p><span class="math display">\[
+J(t)=\frac{\gamma_e+\gamma_v(t)}{\sigma}=\frac{1}{G_M}+\frac{t}{\eta_M}
+\]</span></p>
+<p>which is overall linear in time. At time <span class="math inline">\(t=0\)</span>, the compliance is given by the elastic part <span class="math inline">\(1/G_M\)</span>, while the slope at long times is given by <span class="math inline">\(1/\eta\)</span>. For viscoelastic liquids we have in general</p>
+<p><span class="math display">\[
+J(t)=J_{eq}+\frac{t}{\eta}
+\]</span></p>
+<p>where <span class="math inline">\(J_{eq}\)</span> corresponds to the energy stored in the elastic part of the liquid, but the compliance grows linearly with time. For a viscoelastic solid we know, however, that</p>
+<p><span class="math display">\[
+J_{eq}=\lim_{t\rightarrow \infty}=\frac{1}{\sigma}\lim_{t\rightarrow \infty}\gamma(t)=\frac{1}{G_{eq}}
+\]</span></p>
+<p>We can therefore use a different model to better describe a viscoelastic solid. This is done by the Kelvin Voigt model, where viscous and elastic part are connected in parallel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/kelvinvoigt.png" class="img-fluid figure-img"></p>
+<figcaption>Kelvin Voigt</figcaption>
+</figure>
+</div>
+<p>In this case the stresses add up</p>
+<p><span class="math display">\[
+\sigma=\sigma_e(t)+\sigma_{v}(t)=G\gamma(t)+\eta \frac{d\gamma}{dt}
+\]</span></p>
+<p>Separation of variables yields</p>
+<p><span class="math display">\[
+\int_0^{\gamma}\frac{d\gamma(t)}{\frac{\sigma}{G}-\gamma(t)}=\frac{G}{\eta}\int_0^{t}dt
+\]</span></p>
+<p>which results in the strain</p>
+<p><span class="math display">\[
+\gamma(t)=\frac{\sigma}{G}(1-\exp(-t/(\eta/G))
+\]</span></p>
+<p>which gives for the creep compliance</p>
+<p><span class="math display">\[
+J(t)=\frac{\gamma(t)}{\sigma}=\frac{1}{G}\left (1-\exp(-t/\tau)\right)
+\]</span></p>
+<p>with <span class="math inline">\(J_{eq}=\lim_{t\rightarrow \infty}J(t)\)</span>.</p>
+<div id="db13ddc0-c5a9-46e7-8cc5-98ef641a5e9c" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>plt.figure()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.ion()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">100</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.plot(t,<span class="fl">0.2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>np.exp(<span class="op">-</span>t)),label<span class="op">=</span><span class="st">"ve-solid"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.plot(t,<span class="fl">0.2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>np.exp(<span class="op">-</span>t))<span class="op">+</span><span class="fl">0.08</span><span class="op">*</span>t,label<span class="op">=</span><span class="st">"ve-liquid"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time t"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"$J(t)$"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/tmp1.png"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tmp1.png" class="img-fluid figure-img"></p>
+<figcaption>test</figcaption>
+</figure>
+</div>
+</section>
+<section id="creep-recovery" class="level3" data-number="32.4.2">
+<h3 data-number="32.4.2" class="anchored" data-anchor-id="creep-recovery"><span class="header-section-number">32.4.2</span> Creep Recovery</h3>
+<p>When switching of the stress, the viscoelastic material recovers and we get an elastic recoil. The reocovery strain is defined as</p>
+<p><span class="math display">\[
+\gamma_R =\gamma_0-\gamma(t)
+\]</span></p>
+<p>where the switch off happens at <span class="math inline">\(t=0\)</span>. The corresponding recovery compliance is then</p>
+<p><span class="math display">\[
+J_R(t)\equiv\frac{\gamma_R(t)}{\sigma}
+\]</span></p>
+<p>which directly gives</p>
+<p><span class="math display">\[
+J_R(t)=J(t)-\frac{t}{\eta}
+\]</span></p>
+<p>for a viscoelastic liquid. For a solid, the viscosity is infinite an we obtain</p>
+<p><span class="math display">\[
+J_R(t)=J(t)
+\]</span></p>
+<p><span class="math display">\[
+\lim_{t\rightarrow\infty} J_R(t)=\lim_{t\rightarrow \infty}\left [ J(t)-\frac{t}{\eta}\right ]=J_{eq}
+\]</span></p>
+</section>
+</section>
+<section id="oscillatory-shear" class="level2" data-number="32.5">
+<h2 data-number="32.5" class="anchored" data-anchor-id="oscillatory-shear"><span class="header-section-number">32.5</span> Oscillatory Shear</h2>
+<p>All the previous consideration were done in the time domain with step-like perturbations. The step-like perturbation responses have an analog in the frequency domain, which is commonly measured by a type of “spectroscopy”, which is termed <strong>rheology</strong>. In rheology you apply an oscillating strain at a frequency <span class="math inline">\(\omega\)</span>, which can be written in the complex form as</p>
+<p><span class="math display">\[
+\gamma(t)=\gamma_0 \exp(i\omega t)
+\]</span></p>
+<p>For a pure eslastic solid, the response in instantaneous an the stress reads:</p>
+<p><span class="math display">\[
+\sigma(t)=G \gamma(t)=G \gamma_{0} e^{i \omega t}
+\]</span></p>
+<p>The stress is osciallting in phase with the strain. For a viscous liquid, however, the stress is related to the strain rate and thus</p>
+<p><span class="math display">\[
+\sigma(t)=\eta \frac{d \gamma(t)}{d t}=i \omega \eta \gamma_{0} e^{i \omega t}
+\]</span></p>
+<p>we obtain an out of phase signal, a purely imaginary response, of the stress, which trails the train as shown in the Figure below.</p>
+<div id="1ddab0f7-adb0-4e2d-91dd-91fd638c53ad" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gamma(t,omega,gamma0):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(gamma0<span class="op">*</span>np.exp(<span class="ot">1j</span><span class="op">*</span>omega<span class="op">*</span>t))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="b20bca53-fd56-4c6a-b410-2eeb4bd99818" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span>np.linspace(<span class="dv">0</span>,<span class="dv">20</span>,<span class="dv">100</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>g<span class="op">=</span>gamma(t,<span class="dv">1</span>,<span class="dv">1</span>)<span class="op">;</span>G<span class="op">=</span><span class="fl">1.5</span><span class="op">;</span>eta<span class="op">=</span><span class="dv">1</span><span class="op">;</span>omega<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.ion()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.plot(t,np.real(g),<span class="st">'k-'</span>,label<span class="op">=</span><span class="st">"strain"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.plot(t,np.real(g<span class="op">*</span>G),<span class="st">'k--'</span>,label<span class="op">=</span><span class="st">"stress"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time t"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"stress $\sigma$,strain $\gamma$"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.plot(t,np.real(g),<span class="st">'k-'</span>,label<span class="op">=</span><span class="st">"strain"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.plot(t,np.real(g<span class="op">*</span><span class="ot">1j</span><span class="op">*</span>omega<span class="op">*</span>eta),<span class="st">'k--'</span>,label<span class="op">=</span><span class="st">"stress"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"time t"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"stress $\sigma$,strain $\gamma$"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/tmp2.png"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tmp2.png" class="img-fluid figure-img"></p>
+<figcaption>tmp</figcaption>
+</figure>
+</div>
+<p>For a viscoelastic material, we have now both responses, which we can summarize in a complex modulus <span class="math inline">\(G\)</span>. The real part is called the <strong>storage modulus</strong> and the imaginary part is called the <strong>loss modulus</strong></p>
+<p><span class="math display">\[
+G(\omega)=G^{\prime}(\omega)+i G^{\prime\prime}(\omega)
+\]</span></p>
+<p>Therefore, the time dependent stress is also a complex quantity and given by</p>
+<p><span class="math display">\[
+\sigma(t)=\underbrace{G \gamma_{0}}_{\sigma_{0}} e^{i \omega t}=\underbrace{G^{\prime} \gamma_{0}}_{\operatorname{Re} \sigma_{0}} e^{i \omega t}+i \underbrace{G^{\prime \prime} \gamma_{0}}_{\operatorname{Im} \sigma_{0}} e^{i \omega t}
+\]</span></p>
+<p>The phase angle <span class="math inline">\(\delta\)</span> is given by the ratio of imaginary and real part</p>
+<p><span class="math display">\[
+\tan \delta=\frac{\operatorname{Im} G}{\operatorname{Re} G}=\frac{G^{\prime \prime}}{G^{\prime}}
+\]</span></p>
+<p>and the tangens of the phase angle is called the <strong>loss tangent</strong>.</p>
+<p><span class="math display">\[
+P=\frac{d W}{d t}=\frac{F d x}{d t}=\underbrace{\sigma A}_{F} \frac{L d \gamma}{d t}
+\]</span></p>
+<p><span class="math display">\[
+\frac{P}{V}=\sigma\left(\frac{d \gamma}{d t}\right)
+\]</span></p>
+<p><span class="math display">\[
+\frac{P}{V}=\frac{1}{2} \sigma_{0}\left(\frac{d \gamma}{d t}\right)_{0}^{*} = \frac{1}{2}\left(G^{\prime} \gamma_{0}+i G^{\prime \prime} \gamma_{0}\right)\left(-i \omega \gamma_{0}\right) =\frac{1}{2}(\underbrace{G^{\prime \prime}}_{\begin{array}{c}
+\text { active } \\
+\text { power }
+\end{array}}-\underbrace{i G^{\prime}}_{\text {reactive }}) \gamma_{0}^{2} \omega
+\]</span></p>
+<p>The last part of the equation shows, that the imaginary part is responsible for the dissipation, while the real part adds some pseudo power much like the ac resistance in electronic circuitry.</p>
+<section id="complex-shear-modulus-of-the-maxwell-model" class="level3" data-number="32.5.1">
+<h3 data-number="32.5.1" class="anchored" data-anchor-id="complex-shear-modulus-of-the-maxwell-model"><span class="header-section-number">32.5.1</span> Complex shear modulus of the Maxwell model</h3>
+<p>The elastic part in the Maxwell model is again given by</p>
+<p><span class="math display">\[
+\gamma_e=\frac{\sigma}{G}
+\]</span></p>
+<p>while the viscous part is determined by the following differential equation</p>
+<p><span class="math display">\[
+\frac{d \gamma_{v}}{d t}=\frac{\sigma}{\eta}=\frac{\sigma_{0}}{\eta} e^{i \omega t}
+\]</span></p>
+<p>which yields</p>
+<p><span class="math display">\[
+\gamma_{v}=\frac{1}{i} \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}=-i \frac{\sigma}{\omega \eta}
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\sigma=i \omega \eta \gamma_{v}
+\]</span></p>
+<p>Thus inserting both in the total strain</p>
+<p><span class="math display">\[
+\underbrace{\gamma_{0} e^{i \omega t}}_{\gamma}=\underbrace{\frac{\sigma_{0}}{G} e^{i \omega t}}_{\gamma_e}-i\underbrace{ \frac{\sigma_{0}}{\omega \eta} e^{i \omega t}}_{\gamma_v}
+\]</span></p>
+<p>from which we can read the complex modulus</p>
+<p><span class="math display">\[\begin{eqnarray}
+G^{*}&amp;=&amp;\frac{\sigma_{0}}{\gamma_{0}}=\frac{1}{1 / G-i /(\omega \eta)}=\frac{\omega \eta}{\omega \eta / G-i}=\frac{\omega \eta(\omega \eta / G+i)}{(\omega \underbrace{\eta / G}_{\tau})^{2}+1}\\
+&amp;=&amp;\underbrace{G \frac{1}{1+1 /(\omega \tau)^{2}}}_{G^{\prime}}+i \underbrace{G \frac{\omega \tau}{(\omega \tau)^{2}+1}}_{G^{\prime \prime}}
+\end{eqnarray}\]</span></p>
+<p>The plot below shows the frequency dependence of the real and imaginary part of the modulus for the Maxwell model. The imaginary part has the shape of a Lorentzian, which is corresponding to the Fourier transform of an exponential in the time domain. The wings of <span class="math inline">\(G^{\prime \prime}\)</span> increase or decay with <span class="math inline">\(\omega\)</span>, while the real part <span class="math inline">\(G^{\prime}\)</span> shows a steeper increase with <span class="math inline">\(\omega^2\)</span> until it saturates. The saturation and the peak occur at the characteristic timescale <span class="math inline">\(\tau=\eta/G\)</span>, indicated by the vertical dahsed line.</p>
+<div id="3a427190-dc68-4512-a7f3-d7594f0fb9d1" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> G(omega,eta,Gm):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">/</span>Gm<span class="op">-</span><span class="ot">1j</span><span class="op">/</span>(omega<span class="op">*</span>eta)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4cac3e03-809d-426f-8da7-985d93559d71" class="cell" data-nbsphinx="hidden" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>om<span class="op">=</span>np.linspace(<span class="fl">0.01</span>,<span class="dv">100</span>,<span class="dv">1000</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>plt.figure()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.ion()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.loglog(om,np.real(G(om,<span class="dv">1</span>,<span class="dv">1</span>)),lw<span class="op">=</span><span class="dv">2</span>,label<span class="op">=</span><span class="vs">r"$G^{\prime}$"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.loglog(om,np.imag(G(om,<span class="dv">1</span>,<span class="dv">1</span>)),lw<span class="op">=</span><span class="dv">2</span>,label<span class="op">=</span><span class="vs">r"$G^{\prime\prime}$"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">1</span>,color<span class="op">=</span><span class="st">'k'</span>,ls<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r"$\omega$"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r"$G^{\prime}$,$G^{\prime\prime}$"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"img/tmp3.png"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/tmp3.png" class="img-fluid figure-img"></p>
+<figcaption>tmp3</figcaption>
+</figure>
+</div>
+</section>
+<section id="complex-shear-modulus-of-the-kelvin-voigt-model" class="level3" data-number="32.5.2">
+<h3 data-number="32.5.2" class="anchored" data-anchor-id="complex-shear-modulus-of-the-kelvin-voigt-model"><span class="header-section-number">32.5.2</span> Complex shear modulus of the Kelvin-Voigt model</h3>
+<p><span class="math display">\[
+\underbrace{\sigma_{0} e^{i \omega t}}_{\sigma}=\sigma_{e}+\sigma_{v}=G \gamma+\eta \frac{d \gamma}{d t}=G \gamma_{0} e^{i \omega t}+i \omega \eta \gamma_{0} e^{i \omega t}
+\]</span></p>
+<p><span class="math display">\[
+G^{*}=\frac{\sigma_{0}}{\gamma_{0}}=G+i \omega \eta=\underbrace{G}_{G^{\prime}}+i \underbrace{G \omega \tau}_{G^{\prime \prime}} \tag{Complex modulus Kelvin-Voigt model}
+\]</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

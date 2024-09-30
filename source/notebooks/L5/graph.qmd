@@ -1,0 +1,30 @@
+---
+jupyter: python3
+---
+
+```{python}
+#| tags: []
+from IPython.display import Javascript
+```
+
+```{python}
+#| tags: []
+%%javascript
+    element.innerHTML = '<pre>hello</pre>'
+```
+
+```{python}
+#| tags: []
+%%javascript
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js';
+    document.head.appendChild(script);
+    console.log(window.d3)
+```
+
+```{python}
+#| tags: []
+Javascript(filename="graph.js")
+```
+

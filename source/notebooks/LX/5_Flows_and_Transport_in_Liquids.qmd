@@ -1,0 +1,407 @@
+---
+title: Flows and Transport in Liquids
+jupyter: python3
+---
+
+
+### Diffusion and Brownian Motion
+
+- particles are moving in soft materials all the time→thermal fluctuations, Brownian motion
+- in addition flows, friction→hydrodynamics, mechanical properties
+- elasticity, rheology
+
+**a) Continuity**
+
+flux $\vec{j}=ρ\vec{n}$
+Consider a volume surrounded by a surface $S$ flow through surface:
+
+\begin{equation}
+\int_S\vec{j}\cdot\vec{n}\,\mathrm dS
+\end{equation}
+
+material in volume, e.g., particle density:
+
+\begin{equation}
+\int_V f \,\mathrm dV
+\frac{\mathrm d}{\mathrm dt}\int f \, \mathrm dV=\int_V\frac{\mathrm df}{\mathrm dt}\, \mathrm dV
+\end{equation}
+
+conservation of matter:
+
+\begin{equation}
+\int_S\vec{j}\cdot\vec{n}\,\mathrm dS=-\int_V\frac{\mathrm df}{\mathrm dt}\,\mathrm dV
+\end{equation}
+
+Due to Gauss’s law
+
+\begin{equation}
+\int_S\vec j \cdot \vec n \,\mathrm dS=\int_V \mathrm{div}\,\vec j \,\mathrm dV
+\end{equation}
+
+and thus
+\begin{equation}
+\int_V \left(\frac{\mathrm df}{\mathrm dt}+\vec\nabla \cdot \vec j\right)\mathrm dV=0
+\end{equation}
+
+This yields the continuity equation
+
+\begin{equation}
+\frac{\mathrm df}{\mathrm dt}+\vec \nabla\cdot\vec j = 0.
+\end{equation}
+
+For the density $n=f$, $\vec{j}=n\cdot\vec{v}$
+
+$$
+\frac{\partial n}{\partial t}+\vec \nabla(n\vec v)=0
+$$
+
+for $n=\mathrm{const.}$ it is $\vec{\nabla}\cdot\vec{V}=0$, $\vec{\nabla}\cdot\vec{j}=0$
+incompressible
+
+**Diffusion** 
+
+$N(x)$, $N(x+\Delta x)$, $0.5⋅N(x)$ to the right, $0.5⋅N(x+\Delta x)$ to the left net number $-1⁄2 (N(x+\Delta x)-N(x))$
+thus
+
+$$
+j=\frac{-\tfrac 1 2 (N(x+\Delta x)-N(x))}{A \,\tau}
+$$
+
+With the number density of particles $n(x)≡N(x)⁄Aτ$ one obtains
+
+\begin{equation}
+j=-\frac 1 2 \frac{n(x+\Delta x) \, A \, \Delta x -n(x)\,A\,\Delta x}{A \,\tau}= -\frac 1 2 \frac{(\Delta x)^2}{\tau}\frac{n(x+\Delta x)-n(x)}{\Delta x}
+\end{equation}
+
+For $Δx→0$ it is
+
+\begin{equation}
+j=-D \frac{\partial n}{\partial x}
+\end{equation}
+
+with $D=(Δx)^2/2τ$.
+In 3d, this is
+
+\begin{equation}
+\vec j=-D\vec \nabla n
+\end{equation}
+
+This is Fick’s first law (1855, Fick, empirical).
+flux from a gradient is due to fluctuations in the velocity, diffusion max. entropy to vanish the gradient
+
+**Combination with the continuity equation**
+
+in 1d:
+
+\begin{equation}
+\frac{\mathrm dn}{\mathrm dt}=-\frac{\partial j}{\partial x}
+\frac{\partial j}{\partial x}=-D\frac{\partial ^2n}{\partial x^2}=-\frac{\partial n}{\partial t}
+\end{equation}
+
+Fick’s second law:
+
+\begin{equation}
+\frac{\partial n}{\partial t}=D\nabla^2n
+\end{equation}
+
+$n f$ could be different quantities
+
+
+| flux   | transport property | gradient  |
+| :------ | :----------:     | :----------: |
+| particles  | diffusivity   |particle density     |
+| charge     | conductivity  |potential     |
+|liquid	| permeability	     |pressure
+|momentum	| viscosity	     | momentum density |
+|energy	| heat conductivity	 | temperature |
+
+
+### Smoluchowski-diffusion in an external potential
+
+
+**Smoluchowski-diffusion in an external potential**
+
+\begin{equation}
+F=-\frac{\mathrm dU}{\mathrm dx}
+\end{equation}
+
+velocity of the particle
+
+\begin{equation}
+v=-\frac 1 \xi \frac{\partial U}{\partial x}
+\end{equation}
+
+$ξ$is the friction coefficient. For a sphere $ξ=6πηR$. flux due to flow with $v$, $j_v=nv$
+
+\begin{equation}
+j=-D\frac{\partial n}{\partial x}-\frac n \xi \frac{\partial U}{\partial x}
+\end{equation}
+
+in steady state $j=0$ and
+
+\begin{equation}
+n=n_0\,\mathrm{exp}\left({-\frac{U}{k_{\mathrm B}T}}\right)
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+0&=-D\frac{\mathrm d}{\mathrm dx}\left(n_0\,\mathrm{exp}\left({-\frac{U}{k_{\mathrm B}T}}\right)\right)-\frac 1 \xi\frac{\mathrm d U}{\mathrm d x}n_0\,\mathrm{exp}\left({-\frac{U}{k_{\mathrm B}T}}\right)+\frac{D}{k_{\mathrm B}T}\frac{\mathrm d U}{\mathrm d x}n_0\,\mathrm{exp}\left({-\frac{U}{k_{\mathrm B}T}}\right)\\
+&=-\frac 1 \xi \frac{\mathrm d U}{\mathrm d x}n_0\,\mathrm{exp}\left({-\frac{U}{k_{\mathrm B}T}}\right)
+\end{aligned}
+\end{equation}
+
+
+
+With the diffusion coefficient $D=k_B T/ξ$ one has
+
+\begin{equation}
+j=-\frac 1 \xi \left(k_{\mathrm B}T \frac{\partial n}{\partial x}+n\frac{\partial U}{\partial x}\right)=-\frac 1 \xi n\frac{\partial}{\partial x}(k_{\mathrm B}T\cdot \ln(n)+U),
+\end{equation}
+
+since
+\begin{equation}
+\frac{\mathrm d}{\mathrm d x}\ln(n(x))=\frac 1 n \frac{\mathrm du}{\mathrm dx}
+\end{equation}
+and thus
+\begin{equation}
+\frac{\mathrm du}{\mathrm dx}=n\cdot \ln(n).
+\end{equation}
+
+Here, $k_B T⋅\ln{n}+U$ is the chemical potential.
+
+\begin{equation}
+j=-\frac 1 \xi n \frac{\partial \mu}{\partial x}
+\end{equation}
+
+The chemical potential is constant in equilibrium, extend potential for ?? $\mu=\mathrm{const}$ .
+
+\begin{equation}
+U=-k_{\mathrm B}T \ln(n(x))+\mathrm{const.}
+\end{equation}
+
+With Fick’s second law
+
+\begin{equation}
+\frac{\partial n}{\partial t}=-\frac{\partial j}{\partial x}=\frac 1 \xi \frac{\partial}{\partial x}\left(k_{\mathrm B}T\frac{\partial U}{\partial x}+n\frac{\partial U}{\partial x}\right)
+\frac{\partial n}{\partial t}=\vec \nabla\left(D\vec \nabla n+\frac{\vec{F_\mathrm{ext}}}{\xi}n\right)
+\end{equation}
+
+This is the Smoluchowski equation.
+More general: Fokker—Planck equation
+
+\begin{equation}
+\frac{\partial p(x,t)}{\partial t}=-\frac{\partial}{\partial x}\left[\frac{1}{\xi (x,t)}p(x,t)\right]+\frac{\partial^2}{\partial x^2}\left[D(x,t)p(x,t)\right]
+\end{equation}
+
+$D=k_B T/ξ$ gives a connection between thermal position fluctuations and viscous friction (fluctuation—dissipartion) $D=k_B T/6πηR$ for sphere, e.g., protein: $R\equiv  3 \, \mathrm{nm},\, D=100 \,\mathrm{\mu m^2/s},\, \eta=0.7\, \mathrm{mPas}$.
+Solution of the diffusion equation
+
+\begin{equation}
+\frac{\partial}{\partial t}n(\vec r, t |\vec{r_0}, t_0)=D\nabla^2n(\vec r, t |\vec{r_0}, t_0)
+\end{equation}
+
+initial condition $n(\vec r,t→t_0 |\vec{r_0 },t_0 )=δ(\vec r-\vec{r_0 } )$
+
+
+solution:
+
+\begin{equation}
+n(\vec r,t|\vec{r_0},t_0)=\frac{1}{(4\pi D (t-t_0))^\frac 3 2}\mathrm{exp}\left(-\frac{(\vec r-\vec r_0)^2}{4D(t-t_0)}\right)
+\end{equation}
+
+This is the Green’s function for the diffusion equation for the given boundary conditions. It propagates the initial conditions through the ??? space.
+solution for any initial condition can be found
+
+\begin{equation}
+n(\vec r, t\to 0)=f(\vec{r_0}) \\
+n(\vec r, t)=\int\mathrm d^3r_0\,n(\vec r,t|\vec{r_0},t_0)\,f(\vec{r_0})
+\end{equation}
+
+properties: e.g., particle initially at $x_0$ in 1D, initial distribution $δ(x_0 )$
+
+\begin{equation}
+    \langle x \rangle=\int_{-\infty}^\infty x \frac{1}{\sqrt{4\pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)}\right)\mathrm dx
+\end{equation}
+
+$⟨x⟩=x_0$ ,does not depend on time, particles do not change their initial position on average
+\begin{equation}
+\langle (x-x_0)^2\rangle =\int_{-\infty}^\infty (x-x_0)^2\,n(x,t)\,\mathrm dx
+\end{equation}
+
+$⟨(x-x_0 )^2⟩=2Dt$ in 1D
+
+$⟨r^2⟩=6Dt$ in 3D
+
+mean squared displacement= ̂width of the probability distribution increases linearly in time
+
+$⟨r^2⟩=2dDt$ ,$d$ is the dimension
+in more complex diffusion scenarios: $⟨r^2⟩=cDt^α$ with $α<1$ for subdiffusion and $α>1$ for superdiffusion
+Application: fluorescence recovery after photobleaching
+Molecules are photophysically/chemically bleached in a spatial region with high intensity layer.
+Diffusion causes fluorescent molecules to diffuse in again, ?? bleached come out
+The “hole” is filling up and the dynamics is determined by the diffusion coefficient.
+initial distribution after the bleach is $w(x,t_0 )$
+
+\begin{equation}
+n(x,t_0)=\Theta(-a-x)+\Theta(x-a)
+\end{equation}
+
+Heaviside step function
+
+\begin{equation}
+\Theta(x)=\begin{cases} 0 & x<0 \\ 1 & x\ge0 \end{cases}
+\end{equation}
+
+\begin{equation}
+\frac{\partial n(x,t)}{\partial t}=D\frac{\partial^2}{\partial x^2}n(x,t)
+\end{equation}
+
+boundary condition $\lim_{x→∞} n(x,t) =0$
+solution with Green’s function
+\begin{equation}
+n(x,t|x_0,t_0)=\frac{1}{\sqrt{4 \pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)} \right)
+\end{equation}
+
+\begin{equation}
+\begin{split} 
+n(x,t) &=\int_{-\infty}^\infty \mathrm dx_0\,n(x,t|x_0,t_0)\,\left[\Theta(-a-x)+\Theta(x-a)\right]\\ 
+&= \int_{-\infty}^{-a}\mathrm dx_0 \frac{1}{\sqrt{4 \pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)} \right)\\
+&+\int_{a}^{\infty}\mathrm dx_0 \frac{1}{\sqrt{4 \pi D(t-t_0)}}\mathrm{exp}\left(-\frac{(x-x_0)^2}{4D(t-t_0)} \right) 
+\end{split}
+\end{equation}
+
+\begin{equation}
+\mathrm{erf}(x)=\frac{1}{\sqrt \pi}\int_{-x}^x\mathrm{exp}\left(-t^2\right)\,\mathrm dt=\frac{2}{\sqrt \pi}\int_0^x\mathrm{exp}\left(-t^2\right)\,\mathrm dt
+\end{equation}
+
+solution:
+\begin{equation}
+n(x,t)=1+\frac 1 2 \left(\mathrm{erf\left[\frac{x+a}{2 \sqrt{D(t-t_0)}}\right]-\mathrm{erf}\left[\frac{x-a}{2 \sqrt{D(t-t_0)}}\right]}\right)
+N(t,t_0)=c_0\int_{-a}^a\mathrm dx\,n(x,t)
+\end{equation}
+
+if there is a concentration of $c_0$ fluorescent molecules
+
+\begin{equation}
+N(t,t_0)=\frac{\sqrt{D(t-t_0)}}{a\sqrt \pi}\left(\mathrm{exp}\left[-\frac{a^2}{D(t-t_0)}\right]-1\right)+1+\mathrm{erf}\left[\frac{a}{\sqrt{D(t-t_0)}}\right]
+\end{equation}
+
+**Extension**
+
+Diffusion can also occur on a spherical surface
+?? to a point ?? surface is ?? doing rotational diffusion
+
+\begin{equation}
+\frac{\partial n(\vec r,t|\vec{r_0},t_0)}{\partial t}=D\nabla^2n(\vec r, t|\vec{r_0},t_0)
+\end{equation}
+
+with $|\vec{r_0} |=|\vec r |=1$ so no radial ??
+
+\begin{equation}
+\frac{\partial n(\Omega,t|\Omega_0,t_0)}{\partial t}=D_\mathrm{rot}\left[\frac{1}{\sin \vartheta}\frac{\partial}{\partial \vartheta}\left(\sin \vartheta\frac{\partial}{\partial \vartheta}\right)+\frac{1}{\sin^2 \vartheta} \frac{\partial^2}{\partial \varphi^2}\right]n(\Omega,t,\Omega_0, t_0)
+\end{equation}
+
+The eigenfunctions of the operator on the right are sperical harmonics and the solution may be expressed in terms of $Y_l^m$.
+
+\begin{equation}
+Y_l^m=N\,\mathrm{exp}\left(im\varphi\right)\,P_l^m(\cos \theta)
+p(\Omega,t|\Omega_0,t_0)=\sum_{l=0}^\infty\sum_{m=-l}^{+l}A_{lm}(t,\Omega_0,t_0)Y_l^m(\Omega)
+\end{equation}
+
+insert into diffusion equation
+
+\begin{equation}
+\sum_{l=0}^\infty\sum_{m=-l}^{+l}\frac{\partial A_{lm}}{\partial t}Y_l^m=-\sum_{l=0}^\infty \sum_{m=-l}^l l(l+1)\frac{1}{\tau_R}A_{lm}Y_l^m
+\end{equation}
+
+with orthonormality
+
+\begin{equation}
+\begin{aligned}
+\frac{\partial A_{lm}}{\partial t}&=-l(l+1)\,\tau_R^{-1}\,A_{lm}
+A_{lm}(t|\Omega_0,t_0)=\mathrm{exp}\left(-l(l+1)\frac{t-t_0}{\tau_R}\right)\,a_{lm}(\Omega_0)
+p(\Omega,t|\Omega_0,t_0)\\
+&=\sum_{l=0}^\infty\sum_{m=-l}^l \mathrm{exp}\left(-l(l+1)\frac{t-t_0}{\tau_R}\right)\,a_{lm}(\Omega_0)Y_l^m
+\end{aligned}
+\end{equation}
+
+$a_{lm}$ from $p(Ω,t_0 |Ω_0,t_0 )=δ(Ω-Ω_0)$ and 
+
+\begin{equation}
+        \delta(Ω-Ω_0 )=\sum_{l=0}^{\infty} \sum_{m=-l}^{l} Y_l^m (Ω_0 ) Y_{lm} (Ω)
+\end{equation}
+
+\begin{equation}
+a_{lm}(\Omega_0)=Y_{lm}^*(\Omega_0)
+p(\Omega,t|\Omega_0,t_0)=\sum_{l=0}^\infty \sum_{m=-l}^l\mathrm{exp}\left(-\frac{l(l+1)}{\tau_R}\right)\,Y_{lm}^*(\Omega_0)\,Y_{lm}(\Omega)
+\end{equation}
+
+for example projection on z-direction (NMR/diel.)
+
+\begin{equation}
+P_3=P_0\cos(\theta),\,l=1
+\langle P_3 \rangle=\frac{1}{4 \pi}\int \mathrm d\Omega\,P_0 \cos(\theta) \to 0
+\end{equation}
+
+?? correlation:
+
+\begin{equation}
+\begin{split} 
+\langle P_3(t)P_3^*(t_0) \rangle&=P_0^2\int\mathrm d\Omega\int\mathrm d\Omega_0\cos(\theta)\cos(\theta_0)\,p(\Omega,t|\Omega_0,t_0)\,p_0(\Omega_0)\\&=\frac{4 \pi}{3}P_0^2 \sum_{m=-l}^l\mathrm{exp}\left(-l(l+1)\frac{t-t_0}{\tau_r}\right)|C_{10lm}|^2 
+\end{split}
+\end{equation}
+
+\begin{equation}
+C_{10lm}=\int \mathrm d\Omega\,Y_{10}^*(\Omega)\,Y_{lm}(\Omega)=\delta_{l1}\delta_{m0}
+\langle P_3(t)P_3^*(t_0)\rangle = \frac{4 \pi}{3}\,P_0^2\,\mathrm{exp}\left(-\frac{2(t-t_0)}{\tau_r}\right)
+\end{equation}
+
+
+application in dielectric spectroscopy or NMR for example, $A_lm→C_lm exp(-t/τ_l )$
+rotational diffusion of Janus particles
+
+\begin{equation}
+P_3=P_0\cos(\vartheta)
+\end{equation}
+
+$l=1$,Legendre projection on z-axis, NMR, DS
+
+\begin{equation}
+\begin{aligned}
+\langle P_3(t)P_3^*(t_0)\rangle&=\frac{4 \pi}{3}\,P_0^2\,\mathrm{exp}\left(-\frac{2(t-t_0)}{\tau_r}\right)
+\tau_l=\frac{D_{1}}{D_\mathrm{rot}l(l+1)}
+n(\vartheta,\varphi,t)\\
+&=\sum_{l=0}^\infty\sum_{m=-l}^lC_{lm}\,Y_l^m(\vartheta,\varphi)\,\mathrm{exp}\left(-\frac{t}{\tau_l}\right)
+\end{aligned}
+\end{equation}
+
+quadratic angular displacement
+
+\begin{equation}
+\langle |\hat u (t)-\hat u_0|^2\rangle = 2-2\langle\cos (\theta)\rangle
+\end{equation}
+
+u ̂is a unit vector
+
+\begin{equation}
+\frac{\mathrm d}{\mathrm dt}p(\theta,t)=D_r\nabla^2p(\theta,t)
+2 \pi \int_0^\pi p(\theta, t)\sin(\theta)\,\mathrm d \theta=1
+\langle \cos(\theta)\rangle=2 \pi \int_0^\pi p \sin(\theta)\cos(\theta)\,\mathrm d \theta
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\frac{\mathrm d}{\mathrm d t}\langle \cos(\theta)\rangle&=2 \pi \int_0^\pi\frac{\partial p}{\partial t} \sin(\theta)\cos(\theta)\,\mathrm d \theta \\
+&=2 \pi D_r\int_0^\pi\frac{1}{\sin(\theta)}\left[\frac{\partial}{\partial t}\left(\sin(\theta)\frac{\partial p}{\partial \theta}\right)\right]\sin(\theta)\cos(\theta)\,\mathrm d \theta 
+\end{split}
+\end{equation}
+
+
+### Hydrodynamics
+
+
+
+
+
+
+

@@ -1,0 +1,345 @@
+---
+execute:
+  echo: false
+title: Electric Double Layer
+jupyter: python3
+---
+
+
+
+```{python}
+#| include: false
+#| tags: [remove_input]
+
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.constants import *
+from scipy.optimize import fsolve
+from ipywidgets import interact, interactive, fixed, interact_manual
+import ipywidgets as widgets
+import json
+
+import plotly
+import plotly.graph_objects as go
+from IPython.display import display, HTML
+import plotly.io as pio
+plotly.offline.init_notebook_mode()
+display(HTML(
+    '<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_SVG"></script>'
+))
+
+%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+
+with open('style.json', 'r') as fp:
+    style = json.load(fp)
+    
+plt.rcParams.update(style)
+```
+
+## Charges surfaces in solution, no salt
+
+We are going to consider first a situation, in which there is a solid surface (for example glass) in contact with a solution, which is presumably water. In this case, surface chemical groups on the solid may dissociate due to the high dielectric constant of water such that the residular surface is charged and some ions are dissolved in the solution. We will assume that there is no extra salt which is dissolved in water. 
+
+The questions that arise now are
+
+- How are the dissolved ions distributed in space?
+- How does the ion distribution depend on the surface charge?
+- How is the electrostatic potential inside the liquid?
+
+As the ions populate the regions according to their potential energy in the electric field of the surface charges, we have to combine the Poisson euqation with the Boltzmann equation to have a complete description. This combination will deliver us a mean field appraoch. 
+
+## Poisson-Boltzmann equation
+
+If we name the electrostatic potential $\psi$ and number density of ions of a valancy $z$ $\rho$, we can on one side write down the Boltzmann equation
+
+\begin{equation}
+\rho=\rho_0 \exp\left ( -\frac{z e\psi}{k_B T}\right)\tag{Boltzmann equation}
+\end{equation}
+
+end the Poisson equation as
+
+\begin{equation}
+ze\rho =-\epsilon_0 \epsilon \frac{d^{2}\psi}{dx^2}\tag{Poisson equation}
+\end{equation}
+
+As both contain the charge density $\rho$ we can combine them to yield
+
+\begin{equation}
+\frac{d^2\psi}{dx^2} = -\frac{ze\rho}{\epsilon_0 \epsilon} =-\frac{ze \rho_0}{\epsilon_0 \epsilon}\exp\left ( -\frac{z e\psi}{k_B T}\right)\tag{Poisson-Boltzmann equation}
+\end{equation}
+
+the Poisson-Boltzmann equation, which is a non-linear differential equation in the potential $\psi$ and therefore difficult to solve. 
+
+In the following we would like to determine the surface values for the potential $\psi_s$, the electric field $E_s$ and the density $\rho_s$, which are called contact values. We will do that for a system of two solid surfaces each with a surface charge density $\sigma$ according to the configuration shown below.
+
+![Config](img/configuration.png)
+
+This system is symmetric with respect to the mid-plane at $x=0$ and thus the potential is $\psi_0=\psi(x=0)=0$ and the charge number density is $\rho_o=\rho(x=0)$. Also, due to symmetry we have $\frac{d\psi}{dx}|_{x=0}=0$. It follows from this symmetry that
+
+\begin{equation}
+\sigma=-\int_{0}^{D / 2} z e q d x=\epsilon_{0} \epsilon \int_0^{D / 2}\left(\frac{d^{2} \psi}{d x^{2}}\right)^{2} dx=-\epsilon_{0} \epsilon\left(\frac{d \psi}{d x}\right)|_{D / 2}=-\epsilon_{0} \epsilon\left(\frac{d \psi}{d x}\right)|_{S}=-\epsilon_0 \epsilon E_{s}
+\end{equation}
+
+To obtain the charge number density, we use the derivative of the Boltzmann equation with respect to the position
+
+\begin{equation}
+\frac{d\rho}{dx}=-\frac{ze\rho_0}{k_B T}\exp\left ( -\frac{z e\psi}{k_B T}\right)\frac{d\psi}{dx}
+\end{equation}
+
+The term on the right side can be replaced to yield
+
+\begin{equation}
+\frac{d\rho}{dx}=-\frac{ze\rho_0}{k_B T}\exp\left ( -\frac{z e\psi}{k_B T}\right)\frac{d\psi}{dx}=\frac{\epsilon_0 \epsilon}{k_B T}\left ( \frac{d\psi}{dx}\right ) \left (\frac{d^2\psi}{dx^2} \right )=\frac{\epsilon_0 \epsilon}{k_B T}\frac{d}{dx}\left ( \frac{d\psi}{dx}\right )^2
+\end{equation}
+
+thus we can integrate both sides
+
+\begin{equation}
+\rho_x- \rho_0=\int_0^{x}d\rho = \frac{\epsilon_0 \epsilon}{2k_B T} \left (\frac{d\psi}{dx} \right )^2_x
+\end{equation}
+
+or 
+
+\begin{equation}
+\rho_x=\rho_0 + \frac{\epsilon_0 \epsilon}{2k_B T} \left (\frac{d\psi}{dx} \right )^2_x
+\end{equation}
+
+
+
+The term $\frac{d\psi}{dx}$, which appears as a square in the last formula is just the electric field evaluated at the position $x$. With the contact value of the electric field $E_s$ obtained above, we can immediately write the contact value of the charge number density as 
+
+\begin{equation}
+\rho_s=\rho_s+\frac{\sigma^2}{2\epsilon_0 \epsilon k_B T}
+\end{equation}
+
+Thus even in the case, when the two surfaces are seperated by an infinite distance $\rho_0\rightarrow 0$, the surface charge number density never falls below $\frac{\sigma^2}{2\epsilon_0 \epsilon k_B T}$.
+
+
+
+To obtain the charge number density, the potential and the electric field we must solve the Poisson Boltzmann equation. The solution in the case of no additional electrolyte is given by
+
+\begin{equation}
+\psi=\frac{k_B T }{z e}\ln(\cos^{2}(Kx))
+\end{equation}
+
+or 
+
+\begin{equation}
+\exp\left ( -\frac{z e \psi}{k_B T}\right )=\frac{1} { \cos ^{2} (K x)}
+\end{equation}
+
+where the constant $K$ is given by
+
+\begin{equation}
+K^{2}=\frac{(z e)^{2} \rho_{0} }{ 2 \epsilon_{0} \epsilon k_B T}
+\end{equation}
+
+To find the value of the constant $K$, we can take the derivative of the potential to obtain the electric field
+
+\begin{equation}
+E_{x}=-\frac{d\psi}{dx}= \frac{2k_B T K}{z e}\tan(K x)
+\end{equation}
+
+which is given at the surface to be
+
+\begin{equation}
+E_{s}=-\frac{d\psi}{dx}\bigg|_s = \frac{2k_B T K}{z e}\tan\left (K \frac{D}{2}\right)=-\frac{\sigma}{\epsilon_0 \epsilon}
+\end{equation}
+
+If the surface charge density $\sigma$ is fixed and the thickness of the liquid layer $D$ is known, the latter equation can be graphically solved to obtain the value of $K$. The counter ion density in the solution is then given by
+
+\begin{equation}
+\rho(x)=\rho_0\exp\left (\frac{-ze\psi }{k_B T}\right)=\frac{\rho_0}{\cos^{2}(Kx)}
+\end{equation}
+
+### Example
+
+Two surfaces with a charge density of $\sigma=0.2\, C\cdot m^{-2}$ are at a distance of $D=2 nm$ in water at $T=293\,K$. We calculate the counter ion surface charge, the charge density, the electric field and the potential inside the water film between the two layers. We therefore first calculate a value of
+
+\begin{equation}
+KTK=\frac{ze\sigma}{2k_B T\epsilon_0\epsilon}
+\end{equation}
+
+which shall be equal to $K\tan\left (KD/2\right )$.
+
+```{python}
+#| tags: [hide_code]
+sigma=0.2 # C/m^2
+epsilon=80 # water
+D=2e-9 # m
+T=293 # K
+
+KTK=e*sigma/(2*k*T*epsilon_0*epsilon)
+```
+
+With the help of the previous definitions, we may search for the solution which gives the value of $K$.
+
+```{python}
+#| tags: [hide_code]
+# numerically solve for K
+func = lambda K : KTK - K*np.tan(K*D/2) 
+K_initial_guess = 0.8*np.pi/D
+K = fsolve(func, K_initial_guess)
+```
+
+#### Plot of the charge density
+
+```{python}
+#| tags: [hide_code]
+# ion density in the mid plane
+rho0=K**2*2*epsilon_0*epsilon*k*T/e**2
+```
+
+::: {.content-visible when-format="html"}
+
+```{python}
+#| nbsphinx: hidden_input
+#| tags: [remove_input]
+# ion density in the gap
+#x=np.linspace(-D/2,D/2,1000)
+#plt.plot(x/D,rho0/(np.cos(K*x)**2))
+#plt.xlabel(r'x/D',fontsize=16)
+#plt.ylabel(r'ion density [m$^{-3}$]',fontsize=16)
+#plt.tight_layout()
+#plt.savefig("img/ion_density.png")
+#plt.show()
+```
+
+```{python}
+# Ion density in the gap
+x = np.linspace(-D/2, D/2, 1000)
+ion_density = rho0 / (np.cos(K * x)**2)
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add the ion density plot
+fig.add_trace(go.Scatter(
+    x=x/D, 
+    y=ion_density,
+    mode='lines',
+    name='Ion Density'
+))
+
+# Add layout details (axis labels and titles)
+fig.update_layout(
+    xaxis_title=r'x/D',
+    yaxis_title=r'$\text{Ion density} [m^{-3}]$',
+    width=800,
+    height=600,
+)
+pio.write_image(fig, 'img/ion_density.png')  # To save as PNG
+# Show the figure
+fig.show()
+```
+
+:::
+
+::: {.content-visible unless-format="html"}
+![](img/ion_density.png)
+:::
+
+#### Plot of the electric potential
+
+::: {.content-visible when-format="html"}
+
+```{python}
+#| tags: []
+# potential in the gap
+#x=np.linspace(-D/2,D/2,1000)
+#plt.plot(x/D,k*T*np.log(np.cos(K*x)**2)/e)
+#plt.xlabel(r'x/D',fontsize=16)
+#plt.ylabel(r'electric potential [V]',fontsize=16)
+```
+
+```{python}
+#| tags: [hide_code]
+# Potential in the gap
+x = np.linspace(-D/2, D/2, 1000)
+potential = k * T * np.log(np.cos(K * x)**2) / e
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add the potential plot
+fig.add_trace(go.Scatter(
+    x=x/D, 
+    y=potential,
+    mode='lines',
+    name='Electric Potential'
+))
+
+# Add layout details (axis labels and titles)
+fig.update_layout(
+    xaxis_title=r'x/D',
+    yaxis_title=r'Electric potential [V]',
+    width=800,
+    height=600,
+)
+pio.write_image(fig, 'img/electric_potential.png')
+# Show the figure
+fig.show()
+```
+
+:::
+
+::: {.content-visible unless-format="html"}
+![](img/electric_potential.png)
+:::
+
+#### Plot of the electric field
+
+::: {.content-visible when-format="html"}
+
+```{python}
+#| tags: [hide_code]
+# field in the gap
+#x=np.linspace(-D/2,D/2,1000)
+#plt.plot(x/D,2*k*T*K*np.tan(K*x)/e)
+#plt.xlabel(r'x/D',fontsize=16)
+#plt.ylabel(r'electric field [V/m]',fontsize=16)
+#plt.tight_layout()
+#plt.savefig("img/electric_field.png")
+#plt.show()
+```
+
+```{python}
+#| tags: []
+# Field in the gap
+x = np.linspace(-D/2, D/2, 1000)
+field = 2 * k * T * K * np.tan(K * x) / e
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add the electric field plot
+fig.add_trace(go.Scatter(
+    x=x/D, 
+    y=field,
+    mode='lines',
+    name='Electric Field'
+))
+
+# Add layout details
+fig.update_layout(
+    xaxis_title=r'x/D',
+    yaxis_title='Electric field [V/m]',
+    width=800,
+    height=600,
+)
+
+# Show the figure
+fig.show()
+
+# Optionally, save the figure as an image (PNG) or HTML
+import plotly.io as pio
+pio.write_image(fig, 'img/electric_field.png')  # To save as PNG
+```
+
+:::
+
+::: {.content-visible unless-format="html"}
+![](img/electric_field.png)
+:::
+

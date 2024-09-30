@@ -1,4 +1,6 @@
 ---
+execute:
+  echo: false
 title: Scattering Techniques for Polymer Conformation
 jupyter: python3
 ---
@@ -188,11 +190,18 @@ describing the scattering of an ideal chain, which is displayed in the graph bel
 #| tags: []
 def DebyeFunction(q,R_g):
     return((np.exp(-(q*R_g)**2)-1+(q*R_g)**2)*2/((q*R_g)**2)**2)
-   
+```
+
+::: {.content-visible when-format="html"}
+
+```{python}
+#| nbsphinx: hidden
+#| tags: []
 q=np.linspace(0.1,10,100)
 R_g=1
 
-fig=plt.figure(figsize=(3,2))
+fig=plt.figure(figsize=(8,6))
+plt.ion()
 plt.plot(q,DebyeFunction(q,R_g),'k-',label=r"$R_g=1$")
 plt.plot(q,1-(q*R_g)**2/3,'b--')
 plt.plot(q,2/(q*R_g)**2,'b--')
@@ -208,6 +217,12 @@ plt.savefig("img/tmp1.png")
 plt.show()
 plt.close(fig)
 ```
+
+:::
+
+::: {.content-visible unless-format="html"}
+![](img/tmp1.png)
+:::
 
 We can have a look at different limits again, e.g. the small angle limit for which we find the same result as in the derivation in the previous section
 

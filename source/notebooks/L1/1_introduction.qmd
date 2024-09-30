@@ -1,0 +1,14 @@
+---
+title: Introduction
+jupyter: python3
+---
+
+
+
+
+
+<img src="img/intro.png" alt="intro" name="intro" class="bg-primary mb-1" width="800px">
+
+[Lecture Slides](https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/soft-matter-physics-ws-2023-24/)
+
+

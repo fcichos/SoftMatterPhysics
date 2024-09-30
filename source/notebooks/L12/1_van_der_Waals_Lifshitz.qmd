@@ -1,0 +1,117 @@
+---
+title: van der Waals Interaction
+jupyter: python3
+---
+
+
+
+## Lifshitz Theory
+
+**This needs to be written**
+
+The semiclassical theory we have developed in the last lecture is still based on microscopic quantities, which are the polarizabilities. We would like to base that description rather on continuum quantities to simplify the descriptions. This is done in the Lifshitz theory. It is using continuum quantities like the dielectric function $\epsilon_i$ or the refractive index $n_{i}$ to describe the interactions of macroscopic bodies. 
+
+
+Normal calculation
+
+$$
+w_{q \alpha}=-\frac{q^2 \alpha_1}{\left(4 \pi \varepsilon_0 \varepsilon_3\right)^2 r^4}
+$$
+
+$$
+w_{q 1}=\int_\delta^{\infty} \mathrm{dx} \int_0^{\infty} w_{q \alpha}\left(r=\sqrt{\left(x^2+y^2\right)}\right) \rho_1(2 \pi y) \mathrm{d} y
+$$
+
+$$
+w_{q 1}=-\frac{\pi q^2 \rho_1 \alpha_1}{\left(4 \pi \varepsilon_0 \varepsilon_3\right)^2 \delta}
+$$
+
+Image charge calculation
+
+$$
+\phi(x, y)=\frac{1}{\left(4 \pi \varepsilon_0\right) \varepsilon_l}\left[\frac{q}{\sqrt{(\delta+x)^2+y^2}}+\frac{q^{\prime}}{\sqrt{(\delta-x)^2+y^2}}\right], x<0
+$$
+
+$$
+\phi(x, y)=\frac{1}{\left(4 \pi \varepsilon_0\right) \varepsilon_r} \frac{q^{\prime \prime}}{\sqrt{(\delta+x)^2+y^2}}, x>0
+$$
+
+$$
+\begin{aligned}
+D_x^l & =D_x^r \\
+\left.\frac{\partial \phi}{\partial x} \varepsilon_l\right|_{x=0-} & =\left.\frac{\partial \phi}{\partial x} \varepsilon_r\right|_{x=0+} \\
+\frac{\left(q-q^{\prime}\right) \delta}{\sqrt{\left(\delta^2+y^2\right)^3}} & =\frac{\left(q^{\prime \prime}\right) \delta}{\sqrt{\left(\delta^2+y^2\right)^3}}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+E_y^l & =E_y^r \\
+\left.\frac{\partial \phi}{\partial y}\right|_{x=0-} & =\left.\frac{\partial \phi}{\partial y}\right|_{x=0+} \\
+\frac{\left(q+q^{\prime}\right) y}{\varepsilon_l \sqrt{\left(\delta^2+y^2\right)^3}} & =\frac{q^{\prime \prime} y}{\varepsilon_r \sqrt{\left(\delta^2+y^2\right)^3}}
+\end{aligned}
+$$
+
+$$
+q^{\prime}=-\frac{\varepsilon_r-\varepsilon_l}{\varepsilon_r+\varepsilon_l} q
+$$
+
+
+$$
+q^{\prime \prime}=\frac{2 \varepsilon_r}{\varepsilon_r+\varepsilon_l} q
+$$
+
+$$
+w_{q 1}=w_{q q^{\prime}}=\frac{q q^{\prime}}{\left(4 \pi \varepsilon_0\right) \varepsilon_3(2 \delta)}=-\frac{q^2}{\left(4 \pi \varepsilon_0\right) \varepsilon_3(2 \delta)} \frac{\varepsilon_1-\varepsilon_3}{\varepsilon_1+\varepsilon_3}
+$$
+
+
+$$
+\rho_1 \alpha_1=2 \varepsilon_0 \varepsilon_3 \frac{\varepsilon_1-\varepsilon_3}{\varepsilon_1+\varepsilon_3}
+$$
+
+
+
+$$
+A=\frac{3 k T}{2} \sum_{n=0}^{\infty},\left[\frac{\varepsilon_1\left(i \nu_n\right)-\varepsilon_3\left(i \nu_n\right)}{\varepsilon_1\left(i \nu_n\right)+\varepsilon_3\left(i \nu_n\right)}\right]\left[\frac{\varepsilon_2\left(i \nu_n\right)-\varepsilon_3\left(i \nu_n\right)}{\varepsilon_2\left(i \nu_n\right)+\varepsilon_3\left(i \nu_n\right)}\right]
+$$
+
+
+Using this polarizability, we can write down the the van der Waals interaction energy by McLachlan as
+
+**Zero Frequency**
+
+\begin{equation}
+w(r)=-\frac{3k_B T a_{1}^3a_2^3}{r^6}\left ( \frac{\epsilon_1(0)-\epsilon_3(0)}{\epsilon_1(0)+\epsilon_3(0)}\right )\left ( \frac{\epsilon_2(0)-\epsilon_3(0)}{\epsilon_2(0)+\epsilon_3(0)}\right )
+\end{equation}
+
+and at 
+
+**Optical Frequencies**
+
+\begin{equation}
+w(r)=-\frac{3h a_{1}^3a_2^3}{\pi r^6}\int_{\nu_1}^\infty\left ( \frac{\epsilon_1(i\nu)-\epsilon_3(i\nu)}{\epsilon_1(i\nu)+\epsilon_3(i\nu)}\right )\left ( \frac{\epsilon_2(i\nu)-\epsilon_3(i\nu)}{\epsilon_2(i\nu)+\epsilon_3(i\nu)}\right )d\nu
+\end{equation}
+
+
+To calculate the interaction energy we therefore need to know the dielectric function over the whole frequency range, which is often not easily accessible. Yet, if there is a strong absorption of the material at $\nu_e$ then the dielectric function can be written as
+
+$$\epsilon(\nu)=1+\frac{n^2-1}{1-\left (\frac{\nu}{\nu_e}\right )^2}$$
+
+which can be inserted and integrated in the above equations as a replacement.
+
+<div class="alert alert-warning">
+    
+**van der Waals interactions**
+
+Overall the van der Waals interactions have the following general properties
+    
+- since $h\nu_e >>k_B T$ the dispersion interaction is much bigger that the rest of the interaction. For $\epsilon=n^2\approx 2$, and $\nu_e=3\times 10^{15}$ s$^{-1}$ we find $h\nu_e/2\sqrt{3}k_B T\approx 140$
+- the van der Waals interaction is greatly reduced in a solvent as compared to vacuum. For $n_1=n_2=1.5$ and $n_3=1.4$ we obtain a factor of 32 as compared to $n_3=1$
+- the van der Waals force between like molecules is always attractive. The dispersion part can be repulsive, however, if $n_3$ is between $n_1$ and $n_2$
+- the van der Waals interaction is not additive
+- the dispersion interaction shows retardation effects, at distances larger than $100$ nm, it decays with $r^{-7}$
+    
+</div>
+

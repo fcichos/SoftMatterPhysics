@@ -1,0 +1,442 @@
+---
+jupyter: python3
+---
+
+\setcounter{section}{2}
+
+# Statistical Physics Definitions
+
+The field of statitical physics uses approaches of statistics and probability theory to address physical problems. It considers large populations and derives expressions for the ensemble (or the macrostate) of a system from the microscopic states in the system. 
+
+```{python}
+#| nbsphinx: hidden
+#| tags: []
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import factorial as fac
+
+%matplotlib inline
+%config InlineBackend.figure_format = 'retina' 
+
+plt.rcParams.update({'font.size': 12,
+                     'axes.titlesize': 18,
+                     'axes.labelsize': 16,
+                     'axes.labelpad': 14,
+                     'lines.linewidth': 1,
+                     'lines.markersize': 10,
+                     'xtick.labelsize' : 16,
+                     'ytick.labelsize' : 16,
+                     'xtick.top' : True,
+                     'xtick.direction' : 'in',
+                     'ytick.right' : True,
+                     'ytick.direction' : 'in',}) 
+```
+
+## Entropy
+
+
+### Entropy Definition by Boltzmann
+The term of entropy becomes very important in that context. It measures the number of different ways a system can be rearranged to yield the same macrostate. It is, thus, an indicator for the microscopic degeneracy of a macrostate. In this context the definition of entropy by **Boltzmann** is well known, i.e.,
+
+\begin{equation}
+S=k_\mathrm{B} \ln(W)
+\end{equation}
+
+where $W$ is the number of microstates corresponding to a system's macrostate with and energy $E$. Here $k_\mathrm{B}=1.38064852 × 10^{-23} {\rm m^2\, kg\, s^{-2}\, K^{-1}}$ is the Boltzmann constant. Below are two examples of how to use the formula for the calculation of the entropy.
+
+
+<div class="alert alert-info">
+    
+**Example: Entropy of an N letter word**
+
+
+![letters](img/letters.png)    
+
+Consider the number of states $W$ of a word with $N$ letters of $M$ different characters. The letter can be arranged in 
+    
+\begin{equation}
+W=M^N
+\end{equation}
+    
+different ways such that the entropy is given by
+
+\begin{equation}
+S=N\, k_\mathrm{B} \ln(M) = k_{\rm B}\sum_{1}^{N} \ln(M)
+\end{equation}
+    
+which just tells that entropy is an additive quantity.    
+</div>
+
+
+<div class="alert alert-info">
+    
+**Example: Arrangement of molecules along a chain**
+
+
+![binding](img/binding.png)    
+    
+We consider a linear molecules (perhaps a DNA) that has $N$ binding sites for, e.g., proteins. $N_\mathrm{p}$ sites are occupied with a protein where the binding energy is equal for each site. The number of different ways in which the $N_\mathrm{p}$ proteins can be arranged on the $N$ sites is given by the binomial coefficient 
+    
+\begin{equation}
+W(N_\mathrm{p};N)=\frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}.
+\end{equation}
+    
+Therefore, the entropy is given by
+    
+\begin{equation}
+S=k_\mathrm{B} \ln\left ( \frac{N!}{N_\mathrm{p}!(N-N_\mathrm{p})!}\right )
+\end{equation}
+
+which can be further simplified using the identity
+
+\begin{equation}
+\ln(N!)=\sum_{n=1}^{N}\ln(n)
+\end{equation}
+    
+and the *Stirling approximation*
+
+\begin{equation}
+\sum_{n=1}^{N}\ln(n)\approx \int_1^{N}\ln(x)\,\mathrm{d}x\approx N\ln(N)-N.
+\end{equation}
+    
+This, finally, leads to 
+    
+\begin{equation}
+S=-k_\mathrm{B} N [c \ln(c)+(1-c)\ln(1-c)]
+\end{equation}
+    
+with $c=N_\mathrm{p}/N$ being the mean occupation of each site or the probability to find a state occupied.    
+    
+    
+</div>
+
+Below you just find some Python code calculating the entropy as a function of "concentration" using the Stirling approximation and the original formula. You also recognize there, that the Stirling formula is not yet very good, since $N=100$.
+
+```{python}
+#| nbsphinx: hidden
+#| tags: []
+epsilon=1e-3
+c=np.linspace(epsilon,1-epsilon,100);N=100
+Np=np.arange(1,N)
+
+def S(x):
+    return(np.log(fac(N)/(fac(x)*fac(N-x))))
+```
+
+```{python}
+#| nbsphinx: hidden
+#| tags: []
+fig=plt.figure()
+plt.ion()
+plt.plot(c,-(c*np.log(c)+(1-c)*np.log(1-c)),'r-',label="Stirling")
+plt.plot(Np/N,S(Np)/N,'k--',label="Original")
+plt.xlabel("$c$")
+plt.ylabel(r"$S$ [$k_\mathrm{B}$]")
+plt.title("Accuracy of the Stirling Formula")
+plt.tight_layout()
+plt.legend()
+plt.savefig("img/stirling.png")
+plt.close(fig)
+```
+
+![stirling](img/stirling.png)
+
+### Shannon Entropy
+
+A different access to entropy comes from the field of information theory and has been devised by Claude Shannon. Information theory is trying to mathematically assess the information content of a measurement facing uncertainty. It will turn out further below that this alternative description results in the Boltzmann distribution and effectively amounts to making a best guess about the probability distribution given some limited knowledge about the system such as the average energy.
+
+The Shannon entropy is defined by
+
+\begin{equation}
+S\left(p_{1}, p_{2}, \ldots, p_{N}\right)=S\left(\left\{p_{i}\right\}\right)=-\sum_{i=1}^{N} p_{i} \ln p_{i}
+\end{equation}
+
+and relates to its thermodynamic version, the Gibbs entropy
+
+\begin{equation}
+S\left(\left\{p_{i}\right\}\right)=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i},
+\end{equation}
+
+where $p_i$ is  the probability of the $i$th microstate (or outcome). The example below will show, that if only the normalization of the probability is known, maximization of the Shannon entropy will directly lead to an equal probability of events (uniform distribution). Later, we see that similar calculations can be done to yield the Boltzmann distribution.
+
+<div class="alert alert-info">
+    
+**Example: Uniform distribution**
+    
+    
+To figure out that the Shannon entropy is indeed delivering some useful measure, we will have a look at a measurement which has $N$ outcomes (e.g., rolling a dice). We, of course, know that in this case all numbers of the dice have equal probability, but we can test this by maximizing the Shannon entropy as required by our thermodynamic considerations earlier.
+
+To do so, we use the technique of Lagrange multipliers, which allows us to set a constraint while maximizing the entropy. This contraint is for this example, that 
+
+\begin{equation}
+\sum_{i}^{N} p_{i}=1
+\end{equation}
+
+i.e., that the probability is normalized to 1. With this constraint we maximize the entropy by adding an additional term with the contrain multilied by the Lagrange multiplier $\lambda$:
+
+\begin{equation}
+S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right).
+\end{equation}
+
+We see, that if the probability is normalized to 1, we do not change the entropy. Our procedure is to find that set of probabilities $p_i$ which maximizes this augmented entropy function.
+
+The derivative of the augmented entropy with respect to $\lambda$ yields the normalization condition, i.e., 
+
+\begin{equation}
+\frac{\partial S^{\prime}}{\partial \lambda}=-\left(\sum_{i} p_{i}-1\right)\overset{!}{=} 0.
+\end{equation}
+
+Differentiation with respect to the probabilities yields
+
+\begin{equation}
+\frac{\partial S^{\prime}}{\partial p_{i}}=-\ln p_{i}-1-\lambda\overset{!}{=} 0
+\end{equation}
+
+which directly gives
+
+\begin{equation}
+p_{i}=\mathrm{e}^{-1-\lambda}.
+\end{equation}
+
+Together with the normalization condition we therefore obtain
+
+\begin{equation}
+\sum_{i=1}^{N} \mathrm{e}^{-1-\lambda}=1
+\end{equation}
+
+and since the exponent does not depend on $i$ we find
+
+\begin{equation}
+\mathrm{e}^{-1-\lambda}=\frac{1}{N}
+\end{equation}
+
+or 
+
+\begin{equation}
+p_{i}=\frac{1}{N}
+\end{equation}
+
+which is the expected equal probability of finding one of the $N$ outcomes.
+</div>
+
+## Boltzmann Distribution
+
+Our previous consideration of the state functions has shown, that thermal equibrium is associated with a minimum in free energy. As the free energy consists of internal energy $U$ (or enthalpy $H$) and an entropic term ($-TS$), we may understand this minimization as a competition between the minimization of the internal energy and a maximization of the entropy (since it is $-TS$). The figure below illustrates this competition for a gas in the gravity field. 
+
+
+
+![entropy](img/entropy_comp.png)
+
+The internal energy minimization yields just a condensed layer at the bottom of the container, while the entropy maximization will try to spread the particles evenly (middle picture). The compromise of both at finite temperature is given by the **barometric height formula**, i.e.,
+
+\begin{equation}
+p(z)=p_0\exp\left ( -\frac{m g z}{k_\mathrm{B} T}\right ),
+\end{equation}
+
+where $p(z)$ is the probability to find a particle at height $z$, $m$ is the mass of a particle, $g$ is the gravitational acceleration and $p_0$ is a normalization constant. The result actually gives a hint at some very fundamental distribution, which always provides the free energy minimum in thermal equilibirum. This distribution is the Boltzmann distribution.
+
+The Boltzmann distribution is an approach of statistical physics to describe a thermodynamic system in equilibrium. The idea is hereby to deliver probability distributions for the probability of all different microstates. Key distinguishing feature of different microstates is their energy $E_i$ (that was so far neglected in the examples above), where $i$ indicates the $i$th microstate.
+
+The Boltzmann distribution tells us precisely the probability of finding a given microstate with energy $E_i$: If a particle is in equilibrium with its environment then the probability of finding the particle in state $i$ with energy $E_i$ is
+
+\begin{equation}
+p(E_i)=\frac{1}{Z}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right ).
+\end{equation}
+
+The normalization factor $1/Z$ contains the so-called partition function $Z$:
+
+\begin{equation}
+Z=\sum_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right )={\rm const}.
+\end{equation}
+
+It ensures that the total probablity to find a system in any of the states is 
+
+\begin{equation}
+\sum_i p(E_i)=1.
+\end{equation}
+
+### Mean Energy
+
+The Boltzmann distribution is useful to calculate also expectation values, for example, of the total energy of the system (the mean energy $\langle E\rangle$).
+
+The mean is defined by:
+\begin{equation}
+\langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}E_{i}\exp\left ( -\frac{E_i}{k_\mathrm{B} T}\right).
+\end{equation}
+
+Abbrevating $\beta=(k_\mathrm{B} T)^{-1}$ we find
+
+\begin{equation}
+\langle E \rangle=\frac{1}{Z}\sum_{i=1}^{N}\bigg(- \frac{\partial }{\partial \beta}\exp\left ( -\beta E_i\right)\bigg),
+\end{equation}
+
+where the sum is nothing else than the derivative of the partition function
+
+\begin{equation}
+\langle E \rangle=-\frac{1}{Z} \frac{\partial }{\partial \beta}Z
+\end{equation}
+
+or just
+
+\begin{equation}
+\langle E \rangle=-\frac{\partial }{\partial \beta}\ln(Z).
+\end{equation}
+
+### Free Energy
+
+Employ the Gibbs entropy $S=-k_\mathrm{B}\sum_{i=1}^{N} p_{i} \ln p_{i}$ to find a relation between the free energy $F$ (or $G$) and the partition function. Inserting the probability 
+$p_i=Z^{-1}\exp(-\beta E_i)$ and doing some transformations yields 
+
+\begin{equation}
+S=k_\mathrm{B} (\ln(Z)+\beta <E>).
+\end{equation}
+    
+Using 
+    
+\begin{equation}
+F=U-TS
+\end{equation}
+    
+for the free energy, we can insert the above result for the entropy and obtain
+
+\begin{equation}
+F=-k_\mathrm{B} T \ln(Z)
+\end{equation}
+
+(or $G$ in the same way).    
+    
+Note that this is the total energy and not the mean energy (internal, enthalpy or free energy) of the states in the system. The partition function thus allows us to calculate the free energy.
+
+### Deriving the Boltzmann Distribution
+
+There are a number of ways to derive the Boltzmann distribution. We will have a quick look at a classical derivation of the Boltzmann distribution for a closed system, e.g., a system which is in contact with a reservoir as depicted below.
+
+![Test](img/entropy_calc.png)
+
+System (index s) and reservoir (index r) have total energy $E_{\rm tot}=E_{\rm r}+E_{\rm s}$. We assert now, that the probability to find the system in a specific microstate $p(E_{\rm s}^{(i)})$ with the energy $E_{\rm s}^{(i)}$ is directly proportional to the number of states available to the reservoir, when the system is in that state. The ratio of the probabilities of two states is then equal to the ratio of the number of states of the reservoir, i.e.,
+
+\begin{equation}
+\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})}{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})}.
+\end{equation}
+
+Here, the function $W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})$ is the number of states available to the reservoir, when the system is having the energy $E_{\rm s}^{(1)}$.
+
+We can now rewrite the above equation in terms of the entropy using $W(S(E))=\exp(S(E)/k_\mathrm{B})$ such that 
+
+\begin{equation}
+\frac{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})}{W_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})}=\frac{\exp(S_{\rm r}(E_{\rm tot}-E_{\rm s}^{(1)})/k_{\rm B})}{\exp(S_{\rm r}(E_{\rm tot}-E_{\rm s}^{(2)})/k_{\rm B})}.
+\end{equation}
+
+We may now expand the entropy to first order
+
+\begin{equation}
+S_{\rm r}(E_{\rm tot}-E_{\rm s})\approx S_{\rm r}(E_{\rm tot})-\frac{\partial S_{\rm r}}{\partial E}E_{\rm s}
+\end{equation}
+
+considering that $E_{\rm s}$ is only very tiny as compared to the total energy of the reservoir. Using the thermodynamic identity that
+
+\begin{equation}
+\frac{\partial S_{\rm r}}{\partial E}|_{V,N}=\frac{1}{T}
+\end{equation}
+
+we finally find
+
+\begin{equation}
+\frac{p(E_{\rm s}^{(1)})}{p(E_{\rm s}^{(2)})}=\frac{\exp(-E_{\rm s}^{(1)}/k_{\rm B}T)}{\exp(-E_{\rm s}^{(2)}/k_{\rm B}T)}
+\end{equation}
+
+which corresponds to the ratio of two Boltzmann distributions
+
+\begin{equation}
+p(E_{\rm s}^{(i)})=\frac{1}{Z}\exp\left (- \frac{E_{\rm s}^{(i)}}{k_{\rm B} T}\right),
+\end{equation}
+
+
+where $Z$ is the previously mentioned normalization factor, which is called *partition function*.
+
+<div class="alert alert-info">
+    
+**Example: Barometric height formula**
+    
+We have mentioned already the barometric height formula giving the probability of finding a particle at a height $z$. To derive that, we consider a constant gravitational force $F=-mg$ along the $z$-direction such that the potential energy is given by $E=mgz$ assuming that $E=0$ at $z=0$.
+    
+The probability for finding the particle at position $z$ is therefore 
+    
+\begin{equation}
+p(z)=\frac{1}{Z}\exp\left( -\frac{mgz}{k_{\rm B} T}\right)=\frac{1}{<z>}\exp\left ( -\frac{z}{<z>}\right ).
+\end{equation}
+
+Normalization provides the value of the partition function
+    
+\begin{equation}
+Z=\int_0^\infty\exp\left( -\frac{mgz}{k_{\rm B} T}\right)dz=\frac{k_{\rm B}T}{mg}.
+\end{equation}
+
+We may further calculate the mean height, which is the sedimentation length in sedimentation problems:
+    
+\begin{equation}
+<z>=\frac{1}{Z}\int_0^\infty h\exp\left( -\frac{mgz}{k_{\rm B} T}\right)\mathrm{d}z=\frac{k_{\rm B}T}{mg}
+\end{equation}    
+
+and the mean energy 
+    
+\begin{equation}
+<E>=-\frac{\partial }{\partial \beta} \ln (Z)=+\frac{\partial}{\partial \beta}\ln(\beta m g)=\frac{1}{\beta}=k_{\rm B} T=mg <z>.
+\end{equation}    
+    
+</div>
+
+<div class="alert alert-info">
+    
+**Example: Boltzmann distribution is the maximum entropy distribution in which the average energy is prescribed as a constraint**
+    
+We can also obtain the Boltzmann distribution from the Shannon entropy by constraining the Shannon entropy. With only the normalization as a constraint in entropy maximization, we obtained equally likely microsates. If we now constrain the mean energy $\langle E\rangle$ of the system, we obtain a distribution which maximizes the entropy under this condition. The mean energy is given by
+    
+\begin{equation}      
+\langle E\rangle=\sum_{i} E_{i} p_{i},
+\end{equation}    
+    
+such that we can add another constraint to our augmented entropy. We now have a Lagrange multiplier $\lambda$ for the normalization of the probability and a second one $\beta$ which is multiplied by the energy constraint.
+    
+\begin{equation}    
+S^{\prime}=-\sum_{i} p_{i} \ln p_{i}-\lambda\left(\sum_{i} p_{i}-1\right)-\beta\left(\sum_{i} p_{i} E_{i}-\langle E\rangle\right).    
+\end{equation}
+    
+Taking the derivative 
+    
+\begin{equation}
+\frac{\partial S^{\prime}}{\partial p_{i}}=-\ln p_{i}-1-\lambda-\beta E_i\overset{!}{=} 0
+\end{equation}
+    
+results in     
+    
+\begin{equation}     
+p_{i}=\mathrm{e}^{-1-\lambda-\beta E_{i}}
+\end{equation} 
+    
+and together with the normalization condition $\sum p_i=1$ finally   
+    
+\begin{equation}    
+\mathrm{e}^{-1-\lambda}=\frac{1}{\sum_{i} \mathrm{e}^{-\beta E_{i}}},
+\end{equation}    
+
+where we already recognized that we can replace the prefactor $\mathrm{e}^{-1-\lambda}$ by $1/Z$ with $Z$ being the partition function
+    
+    
+\begin{equation}     
+Z=\sum_{i} \mathrm{e}^{-\beta E_{i}}.
+\end{equation}    
+
+Overall this, therefore, leads to the Boltzmann distribution     
+        
+\begin{equation} 
+p_{i}=\frac{\mathrm{e}^{-\beta E_{i}}}{\sum_{i} \mathrm{e}^{-\beta E_{i}}}
+\end{equation}    
+    
+which is quite interesting. We have just fixed the mean energy of the system and maximized the entropy. The Boltzmann distribution is therefore the probability distribution which maximizes the entropy under as little as possible additional information (just the mean energy).     
+    
+The only thing that is missing in the above formula is an expression for the value of $\beta$, the Lagrange multiplier. This can be obtained when knowning the mean energy. In thermal euilibrium, this mean energy can be obtained from the equipartition theorem.    
+    
+    
+</div>
+

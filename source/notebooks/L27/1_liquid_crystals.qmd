@@ -1,0 +1,72 @@
+---
+title: Liquid Crystals
+jupyter: python3
+---
+
+
+
+$$
+Q_{\alpha \beta}(\boldsymbol{r})=\frac{1}{N} \sum_{i}\left(u_{\alpha}^{(i)} u_{\beta}^{(i)}-\frac{1}{3} \delta_{\alpha \beta}\right)
+$$
+
+- $Q_{\alpha \beta}=Q_{\beta \alpha} \text { since } u_{\alpha}^{(i)} u_{\beta}^{(i)}=u_{\beta}^{(i)} u_{\alpha}^{(i)}$
+- $\begin{aligned}
+\operatorname{Tr} Q_{\alpha \beta} &=Q_{x x}+Q_{y y}+Q_{z z}=\\
+&=\frac{1}{N} \sum_{i}\left[\left(u_{x}^{(i)}\right)^{2}+\left(u_{y}^{(i)}\right)^{2}+\left(u_{z}^{(i)}\right)^{2}-1\right]=0
+\end{aligned}$
+
+- $\begin{aligned}
+&u_{x}=\sin \theta \cos \phi \\
+&u_{y}=\sin \theta \sin \phi \\
+&u_{z}=\cos \theta
+\end{aligned}$
+
+$$
+Q_{\alpha \beta}=\int_{0}^{2 \pi} d \phi \int_{0}^{\pi} \sin \theta d \theta f(\theta, \phi)\left(u_{\alpha} u_{\beta}-\frac{1}{3} \delta_{\alpha \beta}\right)
+$$
+
+
+$$
+\begin{aligned}
+Q_{z z} &=\frac{1}{4 \pi} \int_{0}^{2 \pi} d \phi \int_{0}^{\pi} \sin \theta d \theta\left(\cos ^{2} \theta-\frac{1}{3}\right)=\\
+&=\left.\frac{1}{6}\left(x^{3}-x\right)\right|_{-1} ^{1}=0 .
+\end{aligned}
+$$
+
+prolate
+
+$$
+\mathbf{Q}^{\text {prolate }}=\left(\begin{array}{ccc}
+-1 / 3 & 0 & 0 \\
+0 & -1 / 3 & 0 \\
+0 & 0 & 2 / 3
+\end{array}\right)
+$$
+
+oblate 
+
+$$
+\mathbf{Q}^{\text {oblate }}=\left(\begin{array}{ccc}
+1 / 6 & 0 & 0 \\
+0 & 1 / 6 & 0 \\
+0 & 0 & -1 / 3
+\end{array}\right)
+$$
+
+
+$$
+Q_{\alpha \beta}=S\left(n_{\alpha} n_{\beta}-\frac{1}{3} \delta_{\alpha \beta}\right)
+$$
+
+$$
+Q_{z z}=\frac{2}{3} S, \quad Q_{x x}=Q_{y y}=-\frac{1}{3} S
+$$
+
+$$
+S=\int_{0}^{\pi}\left(1-\frac{3}{2} \sin ^{2} \theta\right) f(\theta) \sin \theta d \theta
+$$
+
+$$
+f(\theta)=\int_{0}^{2 \pi} f(\theta, \phi) d \phi
+$$
+

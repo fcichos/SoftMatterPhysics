@@ -1,0 +1,76 @@
+---
+jupyter: python3
+---
+
+```{python}
+import sympy
+from sympy.abc import x, y
+
+def cylinder_stream_function(U=1, R=1):
+    r = sympy.sqrt(x**2 + y**2)
+    theta = sympy.atan2(y, x)
+    return U * (r - R**2 / r) * sympy.sin(theta)
+
+def velocity_field(psi):
+    u = sympy.lambdify((x, y), psi.diff(y), 'numpy')
+    v = sympy.lambdify((x, y), -psi.diff(x), 'numpy')
+    return u, v
+
+import numpy as np
+
+def plot_streamlines(ax, u, v, xlim=(-1, 1), ylim=(-1, 1)):
+    x0, x1 = xlim
+    y0, y1 = ylim
+    Y, X =  np.ogrid[y0:y1:100j, x0:x1:100j]
+    ax.streamplot(X, Y, u(X, Y), v(X, Y), color='cornflowerblue')
+    
+def format_axes(ax):
+    ax.set_aspect('equal')
+    ax.figure.subplots_adjust(bottom=0, top=1, left=0, right=1)
+    ax.xaxis.set_ticks([])
+    ax.yaxis.set_ticks([])
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+        
+import matplotlib.pyplot as plt
+
+psi = cylinder_stream_function()
+u, v = velocity_field(psi)
+
+xlim = ylim = (-3, 3)
+fig, ax = plt.subplots(figsize=(4, 4))
+plot_streamlines(ax, u, v, xlim, ylim)
+
+c = plt.Circle((0, 0), radius=1, facecolor='gray', zorder=2)
+ax.add_patch(c)
+
+format_axes(ax)
+
+```
+
+```{python}
+#| tags: []
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define parameters
+R = 1  # Radius of the pipe
+Umax = 1  # Maximum velocity at the center of the pipe
+N = 100  # Number of points
+r = np.linspace(0, R, N)  # Radial positions
+
+# Velocity profile for laminar flow in a pipe (parabolic profile)
+v = Umax * (1 - (r / R)**2)
+
+# Plotting the laminar flow profile
+plt.figure(figsize=(8, 6))
+plt.plot(r, v, label='Laminar Flow Profile', color='blue')
+plt.xlabel('Radial Position (r)')
+plt.ylabel('Velocity (v)')
+plt.title('Laminar Flow Velocity Profile in a Pipe')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+

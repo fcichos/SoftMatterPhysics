@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>27&nbsp; Polymers – SoftMatterLecture</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css">
+<meta property="og:title" content="Title for Open Graph">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="SoftMatterLecture">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">SoftMatterLecture</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/fcichos/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="../../../SoftMatterLecture.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#freely-jointed-chain" id="toc-freely-jointed-chain" class="nav-link active" data-scroll-target="#freely-jointed-chain"><span class="header-section-number">27.1</span> Freely Jointed Chain</a>
+  <ul>
+  <li><a href="#mean-squared-end-to-end-distance-of-a-fjc" id="toc-mean-squared-end-to-end-distance-of-a-fjc" class="nav-link" data-scroll-target="#mean-squared-end-to-end-distance-of-a-fjc"><span class="header-section-number">27.1.1</span> Mean-squared end-to-end distance of a FJC</a></li>
+  <li><a href="#distribution-of-the-end-to-end-distances" id="toc-distribution-of-the-end-to-end-distances" class="nav-link" data-scroll-target="#distribution-of-the-end-to-end-distances"><span class="header-section-number">27.1.2</span> Distribution of the end-to-end distances</a></li>
+  <li><a href="#radius-of-gyration" id="toc-radius-of-gyration" class="nav-link" data-scroll-target="#radius-of-gyration"><span class="header-section-number">27.1.3</span> Radius of gyration</a></li>
+  </ul></li>
+  <li><a href="#force-extension-behavior-of-a-fjc" id="toc-force-extension-behavior-of-a-fjc" class="nav-link" data-scroll-target="#force-extension-behavior-of-a-fjc"><span class="header-section-number">27.2</span> Force-extension behavior of a FJC</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Polymers</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="cf8d40cf-5a5c-419b-9b9a-365852946251" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.linalg <span class="im">import</span> norm</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.constants <span class="im">import</span> c,epsilon_0,e,physical_constants</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'style.json'</span>, <span class="st">'r'</span>) <span class="im">as</span> fp:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    style <span class="op">=</span> json.load(fp)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(style)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="freely-jointed-chain" class="level2" data-number="27.1">
+<h2 data-number="27.1" class="anchored" data-anchor-id="freely-jointed-chain"><span class="header-section-number">27.1</span> Freely Jointed Chain</h2>
+<p>One of the simplest models of a polymer chain is a 3D random walk with constant step length, the freely jointed chain (FJC). The step length corresponds to a distance <span class="math inline">\(b\)</span>, which is called the <em>Kuhn</em> length. The Kuhn length is typically larger than the bond length between the monomers of the polymer as neighboring bond may still have correlations. Neigboring Kuhn segments are in the model of the FJC completly independent. The image below shows an example random walk</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/fjc.png" class="img-fluid figure-img"></p>
+<figcaption>Freely Jointed Chain</figcaption>
+</figure>
+</div>
+<video src="img/randomwalk.mp4" controls="">
+</video>
+<section id="mean-squared-end-to-end-distance-of-a-fjc" class="level3" data-number="27.1.1">
+<h3 data-number="27.1.1" class="anchored" data-anchor-id="mean-squared-end-to-end-distance-of-a-fjc"><span class="header-section-number">27.1.1</span> Mean-squared end-to-end distance of a FJC</h3>
+<p>Let us calculate some properties of the freely jointed chain. One is the sum of all bonding vectors <span class="math inline">\(\vec{r}_i\)</span>. This will give us the end-to-end distance, vector of the polymer chain.</p>
+<p><span class="math display">\[
+\vec{R}_N=\sum_{i=1}^N \vec{r}_i
+\]</span></p>
+<p>Of course, this is only a single realisation of a polymer conformation. In general, the polymer can accommodate many different conformations with different end-to-end vectors <span class="math inline">\(\vec{R}_N\)</span>. Therefore, ensemble average of the end to end vector has to be zero.</p>
+<p><span class="math display">\[
+\left\langle\vec{R}_N\right\rangle=0 .
+\]</span></p>
+<p>The next higher moment of the end to vector distance is the mean squared end to end distance. The mean squared end to end distance is calculated by</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left\langle R^2\right\rangle &amp; \equiv\left\langle\vec{R}_N^2\right\rangle=\left\langle\vec{R}_N \cdot \vec{R}_N\right\rangle=\left\langle\left(\sum_{i=1}^N \vec{r}_i\right) \cdot\left(\sum_{j=1}^N \vec{r}_j\right)\right\rangle \\
+&amp; =\sum_{i=1}^N \sum_{j=1}^N\left\langle\vec{r}_i \cdot \vec{r}_j\right\rangle .
+\end{aligned}
+\]</span></p>
+<p>The dot product in the last double sum can now be replaced by</p>
+<p><span class="math display">\[
+\vec{r}_i \cdot \vec{r}_j=b^2 \cos \theta_{i j}
+\]</span></p>
+<p>such that we obtain</p>
+<p><span class="math display">\[
+\left\langle R^2\right\rangle=\sum_{i=1}^N \sum_{j=1}^N\left\langle\vec{r}_i \cdot \vec{r}_j\right\rangle=b^2 \sum_{i=1}^N \sum_{j=1}^N\left\langle\cos \theta_{i j}\right\rangle
+\]</span></p>
+<p>As all bond angles <span class="math inline">\(\theta_{ij}\)</span> are allowed equally, the ensemble average over the cosine is just zero and we obtain</p>
+<p><span class="math display">\[
+\left\langle R^2\right\rangle=n \cdot b^2=L \cdot b
+\]</span></p>
+<p>which is not too surprising. This is the random walk with a step length of <span class="math inline">\(b\)</span> but not with time steps but <span class="math inline">\(N\)</span> segments. While the contour length of the polymer would be <span class="math inline">\(N^2b^2\)</span> the mean sqared end to end distance is shorter and just <span class="math inline">\(Nb^2\)</span>.</p>
+</section>
+<section id="distribution-of-the-end-to-end-distances" class="level3" data-number="27.1.2">
+<h3 data-number="27.1.2" class="anchored" data-anchor-id="distribution-of-the-end-to-end-distances"><span class="header-section-number">27.1.2</span> Distribution of the end-to-end distances</h3>
+<p>The calculation before just addressed the mean squared end to end distance. Again, since this is a random walk, which has many realisations, there must be also a distribution function for the end to end distance. This will tell us by how much the end to end distance fluctuates, and what is the probability to find a certain end to end distance. If we look just at the first segment, we have an end to end vector <span class="math inline">\(\vec{R}_1\)</span> magnitude squared, and we can calculate the length of this vector from its components.</p>
+<p><span class="math display">\[
+\left\langle\left|\vec{R}_1\right|^2\right\rangle=\left\langle x_1^2+y_1^2+z_1^2\right\rangle=b^2=\left\langle x_1^2\right\rangle+\left\langle y_1^2\right\rangle+\left\langle z_1^2\right\rangle
+\]</span></p>
+<p>As the vector can rotate isotropically, the mean squared value of each of the components is just one third of the square length of the Kuhn segment <span class="math inline">\(b\)</span>, i.e.</p>
+<p><span class="math display">\[
+\left\langle x_1^2\right\rangle=\left\langle y_1^2\right\rangle=\left\langle z_1^2\right\rangle=b^2 / 3
+\]</span></p>
+<p>That means now, a chain of <span class="math inline">\(N\)</span> segments results in the mean squared components which are</p>
+<p><span class="math display">\[
+\left\langle x_N^2\right\rangle=\left\langle y_N^2\right\rangle=\left\langle z_N^2\right\rangle=N \cdot b^2 / 3
+\]</span></p>
+<p>This is the variance of how far a random walk travels in x-direction after <span class="math inline">\(N\)</span> step. The distribution function for the random walk as we know is a Gaussian:</p>
+<p><span class="math display">\[
+p(x , N)=\frac{1}{\sqrt{2 \pi\left(N b^2 / 3\right)}} e^{-x^2 /\left(2 N b^2 / 3\right)}
+\]</span></p>
+<p>As all 3 dimensions of the random walk are equivalent, i.e.</p>
+<p><span class="math display">\[
+\left\langle R_N^2\right\rangle=\left\langle x_N^2\right\rangle+\left\langle y_N^2\right\rangle+\left\langle z_N^2\right\rangle=3 \cdot N \cdot b^2 / 3=N \cdot b^2
+\]</span></p>
+<p>the probability density of finding a certain end to end vector is the product of the three 1d probability densities</p>
+<p><span class="math display">\[
+\begin{aligned}
+p(\vec{R} , N) &amp; =p(x, N) \cdot p(y, N) \cdot p(z, N) \\
+&amp; =\sqrt{\frac{3}{2 \pi N b^2}} e^{-3 x^2 /\left(2 N b^2\right)} \sqrt{\frac{3}{2 \pi N a^2}} e^{-3 y^2 /\left(2 N b^2\right)} \sqrt{\frac{3}{2 \pi N a^2}} e^{-3 z^2 /\left(2 N b^2\right)}
+\end{aligned}
+\]</span></p>
+<p>and thus</p>
+<p><span class="math display">\[
+p(\vec{R} , N)=\left(\frac{3}{2 \pi N b^2}\right)^{\frac{3}{2}} e^{-3 R^2 /\left(2 N b^2\right)}
+\]</span></p>
+<p>The corresponding radial distribution function then reads</p>
+<p><span class="math display">\[
+p(R , N) d R=\left(\frac{3}{2 \pi N b^2}\right)^{\frac{3}{2}} e^{-3 R^2 /\left(2 N b^2\right)} 4 \pi R^2 d R
+\]</span></p>
+<p>Such and end to end distribution could be measured if both end of the polymer can be taggeg for example with a dye molecule. The distance of the two dye molecules can then be measured, for example, with the help of fluorescence resonance energy transfer (FRET) if some additional requirements are fullfilled. This can be done for a single polymer molecule and the above ensemble averages could then also be replaced by a time average since the polymer fluctuates due to thermal energy.</p>
+</section>
+<section id="radius-of-gyration" class="level3" data-number="27.1.3">
+<h3 data-number="27.1.3" class="anchored" data-anchor-id="radius-of-gyration"><span class="header-section-number">27.1.3</span> Radius of gyration</h3>
+<p>Not in all cases the end to end distance can be measured or even two ends exist (circular polymers). Then, it more intersting to characterize the spatial extent of the polymer chain by the radius of gyration <span class="math inline">\(R_{g}\)</span>, whose square is defined like this <span class="math display">\[
+R_{\mathrm{g}}^2 \equiv \frac{1}{N} \sum_{i=1}^N\left(\vec{R}_i-\vec{R}_{\mathrm{cm}}\right)^2
+\]</span></p>
+<p><span class="math display">\[
+\vec{R}_{\mathrm{cm}} \equiv \frac{1}{N} \sum_{j=1}^N \vec{R}_j .
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_{\mathrm{g}}^2\right\rangle=\frac{1}{N^2} \sum_{i=1}^N \sum_{j=i}^N\left\langle\left(\vec{R}_i-\vec{R}_j\right)^2\right\rangle
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum_{i=1}^N \rightarrow \int_0^N \mathrm{~d} u \\
+&amp; \left\langle R_{\mathrm{g}}^2\right\rangle=\frac{1}{N^2} \int_0^N \int_u^N\left\langle(\vec{R}(u)-\vec{R}(\mathrm{v}))^2\right\rangle \mathrm{dv} \mathrm{d} u .
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\left\langle(\vec{R}(u)-\vec{R}(\mathrm{v}))^2\right\rangle=(\mathrm{v}-u) b^2
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_{\mathrm{g}}^2\right\rangle=\frac{b^2}{N^2} \int_0^N \int_u^N(\mathrm{v}-u) \mathrm{dv} \mathrm{d} u=\frac{b^2}{N^2} \int_0^N \int_0^{N-u} \mathrm{v}^{\prime} \mathrm{dv} \mathrm{v}^{\prime} \mathrm{d} u
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_{\mathrm{g}}^2\right\rangle=\frac{b^2 N}{6}=\frac{\left\langle R^2\right\rangle}{6}
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+\hline \text { Ideal chains } &amp; \text { Linear } &amp; \text { Ring } &amp; f \text {-arm star } &amp; \text { H-polymer } \\
+\hline\left\langle R_g^2\right\rangle &amp; N b^2 / 6 &amp; N b^2 / 12 &amp; {\left[(N / f) b^2 / 6\right](3-2 / f)} &amp; \left(N b^2 / 6\right) 89 / 625 \\
+\hline
+\end{array}
+\]</span></p>
+<p><span class="math display">\[
+R_{\mathrm{g}}^2 \equiv \frac{1}{N} \sum_{i=1}^N\left(\vec{R}_i-\vec{R}_{\mathrm{cm}}\right)^2
+\]</span></p>
+<p><span class="math display">\[
+\vec{R}_{\mathrm{cm}} \equiv \frac{1}{N} \sum_{j=1}^N \vec{R}_j .
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_{\mathrm{g}}^2\right\rangle=\frac{1}{N^2} \sum_{i=1}^N \sum_{j=i}^N\left\langle\left(\vec{R}_i-\vec{R}_j\right)^2\right\rangle
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum_{i=1}^N \rightarrow \int_0^N \mathrm{~d} u \\
+&amp; \left\langle R_{\mathrm{g}}^2\right\rangle=\frac{1}{N^2} \int_0^N \int_u^N\left\langle(\vec{R}(u)-\vec{R}(\mathrm{v}))^2\right\rangle \mathrm{dv} \mathrm{d} u .
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\left\langle(\vec{R}(u)-\vec{R}(\mathrm{v}))^2\right\rangle=(\mathrm{v}-u) b^2
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_{\mathrm{g}}^2\right\rangle=\frac{b^2}{N^2} \int_0^N \int_u^N(\mathrm{v}-u) \mathrm{dv} \mathrm{d} u=\frac{b^2}{N^2} \int_0^N \int_0^{N-u} \mathrm{v}^{\prime} \mathrm{dv} \mathrm{v}^{\prime} \mathrm{d} u
+\]</span></p>
+<p><span class="math display">\[
+\left\langle R_{\mathrm{g}}^2\right\rangle=\frac{b^2 N}{6}=\frac{\left\langle R^2\right\rangle}{6}
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+\hline \text { Ideal chains } &amp; \text { Linear } &amp; \text { Ring } &amp; f \text {-arm star } &amp; \text { H-polymer } \\
+\hline\left\langle R_g^2\right\rangle &amp; N b^2 / 6 &amp; N b^2 / 12 &amp; {\left[(N / f) b^2 / 6\right](3-2 / f)} &amp; \left(N b^2 / 6\right) 89 / 625 \\
+\hline
+\end{array}
+\]</span></p>
+</section>
+</section>
+<section id="force-extension-behavior-of-a-fjc" class="level2" data-number="27.2">
+<h2 data-number="27.2" class="anchored" data-anchor-id="force-extension-behavior-of-a-fjc"><span class="header-section-number">27.2</span> Force-extension behavior of a FJC</h2>
+<p><span class="math display">\[
+E_{p o t, 1}=-\vec{f} \cdot \vec{r}_1=-f \cdot r_{1, z}=-f \cdot b \cos \theta
+\]</span></p>
+<p><span class="math display">\[
+Z_1=\int_0^\pi \int_0^{2 \pi} e^{-f t \cos \theta / k_B T} \sin \theta \cdot d \varphi d \theta
+\]</span></p>
+<p><span class="math display">\[
+Z_1=2 \pi \int_{-1}^1 e^{f b y / k_B T} d y=\left.2 \pi \frac{k_B T}{f b} e^{f a y / k_B T}\right|_{-1} ^1=2 \pi \frac{k_B T}{f b}\left(e^{f b / k_B T}-e^{-f b / k_B T}\right)=4 \pi \frac{k_B T}{f a} \sinh \left(\frac{f b}{k_B T}\right)
+\]</span></p>
+<p><span class="math display">\[
+Z^*=\sum_i e^{-\beta\left(E_i-f_{1, z}\right)}
+\]</span></p>
+<p><span class="math display">\[
+\left\langle r_{1, z}\right\rangle=\frac{1}{\beta} \frac{\partial}{\partial f} \ln \left(Z^*\right)
+\]</span></p>
+<p><span class="math display">\[
+\left\langle r_{1, z}\right\rangle=k_B T \frac{\partial}{\partial f} \ln Z_1=k_B T \frac{1}{Z_1} \frac{\partial Z_1}{\partial f}=k_B T\left(-\frac{1}{f}+\frac{b}{k_B T} \frac{e^{f b / k_B T}+e^{-f b / k_B T}}{e^{f b / k_B T}-e^{-f b / k_B T}}\right)
+\]</span></p>
+<p><span class="math display">\[
+\left\langle r_{1, z}\right\rangle=b\left(\operatorname{coth}\left(\frac{f b}{k_B T}\right)-\frac{k_B T}{f b}\right)=L\left(\frac{f a}{k_B T}\right)
+\]</span></p>
+<p><span class="math display">\[
+\left\langle r_{N, z}\right\rangle=N b\left(\operatorname{coth}\left(\frac{f b}{k_B T}\right)-\frac{k_B T}{f b}\right)
+\]</span></p>
+<p><span class="math display">\[
+\frac{e^x+e^{-x}}{e^x-e^{-x}}-\frac{1}{x} \approx \frac{2+2 x^2}{2 x+2 x^3 / 6}-\frac{1}{x}=\frac{1+x^2-1-x^2 / 6}{x+x^3 / 6} \approx \frac{x}{3}
+\]</span></p>
+<p><span class="math display">\[
+f=\frac{3 k_B T}{N b^2}\left\langle r_{N, z}\right\rangle
+\]</span></p>
+<p>Thus, for low forces, i.e.&nbsp;small extensions compared to the contour length the system behaves as a Hookean spring that is purely entropic in nature, called entropic spring. The entropic nature causes also a temperature dependence of the entropic spring constant, such that temperature affects the elasticity of elastomers, such as rubber, in an unusual way. Since elastomers consist of networks of flexible polymer chains that are in a partially stretched state, heating causes an elastomer to contract!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
