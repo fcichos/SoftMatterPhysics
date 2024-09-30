@@ -1,0 +1,165 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "SoftMatterLecture"
+  author:
+    name: "Frank Cichos, Ralf Seidel"
+    email: cichos@physik.uni-leipzig.de
+    affiliation:
+      - name: Leipzig University
+        city: Leipzig
+        url: http://www.uni-leipzig.de/~mona
+  date: 29/09/2024
+  abstract: |
+    Abstract
+  search: true
+  downloads: [pdf]
+  page-navigation: true
+  navbar:
+    background: primary
+    search: true
+    right:
+      - icon: github
+        href: https://github.com/fcichos/
+  sidebar:
+    style: floating
+    background: light
+    logo: source/img/mona_logo.png
+    title: "Soft Matter Lecture"
+    collapse-level: 1
+    number-sections: false
+  chapters:
+    - index.qmd
+    - part: "Course Info"
+      chapters:
+        - source/course-info/info.qmd
+        - source/course-info/instructors.qmd
+        - source/course-info/resources.qmd
+        - source/course-info/exam.qmd
+    - part: "Lecture 1"
+      chapters:
+        - source/notebooks/L1/1_introduction.qmd
+        - source/notebooks/L1/2_Thermodynamics_Statistics.qmd
+    - part: "Lecture 2"
+      chapters:
+        - source/notebooks/L2/3_Statistical_Physics_Definitions.qmd
+    - part: "Lecture 3"
+      chapters:
+        - source/notebooks/L3/1_Equipartition.qmd
+        - source/notebooks/L3/2_Chemical_Potential.qmd
+    - part: "Lecture 4"
+      chapters:
+        - source/notebooks/L4/1_Osmotic_Pressure.qmd
+        - source/notebooks/L4/2_Gibbs_Distribution.qmd
+    - part: "Lecture 5"
+      chapters:
+        - source/notebooks/L5/1_Phase_Transitions.qmd
+    - part: "Lecture 6"
+      chapters:
+        - source/notebooks/L6/1_Kinetics_LL_Unmixing.qmd
+    - part: "Lecture 7"
+      chapters:
+        - source/notebooks/L7/1_Solid_Liquid_Phase_Transitions.qmd
+        - source/notebooks/L7/2_Forces_and_Interactions.qmd
+    - part: "Lecture 8"
+      chapters:
+        - source/notebooks/L8/1_Forces_and_Interactions.qmd
+    - part: "Lecture 9"
+      chapters:
+        - source/notebooks/L9/1_Electric_Double_Layer.qmd
+    - part: "Lecture 10"
+      chapters:
+        - source/notebooks/L10/1_van_der_Waals.qmd
+    - part: "Lecture 11"
+      chapters:
+        - source/notebooks/L11/1_van_der_Waals_McLachlan.qmd
+        - source/notebooks/L11/1_van_der_Waals_Solid_Bodies.qmd
+    - part: "Lecture 12"
+      chapters:
+        - source/notebooks/L12/1_van_der_Waals_Lifshitz.qmd
+    - part: "Lecture 13"
+      chapters:
+        - source/notebooks/L13/1_depletion_forces.qmd
+    - part: "Lecture 14"
+      chapters:
+        - source/notebooks/L14/1_depletion_forces.qmd
+        - source/notebooks/L14/2_Flows_Transport.qmd
+    - part: "Lecture 16"
+      chapters:
+        - source/notebooks/L16/1_langevin.qmd
+    - part: "Lecture 17"
+      chapters:
+        - source/notebooks/L17/1_hydrodynamics.qmd
+    - part: "Lecture 18"
+      chapters:
+        - source/notebooks/L18/1_Reynolds_Number.qmd
+        - source/notebooks/L18/2_boundary_hydrodynamics.qmd
+    - part: "Lecture 19"
+      chapters:
+        - source/notebooks/L19/1_electroosmosis.qmd
+        - source/notebooks/L19/2_polymers.qmd
+    - part: "Lecture 20"
+      chapters:
+        - source/notebooks/L20/1_polymers.qmd
+    - part: "Lecture 22"
+      chapters:
+        - source/notebooks/L22/1_real_polymers.qmd
+    - part: "Lecture 23"
+      chapters:
+        - source/notebooks/L23/1_Scattering.qmd
+        - source/notebooks/L23/2_Viscoelasticity.qmd
+    - part: "Lecture 24"
+      chapters:
+        - source/notebooks/L24/1_Viscoelasticity.qmd
+    - part: "Lecture 25"
+      chapters:
+        - source/notebooks/L25/1_polymer_dynamics.qmd
+    - part: "Lecture 26"
+      chapters:
+        - source/notebooks/L26/1_semidilute_polymers.qmd
+    - part: "Lecture 27"
+      chapters:
+        - source/notebooks/L27/1_liquid_crystals.qmd
+    - part: "Lecture X"
+      chapters:
+        - source/notebooks/LX/4_Forces_and_Interactions.qmd
+        - source/notebooks/LX/5_Flows_and_Transport_in_Liquids.qmd
+        - source/notebooks/LX/6_Membranes_Colloids_Liquid_Crystals.qmd
+
+number-sections: true
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+    css:
+      - https://cdnjs.cloudflare.com/ajax/libs/jupyterquiz/1.0.0/jupyterquiz.min.css
+    code-fold: true
+    code-tools: true
+    backgroundcolor: "#F5F5F5"
+    toc: true
+    toc-location: right
+    toc-title: "On this page"
+    toc-depth: 4
+
+  pdf:
+    documentclass: scrreprt
+    cover-image: "source/img/FluffyParticles.png"
+    output-file: pdf-book
+    execute:
+      echo: false       # Hides the code cells
+      eval: true        # Evaluates the code but doesn't show the code cells
+      warning: false    # Hides any warnings
+      error: false      # Hides any error messages
+    exclude:
+      - "source/course-info/"
+    cite-method: biblatex
+
+execute:
+  freeze: auto
+
+comments:
+  hypothesis: false
